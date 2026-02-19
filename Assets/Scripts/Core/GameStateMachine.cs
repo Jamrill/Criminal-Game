@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using JuegoCriminal.Services;
 
 namespace JuegoCriminal.Core
@@ -21,25 +21,36 @@ namespace JuegoCriminal.Core
 
         public GameState CurrentState { get; private set; } = GameState.None;
 
+        public SceneContext CurrentSceneContext { get; private set; }
+        [SerializeField] private MonoBehaviour worldModeController;
+
         private void Awake()
         {
             _sceneLoader = GetComponent<SceneLoader>();
             _save = GetComponent<SaveService>();
 
             if (_sceneLoader != null)
-                _sceneLoader.OnSceneLoaded += _ => SetState(GameState.World);
+                _sceneLoader.OnSceneLoaded += OnSceneLoaded;
+            else
+                Debug.LogError("[GSM] SceneLoader missing on @App");
+        }
+
+        private void Start()
+        {
+            if (worldModeController == null)
+                worldModeController = GetComponent<JuegoCriminal.States.WorldModeController>();
+
+            //Debug.Log("[GSM] (Start) worldModeController is " + (worldModeController == null ? "NULL" : worldModeController.GetType().Name));
         }
 
         public void Boot()
         {
             SetState(GameState.Boot);
 
-            // Intentar cargar save; si no existe, crear nueva partida
             bool loaded = _save.Load();
             if (!loaded)
                 _save.NewGame();
 
-            // Elegir escena destino
             string targetScene = _save.Current?.lastScene;
             if (string.IsNullOrWhiteSpace(targetScene))
                 targetScene = fallbackWorldScene;
@@ -51,15 +62,32 @@ namespace JuegoCriminal.Core
         {
             SetState(GameState.Loading);
             _sceneLoader.LoadScene(sceneName);
+
             _save.SetLastScene(sceneName);
             _save.Save();
+        }
+
+        private void OnSceneLoaded(string sceneName)
+        {
+            Debug.Log("[GSM] Scene loaded callback: " + sceneName);
+
+            // Capturar SceneContext (si existe)
+            CurrentSceneContext = FindAnyObjectByType<SceneContext>();
+            /*if (CurrentSceneContext == null)
+                Debug.LogWarning("[GSM] No SceneContext found in scene: " + sceneName);
+            else
+                Debug.Log("[GSM] SceneContext registered.");*/
+
+            SetState(GameState.World);
         }
 
         private void SetState(GameState state)
         {
             CurrentState = state;
-            // Más adelante: emitir evento OnStateChanged
             Debug.Log($"[GSM] State -> {state}");
+
+            if (worldModeController != null)
+                worldModeController.enabled = (state == GameState.World);
         }
     }
 }

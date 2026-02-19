@@ -1,4 +1,5 @@
 using JuegoCriminal.Services;
+using JuegoCriminal.States;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -18,6 +19,9 @@ namespace JuegoCriminal.Core
             go.AddComponent<SceneLoader>();
             go.AddComponent<SaveService>();
             go.AddComponent<GameStateMachine>();
+
+            var worldMode = go.AddComponent<JuegoCriminal.States.WorldModeController>();
+            worldMode.enabled = false;
 
             Debug.Log("[AutoBootstrap] @App created");
         }

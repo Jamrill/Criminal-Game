@@ -63,7 +63,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Core\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Core\GameStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Core\SceneContext.cs" />
     <Compile Include="Assets\Scripts\Core\Bootstrapper.cs" />
+    <Compile Include="Assets\Scripts\States\WorldModeController.cs" />
     <Compile Include="Assets\Scripts\Services\SaveService.cs" />
   </ItemGroup>
   <ItemGroup>

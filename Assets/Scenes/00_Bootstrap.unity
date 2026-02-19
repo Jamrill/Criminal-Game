@@ -224,13 +224,14 @@ GameObject:
   - component: {fileID: 1352804988}
   - component: {fileID: 1352804987}
   - component: {fileID: 1352804986}
+  - component: {fileID: 1352804990}
   m_Layer: 0
   m_Name: '@App'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1352804985
 Transform:
   m_ObjectHideFlags: 0
@@ -259,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Core.GameStateMachine
   fallbackWorldScene: 10_World_City
+  worldModeController: {fileID: 1352804990}
 --- !u!114 &1352804987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +297,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389fcaf8a727efa44a1a13104dbe90af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Core.Bootstrapper
+--- !u!114 &1352804990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352804984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ad8decd4fd5fa43990ef6b56fa464f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.States.WorldModeController
 --- !u!1 &1360788801
 GameObject:
   m_ObjectHideFlags: 0

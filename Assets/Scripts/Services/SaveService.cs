@@ -19,11 +19,6 @@ namespace JuegoCriminal.Services
 
         private string SavePath => Path.Combine(Application.persistentDataPath, FileName);
 
-        private void Awake()
-        {
-            Debug.Log("PersistentDataPath: " + Application.persistentDataPath);
-        }
-
         public void NewGame()
         {
             Current = new SaveData();
