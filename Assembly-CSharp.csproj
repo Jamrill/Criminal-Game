@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Core\Bootstrapper.cs" />
     <Compile Include="Assets\Scripts\States\WorldModeController.cs" />
     <Compile Include="Assets\Scripts\Services\SaveService.cs" />
+    <Compile Include="Assets\Scripts\Scenes\PlayerSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

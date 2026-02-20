@@ -73,10 +73,17 @@ namespace JuegoCriminal.Core
 
             // Capturar SceneContext (si existe)
             CurrentSceneContext = FindAnyObjectByType<SceneContext>();
-            /*if (CurrentSceneContext == null)
+            if (CurrentSceneContext == null)
                 Debug.LogWarning("[GSM] No SceneContext found in scene: " + sceneName);
             else
-                Debug.Log("[GSM] SceneContext registered.");*/
+                Debug.Log("[GSM] SceneContext registered.");
+
+            // Spawnear player si existe PlayerSpawner en la escena
+            var spawner = FindAnyObjectByType<JuegoCriminal.Scenes.PlayerSpawner>();
+            if (spawner != null && CurrentSceneContext != null)
+                spawner.Spawn(CurrentSceneContext);
+            else
+                Debug.LogWarning("[GSM] PlayerSpawner not found or SceneContext missing.");
 
             SetState(GameState.World);
         }

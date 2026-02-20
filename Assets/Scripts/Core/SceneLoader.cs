@@ -5,6 +5,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Script encargado de crear el elemento empty en escena que contiene los scripts importantes de la partida incluido este y además se encarga de cargar la escena.
+
 namespace JuegoCriminal.Core
 {
     public static class AppAutoBootstrap

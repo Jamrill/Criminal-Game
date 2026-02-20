@@ -2,6 +2,8 @@ using System;
 using System.IO;
 using UnityEngine;
 
+//Script enfocado a guardar y cargar la partida, además identifica la escena cargada en el momento.
+
 namespace JuegoCriminal.Services
 {
     [Serializable]
@@ -10,6 +12,11 @@ namespace JuegoCriminal.Services
         public int version = 1;
         public int money = 1000;
         public string lastScene = "10_World_City";
+
+        public float playerX;
+        public float playerY;
+        public float playerZ;
+        public bool hasPlayerPos;
     }
 
     public sealed class SaveService : MonoBehaviour

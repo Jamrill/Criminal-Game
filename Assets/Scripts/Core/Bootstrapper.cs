@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//Se encarga de que el objeto que tiene este script no se destruya cuando se cambia de escena y que continúe, además revisa el estado del script GameStateMachine.
+
 namespace JuegoCriminal.Core
 {
     public sealed class Bootstrapper : MonoBehaviour
