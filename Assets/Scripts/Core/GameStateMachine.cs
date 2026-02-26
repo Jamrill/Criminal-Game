@@ -14,7 +14,8 @@ namespace JuegoCriminal.Core
     public sealed class GameStateMachine : MonoBehaviour
     {
         [Header("Default scenes")]
-        [SerializeField] private string fallbackWorldScene = "10_World_City";
+        [SerializeField] private string fallbackMenuScene = "01_MainMenu";
+
 
         private SceneLoader _sceneLoader;
         private SaveService _save;
@@ -49,13 +50,9 @@ namespace JuegoCriminal.Core
 
             bool loaded = _save.Load();
             if (!loaded)
-                _save.NewGame();
+                _save.InitEmptyInMemory(); // sin crear save.json
 
-            string targetScene = _save.Current?.lastScene;
-            if (string.IsNullOrWhiteSpace(targetScene))
-                targetScene = fallbackWorldScene;
-
-            LoadWorld(targetScene);
+            _sceneLoader.LoadScene(fallbackMenuScene);
         }
 
         private void LoadWorld(string sceneName)
@@ -81,9 +78,18 @@ namespace JuegoCriminal.Core
             // Spawnear player si existe PlayerSpawner en la escena
             var spawner = FindAnyObjectByType<JuegoCriminal.Scenes.PlayerSpawner>();
             if (spawner != null && CurrentSceneContext != null)
-                spawner.Spawn(CurrentSceneContext);
+            {
+                Vector3? savedPos = null;
+
+                if (_save.Current != null && _save.Current.hasPlayerPos)
+                    savedPos = new Vector3(_save.Current.playerX, _save.Current.playerY, _save.Current.playerZ);
+
+                spawner.Spawn(CurrentSceneContext, savedPos);
+            }
             else
+            {
                 Debug.LogWarning("[GSM] PlayerSpawner not found or SceneContext missing.");
+            }
 
             SetState(GameState.World);
         }

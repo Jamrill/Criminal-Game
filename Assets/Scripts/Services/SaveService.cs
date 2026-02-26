@@ -17,6 +17,15 @@ namespace JuegoCriminal.Services
         public float playerY;
         public float playerZ;
         public bool hasPlayerPos;
+
+        public const int MaxPlayers = 4;
+
+        public int playerCount = 0;
+        public float[] px = new float[MaxPlayers];
+        public float[] py = new float[MaxPlayers];
+        public float[] pz = new float[MaxPlayers];
+        public bool[] hasPos = new bool[MaxPlayers];
+
     }
 
     public sealed class SaveService : MonoBehaviour
@@ -25,6 +34,14 @@ namespace JuegoCriminal.Services
         public SaveData Current { get; private set; }
 
         private string SavePath => Path.Combine(Application.persistentDataPath, FileName);
+
+        public bool HasSaveFile => File.Exists(SavePath);
+
+        public void InitEmptyInMemory()
+        {
+            Current = new SaveData();
+            // No guardamos aquí
+        }
 
         public void NewGame()
         {

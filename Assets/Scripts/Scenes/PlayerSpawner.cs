@@ -9,7 +9,7 @@ namespace JuegoCriminal.Scenes
 
         private GameObject _currentPlayer;
 
-        public void Spawn(SceneContext ctx)
+        public void Spawn(SceneContext ctx, Vector3? overridePos = null)
         {
             if (playerPrefab == null)
             {
@@ -26,7 +26,10 @@ namespace JuegoCriminal.Scenes
             if (_currentPlayer != null)
                 Destroy(_currentPlayer);
 
-            _currentPlayer = Instantiate(playerPrefab, ctx.playerSpawn.position, ctx.playerSpawn.rotation);
+            Vector3 pos = overridePos ?? ctx.playerSpawn.position;
+            Quaternion rot = ctx.playerSpawn.rotation;
+
+            _currentPlayer = Instantiate(playerPrefab, pos, rot);
             _currentPlayer.name = "Player";
 
             Debug.Log("[PlayerSpawner] Player spawned.");

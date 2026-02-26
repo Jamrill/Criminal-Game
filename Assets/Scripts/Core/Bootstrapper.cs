@@ -21,7 +21,7 @@ namespace JuegoCriminal.Core
 
         private void Start()
         {
-            // Arranca la máquina de estados (si existe en el mismo GO).
+            // Arranca la máquina de estados.
             var gsm = GetComponent<GameStateMachine>();
             if (gsm != null)
                 gsm.Boot();
