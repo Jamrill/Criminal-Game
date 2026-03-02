@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using JuegoCriminal.Core;
 
@@ -7,9 +8,28 @@ namespace JuegoCriminal.Scenes
     {
         [SerializeField] private GameObject playerPrefab;
 
-        private GameObject _currentPlayer;
+        private readonly List<GameObject> _players = new();
 
-        public void Spawn(SceneContext ctx, Vector3? overridePos = null)
+        public void DespawnAll()
+        {
+            for (int i = 0; i < _players.Count; i++)
+                if (_players[i] != null) Destroy(_players[i]);
+
+            _players.Clear();
+        }
+
+        public void SpawnOne(SceneContext ctx, Vector3 pos, Quaternion rot, int index)
+        {
+            var go = Instantiate(playerPrefab, pos, rot);
+            go.name = $"Player_{index}";
+            _players.Add(go);
+
+            if (index == 0)
+                go.AddComponent<JuegoCriminal.Player.LocalPlayerMarker>();
+
+        }
+
+        public void SpawnFromSave(SceneContext ctx, JuegoCriminal.Services.SaveData save)
         {
             if (playerPrefab == null)
             {
@@ -23,16 +43,28 @@ namespace JuegoCriminal.Scenes
                 return;
             }
 
-            if (_currentPlayer != null)
-                Destroy(_currentPlayer);
+            DespawnAll();
 
-            Vector3 pos = overridePos ?? ctx.playerSpawn.position;
-            Quaternion rot = ctx.playerSpawn.rotation;
+            // Si hay datos multi-player guardados, usarlos
+            if (save != null && save.playerCount > 0)
+            {
+                int count = Mathf.Min(save.playerCount, JuegoCriminal.Services.SaveData.MaxPlayers);
 
-            _currentPlayer = Instantiate(playerPrefab, pos, rot);
-            _currentPlayer.name = "Player";
+                for (int i = 0; i < count; i++)
+                {
+                    if (!save.hasPos[i]) continue;
 
-            Debug.Log("[PlayerSpawner] Player spawned.");
+                    var pos = new Vector3(save.px[i], save.py[i], save.pz[i]);
+                    SpawnOne(ctx, pos, ctx.playerSpawn.rotation, i);
+                }
+
+                Debug.Log("[PlayerSpawner] Spawned from save. Count: " + count);
+                return;
+            }
+
+            // Fallback: spawnear 1 en playerSpawn
+            SpawnOne(ctx, ctx.playerSpawn.position, ctx.playerSpawn.rotation, 0);
+            Debug.Log("[PlayerSpawner] Spawned default player at playerSpawn.");
         }
     }
 }

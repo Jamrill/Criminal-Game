@@ -79,12 +79,7 @@ namespace JuegoCriminal.Core
             var spawner = FindAnyObjectByType<JuegoCriminal.Scenes.PlayerSpawner>();
             if (spawner != null && CurrentSceneContext != null)
             {
-                Vector3? savedPos = null;
-
-                if (_save.Current != null && _save.Current.hasPlayerPos)
-                    savedPos = new Vector3(_save.Current.playerX, _save.Current.playerY, _save.Current.playerZ);
-
-                spawner.Spawn(CurrentSceneContext, savedPos);
+                spawner.SpawnFromSave(CurrentSceneContext, _save.Current);
             }
             else
             {

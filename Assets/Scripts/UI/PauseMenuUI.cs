@@ -88,7 +88,8 @@ namespace JuegoCriminal.UI
             _save.Current.hasPlayerPos = true;
 
             _save.SetLastScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-            _save.Save();
+            int slotId = (_save.Current != null && _save.Current.slotId > 0) ? _save.Current.slotId : SaveService.DefaultSlotId;
+            _save.SaveSlot(slotId);
 
             Debug.Log($"[PauseMenu] Game Saved. Players saved: {count}");
         }
