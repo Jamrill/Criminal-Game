@@ -16,12 +16,20 @@ namespace JuegoCriminal.UI
         [SerializeField] private TMP_Text slotNumberText;
         [SerializeField] private Button rowButton; // botón del slot (raíz)
 
+        [Header("Visual")]
+        [SerializeField] private bool isCoopVisual; // Normal prefab = false, Coop prefab = true
+        public bool IsCoopVisual => isCoopVisual;
+
         private int _slotId;
         private SlotPanelMode _mode;
         private SaveService _save;
         private SceneLoader _loader;
 
         private bool _wired;
+
+        public int SlotId => _slotId;
+        public bool SlotExists { get; private set; }
+        public System.Action<SaveSlotRowUI> Clicked;
 
         public void Init(int slotId, SlotPanelMode mode, SaveService save, SceneLoader loader)
         {
@@ -47,18 +55,18 @@ namespace JuegoCriminal.UI
                 // En LoadOnly: que no sea editable ni “seleccionable”
                 nameInput.readOnly = loadOnly;
                 nameInput.interactable = !loadOnly;
-                nameInput.enabled = true; // lo dejamos enabled para que se vea igual, pero sin interacción
+                nameInput.enabled = true; // se ve igual
 
-                // Clave: en LoadOnly, que NINGÚN hijo del input bloquee clicks (incluye Caret)
+                // En LoadOnly, que NINGÚN hijo del input bloquee clicks (incluye Caret)
                 SetAllInputGraphicsRaycast(!loadOnly);
             }
         }
 
         public void Refresh(SaveData dataOrNull)
         {
-            bool exists = (dataOrNull != null);
+            SlotExists = (dataOrNull != null);
 
-            if (!exists)
+            if (!SlotExists)
             {
                 if (nameInput != null)
                 {
@@ -66,23 +74,26 @@ namespace JuegoCriminal.UI
                     if (nameInput.placeholder != null)
                     {
                         var ph = nameInput.placeholder.GetComponent<TMP_Text>();
-                        if (ph != null) ph.text = $"Partida nueva";
+                        if (ph != null) ph.text = "Partida nueva";
                     }
                 }
 
                 if (dateText != null) dateText.text = "";
 
-                // Si estamos en LoadOnly y el slot está vacío: deshabilitar click del row
+                // En LoadOnly y slot vacío: deshabilitar click del row
                 if (_mode == SlotPanelMode.LoadOnly)
                 {
                     if (rowButton != null) rowButton.interactable = false;
-                    // Aunque el input ya no tiene raycast, mejor por claridad:
                     SetAllInputGraphicsRaycast(false);
                 }
                 else
                 {
                     if (rowButton != null) rowButton.interactable = true;
                 }
+
+                // Ocultar número de slot en "Partida nueva"
+                if (slotNumberText != null)
+                    slotNumberText.gameObject.SetActive(false);
 
                 return;
             }
@@ -97,6 +108,9 @@ namespace JuegoCriminal.UI
                     ? ""
                     : dataOrNull.lastPlayedUtc.Replace("T", " ").Replace("Z", " UTC");
             }
+
+            if (slotNumberText != null)
+                slotNumberText.gameObject.SetActive(true);
 
             // En LoadOnly queremos click fácil: raycast del input off
             if (_mode == SlotPanelMode.LoadOnly)
@@ -127,7 +141,6 @@ namespace JuegoCriminal.UI
         {
             if (nameInput == null) return;
 
-            // Esto incluye Caret, Selection Highlight, Text, Placeholder, Background Image, etc.
             var graphics = nameInput.GetComponentsInChildren<Graphic>(true);
             for (int i = 0; i < graphics.Length; i++)
                 graphics[i].raycastTarget = enabled;
@@ -135,25 +148,23 @@ namespace JuegoCriminal.UI
 
         private void OnRowClicked()
         {
-            // LoadOnly: click carga directamente
-            if (_mode == SlotPanelMode.LoadOnly)
-                HandleAction();
-            else
-                nameInput?.ActivateInputField(); // New/Coop: click enfoca el input
+            // Avisar al panel: "me han clickado"
+            Clicked?.Invoke(this);
+
+            // En New/Coop: click enfoca el input
+            if (_mode != SlotPanelMode.LoadOnly)
+                nameInput?.ActivateInputField();
         }
 
-        private void OnSubmit()
-        {
-            // Enter en TMP dispara onSubmit
-            HandleAction();
-        }
+        private void OnSubmit() => HandleAction();
 
         private void OnEndEditFallback()
         {
-            // A veces Enter llega aquí
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
                 HandleAction();
         }
+
+        public void PerformDefaultAction() => HandleAction();
 
         private void HandleAction()
         {
@@ -182,7 +193,6 @@ namespace JuegoCriminal.UI
             var modeStr = (_mode == SlotPanelMode.NewCoop) ? "Coop" : "Single";
             var data = _save.CreateNewData(_slotId, enteredName, modeStr);
 
-            // TODO: confirmación si exists==true (más adelante)
             _save.SetCurrent(data);
             _save.SaveSlot(_slotId);
 

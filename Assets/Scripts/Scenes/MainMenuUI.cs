@@ -8,6 +8,9 @@ namespace JuegoCriminal.Scenes
 {
     public sealed class MainMenuUI : MonoBehaviour
     {
+        [Header("Main buttons panel")]
+        [SerializeField] private GameObject mainButtonsPanel;
+
         [Header("Main buttons")]
         [SerializeField] private Button continueButton;
         [SerializeField] private Button newGameButton;
@@ -17,8 +20,8 @@ namespace JuegoCriminal.Scenes
         [SerializeField] private Button quitButton;
 
         [Header("Panels")]
-        [SerializeField] private SlotsPanelUI slotsPanel;     // tu controlador de slots
-        [SerializeField] private GameObject optionsPanel;     // opcional (puede ser null)
+        [SerializeField] private SlotsPanelUI slotsPanel;
+        [SerializeField] private GameObject optionsPanel; // opcional
 
         private SaveService _save;
         private SceneLoader _loader;
@@ -31,19 +34,44 @@ namespace JuegoCriminal.Scenes
             if (_save == null) Debug.LogError("[MainMenuUI] SaveService not found (@App missing?)");
             if (_loader == null) Debug.LogError("[MainMenuUI] SceneLoader not found (@App missing?)");
             if (slotsPanel == null) Debug.LogError("[MainMenuUI] SlotsPanelUI not assigned");
+            if (mainButtonsPanel == null) Debug.LogError("[MainMenuUI] MainButtonsPanel not assigned");
 
-            // Continue y LoadGame habilitados solo si hay slots existentes
-            RefreshButtons();
-
+            // Listeners de botones (solo se registran una vez aquí)
             if (continueButton != null) continueButton.onClick.AddListener(Continue);
             if (newGameButton != null) newGameButton.onClick.AddListener(OpenNewGame);
             if (loadGameButton != null) loadGameButton.onClick.AddListener(OpenLoadGame);
             if (coopButton != null) coopButton.onClick.AddListener(OpenCoop);
             if (optionsButton != null) optionsButton.onClick.AddListener(OpenOptions);
             if (quitButton != null) quitButton.onClick.AddListener(Quit);
+        }
 
-            if (optionsPanel != null)
-                optionsPanel.SetActive(false);
+        private void OnEnable()
+        {
+            // Suscripción "a prueba de duplicados" al evento de cierre del SlotsPanel
+            if (slotsPanel != null)
+            {
+                slotsPanel.OnClosed -= OnSlotsClosed;
+                slotsPanel.OnClosed += OnSlotsClosed;
+            }
+        }
+
+        private void OnDisable()
+        {
+            // Buen hábito: desuscribirse al desactivar
+            if (slotsPanel != null)
+                slotsPanel.OnClosed -= OnSlotsClosed;
+        }
+
+        private void Start()
+        {
+            // Estado inicial del menú (importante si el panel viene desactivado desde la escena)
+            if (optionsPanel != null) optionsPanel.SetActive(false);
+
+            // Por seguridad, al entrar al menú mostramos siempre los botones principales
+            if (mainButtonsPanel != null) mainButtonsPanel.SetActive(true);
+
+            // Refresca interactables de Continue/Load según slots existentes
+            RefreshButtons();
         }
 
         private void RefreshButtons()
@@ -55,12 +83,40 @@ namespace JuegoCriminal.Scenes
             if (continueButton != null)
             {
                 int last = _save.GetLastSlotId();
-                bool canContinue = (last > 0 && _save.SlotExists(last)) || _save.SlotExists(SaveService.DefaultSlotId);
+                bool canContinue =
+                    (last > 0 && _save.SlotExists(last)) ||
+                    _save.SlotExists(SaveService.DefaultSlotId);
+
                 continueButton.interactable = canContinue;
             }
 
             if (loadGameButton != null)
                 loadGameButton.interactable = anySlots;
+        }
+
+        private void ShowSlotsPanel(SlotPanelMode mode)
+        {
+            if (slotsPanel == null) return;
+
+            // Al abrir el panel de slots ocultamos el panel principal del menú
+            if (mainButtonsPanel != null)
+                mainButtonsPanel.SetActive(false);
+
+            // Y cerramos opciones si estaban abiertas
+            if (optionsPanel != null)
+                optionsPanel.SetActive(false);
+
+            slotsPanel.Open(mode);
+        }
+
+        private void OnSlotsClosed()
+        {
+            // Al cerrar el panel de slots volvemos a mostrar el panel principal
+            if (mainButtonsPanel != null)
+                mainButtonsPanel.SetActive(true);
+
+            // Por si se creó o borró una partida: actualizar botones
+            RefreshButtons();
         }
 
         private void Continue()
@@ -85,23 +141,9 @@ namespace JuegoCriminal.Scenes
             _loader.LoadScene(target);
         }
 
-        private void OpenNewGame()
-        {
-            if (slotsPanel == null) return;
-            slotsPanel.Open(SlotPanelMode.NewSingle);
-        }
-
-        private void OpenCoop()
-        {
-            if (slotsPanel == null) return;
-            slotsPanel.Open(SlotPanelMode.NewCoop);
-        }
-
-        private void OpenLoadGame()
-        {
-            if (slotsPanel == null) return;
-            slotsPanel.Open(SlotPanelMode.LoadOnly);
-        }
+        private void OpenNewGame() => ShowSlotsPanel(SlotPanelMode.NewSingle);
+        private void OpenCoop() => ShowSlotsPanel(SlotPanelMode.NewCoop);
+        private void OpenLoadGame() => ShowSlotsPanel(SlotPanelMode.LoadOnly);
 
         private void OpenOptions()
         {
@@ -110,6 +152,10 @@ namespace JuegoCriminal.Scenes
                 Debug.Log("[MainMenuUI] Options panel not assigned (ok for now).");
                 return;
             }
+
+            // Ocultamos el panel principal y mostramos opciones
+            if (mainButtonsPanel != null)
+                mainButtonsPanel.SetActive(false);
 
             optionsPanel.SetActive(true);
         }

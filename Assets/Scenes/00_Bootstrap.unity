@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 1352804987}
   - component: {fileID: 1352804986}
   - component: {fileID: 1352804990}
+  - component: {fileID: 1352804991}
   m_Layer: 0
   m_Name: '@App'
   m_TagString: Untagged
@@ -354,6 +355,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ad8decd4fd5fa43990ef6b56fa464f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.States.WorldModeController
+--- !u!114 &1352804991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352804984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154a9e4005541234b90b9619c78749ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Services.EconomyService
 --- !u!1 &1360788801
 GameObject:
   m_ObjectHideFlags: 0

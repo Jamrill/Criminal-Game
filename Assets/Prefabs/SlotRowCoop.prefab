@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8044773542847762575}
   - component: {fileID: 863215088610624690}
   m_Layer: 5
-  m_Name: SlotRow
+  m_Name: SlotRowCoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7075472, g: 0.31706125, b: 0.31706125, a: 1}
+  m_Color: {r: 0.31764707, g: 0.49703997, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -97,6 +97,7 @@ MonoBehaviour:
   dateText: {fileID: 4533425348287275435}
   slotNumberText: {fileID: 4153252907115949376}
   rowButton: {fileID: 863215088610624690}
+  isCoopVisual: 1
 --- !u!114 &8044773542847762575
 MonoBehaviour:
   m_ObjectHideFlags: 0

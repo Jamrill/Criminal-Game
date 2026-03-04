@@ -21,6 +21,9 @@ namespace JuegoCriminal.Core
             go.AddComponent<SceneLoader>();
             go.AddComponent<SaveService>();
             go.AddComponent<GameStateMachine>();
+            go.AddComponent<EconomyService>();
+            go.AddComponent<PropertyService>();
+
 
             var worldMode = go.AddComponent<JuegoCriminal.States.WorldModeController>();
             worldMode.enabled = false;

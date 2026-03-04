@@ -86,6 +86,9 @@ namespace JuegoCriminal.Core
                 Debug.LogWarning("[GSM] PlayerSpawner not found or SceneContext missing.");
             }
 
+            var economy = FindAnyObjectByType<JuegoCriminal.Services.EconomyService>();
+            if (economy != null) economy.SyncFromSave();
+
             SetState(GameState.World);
         }
 

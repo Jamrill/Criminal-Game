@@ -12,6 +12,8 @@ namespace JuegoCriminal.Services
         public int money = 1000;
         public string lastScene = "10_World_City";
 
+        public int[] ownedProperties = new int[0];
+
         // Compat (puedes quitarlo más adelante)
         public float playerX;
         public float playerY;
