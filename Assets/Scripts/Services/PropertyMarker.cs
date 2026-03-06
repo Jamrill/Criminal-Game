@@ -23,28 +23,29 @@ namespace JuegoCriminal.World
             col.isTrigger = true;
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player"))
-                _playerInside = true;
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Player"))
-                _playerInside = false;
-        }
-
         private void Update()
         {
             if (!_playerInside) return;
+
             if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("[Property] E pressed, trying to buy...");
                 TryBuy();
+            }
+        }
+
+        public void TryBuyFromInteractor()
+        {
+            TryBuy();
         }
 
         private void TryBuy()
         {
+            Debug.Log($"[Property] TryBuy called. economy={_economy != null}, properties={_properties != null}");
+
             if (_economy == null || _properties == null) return;
+
+            Debug.Log($"[Property] Owned? {_properties.IsOwned(propertyId)}  Price={price}  Money={_economy.Money}");
 
             if (_properties.IsOwned(propertyId))
             {
@@ -60,6 +61,23 @@ namespace JuegoCriminal.World
 
             _properties.AddOwned(propertyId);
             Debug.Log($"[Property] Purchased property {propertyId} for {price}");
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                _playerInside = true;
+                Debug.Log("[Property] Player inside = TRUE");
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                _playerInside = false;
+                Debug.Log("[Property] Player inside = FALSE");
+            }
         }
     }
 }

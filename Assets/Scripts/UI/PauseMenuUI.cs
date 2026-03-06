@@ -46,7 +46,11 @@ namespace JuegoCriminal.UI
             bool show = !panel.activeSelf;
             panel.SetActive(show);
 
-            Time.timeScale = show ? 0f : 1f; // pausa simple
+            Time.timeScale = show ? 0f : 1f;
+
+            // Cursor
+            Cursor.lockState = show ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = show;
         }
 
         private void SaveGame()

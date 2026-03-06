@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 1410357432404881207}
   - component: {fileID: 6736601734611923222}
   - component: {fileID: 7999451665683247784}
-  - component: {fileID: 6901269128593929195}
-  m_Layer: 0
+  - component: {fileID: 5898130450708295809}
+  - component: {fileID: 8011852369382267997}
+  - component: {fileID: 1091764393031467519}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -141,7 +143,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6901269128593929195
+--- !u!114 &5898130450708295809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,8 +152,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 1021932728646410389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6164346b60d4aa541a2a5fb157e8de2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6268d6ddcaad2c849b0cfb2858011ffd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.SimplePlayerController
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.Interactor
+  maxDistance: 5
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &8011852369382267997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021932728646410389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0609ae81bcb0148980929e295bd7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.ThirdPersonController
   moveSpeed: 5
-  gravity: -9.81
+  gravity: -1
+  mouseSensitivity: 2
+  cameraRig: {fileID: 0}
+  cameraPivot: {fileID: 0}
+  minPitch: -35
+  maxPitch: 70
+--- !u!54 &1091764393031467519
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021932728646410389}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
