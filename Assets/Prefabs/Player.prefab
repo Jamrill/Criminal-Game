@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 1410357432404881207}
   - component: {fileID: 6736601734611923222}
   - component: {fileID: 7999451665683247784}
-  - component: {fileID: 5898130450708295809}
   - component: {fileID: 8011852369382267997}
-  - component: {fileID: 1091764393031467519}
+  - component: {fileID: 7125946806612244180}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -143,22 +142,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5898130450708295809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021932728646410389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6268d6ddcaad2c849b0cfb2858011ffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.Interactor
-  maxDistance: 5
-  interactMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &8011852369382267997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,30 +161,21 @@ MonoBehaviour:
   cameraPivot: {fileID: 0}
   minPitch: -35
   maxPitch: 70
---- !u!54 &1091764393031467519
-Rigidbody:
+--- !u!114 &7125946806612244180
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021932728646410389}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c758303a7d9dbab498c7453d4fd2770f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.InteractorRaycast
+  maxDistance: 10
+  interactMask:
     serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+    m_Bits: 64
+  promptPrefab: {fileID: 6439836096325685817, guid: 1c345781c79c4ab4891439654d2c873f, type: 3}
+  iconCanBuy: {fileID: 21300000, guid: cada6e871c74dbd408372a044d854bc8, type: 3}

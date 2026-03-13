@@ -18,6 +18,8 @@ namespace JuegoCriminal.UI
         [SerializeField] private Button deleteButton;
         [SerializeField] private Button loadButton;
         [SerializeField] private Button backgroundButton;
+        [SerializeField] private MenuTransitionController transitions;
+
 
         [Header("Confirm Delete Panel")]
         [SerializeField] private GameObject confirmPanel;
@@ -47,7 +49,7 @@ namespace JuegoCriminal.UI
             if (backButton != null)
             {
                 backButton.onClick.RemoveAllListeners();
-                backButton.onClick.AddListener(Close);
+                backButton.onClick.AddListener(OnBackPressed);
             }
 
             // Delete
@@ -125,6 +127,13 @@ namespace JuegoCriminal.UI
                 _rows.Add(row);
                 _rowBySlot[slotId] = row;
             }
+        }
+        private void OnBackPressed()
+        {
+            if (transitions != null)
+                transitions.TransitionBackToMainMenu();
+            else
+                Close(); // fallback
         }
 
         // Asegura que el slot usa el prefab correcto (single/coop) según el SaveData

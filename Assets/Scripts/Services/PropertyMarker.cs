@@ -3,7 +3,6 @@ using JuegoCriminal.Services;
 
 namespace JuegoCriminal.World
 {
-    [RequireComponent(typeof(Collider))]
     public sealed class PropertyMarker : MonoBehaviour
     {
         public int propertyId = 1;
@@ -11,73 +10,46 @@ namespace JuegoCriminal.World
 
         private EconomyService _economy;
         private PropertyService _properties;
-        private bool _playerInside;
 
         private void Awake()
         {
+            // No pasa nada si aquí es null; lo reintentamos cuando interactúen
             _economy = FindAnyObjectByType<EconomyService>();
             _properties = FindAnyObjectByType<PropertyService>();
-
-            // Asegura trigger
-            var col = GetComponent<Collider>();
-            col.isTrigger = true;
         }
 
-        private void Update()
+        private void EnsureServices()
         {
-            if (!_playerInside) return;
+            if (_economy == null) _economy = FindAnyObjectByType<EconomyService>();
+            if (_properties == null) _properties = FindAnyObjectByType<PropertyService>();
+        }
 
-            if (Input.GetKeyDown(KeyCode.E))
+        public bool IsOwned
+        {
+            get
             {
-                Debug.Log("[Property] E pressed, trying to buy...");
-                TryBuy();
+                EnsureServices();
+                return _properties != null && _properties.IsOwned(propertyId);
             }
         }
 
-        public void TryBuyFromInteractor()
+        public string GetPromptText(int money)
         {
-            TryBuy();
+            if (IsOwned) return "Owned";
+            if (money < price) return $"Need ${price}";
+            return $"Press E to buy (${price})";
         }
 
-        private void TryBuy()
+        public bool TryBuy()
         {
-            Debug.Log($"[Property] TryBuy called. economy={_economy != null}, properties={_properties != null}");
+            EnsureServices();
+            if (_economy == null || _properties == null) return false;
 
-            if (_economy == null || _properties == null) return;
-
-            Debug.Log($"[Property] Owned? {_properties.IsOwned(propertyId)}  Price={price}  Money={_economy.Money}");
-
-            if (_properties.IsOwned(propertyId))
-            {
-                Debug.Log($"[Property] Already owned: {propertyId}");
-                return;
-            }
-
-            if (!_economy.TrySpend(price))
-            {
-                Debug.Log($"[Property] Not enough money. Need {price}");
-                return;
-            }
+            if (_properties.IsOwned(propertyId)) return false;
+            if (!_economy.TrySpend(price)) return false;
 
             _properties.AddOwned(propertyId);
-            Debug.Log($"[Property] Purchased property {propertyId} for {price}");
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                _playerInside = true;
-                Debug.Log("[Property] Player inside = TRUE");
-            }
-        }
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                _playerInside = false;
-                Debug.Log("[Property] Player inside = FALSE");
-            }
+            return true;
         }
     }
 }

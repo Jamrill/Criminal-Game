@@ -11,6 +11,9 @@ namespace JuegoCriminal.Scenes
         [Header("Main buttons panel")]
         [SerializeField] private GameObject mainButtonsPanel;
 
+        [SerializeField] private MenuTransitionController transitions;
+
+
         [Header("Main buttons")]
         [SerializeField] private Button continueButton;
         [SerializeField] private Button newGameButton;
@@ -143,12 +146,10 @@ namespace JuegoCriminal.Scenes
 
         private void OpenLoadGame()
         {
-            if (slotsPanel == null) return;
-
-            if (mainButtonsPanel != null) mainButtonsPanel.SetActive(false);
-            if (optionsPanel != null) optionsPanel.SetActive(false);
-
-            slotsPanel.Open(SlotPanelMode.LoadOnly);
+            if (transitions != null)
+                transitions.TransitionToLoadGame();
+            else
+                slotsPanel.Open(SlotPanelMode.LoadOnly); // fallback
         }
 
         private void OpenOptions()

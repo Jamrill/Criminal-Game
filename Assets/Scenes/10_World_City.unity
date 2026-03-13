@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 155322674}
   m_Layer: 0
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1062,6 +1062,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 119
   smooth: 20
+  minDistance: 0.2
+  maxDistance: 6
+  zoomSpeed: 2
+  thirdPersonHeight: 2
+  firstPersonHeight: 1.75
+  firstPersonThreshold: 0.35
 --- !u!1 &636053353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,7 +1720,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

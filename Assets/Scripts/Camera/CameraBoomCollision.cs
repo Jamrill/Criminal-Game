@@ -10,62 +10,58 @@ namespace JuegoCriminal.CameraSystem
         [SerializeField] private LayerMask collisionMask = ~0; // todo
         [SerializeField] private float smooth = 20f;
 
-        [Header("Distance for first/third person")]
+        [Header("Zoom")]
         [SerializeField] private float minDistance = 0.2f;
         [SerializeField] private float maxDistance = 6f;
         [SerializeField] private float zoomSpeed = 2f;
 
         [Header("Heights")]
         [SerializeField] private float thirdPersonHeight = 2.0f;
-        [SerializeField] private float firstPersonHeight = 1.75f;   // <- ajusta aquí
-        [SerializeField] private float firstPersonThreshold = 0.35f; // distancia <= esto = 1ª persona
-
+        [SerializeField] private float firstPersonHeight = 1.75f;
+        [SerializeField] private float firstPersonThreshold = 0.35f;
 
         public float CurrentDistance { get; private set; }
 
-        private Vector3 _defaultLocalPos;
-
         private void Awake()
         {
-            if (cameraTransform == null)
-                cameraTransform = Camera.main != null ? Camera.main.transform : null;
-
-            if (cameraTransform != null)
-                _defaultLocalPos = cameraTransform.localPosition;
+            if (cameraTransform == null && Camera.main != null)
+                cameraTransform = Camera.main.transform;
         }
 
         private void LateUpdate()
         {
+            // 1) Zoom con rueda
             float scroll = Input.mouseScrollDelta.y;
             if (Mathf.Abs(scroll) > 0.01f)
-            {
                 desiredDistance = Mathf.Clamp(desiredDistance - scroll * zoomSpeed, minDistance, maxDistance);
-            }
 
             if (cameraTransform == null) return;
 
-            // Dirección hacia la cámara (local -Z del pivot)
-            Vector3 origin = transform.position;
+            // 2) Colisión: desde pivot hacia atrás (evitamos chocar con el propio Player)
+            Vector3 origin = transform.position + Vector3.up * 0.5f; // pequeño offset para evitar suelo
             Vector3 dir = -transform.forward;
 
+            int mask = collisionMask & ~LayerMask.GetMask("Player");
             float targetDist = desiredDistance;
 
-            int mask = collisionMask & ~LayerMask.GetMask("Player");
-
-            if (Physics.SphereCast(origin, sphereRadius, dir, out RaycastHit hit, desiredDistance, collisionMask, QueryTriggerInteraction.Ignore))
+            if (Physics.SphereCast(origin, sphereRadius, dir, out RaycastHit hit, desiredDistance, mask, QueryTriggerInteraction.Ignore))
             {
-                Physics.SphereCast(origin, sphereRadius, dir, out hit, desiredDistance, mask, QueryTriggerInteraction.Ignore);
                 // Acercar la cámara para no atravesar
-                targetDist = Mathf.Max(0.5f, hit.distance);
+                targetDist = Mathf.Max(minDistance, hit.distance);
             }
 
-            // La cámara está detrás del pivot
+            // 3) Altura según 1ª / 3ª persona
             float height = (targetDist <= firstPersonThreshold) ? firstPersonHeight : thirdPersonHeight;
+
+            // Cámara detrás del pivot
             Vector3 desiredLocal = new Vector3(0f, height, -targetDist);
 
-            /*Vector3 desiredLocal = new Vector3(0f, _defaultLocalPos.y, -targetDist);
-
-            cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, desiredLocal, smooth * Time.deltaTime);*/
+            // 4) Aplicar (suave)
+            cameraTransform.localPosition = Vector3.Lerp(
+                cameraTransform.localPosition,
+                desiredLocal,
+                smooth * Time.deltaTime
+            );
 
             CurrentDistance = targetDist;
         }
