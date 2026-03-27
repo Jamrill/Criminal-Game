@@ -25,7 +25,7 @@ namespace JuegoCriminal.UI
         [SerializeField] private RectTransform backButton;
         [SerializeField] private RectTransform loadButton;
         [SerializeField] private RectTransform deleteButton;
-        [SerializeField] private float buttonsEnterDuration = 0.22f;
+        //[SerializeField] private float buttonsEnterDuration = 0.22f;
         [SerializeField] private float buttonsOffscreenY = -600f;
 
         private Vector2 _scrollFinalPos;

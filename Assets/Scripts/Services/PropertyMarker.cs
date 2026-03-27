@@ -49,6 +49,10 @@ namespace JuegoCriminal.World
             if (!_economy.TrySpend(price)) return false;
 
             _properties.AddOwned(propertyId);
+
+            var visual = GetComponentInChildren<PropertyVisual>();
+            if (visual != null) visual.Refresh();
+
             return true;
         }
     }
