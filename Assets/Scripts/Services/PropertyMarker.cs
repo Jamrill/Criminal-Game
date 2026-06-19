@@ -1,9 +1,10 @@
 using UnityEngine;
 using JuegoCriminal.Services;
+using JuegoCriminal.Interaction;
 
 namespace JuegoCriminal.World
 {
-    public sealed class PropertyMarker : MonoBehaviour
+    public sealed class PropertyMarker : MonoBehaviour, IInteractable
     {
         public int propertyId = 1;
         public int price = 500;
@@ -13,7 +14,6 @@ namespace JuegoCriminal.World
 
         private void Awake()
         {
-            // No pasa nada si aquí es null; lo reintentamos cuando interactúen
             _economy = FindAnyObjectByType<EconomyService>();
             _properties = FindAnyObjectByType<PropertyService>();
         }
@@ -33,11 +33,33 @@ namespace JuegoCriminal.World
             }
         }
 
-        public string GetPromptText(int money)
+        public bool CanInteract()
         {
+            EnsureServices();
+
+            if (_economy == null || _properties == null)
+                return false;
+
+            if (IsOwned)
+                return false;
+
+            return _economy.Money >= price;
+        }
+
+        public void Interact()
+        {
+            TryBuy();
+        }
+
+        public string GetInteractionText()
+        {
+            EnsureServices();
+
+            int money = _economy != null ? _economy.Money : 0;
+
             if (IsOwned) return "Owned";
             if (money < price) return $"Need ${price}";
-            return $"Press E to buy (${price})";
+            return $"Buy ${price}";
         }
 
         public bool TryBuy()

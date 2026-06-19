@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 869279624956867578}
   - component: {fileID: 7156025261398757371}
   - component: {fileID: 1410357432404881207}
-  - component: {fileID: 6736601734611923222}
   - component: {fileID: 7999451665683247784}
   - component: {fileID: 8011852369382267997}
   - component: {fileID: 7125946806612244180}
@@ -94,29 +93,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6736601734611923222
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021932728646410389}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &7999451665683247784
 CharacterController:
   m_ObjectHideFlags: 0
@@ -135,13 +111,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 3
+  m_Radius: 0.75
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &8011852369382267997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,13 +130,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0609ae81bcb0148980929e295bd7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.ThirdPersonController
-  moveSpeed: 5
-  gravity: -1
+  walkSpeed: 3.5
+  runSpeed: 8
+  acceleration: 14
+  deceleration: 18
+  canJump: 1
+  jumpKey: 32
+  jumpHeight: 1.2
+  gravity: -20
+  groundedStickForce: -2
   mouseSensitivity: 2
   cameraRig: {fileID: 0}
   cameraPivot: {fileID: 0}
   minPitch: -35
   maxPitch: 70
+  runKey: 304
 --- !u!114 &7125946806612244180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,9 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c758303a7d9dbab498c7453d4fd2770f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.InteractorRaycast
-  maxDistance: 10
+  interactKey: 101
+  switchTargetKey: 9
+  firstPersonDistance: 5
+  thirdPersonRadius: 3
   interactMask:
     serializedVersion: 2
     m_Bits: 64
   promptPrefab: {fileID: 6439836096325685817, guid: 1c345781c79c4ab4891439654d2c873f, type: 3}
-  iconCanBuy: {fileID: 21300000, guid: cada6e871c74dbd408372a044d854bc8, type: 3}
+  iconInteract: {fileID: 0}

@@ -6,19 +6,33 @@ namespace JuegoCriminal.Player
     public sealed class ThirdPersonController : MonoBehaviour
     {
         [Header("Movement")]
-        [SerializeField] private float moveSpeed = 5f;
-        [SerializeField] private float gravity = -9.81f;
+        [SerializeField] private float walkSpeed = 3.5f;
+        [SerializeField] private float runSpeed = 6.0f;
+        [SerializeField] private float acceleration = 14f;
+        [SerializeField] private float deceleration = 18f;
+
+        [Header("Jump / Gravity")]
+        [SerializeField] private bool canJump = true;
+        [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+        [SerializeField] private float jumpHeight = 1.2f;
+        [SerializeField] private float gravity = -20f;
+        [SerializeField] private float groundedStickForce = -2f;
 
         [Header("Look")]
         [SerializeField] private float mouseSensitivity = 2f;
 
         [Header("Camera Pitch")]
-        [SerializeField] private Transform cameraRig;   // el CameraRig (o la cámara si no hay rig)
-        [SerializeField] private Transform cameraPivot; // arrastra CameraPivot aquí
+        [SerializeField] private Transform cameraRig;   // CameraRig
+        [SerializeField] private Transform cameraPivot; // CameraPivot
         [SerializeField] private float minPitch = -35f;
         [SerializeField] private float maxPitch = 70f;
 
+        [Header("Input")]
+        [SerializeField] private KeyCode runKey = KeyCode.LeftShift;
+
         private CharacterController _cc;
+
+        private Vector3 _horizontalVelocity;
         private float _verticalVelocity;
         private float _pitch;
 
@@ -26,47 +40,37 @@ namespace JuegoCriminal.Player
         {
             _cc = GetComponent<CharacterController>();
 
-            // Si no asignas cameraRig, intenta encontrar uno
-            if (cameraRig == null)
-            {
-                var rig = GameObject.Find("CameraRig");
-                if (rig != null) cameraRig = rig.transform;
-                else if (Camera.main != null) cameraRig = Camera.main.transform;
-            }
+            FindCameraReferencesIfNeeded();
         }
 
         private void Start()
         {
-            if (cameraPivot == null)
-            {
-                // Busca por nombre (simple y robusto)
-                var pivotGo = GameObject.Find("CameraPivot");
-                if (pivotGo != null) cameraPivot = pivotGo.transform;
-            }
+            FindCameraReferencesIfNeeded();
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-
-        /*private void OnEnable()
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-
-        private void OnDisable()
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }*/
 
         private void Update()
         {
-            if (Time.timeScale == 0f) return;
-            if (Cursor.lockState != CursorLockMode.Locked) return;
+            if (!CanReceiveInput())
+                return;
+
+            FindCameraReferencesIfNeeded();
 
             Look();
             Move();
+        }
+
+        private bool CanReceiveInput()
+        {
+            if (Time.timeScale == 0f)
+                return false;
+
+            if (Cursor.lockState != CursorLockMode.Locked)
+                return false;
+
+            return true;
         }
 
         private void Look()
@@ -74,10 +78,11 @@ namespace JuegoCriminal.Player
             float mx = Input.GetAxis("Mouse X") * mouseSensitivity;
             float my = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-            // Yaw del player
+            // De momento mantenemos el sistema actual:
+            // el ratón rota al jugador en Y, y la cámara sigue al jugador.
             transform.Rotate(0f, mx, 0f);
 
-            // Pitch del pivot
+            // Pitch vertical del CameraPivot.
             _pitch -= my;
             _pitch = Mathf.Clamp(_pitch, minPitch, maxPitch);
 
@@ -87,23 +92,101 @@ namespace JuegoCriminal.Player
 
         private void Move()
         {
+            Vector2 input = ReadMoveInput();
+
+            Vector3 targetHorizontalVelocity = CalculateTargetHorizontalVelocity(input);
+            UpdateHorizontalVelocity(targetHorizontalVelocity);
+            UpdateVerticalVelocity();
+
+            Vector3 finalVelocity = _horizontalVelocity;
+            finalVelocity.y = _verticalVelocity;
+
+            _cc.Move(finalVelocity * Time.deltaTime);
+        }
+
+        private Vector2 ReadMoveInput()
+        {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
 
-            Vector3 input = new Vector3(h, 0f, v);
-            if (input.sqrMagnitude > 1f) input.Normalize();
+            Vector2 input = new Vector2(h, v);
 
-            // Movimiento relativo al player
-            Vector3 move = transform.TransformDirection(input) * moveSpeed;
+            if (input.sqrMagnitude > 1f)
+                input.Normalize();
 
-            // Gravedad
-            if (_cc.isGrounded && _verticalVelocity < 0f)
-                _verticalVelocity = -2f;
+            return input;
+        }
 
-            _verticalVelocity += gravity * Time.deltaTime;
-            move.y = _verticalVelocity;
+        private Vector3 CalculateTargetHorizontalVelocity(Vector2 input)
+        {
+            if (input.sqrMagnitude <= 0.001f)
+                return Vector3.zero;
 
-            _cc.Move(move * Time.deltaTime);
+            // Movimiento relativo al jugador.
+            // Como la cámara sigue el yaw del jugador, esto encaja con la cámara actual.
+            Vector3 moveDirection =
+                transform.right * input.x +
+                transform.forward * input.y;
+
+            moveDirection.y = 0f;
+            moveDirection.Normalize();
+
+            float speed = Input.GetKey(runKey) ? runSpeed : walkSpeed;
+
+            return moveDirection * speed;
+        }
+
+        private void UpdateHorizontalVelocity(Vector3 targetHorizontalVelocity)
+        {
+            float rate = targetHorizontalVelocity.sqrMagnitude > 0.001f
+                ? acceleration
+                : deceleration;
+
+            _horizontalVelocity = Vector3.MoveTowards(
+                _horizontalVelocity,
+                targetHorizontalVelocity,
+                rate * Time.deltaTime
+            );
+        }
+
+        private void UpdateVerticalVelocity()
+        {
+            if (_cc.isGrounded)
+            {
+                if (_verticalVelocity < 0f)
+                    _verticalVelocity = groundedStickForce;
+
+                if (canJump && Input.GetKeyDown(jumpKey))
+                {
+                    // Fórmula física básica para alcanzar jumpHeight.
+                    _verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                }
+            }
+            else
+            {
+                _verticalVelocity += gravity * Time.deltaTime;
+            }
+        }
+
+        private void FindCameraReferencesIfNeeded()
+        {
+            if (cameraRig == null)
+            {
+                GameObject rig = GameObject.Find("CameraRig");
+
+                if (rig != null)
+                    cameraRig = rig.transform;
+                else if (Camera.main != null)
+                    cameraRig = Camera.main.transform;
+            }
+
+            if (cameraPivot == null)
+            {
+                GameObject pivot = GameObject.Find("CameraPivot");
+
+                if (pivot != null)
+                    cameraPivot = pivot.transform;
+            }
         }
     }
 }

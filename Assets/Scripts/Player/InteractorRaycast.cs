@@ -1,109 +1,281 @@
+using System.Collections.Generic;
 using UnityEngine;
-using JuegoCriminal.Services;
-using JuegoCriminal.World;
 using JuegoCriminal.UI;
+using JuegoCriminal.CameraSystem;
+using JuegoCriminal.Interaction;
 
 namespace JuegoCriminal.Player
 {
     public sealed class InteractorRaycast : MonoBehaviour
     {
-        [Header("Raycast")]
-        [SerializeField] private float maxDistance = 5f;
+        [Header("Input")]
+        [SerializeField] private KeyCode interactKey = KeyCode.E;
+        [SerializeField] private KeyCode switchTargetKey = KeyCode.Tab;
+
+        [Header("First Person Raycast")]
+        [SerializeField] private float firstPersonDistance = 5f;
+
+        [Header("Third Person Radius")]
+        [SerializeField] private float thirdPersonRadius = 3f;
         [SerializeField] private LayerMask interactMask;
 
         [Header("World Prompt Prefab")]
         [SerializeField] private WorldPromptUI promptPrefab;
 
         [Header("Icon")]
-        [SerializeField] private Sprite iconCanBuy; // tu sprite "E"
+        [SerializeField] private Sprite iconInteract; // tu sprite "E"
 
-        private EconomyService _economy;
+        private CameraBoomCollision _cameraBoom;
         private Camera _cam;
 
-        private PropertyMarker _current;
+        private IInteractable _current;
+        private Transform _currentTransform;
+
         private WorldPromptUI _prompt;
+
+        private readonly List<IInteractable> _targetsInRange = new();
+        private int _targetIndex;
 
         private void Awake()
         {
-            _economy = FindAnyObjectByType<EconomyService>();
+            _cameraBoom = FindAnyObjectByType<CameraBoomCollision>();
             _cam = Camera.main;
         }
 
         private void Update()
         {
-            // No interactuar si hay pausa/menú
             if (Time.timeScale == 0f || Cursor.lockState != CursorLockMode.Locked)
             {
                 HidePrompt();
                 return;
             }
 
-            if (_cam == null) _cam = Camera.main;
-            if (_cam == null) return;
+            RefreshReferences();
 
-            _current = GetLookAtProperty();
-            if (_current == null)
+            if (_cam == null)
             {
                 HidePrompt();
                 return;
             }
 
-            int money = _economy != null ? _economy.Money : 0;
+            bool isFirstPerson = _cameraBoom != null && _cameraBoom.IsFirstPerson;
 
-            // Solo mostramos el prompt si:
-            // - NO está comprada
-            // - y tienes dinero suficiente
-            if (_current.IsOwned || money < _current.price)
+            if (isFirstPerson)
+                UpdateFirstPersonInteraction();
+            else
+                UpdateThirdPersonInteraction();
+
+            if (_current == null || !_current.CanInteract())
             {
                 HidePrompt();
                 return;
             }
 
-            // Mostrar prompt y asignar icono "E"
-            ShowPromptOver(_current);
-            if (_prompt != null) _prompt.SetIcon(iconCanBuy);
+            ShowPromptOver(_currentTransform);
 
-            // Comprar
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                bool bought = _current.TryBuy();
-                if (bought)
-                    HidePrompt();
-            }
+            if (_prompt != null)
+                _prompt.SetIcon(iconInteract);
+
+            if (Input.GetKeyDown(interactKey))
+                _current.Interact();
         }
 
-        private PropertyMarker GetLookAtProperty()
+        private void RefreshReferences()
         {
+            if (_cameraBoom == null)
+                _cameraBoom = FindAnyObjectByType<CameraBoomCollision>();
+
+            if (_cam == null)
+                _cam = Camera.main;
+        }
+
+        // -------------------------
+        // First person
+        // -------------------------
+
+        private void UpdateFirstPersonInteraction()
+        {
+            _targetsInRange.Clear();
+            _targetIndex = 0;
+
+            _current = GetLookAtInteractable(out _currentTransform);
+        }
+
+        private IInteractable GetLookAtInteractable(out Transform interactableTransform)
+        {
+            interactableTransform = null;
+
             if (_cam == null) return null;
 
-            // Centro de pantalla (crosshair)
-            Ray ray = _cam.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f));
+            Ray ray = _cam.ScreenPointToRay(
+                new Vector3(Screen.width * 0.5f, Screen.height * 0.5f)
+            );
 
-            if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, interactMask, QueryTriggerInteraction.Ignore))
-                return hit.collider.GetComponentInParent<PropertyMarker>();
+            if (Physics.Raycast(
+                    ray,
+                    out RaycastHit hit,
+                    firstPersonDistance,
+                    interactMask,
+                    QueryTriggerInteraction.Ignore))
+            {
+                IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
+
+                if (interactable != null && interactable.CanInteract())
+                {
+                    interactableTransform = GetTransformFromInteractable(interactable);
+                    return interactable;
+                }
+            }
 
             return null;
         }
 
-        private void ShowPromptOver(PropertyMarker marker)
+        // -------------------------
+        // Third person
+        // -------------------------
+
+        private void UpdateThirdPersonInteraction()
         {
+            IInteractable previousTarget = _current;
+
+            RefreshTargetsInRadius();
+
+            if (_targetsInRange.Count == 0)
+            {
+                _current = null;
+                _currentTransform = null;
+                _targetIndex = 0;
+                return;
+            }
+
+            if (previousTarget != null)
+            {
+                int previousIndex = _targetsInRange.IndexOf(previousTarget);
+
+                if (previousIndex >= 0)
+                    _targetIndex = previousIndex;
+            }
+
+            if (_targetIndex >= _targetsInRange.Count)
+                _targetIndex = 0;
+
+            if (Input.GetKeyDown(switchTargetKey))
+            {
+                _targetIndex++;
+
+                if (_targetIndex >= _targetsInRange.Count)
+                    _targetIndex = 0;
+            }
+
+            _current = _targetsInRange[_targetIndex];
+            _currentTransform = GetTransformFromInteractable(_current);
+        }
+
+        private void RefreshTargetsInRadius()
+        {
+            _targetsInRange.Clear();
+
+            Collider[] hits = Physics.OverlapSphere(
+                transform.position,
+                thirdPersonRadius,
+                interactMask,
+                QueryTriggerInteraction.Ignore
+            );
+
+            for (int i = 0; i < hits.Length; i++)
+            {
+                IInteractable interactable = hits[i].GetComponentInParent<IInteractable>();
+
+                if (interactable == null)
+                    continue;
+
+                if (!interactable.CanInteract())
+                    continue;
+
+                if (_targetsInRange.Contains(interactable))
+                    continue;
+
+                _targetsInRange.Add(interactable);
+            }
+
+            _targetsInRange.Sort(CompareTargets);
+        }
+
+        private int CompareTargets(IInteractable a, IInteractable b)
+        {
+            Transform ta = GetTransformFromInteractable(a);
+            Transform tb = GetTransformFromInteractable(b);
+
+            float scoreA = GetTargetScore(ta);
+            float scoreB = GetTargetScore(tb);
+
+            return scoreA.CompareTo(scoreB);
+        }
+
+        private float GetTargetScore(Transform target)
+        {
+            if (target == null)
+                return float.MaxValue;
+
+            Vector3 toTarget = target.position - transform.position;
+            float distance = toTarget.magnitude;
+
+            if (distance <= 0.001f)
+                return 0f;
+
+            Vector3 direction = toTarget.normalized;
+            float forwardDot = Vector3.Dot(transform.forward, direction);
+
+            float behindPenalty = forwardDot < 0f ? 2.5f : 0f;
+
+            return distance + behindPenalty;
+        }
+
+        // -------------------------
+        // Prompt
+        // -------------------------
+
+        private void ShowPromptOver(Transform target)
+        {
+            if (target == null) return;
             if (promptPrefab == null) return;
 
             if (_prompt == null)
                 _prompt = Instantiate(promptPrefab);
 
-            // Anchor opcional (Empty hijo llamado PromptAnchor)
-            Transform anchor = marker.transform.Find("PromptAnchor");
-            if (anchor == null) anchor = marker.transform;
+            Transform anchor = GetPromptAnchor(target);
 
             _prompt.gameObject.SetActive(true);
             _prompt.Attach(anchor, _cam);
+        }
+
+        private Transform GetPromptAnchor(Transform target)
+        {
+            Transform anchor = target.Find("PromptAnchor");
+
+            if (anchor != null)
+                return anchor;
+
+            return target;
         }
 
         private void HidePrompt()
         {
             if (_prompt != null)
                 _prompt.gameObject.SetActive(false);
+        }
+
+        private Transform GetTransformFromInteractable(IInteractable interactable)
+        {
+            if (interactable is Component component)
+                return component.transform;
+
+            return null;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.DrawWireSphere(transform.position, thirdPersonRadius);
         }
     }
 }

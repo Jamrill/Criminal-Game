@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8920450159830505065, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 496
@@ -52,14 +56,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4870356264961618102}
     - targetCorrespondingSourceObject: {fileID: -8920450159830505065, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 791071627853251080}
+    - targetCorrespondingSourceObject: {fileID: -8920450159830505065, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8017923917386283357}
   m_SourcePrefab: {fileID: 100100000, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
+--- !u!1 &8167378409512557222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
+  m_PrefabInstance: {fileID: 9050320683061340151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4870356264961618102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167378409512557222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187a97a362cf49844bee38f236032e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Interaction.DoorInteractable
+  animator: {fileID: 8017923917386283357}
+  openBoolName: IsOpen
+  openText: Open
+  closeText: Close
 --- !u!1 &8767667770939936352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8920450159830505065, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
@@ -86,3 +121,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0354514, y: 4.0908003, z: 0.25}
   m_Center: {x: -1.0177252, y: -0.02850306, z: 0}
+--- !u!95 &8017923917386283357
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8767667770939936352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6a2434582f8b2243a077e7383ac0b91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
