@@ -33,6 +33,11 @@ namespace JuegoCriminal.World
             }
         }
 
+        public bool CanShowPrompt()
+        {
+            return !IsOwned;
+        }
+
         public bool CanInteract()
         {
             EnsureServices();

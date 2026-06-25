@@ -22,9 +22,6 @@ namespace JuegoCriminal.Player
         [Header("World Prompt Prefab")]
         [SerializeField] private WorldPromptUI promptPrefab;
 
-        [Header("Icon")]
-        [SerializeField] private Sprite iconInteract; // tu sprite "E"
-
         private CameraBoomCollision _cameraBoom;
         private Camera _cam;
 
@@ -65,7 +62,7 @@ namespace JuegoCriminal.Player
             else
                 UpdateThirdPersonInteraction();
 
-            if (_current == null || !_current.CanInteract())
+            if (_current == null || !_current.CanShowPrompt())
             {
                 HidePrompt();
                 return;
@@ -74,7 +71,30 @@ namespace JuegoCriminal.Player
             ShowPromptOver(_currentTransform);
 
             if (_prompt != null)
-                _prompt.SetIcon(iconInteract);
+            {
+                _prompt.SetText(_current.GetInteractionText());
+                _prompt.SetInteractableVisual(_current.CanInteract());
+            }
+
+            if (Input.GetKeyDown(interactKey) && _current.CanInteract())
+            {
+                _current.Interact();
+
+                if (_current != null && _current.CanShowPrompt() && _prompt != null)
+                {
+                    _prompt.SetText(_current.GetInteractionText());
+                    _prompt.SetInteractableVisual(_current.CanInteract());
+                }
+                else
+                {
+                    HidePrompt();
+                }
+            }
+
+            ShowPromptOver(_currentTransform);
+
+            if (_prompt != null)
+                _prompt.SetText(_current.GetInteractionText());
 
             if (Input.GetKeyDown(interactKey))
                 _current.Interact();
@@ -120,7 +140,7 @@ namespace JuegoCriminal.Player
             {
                 IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
 
-                if (interactable != null && interactable.CanInteract())
+                if (interactable != null && interactable.CanShowPrompt())
                 {
                     interactableTransform = GetTransformFromInteractable(interactable);
                     return interactable;
@@ -189,7 +209,7 @@ namespace JuegoCriminal.Player
                 if (interactable == null)
                     continue;
 
-                if (!interactable.CanInteract())
+                if (!interactable.CanShowPrompt())
                     continue;
 
                 if (_targetsInRange.Contains(interactable))
@@ -243,19 +263,54 @@ namespace JuegoCriminal.Player
             if (_prompt == null)
                 _prompt = Instantiate(promptPrefab);
 
-            Transform anchor = GetPromptAnchor(target);
+            Transform anchor = GetPromptAnchor(target, out bool useAnchorTransform);
 
             _prompt.gameObject.SetActive(true);
-            _prompt.Attach(anchor, _cam);
+            _prompt.Attach(anchor, _cam, useAnchorTransform);
         }
 
-        private Transform GetPromptAnchor(Transform target)
+        private Transform GetPromptAnchor(Transform target, out bool useAnchorTransform)
         {
-            Transform anchor = target.Find("PromptAnchor");
+            useAnchorTransform = false;
 
-            if (anchor != null)
-                return anchor;
+            if (target == null)
+                return transform;
 
+            Transform bestAnchor = null;
+            float bestDistance = float.MaxValue;
+
+            // Busca todos los hijos cuyo nombre empiece por "PromptAnchor"
+            // Ejemplos válidos:
+            // PromptAnchor
+            // PromptAnchor_2
+            // PromptAnchor_Left
+            // PromptAnchor_Right
+            Transform[] children = target.GetComponentsInChildren<Transform>(true);
+
+            for (int i = 0; i < children.Length; i++)
+            {
+                Transform child = children[i];
+
+                if (!child.name.StartsWith("PromptAnchor"))
+                    continue;
+
+                float distance = Vector3.Distance(transform.position, child.position);
+
+                if (distance < bestDistance)
+                {
+                    bestDistance = distance;
+                    bestAnchor = child;
+                }
+            }
+
+            if (bestAnchor != null)
+            {
+                useAnchorTransform = true;
+                return bestAnchor;
+            }
+
+            // Si no hay ningún PromptAnchor, comportamiento por defecto.
+            useAnchorTransform = false;
             return target;
         }
 
