@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
       propertyPath: m_LocalRotation.x
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
       propertyPath: m_LocalRotation.z
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
       propertyPath: m_Name
-      value: Glass_hole
+      value: Glass_Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62,14 +62,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8668986368573967391}
+      addedObject: {fileID: 1551722407608362820}
   m_SourcePrefab: {fileID: 100100000, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
 --- !u!1 &6846207023762304692 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e94b7fe619f5c4b93a06c7198a2511, type: 3}
   m_PrefabInstance: {fileID: 6035937108557812709}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8668986368573967391
+--- !u!65 &1551722407608362820
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,5 +88,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.50000036, y: 5, z: 4}
-  m_Center: {x: 0.25, y: 3.5, z: 0}
+  m_Size: {x: 4, y: 5, z: 0.5000001}
+  m_Center: {x: 2, y: 2.5, z: -0.000000014901161}
