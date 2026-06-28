@@ -7,7 +7,7 @@ namespace JuegoCriminal.UI
     public sealed class MenuTransitionController : MonoBehaviour
     {
         [Header("Main Menu Buttons (in order)")]
-        [SerializeField] private CanvasGroup[] mainButtons; // Continue..Quit (cada botón con CanvasGroup)
+        [SerializeField] private CanvasGroup[] mainButtons; // Continue..Quit (cada botÃ³n con CanvasGroup)
         [SerializeField] private float buttonHideStagger = 0.05f;
         [SerializeField] private float buttonHideDuration = 0.12f;
         [SerializeField] private float buttonSlideX = 40f;
@@ -192,7 +192,7 @@ namespace JuegoCriminal.UI
             // 2) Apagar SlotsPanel root
             if (slotsPanelRoot != null) slotsPanelRoot.SetActive(false);
 
-            // 3) Mostrar botones del menú uno a uno (fade in + slide back)
+            // 3) Mostrar botones del menï¿½ uno a uno (fade in + slide back)
             for (int i = 0; i < mainButtons.Length; i++)
             {
                 if (mainButtons[i] != null)
@@ -240,7 +240,7 @@ namespace JuegoCriminal.UI
         {
             if (cg == null) yield break;
 
-            // Busca el índice para usar la base pos guardada
+            // Busca el ï¿½ndice para usar la base pos guardada
             int idx = System.Array.IndexOf(mainButtons, cg);
             Vector3 basePos = (idx >= 0 && idx < _mainButtonsBaseLocalPos.Length) ? _mainButtonsBaseLocalPos[idx] : cg.transform.localPosition;
 

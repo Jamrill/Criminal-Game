@@ -25,7 +25,7 @@ namespace JuegoCriminal.Scenes
         [Header("Panels")]
         [SerializeField] private SlotsPanelUI slotsPanel;
         [SerializeField] private GameObject optionsPanel; // opcional
-        [SerializeField] private NewGameDialogUI newGameDialog;
+        [SerializeField] private NewGameDialogUI newGamePanel;
 
         private SaveService _save;
         private SceneLoader _loader;
@@ -38,7 +38,7 @@ namespace JuegoCriminal.Scenes
             if (_save == null) Debug.LogError("[MainMenuUI] SaveService not found (@App missing?)");
             if (_loader == null) Debug.LogError("[MainMenuUI] SceneLoader not found (@App missing?)");
             if (slotsPanel == null) Debug.LogError("[MainMenuUI] SlotsPanelUI not assigned");
-            if (newGameDialog == null) Debug.LogError("[MainMenuUI] NewGameDialogUI not assigned");
+            if (newGamePanel == null) Debug.LogError("[MainMenuUI] NewGameDialogUI not assigned");
             if (mainButtonsPanel == null) Debug.LogError("[MainMenuUI] MainButtonsPanel not assigned");
 
             // Listeners
@@ -52,7 +52,7 @@ namespace JuegoCriminal.Scenes
 
         private void OnEnable()
         {
-            // Suscripción segura
+            // Suscripciï¿½n segura
             if (slotsPanel != null)
             {
                 slotsPanel.OnClosed -= OnSlotsClosed;
@@ -125,23 +125,23 @@ namespace JuegoCriminal.Scenes
 
         private void OpenNewGame()
         {
-            if (newGameDialog == null) return;
+            if (newGamePanel == null) return;
 
-            // Ocultar menú principal y otros paneles
+            // Ocultar menï¿½ principal y otros paneles
             if (mainButtonsPanel != null) mainButtonsPanel.SetActive(false);
             if (optionsPanel != null) optionsPanel.SetActive(false);
 
-            newGameDialog.Open(coop: false);
+            newGamePanel.Open(coop: false);
         }
 
         private void OpenCoop()
         {
-            if (newGameDialog == null) return;
+            if (newGamePanel == null) return;
 
             if (mainButtonsPanel != null) mainButtonsPanel.SetActive(false);
             if (optionsPanel != null) optionsPanel.SetActive(false);
 
-            newGameDialog.Open(coop: true);
+            newGamePanel.Open(coop: true);
         }
 
         private void OpenLoadGame()
