@@ -127,21 +127,36 @@ namespace JuegoCriminal.Scenes
         {
             if (newGamePanel == null) return;
 
-            // Ocultar men� principal y otros paneles
-            if (mainButtonsPanel != null) mainButtonsPanel.SetActive(false);
-            if (optionsPanel != null) optionsPanel.SetActive(false);
+            if (optionsPanel != null)
+                optionsPanel.SetActive(false);
 
-            newGamePanel.Open(coop: false);
+            if (transitions != null)
+                transitions.TransitionToNewGame(coop: false);
+            else
+            {
+                if (mainButtonsPanel != null)
+                    mainButtonsPanel.SetActive(false);
+
+                newGamePanel.Open(coop: false);
+            }
         }
 
         private void OpenCoop()
         {
             if (newGamePanel == null) return;
 
-            if (mainButtonsPanel != null) mainButtonsPanel.SetActive(false);
-            if (optionsPanel != null) optionsPanel.SetActive(false);
+            if (optionsPanel != null)
+                optionsPanel.SetActive(false);
 
-            newGamePanel.Open(coop: true);
+            if (transitions != null)
+                transitions.TransitionToNewGame(coop: true);
+            else
+            {
+                if (mainButtonsPanel != null)
+                    mainButtonsPanel.SetActive(false);
+
+                newGamePanel.Open(coop: true);
+            }
         }
 
         private void OpenLoadGame()

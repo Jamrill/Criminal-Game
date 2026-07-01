@@ -20,7 +20,6 @@ namespace JuegoCriminal.UI
         [SerializeField] private Button backgroundButton;
         [SerializeField] private MenuTransitionController transitions;
 
-
         [Header("Confirm Delete Panel")]
         [SerializeField] private GameObject confirmPanel;
         [SerializeField] private Button confirmYesButton;
@@ -34,25 +33,25 @@ namespace JuegoCriminal.UI
         private readonly List<SaveSlotRowUI> _rows = new();
         private readonly Dictionary<int, SaveSlotRowUI> _rowBySlot = new();
 
-        // Selección
         private int _selectedSlotId = -1;
         private bool _selectedSlotExists = false;
+
+        private bool _confirmDeleteOpen;
 
         private void Awake()
         {
             _save = FindAnyObjectByType<SaveService>();
             _loader = FindAnyObjectByType<SceneLoader>();
 
-            if (panelRoot != null) panelRoot.SetActive(false);
+            if (panelRoot != null)
+                panelRoot.SetActive(false);
 
-            // Back
             if (backButton != null)
             {
                 backButton.onClick.RemoveAllListeners();
                 backButton.onClick.AddListener(OnBackPressed);
             }
 
-            // Delete
             if (deleteButton != null)
             {
                 deleteButton.onClick.RemoveAllListeners();
@@ -60,7 +59,6 @@ namespace JuegoCriminal.UI
                 deleteButton.interactable = false;
             }
 
-            // Load
             if (loadButton != null)
             {
                 loadButton.onClick.RemoveAllListeners();
@@ -68,15 +66,14 @@ namespace JuegoCriminal.UI
                 loadButton.interactable = false;
             }
 
-            // Background (deselect)
             if (backgroundButton != null)
             {
                 backgroundButton.onClick.RemoveAllListeners();
                 backgroundButton.onClick.AddListener(ClearSelection);
             }
 
-            // Confirm panel
-            if (confirmPanel != null) confirmPanel.SetActive(false);
+            if (confirmPanel != null)
+                confirmPanel.SetActive(false);
 
             if (confirmYesButton != null)
             {
@@ -91,28 +88,35 @@ namespace JuegoCriminal.UI
             }
         }
 
+        // Abre el panel de slots en modo carga.
+        // Este panel actualmente solo se usa para Load Game.
         public void Open(SlotPanelMode mode)
         {
-            // Este panel ya solo se usa para LoadOnly
-            // (si lo llamas con otro modo, lo tratamos igual)
-            if (panelRoot != null) panelRoot.SetActive(true);
-            if (confirmPanel != null) confirmPanel.SetActive(false);
+            if (panelRoot != null)
+                panelRoot.SetActive(true);
+
+            HideConfirmDeletePanel();
 
             BuildIfNeeded();
             RefreshAll();
             ClearSelection();
 
-            // Mostrar/ocultar el botón Load (solo tiene sentido en Load)
             if (loadButton != null)
                 loadButton.gameObject.SetActive(true);
         }
 
         public void Close()
         {
-            if (panelRoot != null) panelRoot.SetActive(false);
+            HideConfirmDeletePanel();
+
+            if (panelRoot != null)
+                panelRoot.SetActive(false);
+
             OnClosed?.Invoke();
         }
 
+        // Construye las filas de slots una sola vez.
+        // Después solo se refrescan los datos para evitar reinstanciar UI continuamente.
         private void BuildIfNeeded()
         {
             if (_rows.Count > 0) return;
@@ -128,15 +132,20 @@ namespace JuegoCriminal.UI
                 _rowBySlot[slotId] = row;
             }
         }
+
         private void OnBackPressed()
         {
+            if (_confirmDeleteOpen)
+                return;
+
             if (transitions != null)
                 transitions.TransitionBackToMainMenu();
             else
-                Close(); // fallback
+                Close();
         }
 
-        // Asegura que el slot usa el prefab correcto (single/coop) según el SaveData
+        // Cambia el prefab visual de una fila si la partida es Coop.
+        // Las partidas Single usan un prefab y las Coop otro.
         private SaveSlotRowUI EnsureRowPrefab(int slotId, bool wantCoop)
         {
             if (!_rowBySlot.TryGetValue(slotId, out var current) || current == null)
@@ -165,12 +174,14 @@ namespace JuegoCriminal.UI
             return newRow;
         }
 
+        //Refresca todas las filas visibles según los saves existentes.
         private void RefreshAll()
         {
             if (_save == null) return;
 
             var existing = _save.ListExistingSlots();
             var map = new Dictionary<int, SaveData>();
+
             foreach (var s in existing)
                 map[s.slotId] = s;
 
@@ -179,10 +190,11 @@ namespace JuegoCriminal.UI
                 int slotId = i + 1;
                 map.TryGetValue(slotId, out var data);
 
-                bool show = (data != null); // solo existentes
+                bool show = data != null;
 
-                bool wantCoop = (data != null) &&
-                                string.Equals(data.gameMode, "Coop", StringComparison.OrdinalIgnoreCase);
+                bool wantCoop =
+                    data != null &&
+                    string.Equals(data.gameMode, "Coop", StringComparison.OrdinalIgnoreCase);
 
                 var row = EnsureRowPrefab(slotId, wantCoop);
                 if (row == null) continue;
@@ -193,51 +205,76 @@ namespace JuegoCriminal.UI
                 row.SetMode(SlotPanelMode.LoadOnly);
                 row.Refresh(data);
             }
+
+            SetRowsInteractable(!_confirmDeleteOpen);
         }
 
+        // Se ejecuta al seleccionar una fila de save.
+        // Activa Load/Delete solo si el slot existe.
         private void OnRowClicked(SaveSlotRowUI row)
         {
-            if (row == null) return;
+            if (_confirmDeleteOpen)
+                return;
+
+            if (row == null)
+                return;
 
             _selectedSlotId = row.SlotId;
             _selectedSlotExists = row.SlotExists;
 
-            if (deleteButton != null) deleteButton.interactable = _selectedSlotExists;
-            if (loadButton != null) loadButton.interactable = _selectedSlotExists;
+            RefreshActionButtons();
         }
 
         private void OnLoadPressed()
         {
+            if (_confirmDeleteOpen)
+                return;
+
             if (_save == null || _loader == null) return;
             if (_selectedSlotId <= 0 || !_selectedSlotExists) return;
 
             if (_save.LoadSlot(_selectedSlotId))
             {
                 var target = _save.Current?.lastScene;
-                if (string.IsNullOrWhiteSpace(target)) target = "10_World_City";
+
+                if (string.IsNullOrWhiteSpace(target))
+                    target = "10_World_City";
+
                 _loader.LoadScene(target);
             }
         }
 
         private void OpenConfirmDelete()
         {
-            if (_selectedSlotId <= 0 || !_selectedSlotExists) return;
-            if (confirmPanel != null) confirmPanel.SetActive(true);
+            if (_selectedSlotId <= 0 || !_selectedSlotExists)
+                return;
+
+            ShowConfirmDeletePanel();
         }
 
         private void ConfirmDeleteNo()
         {
-            if (confirmPanel != null) confirmPanel.SetActive(false);
+            HideConfirmDeletePanel();
+            RefreshActionButtons();
         }
 
         private void ConfirmDeleteYes()
         {
-            if (_save == null) return;
-            if (_selectedSlotId <= 0 || !_selectedSlotExists) return;
+            if (_save == null)
+            {
+                HideConfirmDeletePanel();
+                return;
+            }
+
+            if (_selectedSlotId <= 0 || !_selectedSlotExists)
+            {
+                HideConfirmDeletePanel();
+                return;
+            }
 
             _save.DeleteSlot(_selectedSlotId);
 
-            if (confirmPanel != null) confirmPanel.SetActive(false);
+            HideConfirmDeletePanel();
 
             RefreshAll();
             ClearSelection();
@@ -245,13 +282,115 @@ namespace JuegoCriminal.UI
 
         private void ClearSelection()
         {
+            if (_confirmDeleteOpen)
+                return;
+
             _selectedSlotId = -1;
             _selectedSlotExists = false;
 
-            if (deleteButton != null) deleteButton.interactable = false;
-            if (loadButton != null) loadButton.interactable = false;
+            RefreshActionButtons();
+        }
 
-            if (confirmPanel != null) confirmPanel.SetActive(false);
+        // Abre la ventana de confirmación de borrado.
+        // Mientras está abierta, bloqueamos el resto del panel.
+        private void ShowConfirmDeletePanel()
+        {
+            _confirmDeleteOpen = true;
+
+            if (confirmPanel != null)
+                confirmPanel.SetActive(true);
+
+            SetSlotPanelControlsInteractable(false);
+
+            if (confirmYesButton != null)
+                confirmYesButton.interactable = true;
+
+            if (confirmNoButton != null)
+                confirmNoButton.interactable = true;
+        }
+
+        // Cierra la ventana de confirmación y devuelve el control al SlotsPanel.
+        private void HideConfirmDeletePanel()
+        {
+            _confirmDeleteOpen = false;
+
+            if (confirmPanel != null)
+                confirmPanel.SetActive(false);
+
+            SetSlotPanelControlsInteractable(true);
+            RefreshActionButtons();
+        }
+
+        // Bloquea o desbloquea los controles del SlotsPanel.
+        // Importante: los botones Yes/No del ConfirmPanel NO se bloquean aquí.
+        private void SetSlotPanelControlsInteractable(bool interactable)
+        {
+            if (backButton != null)
+                backButton.interactable = interactable;
+
+            if (backgroundButton != null)
+                backgroundButton.interactable = interactable;
+
+            SetRowsInteractable(interactable);
+
+            if (!interactable)
+            {
+                if (deleteButton != null)
+                    deleteButton.interactable = false;
+
+                if (loadButton != null)
+                    loadButton.interactable = false;
+
+                return;
+            }
+
+            RefreshActionButtons();
+        }
+
+        // Actualiza Load/Delete según haya o no una partida seleccionada.
+        private void RefreshActionButtons()
+        {
+            if (_confirmDeleteOpen)
+            {
+                if (deleteButton != null)
+                    deleteButton.interactable = false;
+
+                if (loadButton != null)
+                    loadButton.interactable = false;
+
+                return;
+            }
+
+            if (deleteButton != null)
+                deleteButton.interactable = _selectedSlotExists;
+
+            if (loadButton != null)
+                loadButton.interactable = _selectedSlotExists;
+        }
+
+        // Bloquea también las filas de saves para impedir selección/clicks detrás del ConfirmPanel.
+        private void SetRowsInteractable(bool interactable)
+        {
+            for (int i = 0; i < _rows.Count; i++)
+            {
+                SaveSlotRowUI row = _rows[i];
+
+                if (row == null)
+                    continue;
+
+                Button[] buttons = row.GetComponentsInChildren<Button>(true);
+
+                for (int j = 0; j < buttons.Length; j++)
+                    buttons[j].interactable = interactable;
+
+                CanvasGroup canvasGroup = row.GetComponent<CanvasGroup>();
+
+                if (canvasGroup != null)
+                {
+                    canvasGroup.interactable = interactable;
+                    canvasGroup.blocksRaycasts = interactable;
+                }
+            }
         }
     }
 }

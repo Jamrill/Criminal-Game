@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,28 +21,33 @@ namespace JuegoCriminal.UI
         [SerializeField] private string singleTitle = "New Game";
         [SerializeField] private string coopTitle = "New Co-op Game";
 
-        // Services (viven en @App)
+        public event Action OnBackRequested;
+
+        public RectTransform PanelRect
+        {
+            get
+            {
+                if (panelRoot != null)
+                    return panelRoot.GetComponent<RectTransform>();
+
+                return GetComponent<RectTransform>();
+            }
+        }
+
         private SaveService _save;
         private SceneLoader _loader;
 
-        // Session mode for the next save we create: "Single" or "Coop"
         private string _mode = "Single";
-
-        // When true, we are closing the dialog because we are starting the game,
-        // so we should NOT re-enable the main menu buttons (avoids the "flash").
         private bool _isStartingGame;
 
         private void Awake()
         {
-            // Find services once (they exist in @App)
             _save = FindAnyObjectByType<SaveService>();
             _loader = FindAnyObjectByType<SceneLoader>();
 
-            // Start hidden by default
             if (panelRoot != null)
                 panelRoot.SetActive(false);
 
-            // Wire UI buttons (remove listeners first to avoid duplicates)
             if (backButton != null)
             {
                 backButton.onClick.RemoveAllListeners();
@@ -54,7 +60,6 @@ namespace JuegoCriminal.UI
                 acceptButton.onClick.AddListener(OnAcceptPressed);
             }
 
-            // Pressing Enter on the input field acts like Accept
             if (nameInput != null)
             {
                 nameInput.onSubmit.RemoveAllListeners();
@@ -62,54 +67,47 @@ namespace JuegoCriminal.UI
             }
         }
 
-        /// <summary>
-        /// Opens the dialog and sets which type of game we are creating.
-        /// </summary>
         public void Open(bool coop)
         {
             _isStartingGame = false;
             _mode = coop ? "Coop" : "Single";
 
-            // Update title
             if (titleText != null)
                 titleText.text = coop ? coopTitle : singleTitle;
 
-            // Clear and focus input
+            if (panelRoot != null)
+                panelRoot.SetActive(true);
+
             if (nameInput != null)
             {
                 nameInput.text = "";
+                nameInput.Select();
                 nameInput.ActivateInputField();
             }
-
-            // Show dialog
-            if (panelRoot != null)
-                panelRoot.SetActive(true);
         }
 
-        /// <summary>
-        /// Closes the dialog.
-        /// If we are NOT starting the game, we return to the main menu buttons.
-        /// </summary>
         public void Close()
         {
-            if (panelRoot != null)
-                panelRoot.SetActive(false);
+            HidePanelOnly();
 
-            // If we are starting a new game, do NOT show the menu again (avoids a visual flash)
             if (_isStartingGame)
                 return;
 
             ShowMainMenuButtons();
         }
 
-        // -------------------------
-        // UI Button Handlers
-        // -------------------------
+        public void HidePanelOnly()
+        {
+            if (panelRoot != null)
+                panelRoot.SetActive(false);
+        }
 
         private void OnBackPressed()
         {
-            // Back simply closes the dialog and returns to main menu buttons
-            Close();
+            if (OnBackRequested != null)
+                OnBackRequested.Invoke();
+            else
+                Close();
         }
 
         private void OnAcceptPressed()
@@ -119,29 +117,17 @@ namespace JuegoCriminal.UI
 
             _isStartingGame = true;
 
-            // 1) Build a save display name
             string displayName = GetEnteredNameOrDefault();
-
-            // 2) Choose first free slot (1..MaxSlots)
             int slotId = FindFirstFreeSlotOrDefault();
 
-            // 3) Create/Save the new game (writes slot + meta)
             _save.NewGame(displayName: displayName, mode: _mode, slotId: slotId);
 
-            // 4) Close WITHOUT showing main menu again (no flash), then load world
             if (panelRoot != null)
                 panelRoot.SetActive(false);
 
             _loader.LoadScene(worldSceneName);
         }
 
-        // -------------------------
-        // Helper Methods
-        // -------------------------
-
-        /// <summary>
-        /// Returns the entered name, or a default if empty.
-        /// </summary>
         private string GetEnteredNameOrDefault()
         {
             string displayName = nameInput != null ? nameInput.text.Trim() : "";
@@ -152,10 +138,6 @@ namespace JuegoCriminal.UI
             return displayName;
         }
 
-        /// <summary>
-        /// Finds the first available slot. If none exist, falls back to DefaultSlotId.
-        /// (Later we can show a "No free slots" warning or a "Overwrite" flow.)
-        /// </summary>
         private int FindFirstFreeSlotOrDefault()
         {
             int slotId = -1;
@@ -175,20 +157,11 @@ namespace JuegoCriminal.UI
             return slotId;
         }
 
-        /// <summary>
-        /// Re-enables the main menu buttons panel in a safe way.
-        /// </summary>
         private void ShowMainMenuButtons()
         {
-            // Preferred: use MainMenuUI helper if available
             var menu = FindAnyObjectByType<JuegoCriminal.Scenes.MainMenuUI>();
             if (menu != null)
                 menu.ShowMainButtons();
-
-            // Fallback: enable a panel by name if you still use it
-            /*var mainButtons = GameObject.Find("MainPanel");
-            if (mainButtons != null)
-                mainButtons.SetActive(true);*/
         }
     }
 }
