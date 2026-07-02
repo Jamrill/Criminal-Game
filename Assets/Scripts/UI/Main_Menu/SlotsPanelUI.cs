@@ -177,14 +177,28 @@ namespace JuegoCriminal.UI
         //Refresca todas las filas visibles según los saves existentes.
         private void RefreshAll()
         {
-            if (_save == null) return;
+            if (_save == null)
+                return;
 
+            // 1) Obtenemos todos los saves existentes.
             var existing = _save.ListExistingSlots();
+
+            // 2) Los ordenamos por fecha de última partida, de más reciente a más antigua.
+            existing.Sort((a, b) =>
+            {
+                DateTime dateA = GetLastPlayedDate(a);
+                DateTime dateB = GetLastPlayedDate(b);
+
+                return dateB.CompareTo(dateA);
+            });
+
+            // 3) Creamos un mapa por slotId para refrescar cada fila correctamente.
             var map = new Dictionary<int, SaveData>();
 
-            foreach (var s in existing)
-                map[s.slotId] = s;
+            foreach (var saveData in existing)
+                map[saveData.slotId] = saveData;
 
+            // 4) Refrescamos todas las filas según el slot que representan.
             for (int i = 0; i < _rows.Count; i++)
             {
                 int slotId = i + 1;
@@ -197,16 +211,50 @@ namespace JuegoCriminal.UI
                     string.Equals(data.gameMode, "Coop", StringComparison.OrdinalIgnoreCase);
 
                 var row = EnsureRowPrefab(slotId, wantCoop);
-                if (row == null) continue;
+                if (row == null)
+                    continue;
 
                 row.gameObject.SetActive(show);
-                if (!show) continue;
+
+                if (!show)
+                    continue;
 
                 row.SetMode(SlotPanelMode.LoadOnly);
                 row.Refresh(data);
             }
 
+            // 5) Reordenamos visualmente las filas activas en el Content.
+            // No cambiamos el slot real, solo el orden en pantalla.
+            for (int i = 0; i < existing.Count; i++)
+            {
+                int slotId = existing[i].slotId;
+
+                if (_rowBySlot.TryGetValue(slotId, out var row) && row != null)
+                    row.transform.SetSiblingIndex(i);
+            }
+
+            // 6) Si está abierto el ConfirmPanel, mantenemos las filas bloqueadas.
             SetRowsInteractable(!_confirmDeleteOpen);
+        }
+
+        private DateTime GetLastPlayedDate(SaveData data)
+        {
+            if (data == null)
+                return DateTime.MinValue;
+
+            if (string.IsNullOrWhiteSpace(data.lastPlayedUtc))
+                return DateTime.MinValue;
+
+            if (DateTime.TryParse(
+                    data.lastPlayedUtc,
+                    null,
+                    System.Globalization.DateTimeStyles.RoundtripKind,
+                    out DateTime parsedDate))
+            {
+                return parsedDate;
+            }
+
+            return DateTime.MinValue;
         }
 
         // Se ejecuta al seleccionar una fila de save.
