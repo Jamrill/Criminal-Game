@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7762532704661469185}
   - component: {fileID: 1932464899732809373}
   - component: {fileID: 5336517147724645794}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 2711975609150054240}
   - component: {fileID: 3381606566932678413}
   - component: {fileID: 2579580949313620658}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,33 +317,22 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de5b6ca44162f7e4eb55231387033a0e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 347394265895726446}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de5b6ca44162f7e4eb55231387033a0e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 998359165192388841}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de5b6ca44162f7e4eb55231387033a0e, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 347394265895726446}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de5b6ca44162f7e4eb55231387033a0e, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1351883525217949260}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de5b6ca44162f7e4eb55231387033a0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6934705901944219621}
   m_SourcePrefab: {fileID: 100100000, guid: de5b6ca44162f7e4eb55231387033a0e, type: 3}
 --- !u!1 &4800006894238943182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: de5b6ca44162f7e4eb55231387033a0e, type: 3}
   m_PrefabInstance: {fileID: 5646499115140709023}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &347394265895726446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4800006894238943182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63d5c01f6e17eeb478541d9f3a51249d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.World.PropertyMarker
-  propertyId: 1
-  price: 500
 --- !u!65 &998359165192388841
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -365,6 +354,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000005, y: 0.04, z: 0.0015146617}
   m_Center: {x: -1.0553971e-17, y: -0.005999999, z: -0.00074266986}
+--- !u!114 &347394265895726446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800006894238943182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d5c01f6e17eeb478541d9f3a51249d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.World.PropertyMarker
+  propertyId: 1
+  price: 500
+  interactableObject: {fileID: 6934705901944219621}
+  propertyVisual: {fileID: 0}
+  buyText: Buy
+  ownedText: Owned
+  needMoneyText: Need
+  debugLogs: 0
 --- !u!114 &1351883525217949260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,12 +386,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b7d6ed7d7ae63499098f0f3b1ec957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.World.PropertyVisual
-  marker: {fileID: 347394265895726446}
-  forSaleText: {fileID: 5336517147724645794}
+  signText: {fileID: 5336517147724645794}
   signRoot: {fileID: 4800006894238943182}
   forSaleLabel: FOR SALE
   soldLabel: SOLD
-  hideAfterSeconds: 20
+  hideAfterSoldSeconds: 2
+--- !u!114 &6934705901944219621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800006894238943182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87586b0ea6583624ebc110128b80afc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Interaction.InteractableObject
+  forceInteractableLayer: 1
+  applyLayerToChildren: 1
+  interactionKey: 101
+  interactionText: Interact
+  canShowPrompt: 1
+  promptPrefab: {fileID: 6439836096325685817, guid: 1c345781c79c4ab4891439654d2c873f, type: 3}
+  promptAnchors: []
+  createFallbackAnchorAboveObject: 1
+  fallbackExtraHeight: 0.1
+  canInteract: 1
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  debugLogs: 0
 --- !u!4 &5320682426869587316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: de5b6ca44162f7e4eb55231387033a0e, type: 3}

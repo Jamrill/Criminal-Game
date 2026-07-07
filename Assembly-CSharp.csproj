@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\Scripts\Interaction\IInteractable.cs" />
     <Compile Include="Assets\Scripts\UI\WorldPromptUI.cs" />
     <Compile Include="Assets\Scripts\Core\SceneLoader.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -93,6 +92,7 @@
     <Compile Include="Assets\Scripts\Services\EconomyService.cs" />
     <Compile Include="Assets\Scripts\UI\Main_Menu\MenuTransitionController.cs" />
     <Compile Include="Assets\Scripts\Core\Bootstrapper.cs" />
+    <Compile Include="Assets\Scripts\Printer3DAnimation.cs" />
     <Compile Include="Assets\Scripts\Services\PropertyService.cs" />
     <Compile Include="Assets\Scripts\States\WorldModeController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
@@ -108,6 +108,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Player\InteractorRaycast.cs" />
     <Compile Include="Assets\Scripts\Interaction\DoorInteractable.cs" />
+    <Compile Include="Assets\Scripts\notAssignedToNothing\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Services\PropertyMarker.cs" />
     <Compile Include="Assets\Scripts\UI\Main_Menu\NewGameDialogUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Scenes\PlayerSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Scripts\Interaction\InteractableObject.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenuUI.cs" />
   </ItemGroup>
   <ItemGroup>

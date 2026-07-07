@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 5906423009483333093}
   - component: {fileID: 6439836096325685817}
   m_Layer: 0
-  m_Name: E Key
+  m_Name: Text_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5906423009483333093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,8 +480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9d2d52898681142aaa58637615c542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.UI.WorldPromptUI
-  iconImage: {fileID: 0}
-  secondiconImage: {fileID: 0}
+  iconImage: {fileID: 2479877377387646955}
+  secondIconImage: {fileID: 985735860225499138}
   promptText: {fileID: 2686136257367271261}
   worldOffset: {x: 0, y: 1.5, z: 0}
   normalColor: {r: 0.9372549, g: 0.77254903, b: 0.52156866, a: 1}

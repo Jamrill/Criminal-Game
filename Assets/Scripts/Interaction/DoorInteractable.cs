@@ -3,8 +3,11 @@ using UnityEngine;
 
 namespace JuegoCriminal.Interaction
 {
-    public sealed class DoorInteractable : MonoBehaviour, IInteractable
+    public sealed class DoorController : MonoBehaviour
     {
+        [Header("References")]
+        [SerializeField] private InteractableObject interactableObject;
+
         [Header("Door Animation")]
         [SerializeField] private Animator doorAnimator;
         [SerializeField] private string openBoolName = "IsOpen";
@@ -29,18 +32,93 @@ namespace JuegoCriminal.Interaction
         private bool _isMoving;
         private Coroutine _movementRoutine;
 
+        private void Reset()
+        {
+            interactableObject = GetComponent<InteractableObject>();
+            doorAnimator = GetComponent<Animator>();
+        }
+
         private void Awake()
         {
+            if (interactableObject == null)
+                interactableObject = GetComponent<InteractableObject>();
+
             if (doorAnimator == null)
                 doorAnimator = GetComponent<Animator>();
+
+            RefreshPromptText();
         }
 
-        public bool CanShowPrompt()
+        public void ToggleDoor()
         {
-            return doorAnimator != null;
+            if (!CanUseDoor())
+                return;
+
+            if (canClose)
+                _isOpen = !_isOpen;
+            else
+                _isOpen = true;
+
+            if (doorAnimator != null)
+                doorAnimator.SetBool(openBoolName, _isOpen);
+
+            PlayExtraAnimators();
+
+            if (_movementRoutine != null)
+                StopCoroutine(_movementRoutine);
+
+            _movementRoutine = StartCoroutine(MovementCooldown());
+
+            if (debugLogs)
+                Debug.Log($"DoorController: {name} -> {openBoolName} = {_isOpen}", this);
         }
 
-        public bool CanInteract()
+        public void OpenDoor()
+        {
+            if (!CanUseDoor())
+                return;
+
+            _isOpen = true;
+
+            if (doorAnimator != null)
+                doorAnimator.SetBool(openBoolName, true);
+
+            PlayExtraAnimators();
+
+            if (_movementRoutine != null)
+                StopCoroutine(_movementRoutine);
+
+            _movementRoutine = StartCoroutine(MovementCooldown());
+
+            if (debugLogs)
+                Debug.Log($"DoorController: {name} opened.", this);
+        }
+
+        public void CloseDoor()
+        {
+            if (!CanUseDoor())
+                return;
+
+            if (!canClose)
+                return;
+
+            _isOpen = false;
+
+            if (doorAnimator != null)
+                doorAnimator.SetBool(openBoolName, false);
+
+            PlayExtraAnimators();
+
+            if (_movementRoutine != null)
+                StopCoroutine(_movementRoutine);
+
+            _movementRoutine = StartCoroutine(MovementCooldown());
+
+            if (debugLogs)
+                Debug.Log($"DoorController: {name} closed.", this);
+        }
+
+        private bool CanUseDoor()
         {
             if (doorAnimator == null)
                 return false;
@@ -52,40 +130,6 @@ namespace JuegoCriminal.Interaction
                 return false;
 
             return true;
-        }
-
-        public void Interact()
-        {
-            if (!CanInteract())
-                return;
-
-            if (canClose)
-                _isOpen = !_isOpen;
-            else
-                _isOpen = true;
-
-            doorAnimator.SetBool(openBoolName, _isOpen);
-
-            PlayExtraAnimators();
-
-            if (_movementRoutine != null)
-                StopCoroutine(_movementRoutine);
-
-            _movementRoutine = StartCoroutine(MovementCooldown());
-
-            if (debugLogs)
-                Debug.Log($"DoorInteractable: {name} -> {openBoolName} = {_isOpen}", this);
-        }
-
-        public string GetInteractionText()
-        {
-            if (_isMoving)
-                return movingText;
-
-            if (canClose)
-                return _isOpen ? closeText : openText;
-
-            return openText;
         }
 
         private void PlayExtraAnimators()
@@ -109,10 +153,44 @@ namespace JuegoCriminal.Interaction
         {
             _isMoving = true;
 
+            if (interactableObject != null)
+            {
+                interactableObject.SetCanInteract(false);
+                interactableObject.SetInteractionText(movingText);
+            }
+
             yield return new WaitForSeconds(movementLockTime);
 
             _isMoving = false;
             _movementRoutine = null;
+
+            if (interactableObject != null)
+            {
+                interactableObject.SetCanInteract(CanUseDoor());
+                RefreshPromptText();
+            }
+        }
+
+        private void RefreshPromptText()
+        {
+            if (interactableObject == null)
+                return;
+
+            if (_isMoving)
+            {
+                interactableObject.SetInteractionText(movingText);
+                return;
+            }
+
+            if (canClose)
+            {
+                interactableObject.SetInteractionText(_isOpen ? closeText : openText);
+            }
+            else
+            {
+                interactableObject.SetInteractionText(_isOpen ? string.Empty : openText);
+                interactableObject.SetCanShowPrompt(!_isOpen);
+            }
         }
     }
 }

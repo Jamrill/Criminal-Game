@@ -154,6 +154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knob
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7bd77c4db43335143b8979ea9fe1b5f2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -341,6 +345,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4870356264961618102}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9117257081164688944}
     - targetCorrespondingSourceObject: {fileID: -8920450159830505065, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1680079168486864349}
@@ -384,6 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187a97a362cf49844bee38f236032e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Interaction.DoorInteractable
+  interactableObject: {fileID: 9117257081164688944}
   doorAnimator: {fileID: 5298578580213901636}
   openBoolName: IsOpen
   extraAnimators:
@@ -395,6 +403,46 @@ MonoBehaviour:
   canClose: 1
   movementLockTime: 1.1
   debugLogs: 1
+--- !u!114 &9117257081164688944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167378409512557222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87586b0ea6583624ebc110128b80afc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Interaction.InteractableObject
+  forceInteractableLayer: 1
+  applyLayerToChildren: 1
+  interactionKey: 101
+  interactionText: Open door
+  canShowPrompt: 1
+  promptPrefab: {fileID: 6439836096325685817, guid: 1c345781c79c4ab4891439654d2c873f, type: 3}
+  promptAnchors:
+  - {fileID: 6981221674227314077}
+  - {fileID: 3070415494755014853}
+  createFallbackAnchorAboveObject: 1
+  fallbackExtraHeight: 0.25
+  canInteract: 1
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4870356264961618102}
+        m_TargetAssemblyTypeName: JuegoCriminal.Interaction.DoorController, Assembly-CSharp
+        m_MethodName: ToggleDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  debugLogs: 0
 --- !u!1 &8767667770939936352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8920450159830505065, guid: 8a9325ab3d8cce749a03d5e45017db9c, type: 3}

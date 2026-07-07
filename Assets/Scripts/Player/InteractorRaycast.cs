@@ -1,15 +1,14 @@
 using System.Collections.Generic;
-using UnityEngine;
-using JuegoCriminal.UI;
 using JuegoCriminal.CameraSystem;
 using JuegoCriminal.Interaction;
+using JuegoCriminal.UI;
+using UnityEngine;
 
 namespace JuegoCriminal.Player
 {
     public sealed class InteractorRaycast : MonoBehaviour
     {
         [Header("Input")]
-        [SerializeField] private KeyCode interactKey = KeyCode.E;
         [SerializeField] private KeyCode switchTargetKey = KeyCode.Tab;
 
         [Header("First Person Raycast")]
@@ -19,18 +18,18 @@ namespace JuegoCriminal.Player
         [SerializeField] private float thirdPersonRadius = 3f;
         [SerializeField] private LayerMask interactMask;
 
-        [Header("World Prompt Prefab")]
-        [SerializeField] private WorldPromptUI promptPrefab;
+        [Header("Debug")]
+        [SerializeField] private bool debugLogs;
 
         private CameraBoomCollision _cameraBoom;
         private Camera _cam;
 
-        private IInteractable _current;
-        private Transform _currentTransform;
+        private InteractableObject _current;
 
         private WorldPromptUI _prompt;
+        private WorldPromptUI _currentPromptPrefab;
 
-        private readonly List<IInteractable> _targetsInRange = new();
+        private readonly List<InteractableObject> _targetsInRange = new();
         private int _targetIndex;
 
         private void Awake()
@@ -68,36 +67,15 @@ namespace JuegoCriminal.Player
                 return;
             }
 
-            ShowPromptOver(_currentTransform);
+            ShowPromptForCurrent();
 
-            if (_prompt != null)
-            {
-                _prompt.SetText(_current.GetInteractionText());
-                _prompt.SetInteractableVisual(_current.CanInteract());
-            }
+            KeyCode currentInteractionKey = _current.GetInteractionKey();
 
-            if (Input.GetKeyDown(interactKey) && _current.CanInteract())
+            if (Input.GetKeyDown(currentInteractionKey) && _current.CanInteract())
             {
                 _current.Interact();
-
-                if (_current != null && _current.CanShowPrompt() && _prompt != null)
-                {
-                    _prompt.SetText(_current.GetInteractionText());
-                    _prompt.SetInteractableVisual(_current.CanInteract());
-                }
-                else
-                {
-                    HidePrompt();
-                }
+                RefreshPromptVisuals();
             }
-
-            ShowPromptOver(_currentTransform);
-
-            if (_prompt != null)
-                _prompt.SetText(_current.GetInteractionText());
-
-            if (Input.GetKeyDown(interactKey))
-                _current.Interact();
         }
 
         private void RefreshReferences()
@@ -109,61 +87,55 @@ namespace JuegoCriminal.Player
                 _cam = Camera.main;
         }
 
-        // -------------------------
-        // First person
-        // -------------------------
-
         private void UpdateFirstPersonInteraction()
         {
             _targetsInRange.Clear();
             _targetIndex = 0;
 
-            _current = GetLookAtInteractable(out _currentTransform);
+            _current = GetLookAtInteractable();
         }
 
-        private IInteractable GetLookAtInteractable(out Transform interactableTransform)
+        private InteractableObject GetLookAtInteractable()
         {
-            interactableTransform = null;
-
-            if (_cam == null) return null;
-
             Ray ray = _cam.ScreenPointToRay(
                 new Vector3(Screen.width * 0.5f, Screen.height * 0.5f)
             );
 
-            if (Physics.Raycast(
+            if (!Physics.Raycast(
                     ray,
                     out RaycastHit hit,
                     firstPersonDistance,
                     interactMask,
                     QueryTriggerInteraction.Ignore))
             {
-                IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
-
-                if (interactable != null && interactable.CanShowPrompt())
-                {
-                    interactableTransform = GetTransformFromInteractable(interactable);
-                    return interactable;
-                }
+                return null;
             }
 
-            return null;
-        }
+            InteractableObject interactable = hit.collider.GetComponentInParent<InteractableObject>();
 
-        // -------------------------
-        // Third person
-        // -------------------------
+            if (interactable == null)
+            {
+                if (debugLogs)
+                    Debug.Log($"Raycast golpeó {hit.collider.name}, pero no tiene InteractableObject.", hit.collider);
+
+                return null;
+            }
+
+            if (!interactable.CanShowPrompt())
+                return null;
+
+            return interactable;
+        }
 
         private void UpdateThirdPersonInteraction()
         {
-            IInteractable previousTarget = _current;
+            InteractableObject previousTarget = _current;
 
             RefreshTargetsInRadius();
 
             if (_targetsInRange.Count == 0)
             {
                 _current = null;
-                _currentTransform = null;
                 _targetIndex = 0;
                 return;
             }
@@ -188,7 +160,6 @@ namespace JuegoCriminal.Player
             }
 
             _current = _targetsInRange[_targetIndex];
-            _currentTransform = GetTransformFromInteractable(_current);
         }
 
         private void RefreshTargetsInRadius()
@@ -204,7 +175,7 @@ namespace JuegoCriminal.Player
 
             for (int i = 0; i < hits.Length; i++)
             {
-                IInteractable interactable = hits[i].GetComponentInParent<IInteractable>();
+                InteractableObject interactable = hits[i].GetComponentInParent<InteractableObject>();
 
                 if (interactable == null)
                     continue;
@@ -221,13 +192,10 @@ namespace JuegoCriminal.Player
             _targetsInRange.Sort(CompareTargets);
         }
 
-        private int CompareTargets(IInteractable a, IInteractable b)
+        private int CompareTargets(InteractableObject a, InteractableObject b)
         {
-            Transform ta = GetTransformFromInteractable(a);
-            Transform tb = GetTransformFromInteractable(b);
-
-            float scoreA = GetTargetScore(ta);
-            float scoreB = GetTargetScore(tb);
+            float scoreA = GetTargetScore(a != null ? a.transform : null);
+            float scoreB = GetTargetScore(b != null ? b.transform : null);
 
             return scoreA.CompareTo(scoreB);
         }
@@ -251,81 +219,62 @@ namespace JuegoCriminal.Player
             return distance + behindPenalty;
         }
 
-        // -------------------------
-        // Prompt
-        // -------------------------
-
-        private void ShowPromptOver(Transform target)
+        private void ShowPromptForCurrent()
         {
-            if (target == null) return;
-            if (promptPrefab == null) return;
+            if (_current == null)
+                return;
+
+            WorldPromptUI promptPrefab = _current.GetPromptPrefab();
+
+            if (promptPrefab == null)
+            {
+                HidePrompt();
+
+                if (debugLogs)
+                    Debug.LogWarning($"'{_current.name}' no tiene Prompt Prefab asignado.", _current);
+
+                return;
+            }
+
+            EnsurePromptInstance(promptPrefab);
 
             if (_prompt == null)
-                _prompt = Instantiate(promptPrefab);
+                return;
 
-            Transform anchor = GetPromptAnchor(target, out bool useAnchorTransform);
+            Transform anchor = _current.GetClosestPromptAnchor(transform);
+            bool hasManualAnchor = _current.HasPromptAnchor();
 
             _prompt.gameObject.SetActive(true);
-            _prompt.Attach(anchor, _cam, useAnchorTransform);
+            _prompt.Attach(anchor, _cam, hasManualAnchor);
+
+            RefreshPromptVisuals();
         }
 
-        private Transform GetPromptAnchor(Transform target, out bool useAnchorTransform)
+        private void RefreshPromptVisuals()
         {
-            useAnchorTransform = false;
+            if (_prompt == null || _current == null)
+                return;
 
-            if (target == null)
-                return transform;
+            _prompt.SetText(_current.GetInteractionText());
+            _prompt.SetInteractableVisual(_current.CanInteract());
+        }
 
-            Transform bestAnchor = null;
-            float bestDistance = float.MaxValue;
+        private void EnsurePromptInstance(WorldPromptUI promptPrefab)
+        {
+            if (_prompt != null && _currentPromptPrefab == promptPrefab)
+                return;
 
-            // Busca todos los hijos cuyo nombre empiece por "PromptAnchor"
-            // Ejemplos válidos:
-            // PromptAnchor
-            // PromptAnchor_2
-            // PromptAnchor_Left
-            // PromptAnchor_Right
-            Transform[] children = target.GetComponentsInChildren<Transform>(true);
+            if (_prompt != null)
+                Destroy(_prompt.gameObject);
 
-            for (int i = 0; i < children.Length; i++)
-            {
-                Transform child = children[i];
-
-                if (!child.name.StartsWith("PromptAnchor"))
-                    continue;
-
-                float distance = Vector3.Distance(transform.position, child.position);
-
-                if (distance < bestDistance)
-                {
-                    bestDistance = distance;
-                    bestAnchor = child;
-                }
-            }
-
-            if (bestAnchor != null)
-            {
-                useAnchorTransform = true;
-                return bestAnchor;
-            }
-
-            // Si no hay ningún PromptAnchor, comportamiento por defecto.
-            useAnchorTransform = false;
-            return target;
+            _currentPromptPrefab = promptPrefab;
+            _prompt = Instantiate(promptPrefab);
         }
 
         private void HidePrompt()
         {
             if (_prompt != null)
                 _prompt.gameObject.SetActive(false);
-        }
-
-        private Transform GetTransformFromInteractable(IInteractable interactable)
-        {
-            if (interactable is Component component)
-                return component.transform;
-
-            return null;
         }
 
         private void OnDrawGizmosSelected()
