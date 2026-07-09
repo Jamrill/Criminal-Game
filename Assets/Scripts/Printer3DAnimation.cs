@@ -1,14 +1,50 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using JuegoCriminal.Interaction;
 
 public class Printer3DAnimation : MonoBehaviour
 {
+    [Serializable]
+    public sealed class PrintProject
+    {
+        [Header("Project Info")]
+        public string projectName = "New Print Project";
+
+        [Tooltip("Imagen que se mostrará en la pantalla/canvas de la impresora.")]
+        public Sprite previewSprite;
+
+        [Tooltip("Prefab que aparecerá al terminar correctamente la impresión.")]
+        public GameObject completedPrintPrefab;
+
+        [Tooltip("Si es mayor que 0, este proyecto usará esta duración en lugar de la duración general.")]
+        public float customPrintDuration = -1f;
+    }
+
     [Header("State")]
     [SerializeField] private bool isPrinting;
 
     [Header("References")]
     [SerializeField] private InteractableObject interactableObject;
+
+    [Header("Camera Selection Mode")]
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private Camera printerCamera;
+
+    [Tooltip("Objeto raíz de la UI de selección de la impresora. Puede ser Screen_Info_canvas o un panel dentro de él.")]
+    [SerializeField] private GameObject printerSelectionRoot;
+
+    [Tooltip("Scripts del jugador/cámara que quieres desactivar mientras se elige un proyecto.")]
+    [SerializeField] private MonoBehaviour[] disableWhileSelecting;
+
+    [Header("Printer Selection UI")]
+    [SerializeField] private Image projectPreviewImage;
+    [SerializeField] private Button backProjectButton;
+    [SerializeField] private Button nextProjectButton;
+    [SerializeField] private Button printProjectButton;
+
+    [Header("Available Print Projects")]
+    [SerializeField] private PrintProject[] printProjects;
 
     [Header("Parts")]
     [SerializeField] private Transform basePart;
@@ -47,7 +83,6 @@ public class Printer3DAnimation : MonoBehaviour
     [Header("Printed Result")]
     [SerializeField] private Transform resultSpawnPoint;
     [SerializeField] private GameObject failedPrintPrefab;
-    [SerializeField] private GameObject completedPrintPrefab;
 
     [Header("Print Line")]
     [SerializeField] private LineRenderer printLine;
@@ -62,6 +97,13 @@ public class Printer3DAnimation : MonoBehaviour
     private bool wasPrinting;
     private bool isReturningToStart;
 
+    private int selectedProjectIndex;
+    private PrintProject currentPrintProject;
+
+    private bool isSelectingProject;
+    private bool previousCursorVisible;
+    private CursorLockMode previousCursorLockMode;
+
     private void Reset()
     {
         interactableObject = GetComponent<InteractableObject>();
@@ -72,6 +114,9 @@ public class Printer3DAnimation : MonoBehaviour
         if (interactableObject == null)
             interactableObject = GetComponent<InteractableObject>();
 
+        if (playerCamera == null && Camera.main != null)
+            playerCamera = Camera.main;
+
         if (basePart != null)
             baseStartLocalPosition = basePart.localPosition;
 
@@ -81,6 +126,8 @@ public class Printer3DAnimation : MonoBehaviour
         if (railsPart != null)
             railsStartLocalPosition = railsPart.localPosition;
 
+        SetupSelectionButtons();
+        SetupSelectionCamera();
         SetupLineRenderer();
         SetupProgressBar();
 
@@ -108,6 +155,39 @@ public class Printer3DAnimation : MonoBehaviour
         UpdatePrintLine();
     }
 
+    private void SetupSelectionButtons()
+    {
+        if (backProjectButton != null)
+        {
+            backProjectButton.onClick.RemoveAllListeners();
+            backProjectButton.onClick.AddListener(SelectPreviousProject);
+        }
+
+        if (nextProjectButton != null)
+        {
+            nextProjectButton.onClick.RemoveAllListeners();
+            nextProjectButton.onClick.AddListener(SelectNextProject);
+        }
+
+        if (printProjectButton != null)
+        {
+            printProjectButton.onClick.RemoveAllListeners();
+            printProjectButton.onClick.AddListener(ConfirmSelectedProjectAndPrint);
+        }
+    }
+
+    private void SetupSelectionCamera()
+    {
+        if (printerSelectionRoot != null)
+            printerSelectionRoot.SetActive(false);
+
+        if (printerCamera != null)
+            printerCamera.gameObject.SetActive(false);
+
+        if (playerCamera != null)
+            playerCamera.gameObject.SetActive(true);
+    }
+
     private void DetectPrintingStateChange()
     {
         if (isPrinting == wasPrinting)
@@ -122,11 +202,11 @@ public class Printer3DAnimation : MonoBehaviour
     }
 
     /// <summary>
-    /// Este es el método que debes llamar desde InteractableObject -> On Interact.
-    /// Si está parada, empieza.
-    /// Si está imprimiendo, cancela.
+    /// Método recomendado para llamar desde InteractableObject -> On Interact.
+    /// Si la impresora está parada, abre la pantalla de selección.
+    /// Si está imprimiendo, cancela la impresión.
     /// </summary>
-    public void StartPrint()
+    public void InteractWithPrinter()
     {
         if (isPrinting)
         {
@@ -134,17 +214,170 @@ public class Printer3DAnimation : MonoBehaviour
             return;
         }
 
-        BeginPrint();
+        OpenProjectSelection();
+    }
+
+    /// <summary>
+    /// Compatibilidad con tu configuración anterior.
+    /// Si todavía llamas a StartPrint desde el evento, ahora abre el menú de selección.
+    /// </summary>
+    public void StartPrint()
+    {
+        InteractWithPrinter();
     }
 
     public void StartPrinting()
     {
-        StartPrint();
+        InteractWithPrinter();
     }
 
     public void StopPrinting()
     {
         CancelPrint();
+    }
+
+    public void OpenProjectSelection()
+    {
+        if (isPrinting)
+            return;
+
+        if (printProjects == null || printProjects.Length == 0)
+        {
+            Debug.LogWarning("[Printer3DAnimation] No hay proyectos de impresión configurados.", this);
+            return;
+        }
+
+        isSelectingProject = true;
+
+        previousCursorVisible = Cursor.visible;
+        previousCursorLockMode = Cursor.lockState;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        SetPlayerControlEnabled(false);
+        SetCameraMode(usePrinterCamera: true);
+
+        if (printerSelectionRoot != null)
+            printerSelectionRoot.SetActive(true);
+
+        selectedProjectIndex = Mathf.Clamp(selectedProjectIndex, 0, printProjects.Length - 1);
+        RefreshSelectedProjectUI();
+
+        if (interactableObject != null)
+        {
+            interactableObject.SetCanInteract(false);
+            interactableObject.SetCanShowPrompt(false);
+        }
+    }
+
+    public void CloseProjectSelection()
+    {
+        isSelectingProject = false;
+
+        if (printerSelectionRoot != null)
+            printerSelectionRoot.SetActive(false);
+
+        SetCameraMode(usePrinterCamera: false);
+        SetPlayerControlEnabled(true);
+
+        Cursor.visible = previousCursorVisible;
+        Cursor.lockState = previousCursorLockMode;
+
+        if (!isPrinting)
+            SetIdleState();
+    }
+
+    private void SelectPreviousProject()
+    {
+        if (!isSelectingProject)
+            return;
+
+        if (printProjects == null || printProjects.Length == 0)
+            return;
+
+        selectedProjectIndex--;
+
+        if (selectedProjectIndex < 0)
+            selectedProjectIndex = printProjects.Length - 1;
+
+        RefreshSelectedProjectUI();
+    }
+
+    private void SelectNextProject()
+    {
+        if (!isSelectingProject)
+            return;
+
+        if (printProjects == null || printProjects.Length == 0)
+            return;
+
+        selectedProjectIndex++;
+
+        if (selectedProjectIndex >= printProjects.Length)
+            selectedProjectIndex = 0;
+
+        RefreshSelectedProjectUI();
+    }
+
+    private void ConfirmSelectedProjectAndPrint()
+    {
+        if (!isSelectingProject)
+            return;
+
+        if (printProjects == null || printProjects.Length == 0)
+            return;
+
+        selectedProjectIndex = Mathf.Clamp(selectedProjectIndex, 0, printProjects.Length - 1);
+        currentPrintProject = printProjects[selectedProjectIndex];
+
+        CloseProjectSelection();
+        BeginPrint();
+    }
+
+    private void RefreshSelectedProjectUI()
+    {
+        if (printProjects == null || printProjects.Length == 0)
+        {
+            if (projectPreviewImage != null)
+            {
+                projectPreviewImage.sprite = null;
+                projectPreviewImage.enabled = false;
+            }
+
+            return;
+        }
+
+        selectedProjectIndex = Mathf.Clamp(selectedProjectIndex, 0, printProjects.Length - 1);
+
+        PrintProject project = printProjects[selectedProjectIndex];
+
+        if (projectPreviewImage != null)
+        {
+            projectPreviewImage.sprite = project != null ? project.previewSprite : null;
+            projectPreviewImage.enabled = project != null && project.previewSprite != null;
+        }
+    }
+
+    private void SetCameraMode(bool usePrinterCamera)
+    {
+        if (playerCamera != null)
+            playerCamera.gameObject.SetActive(!usePrinterCamera);
+
+        if (printerCamera != null)
+            printerCamera.gameObject.SetActive(usePrinterCamera);
+    }
+
+    private void SetPlayerControlEnabled(bool enabled)
+    {
+        if (disableWhileSelecting == null)
+            return;
+
+        for (int i = 0; i < disableWhileSelecting.Length; i++)
+        {
+            if (disableWhileSelecting[i] != null)
+                disableWhileSelecting[i].enabled = enabled;
+        }
     }
 
     public void CancelPrint()
@@ -167,6 +400,9 @@ public class Printer3DAnimation : MonoBehaviour
         wasPrinting = true;
         isReturningToStart = false;
 
+        if (currentPrintProject == null)
+            currentPrintProject = GetSelectedProjectOrNull();
+
         if (interactableObject != null)
         {
             interactableObject.SetInteractionText(printingText);
@@ -184,6 +420,8 @@ public class Printer3DAnimation : MonoBehaviour
         wasPrinting = false;
 
         SpawnCompletedPrint();
+
+        currentPrintProject = null;
 
         BeginReturnToStart();
         SetIdleState();
@@ -213,7 +451,9 @@ public class Printer3DAnimation : MonoBehaviour
     {
         printTimer += Time.deltaTime;
 
-        float totalProgress = Mathf.Clamp01(printTimer / printDuration);
+        float duration = GetCurrentPrintDuration();
+        float totalProgress = Mathf.Clamp01(printTimer / duration);
+
         SetProgress(totalProgress);
 
         if (totalProgress >= 1f)
@@ -222,10 +462,6 @@ public class Printer3DAnimation : MonoBehaviour
             return;
         }
 
-        // -------------------------
-        // FASE 1: bajada inicial
-        // -------------------------
-
         float dropProgress = Mathf.Clamp01(printTimer / initialDropDuration);
         dropProgress = Mathf.SmoothStep(0f, 1f, dropProgress);
 
@@ -233,23 +469,17 @@ public class Printer3DAnimation : MonoBehaviour
 
         bool initialDropFinished = printTimer >= initialDropDuration;
 
-        // -------------------------
-        // FASE 2: impresión real
-        // -------------------------
-
         float printPhaseTimer = Mathf.Max(0f, printTimer - initialDropDuration);
 
-        float printPhaseDuration = Mathf.Max(0.01f, printDuration - initialDropDuration);
+        float printPhaseDuration = Mathf.Max(0.01f, duration - initialDropDuration);
         float printPhaseProgress = Mathf.Clamp01(printPhaseTimer / printPhaseDuration);
 
-        // Solo sube lentamente después de haber llegado abajo.
         float riseOffset = initialDropFinished
             ? slowRiseY * printPhaseProgress
             : 0f;
 
         float verticalOffsetY = dropOffset + riseOffset;
 
-        // El cabezal y la base solo se mueven cuando la bajada inicial ha terminado.
         float headHorizontal = initialDropFinished
             ? Mathf.Sin(printPhaseTimer * headHorizontalSpeed)
             : 0f;
@@ -286,6 +516,23 @@ public class Printer3DAnimation : MonoBehaviour
                 baseStartLocalPosition +
                 baseOffset;
         }
+    }
+
+    private float GetCurrentPrintDuration()
+    {
+        if (currentPrintProject != null && currentPrintProject.customPrintDuration > 0f)
+            return currentPrintProject.customPrintDuration;
+
+        return Mathf.Max(0.01f, printDuration);
+    }
+
+    private PrintProject GetSelectedProjectOrNull()
+    {
+        if (printProjects == null || printProjects.Length == 0)
+            return null;
+
+        selectedProjectIndex = Mathf.Clamp(selectedProjectIndex, 0, printProjects.Length - 1);
+        return printProjects[selectedProjectIndex];
     }
 
     private void ReturnSmoothlyToStart()
@@ -339,13 +586,18 @@ public class Printer3DAnimation : MonoBehaviour
 
     private void SpawnCompletedPrint()
     {
-        if (completedPrintPrefab == null)
+        GameObject prefabToSpawn = null;
+
+        if (currentPrintProject != null)
+            prefabToSpawn = currentPrintProject.completedPrintPrefab;
+
+        if (prefabToSpawn == null)
             return;
 
         Transform spawn = resultSpawnPoint != null ? resultSpawnPoint : transform;
 
         Instantiate(
-            completedPrintPrefab,
+            prefabToSpawn,
             spawn.position,
             spawn.rotation
         );

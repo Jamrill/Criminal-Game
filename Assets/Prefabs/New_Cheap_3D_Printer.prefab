@@ -577,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1291274093719860421
 Transform:
   m_ObjectHideFlags: 0
@@ -1283,6 +1283,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Printer3DAnimation
   isPrinting: 0
   interactableObject: {fileID: 3925509870671353250}
+  playerCamera: {fileID: 0}
+  printerCamera: {fileID: 812975280175631763}
+  printerSelectionRoot: {fileID: 61277285456604512}
+  disableWhileSelecting: []
+  projectPreviewImage: {fileID: 0}
+  backProjectButton: {fileID: 0}
+  nextProjectButton: {fileID: 0}
+  printProjectButton: {fileID: 0}
+  printProjects: []
   basePart: {fileID: 2830058456147001937}
   headPart: {fileID: 558845276225667012}
   railsPart: {fileID: 2841661588774499054}
@@ -1301,7 +1310,6 @@ MonoBehaviour:
   progressSlider: {fileID: 0}
   resultSpawnPoint: {fileID: 6253131254469392379}
   failedPrintPrefab: {fileID: 0}
-  completedPrintPrefab: {fileID: 0}
   printLine: {fileID: 0}
   lineStartPoint: {fileID: 5411271417544798952}
   lineEndPoint: {fileID: 8540070398829714347}
@@ -1323,7 +1331,8 @@ MonoBehaviour:
   interactionText: Print
   canShowPrompt: 1
   promptPrefab: {fileID: 6439836096325685817, guid: 1c345781c79c4ab4891439654d2c873f, type: 3}
-  promptAnchors: []
+  promptAnchors:
+  - {fileID: 0}
   createFallbackAnchorAboveObject: 1
   fallbackExtraHeight: -1
   canInteract: 1
