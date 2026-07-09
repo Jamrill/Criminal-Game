@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb0265cb9d5e1004da578346e404964e
+guid: 89ea467d21290d048ba61145c92bbbdf
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -12,8 +12,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "C\xE9sped"
-    second: {fileID: 2100000, guid: 00ce578f6e617d3478d79395cd3df04d, type: 2}
+      name: SideWalk
+    second: {fileID: 2100000, guid: e19a32faf764c14489bdc7b39c75592c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

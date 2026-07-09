@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb0265cb9d5e1004da578346e404964e
+guid: 4f552c6974405fb46aba41bdffca88b7
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bordillo
-    second: {fileID: 2100000, guid: 4f9f621ccdafe6c43beda982e9c20ea3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "C\xE9sped"
-    second: {fileID: 2100000, guid: 00ce578f6e617d3478d79395cd3df04d, type: 2}
+      name: Floor
+    second: {fileID: 2100000, guid: 52335d409b6a1a34aa87994e0e88e46d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

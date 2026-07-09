@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: fb0265cb9d5e1004da578346e404964e
+guid: 04f9584316e4aea4dac9069168670db2
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bordillo
-    second: {fileID: 2100000, guid: 4f9f621ccdafe6c43beda982e9c20ea3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "C\xE9sped"
-    second: {fileID: 2100000, guid: 00ce578f6e617d3478d79395cd3df04d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

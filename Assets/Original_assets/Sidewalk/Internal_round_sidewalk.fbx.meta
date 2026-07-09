@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb0265cb9d5e1004da578346e404964e
+guid: 61cb4b07a3ee0344cb3fcdd134f759b5
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -12,8 +12,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "C\xE9sped"
-    second: {fileID: 2100000, guid: 00ce578f6e617d3478d79395cd3df04d, type: 2}
+      name: Metal_Brushed
+    second: {fileID: 2100000, guid: 33d57fd5ca9792f468984833e019d7aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro
+    second: {fileID: 2100000, guid: 8a27d478bcf80fb46964eb73ae02b4fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SideWalk
+    second: {fileID: 2100000, guid: e19a32faf764c14489bdc7b39c75592c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

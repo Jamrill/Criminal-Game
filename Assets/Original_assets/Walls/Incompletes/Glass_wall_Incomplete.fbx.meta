@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb0265cb9d5e1004da578346e404964e
+guid: 6ac5f68928830f34b8de0df87d37abc6
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bordillo
-    second: {fileID: 2100000, guid: 4f9f621ccdafe6c43beda982e9c20ea3, type: 2}
+    second: {fileID: 2100000, guid: 0227d196c00b4094ea6c3131f9222936, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "C\xE9sped"
-    second: {fileID: 2100000, guid: 00ce578f6e617d3478d79395cd3df04d, type: 2}
+      name: Glass
+    second: {fileID: 2100000, guid: c20bc2edbd93de84cadf81cba5a8bc43, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
