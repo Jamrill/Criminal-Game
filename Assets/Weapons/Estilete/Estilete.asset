@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ea322b475784a4eaf901893ca0fd75, type: 3}
+  m_Name: Estilete
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Printing.PrintableProductDefinition
+  id: Estilete
+  displayName: Estilete
+  inventorySprite: {fileID: 21300000, guid: dd1903e47ab20fe4c8d4a86cbf6cc835, type: 3}
+  workbenchPreviewSprite: {fileID: 21300000, guid: dd1903e47ab20fe4c8d4a86cbf6cc835, type: 3}
+  assembledPrefab: {fileID: 919132149155446097, guid: b40ca17051f5f3240a80db04f85b3c9e, type: 3}
+  requiredWorkbenchLevel: 1
+  unlockedByDefault: 1
+  requiredParts:
+  - {fileID: 11400000, guid: 367a59fa8ae975b44b0af187c10be159, type: 2}
+  - {fileID: 11400000, guid: 57922f8334fd6324091d084c51a6ad34, type: 2}
+  baseSellValue: 150
