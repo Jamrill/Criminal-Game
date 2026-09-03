@@ -15,6 +15,13 @@ MonoBehaviour:
   id: Estilete_blade
   displayName: Estilete blade
   inventorySprite: {fileID: 21300000, guid: 0355d749874b9b1458469c2e1034f754, type: 3}
+  itemType: 0
+  gridWidth: 1
+  gridHeight: 2
+  occupiedCells: 0101
+  canRotate: 1
+  equipmentSlot: 0
+  inventoryCapacityBonus: 0
   printerPreviewSprite: {fileID: 21300000, guid: 0355d749874b9b1458469c2e1034f754, type: 3}
   printedPartPrefab: {fileID: 919132149155446097, guid: 929c86977e126194181a8117968eaf8a, type: 3}
   requiredPrinterLevel: 1

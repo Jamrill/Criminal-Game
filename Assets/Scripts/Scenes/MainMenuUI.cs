@@ -25,6 +25,7 @@ namespace JuegoCriminal.Scenes
         [Header("Panels")]
         [SerializeField] private SlotsPanelUI slotsPanel;
         [SerializeField] private GameObject optionsPanel; // opcional
+        [SerializeField] private ControlsMenuUI controlsMenu;
         [SerializeField] private NewGameDialogUI newGamePanel;
 
         private SaveService _save;
@@ -32,14 +33,21 @@ namespace JuegoCriminal.Scenes
 
         private void Awake()
         {
-            _save = FindAnyObjectByType<SaveService>();
-            _loader = FindAnyObjectByType<SceneLoader>();
+            Bootstrapper app = Bootstrapper.Instance;
+            _save = app != null ? app.SaveService : null;
+            _loader = app != null ? app.SceneLoader : null;
+
+            if (_save == null) _save = FindAnyObjectByType<SaveService>();
+            if (_loader == null) _loader = FindAnyObjectByType<SceneLoader>();
 
             if (_save == null) Debug.LogError("[MainMenuUI] SaveService not found (@App missing?)");
             if (_loader == null) Debug.LogError("[MainMenuUI] SceneLoader not found (@App missing?)");
             if (slotsPanel == null) Debug.LogError("[MainMenuUI] SlotsPanelUI not assigned");
             if (newGamePanel == null) Debug.LogError("[MainMenuUI] NewGameDialogUI not assigned");
             if (mainButtonsPanel == null) Debug.LogError("[MainMenuUI] MainButtonsPanel not assigned");
+
+            if (controlsMenu == null)
+                controlsMenu = FindAnyObjectByType<ControlsMenuUI>(FindObjectsInactive.Include);
 
             // Listeners
             if (continueButton != null) continueButton.onClick.AddListener(Continue);
@@ -81,12 +89,8 @@ namespace JuegoCriminal.Scenes
 
             if (continueButton != null)
             {
-                int last = _save.GetLastSlotId();
-                bool canContinue =
-                    (last > 0 && _save.SlotExists(last)) ||
-                    _save.SlotExists(SaveService.DefaultSlotId);
-
-                continueButton.interactable = canContinue;
+                int continueSlotId = _save.GetContinueSlotId();
+                continueButton.interactable = continueSlotId > 0;
             }
 
             if (loadGameButton != null)
@@ -105,18 +109,16 @@ namespace JuegoCriminal.Scenes
         {
             if (_save == null || _loader == null) return;
 
-            int slotId = _save.GetLastSlotId();
-            if (slotId <= 0 || !_save.SlotExists(slotId))
-                slotId = SaveService.DefaultSlotId;
+            int slotId = _save.GetContinueSlotId();
 
-            if (!_save.LoadSlot(slotId))
+            if (slotId <= 0 || !_save.LoadSlot(slotId))
             {
                 Debug.LogWarning("[MainMenuUI] Continue failed: slot not found.");
                 RefreshButtons();
                 return;
             }
 
-            string target = _save.Current?.lastScene;
+            string target = _save.CurrentSceneName;
             if (string.IsNullOrWhiteSpace(target))
                 target = "10_World_City";
 
@@ -175,10 +177,34 @@ namespace JuegoCriminal.Scenes
                 return;
             }
 
-            if (mainButtonsPanel != null)
-                mainButtonsPanel.SetActive(false);
+            if (controlsMenu != null)
+                controlsMenu.Close();
 
-            optionsPanel.SetActive(true);
+            if (transitions != null)
+                transitions.TransitionToOptions(optionsPanel);
+            else
+            {
+                if (mainButtonsPanel != null)
+                    mainButtonsPanel.SetActive(false);
+
+                optionsPanel.SetActive(true);
+            }
+        }
+
+        public void CloseOptions()
+        {
+            if (controlsMenu != null)
+                controlsMenu.Close();
+
+            if (transitions != null)
+                transitions.TransitionBackFromOptions(optionsPanel);
+            else
+            {
+                if (optionsPanel != null)
+                    optionsPanel.SetActive(false);
+
+                ShowMainButtons();
+            }
         }
 
         public void ShowMainButtons()

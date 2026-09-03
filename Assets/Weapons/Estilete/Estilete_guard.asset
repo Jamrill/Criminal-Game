@@ -15,6 +15,13 @@ MonoBehaviour:
   id: Estilete_guard
   displayName: Estilete guard
   inventorySprite: {fileID: 21300000, guid: 8f91ddb16e07efb44951649c8abe8ce0, type: 3}
+  itemType: 0
+  gridWidth: 3
+  gridHeight: 2
+  occupiedCells: 010101000100
+  canRotate: 0
+  equipmentSlot: 0
+  inventoryCapacityBonus: 0
   printerPreviewSprite: {fileID: 21300000, guid: 8f91ddb16e07efb44951649c8abe8ce0, type: 3}
   printedPartPrefab: {fileID: 919132149155446097, guid: f691734307c997f478e408855b848c61, type: 3}
   requiredPrinterLevel: 1

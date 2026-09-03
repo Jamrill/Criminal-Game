@@ -1,4 +1,5 @@
 using UnityEngine;
+using JuegoCriminal.Core;
 
 namespace JuegoCriminal.Player
 {
@@ -13,13 +14,13 @@ namespace JuegoCriminal.Player
 
         [Header("Jump / Gravity")]
         [SerializeField] private bool canJump = true;
-        [SerializeField] private KeyCode jumpKey = KeyCode.Space;
         [SerializeField] private float jumpHeight = 1.2f;
         [SerializeField] private float gravity = -20f;
         [SerializeField] private float groundedStickForce = -2f;
 
         [Header("Look")]
-        [SerializeField] private float mouseSensitivity = 2f;
+        [SerializeField] private float mouseLookSensitivity = 0.1f;
+        [SerializeField] private float gamepadLookSpeed = 120f;
 
         [Header("Camera Pitch")]
         [SerializeField] private Transform cameraRig;   // CameraRig
@@ -27,14 +28,13 @@ namespace JuegoCriminal.Player
         [SerializeField] private float minPitch = -35f;
         [SerializeField] private float maxPitch = 70f;
 
-        [Header("Input")]
-        [SerializeField] private KeyCode runKey = KeyCode.LeftShift;
-
         private CharacterController _cc;
 
         private Vector3 _horizontalVelocity;
         private float _verticalVelocity;
         private float _pitch;
+
+        public float LookPitch => _pitch;
 
         private void Awake()
         {
@@ -75,11 +75,16 @@ namespace JuegoCriminal.Player
 
         private void Look()
         {
-            float mx = Input.GetAxis("Mouse X") * mouseSensitivity;
-            float my = Input.GetAxis("Mouse Y") * mouseSensitivity;
+            Vector2 lookInput = GameInput.Look;
+            float sensitivity = GameInput.IsLookFromPointer
+                ? mouseLookSensitivity
+                : gamepadLookSpeed * Time.deltaTime;
+
+            float mx = lookInput.x * sensitivity;
+            float my = lookInput.y * sensitivity;
 
             // De momento mantenemos el sistema actual:
-            // el ratón rota al jugador en Y, y la cámara sigue al jugador.
+            // el ratÃ³n rota al jugador en Y, y la cÃ¡mara sigue al jugador.
             transform.Rotate(0f, mx, 0f);
 
             // Pitch vertical del CameraPivot.
@@ -106,10 +111,7 @@ namespace JuegoCriminal.Player
 
         private Vector2 ReadMoveInput()
         {
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
-
-            Vector2 input = new Vector2(h, v);
+            Vector2 input = GameInput.Move;
 
             if (input.sqrMagnitude > 1f)
                 input.Normalize();
@@ -123,7 +125,7 @@ namespace JuegoCriminal.Player
                 return Vector3.zero;
 
             // Movimiento relativo al jugador.
-            // Como la cámara sigue el yaw del jugador, esto encaja con la cámara actual.
+            // Como la cÃ¡mara sigue el yaw del jugador, esto encaja con la cÃ¡mara actual.
             Vector3 moveDirection =
                 transform.right * input.x +
                 transform.forward * input.y;
@@ -131,7 +133,7 @@ namespace JuegoCriminal.Player
             moveDirection.y = 0f;
             moveDirection.Normalize();
 
-            float speed = Input.GetKey(runKey) ? runSpeed : walkSpeed;
+            float speed = GameInput.SprintHeld ? runSpeed : walkSpeed;
 
             return moveDirection * speed;
         }
@@ -156,9 +158,9 @@ namespace JuegoCriminal.Player
                 if (_verticalVelocity < 0f)
                     _verticalVelocity = groundedStickForce;
 
-                if (canJump && Input.GetKeyDown(jumpKey))
+                if (canJump && GameInput.JumpPressed)
                 {
-                    // Fórmula física básica para alcanzar jumpHeight.
+                    // FÃ³rmula fÃ­sica bÃ¡sica para alcanzar jumpHeight.
                     _verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 }
             }
@@ -187,6 +189,17 @@ namespace JuegoCriminal.Player
                 if (pivot != null)
                     cameraPivot = pivot.transform;
             }
+        }
+
+        public void SetLookRotation(float yaw, float pitch)
+        {
+            FindCameraReferencesIfNeeded();
+
+            transform.rotation = Quaternion.Euler(0f, yaw, 0f);
+            _pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
+
+            if (cameraPivot != null)
+                cameraPivot.localRotation = Quaternion.Euler(_pitch, 0f, 0f);
         }
     }
 }

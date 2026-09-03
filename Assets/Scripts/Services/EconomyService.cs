@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using JuegoCriminal.Services;
 
 namespace JuegoCriminal.Services
 {
@@ -10,11 +9,11 @@ namespace JuegoCriminal.Services
 
         private SaveService _save;
 
-        public int Money => _save != null && _save.Current != null ? _save.Current.money : 0;
+        public int Money => _save != null ? _save.CurrentMoney : 0;
 
         private void Awake()
         {
-            _save = FindAnyObjectByType<SaveService>();
+            _save = GetComponent<SaveService>();
         }
 
         public void SyncFromSave()
@@ -27,23 +26,23 @@ namespace JuegoCriminal.Services
 
         public bool TrySpend(int amount)
         {
-            if (amount < 0) amount = -amount;
-            if (!CanAfford(amount)) return false;
+            if (_save == null || !_save.TrySpendMoney(amount, out int remainingMoney))
+                return false;
 
-            _save.Current.money -= amount;
-            OnMoneyChanged?.Invoke(_save.Current.money);
+            OnMoneyChanged?.Invoke(remainingMoney);
 
-            // Guardado inmediato opcional: de momento NO lo hacemos aquí.
+            // Guardado inmediato opcional: de momento NO lo hacemos aquÃ­.
             // Lo guardas cuando el jugador pulse Save en el PauseMenu.
             return true;
         }
 
         public void AddMoney(int amount)
         {
-            if (amount < 0) amount = -amount;
+            if (_save == null)
+                return;
 
-            _save.Current.money += amount;
-            OnMoneyChanged?.Invoke(_save.Current.money);
+            int currentMoney = _save.AddMoney(amount);
+            OnMoneyChanged?.Invoke(currentMoney);
         }
     }
 }

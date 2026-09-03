@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+using System.Collections;
+using UnityEngine;
 using JuegoCriminal.Services;
+using JuegoCriminal.Player;
 
 namespace JuegoCriminal.Core
 {
@@ -8,6 +10,7 @@ namespace JuegoCriminal.Core
         None,
         Boot,
         Loading,
+        Menu,
         World
     }
 
@@ -19,19 +22,25 @@ namespace JuegoCriminal.Core
 
         private SceneLoader _sceneLoader;
         private SaveService _save;
+        private EconomyService _economy;
 
         public GameState CurrentState { get; private set; } = GameState.None;
 
         public SceneContext CurrentSceneContext { get; private set; }
         [SerializeField] private MonoBehaviour worldModeController;
+        private Coroutine _sceneSetupRoutine;
 
         private void Awake()
         {
             _sceneLoader = GetComponent<SceneLoader>();
             _save = GetComponent<SaveService>();
+            _economy = GetComponent<EconomyService>();
 
             if (_sceneLoader != null)
+            {
+                _sceneLoader.OnSceneLoadStarted += OnSceneLoadStarted;
                 _sceneLoader.OnSceneLoaded += OnSceneLoaded;
+            }
             else
                 Debug.LogError("[GSM] SceneLoader missing on @App");
         }
@@ -48,9 +57,9 @@ namespace JuegoCriminal.Core
         {
             SetState(GameState.Boot);
 
-            bool loaded = _save.Load();
-            if (!loaded)
-                _save.InitEmptyInMemory(); // sin crear save.json
+            // El arranque no debe cargar ningún slot: hacerlo modificaría el metadato de
+            // "última partida" antes de que el jugador pulse Continue o elija una partida.
+            _save.InitEmptyInMemory();
 
             _sceneLoader.LoadScene(fallbackMenuScene);
         }
@@ -75,21 +84,63 @@ namespace JuegoCriminal.Core
             else
                 Debug.Log("[GSM] SceneContext registered.");
 
-            // Spawnear player si existe PlayerSpawner en la escena
+            // Las escenas sin contexto de mundo (por ejemplo, el menú) no intentan crear jugadores.
             var spawner = FindAnyObjectByType<JuegoCriminal.Scenes.PlayerSpawner>();
             if (spawner != null && CurrentSceneContext != null)
             {
-                spawner.SpawnFromSave(CurrentSceneContext, _save.Current);
+                spawner.SpawnFromSave(CurrentSceneContext, _save.GetCurrentPlayerStates());
             }
-            else
+            else if (CurrentSceneContext != null)
             {
-                Debug.LogWarning("[GSM] PlayerSpawner not found or SceneContext missing.");
+                Debug.LogWarning("[GSM] SceneContext exists but PlayerSpawner is missing.");
             }
 
-            var economy = FindAnyObjectByType<JuegoCriminal.Services.EconomyService>();
-            if (economy != null) economy.SyncFromSave();
+            if (_economy != null)
+                _economy.SyncFromSave();
+
+            if (CurrentSceneContext == null)
+            {
+                SetState(GameState.Menu);
+                _sceneLoader.ReportSceneReady(sceneName);
+                return;
+            }
+
+            _sceneSetupRoutine = StartCoroutine(WaitForWorldReady(sceneName));
+        }
+
+        private IEnumerator WaitForWorldReady(string sceneName)
+        {
+            // Instantiate ejecuta Awake/OnEnable inmediatamente, pero Start y los seguidores de
+            // cámara necesitan al menos un frame completo para quedar inicializados.
+            while (FindAnyObjectByType<LocalPlayerMarker>() == null || Camera.main == null)
+                yield return null;
+
+            yield return null;
+            yield return new WaitForEndOfFrame();
 
             SetState(GameState.World);
+            _sceneLoader.ReportSceneReady(sceneName);
+            _sceneSetupRoutine = null;
+        }
+
+        private void OnSceneLoadStarted(string sceneName)
+        {
+            if (_sceneSetupRoutine != null)
+            {
+                StopCoroutine(_sceneSetupRoutine);
+                _sceneSetupRoutine = null;
+            }
+
+            SetState(GameState.Loading);
+        }
+
+        private void OnDestroy()
+        {
+            if (_sceneLoader == null)
+                return;
+
+            _sceneLoader.OnSceneLoadStarted -= OnSceneLoadStarted;
+            _sceneLoader.OnSceneLoaded -= OnSceneLoaded;
         }
 
         private void SetState(GameState state)

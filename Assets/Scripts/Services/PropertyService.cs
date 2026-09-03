@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 namespace JuegoCriminal.Services
@@ -9,27 +8,17 @@ namespace JuegoCriminal.Services
 
         private void Awake()
         {
-            _save = FindAnyObjectByType<SaveService>();
+            _save = GetComponent<SaveService>();
         }
 
         public bool IsOwned(int propertyId)
         {
-            if (_save?.Current?.ownedProperties == null) return false;
-            return _save.Current.ownedProperties.Contains(propertyId);
+            return _save != null && _save.IsPropertyOwned(propertyId);
         }
 
-        public void AddOwned(int propertyId)
+        public bool AddOwned(int propertyId)
         {
-            if (_save?.Current == null) return;
-
-            var arr = _save.Current.ownedProperties ?? new int[0];
-            if (arr.Contains(propertyId)) return;
-
-            var newArr = new int[arr.Length + 1];
-            for (int i = 0; i < arr.Length; i++) newArr[i] = arr[i];
-            newArr[newArr.Length - 1] = propertyId;
-
-            _save.Current.ownedProperties = newArr;
+            return _save != null && _save.TryAddOwnedProperty(propertyId);
         }
     }
 }

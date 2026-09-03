@@ -234,7 +234,7 @@ MonoBehaviour:
   nameText: {fileID: 2129611524849976902}
   dateText: {fileID: 4533425348287275435}
   rowButton: {fileID: 863215088610624690}
-  isCoopVisual: 0
+  isCoopVisual: 1
 --- !u!114 &8044773542847762575
 MonoBehaviour:
   m_ObjectHideFlags: 0

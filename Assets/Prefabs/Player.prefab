@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7999451665683247784}
   - component: {fileID: 8011852369382267997}
   - component: {fileID: 7125946806612244180}
+  - component: {fileID: 6285136973182459142}
+  - component: {fileID: 7021432719448263519}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -135,16 +137,15 @@ MonoBehaviour:
   acceleration: 14
   deceleration: 18
   canJump: 1
-  jumpKey: 32
   jumpHeight: 1.2
   gravity: -20
   groundedStickForce: -2
-  mouseSensitivity: 2
+  mouseLookSensitivity: 0.1
+  gamepadLookSpeed: 120
   cameraRig: {fileID: 0}
   cameraPivot: {fileID: 0}
   minPitch: -35
   maxPitch: 70
-  runKey: 304
 --- !u!114 &7125946806612244180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,12 +158,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c758303a7d9dbab498c7453d4fd2770f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.InteractorRaycast
-  interactKey: 101
-  switchTargetKey: 9
   firstPersonDistance: 5
   thirdPersonRadius: 3
   interactMask:
     serializedVersion: 2
     m_Bits: 64
-  promptPrefab: {fileID: 6439836096325685817, guid: 1c345781c79c4ab4891439654d2c873f, type: 3}
-  iconInteract: {fileID: 0}
+  debugLogs: 0
+--- !u!114 &6285136973182459142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021932728646410389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455125270366411e9fb40a9a256b8c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Inventory.PlayerInventory
+  catalog: {fileID: 11400000, guid: 5e3dc20826a24ae3830aa1cc21b78f8e, type: 2}
+  baseCapacity: 50
+  equippedItems: []
+--- !u!114 &7021432719448263519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021932728646410389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23566f8239cb43ae8e9fe74c83ac0757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Inventory.InventoryMenuUI
+  inventory: {fileID: 6285136973182459142}
+  uiPrefab: {fileID: 4952107518557984086, guid: c031d7da2e879b944b6eca0b6fc197df, type: 3}
+  panelRoot: {fileID: 0}
+  gridRoot: {fileID: 0}
+  capacityText: {fileID: 0}
+  cellSize: 56
+  cellColor: {r: 0.12, g: 0.12, b: 0.12, a: 0.92}
+  itemCellColor: {r: 1, g: 1, b: 1, a: 0.9}
+  itemIconScale: 1.3

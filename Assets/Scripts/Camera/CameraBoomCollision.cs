@@ -1,4 +1,5 @@
 using UnityEngine;
+using JuegoCriminal.Core;
 
 namespace JuegoCriminal.CameraSystem
 {
@@ -17,7 +18,6 @@ namespace JuegoCriminal.CameraSystem
 
         [Header("Shoulder Camera - Third Person")]
         [SerializeField] private float thirdPersonShoulderOffset = 0.65f;
-        [SerializeField] private KeyCode switchShoulderKey = KeyCode.C;
         [SerializeField] private bool startOnRightShoulder = true;
 
         [Header("Transition")]
@@ -59,7 +59,7 @@ namespace JuegoCriminal.CameraSystem
 
         private void Start()
         {
-            // En escenas con player/c·mara generados en runtime, Camera.main puede no estar listo en Awake.
+            // En escenas con player/c√°mara generados en runtime, Camera.main puede no estar listo en Awake.
             FindCameraIfNeeded();
 
             ApplyImmediate();
@@ -113,7 +113,7 @@ namespace JuegoCriminal.CameraSystem
 
         private void UpdateShoulderOffset()
         {
-            // En primera persona la c·mara se centra.
+            // En primera persona la c√°mara se centra.
             // En tercera persona se desplaza al hombro actual.
             float targetShoulderOffset = _isFirstPerson
                 ? 0f
@@ -128,10 +128,10 @@ namespace JuegoCriminal.CameraSystem
 
         private void UpdateCameraPosition()
         {
-            // PosiciÛn local deseada:
+            // Posici√≥n local deseada:
             // X = hombro
-            // Y = 0 porque la altura est· en el CameraPivot
-            // Z = distancia hacia atr·s
+            // Y = 0 porque la altura est√° en el CameraPivot
+            // Z = distancia hacia atr√°s
             Vector3 desiredLocalPos = new Vector3(
                 _currentShoulderOffset,
                 0f,
@@ -160,11 +160,11 @@ namespace JuegoCriminal.CameraSystem
 
         private void HandleScrollToggle()
         {
-            // No cambiar c·mara mientras el juego est· pausado o el cursor est· libre.
+            // No cambiar c√°mara mientras el juego est√° pausado o el cursor est√° libre.
             if (Time.timeScale == 0f) return;
             if (Cursor.lockState != CursorLockMode.Locked) return;
 
-            float scroll = Input.mouseScrollDelta.y;
+            float scroll = GameInput.CameraZoom;
             if (Mathf.Abs(scroll) < scrollThreshold) return;
 
             if (scroll > 0f)
@@ -181,7 +181,7 @@ namespace JuegoCriminal.CameraSystem
             if (Time.timeScale == 0f) return;
             if (Cursor.lockState != CursorLockMode.Locked) return;
 
-            if (Input.GetKeyDown(switchShoulderKey))
+            if (GameInput.SwitchShoulderPressed)
                 _shoulderSign *= -1;
         }
 
@@ -220,7 +220,7 @@ namespace JuegoCriminal.CameraSystem
 
             direction.Normalize();
 
-            // Excluir Player para que la c·mara no choque con el propio personaje.
+            // Excluir Player para que la c√°mara no choque con el propio personaje.
             int mask = collisionMask & ~LayerMask.GetMask("Player");
 
             if (Physics.SphereCast(
@@ -260,7 +260,7 @@ namespace JuegoCriminal.CameraSystem
             float safeDistance = Mathf.Max(cam.nearClipPlane + 0.08f, 0.12f);
 
             // Puntos del viewport que vamos a comprobar.
-            // Centro + bordes b·sicos del near plane.
+            // Centro + bordes b√°sicos del near plane.
             Vector3[] viewportPoints =
             {
         new Vector3(0.5f, 0.5f, safeDistance), // centro
@@ -302,7 +302,7 @@ namespace JuegoCriminal.CameraSystem
 
             if (strongestPushBack > 0f)
             {
-                // Empujamos la c·mara hacia atr·s en su eje local Z.
+                // Empujamos la c√°mara hacia atr√°s en su eje local Z.
                 // En primera persona esto evita que el near plane corte paredes.
                 desiredLocalPos += new Vector3(0f, 0f, -strongestPushBack);
             }
@@ -322,7 +322,7 @@ namespace JuegoCriminal.CameraSystem
 
         private void ApplyImmediate()
         {
-            // Recalcular estado inicial por si se cambiÛ el bool en Inspector.
+            // Recalcular estado inicial por si se cambi√≥ el bool en Inspector.
             _shoulderSign = startOnRightShoulder ? 1 : -1;
 
             _isFirstPerson = false;

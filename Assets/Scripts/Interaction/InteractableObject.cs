@@ -13,9 +13,6 @@ namespace JuegoCriminal.Interaction
         [SerializeField] private bool forceInteractableLayer = true;
         [SerializeField] private bool applyLayerToChildren = true;
 
-        [Header("Input")]
-        [SerializeField] private KeyCode interactionKey = KeyCode.E;
-
         [Header("Prompt")]
         [SerializeField] private string interactionText = "Interact";
         [SerializeField] private bool canShowPrompt = true;
@@ -23,11 +20,11 @@ namespace JuegoCriminal.Interaction
         [Tooltip("Prefab visual del prompt para este objeto. El prefab ya debe traer sus iconos configurados.")]
         [SerializeField] private WorldPromptUI promptPrefab;
 
-        [Tooltip("Anchors manuales. Si está vacío, se buscan hijos cuyo nombre empiece por PromptAnchor.")]
+        [Tooltip("Anchors manuales. Si estÃ¡ vacÃ­o, se buscan hijos cuyo nombre empiece por PromptAnchor.")]
         [SerializeField] private Transform[] promptAnchors;
 
         [Header("Fallback Prompt Anchor")]
-        [Tooltip("Si no hay PromptAnchor, crea uno automáticamente encima del objeto.")]
+        [Tooltip("Si no hay PromptAnchor, crea uno automÃ¡ticamente encima del objeto.")]
         [SerializeField] private bool createFallbackAnchorAboveObject = true;
 
         [Tooltip("Altura extra sobre el punto superior del objeto.")]
@@ -35,17 +32,12 @@ namespace JuegoCriminal.Interaction
 
         [Header("Interaction")]
         [SerializeField] private bool canInteract = true;
-        [SerializeField] private UnityEvent onInteract;
+        [SerializeField] private UnityEvent onInteract = new UnityEvent();
 
         [Header("Debug")]
         [SerializeField] private bool debugLogs;
 
         private Transform _fallbackPromptAnchor;
-
-        public KeyCode GetInteractionKey()
-        {
-            return interactionKey;
-        }
 
         private void Reset()
         {
@@ -92,6 +84,18 @@ namespace JuegoCriminal.Interaction
             return promptPrefab;
         }
 
+        public Transform[] GetPromptAnchorsCopy()
+        {
+            if (promptAnchors != null && promptAnchors.Length > 0)
+                return (Transform[])promptAnchors.Clone();
+
+            Transform fallback = createFallbackAnchorAboveObject
+                ? CreateOrUpdateFallbackAnchor()
+                : transform;
+
+            return new[] { fallback };
+        }
+
         public void Interact()
         {
             if (!CanInteract())
@@ -101,6 +105,19 @@ namespace JuegoCriminal.Interaction
                 Debug.Log($"InteractableObject: {name} interacted.", this);
 
             onInteract?.Invoke();
+        }
+
+        public void AddInteractionListener(UnityAction listener)
+        {
+            if (listener == null) return;
+            if (onInteract == null) onInteract = new UnityEvent();
+            onInteract.RemoveListener(listener);
+            onInteract.AddListener(listener);
+        }
+
+        public void RemoveInteractionListener(UnityAction listener)
+        {
+            if (listener != null) onInteract?.RemoveListener(listener);
         }
 
         public Transform GetClosestPromptAnchor(Transform interactorTransform)
@@ -163,6 +180,37 @@ namespace JuegoCriminal.Interaction
         public void SetCanShowPrompt(bool value)
         {
             canShowPrompt = value;
+        }
+
+        public void UseOwnFallbackPromptAnchor(float extraHeight = 0.03f)
+        {
+            promptAnchors = null;
+            createFallbackAnchorAboveObject = true;
+            fallbackExtraHeight = Mathf.Max(0f, extraHeight);
+            CreateOrUpdateFallbackAnchor();
+        }
+
+        public void ConfigureRuntime(
+            string text,
+            WorldPromptUI prefab,
+            UnityAction interactionCallback,
+            Transform[] sharedPromptAnchors = null)
+        {
+            interactionText = text;
+            promptPrefab = prefab;
+            canInteract = true;
+            canShowPrompt = promptPrefab != null;
+
+            if (onInteract == null)
+                onInteract = new UnityEvent();
+
+            if (interactionCallback != null)
+                onInteract.AddListener(interactionCallback);
+
+            if (sharedPromptAnchors != null && sharedPromptAnchors.Length > 0)
+                promptAnchors = (Transform[])sharedPromptAnchors.Clone();
+
+            EnsureInteractableLayer();
         }
 
         private Transform CreateOrUpdateFallbackAnchor()
@@ -249,7 +297,7 @@ namespace JuegoCriminal.Interaction
             if (interactableLayer == -1)
             {
                 Debug.LogWarning(
-                    $"InteractableObject: no existe la layer '{InteractableLayerName}'. Créala en Project Settings > Tags and Layers.",
+                    $"InteractableObject: no existe la layer '{InteractableLayerName}'. CrÃ©ala en Project Settings > Tags and Layers.",
                     this
                 );
 

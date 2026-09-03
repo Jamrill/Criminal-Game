@@ -2,15 +2,13 @@ using System.Collections.Generic;
 using JuegoCriminal.CameraSystem;
 using JuegoCriminal.Interaction;
 using JuegoCriminal.UI;
+using JuegoCriminal.Core;
 using UnityEngine;
 
 namespace JuegoCriminal.Player
 {
     public sealed class InteractorRaycast : MonoBehaviour
     {
-        [Header("Input")]
-        [SerializeField] private KeyCode switchTargetKey = KeyCode.Tab;
-
         [Header("First Person Raycast")]
         [SerializeField] private float firstPersonDistance = 5f;
 
@@ -30,6 +28,7 @@ namespace JuegoCriminal.Player
         private WorldPromptUI _currentPromptPrefab;
 
         private readonly List<InteractableObject> _targetsInRange = new();
+        private readonly RaycastHit[] _firstPersonHits = new RaycastHit[16];
         private int _targetIndex;
 
         private void Awake()
@@ -69,9 +68,7 @@ namespace JuegoCriminal.Player
 
             ShowPromptForCurrent();
 
-            KeyCode currentInteractionKey = _current.GetInteractionKey();
-
-            if (Input.GetKeyDown(currentInteractionKey) && _current.CanInteract())
+            if (GameInput.InteractPressed && _current.CanInteract())
             {
                 _current.Interact();
                 RefreshPromptVisuals();
@@ -101,30 +98,33 @@ namespace JuegoCriminal.Player
                 new Vector3(Screen.width * 0.5f, Screen.height * 0.5f)
             );
 
-            if (!Physics.Raycast(
-                    ray,
-                    out RaycastHit hit,
-                    firstPersonDistance,
-                    interactMask,
-                    QueryTriggerInteraction.Ignore))
+            int hitCount = Physics.RaycastNonAlloc(
+                ray,
+                _firstPersonHits,
+                firstPersonDistance,
+                interactMask,
+                QueryTriggerInteraction.Ignore);
+
+            InteractableObject closestAvailable = null;
+            float closestDistance = float.MaxValue;
+
+            for (int i = 0; i < hitCount; i++)
             {
-                return null;
+                RaycastHit hit = _firstPersonHits[i];
+                InteractableObject interactable =
+                    hit.collider.GetComponentInParent<InteractableObject>();
+
+                if (interactable == null || !interactable.CanShowPrompt())
+                    continue;
+
+                if (hit.distance >= closestDistance)
+                    continue;
+
+                closestAvailable = interactable;
+                closestDistance = hit.distance;
             }
 
-            InteractableObject interactable = hit.collider.GetComponentInParent<InteractableObject>();
-
-            if (interactable == null)
-            {
-                if (debugLogs)
-                    Debug.Log($"Raycast golpeó {hit.collider.name}, pero no tiene InteractableObject.", hit.collider);
-
-                return null;
-            }
-
-            if (!interactable.CanShowPrompt())
-                return null;
-
-            return interactable;
+            return closestAvailable;
         }
 
         private void UpdateThirdPersonInteraction()
@@ -151,7 +151,7 @@ namespace JuegoCriminal.Player
             if (_targetIndex >= _targetsInRange.Count)
                 _targetIndex = 0;
 
-            if (Input.GetKeyDown(switchTargetKey))
+            if (GameInput.SwitchTargetPressed)
             {
                 _targetIndex++;
 

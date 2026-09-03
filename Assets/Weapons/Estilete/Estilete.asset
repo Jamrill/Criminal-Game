@@ -15,6 +15,13 @@ MonoBehaviour:
   id: Estilete
   displayName: Estilete
   inventorySprite: {fileID: 21300000, guid: dd1903e47ab20fe4c8d4a86cbf6cc835, type: 3}
+  itemType: 0
+  gridWidth: 3
+  gridHeight: 4
+  occupiedCells: 000000000000000000000000
+  canRotate: 1
+  equipmentSlot: 0
+  inventoryCapacityBonus: 0
   workbenchPreviewSprite: {fileID: 21300000, guid: dd1903e47ab20fe4c8d4a86cbf6cc835, type: 3}
   assembledPrefab: {fileID: 919132149155446097, guid: b40ca17051f5f3240a80db04f85b3c9e, type: 3}
   requiredWorkbenchLevel: 1

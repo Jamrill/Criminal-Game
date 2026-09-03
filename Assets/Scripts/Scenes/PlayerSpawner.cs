@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using JuegoCriminal.Core;
+using JuegoCriminal.Services;
 
 namespace JuegoCriminal.Scenes
 {
@@ -18,7 +19,14 @@ namespace JuegoCriminal.Scenes
             _players.Clear();
         }
 
-        public void SpawnOne(SceneContext ctx, Vector3 pos, Quaternion rot, int index)
+        public void SpawnOne(
+            SceneContext ctx,
+            Vector3 pos,
+            Quaternion rot,
+            int index,
+            bool restoreLookRotation = false,
+            float playerYaw = 0f,
+            float cameraPitch = 0f)
         {
             var go = Instantiate(playerPrefab, pos, rot);
             go.name = $"Player_{index}";
@@ -27,9 +35,16 @@ namespace JuegoCriminal.Scenes
             if (index == 0)
                 go.AddComponent<JuegoCriminal.Player.LocalPlayerMarker>();
 
+            if (restoreLookRotation)
+            {
+                var controller = go.GetComponent<JuegoCriminal.Player.ThirdPersonController>();
+                if (controller != null)
+                    controller.SetLookRotation(playerYaw, cameraPitch);
+            }
+
         }
 
-        public void SpawnFromSave(SceneContext ctx, JuegoCriminal.Services.SaveData save)
+        public void SpawnFromSave(SceneContext ctx, IReadOnlyList<PlayerLoadState> savedPlayers)
         {
             if (playerPrefab == null)
             {
@@ -46,25 +61,51 @@ namespace JuegoCriminal.Scenes
             DespawnAll();
 
             // Si hay datos multi-player guardados, usarlos
-            if (save != null && save.playerCount > 0)
+            if (savedPlayers != null && savedPlayers.Count > 0)
             {
-                int count = Mathf.Min(save.playerCount, JuegoCriminal.Services.SaveData.MaxPlayers);
+                int spawnedCount = 0;
 
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < savedPlayers.Count; i++)
                 {
-                    if (!save.hasPos[i]) continue;
+                    PlayerLoadState state = savedPlayers[i];
+                    Quaternion rotation = state.HasLookRotation
+                        ? Quaternion.Euler(0f, state.Yaw, 0f)
+                        : ctx.playerSpawn.rotation;
 
-                    var pos = new Vector3(save.px[i], save.py[i], save.pz[i]);
-                    SpawnOne(ctx, pos, ctx.playerSpawn.rotation, i);
+                    SpawnOne(
+                        ctx,
+                        state.Position,
+                        rotation,
+                        state.Index,
+                        state.HasLookRotation,
+                        state.Yaw,
+                        state.Pitch
+                    );
+                    spawnedCount++;
                 }
 
-                Debug.Log("[PlayerSpawner] Spawned from save. Count: " + count);
-                return;
+                if (spawnedCount > 0)
+                {
+                    EnsureLocalPlayerMarker();
+                    Debug.Log("[PlayerSpawner] Spawned from save. Count: " + spawnedCount);
+                    return;
+                }
+
+                Debug.LogWarning("[PlayerSpawner] Save had no valid player positions. Using scene spawn.");
             }
 
             // Fallback: spawnear 1 en playerSpawn
             SpawnOne(ctx, ctx.playerSpawn.position, ctx.playerSpawn.rotation, 0);
             Debug.Log("[PlayerSpawner] Spawned default player at playerSpawn.");
+        }
+
+        private void EnsureLocalPlayerMarker()
+        {
+            if (_players.Count == 0 || _players[0] == null)
+                return;
+
+            if (_players[0].GetComponent<JuegoCriminal.Player.LocalPlayerMarker>() == null)
+                _players[0].AddComponent<JuegoCriminal.Player.LocalPlayerMarker>();
         }
     }
 }

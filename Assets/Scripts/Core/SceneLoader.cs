@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Script encargado de crear el elemento empty en escena que contiene los scripts importantes de la partida,
-// incluido este, y adem�s se encarga de cargar la escena.
+// incluido este, y además se encarga de cargar la escena.
 
 namespace JuegoCriminal.Core
 {
@@ -19,15 +19,19 @@ namespace JuegoCriminal.Core
             if (UnityEngine.Object.FindAnyObjectByType<Bootstrapper>() != null) return;
 
             var go = new GameObject("@App");
-            go.AddComponent<Bootstrapper>();
             go.AddComponent<SceneLoader>();
             go.AddComponent<SaveService>();
-            go.AddComponent<GameStateMachine>();
             go.AddComponent<EconomyService>();
             go.AddComponent<PropertyService>();
+            go.AddComponent<WorldSaveService>();
 
             var worldMode = go.AddComponent<JuegoCriminal.States.WorldModeController>();
             worldMode.enabled = false;
+
+            // Bootstrapper se añade al final porque AddComponent ejecuta Awake inmediatamente.
+            // Así puede cachear una composición completa y GameStateMachine ve todos los servicios.
+            go.AddComponent<GameStateMachine>();
+            go.AddComponent<Bootstrapper>();
 
             Debug.Log("[AutoBootstrap] @App created");
         }
@@ -38,10 +42,24 @@ namespace JuegoCriminal.Core
         [Header("Loading Screen")]
         [SerializeField] private string loadingText = "Loading...";
         [SerializeField] private float minimumLoadingTime = 1.0f;
+        [Min(1f)]
+        [SerializeField] private float sceneSetupTimeout = 30f;
         [SerializeField] private int framesToWaitAfterLoad = 2;
 
+        private string _readySceneName;
+
         public bool IsLoading { get; private set; }
+        public event Action<string> OnSceneLoadStarted;
         public event Action<string> OnSceneLoaded;
+
+        public void ReportSceneReady(string sceneName)
+        {
+            if (!IsLoading || string.IsNullOrWhiteSpace(sceneName))
+                return;
+
+            _readySceneName = sceneName;
+            Debug.Log("[SceneLoader] Scene ready: " + sceneName);
+        }
 
         public void LoadScene(string sceneName)
         {
@@ -54,6 +72,8 @@ namespace JuegoCriminal.Core
         private IEnumerator LoadRoutine(string sceneName)
         {
             IsLoading = true;
+            _readySceneName = null;
+            OnSceneLoadStarted?.Invoke(sceneName);
 
             Time.timeScale = 1f;
 
@@ -101,7 +121,22 @@ namespace JuegoCriminal.Core
 
             OnSceneLoaded?.Invoke(sceneName);
 
-            // Esperamos algunos frames para que GameStateMachine, spawner y dem�s terminen de preparar la escena.
+            // La activación de Unity no implica que el mundo ya esté preparado. Esperamos a que
+            // GameStateMachine confirme que el contexto, el jugador y la cámara están disponibles.
+            float setupStartTime = Time.unscaledTime;
+
+            while (_readySceneName != sceneName)
+            {
+                if (Time.unscaledTime - setupStartTime >= sceneSetupTimeout)
+                {
+                    Debug.LogError($"[SceneLoader] Scene setup timed out after {sceneSetupTimeout:0.#}s: {sceneName}");
+                    break;
+                }
+
+                yield return null;
+            }
+
+            // Margen configurable para que otros Start/LateUpdate reaccionen a la escena preparada.
             for (int i = 0; i < framesToWaitAfterLoad; i++)
                 yield return null;
 
@@ -111,6 +146,7 @@ namespace JuegoCriminal.Core
                 loadingScreen.Hide();
 
             IsLoading = false;
+            _readySceneName = null;
         }
 
         private LoadingScreenUI GetLoadingScreen()

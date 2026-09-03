@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using JuegoCriminal.Services;
 using JuegoCriminal.Core;
+using UnityEngine.Events;
 
 namespace JuegoCriminal.UI
 {
@@ -39,32 +40,49 @@ namespace JuegoCriminal.UI
 
         private string _mode = "Single";
         private bool _isStartingGame;
+        private UnityAction<string> _submitListener;
 
         private void Awake()
         {
-            _save = FindAnyObjectByType<SaveService>();
-            _loader = FindAnyObjectByType<SceneLoader>();
+            Bootstrapper app = Bootstrapper.Instance;
+            _save = app != null ? app.SaveService : null;
+            _loader = app != null ? app.SceneLoader : null;
+
+            if (_save == null) _save = FindAnyObjectByType<SaveService>();
+            if (_loader == null) _loader = FindAnyObjectByType<SceneLoader>();
 
             if (panelRoot != null)
                 panelRoot.SetActive(false);
 
             if (backButton != null)
             {
-                backButton.onClick.RemoveAllListeners();
+                backButton.onClick.RemoveListener(OnBackPressed);
                 backButton.onClick.AddListener(OnBackPressed);
             }
 
             if (acceptButton != null)
             {
-                acceptButton.onClick.RemoveAllListeners();
+                acceptButton.onClick.RemoveListener(OnAcceptPressed);
                 acceptButton.onClick.AddListener(OnAcceptPressed);
             }
 
             if (nameInput != null)
             {
-                nameInput.onSubmit.RemoveAllListeners();
-                nameInput.onSubmit.AddListener(_ => OnAcceptPressed());
+                _submitListener = _ => OnAcceptPressed();
+                nameInput.onSubmit.AddListener(_submitListener);
             }
+        }
+
+        private void OnDestroy()
+        {
+            if (backButton != null)
+                backButton.onClick.RemoveListener(OnBackPressed);
+
+            if (acceptButton != null)
+                acceptButton.onClick.RemoveListener(OnAcceptPressed);
+
+            if (nameInput != null && _submitListener != null)
+                nameInput.onSubmit.RemoveListener(_submitListener);
         }
 
         public void Open(bool coop)
@@ -118,7 +136,7 @@ namespace JuegoCriminal.UI
             _isStartingGame = true;
 
             string displayName = GetEnteredNameOrDefault();
-            int slotId = FindFirstFreeSlotOrDefault();
+            int slotId = _save.GetFirstFreeSlotId();
 
             _save.NewGame(displayName: displayName, mode: _mode, slotId: slotId);
 
@@ -136,25 +154,6 @@ namespace JuegoCriminal.UI
                 displayName = _mode == "Coop" ? "New Co-op Save" : "New Save";
 
             return displayName;
-        }
-
-        private int FindFirstFreeSlotOrDefault()
-        {
-            int slotId = -1;
-
-            for (int i = 1; i <= SaveService.MaxSlots; i++)
-            {
-                if (!_save.SlotExists(i))
-                {
-                    slotId = i;
-                    break;
-                }
-            }
-
-            if (slotId < 0)
-                slotId = SaveService.DefaultSlotId;
-
-            return slotId;
         }
 
         private void ShowMainMenuButtons()

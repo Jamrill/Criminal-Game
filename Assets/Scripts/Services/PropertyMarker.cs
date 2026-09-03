@@ -1,6 +1,9 @@
 using UnityEngine;
 using JuegoCriminal.Interaction;
 using JuegoCriminal.Services;
+using JuegoCriminal.Core;
+using System.Collections;
+using TMPro;
 
 namespace JuegoCriminal.World
 {
@@ -12,7 +15,13 @@ namespace JuegoCriminal.World
 
         [Header("Refs")]
         [SerializeField] private InteractableObject interactableObject;
-        [SerializeField] private PropertyVisual propertyVisual;
+        [SerializeField] private TMP_Text signText;
+        [SerializeField] private GameObject signRoot;
+
+        [Header("Sign Visual")]
+        [SerializeField] private string forSaleLabel = "FOR SALE";
+        [SerializeField] private string soldLabel = "SOLD";
+        [SerializeField, Min(0f)] private float hideAfterSoldSeconds = 2f;
 
         [Header("Prompt Text")]
         [SerializeField] private string buyText = "Buy";
@@ -24,6 +33,7 @@ namespace JuegoCriminal.World
 
         private EconomyService _economy;
         private PropertyService _properties;
+        private Coroutine _hideRoutine;
 
         public bool IsOwned
         {
@@ -37,7 +47,8 @@ namespace JuegoCriminal.World
         private void Reset()
         {
             interactableObject = GetComponent<InteractableObject>();
-            propertyVisual = GetComponentInChildren<PropertyVisual>();
+            signText = GetComponentInChildren<TMP_Text>(true);
+            signRoot = gameObject;
         }
 
         private void Awake()
@@ -45,8 +56,10 @@ namespace JuegoCriminal.World
             if (interactableObject == null)
                 interactableObject = GetComponent<InteractableObject>();
 
-            if (propertyVisual == null)
-                propertyVisual = GetComponentInChildren<PropertyVisual>();
+            if (signText == null)
+                signText = GetComponentInChildren<TMP_Text>(true);
+            if (signRoot == null)
+                signRoot = gameObject;
 
             EnsureServices();
         }
@@ -57,12 +70,18 @@ namespace JuegoCriminal.World
 
             if (_economy != null)
                 _economy.OnMoneyChanged += HandleMoneyChanged;
+
+            if (interactableObject != null)
+                interactableObject.AddInteractionListener(BuyFromInteraction);
         }
 
         private void OnDisable()
         {
             if (_economy != null)
                 _economy.OnMoneyChanged -= HandleMoneyChanged;
+
+            if (interactableObject != null)
+                interactableObject.RemoveInteractionListener(BuyFromInteraction);
         }
 
         private void Start()
@@ -73,10 +92,22 @@ namespace JuegoCriminal.World
         private void EnsureServices()
         {
             if (_economy == null)
-                _economy = FindAnyObjectByType<EconomyService>();
+            {
+                Bootstrapper app = Bootstrapper.Instance;
+                _economy = app != null ? app.EconomyService : null;
+
+                if (_economy == null)
+                    _economy = FindAnyObjectByType<EconomyService>();
+            }
 
             if (_properties == null)
-                _properties = FindAnyObjectByType<PropertyService>();
+            {
+                Bootstrapper app = Bootstrapper.Instance;
+                _properties = app != null ? app.PropertyService : null;
+
+                if (_properties == null)
+                    _properties = FindAnyObjectByType<PropertyService>();
+            }
         }
 
         private void HandleMoneyChanged(int money)
@@ -131,13 +162,8 @@ namespace JuegoCriminal.World
             int money = _economy != null ? _economy.Money : 0;
             bool canAfford = money >= price;
 
-            if (propertyVisual != null)
-            {
-                if (owned)
-                    propertyVisual.ShowSold();
-                else
-                    propertyVisual.ShowForSale();
-            }
+            if (owned) ShowSold();
+            else ShowForSale();
 
             if (interactableObject == null)
                 return;
@@ -162,6 +188,36 @@ namespace JuegoCriminal.World
                 interactableObject.SetInteractionText($"{needMoneyText} ${price}");
                 interactableObject.SetCanInteract(false);
             }
+        }
+
+        private void ShowForSale()
+        {
+            StopHideRoutine();
+            if (signRoot != null) signRoot.SetActive(true);
+            if (signText != null) signText.text = forSaleLabel;
+        }
+
+        private void ShowSold()
+        {
+            StopHideRoutine();
+            if (signRoot != null) signRoot.SetActive(true);
+            if (signText != null) signText.text = soldLabel;
+            if (hideAfterSoldSeconds > 0f)
+                _hideRoutine = StartCoroutine(HideAfterSoldDelay());
+        }
+
+        private IEnumerator HideAfterSoldDelay()
+        {
+            yield return new WaitForSeconds(hideAfterSoldSeconds);
+            if (signRoot != null) signRoot.SetActive(false);
+            _hideRoutine = null;
+        }
+
+        private void StopHideRoutine()
+        {
+            if (_hideRoutine == null) return;
+            StopCoroutine(_hideRoutine);
+            _hideRoutine = null;
         }
     }
 }

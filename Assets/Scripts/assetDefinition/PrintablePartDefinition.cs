@@ -1,4 +1,5 @@
 using UnityEngine;
+using JuegoCriminal.Inventory;
 
 namespace JuegoCriminal.Printing
 {
@@ -6,14 +7,9 @@ namespace JuegoCriminal.Printing
         fileName = "Part_New",
         menuName = "Juego Criminal/Printing/Printable Part"
     )]
-    public sealed class PrintablePartDefinition : ScriptableObject
+    public sealed class PrintablePartDefinition : InventoryItemDefinition
     {
-        [Header("Identity")]
-        [SerializeField] private string id = "part_new";
-        [SerializeField] private string displayName = "New Part";
-
         [Header("Visuals")]
-        [SerializeField] private Sprite inventorySprite;
         [SerializeField] private Sprite printerPreviewSprite;
 
         [Header("Prefab")]
@@ -33,10 +29,6 @@ namespace JuegoCriminal.Printing
         [Min(0f)]
         [SerializeField] private float materialCost = 0.5f;
 
-        public string Id => id;
-        public string DisplayName => displayName;
-
-        public Sprite InventorySprite => inventorySprite;
         public Sprite PrinterPreviewSprite => printerPreviewSprite;
 
         public GameObject PrintedPartPrefab => printedPartPrefab;

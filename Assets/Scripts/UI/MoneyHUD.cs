@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using JuegoCriminal.Services;
+using JuegoCriminal.Core;
 
 namespace JuegoCriminal.UI
 {
@@ -12,7 +13,11 @@ namespace JuegoCriminal.UI
 
         private void Awake()
         {
-            _economy = FindAnyObjectByType<EconomyService>();
+            Bootstrapper app = Bootstrapper.Instance;
+            _economy = app != null ? app.EconomyService : null;
+
+            if (_economy == null)
+                _economy = FindAnyObjectByType<EconomyService>();
             if (_economy != null)
                 _economy.OnMoneyChanged += UpdateText;
         }

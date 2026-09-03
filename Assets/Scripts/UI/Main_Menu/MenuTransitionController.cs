@@ -13,6 +13,9 @@ namespace JuegoCriminal.UI
         [SerializeField] private float buttonHideDuration = 0.12f;
         [SerializeField] private float buttonSlideX = 40f;
 
+        [Header("Initial Entrance")]
+        [SerializeField] private bool animateMainButtonsOnStart = true;
+
         [Header("Slots Panel")]
         [SerializeField] private GameObject slotsPanelRoot;
         [SerializeField] private SlotsPanelUI slotsPanelUI;
@@ -41,12 +44,17 @@ namespace JuegoCriminal.UI
         [SerializeField] private RectTransform newGamePanelRect;
         [SerializeField] private CanvasGroup newGamePanelGroup;
 
-        [Tooltip("Posici髇 Y exacta desde la que entra y hacia la que sale el NewGamePanel.")]
+        [Tooltip("Posici贸n Y exacta desde la que entra y hacia la que sale el NewGamePanel.")]
         [SerializeField] private float newGameOffscreenY = 900f;
 
         [SerializeField] private float newGameEnterDuration = 0.28f;
         [SerializeField, Range(0f, 0.95f)] private float newGameFadeStartAt = 0.55f;
         [SerializeField, Range(0f, 0.95f)] private float newGameFadeOutStartAt = 0.15f;
+
+        [Header("Options Panel")]
+        [SerializeField] private float optionsButtonOffscreenY = 140f;
+        [SerializeField] private float optionsButtonDuration = 0.18f;
+        [SerializeField] private float optionsButtonStagger = 0.06f;
 
         private Vector2 _scrollFinalPos;
         private Vector2 _backFinalPos;
@@ -55,6 +63,8 @@ namespace JuegoCriminal.UI
         private Vector2 _newGameFinalPos;
 
         private Vector3[] _mainButtonsBaseLocalPos;
+        private readonly System.Collections.Generic.Dictionary<Transform, Vector3>
+            _optionsButtonBaseLocalPos = new();
 
         private bool _isTransitioning;
 
@@ -63,6 +73,9 @@ namespace JuegoCriminal.UI
             CachePositions();
             CacheCanvasGroups();
             CacheMainButtonPositions();
+
+            if (animateMainButtonsOnStart)
+                PrepareMainButtonsForEntrance();
 
             if (slotsPanelRoot != null)
                 slotsPanelRoot.SetActive(false);
@@ -88,6 +101,12 @@ namespace JuegoCriminal.UI
             SetCanvasGroup(backButtonGroup, 0f, false);
             SetCanvasGroup(loadButtonGroup, 0f, false);
             SetCanvasGroup(deleteButtonGroup, 0f, false);
+        }
+
+        private void Start()
+        {
+            if (animateMainButtonsOnStart)
+                StartCoroutine(InitialMainButtonsRoutine());
         }
 
         private void OnDestroy()
@@ -149,6 +168,37 @@ namespace JuegoCriminal.UI
             }
         }
 
+        private void PrepareMainButtonsForEntrance()
+        {
+            for (int i = 0; i < mainButtons.Length; i++)
+            {
+                CanvasGroup button = mainButtons[i];
+                if (button == null)
+                    continue;
+
+                button.transform.localPosition =
+                    _mainButtonsBaseLocalPos[i] + new Vector3(buttonSlideX, 0f, 0f);
+
+                SetCanvasGroup(button, 0f, false);
+            }
+        }
+
+        private IEnumerator InitialMainButtonsRoutine()
+        {
+            _isTransitioning = true;
+
+            for (int i = 0; i < mainButtons.Length; i++)
+            {
+                if (mainButtons[i] != null)
+                    StartCoroutine(FadeAndSlideIn(mainButtons[i], buttonHideDuration, buttonSlideX));
+
+                yield return WaitUnscaled(buttonHideStagger);
+            }
+
+            yield return WaitUnscaled(buttonHideDuration);
+            _isTransitioning = false;
+        }
+
         public void TransitionToLoadGame()
         {
             Debug.Log("[MenuTransition] TransitionToLoadGame called");
@@ -187,6 +237,121 @@ namespace JuegoCriminal.UI
                 return;
 
             StartCoroutine(BackFromNewGameRoutine());
+        }
+
+        public void TransitionToOptions(GameObject optionsPanel)
+        {
+            if (_isTransitioning || optionsPanel == null)
+                return;
+
+            StartCoroutine(OptionsRoutine(optionsPanel));
+        }
+
+        public void TransitionBackFromOptions(GameObject optionsPanel)
+        {
+            if (_isTransitioning || optionsPanel == null)
+                return;
+
+            StartCoroutine(BackFromOptionsRoutine(optionsPanel));
+        }
+
+        private IEnumerator OptionsRoutine(GameObject optionsPanel)
+        {
+            _isTransitioning = true;
+
+            for (int i = 0; i < mainButtons.Length; i++)
+            {
+                if (mainButtons[i] != null)
+                    StartCoroutine(FadeAndSlideOut(mainButtons[i], buttonHideDuration, buttonSlideX));
+
+                yield return WaitUnscaled(buttonHideStagger);
+            }
+
+            optionsPanel.SetActive(true);
+            CanvasGroup[] optionButtons = GetButtonCanvasGroups(optionsPanel);
+            Vector3[] finalPositions = GetOptionsButtonBasePositions(optionButtons);
+
+            // Todos deben estar preparados antes del primer yield. Si se hiciera
+            // dentro del bucle escalonado, los botones pendientes ser铆an visibles
+            // durante unos fotogramas en su posici贸n final.
+            for (int i = 0; i < optionButtons.Length; i++)
+            {
+                optionButtons[i].transform.localPosition =
+                    finalPositions[i] + Vector3.up * optionsButtonOffscreenY;
+                SetCanvasGroup(optionButtons[i], 0f, false);
+            }
+
+            for (int i = 0; i < optionButtons.Length; i++)
+            {
+                StartCoroutine(FadeAndSlideVertical(
+                    optionButtons[i],
+                    finalPositions[i] + Vector3.up * optionsButtonOffscreenY,
+                    finalPositions[i],
+                    0f,
+                    1f,
+                    optionsButtonDuration,
+                    true));
+
+                yield return WaitUnscaled(optionsButtonStagger);
+            }
+
+            yield return WaitUnscaled(optionsButtonDuration);
+            _isTransitioning = false;
+        }
+
+        private IEnumerator BackFromOptionsRoutine(GameObject optionsPanel)
+        {
+            _isTransitioning = true;
+
+            CanvasGroup[] optionButtons = GetButtonCanvasGroups(optionsPanel);
+            Vector3[] finalPositions = GetOptionsButtonBasePositions(optionButtons);
+
+            for (int i = 0; i < optionButtons.Length; i++)
+            {
+                optionButtons[i].transform.localPosition = finalPositions[i];
+                SetCanvasGroup(optionButtons[i], 1f, false);
+            }
+
+            for (int i = optionButtons.Length - 1; i >= 0; i--)
+            {
+                StartCoroutine(FadeAndSlideVertical(
+                    optionButtons[i],
+                    finalPositions[i],
+                    finalPositions[i] + Vector3.up * optionsButtonOffscreenY,
+                    1f,
+                    0f,
+                    optionsButtonDuration,
+                    false));
+
+                yield return WaitUnscaled(optionsButtonStagger);
+            }
+
+            yield return WaitUnscaled(optionsButtonDuration);
+
+            // La salida termina arriba, pero esa posici贸n es 煤nicamente visual.
+            // Restauramos la posici贸n real antes de desactivar el panel para que
+            // nunca se acumule el desplazamiento en la siguiente apertura.
+            for (int i = 0; i < optionButtons.Length; i++)
+            {
+                optionButtons[i].transform.localPosition = finalPositions[i];
+                SetCanvasGroup(optionButtons[i], 0f, false);
+            }
+
+            optionsPanel.SetActive(false);
+
+            MainMenuUI menu = FindAnyObjectByType<MainMenuUI>();
+            if (menu != null)
+                menu.ShowMainButtons();
+
+            for (int i = 0; i < mainButtons.Length; i++)
+            {
+                if (mainButtons[i] != null)
+                    StartCoroutine(FadeAndSlideIn(mainButtons[i], buttonHideDuration, buttonSlideX));
+
+                yield return WaitUnscaled(buttonHideStagger);
+            }
+
+            _isTransitioning = false;
         }
 
         private IEnumerator NewGameRoutine(bool coop)
@@ -562,6 +727,80 @@ namespace JuegoCriminal.UI
             cg.interactable = false;
             cg.blocksRaycasts = false;
             cg.transform.localPosition = endPos;
+        }
+
+        private static CanvasGroup[] GetButtonCanvasGroups(GameObject panel)
+        {
+            Button[] buttons = panel.GetComponentsInChildren<Button>(false);
+            var groups = new System.Collections.Generic.List<CanvasGroup>(buttons.Length);
+
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                // Los botones internos de una categor铆a (por ejemplo, las teclas
+                // reasignables) no forman parte de la navegaci贸n de Options.
+                if (buttons[i].GetComponentInParent<ControlsMenuUI>() != null)
+                    continue;
+
+                CanvasGroup group = buttons[i].GetComponent<CanvasGroup>();
+                if (group == null)
+                    group = buttons[i].gameObject.AddComponent<CanvasGroup>();
+
+                groups.Add(group);
+            }
+
+            return groups.ToArray();
+        }
+
+        private Vector3[] GetOptionsButtonBasePositions(CanvasGroup[] groups)
+        {
+            var positions = new Vector3[groups.Length];
+
+            for (int i = 0; i < groups.Length; i++)
+            {
+                Transform buttonTransform = groups[i].transform;
+                if (!_optionsButtonBaseLocalPos.TryGetValue(buttonTransform, out Vector3 basePosition))
+                {
+                    basePosition = buttonTransform.localPosition;
+                    _optionsButtonBaseLocalPos.Add(buttonTransform, basePosition);
+                }
+
+                positions[i] = basePosition;
+            }
+
+            return positions;
+        }
+
+        private static IEnumerator FadeAndSlideVertical(
+            CanvasGroup group,
+            Vector3 startPosition,
+            Vector3 endPosition,
+            float startAlpha,
+            float endAlpha,
+            float duration,
+            bool interactableAtEnd)
+        {
+            if (group == null)
+                yield break;
+
+            group.transform.localPosition = startPosition;
+            group.alpha = startAlpha;
+            group.interactable = false;
+            group.blocksRaycasts = false;
+
+            float t = 0f;
+            while (t < 1f)
+            {
+                t += Time.unscaledDeltaTime / Mathf.Max(0.0001f, duration);
+                float s = Smooth01(t);
+                group.transform.localPosition = Vector3.Lerp(startPosition, endPosition, s);
+                group.alpha = Mathf.Lerp(startAlpha, endAlpha, s);
+                yield return null;
+            }
+
+            group.transform.localPosition = endPosition;
+            group.alpha = endAlpha;
+            group.interactable = interactableAtEnd;
+            group.blocksRaycasts = interactableAtEnd;
         }
 
         private static void SetAlpha(CanvasGroup group, float alpha)
