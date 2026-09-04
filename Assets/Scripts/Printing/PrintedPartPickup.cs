@@ -13,7 +13,12 @@ namespace JuegoCriminal.Printing
         private InventoryItemDefinition _item;
         private bool _pickedUp;
 
-        public void Initialize(InventoryItemDefinition item, WorldPromptUI promptPrefab, Action onPickedUp)
+        public void Initialize(
+            InventoryItemDefinition item,
+            WorldPromptUI promptPrefab,
+            string promptText,
+            float promptExtraHeight,
+            Action onPickedUp)
         {
             _item = item;
             _onPickedUp = onPickedUp;
@@ -23,8 +28,8 @@ namespace JuegoCriminal.Printing
             if (interactable == null)
                 interactable = gameObject.AddComponent<InteractableObject>();
 
-            interactable.ConfigureRuntime("Pick Up", promptPrefab, PickUp);
-            interactable.UseOwnFallbackPromptAnchor(0.03f);
+            interactable.ConfigureRuntime(promptText, promptPrefab, PickUp);
+            interactable.UseOwnFallbackPromptAnchor(promptExtraHeight);
         }
 
         private void PickUp()

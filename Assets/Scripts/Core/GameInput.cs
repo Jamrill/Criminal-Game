@@ -23,12 +23,14 @@ namespace JuegoCriminal.Core
         private const string BindingOverridesKey = "input.bindingOverrides";
         private static bool _overridesLoaded;
         private static bool _missingAssetLogged;
+        private static int _pauseConsumedFrame = -1;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetRuntimeState()
         {
             _overridesLoaded = false;
             _missingAssetLogged = false;
+            _pauseConsumedFrame = -1;
         }
 
         public static Vector2 Move => ReadVector2(GameInputAction.Move);
@@ -38,10 +40,16 @@ namespace JuegoCriminal.Core
         public static bool JumpPressed => WasPressedThisFrame(GameInputAction.Jump);
         public static bool SprintHeld => IsPressed(GameInputAction.Sprint);
         public static bool InteractPressed => WasPressedThisFrame(GameInputAction.Interact);
-        public static bool PausePressed => WasPressedThisFrame(GameInputAction.Pause);
+        public static bool PausePressed =>
+            _pauseConsumedFrame != Time.frameCount && WasPressedThisFrame(GameInputAction.Pause);
         public static bool SwitchTargetPressed => WasPressedThisFrame(GameInputAction.SwitchTarget);
         public static bool SwitchShoulderPressed => WasPressedThisFrame(GameInputAction.SwitchShoulder);
         public static bool InventoryPressed => WasPressedThisFrame(GameInputAction.Inventory);
+
+        public static void ConsumePausePress()
+        {
+            _pauseConsumedFrame = Time.frameCount;
+        }
 
         public static bool IsLookFromPointer
         {

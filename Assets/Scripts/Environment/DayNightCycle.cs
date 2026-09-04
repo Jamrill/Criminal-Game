@@ -90,7 +90,11 @@ namespace JuegoCriminal.Environment
             if (_mainCamera == null)
                 _mainCamera = Camera.main;
             if (_mainCamera != null)
+            {
                 _mainCamera.backgroundColor = skyColor;
+                PositionCelestialVisual(sun, "Sun Visual");
+                PositionCelestialVisual(moon, "Moon Visual");
+            }
 
             if (clockText != null)
             {
@@ -98,6 +102,16 @@ namespace JuegoCriminal.Environment
                 int minutes = Mathf.FloorToInt((_currentHour - hours) * 60f);
                 clockText.SetText("{0:00}:{1:00}", hours, minutes);
             }
+        }
+
+        private void PositionCelestialVisual(Light source, string childName)
+        {
+            if (source == null || _mainCamera == null)
+                return;
+
+            Transform visual = source.transform.Find(childName);
+            if (visual != null)
+                visual.position = _mainCamera.transform.position - source.transform.forward * 180f;
         }
     }
 }

@@ -245,7 +245,10 @@ namespace JuegoCriminal.Player
             bool hasManualAnchor = _current.HasPromptAnchor();
 
             _prompt.gameObject.SetActive(true);
-            _prompt.Attach(anchor, _cam, hasManualAnchor);
+            if (_current.UsesDirectFallbackPromptPosition())
+                _prompt.AttachDirectBillboard(anchor, _cam);
+            else
+                _prompt.Attach(anchor, _cam, hasManualAnchor);
 
             RefreshPromptVisuals();
         }

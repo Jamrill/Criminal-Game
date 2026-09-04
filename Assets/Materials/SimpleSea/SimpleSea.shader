@@ -12,6 +12,14 @@ Shader "Juego Criminal/Simple Sea"
         _RippleStrength("Small Ripple Strength", Range(0, 1)) = 0.22
         _RippleScale("Small Ripple Scale", Range(0.2, 8)) = 2.4
         _RippleSpeed("Small Ripple Speed", Range(0, 5)) = 1.3
+        [Normal] _NormalMap("Surface Normal", 2D) = "bump" {}
+        _NormalTiling("Normal Tiling", Range(0.02, 2)) = 0.28
+        _NormalStrength("Normal Strength", Range(0, 2)) = 0.75
+        _NormalSpeed("Normal Speed", Range(0, 1)) = 0.08
+        [HDR] _FoamColor("Foam Color", Color) = (0.9, 0.97, 1, 1)
+        _FoamAmount("Foam Amount", Range(0, 2)) = 0.9
+        _FoamThreshold("Foam Crest Threshold", Range(0.45, 0.95)) = 0.68
+        _FoamSharpness("Foam Sharpness", Range(1, 20)) = 8
         _Smoothness("Smoothness", Range(0, 1)) = 0.72
         _Alpha("Alpha", Range(0, 1)) = 0.92
     }
@@ -43,6 +51,9 @@ Shader "Juego Criminal/Simple Sea"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
 
+            TEXTURE2D(_NormalMap);
+            SAMPLER(sampler_NormalMap);
+
             CBUFFER_START(UnityPerMaterial)
                 half4 _DeepColor;
                 half4 _ShallowColor;
@@ -54,6 +65,14 @@ Shader "Juego Criminal/Simple Sea"
                 float _RippleStrength;
                 float _RippleScale;
                 float _RippleSpeed;
+                float4 _NormalMap_ST;
+                float _NormalTiling;
+                float _NormalStrength;
+                float _NormalSpeed;
+                half4 _FoamColor;
+                float _FoamAmount;
+                float _FoamThreshold;
+                float _FoamSharpness;
                 half _Smoothness;
                 half _Alpha;
             CBUFFER_END
@@ -61,6 +80,7 @@ Shader "Juego Criminal/Simple Sea"
             struct Attributes
             {
                 float4 positionOS : POSITION;
+                float2 uv : TEXCOORD0;
             };
 
             struct Varyings
@@ -70,37 +90,39 @@ Shader "Juego Criminal/Simple Sea"
                 half3 normalWS : TEXCOORD1;
                 half fogFactor : TEXCOORD2;
                 half waveFactor : TEXCOORD3;
+                float2 uv : TEXCOORD4;
+                half foamFactor : TEXCOORD5;
             };
+
+            float WavePacket(float2 position, float2 direction, float frequency,
+                float speed, float packetScale, float phaseOffset, float time)
+            {
+                float2 crestDirection = float2(-direction.y, direction.x);
+                float forward = dot(position, direction);
+                float across = dot(position, crestDirection);
+                float packetTime = _Time.y * _VariationSpeed;
+
+                // Long envelopes break each crest into natural, elongated sections.
+                float packetPattern = 0.5 + 0.5 * sin(across * packetScale + packetTime * 0.19 + phaseOffset);
+                packetPattern += sin(across * packetScale * 0.41 - packetTime * 0.11 + phaseOffset * 1.7) * 0.16;
+                float envelope = smoothstep(0.24, 0.68, packetPattern);
+                envelope = lerp(1.0, envelope, _WaveVariation);
+
+                float spacing = sin(forward * 0.074 + packetTime * 0.27 + phaseOffset) * 1.7;
+                float crestPhase = forward * frequency + time * speed + spacing * _WaveVariation;
+                float crest = sin(crestPhase) + sin(crestPhase * 1.93 + phaseOffset) * 0.12;
+                return crest * envelope;
+            }
 
             float GetWaveHeight(float2 position, float time)
             {
-                const float2 travelDirection = float2(0.923, 0.385);
-                const float2 crestDirection = float2(-0.385, 0.923);
-                float forward = dot(position, travelDirection);
-                float across = dot(position, crestDirection);
-                float variationTime = _Time.y * _VariationSpeed;
-                float variationCycle = 0.76 + 0.24 * sin(variationTime * 0.73);
-                variationCycle += 0.10 * sin(variationTime * 0.29 + 2.1);
-                float dynamicVariation = _WaveVariation * saturate(variationCycle);
-
-                // The phase warp changes the gap between consecutive crests.
-                // Lateral warp bends the crest lines without breaking them into bumps.
-                float spacingWarp = sin(forward * 0.11 + variationTime * 0.42) * 3.5;
-                spacingWarp += sin(forward * 0.037 - variationTime * 0.23) * 1.5;
-                float lateralWarp = sin(across * 0.075 + variationTime * 0.43) * 0.6;
-                float phase = forward * _WaveFrequency + time;
-                phase += (spacingWarp + lateralWarp) * dynamicVariation;
-
-                float wave = sin(phase) * 0.67;
-                wave += sin(phase * 0.51 - time * 0.16 + variationTime * 0.12 + 1.7) * 0.24;
-                wave += sin(phase * 1.86 + time * 0.21 - variationTime * 0.19) * 0.09;
-
-                // Every wave remains visible; only its height changes from one group to another.
-                float groupPattern = sin(forward * 0.083 - variationTime * 0.37);
-                groupPattern += sin(forward * 0.031 + variationTime * 0.16 + 1.4) * 0.35;
-                groupPattern = saturate(groupPattern * 0.5 + 0.5);
-                float grouping = lerp(1.0, lerp(0.58, 1.42, groupPattern), dynamicVariation);
-                return wave * grouping * _WaveHeight;
+                float largeWave = WavePacket(position, normalize(float2(0.96, 0.28)),
+                    _WaveFrequency, 1.0, 0.062, 0.2, time) * 0.56;
+                float mediumWave = WavePacket(position, normalize(float2(0.88, 0.47)),
+                    _WaveFrequency * 1.48, 0.73, 0.093, 2.4, time) * 0.29;
+                float smallWave = WavePacket(position, normalize(float2(0.99, 0.12)),
+                    _WaveFrequency * 2.15, 1.31, 0.137, 4.7, time) * 0.15;
+                return (largeWave + mediumWave + smallWave) * _WaveHeight;
             }
 
             Varyings Vert(Attributes input)
@@ -108,23 +130,34 @@ Shader "Juego Criminal/Simple Sea"
                 Varyings output;
                 float3 positionOS = input.positionOS.xyz;
                 float time = _Time.y * _WaveSpeed;
-                float2 wavePosition = positionOS.xz;
+                float3 basePositionWS = TransformObjectToWorld(positionOS);
+                float2 wavePosition = basePositionWS.xz;
                 float height = GetWaveHeight(wavePosition, time);
-                positionOS.y += height;
+                basePositionWS.y += height;
+                positionOS = TransformWorldToObject(basePositionWS);
 
                 // Finite differences keep lighting consistent with all combined waves.
                 const float normalSampleDistance = 0.08;
                 float slopeX = (GetWaveHeight(wavePosition + float2(normalSampleDistance, 0), time) - height) / normalSampleDistance;
                 float slopeZ = (GetWaveHeight(wavePosition + float2(0, normalSampleDistance), time) - height) / normalSampleDistance;
-                float3 normalOS = normalize(float3(-slopeX, 1.0, -slopeZ));
+                float3 waveNormalWS = normalize(float3(-slopeX, 1.0, -slopeZ));
 
                 VertexPositionInputs positions = GetVertexPositionInputs(positionOS);
                 output.positionCS = positions.positionCS;
                 output.positionWS = positions.positionWS;
-                output.normalWS = TransformObjectToWorldNormal(normalOS);
+                output.normalWS = waveNormalWS;
                 output.fogFactor = ComputeFogFactor(positions.positionCS.z);
                 float colorRange = max(_WaveHeight, 0.001);
                 output.waveFactor = saturate(height / (colorRange * 2.0) + 0.5);
+                const float foamSampleDistance = 0.18;
+                const float2 primaryTravelDirection = float2(0.96, 0.28);
+                float heightAhead = GetWaveHeight(
+                    wavePosition + primaryTravelDirection * foamSampleDistance, time);
+                float forwardSlope = (heightAhead - height) / foamSampleDistance;
+                float crestMask = saturate((output.waveFactor - _FoamThreshold) * _FoamSharpness);
+                float leadingFace = smoothstep(-0.015, 0.12, forwardSlope);
+                output.foamFactor = crestMask * leadingFace;
+                output.uv = input.uv;
                 return output;
             }
 
@@ -142,15 +175,34 @@ Shader "Juego Criminal/Simple Sea"
                 rippleSlope *= _RippleStrength * 0.18;
                 normalWS = normalize(normalWS + half3(-rippleSlope.x, 0, -rippleSlope.y));
 
+                float2 normalUV = input.positionWS.xz * _NormalTiling;
+                float normalTime = _Time.y * _NormalSpeed;
+                half3 normalA = UnpackNormal(SAMPLE_TEXTURE2D(
+                    _NormalMap, sampler_NormalMap, normalUV + float2(normalTime, normalTime * 0.37)));
+                half3 normalB = UnpackNormal(SAMPLE_TEXTURE2D(
+                    _NormalMap, sampler_NormalMap, normalUV * 1.43 + float2(-normalTime * 0.61, normalTime * 0.83)));
+                half2 mappedSlope = (normalA.xy + normalB.xy) * 0.5h * _NormalStrength;
+                normalWS = normalize(normalWS + half3(mappedSlope.x, 0, mappedSlope.y));
+
                 Light mainLight = GetMainLight(TransformWorldToShadowCoord(input.positionWS));
                 half diffuse = saturate(dot(normalWS, mainLight.direction));
                 half3 viewDirection = SafeNormalize(GetWorldSpaceViewDir(input.positionWS));
                 half fresnel = pow(1.0h - saturate(dot(normalWS, viewDirection)), 4.0h);
+                half3 halfDirection = SafeNormalize(mainLight.direction + viewDirection);
+                half specularPower = lerp(18.0h, 140.0h, _Smoothness);
+                half specular = pow(saturate(dot(normalWS, halfDirection)), specularPower);
 
                 half3 baseColor = lerp(_DeepColor.rgb, _ShallowColor.rgb, input.waveFactor);
                 half3 lighting = mainLight.color * (0.35h + diffuse * 0.65h);
                 half3 color = baseColor * lighting;
                 color += fresnel * lerp(0.08h, 0.3h, _Smoothness);
+                color += specular * mainLight.color * lerp(0.12h, 0.65h, _Smoothness);
+                half foamNoise = SAMPLE_TEXTURE2D(
+                    _NormalMap, sampler_NormalMap, normalUV * 0.61 + float2(normalTime * 0.31, -normalTime * 0.24)).r;
+                half brokenFoam = smoothstep(0.24h, 0.72h, foamNoise + input.foamFactor * 0.58h);
+                half foam = saturate(input.foamFactor * brokenFoam * _FoamAmount);
+                half3 foamLighting = _FoamColor.rgb * (0.42h + mainLight.color * (0.25h + diffuse * 0.33h));
+                color = lerp(color, foamLighting, foam);
                 color = MixFog(color, input.fogFactor);
                 return half4(color, _Alpha);
             }

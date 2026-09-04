@@ -13,6 +13,8 @@ namespace JuegoCriminal.EditorTools
         private const string Folder = "Assets/Materials/SimpleSea";
         private const string ShaderPath = Folder + "/SimpleSea.shader";
         private const string MaterialPath = Folder + "/M_SimpleSea.mat";
+        private const string SurfaceTexturePath = Folder + "/Water texture.png";
+        private const string MoonMaterialPath = Folder + "/M_MoonDisc.mat";
         private const string MeshPath = Folder + "/M_SimpleSeaGrid.asset";
         private const string ScenePath = "Assets/Scenes/20_SimpleSea.unity";
 
@@ -83,15 +85,21 @@ namespace JuegoCriminal.EditorTools
                 return;
 
             SceneManager.SetActiveScene(seaScene);
+            Light sun = FindLight(seaScene, "Sun") ?? CreateSun();
+            Light moon = FindLight(seaScene, "Moon") ?? CreateMoon();
+            bool sceneChanged = RemoveGeneratedSunVisual(sun);
+            sceneChanged |= EnsureCelestialVisual(moon, "Moon Visual", MoonMaterialPath, new Color(0.72f, 0.82f, 1f), 10f);
+
             if (FindInScene<JuegoCriminal.Environment.DayNightCycle>(seaScene) == null)
             {
-                Light sun = FindLight(seaScene, "Sun") ?? CreateSun();
-                Light moon = FindLight(seaScene, "Moon") ?? CreateMoon();
                 TMP_Text clock = CreateClock();
                 CreateDayNightCycle(sun, moon, clock);
-                EditorSceneManager.SaveScene(seaScene);
+                sceneChanged = true;
                 Debug.Log("[SimpleSea] Day/night cycle added to 20_SimpleSea.");
             }
+
+            if (sceneChanged)
+                EditorSceneManager.SaveScene(seaScene);
 
             if (previousScene.IsValid() && previousScene.isLoaded)
                 SceneManager.SetActiveScene(previousScene);
@@ -142,6 +150,7 @@ namespace JuegoCriminal.EditorTools
             }
 
             Material material = AssetDatabase.LoadAssetAtPath<Material>(MaterialPath);
+            bool created = material == null;
             if (material == null)
             {
                 material = new Material(shader) { name = "M_SimpleSea" };
@@ -152,22 +161,34 @@ namespace JuegoCriminal.EditorTools
                 material.shader = shader;
             }
 
-            material.SetColor("_DeepColor", new Color(0.015f, 0.10f, 0.18f, 1f));
-            material.SetColor("_ShallowColor", new Color(0.04f, 0.48f, 0.52f, 1f));
-            material.SetFloat("_WaveHeight", 0.35f);
-            material.SetFloat("_WaveFrequency", 0.55f);
-            material.SetFloat("_WaveSpeed", 1.1f);
-            material.SetFloat("_WaveVariation", 1f);
-            material.SetFloat("_VariationSpeed", 0.45f);
-            material.SetFloat("_RippleStrength", 0.22f);
-            material.SetFloat("_RippleScale", 2.4f);
-            material.SetFloat("_RippleSpeed", 1.3f);
-            material.SetFloat("_Smoothness", 0.72f);
-            material.SetFloat("_Alpha", 0.92f);
-            material.enableInstancing = true;
-            EditorUtility.SetDirty(material);
+            if (created)
+            {
+                material.SetColor("_DeepColor", new Color(0.015f, 0.10f, 0.18f, 1f));
+                material.SetColor("_ShallowColor", new Color(0.04f, 0.48f, 0.52f, 1f));
+                material.SetFloat("_WaveHeight", 0.35f);
+                material.SetFloat("_WaveFrequency", 0.55f);
+                material.SetFloat("_WaveSpeed", 1.1f);
+                material.SetFloat("_WaveVariation", 1f);
+                material.SetFloat("_VariationSpeed", 0.45f);
+                material.SetFloat("_RippleStrength", 0.22f);
+                material.SetFloat("_RippleScale", 2.4f);
+                material.SetFloat("_RippleSpeed", 1.3f);
+                material.SetTexture("_NormalMap", AssetDatabase.LoadAssetAtPath<Texture2D>(SurfaceTexturePath));
+                material.SetFloat("_NormalTiling", 0.28f);
+                material.SetFloat("_NormalStrength", 0.75f);
+                material.SetFloat("_NormalSpeed", 0.08f);
+                material.SetColor("_FoamColor", new Color(0.9f, 0.97f, 1f, 1f));
+                material.SetFloat("_FoamAmount", 0.9f);
+                material.SetFloat("_FoamThreshold", 0.68f);
+                material.SetFloat("_FoamSharpness", 8f);
+                material.SetFloat("_Smoothness", 0.72f);
+                material.SetFloat("_Alpha", 0.92f);
+                material.enableInstancing = true;
+                EditorUtility.SetDirty(material);
+            }
             return material;
         }
+
 
         private static Mesh EnsureGridMesh()
         {
@@ -260,7 +281,57 @@ namespace JuegoCriminal.EditorTools
             moon.type = LightType.Directional;
             moon.color = new Color(0.38f, 0.48f, 0.78f);
             moon.intensity = 0.16f;
+            EnsureCelestialVisual(moon, "Moon Visual", MoonMaterialPath, new Color(0.72f, 0.82f, 1f), 10f);
             return moon;
+        }
+
+        private static bool EnsureCelestialVisual(Light light, string visualName, string materialPath, Color color, float size)
+        {
+            if (light == null || light.transform.Find(visualName) != null)
+                return false;
+
+            Material material = EnsureCelestialMaterial(materialPath, color);
+            GameObject visual = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            visual.name = visualName;
+            visual.transform.SetParent(light.transform, false);
+            visual.transform.localPosition = new Vector3(0f, 0f, -180f);
+            visual.transform.localScale = Vector3.one * size;
+            visual.GetComponent<MeshRenderer>().sharedMaterial = material;
+            Collider collider = visual.GetComponent<Collider>();
+            if (collider != null)
+                Object.DestroyImmediate(collider);
+            return true;
+        }
+
+        private static bool RemoveGeneratedSunVisual(Light sun)
+        {
+            if (sun == null)
+                return false;
+
+            Transform generatedVisual = sun.transform.Find("Sun Visual");
+            if (generatedVisual == null)
+                return false;
+
+            Object.DestroyImmediate(generatedVisual.gameObject);
+            return true;
+        }
+
+        private static Material EnsureCelestialMaterial(string path, Color color)
+        {
+            Material material = AssetDatabase.LoadAssetAtPath<Material>(path);
+            if (material != null)
+                return material;
+
+            Shader shader = Shader.Find("Universal Render Pipeline/Unlit");
+            if (shader == null)
+                shader = Shader.Find("Unlit/Color");
+            material = new Material(shader) { name = System.IO.Path.GetFileNameWithoutExtension(path) };
+            if (material.HasProperty("_BaseColor"))
+                material.SetColor("_BaseColor", color);
+            if (material.HasProperty("_Color"))
+                material.SetColor("_Color", color);
+            AssetDatabase.CreateAsset(material, path);
+            return material;
         }
 
         private static TMP_Text CreateClock()

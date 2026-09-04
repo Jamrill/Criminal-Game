@@ -30,9 +30,13 @@ namespace JuegoCriminal.Inventory
         private bool _interactorWasEnabled;
         private bool _cameraBoomWasEnabled;
         private GameObject _uiInstance;
+        private CanvasGroup _interactionGroup;
+        private bool _interactionBlocked;
 
         public RectTransform GridRoot => gridRoot;
         public float CellSize => cellSize;
+        public bool IsOpen => _open;
+        public bool IsInteractionBlocked => _interactionBlocked;
 
         private void Awake()
         {
@@ -40,6 +44,9 @@ namespace JuegoCriminal.Inventory
             if ((panelRoot == null || gridRoot == null) && uiPrefab != null)
                 CreateUIFromPrefab();
             if (panelRoot == null || gridRoot == null) CreateDevelopmentUI();
+            _interactionGroup = panelRoot.GetComponent<CanvasGroup>();
+            if (_interactionGroup == null)
+                _interactionGroup = panelRoot.AddComponent<CanvasGroup>();
             panelRoot.SetActive(false);
             if (inventory != null) inventory.Changed += Refresh;
         }
@@ -75,10 +82,23 @@ namespace JuegoCriminal.Inventory
         public void Close()
         {
             _open = false;
+            SetInteractionBlocked(false);
             panelRoot.SetActive(false);
             SetPlayerControl(true);
             Cursor.visible = _previousCursorVisible;
             Cursor.lockState = _previousCursorLock;
+        }
+
+        public void SetInteractionBlocked(bool blocked)
+        {
+            _interactionBlocked = blocked;
+            if (_interactionGroup == null && panelRoot != null)
+                _interactionGroup = panelRoot.GetComponent<CanvasGroup>();
+            if (_interactionGroup == null)
+                return;
+
+            _interactionGroup.interactable = !blocked;
+            _interactionGroup.blocksRaycasts = !blocked;
         }
 
         public void TryDrop(InventoryPlacement placement, Vector2 screenPosition, bool rotated)
@@ -104,6 +124,58 @@ namespace JuegoCriminal.Inventory
             InventoryItemDefinition item = inventory.Resolve(placement.itemId);
             if (item == null || !item.CanRotate
                 || !inventory.TryMove(placement.instanceId, placement.x, placement.y, !placement.rotated)) Refresh();
+        }
+
+        public bool CanRotate(InventoryPlacement placement)
+        {
+            InventoryItemDefinition item = placement != null ? inventory.Resolve(placement.itemId) : null;
+            return item != null && item.CanRotate;
+        }
+
+        public void UpdateDraggedItemVisual(InventoryPlacement placement, RectTransform itemRect, bool rotated)
+        {
+            InventoryItemDefinition item = placement != null ? inventory.Resolve(placement.itemId) : null;
+            if (item == null || itemRect == null)
+                return;
+
+            Vector2 draggedPosition = itemRect.anchoredPosition;
+            itemRect.sizeDelta = new Vector2(item.Width(rotated) * cellSize, item.Height(rotated) * cellSize);
+            itemRect.anchoredPosition = draggedPosition;
+
+            RectTransform[] children = itemRect.GetComponentsInChildren<RectTransform>(true);
+            int footprintIndex = 0;
+            for (int y = 0; y < item.Height(rotated); y++)
+            for (int x = 0; x < item.Width(rotated); x++)
+            {
+                if (!item.Occupies(x, y, rotated))
+                    continue;
+
+                RectTransform footprint = FindNextFootprint(children, ref footprintIndex);
+                if (footprint == null)
+                    continue;
+                SetGridRect(footprint, x, y, 1, 1);
+                footprint.sizeDelta -= Vector2.one * 5f;
+            }
+
+            for (int i = 0; i < children.Length; i++)
+            {
+                if (children[i].name != "Icon")
+                    continue;
+                children[i].sizeDelta = new Vector2(item.GridWidth * cellSize, item.GridHeight * cellSize) * itemIconScale;
+                children[i].localRotation = Quaternion.Euler(0f, 0f, rotated ? -90f : 0f);
+                break;
+            }
+        }
+
+        private static RectTransform FindNextFootprint(RectTransform[] children, ref int searchIndex)
+        {
+            while (searchIndex < children.Length)
+            {
+                RectTransform candidate = children[searchIndex++];
+                if (candidate.name.StartsWith("Footprint_"))
+                    return candidate;
+            }
+            return null;
         }
 
         public void Refresh()
@@ -172,6 +244,8 @@ namespace JuegoCriminal.Inventory
             icon.color = Color.white;
             icon.preserveAspect = true;
             icon.raycastTarget = false;
+
+            UpdateDraggedItemVisual(placement, rect, placement.rotated);
 
             go.GetComponent<InventoryItemViewUI>().Initialize(this, placement);
         }

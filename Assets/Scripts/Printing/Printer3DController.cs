@@ -15,6 +15,8 @@ namespace JuegoCriminal.Printing
     /// <summary>Coordina selección, ciclo de impresión y entrega del resultado.</summary>
     public sealed class Printer3DController : MonoBehaviour
     {
+        public static Printer3DController ActiveSelection { get; private set; }
+
         [Header("Configuration")]
         [SerializeField, Tooltip("Debe ser único para cada impresora colocada en una escena.")]
         private string persistenceId = "printer_01";
@@ -40,9 +42,14 @@ namespace JuegoCriminal.Printing
         [SerializeField] private Button backProjectButton;
         [SerializeField] private Button nextProjectButton;
         [SerializeField] private Button printProjectButton;
+        [SerializeField] private Button exitProjectButton;
         [Header("Prompt Text")]
         [SerializeField] private string idleText = "Print";
         [SerializeField] private string printingText = "Cancel?";
+        [Header("Completed Output Prompt")]
+        [SerializeField] private string pickupText = "Pick Up";
+        [SerializeField, Tooltip("Altura adicional respecto a la parte superior del objeto impreso. Admite valores negativos.")]
+        private float pickupPromptExtraHeight = -0.03f;
 
         private float _printTimer;
         private int _selectedPartIndex;
@@ -63,6 +70,7 @@ namespace JuegoCriminal.Printing
         public float PrintSpeedMultiplier => profile != null ? profile.PrintSpeedMultiplier : 1f;
         public int PrinterLevel => profile != null ? profile.PrinterLevel : 1;
         public string PersistenceId => persistenceId;
+        public bool IsSelecting => _isSelecting;
 
         private enum SavedStatus { Idle, Printing, Completed }
 
@@ -92,12 +100,18 @@ namespace JuegoCriminal.Printing
 
         private void Start() => RestoreFromSave();
 
-        private void OnDestroy() => RemoveButtonListeners();
+        private void OnDestroy()
+        {
+            if (ActiveSelection == this)
+                ActiveSelection = null;
+            RemoveButtonListeners();
+        }
 
         private void Update()
         {
             if (_isSelecting && GameInput.PausePressed)
             {
+                GameInput.ConsumePausePress();
                 CloseProjectSelection();
                 return;
             }
@@ -129,6 +143,7 @@ namespace JuegoCriminal.Printing
             }
 
             _isSelecting = true;
+            ActiveSelection = this;
             _previousCursorVisible = Cursor.visible;
             _previousCursorLockMode = Cursor.lockState;
             Cursor.visible = true;
@@ -146,6 +161,8 @@ namespace JuegoCriminal.Printing
         {
             if (!_isSelecting) return;
             _isSelecting = false;
+            if (ActiveSelection == this)
+                ActiveSelection = null;
 
             if (_cameraTransition != null) StopCoroutine(_cameraTransition);
             _cameraTransition = StartCoroutine(ExitPrinterCameraRoutine());
@@ -430,6 +447,8 @@ namespace JuegoCriminal.Printing
             pickup.Initialize(
                 _currentPart,
                 interactableObject != null ? interactableObject.GetPromptPrefab() : null,
+                pickupText,
+                pickupPromptExtraHeight,
                 OnOutputPickedUp);
         }
 
@@ -541,6 +560,7 @@ namespace JuegoCriminal.Printing
             if (backProjectButton != null) backProjectButton.onClick.AddListener(SelectPreviousPart);
             if (nextProjectButton != null) nextProjectButton.onClick.AddListener(SelectNextPart);
             if (printProjectButton != null) printProjectButton.onClick.AddListener(ConfirmSelectedPartAndPrint);
+            if (exitProjectButton != null) exitProjectButton.onClick.AddListener(CloseProjectSelection);
         }
 
         private void RemoveButtonListeners()
@@ -548,6 +568,7 @@ namespace JuegoCriminal.Printing
             if (backProjectButton != null) backProjectButton.onClick.RemoveListener(SelectPreviousPart);
             if (nextProjectButton != null) nextProjectButton.onClick.RemoveListener(SelectNextPart);
             if (printProjectButton != null) printProjectButton.onClick.RemoveListener(ConfirmSelectedPartAndPrint);
+            if (exitProjectButton != null) exitProjectButton.onClick.RemoveListener(CloseProjectSelection);
         }
     }
 }

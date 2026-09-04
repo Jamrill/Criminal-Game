@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using JuegoCriminal.Services;
 using JuegoCriminal.Core;
+using JuegoCriminal.Printing;
+using JuegoCriminal.Inventory;
 
 namespace JuegoCriminal.UI
 {
@@ -14,6 +16,7 @@ namespace JuegoCriminal.UI
         [SerializeField] private Button loadButton;
         [SerializeField] private Button optionsButton;
         [SerializeField] private Button quitButton;
+        [SerializeField] private int pauseCanvasSortingOrder = 100;
 
         [Header("Shared menu prefabs")]
         [SerializeField] private GameObject optionsPanelPrefab;
@@ -60,6 +63,13 @@ namespace JuegoCriminal.UI
 
             if (panel != null) panel.SetActive(false);
 
+            Canvas pauseCanvas = panel != null ? panel.GetComponentInParent<Canvas>() : GetComponentInParent<Canvas>();
+            if (pauseCanvas != null)
+            {
+                pauseCanvas.overrideSorting = true;
+                pauseCanvas.sortingOrder = pauseCanvasSortingOrder;
+            }
+
             if (saveButton != null) saveButton.onClick.AddListener(SaveGame);
             if (loadButton != null) loadButton.onClick.AddListener(LoadGame);
             if (optionsButton != null) optionsButton.onClick.AddListener(OpenOptions);
@@ -80,6 +90,14 @@ namespace JuegoCriminal.UI
         {
             if (GameInput.PausePressed)
             {
+                Printer3DController activePrinter = Printer3DController.ActiveSelection;
+                if (activePrinter != null && activePrinter.IsSelecting)
+                {
+                    GameInput.ConsumePausePress();
+                    activePrinter.CloseProjectSelection();
+                    return;
+                }
+
                 if (_overlayOpen)
                     CloseOverlay();
                 else
@@ -96,9 +114,12 @@ namespace JuegoCriminal.UI
 
             Time.timeScale = show ? 0f : 1f;
 
-            // Cursor
-            Cursor.lockState = show ? CursorLockMode.None : CursorLockMode.Locked;
-            Cursor.visible = show;
+            InventoryMenuUI inventoryMenu = FindAnyObjectByType<InventoryMenuUI>();
+            if (inventoryMenu != null && inventoryMenu.IsOpen)
+                inventoryMenu.SetInteractionBlocked(show);
+            bool inventoryRemainsOpen = !show && inventoryMenu != null && inventoryMenu.IsOpen;
+            Cursor.lockState = show || inventoryRemainsOpen ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = show || inventoryRemainsOpen;
         }
 
         private void SaveGame()

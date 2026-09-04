@@ -21,6 +21,7 @@ namespace JuegoCriminal.UI
         private Transform _follow;
         private Camera _cam;
         private bool _useAnchorTransform;
+        private bool _applyWorldOffset = true;
 
         private void Awake()
         {
@@ -45,6 +46,15 @@ namespace JuegoCriminal.UI
             _follow = follow;
             _cam = cam;
             _useAnchorTransform = useAnchorTransform;
+            _applyWorldOffset = !useAnchorTransform;
+        }
+
+        public void AttachDirectBillboard(Transform follow, Camera cam)
+        {
+            _follow = follow;
+            _cam = cam;
+            _useAnchorTransform = false;
+            _applyWorldOffset = false;
         }
 
         public void SetIcon(Sprite primarysprite, Sprite SecondarySprite)
@@ -96,7 +106,7 @@ namespace JuegoCriminal.UI
                 return;
             }
 
-            transform.position = _follow.position + worldOffset;
+            transform.position = _follow.position + (_applyWorldOffset ? worldOffset : Vector3.zero);
 
             if (_cam != null)
                 transform.forward = (transform.position - _cam.transform.position).normalized;

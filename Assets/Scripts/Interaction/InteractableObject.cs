@@ -38,6 +38,7 @@ namespace JuegoCriminal.Interaction
         [SerializeField] private bool debugLogs;
 
         private Transform _fallbackPromptAnchor;
+        private bool _useDirectFallbackPromptPosition;
 
         private void Reset()
         {
@@ -167,6 +168,11 @@ namespace JuegoCriminal.Interaction
             return promptAnchors != null && promptAnchors.Length > 0;
         }
 
+        public bool UsesDirectFallbackPromptPosition()
+        {
+            return _useDirectFallbackPromptPosition;
+        }
+
         public void SetInteractionText(string newText)
         {
             interactionText = newText;
@@ -186,8 +192,12 @@ namespace JuegoCriminal.Interaction
         {
             promptAnchors = null;
             createFallbackAnchorAboveObject = true;
-            fallbackExtraHeight = Mathf.Max(0f, extraHeight);
-            CreateOrUpdateFallbackAnchor();
+            fallbackExtraHeight = extraHeight;
+            Transform anchor = CreateOrUpdateFallbackAnchor();
+            // Runtime pickup prompts must use the calculated anchor directly.
+            // Otherwise WorldPromptUI adds its generic prefab offset on top.
+            promptAnchors = new[] { anchor };
+            _useDirectFallbackPromptPosition = true;
         }
 
         public void ConfigureRuntime(
@@ -208,7 +218,10 @@ namespace JuegoCriminal.Interaction
                 onInteract.AddListener(interactionCallback);
 
             if (sharedPromptAnchors != null && sharedPromptAnchors.Length > 0)
+            {
                 promptAnchors = (Transform[])sharedPromptAnchors.Clone();
+                _useDirectFallbackPromptPosition = false;
+            }
 
             EnsureInteractableLayer();
         }
