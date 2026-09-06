@@ -1,0 +1,61 @@
+{
+  "name": "Velaro GT",
+  "triangles": 28788,
+  "vertices": 15531,
+  "mesh_objects": 10,
+  "materials": 9,
+  "textures": 0,
+  "units": "meters",
+  "blender_forward": "-Y",
+  "unity_forward": "+Z",
+  "parts": {
+    "Door_L": {
+      "pivot_blender": [
+        -0.8997751474380493,
+        -0.625,
+        0.8899999856948853
+      ],
+      "axis": 2,
+      "degrees": 65
+    },
+    "Door_R": {
+      "pivot_blender": [
+        0.8997751474380493,
+        -0.625,
+        0.8899999856948853
+      ],
+      "axis": 2,
+      "degrees": -65
+    },
+    "Hood": {
+      "pivot_blender": [
+        0.0,
+        -0.6850000023841858,
+        0.8849999904632568
+      ],
+      "axis": 0,
+      "degrees": -62
+    },
+    "Trunk": {
+      "pivot_blender": [
+        0.0,
+        1.434999942779541,
+        0.9399999976158142
+      ],
+      "axis": 0,
+      "degrees": 70
+    }
+  },
+  "mesh_breakdown": {
+    "Body_Interior": 16080,
+    "Door_L_Mesh": 1054,
+    "Door_R_Mesh": 1054,
+    "Hood_Mesh": 1280,
+    "Trunk_Mesh": 760,
+    "Wheel_FL_Mesh": 1744,
+    "Wheel_FR_Mesh": 1744,
+    "Wheel_RL_Mesh": 1744,
+    "Wheel_RR_Mesh": 1744,
+    "Engine_Assembly_Mesh": 1584
+  }
+}

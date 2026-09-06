@@ -1,0 +1,1524 @@
+{
+  "checks": [
+    {
+      "name": "source/root_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/mesh_count_10",
+      "passed": true,
+      "severity": "error",
+      "details": 10
+    },
+    {
+      "name": "source/triangle_budget",
+      "passed": true,
+      "severity": "error",
+      "details": 28988
+    },
+    {
+      "name": "source/finite_geometry",
+      "passed": true,
+      "severity": "error",
+      "details": 15635
+    },
+    {
+      "name": "source/realistic_dimensions",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "width_m": 2.2200000286102295,
+        "length_m": 5.050000190734863,
+        "height_m": 1.3799993991851807
+      }
+    },
+    {
+      "name": "source/Wheel_FL_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Wheel_FL_parent",
+      "passed": true,
+      "severity": "error",
+      "details": "Velaro_GT"
+    },
+    {
+      "name": "source/Wheel_FL_centre",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -0.8999999761581421,
+        -1.399999976158142,
+        0.36000001430511475
+      ]
+    },
+    {
+      "name": "source/Wheel_FL_mesh_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Wheel_FL_mesh_origin",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -0.8999999761581421,
+        -1.399999976158142,
+        0.36000001430511475
+      ]
+    },
+    {
+      "name": "source/Wheel_FL_geometry_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -1.399999976158142,
+        0.35999998450279236
+      ]
+    },
+    {
+      "name": "source/Wheel_FR_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Wheel_FR_parent",
+      "passed": true,
+      "severity": "error",
+      "details": "Velaro_GT"
+    },
+    {
+      "name": "source/Wheel_FR_centre",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.8999999761581421,
+        -1.399999976158142,
+        0.36000001430511475
+      ]
+    },
+    {
+      "name": "source/Wheel_FR_mesh_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Wheel_FR_mesh_origin",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.8999999761581421,
+        -1.399999976158142,
+        0.36000001430511475
+      ]
+    },
+    {
+      "name": "source/Wheel_FR_geometry_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -1.399999976158142,
+        0.35999998450279236
+      ]
+    },
+    {
+      "name": "source/Wheel_RL_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Wheel_RL_parent",
+      "passed": true,
+      "severity": "error",
+      "details": "Velaro_GT"
+    },
+    {
+      "name": "source/Wheel_RL_centre",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -0.8999999761581421,
+        1.4500000476837158,
+        0.36000001430511475
+      ]
+    },
+    {
+      "name": "source/Wheel_RL_mesh_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Wheel_RL_mesh_origin",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -0.8999999761581421,
+        1.4500000476837158,
+        0.36000001430511475
+      ]
+    },
+    {
+      "name": "source/Wheel_RL_geometry_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        1.449999988079071,
+        0.35999998450279236
+      ]
+    },
+    {
+      "name": "source/Wheel_RR_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Wheel_RR_parent",
+      "passed": true,
+      "severity": "error",
+      "details": "Velaro_GT"
+    },
+    {
+      "name": "source/Wheel_RR_centre",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.8999999761581421,
+        1.4500000476837158,
+        0.36000001430511475
+      ]
+    },
+    {
+      "name": "source/Wheel_RR_mesh_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Wheel_RR_mesh_origin",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.8999999761581421,
+        1.4500000476837158,
+        0.36000001430511475
+      ]
+    },
+    {
+      "name": "source/Wheel_RR_geometry_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        1.449999988079071,
+        0.35999998450279236
+      ]
+    },
+    {
+      "name": "source/Door_L_pivot",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Door_L_hinge_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -0.8997751474380493,
+        -0.625,
+        0.8899999856948853
+      ]
+    },
+    {
+      "name": "source/Door_L_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Door_L_mesh_at_hinge",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Door_R_pivot",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Door_R_hinge_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.8997751474380493,
+        -0.625,
+        0.8899999856948853
+      ]
+    },
+    {
+      "name": "source/Door_R_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Door_R_mesh_at_hinge",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Hood_pivot",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Hood_hinge_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.0,
+        -0.6850000023841858,
+        0.8849999904632568
+      ]
+    },
+    {
+      "name": "source/Hood_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Hood_mesh_at_hinge",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Trunk_pivot",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Trunk_hinge_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.0,
+        1.434999942779541,
+        0.9399999976158142
+      ]
+    },
+    {
+      "name": "source/Trunk_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/Trunk_mesh_at_hinge",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/metres",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/animation_Door_L",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "closed_probe": [
+          -0.9,
+          0.95,
+          0.62
+        ],
+        "open_probe": [
+          -2.3273050785064697,
+          0.040419962257146835,
+          0.6200000047683716
+        ],
+        "delta": [
+          -1.4273051023483276,
+          -0.9095800518989563,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          65.00000067042492
+        ]
+      }
+    },
+    {
+      "name": "source/fixed_hinge_Door_L",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/animation_Door_R",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "closed_probe": [
+          0.9,
+          0.95,
+          0.62
+        ],
+        "open_probe": [
+          2.3273050785064697,
+          0.040419962257146835,
+          0.6200000047683716
+        ],
+        "delta": [
+          1.4273051023483276,
+          -0.9095800518989563,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          -65.00000067042492
+        ]
+      }
+    },
+    {
+      "name": "source/fixed_hinge_Door_R",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/animation_Hood",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "closed_probe": [
+          0,
+          -2.1,
+          0.83
+        ],
+        "open_probe": [
+          0.0,
+          -1.3978644609451294,
+          2.1085498332977295
+        ],
+        "delta": [
+          0.0,
+          0.702135443687439,
+          1.2785499095916748
+        ],
+        "rotation_degrees": [
+          -61.99999717184774,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "source/fixed_hinge_Hood",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/animation_Trunk",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "closed_probe": [
+          0,
+          2.1,
+          0.84
+        ],
+        "open_probe": [
+          0.0,
+          1.7564126253128052,
+          1.530693531036377
+        ],
+        "delta": [
+          0.0,
+          -0.3435872793197632,
+          0.6906935572624207
+        ],
+        "rotation_degrees": [
+          69.99999967119774,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "source/fixed_hinge_Trunk",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "source/normal_front_quarter_L",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.8613886833190918,
+          -2.2300000190734863,
+          0.5299999713897705
+        ],
+        "normal": [
+          -0.9168760776519775,
+          -0.3958848714828491,
+          -0.051121920347213745
+        ],
+        "outward_dot": 0.9168760776519775,
+        "material": "Paint_Metallic",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_rear_quarter_L",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.8796913623809814,
+          2.25,
+          0.5299999713897705
+        ],
+        "normal": [
+          -0.9083272814750671,
+          0.4156584143638611,
+          -0.04658062011003494
+        ],
+        "outward_dot": 0.9083272814750671,
+        "material": "Paint_Metallic",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_door_L",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.9198788404464722,
+          0.30000001192092896,
+          0.7200000286102295
+        ],
+        "normal": [
+          -0.9980000257492065,
+          -0.05735652893781662,
+          0.026573974639177322
+        ],
+        "outward_dot": 0.9980000257492065,
+        "material": "Paint_Metallic",
+        "object": "Door_L_Mesh"
+      }
+    },
+    {
+      "name": "source/normal_side_glass_L",
+      "passed": false,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.7808147668838501,
+          0.3500000238418579,
+          1.1200000047683716
+        ],
+        "normal": [
+          0.9206919074058533,
+          0.03386931121349335,
+          -0.38881802558898926
+        ],
+        "outward_dot": -0.9206919074058533,
+        "material": "Glass_Tinted",
+        "object": "Door_L_Mesh"
+      }
+    },
+    {
+      "name": "source/normal_quarter_glass_L",
+      "passed": false,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.804053544998169,
+          0.9470000267028809,
+          1.1039999723434448
+        ],
+        "normal": [
+          0.8960189819335938,
+          -0.014440872706472874,
+          -0.4437808394432068
+        ],
+        "outward_dot": -0.8960189819335938,
+        "material": "Glass_Tinted",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_front_LED_L",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.5800961852073669,
+          -2.4472811222076416,
+          0.6408886909484863
+        ],
+        "normal": [
+          0.06963485479354858,
+          -0.8748131394386292,
+          0.4794299602508545
+        ],
+        "outward_dot": 0.8748131394386292,
+        "material": "LED_White",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_rear_LED_L",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.450201153755188,
+          2.460228443145752,
+          0.683857262134552
+        ],
+        "normal": [
+          0.009009042754769325,
+          0.8659816384315491,
+          0.4999946653842926
+        ],
+        "outward_dot": 0.8659816384315491,
+        "material": "LED_Red",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_front_quarter_R",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.8613886833190918,
+          -2.2300000190734863,
+          0.5299999713897705
+        ],
+        "normal": [
+          0.9168760776519775,
+          -0.39588484168052673,
+          -0.05112192779779434
+        ],
+        "outward_dot": 0.9168760776519775,
+        "material": "Paint_Metallic",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_rear_quarter_R",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.8796913623809814,
+          2.25,
+          0.5299999713897705
+        ],
+        "normal": [
+          0.9083272814750671,
+          0.4156584143638611,
+          -0.04658062011003494
+        ],
+        "outward_dot": 0.9083272814750671,
+        "material": "Paint_Metallic",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_door_R",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.9198788404464722,
+          0.30000001192092896,
+          0.7200000286102295
+        ],
+        "normal": [
+          0.9980000257492065,
+          -0.05735652893781662,
+          0.026573974639177322
+        ],
+        "outward_dot": 0.9980000257492065,
+        "material": "Paint_Metallic",
+        "object": "Door_R_Mesh"
+      }
+    },
+    {
+      "name": "source/normal_side_glass_R",
+      "passed": false,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.7808150053024292,
+          0.3500000238418579,
+          1.1200000047683716
+        ],
+        "normal": [
+          -0.9206918478012085,
+          0.03386931121349335,
+          -0.38881805539131165
+        ],
+        "outward_dot": -0.9206918478012085,
+        "material": "Glass_Tinted",
+        "object": "Door_R_Mesh"
+      }
+    },
+    {
+      "name": "source/normal_quarter_glass_R",
+      "passed": false,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.8040533065795898,
+          0.9470000267028809,
+          1.1039999723434448
+        ],
+        "normal": [
+          -0.8960189819335938,
+          -0.014440876431763172,
+          -0.4437808394432068
+        ],
+        "outward_dot": -0.8960189819335938,
+        "material": "Glass_Tinted",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_front_LED_R",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.5800961852073669,
+          -2.4471631050109863,
+          0.6408886909484863
+        ],
+        "normal": [
+          -0.07020805776119232,
+          -0.8635941743850708,
+          0.49927544593811035
+        ],
+        "outward_dot": 0.8635941743850708,
+        "material": "LED_White",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_rear_LED_R",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.450201153755188,
+          2.460264205932617,
+          0.6838572025299072
+        ],
+        "normal": [
+          -0.009037996642291546,
+          0.8678024411201477,
+          0.4968273341655731
+        ],
+        "outward_dot": 0.8678024411201477,
+        "material": "LED_Red",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_hood",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.12999999523162842,
+          -1.399999976158142,
+          0.9037504196166992
+        ],
+        "normal": [
+          0.014753896743059158,
+          -0.0429200679063797,
+          0.998969554901123
+        ],
+        "outward_dot": 0.998969554901123,
+        "material": "Paint_Metallic",
+        "object": "Hood_Mesh"
+      }
+    },
+    {
+      "name": "source/normal_trunk",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.12999999523162842,
+          1.8600000143051147,
+          0.8893656134605408
+        ],
+        "normal": [
+          0.014646966010332108,
+          0.12750813364982605,
+          0.9917294383049011
+        ],
+        "outward_dot": 0.9917294383049011,
+        "material": "Paint_Metallic",
+        "object": "Trunk_Mesh"
+      }
+    },
+    {
+      "name": "source/normal_roof",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.12999999523162842,
+          0.4300000071525574,
+          1.3592206239700317
+        ],
+        "normal": [
+          0.0062834275886416435,
+          -0.020285354927182198,
+          0.9997745156288147
+        ],
+        "outward_dot": 0.9997745156288147,
+        "material": "Paint_Metallic",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_front_glass",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.1599999964237213,
+          -0.25,
+          1.1749379634857178
+        ],
+        "normal": [
+          0.013045983389019966,
+          -0.4796060621738434,
+          0.8773869872093201
+        ],
+        "outward_dot": 0.8773869872093201,
+        "material": "Glass_Tinted",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_rear_glass",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.1599999964237213,
+          1.149999976158142,
+          1.133711338043213
+        ],
+        "normal": [
+          0.0006502715987153351,
+          0.543829619884491,
+          0.8391954302787781
+        ],
+        "outward_dot": 0.8391954302787781,
+        "material": "Glass_Tinted",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "fbx/root_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/mesh_count_10",
+      "passed": true,
+      "severity": "error",
+      "details": 10
+    },
+    {
+      "name": "fbx/triangle_budget",
+      "passed": true,
+      "severity": "error",
+      "details": 28988
+    },
+    {
+      "name": "fbx/finite_geometry",
+      "passed": true,
+      "severity": "error",
+      "details": 15635
+    },
+    {
+      "name": "fbx/realistic_dimensions",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "width_m": 1.9875266551971436,
+        "length_m": 5.050000190734863,
+        "height_m": 1.4071693420410156
+      }
+    },
+    {
+      "name": "fbx/Wheel_FL_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Wheel_FL_parent",
+      "passed": true,
+      "severity": "error",
+      "details": "Velaro_GT"
+    },
+    {
+      "name": "fbx/Wheel_FL_centre",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -0.8999999761581421,
+        -1.399999976158142,
+        0.3600001037120819
+      ]
+    },
+    {
+      "name": "fbx/Wheel_FL_mesh_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Wheel_FL_mesh_origin",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.009000003337860107,
+        -0.003600029507651925,
+        -0.014000028371810913
+      ]
+    },
+    {
+      "name": "fbx/Wheel_FL_geometry_position",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.0036000291584059596,
+        -0.014000028371810913
+      ]
+    },
+    {
+      "name": "fbx/Wheel_FR_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Wheel_FR_parent",
+      "passed": true,
+      "severity": "error",
+      "details": "Velaro_GT"
+    },
+    {
+      "name": "fbx/Wheel_FR_centre",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.8999999761581421,
+        -1.399999976158142,
+        0.3600001037120819
+      ]
+    },
+    {
+      "name": "fbx/Wheel_FR_mesh_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Wheel_FR_mesh_origin",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        0.009000003337860107,
+        -0.003600029507651925,
+        -0.014000028371810913
+      ]
+    },
+    {
+      "name": "fbx/Wheel_FR_geometry_position",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.0036000291584059596,
+        -0.014000028371810913
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RL_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Wheel_RL_parent",
+      "passed": true,
+      "severity": "error",
+      "details": "Velaro_GT"
+    },
+    {
+      "name": "fbx/Wheel_RL_centre",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -0.8999999761581421,
+        1.4499999284744263,
+        0.3599998652935028
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RL_mesh_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Wheel_RL_mesh_origin",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.009000003337860107,
+        -0.003600027412176132,
+        0.01449999213218689
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RL_geometry_position",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.0036000271793454885,
+        0.014499991200864315
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RR_exists",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Wheel_RR_parent",
+      "passed": true,
+      "severity": "error",
+      "details": "Velaro_GT"
+    },
+    {
+      "name": "fbx/Wheel_RR_centre",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.8999999761581421,
+        1.4499999284744263,
+        0.3599998652935028
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RR_mesh_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Wheel_RR_mesh_origin",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        0.009000003337860107,
+        -0.003600027412176132,
+        0.01449999213218689
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RR_geometry_position",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.0036000271793454885,
+        0.014499991200864315
+      ]
+    },
+    {
+      "name": "fbx/Door_L_pivot",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Door_L_hinge_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        -0.8997751474380493,
+        -0.6249999403953552,
+        0.89000004529953
+      ]
+    },
+    {
+      "name": "fbx/Door_L_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Door_L_mesh_at_hinge",
+      "passed": false,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Door_R_pivot",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Door_R_hinge_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.8997751474380493,
+        -0.6249999403953552,
+        0.89000004529953
+      ]
+    },
+    {
+      "name": "fbx/Door_R_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Door_R_mesh_at_hinge",
+      "passed": false,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Hood_pivot",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Hood_hinge_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.0,
+        -0.684999942779541,
+        0.8850000500679016
+      ]
+    },
+    {
+      "name": "fbx/Hood_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Hood_mesh_at_hinge",
+      "passed": false,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Trunk_pivot",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Trunk_hinge_position",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        0.0,
+        1.4350000619888306,
+        0.9399998784065247
+      ]
+    },
+    {
+      "name": "fbx/Trunk_parent",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Trunk_mesh_at_hinge",
+      "passed": false,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/triangle_preservation",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "source": 28988,
+        "fbx": 28988
+      }
+    },
+    {
+      "name": "fbx/no_studio_objects",
+      "passed": true,
+      "severity": "error",
+      "details": null
+    }
+  ],
+  "source": {
+    "mesh_count": 10,
+    "triangles": 28988,
+    "bbox_min": [
+      -1.1100000143051147,
+      -2.5250000953674316,
+      0.004999995231628418
+    ],
+    "bbox_max": [
+      1.1100000143051147,
+      2.5250000953674316,
+      1.384999394416809
+    ],
+    "meshes": [
+      "Body_Interior",
+      "Door_L_Mesh",
+      "Door_R_Mesh",
+      "Engine_Assembly_Mesh",
+      "Hood_Mesh",
+      "Trunk_Mesh",
+      "Wheel_FL_Mesh",
+      "Wheel_FR_Mesh",
+      "Wheel_RL_Mesh",
+      "Wheel_RR_Mesh"
+    ],
+    "pivots": {
+      "Wheel_FL": [
+        -0.8999999761581421,
+        -1.399999976158142,
+        0.36000001430511475
+      ],
+      "Wheel_FR": [
+        0.8999999761581421,
+        -1.399999976158142,
+        0.36000001430511475
+      ],
+      "Wheel_RL": [
+        -0.8999999761581421,
+        1.4500000476837158,
+        0.36000001430511475
+      ],
+      "Wheel_RR": [
+        0.8999999761581421,
+        1.4500000476837158,
+        0.36000001430511475
+      ],
+      "Door_L": [
+        -0.8997751474380493,
+        -0.625,
+        0.8899999856948853
+      ],
+      "Door_R": [
+        0.8997751474380493,
+        -0.625,
+        0.8899999856948853
+      ],
+      "Hood": [
+        0.0,
+        -0.6850000023841858,
+        0.8849999904632568
+      ],
+      "Trunk": [
+        0.0,
+        1.434999942779541,
+        0.9399999976158142
+      ]
+    }
+  },
+  "fbx": {
+    "mesh_count": 10,
+    "triangles": 28988,
+    "bbox_min": [
+      -0.9937633275985718,
+      -2.5250000953674316,
+      -0.022169945761561394
+    ],
+    "bbox_max": [
+      0.9937633275985718,
+      2.5250000953674316,
+      1.384999394416809
+    ],
+    "meshes": [
+      "Body_Interior",
+      "Door_L_Mesh",
+      "Door_R_Mesh",
+      "Engine_Assembly_Mesh",
+      "Hood_Mesh",
+      "Trunk_Mesh",
+      "Wheel_FL_Mesh",
+      "Wheel_FR_Mesh",
+      "Wheel_RL_Mesh",
+      "Wheel_RR_Mesh"
+    ],
+    "pivots": {
+      "Wheel_FL": [
+        -0.8999999761581421,
+        -1.399999976158142,
+        0.3600001037120819
+      ],
+      "Wheel_FR": [
+        0.8999999761581421,
+        -1.399999976158142,
+        0.3600001037120819
+      ],
+      "Wheel_RL": [
+        -0.8999999761581421,
+        1.4499999284744263,
+        0.3599998652935028
+      ],
+      "Wheel_RR": [
+        0.8999999761581421,
+        1.4499999284744263,
+        0.3599998652935028
+      ],
+      "Door_L": [
+        -0.8997751474380493,
+        -0.6249999403953552,
+        0.89000004529953
+      ],
+      "Door_R": [
+        0.8997751474380493,
+        -0.6249999403953552,
+        0.89000004529953
+      ],
+      "Hood": [
+        0.0,
+        -0.684999942779541,
+        0.8850000500679016
+      ],
+      "Trunk": [
+        0.0,
+        1.4350000619888306,
+        0.9399998784065247
+      ]
+    }
+  },
+  "passed": false,
+  "failures": [
+    {
+      "name": "source/normal_side_glass_L",
+      "passed": false,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.7808147668838501,
+          0.3500000238418579,
+          1.1200000047683716
+        ],
+        "normal": [
+          0.9206919074058533,
+          0.03386931121349335,
+          -0.38881802558898926
+        ],
+        "outward_dot": -0.9206919074058533,
+        "material": "Glass_Tinted",
+        "object": "Door_L_Mesh"
+      }
+    },
+    {
+      "name": "source/normal_quarter_glass_L",
+      "passed": false,
+      "severity": "error",
+      "details": {
+        "position": [
+          -0.804053544998169,
+          0.9470000267028809,
+          1.1039999723434448
+        ],
+        "normal": [
+          0.8960189819335938,
+          -0.014440872706472874,
+          -0.4437808394432068
+        ],
+        "outward_dot": -0.8960189819335938,
+        "material": "Glass_Tinted",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "source/normal_side_glass_R",
+      "passed": false,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.7808150053024292,
+          0.3500000238418579,
+          1.1200000047683716
+        ],
+        "normal": [
+          -0.9206918478012085,
+          0.03386931121349335,
+          -0.38881805539131165
+        ],
+        "outward_dot": -0.9206918478012085,
+        "material": "Glass_Tinted",
+        "object": "Door_R_Mesh"
+      }
+    },
+    {
+      "name": "source/normal_quarter_glass_R",
+      "passed": false,
+      "severity": "error",
+      "details": {
+        "position": [
+          0.8040533065795898,
+          0.9470000267028809,
+          1.1039999723434448
+        ],
+        "normal": [
+          -0.8960189819335938,
+          -0.014440876431763172,
+          -0.4437808394432068
+        ],
+        "outward_dot": -0.8960189819335938,
+        "material": "Glass_Tinted",
+        "object": "Body_Interior"
+      }
+    },
+    {
+      "name": "fbx/Wheel_FL_mesh_origin",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.009000003337860107,
+        -0.003600029507651925,
+        -0.014000028371810913
+      ]
+    },
+    {
+      "name": "fbx/Wheel_FL_geometry_position",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.0036000291584059596,
+        -0.014000028371810913
+      ]
+    },
+    {
+      "name": "fbx/Wheel_FR_mesh_origin",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        0.009000003337860107,
+        -0.003600029507651925,
+        -0.014000028371810913
+      ]
+    },
+    {
+      "name": "fbx/Wheel_FR_geometry_position",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.0036000291584059596,
+        -0.014000028371810913
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RL_mesh_origin",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.009000003337860107,
+        -0.003600027412176132,
+        0.01449999213218689
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RL_geometry_position",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.0036000271793454885,
+        0.014499991200864315
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RR_mesh_origin",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        0.009000003337860107,
+        -0.003600027412176132,
+        0.01449999213218689
+      ]
+    },
+    {
+      "name": "fbx/Wheel_RR_geometry_position",
+      "passed": false,
+      "severity": "error",
+      "details": [
+        -0.0036000271793454885,
+        0.014499991200864315
+      ]
+    },
+    {
+      "name": "fbx/Door_L_mesh_at_hinge",
+      "passed": false,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Door_R_mesh_at_hinge",
+      "passed": false,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Hood_mesh_at_hinge",
+      "passed": false,
+      "severity": "error",
+      "details": null
+    },
+    {
+      "name": "fbx/Trunk_mesh_at_hinge",
+      "passed": false,
+      "severity": "error",
+      "details": null
+    }
+  ]
+}

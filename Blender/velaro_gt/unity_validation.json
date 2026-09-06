@@ -1,0 +1,169 @@
+{
+    "unityVersion": "6000.3.8f1",
+    "isolatedProject": "C:/Users/jrjav/AppData/Local/Temp/VelaroGT_Validation_20260906_173618/Assets",
+    "passed": false,
+    "automaticPrefabPresentBeforeExecute": false,
+    "sourceSceneUnchanged": true,
+    "prefabCreated": true,
+    "dimensionsWithinTolerance": false,
+    "allMaterialsURP": true,
+    "triangleCount": 28204,
+    "meshCount": 10,
+    "colliderCount": 3,
+    "materialCount": 9,
+    "closedDimensions": {
+        "x": 2.2199997901916506,
+        "y": 1.3799997568130494,
+        "z": 5.049999713897705
+    },
+    "rootEuler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "rootScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+    },
+    "hinges": [
+        {
+            "name": "Door_L",
+            "pivotPosition": {
+                "x": 0.8997751474380493,
+                "y": 0.8899999856948853,
+                "z": 0.6249998211860657
+            },
+            "localEulerClosed": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "configuredOpenEuler": {
+                "x": 0.0,
+                "y": 65.0,
+                "z": 0.0
+            },
+            "closedCenter": {
+                "x": 0.8950182199478149,
+                "y": 0.7898706793785095,
+                "z": -0.17085731029510499
+            },
+            "openCenter": {
+                "x": 0.807016909122467,
+                "y": 0.8519946932792664,
+                "z": -0.17085731029510499
+            },
+            "openingDirectionCorrect": false,
+            "originUnchanged": true,
+            "closesToOriginalPose": true
+        },
+        {
+            "name": "Door_R",
+            "pivotPosition": {
+                "x": -0.8997751474380493,
+                "y": 0.8899999856948853,
+                "z": 0.6249998211860657
+            },
+            "localEulerClosed": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "configuredOpenEuler": {
+                "x": 0.0,
+                "y": -65.0,
+                "z": 0.0
+            },
+            "closedCenter": {
+                "x": -0.8950182199478149,
+                "y": 0.7898706793785095,
+                "z": -0.17085731029510499
+            },
+            "openCenter": {
+                "x": -0.807016909122467,
+                "y": 0.8519946932792664,
+                "z": -0.17085731029510499
+            },
+            "openingDirectionCorrect": false,
+            "originUnchanged": true,
+            "closesToOriginalPose": true
+        },
+        {
+            "name": "Hood",
+            "pivotPosition": {
+                "x": 0.0,
+                "y": 0.8849999308586121,
+                "z": 0.6849998235702515
+            },
+            "localEulerClosed": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "configuredOpenEuler": {
+                "x": -62.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "closedCenter": {
+                "x": 0.0,
+                "y": 0.8352764844894409,
+                "z": 1.4570553302764893
+            },
+            "openCenter": {
+                "x": 0.0,
+                "y": 1.5433406829833985,
+                "z": 1.0913610458374024
+            },
+            "openingDirectionCorrect": true,
+            "originUnchanged": true,
+            "closesToOriginalPose": true
+        },
+        {
+            "name": "Trunk",
+            "pivotPosition": {
+                "x": 0.0,
+                "y": 0.9399998188018799,
+                "z": -1.434999942779541
+            },
+            "localEulerClosed": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "configuredOpenEuler": {
+                "x": 70.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "closedCenter": {
+                "x": 0.0,
+                "y": 0.8504091501235962,
+                "z": -1.838497281074524
+            },
+            "openCenter": {
+                "x": 0.0,
+                "y": 1.288521409034729,
+                "z": -1.6571918725967408
+            },
+            "openingDirectionCorrect": true,
+            "originUnchanged": true,
+            "closesToOriginalPose": true
+        }
+    ],
+    "materialNames": [
+        "Paint_Metallic",
+        "Tire_Rubber",
+        "Trim_Dark",
+        "Alloy_Metal",
+        "LED_White",
+        "LED_Red",
+        "Glass_Tinted",
+        "Leather_Tan",
+        "Display"
+    ],
+    "errors": [
+        "One or more geometry, material, scene, or hinge assertions failed; inspect individual fields."
+    ]
+}
