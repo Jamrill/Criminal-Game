@@ -33,13 +33,20 @@ namespace JuegoCriminal.Inventory
         public bool CanRotate => canRotate;
         public EquipmentSlot EquipmentSlot => equipmentSlot;
         public int InventoryCapacityBonus => Mathf.Max(0, inventoryCapacityBonus);
-        public int Width(bool rotated) => rotated ? GridHeight : GridWidth;
-        public int Height(bool rotated) => rotated ? GridWidth : GridHeight;
+        public int Width(int rotation) => (rotation & 1) != 0 ? GridHeight : GridWidth;
+        public int Height(int rotation) => (rotation & 1) != 0 ? GridWidth : GridHeight;
 
-        public bool Occupies(int x, int y, bool rotated)
+        public bool Occupies(int x, int y, int rotation)
         {
-            int sourceX = rotated ? y : x;
-            int sourceY = rotated ? GridHeight - 1 - x : y;
+            rotation = ((rotation % 4) + 4) % 4;
+            if (x < 0 || y < 0 || x >= Width(rotation) || y >= Height(rotation)) return false;
+            int sourceX = x, sourceY = y;
+            switch (rotation)
+            {
+                case 1: sourceX = y; sourceY = GridHeight - 1 - x; break;
+                case 2: sourceX = GridWidth - 1 - x; sourceY = GridHeight - 1 - y; break;
+                case 3: sourceX = GridWidth - 1 - y; sourceY = x; break;
+            }
             if (sourceX < 0 || sourceX >= GridWidth || sourceY < 0 || sourceY >= GridHeight) return false;
             return occupiedCells == null || occupiedCells.Length != GridWidth * GridHeight
                 || occupiedCells[sourceY * GridWidth + sourceX];

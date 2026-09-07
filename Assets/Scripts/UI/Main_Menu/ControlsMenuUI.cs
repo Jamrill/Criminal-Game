@@ -24,7 +24,66 @@ namespace JuegoCriminal.UI
             if (resetButton != null)
                 resetButton.onClick.AddListener(ResetBindings);
 
+            EnsureRuntimeBindingRow("Crouch", GameInputAction.Crouch, 1);
+            EnsureRuntimeBindingRow("Rotate Inventory Item", GameInputAction.RotateInventory, 0);
+
             panelRoot.SetActive(false);
+        }
+
+        private void EnsureRuntimeBindingRow(string displayName, GameInputAction action, int bindingIndex)
+        {
+            if (contentRoot == null)
+                return;
+
+            string objectName = "Binding_" + displayName.Replace(" ", string.Empty);
+            if (contentRoot.Find(objectName) != null)
+                return;
+
+            var rowObject = new GameObject(objectName, typeof(RectTransform), typeof(HorizontalLayoutGroup), typeof(LayoutElement));
+            rowObject.transform.SetParent(contentRoot, false);
+            ((RectTransform)rowObject.transform).sizeDelta = new Vector2(600f, 48f);
+
+            LayoutElement element = rowObject.GetComponent<LayoutElement>();
+            element.preferredHeight = 48f;
+            element.minHeight = 48f;
+
+            HorizontalLayoutGroup layout = rowObject.GetComponent<HorizontalLayoutGroup>();
+            layout.spacing = 20f;
+            layout.childAlignment = TextAnchor.MiddleCenter;
+            layout.childControlWidth = true;
+            layout.childForceExpandWidth = true;
+
+            TMP_Text actionText = CreateRuntimeText("Action", rowObject.transform, displayName);
+            var buttonObject = new GameObject("RebindButton", typeof(RectTransform), typeof(Image), typeof(Button));
+            buttonObject.transform.SetParent(rowObject.transform, false);
+            Image image = buttonObject.GetComponent<Image>();
+            image.color = new Color(0.22f, 0.22f, 0.22f, 1f);
+            Button button = buttonObject.GetComponent<Button>();
+            button.targetGraphic = image;
+
+            TMP_Text bindingText = CreateRuntimeText("Binding", buttonObject.transform, "Unassigned");
+            bindingText.alignment = TextAlignmentOptions.Center;
+            RectTransform textRect = bindingText.rectTransform;
+            textRect.anchorMin = Vector2.zero;
+            textRect.anchorMax = Vector2.one;
+            textRect.offsetMin = Vector2.zero;
+            textRect.offsetMax = Vector2.zero;
+
+            var row = rowObject.AddComponent<ControlRebindButtonUI>();
+            row.Configure(action, bindingIndex, displayName, actionText, bindingText, button);
+        }
+
+        private static TMP_Text CreateRuntimeText(string objectName, Transform parent, string value)
+        {
+            var textObject = new GameObject(objectName, typeof(RectTransform), typeof(TextMeshProUGUI));
+            textObject.transform.SetParent(parent, false);
+            TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
+            text.text = value;
+            text.font = TMP_Settings.defaultFontAsset;
+            text.fontSize = 24f;
+            text.alignment = TextAlignmentOptions.MidlineLeft;
+            text.color = Color.white;
+            return text;
         }
 
         private void OnDestroy()
@@ -38,6 +97,11 @@ namespace JuegoCriminal.UI
 
         public void Open()
         {
+            if (transform.parent != null)
+            {
+                var videoMenu = transform.parent.GetComponentInChildren<VideoMenuUI>(true);
+                if (videoMenu != null) videoMenu.Close();
+            }
             panelRoot.SetActive(true);
             RefreshRows();
         }
@@ -82,6 +146,8 @@ namespace JuegoCriminal.UI
             CreateRow("Switch Target", GameInputAction.SwitchTarget, 1);
             CreateRow("Switch Shoulder", GameInputAction.SwitchShoulder, 1);
             CreateRow("Inventory", GameInputAction.Inventory, 0);
+            CreateRow("Crouch", GameInputAction.Crouch, 1);
+            CreateRow("Rotate Inventory Item", GameInputAction.RotateInventory, 0);
 
             UnityEditor.EditorUtility.SetDirty(this);
         }

@@ -303,6 +303,10 @@ namespace JuegoCriminal.UI
         {
             _isTransitioning = true;
 
+            // Hide category contents (and their dropdown) before animating navigation.
+            var videoMenu = optionsPanel.GetComponentInChildren<VideoMenuUI>(true);
+            if (videoMenu != null) videoMenu.Close();
+
             CanvasGroup[] optionButtons = GetButtonCanvasGroups(optionsPanel);
             Vector3[] finalPositions = GetOptionsButtonBasePositions(optionButtons);
 
@@ -738,7 +742,8 @@ namespace JuegoCriminal.UI
             {
                 // Los botones internos de una categoría (por ejemplo, las teclas
                 // reasignables) no forman parte de la navegación de Options.
-                if (buttons[i].GetComponentInParent<ControlsMenuUI>() != null)
+                if (buttons[i].GetComponentInParent<ControlsMenuUI>() != null ||
+                    buttons[i].GetComponentInParent<VideoMenuUI>() != null)
                     continue;
 
                 CanvasGroup group = buttons[i].GetComponent<CanvasGroup>();

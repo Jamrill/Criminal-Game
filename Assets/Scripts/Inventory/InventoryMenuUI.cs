@@ -101,7 +101,7 @@ namespace JuegoCriminal.Inventory
             _interactionGroup.blocksRaycasts = !blocked;
         }
 
-        public void TryDrop(InventoryPlacement placement, Vector2 screenPosition, bool rotated)
+        public void TryDrop(InventoryPlacement placement, Vector2 screenPosition, int rotated)
         {
             if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(gridRoot, screenPosition, null, out Vector2 local))
             {
@@ -112,7 +112,7 @@ namespace JuegoCriminal.Inventory
             if (!inventory.TryMove(placement.instanceId, x, y, rotated)) Refresh();
         }
 
-        public void TryDropAtLocalPosition(InventoryPlacement placement, Vector2 localPosition, bool rotated)
+        public void TryDropAtLocalPosition(InventoryPlacement placement, Vector2 localPosition, int rotated)
         {
             int x = Mathf.RoundToInt(localPosition.x / cellSize);
             int y = Mathf.RoundToInt(-localPosition.y / cellSize);
@@ -123,7 +123,7 @@ namespace JuegoCriminal.Inventory
         {
             InventoryItemDefinition item = inventory.Resolve(placement.itemId);
             if (item == null || !item.CanRotate
-                || !inventory.TryMove(placement.instanceId, placement.x, placement.y, !placement.rotated)) Refresh();
+                || !inventory.TryMove(placement.instanceId, placement.x, placement.y, (placement.Rotation + 1) % 4)) Refresh();
         }
 
         public bool CanRotate(InventoryPlacement placement)
@@ -132,7 +132,7 @@ namespace JuegoCriminal.Inventory
             return item != null && item.CanRotate;
         }
 
-        public void UpdateDraggedItemVisual(InventoryPlacement placement, RectTransform itemRect, bool rotated)
+        public void UpdateDraggedItemVisual(InventoryPlacement placement, RectTransform itemRect, int rotated)
         {
             InventoryItemDefinition item = placement != null ? inventory.Resolve(placement.itemId) : null;
             if (item == null || itemRect == null)
@@ -162,7 +162,7 @@ namespace JuegoCriminal.Inventory
                 if (children[i].name != "Icon")
                     continue;
                 children[i].sizeDelta = new Vector2(item.GridWidth * cellSize, item.GridHeight * cellSize) * itemIconScale;
-                children[i].localRotation = Quaternion.Euler(0f, 0f, rotated ? -90f : 0f);
+                children[i].localRotation = Quaternion.Euler(0f, 0f, -90f * rotated);
                 break;
             }
         }
@@ -214,15 +214,15 @@ namespace JuegoCriminal.Inventory
             var go = new GameObject("Item_" + item.DisplayName, typeof(RectTransform), typeof(Image), typeof(InventoryItemViewUI));
             RectTransform rect = (RectTransform)go.transform;
             rect.SetParent(gridRoot, false);
-            SetGridRect(rect, placement.x, placement.y, item.Width(placement.rotated), item.Height(placement.rotated));
+            SetGridRect(rect, placement.x, placement.y, item.Width(placement.Rotation), item.Height(placement.Rotation));
             Image hitArea = go.GetComponent<Image>();
             hitArea.color = Color.clear;
             hitArea.raycastTarget = false;
 
-            for (int y = 0; y < item.Height(placement.rotated); y++)
-            for (int x = 0; x < item.Width(placement.rotated); x++)
+            for (int y = 0; y < item.Height(placement.Rotation); y++)
+            for (int x = 0; x < item.Width(placement.Rotation); x++)
             {
-                if (!item.Occupies(x, y, placement.rotated)) continue;
+                if (!item.Occupies(x, y, placement.Rotation)) continue;
                 var cell = new GameObject($"Footprint_{x}_{y}", typeof(RectTransform), typeof(Image));
                 RectTransform cellRect = (RectTransform)cell.transform;
                 cellRect.SetParent(rect, false);
@@ -245,7 +245,7 @@ namespace JuegoCriminal.Inventory
             icon.preserveAspect = true;
             icon.raycastTarget = false;
 
-            UpdateDraggedItemVisual(placement, rect, placement.rotated);
+            UpdateDraggedItemVisual(placement, rect, placement.Rotation);
 
             go.GetComponent<InventoryItemViewUI>().Initialize(this, placement);
         }

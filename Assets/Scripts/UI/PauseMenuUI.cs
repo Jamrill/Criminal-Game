@@ -275,6 +275,8 @@ namespace JuegoCriminal.UI
                 }
                 else
                 {
+                    var videoMenu = overlay.GetComponentInChildren<VideoMenuUI>(true);
+                    if (videoMenu != null) videoMenu.Close();
                     yield return AnimateOverlay(overlay, false);
                 }
             }
@@ -381,7 +383,8 @@ namespace JuegoCriminal.UI
             for (int i = 0; i < allButtons.Length; i++)
             {
                 if (!allButtons[i].gameObject.activeInHierarchy) continue;
-                if (allButtons[i].GetComponentInParent<ControlsMenuUI>() != null) continue;
+                if (allButtons[i].GetComponentInParent<ControlsMenuUI>() != null ||
+                    allButtons[i].GetComponentInParent<VideoMenuUI>() != null) continue;
 
                 CanvasGroup group = allButtons[i].GetComponent<CanvasGroup>();
                 if (group == null) group = allButtons[i].gameObject.AddComponent<CanvasGroup>();

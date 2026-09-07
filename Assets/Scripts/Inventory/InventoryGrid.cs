@@ -11,6 +11,9 @@ namespace JuegoCriminal.Inventory
         public int x;
         public int y;
         public bool rotated;
+        public int rotation;
+        // Old saves stored only a boolean (0 or 90 degrees).
+        public int Rotation => rotation == 0 && rotated ? 1 : ((rotation % 4) + 4) % 4;
     }
 
     public sealed class InventoryGrid
@@ -41,9 +44,9 @@ namespace JuegoCriminal.Inventory
                 InventoryPlacement p = _placements[i];
                 InventoryItemDefinition item = _resolve(p.itemId);
                 if (item == null) continue;
-                for (int y = 0; y < item.Height(p.rotated); y++)
-                for (int x = 0; x < item.Width(p.rotated); x++)
-                    if (item.Occupies(x, y, p.rotated)
+                for (int y = 0; y < item.Height(p.Rotation); y++)
+                for (int x = 0; x < item.Width(p.Rotation); x++)
+                    if (item.Occupies(x, y, p.Rotation)
                         && (p.y + y) * Width + p.x + x >= proposedCapacity) return false;
             }
             return true;
@@ -54,9 +57,9 @@ namespace JuegoCriminal.Inventory
             placement = null;
             if (item == null || string.IsNullOrWhiteSpace(item.Id)) return false;
 
-            for (int rotation = 0; rotation < (item.CanRotate ? 2 : 1); rotation++)
+            for (int rotation = 0; rotation < (item.CanRotate ? 4 : 1); rotation++)
             {
-                bool rotated = rotation == 1;
+                int rotated = rotation;
                 for (int y = 0; y < MaxRows; y++)
                 for (int x = 0; x < Width; x++)
                 {
@@ -64,7 +67,7 @@ namespace JuegoCriminal.Inventory
                     placement = new InventoryPlacement
                     {
                         instanceId = Guid.NewGuid().ToString("N"), itemId = item.Id,
-                        x = x, y = y, rotated = rotated
+                        x = x, y = y, rotation = rotated, rotated = (rotated & 1) != 0
                     };
                     _placements.Add(placement);
                     return true;
@@ -73,18 +76,18 @@ namespace JuegoCriminal.Inventory
             return false;
         }
 
-        public bool TryMove(string instanceId, int x, int y, bool rotated)
+        public bool TryMove(string instanceId, int x, int y, int rotated)
         {
             InventoryPlacement placement = _placements.Find(p => p.instanceId == instanceId);
             InventoryItemDefinition item = placement != null ? _resolve(placement.itemId) : null;
-            if (item == null || (rotated && !item.CanRotate) || !CanPlace(item, x, y, rotated, instanceId)) return false;
-            placement.x = x; placement.y = y; placement.rotated = rotated;
+            if (item == null || (rotated != 0 && !item.CanRotate) || !CanPlace(item, x, y, rotated, instanceId)) return false;
+            placement.x = x; placement.y = y; placement.rotation = ((rotated % 4) + 4) % 4; placement.rotated = (placement.rotation & 1) != 0;
             return true;
         }
 
         public bool Remove(string instanceId) => _placements.RemoveAll(p => p.instanceId == instanceId) > 0;
 
-        public bool CanPlace(InventoryItemDefinition item, int x, int y, bool rotated, string ignoredInstanceId)
+        public bool CanPlace(InventoryItemDefinition item, int x, int y, int rotated, string ignoredInstanceId)
         {
             if (item == null) return false;
             for (int localY = 0; localY < item.Height(rotated); localY++)
@@ -108,8 +111,8 @@ namespace JuegoCriminal.Inventory
                 InventoryItemDefinition item = _resolve(p.itemId);
                 if (item == null) continue;
                 int lx = x - p.x, ly = y - p.y;
-                if (lx >= 0 && ly >= 0 && lx < item.Width(p.rotated) && ly < item.Height(p.rotated)
-                    && item.Occupies(lx, ly, p.rotated)) return true;
+                if (lx >= 0 && ly >= 0 && lx < item.Width(p.Rotation) && ly < item.Height(p.Rotation)
+                    && item.Occupies(lx, ly, p.Rotation)) return true;
             }
             return false;
         }

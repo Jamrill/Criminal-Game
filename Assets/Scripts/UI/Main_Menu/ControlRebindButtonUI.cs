@@ -63,11 +63,17 @@ namespace JuegoCriminal.UI
             TMP_Text inputBindingLabel,
             Button inputButton)
         {
+            if (rebindButton != null)
+                rebindButton.onClick.RemoveListener(BeginRebind);
+
             action = inputAction;
             bindingIndex = inputBindingIndex;
             actionLabel = inputActionLabel;
             bindingLabel = inputBindingLabel;
             rebindButton = inputButton;
+
+            if (Application.isPlaying && rebindButton != null)
+                rebindButton.onClick.AddListener(BeginRebind);
 
             if (actionLabel != null)
                 actionLabel.text = displayName;

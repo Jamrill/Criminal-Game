@@ -440,7 +440,8 @@ namespace JuegoCriminal.Services
                     itemId = source.itemId,
                     x = source.x,
                     y = source.y,
-                    rotated = source.rotated
+                    rotated = source.rotated,
+                    rotation = source.Rotation
                 };
             }
             return true;

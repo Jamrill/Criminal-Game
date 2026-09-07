@@ -42,7 +42,7 @@ namespace JuegoCriminal.Inventory
             return true;
         }
 
-        public bool TryMove(string instanceId, int x, int y, bool rotated)
+        public bool TryMove(string instanceId, int x, int y, int rotated)
         {
             if (!Grid.TryMove(instanceId, x, y, rotated)) return false;
             CommitChange();
@@ -125,7 +125,7 @@ namespace JuegoCriminal.Inventory
                     if (p != null && Resolve(p.itemId) != null) _placements.Add(new InventoryPlacement
                     {
                         instanceId = string.IsNullOrWhiteSpace(p.instanceId) ? Guid.NewGuid().ToString("N") : p.instanceId,
-                        itemId = p.itemId, x = p.x, y = p.y, rotated = p.rotated
+                        itemId = p.itemId, x = p.x, y = p.y, rotated = p.rotated, rotation = p.Rotation
                     });
                 }
             Grid = new InventoryGrid(Capacity, _placements, Resolve);

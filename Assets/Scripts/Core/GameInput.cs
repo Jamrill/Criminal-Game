@@ -15,7 +15,9 @@ namespace JuegoCriminal.Core
         SwitchTarget,
         SwitchShoulder,
         CameraZoom,
-        Inventory
+        Inventory,
+        Crouch,
+        RotateInventory
     }
 
     public static class GameInput
@@ -45,6 +47,8 @@ namespace JuegoCriminal.Core
         public static bool SwitchTargetPressed => WasPressedThisFrame(GameInputAction.SwitchTarget);
         public static bool SwitchShoulderPressed => WasPressedThisFrame(GameInputAction.SwitchShoulder);
         public static bool InventoryPressed => WasPressedThisFrame(GameInputAction.Inventory);
+        public static bool CrouchHeld => IsPressed(GameInputAction.Crouch);
+        public static bool RotateInventoryPressed => WasPressedThisFrame(GameInputAction.RotateInventory);
 
         public static void ConsumePausePress()
         {
@@ -214,9 +218,11 @@ namespace JuegoCriminal.Core
                 GameInputAction.Interact => ("Player", "Interact"),
                 GameInputAction.Pause => ("UI", "Cancel"),
                 GameInputAction.SwitchTarget => ("Player", "Next"),
-                GameInputAction.SwitchShoulder => ("Player", "Crouch"),
+                GameInputAction.SwitchShoulder => ("Player", "SwitchShoulder"),
                 GameInputAction.CameraZoom => ("UI", "ScrollWheel"),
                 GameInputAction.Inventory => ("Player", "Inventory"),
+                GameInputAction.Crouch => ("Player", "Crouch"),
+                GameInputAction.RotateInventory => ("Player", "RotateInventory"),
                 _ => throw new ArgumentOutOfRangeException(nameof(action), action, null)
             };
         }

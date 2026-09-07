@@ -12,6 +12,10 @@ namespace JuegoCriminal.Player
         [SerializeField] private float acceleration = 14f;
         [SerializeField] private float deceleration = 18f;
 
+        [Header("Crouch")]
+        [SerializeField, Range(0.25f, 0.9f)] private float crouchedHeightMultiplier = 0.5f;
+        [SerializeField, Min(0.1f)] private float crouchTransitionSpeed = 8f;
+
         [Header("Jump / Gravity")]
         [SerializeField] private bool canJump = true;
         [SerializeField] private float jumpHeight = 1.2f;
@@ -33,12 +37,16 @@ namespace JuegoCriminal.Player
         private Vector3 _horizontalVelocity;
         private float _verticalVelocity;
         private float _pitch;
+        private float _standingCapsuleHeight;
+        private Vector3 _standingCapsuleCenter;
 
         public float LookPitch => _pitch;
 
         private void Awake()
         {
             _cc = GetComponent<CharacterController>();
+            _standingCapsuleHeight = _cc.height;
+            _standingCapsuleCenter = _cc.center;
 
             FindCameraReferencesIfNeeded();
         }
@@ -59,6 +67,7 @@ namespace JuegoCriminal.Player
             FindCameraReferencesIfNeeded();
 
             Look();
+            UpdateCrouch();
             Move();
         }
 
@@ -189,6 +198,18 @@ namespace JuegoCriminal.Player
                 if (pivot != null)
                     cameraPivot = pivot.transform;
             }
+        }
+
+        private void UpdateCrouch()
+        {
+            float crouchedHeight = _standingCapsuleHeight * crouchedHeightMultiplier;
+            float targetHeight = GameInput.CrouchHeld ? crouchedHeight : _standingCapsuleHeight;
+            float standingBottom = _standingCapsuleCenter.y - _standingCapsuleHeight * 0.5f;
+            Vector3 targetCenter = _standingCapsuleCenter;
+            targetCenter.y = standingBottom + targetHeight * 0.5f;
+
+            _cc.height = Mathf.MoveTowards(_cc.height, targetHeight, crouchTransitionSpeed * Time.deltaTime);
+            _cc.center = Vector3.MoveTowards(_cc.center, targetCenter, crouchTransitionSpeed * Time.deltaTime);
         }
 
         public void SetLookRotation(float yaw, float pitch)
