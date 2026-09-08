@@ -1,0 +1,58 @@
+{
+  "revision": "04",
+  "checked_at_utc": "2026-09-08T17:30:44.865830+00:00",
+  "topology_measurement": "Carrocería y seis cristales reunidos temporalmente en memoria, sin aplicar espesores.",
+  "body_window_boundary_edges": 1184,
+  "independent_windows": [
+    "Cristal · Parabrisas",
+    "Cristal · Ventanilla puerta derecha",
+    "Cristal · Ventanilla puerta izquierda",
+    "Cristal · Luneta trasera",
+    "Cristal · Cristal de custodia derecha",
+    "Cristal · Cristal de custodia izquierda"
+  ],
+  "scope": "Exterior estático. Sin habitáculo, motor, mecanismos, animaciones ni scripts incrustados.",
+  "reference": "Imagen adjunta en la conversación; proporciones inferidas visualmente.",
+  "file_reopened_in_blender": true,
+  "blender_version": "5.1.0",
+  "skin_vertices": 143852,
+  "skin_faces": 140265,
+  "skin_boundary_edges": 0,
+  "skin_nonmanifold_edges": 0,
+  "skin_connected_components": 1,
+  "skin_zero_area_faces": 0,
+  "skin_signed_volume_m3": 7.780832246417986,
+  "skin_dimensions_m": [
+    4.955923080444336,
+    1.991889238357544,
+    1.2771427184343338
+  ],
+  "wheelbase_m": 2.96,
+  "tire_diameter_m": 0.73,
+  "mirror_surface_max_deviation_m": 0.002071258146315813,
+  "mirror_surface_mean_deviation_m": 3.9992863829913326e-06,
+  "nonfinite_vertices": 0,
+  "embedded_text_blocks": 0,
+  "animation_actions": 0,
+  "temporary_scene_objects": [],
+  "inspection_cameras": 6,
+  "headlamp_covers": 2,
+  "rear_lenses": 2,
+  "exhaust_surrounds": 2,
+  "rendered_views": [
+    "01_lateral.png",
+    "02_frontal.png",
+    "03_trasera.png",
+    "04_superior.png",
+    "05_tres_cuartos_delantero.png",
+    "06_tres_cuartos_trasero.png"
+  ],
+  "render_bytes": {
+    "01_lateral.png": 1276354,
+    "02_frontal.png": 905531,
+    "03_trasera.png": 858725,
+    "04_superior.png": 1203289,
+    "05_tres_cuartos_delantero.png": 1482629,
+    "06_tres_cuartos_trasero.png": 1479953
+  }
+}
