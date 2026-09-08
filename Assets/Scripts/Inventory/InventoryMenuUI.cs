@@ -18,6 +18,14 @@ namespace JuegoCriminal.Inventory
         [SerializeField, Min(24f)] private float cellSize = 56f;
         [SerializeField] private Color cellColor = new Color(0.12f, 0.12f, 0.12f, 0.92f);
         [SerializeField] private Color itemCellColor = new Color(1f, 1f, 1f, 0.9f);
+        [Header("Optional cell sprites")]
+        [SerializeField, Tooltip("Imagen de cada celda vacia. Sin sprite se utiliza Cell Color.")]
+        private Sprite emptyCellSprite;
+        [SerializeField, Tooltip("Imagen iluminada de cada celda ocupada por un objeto. Sin sprite se utiliza Item Cell Color.")]
+        private Sprite occupiedCellSprite;
+        [SerializeField, Tooltip("Imagen de celdas bloqueadas. Sin sprite se usa Unusable Cell Color.")]
+        private Sprite unusableCellSprite;
+        [SerializeField] private Color unusableCellColor = new Color(0.32f, 0.32f, 0.32f, 0.95f);
         [SerializeField, Range(0.5f, 2f)] private float itemIconScale = 1.3f;
 
         private bool _open;
@@ -188,22 +196,25 @@ namespace JuegoCriminal.Inventory
             }
 
             int capacity = inventory.Capacity;
-            int rows = Mathf.Max(1, Mathf.CeilToInt(capacity / (float)InventoryGrid.Width));
-            gridRoot.sizeDelta = new Vector2(InventoryGrid.Width * cellSize, rows * cellSize);
+            if (inventory.Grid == null) return;
+            int columns = inventory.Grid.Columns;
+            int rows = inventory.Grid.Rows;
+            gridRoot.sizeDelta = new Vector2(columns * cellSize, rows * cellSize);
             if (capacityText != null) capacityText.text = $"Inventory {capacity}/{InventoryGrid.MaxCapacity}";
 
-            for (int i = 0; i < capacity; i++) CreateCell(i % InventoryGrid.Width, i / InventoryGrid.Width);
+            for (int i = 0; i < rows * columns; i++) CreateCell(i % columns, i / columns, i < capacity);
             for (int i = 0; i < inventory.Grid.Placements.Count; i++) CreateItem(inventory.Grid.Placements[i]);
         }
 
-        private void CreateCell(int x, int y)
+        private void CreateCell(int x, int y, bool usable)
         {
             var go = new GameObject($"Cell_{x}_{y}", typeof(RectTransform), typeof(Image));
             RectTransform rect = (RectTransform)go.transform;
             rect.SetParent(gridRoot, false);
             SetGridRect(rect, x, y, 1, 1);
             rect.sizeDelta -= Vector2.one * 2f;
-            go.GetComponent<Image>().color = cellColor;
+            ApplyCellAppearance(go.GetComponent<Image>(), usable ? emptyCellSprite : unusableCellSprite,
+                usable ? cellColor : unusableCellColor);
             go.GetComponent<Image>().raycastTarget = false;
         }
 
@@ -229,7 +240,7 @@ namespace JuegoCriminal.Inventory
                 SetGridRect(cellRect, x, y, 1, 1);
                 cellRect.sizeDelta -= Vector2.one * 5f;
                 Image background = cell.GetComponent<Image>();
-                background.color = itemCellColor;
+                ApplyCellAppearance(background, occupiedCellSprite, itemCellColor);
                 background.raycastTarget = true;
             }
 
@@ -248,6 +259,16 @@ namespace JuegoCriminal.Inventory
             UpdateDraggedItemVisual(placement, rect, placement.Rotation);
 
             go.GetComponent<InventoryItemViewUI>().Initialize(this, placement);
+        }
+
+        private static void ApplyCellAppearance(Image image, Sprite sprite, Color fallbackColor)
+        {
+            image.sprite = sprite;
+            // Keep the sprite's authored colors; dark fallback colors must not tint it.
+            image.color = sprite != null ? Color.white : fallbackColor;
+            image.type = sprite != null && sprite.border.sqrMagnitude > 0f
+                ? Image.Type.Sliced : Image.Type.Simple;
+            image.preserveAspect = false;
         }
 
         private void SetGridRect(RectTransform rect, int x, int y, int width, int height)

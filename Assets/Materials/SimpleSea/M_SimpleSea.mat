@@ -66,7 +66,7 @@ Material:
     - _WaveFrequency: 0.1
     - _WaveHeight: 2
     - _WaveSpeed: 1.55
-    - _WaveVariation: 0.23
+    - _WaveVariation: 0.41
     m_Colors:
     - _DeepColor: {r: 0.015, g: 0.1, b: 0.18, a: 1}
     - _FoamColor: {r: 0.9, g: 0.97, b: 1, a: 1}

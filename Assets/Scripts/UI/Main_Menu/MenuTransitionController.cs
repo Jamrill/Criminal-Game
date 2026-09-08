@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using JuegoCriminal.Scenes;
+using JuegoCriminal.Core;
 
 namespace JuegoCriminal.UI
 {
@@ -186,6 +187,18 @@ namespace JuegoCriminal.UI
         private IEnumerator InitialMainButtonsRoutine()
         {
             _isTransitioning = true;
+
+            // Let Bootstrapper.Start establish the initial loading state, regardless
+            // of the order in which Unity invokes Start on the scene components.
+            yield return null;
+            while ((Bootstrapper.Instance != null && Bootstrapper.Instance.SceneLoader != null &&
+                    Bootstrapper.Instance.SceneLoader.IsLoading) ||
+                   (LoadingScreenUI.Instance != null && LoadingScreenUI.Instance.IsVisible))
+                yield return null;
+
+            // Present one unobscured frame before starting the entrance, so the
+            // loading screen cannot consume the first part of the animation.
+            yield return null;
 
             for (int i = 0; i < mainButtons.Length; i++)
             {

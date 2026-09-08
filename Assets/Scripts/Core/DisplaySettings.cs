@@ -9,11 +9,14 @@ namespace JuegoCriminal.Core
         public static IReadOnlyList<Vector2Int> Resolutions => resolutions;
         public static Vector2Int Resolution { get; private set; }
         public static int Mode { get; private set; }
+        public static bool VSyncEnabled { get; private set; }
         public static readonly string[] ModeLabels = { "Pantalla completa", "Ventana (con bordes)", "Ventana sin bordes" };
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
         {
+            VSyncEnabled = PlayerPrefs.GetInt("Video.VSync", QualitySettings.vSyncCount > 0 ? 1 : 0) != 0;
+            QualitySettings.vSyncCount = VSyncEnabled ? 1 : 0;
             resolutions.Clear();
             var desktop = Screen.currentResolution;
             float aspect = desktop.height > 0 ? (float)desktop.width / desktop.height : 16f / 9f;
@@ -54,6 +57,14 @@ namespace JuegoCriminal.Core
         {
             Mode = Mathf.Clamp(index, 0, 2);
             Save();
+        }
+
+        public static void SetVSync(int index)
+        {
+            VSyncEnabled = index == 1;
+            QualitySettings.vSyncCount = VSyncEnabled ? 1 : 0;
+            PlayerPrefs.SetInt("Video.VSync", VSyncEnabled ? 1 : 0);
+            PlayerPrefs.Save();
         }
 
         private static void Save()

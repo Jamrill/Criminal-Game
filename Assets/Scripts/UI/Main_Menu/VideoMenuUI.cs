@@ -22,6 +22,8 @@ namespace JuegoCriminal.UI
         [SerializeField] private TMP_Text resolutionLabel;
         [SerializeField] private Button windowModeButton;
         [SerializeField] private TMP_Text windowModeLabel;
+        [SerializeField] private Button vsyncButton;
+        [SerializeField] private TMP_Text vsyncLabel;
         private GameObject popup;
 
         private void Awake()
@@ -38,6 +40,8 @@ namespace JuegoCriminal.UI
             resolutionButton.onClick.AddListener(OpenResolutions);
             windowModeButton.onClick.AddListener(() => ShowChoices(windowModeButton,
                 DisplaySettings.ModeLabels, DisplaySettings.Mode, DisplaySettings.SetMode));
+            vsyncButton.onClick.AddListener(() => ShowChoices(vsyncButton,
+                new[] { "Desactivado", "Activado" }, DisplaySettings.VSyncEnabled ? 1 : 0, DisplaySettings.SetVSync));
         }
 
         private void OnEnable()
@@ -86,6 +90,7 @@ namespace JuegoCriminal.UI
             smaaQualityLabel.text = VideoSettings.Antialiasing == 2 ? VideoSettings.SmaaQualityLabel + "  v" : "No aplicable";
             resolutionLabel.text = DisplaySettings.Resolution.x + " x " + DisplaySettings.Resolution.y + "  v";
             windowModeLabel.text = DisplaySettings.ModeLabels[DisplaySettings.Mode] + "  v";
+            vsyncLabel.text = (DisplaySettings.VSyncEnabled ? "Activado" : "Desactivado") + "  v";
         }
 
         private void CloseChoices()

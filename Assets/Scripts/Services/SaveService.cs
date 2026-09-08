@@ -67,6 +67,7 @@ namespace JuegoCriminal.Services
 
         public int[] ownedProperties = new int[0];
         public InventoryPlacement[] inventoryItems = Array.Empty<InventoryPlacement>();
+        public int inventoryColumns = 10;
         public string[] equippedItemIds = Array.Empty<string>();
         public PrinterSaveState[] printers = Array.Empty<PrinterSaveState>();
 

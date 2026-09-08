@@ -21,14 +21,17 @@ namespace JuegoCriminal.Inventory
         public const int Width = 10;
         public const int MaxRows = 8;
         public const int MaxCapacity = Width * MaxRows;
+        public int Columns { get; private set; }
+        public int Rows => (MaxCapacity + Columns - 1) / Columns;
 
         private readonly List<InventoryPlacement> _placements;
         private readonly Func<string, InventoryItemDefinition> _resolve;
         public int Capacity { get; private set; }
         public IReadOnlyList<InventoryPlacement> Placements => _placements;
 
-        public InventoryGrid(int capacity, List<InventoryPlacement> placements, Func<string, InventoryItemDefinition> resolve)
+        public InventoryGrid(int capacity, List<InventoryPlacement> placements, Func<string, InventoryItemDefinition> resolve, int columns = Width)
         {
+            Columns = Math.Clamp(columns, 1, MaxCapacity);
             Capacity = Math.Clamp(capacity, 0, MaxCapacity);
             _placements = placements ?? new List<InventoryPlacement>();
             _resolve = resolve;
@@ -47,7 +50,7 @@ namespace JuegoCriminal.Inventory
                 for (int y = 0; y < item.Height(p.Rotation); y++)
                 for (int x = 0; x < item.Width(p.Rotation); x++)
                     if (item.Occupies(x, y, p.Rotation)
-                        && (p.y + y) * Width + p.x + x >= proposedCapacity) return false;
+                        && (p.y + y) * Columns + p.x + x >= proposedCapacity) return false;
             }
             return true;
         }
@@ -60,8 +63,8 @@ namespace JuegoCriminal.Inventory
             for (int rotation = 0; rotation < (item.CanRotate ? 4 : 1); rotation++)
             {
                 int rotated = rotation;
-                for (int y = 0; y < MaxRows; y++)
-                for (int x = 0; x < Width; x++)
+                for (int y = 0; y < Rows; y++)
+                for (int x = 0; x < Columns; x++)
                 {
                     if (!CanPlace(item, x, y, rotated, null)) continue;
                     placement = new InventoryPlacement
@@ -95,10 +98,39 @@ namespace JuegoCriminal.Inventory
             {
                 if (!item.Occupies(localX, localY, rotated)) continue;
                 int cellX = x + localX, cellY = y + localY;
-                int index = cellY * Width + cellX;
-                if (cellX < 0 || cellX >= Width || cellY < 0 || cellY >= MaxRows || index >= Capacity) return false;
+                int index = cellY * Columns + cellX;
+                if (cellX < 0 || cellX >= Columns || cellY < 0 || cellY >= Rows || index >= Capacity) return false;
                 if (IsOccupied(cellX, cellY, ignoredInstanceId)) return false;
             }
+            return true;
+        }
+
+        public bool TrySetColumns(int columns)
+        {
+            columns = Math.Clamp(columns, 1, MaxCapacity);
+            if (columns == Columns) return true;
+            var test = new InventoryGrid(Capacity, _placements, _resolve, columns);
+            bool fits = true;
+            foreach (var p in _placements)
+                if (!test.CanPlace(_resolve(p.itemId), p.x, p.y, p.Rotation, p.instanceId)) { fits = false; break; }
+            if (fits) { Columns = columns; return true; }
+
+            // Repack on a separate grid. Failure must never delete or move items.
+            var packed = new List<InventoryPlacement>();
+            test = new InventoryGrid(Capacity, packed, _resolve, columns);
+            foreach (var p in _placements)
+            {
+                if (!test.TryAdd(_resolve(p.itemId), out var placed)) return false;
+                placed.instanceId = p.instanceId;
+            }
+            for (int i = 0; i < _placements.Count; i++)
+            {
+                _placements[i].x = packed[i].x;
+                _placements[i].y = packed[i].y;
+                _placements[i].rotation = packed[i].rotation;
+                _placements[i].rotated = packed[i].rotated;
+            }
+            Columns = columns;
             return true;
         }
 

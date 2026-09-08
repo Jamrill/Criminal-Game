@@ -12,6 +12,8 @@ namespace JuegoCriminal.Inventory
         [Tooltip("Capacidad temporal/base. La ropa equipada se suma encima.")]
         [SerializeField, Range(0, InventoryGrid.MaxCapacity)] private int baseCapacity = 46;
         [SerializeField] private InventoryItemDefinition[] equippedItems;
+        [SerializeField, Range(1, InventoryGrid.MaxCapacity), Tooltip("Ancho de la cuadricula. El maximo total sigue siendo 80 celdas. Se aplica al cargar el jugador.")]
+        private int columns = 10;
 
         private readonly List<InventoryPlacement> _placements = new();
         private readonly Dictionary<string, InventoryItemDefinition> _sessionDefinitions = new();
@@ -128,12 +130,19 @@ namespace JuegoCriminal.Inventory
                         itemId = p.itemId, x = p.x, y = p.y, rotated = p.rotated, rotation = p.Rotation
                     });
                 }
-            Grid = new InventoryGrid(Capacity, _placements, Resolve);
+            int savedColumns = _save?.Current != null ? _save.Current.inventoryColumns : columns;
+            if (savedColumns <= 0) savedColumns = InventoryGrid.Width;
+            Grid = new InventoryGrid(Capacity, _placements, Resolve, savedColumns);
+            if (Grid.TrySetColumns(columns))
+                CommitChange();
+            else
+                Debug.LogWarning("[Inventory] No se pueden acomodar los objetos con las columnas solicitadas. Se conserva la cuadricula guardada, sin perder objetos.", this);
         }
 
         private void CommitChange()
         {
             _save?.UpdateInventoryPlacements(Grid.Placements);
+            if (_save?.Current != null) _save.Current.inventoryColumns = Grid.Columns;
             var equippedIds = new List<string>();
             if (equippedItems != null)
                 for (int i = 0; i < equippedItems.Length; i++)

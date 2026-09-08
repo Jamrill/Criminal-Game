@@ -46,6 +46,12 @@ namespace JuegoCriminal.Core
         [SerializeField] private float sceneSetupTimeout = 30f;
         [SerializeField] private int framesToWaitAfterLoad = 2;
 
+        [Header("Optional Shader Warmup")]
+        [Tooltip("Colecciones capturadas de variantes realmente usadas. Vacio = sin precalentamiento adicional.")]
+        [SerializeField] private ShaderVariantCollection[] shaderWarmupCollections = Array.Empty<ShaderVariantCollection>();
+        [Min(1)]
+        [SerializeField] private int shaderVariantsPerFrame = 8;
+
         private string _readySceneName;
 
         public bool IsLoading { get; private set; }
@@ -137,6 +143,20 @@ namespace JuegoCriminal.Core
             }
 
             // Margen configurable para que otros Start/LateUpdate reaccionen a la escena preparada.
+            // Keep the loading screen visible while preparing explicitly configured
+            // variants. Do not warm every shader in the project on every load.
+            if (shaderWarmupCollections != null)
+            {
+                foreach (var collection in shaderWarmupCollections)
+                {
+                    if (collection == null || collection.isWarmedUp || collection.variantCount == 0)
+                        continue;
+                    while (!collection.WarmUpProgressively(Mathf.Max(1, shaderVariantsPerFrame)))
+                        yield return null;
+                    yield return null;
+                }
+            }
+
             for (int i = 0; i < framesToWaitAfterLoad; i++)
                 yield return null;
 

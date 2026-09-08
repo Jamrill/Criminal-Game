@@ -8,6 +8,7 @@ namespace JuegoCriminal.UI
     public sealed class LoadingScreenUI : MonoBehaviour
     {
         public static LoadingScreenUI Instance { get; private set; }
+        public bool IsVisible => loadingScreenRoot != null && loadingScreenRoot.activeInHierarchy;
 
         [Header("Root")]
         [SerializeField] private GameObject loadingScreenRoot;
