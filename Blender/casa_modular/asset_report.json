@@ -1,0 +1,501 @@
+{
+  "scale": {
+    "default_cube": 2,
+    "person_height": 4,
+    "person_width": 2,
+    "wall_height": 8,
+    "floor_thickness": 0.4,
+    "floor_pitch": 8.4
+  },
+  "assets": {
+    "TV_Retro": {
+      "triangles": 400,
+      "objects": [
+        "TV_Retro"
+      ],
+      "notes": "Origin floor centre. Front is -Y in Blender. Stylized CRT, no antennas.",
+      "bounds": [
+        [
+          -1.399999976158142,
+          -0.9049999713897705,
+          0.0
+        ],
+        [
+          1.399999976158142,
+          1.28000009059906,
+          2.2750000953674316
+        ]
+      ]
+    },
+    "TV_Modern_Stand": {
+      "triangles": 308,
+      "objects": [
+        "TV_Modern_Stand"
+      ],
+      "notes": "Origin under feet. Stand included in one static mesh.",
+      "bounds": [
+        [
+          -1.7999999523162842,
+          -0.4696188271045685,
+          0.05779445171356201
+        ],
+        [
+          1.7999999523162842,
+          0.36221498250961304,
+          2.6999998092651367
+        ]
+      ]
+    },
+    "TV_Modern_Wall_Large": {
+      "triangles": 132,
+      "objects": [
+        "TV_Modern_Wall_Large"
+      ],
+      "notes": "Origin at centre of rear wall mount. Mount at desired viewing height.",
+      "bounds": [
+        [
+          -2.799999952316284,
+          -0.30000001192092896,
+          -1.600000023841858
+        ],
+        [
+          2.799999952316284,
+          0.04999999701976776,
+          1.600000023841858
+        ]
+      ]
+    },
+    "Coffee_Table": {
+      "triangles": 264,
+      "objects": [
+        "Coffee_Table"
+      ],
+      "notes": "Origin floor centre. Height 1.2, sized for the 4-unit character.",
+      "bounds": [
+        [
+          -1.7999999523162842,
+          -1.1749999523162842,
+          0.02990281581878662
+        ],
+        [
+          1.7999999523162842,
+          1.1749999523162842,
+          1.2000000476837158
+        ]
+      ]
+    },
+    "Chair_01_Basic": {
+      "triangles": 396,
+      "objects": [
+        "Chair_01_Basic"
+      ],
+      "notes": "Origin floor centre. Seat width 2.35; three distinct comfort/detail tiers.",
+      "bounds": [
+        [
+          -1.1750001907348633,
+          -1.0750001668930054,
+          0.04235617816448212
+        ],
+        [
+          1.1750000715255737,
+          1.0750000476837158,
+          2.7233877182006836
+        ]
+      ]
+    },
+    "Chair_02_Comfort": {
+      "triangles": 352,
+      "objects": [
+        "Chair_02_Comfort"
+      ],
+      "notes": "Origin floor centre. Seat width 2.35; three distinct comfort/detail tiers.",
+      "bounds": [
+        [
+          -1.1750001907348633,
+          -1.0750001668930054,
+          0.04235617816448212
+        ],
+        [
+          1.1750000715255737,
+          1.2015278339385986,
+          2.7296829223632812
+        ]
+      ]
+    },
+    "Chair_03_Elegant": {
+      "triangles": 572,
+      "objects": [
+        "Chair_03_Elegant"
+      ],
+      "notes": "Origin floor centre. Seat width 2.35; three distinct comfort/detail tiers.",
+      "bounds": [
+        [
+          -1.2800002098083496,
+          -1.0750001668930054,
+          0.04585956037044525
+        ],
+        [
+          1.28000009059906,
+          1.2015278339385986,
+          2.7296829223632812
+        ]
+      ]
+    },
+    "Wall_Straight_4x8": {
+      "triangles": 24,
+      "objects": [
+        "Wall_Straight_4x8"
+      ],
+      "notes": "Start (0,0,0), end (4,0,0). Height 8. Thickness centred on Y=0.",
+      "bounds": [
+        [
+          0.0,
+          -0.1850000023841858,
+          0.0
+        ],
+        [
+          4.0,
+          0.15000000596046448,
+          8.0
+        ]
+      ]
+    },
+    "Wall_Window_4x8": {
+      "triangles": 60,
+      "objects": [
+        "Wall_Window_4x8"
+      ],
+      "notes": "Same origin as straight wall. Opening X=.55..3.45, Z=3..6.2. Window separate.",
+      "bounds": [
+        [
+          0.0,
+          -0.1850000023841858,
+          0.0
+        ],
+        [
+          4.0,
+          0.15000000596046448,
+          8.0
+        ]
+      ]
+    },
+    "Window_Insert": {
+      "triangles": 232,
+      "objects": [
+        "Window_Frame",
+        "Window_Glass"
+      ],
+      "notes": "Origin equals Wall_Window. Place at identical transform. Glass is a separate mesh.",
+      "bounds": [
+        [
+          0.5499999523162842,
+          -0.11999999731779099,
+          3.0
+        ],
+        [
+          3.450000286102295,
+          0.11999999731779099,
+          6.199999809265137
+        ]
+      ]
+    },
+    "Wall_Glazing_4x8": {
+      "triangles": 84,
+      "objects": [
+        "Glazing_Frame",
+        "Glazing_Glass"
+      ],
+      "notes": "Start (0,0,0), end (4,0,0). Glass separate for Unity transparent material.",
+      "bounds": [
+        [
+          -5.960464477539063e-08,
+          -0.15000000596046448,
+          0.0
+        ],
+        [
+          4.0,
+          0.15000000596046448,
+          8.0
+        ]
+      ]
+    },
+    "Wall_Corner_Square": {
+      "triangles": 24,
+      "objects": [
+        "Wall_Corner_Square"
+      ],
+      "notes": "Origin start (0,0,0), end (2,2,0). Entry tangent +X, exit +Y. Rotate 90 degrees to connect next straight.",
+      "bounds": [
+        [
+          0.0,
+          -0.15000000596046448,
+          0.0
+        ],
+        [
+          2.1500000953674316,
+          2.0,
+          8.0
+        ]
+      ]
+    },
+    "Wall_Corner_Round": {
+      "triangles": 100,
+      "objects": [
+        "Wall_Corner_Round"
+      ],
+      "notes": "Quarter circle R=2, 12 segments. Same endpoints/tangents as square corner; origin at first lower endpoint.",
+      "bounds": [
+        [
+          1.1327983055540558e-16,
+          -0.15000000596046448,
+          0.0
+        ],
+        [
+          2.1500000953674316,
+          2.0,
+          8.0
+        ]
+      ]
+    },
+    "Wall_Door_4x8": {
+      "triangles": 60,
+      "objects": [
+        "Wall_Door_4x8"
+      ],
+      "notes": "Door opening X=.6..3.4, Z=0..4.8. Same wall origin; no geometry in opening.",
+      "bounds": [
+        [
+          0.0,
+          -0.1850000023841858,
+          0.0
+        ],
+        [
+          4.0,
+          0.15000000596046448,
+          8.0
+        ]
+      ]
+    },
+    "Door_Frame": {
+      "triangles": 132,
+      "objects": [
+        "Door_Frame"
+      ],
+      "notes": "Same origin as Wall_Door. Clear width 2.56 and clear height 4.68.",
+      "bounds": [
+        [
+          0.5999999642372131,
+          -0.1899999976158142,
+          0.0
+        ],
+        [
+          3.3999998569488525,
+          0.1899999976158142,
+          4.800000190734863
+        ]
+      ]
+    },
+    "Door_Leaf_Plain": {
+      "triangles": 220,
+      "objects": [
+        "Door_Leaf_Plain"
+      ],
+      "notes": "HINGE origin. Place at wall/frame local (0.74,0,0); rotate around local Z in Blender / Y in Unity.",
+      "bounds": [
+        [
+          0.0,
+          -0.2029999941587448,
+          0.039999961853027344
+        ],
+        [
+          2.5199999809265137,
+          0.2029999941587448,
+          4.679999828338623
+        ]
+      ]
+    },
+    "Door_Leaf_Panelled": {
+      "triangles": 396,
+      "objects": [
+        "Door_Leaf_Panelled"
+      ],
+      "notes": "HINGE origin. Place at wall/frame local (0.74,0,0); rotate around local Z in Blender / Y in Unity.",
+      "bounds": [
+        [
+          0.0,
+          -0.2029999941587448,
+          0.039999961853027344
+        ],
+        [
+          2.5199999809265137,
+          0.2029999941587448,
+          4.679999828338623
+        ]
+      ]
+    },
+    "Stairs_U_Floor": {
+      "triangles": 1808,
+      "objects": [
+        "Stairs_U_Floor"
+      ],
+      "notes": "Origin front-centre ground. Repeat every Z=8.4. Open well X=-1.9..1.9,Y=2.8..10.6. Place lift module at (0,2.8,0). Visual steps; use ramp colliders in Unity.",
+      "bounds": [
+        [
+          -4.5,
+          0.0,
+          0.046210289001464844
+        ],
+        [
+          4.5,
+          13.399999618530273,
+          10.575906753540039
+        ]
+      ]
+    },
+    "Stairs_Start_Landing": {
+      "triangles": 12,
+      "objects": [
+        "Stairs_Start_Landing"
+      ],
+      "notes": "Use once at the base of the staircase. Top surface Z=0.",
+      "bounds": [
+        [
+          -4.5,
+          0.0,
+          -0.4000000059604645
+        ],
+        [
+          4.5,
+          2.799999952316284,
+          0.0
+        ]
+      ]
+    },
+    "Lift_Shaft_Floor": {
+      "triangles": 96,
+      "objects": [
+        "Lift_Shaft_Floor"
+      ],
+      "notes": "Repeat at Z=8.4*n. Open top/bottom: no floor blocking the car. Place at stairs (0,2.8,0). Door opening 2.96 wide, 4.9 high.",
+      "bounds": [
+        [
+          -1.899999976158142,
+          -0.08000004291534424,
+          0.0
+        ],
+        [
+          1.899999976158142,
+          3.799999952316284,
+          8.399999618530273
+        ]
+      ]
+    },
+    "Lift_Landing_Doors": {
+      "triangles": 88,
+      "objects": [
+        "LandingDoor_Left",
+        "LandingDoor_Right"
+      ],
+      "notes": "Place at each shaft floor origin. Separate leaves slide in +/-X. No animation or elevator logic included.",
+      "bounds": [
+        [
+          -1.4600000381469727,
+          -0.09000000357627869,
+          0.029999971389770508
+        ],
+        [
+          1.4600000381469727,
+          -0.019999999552965164,
+          4.850000381469727
+        ]
+      ]
+    },
+    "Lift_Cabin": {
+      "triangles": 376,
+      "objects": [
+        "Cabin_Body",
+        "CabinDoor_Left",
+        "CabinDoor_Right"
+      ],
+      "notes": "Origin at cabin floor/front. Align with shaft origin. Animate entire cabin vertically; door leaves slide separately in X. No floor count baked into cabin.",
+      "bounds": [
+        [
+          -1.649999976158142,
+          0.1850000023841858,
+          -0.23999999463558197
+        ],
+        [
+          1.649999976158142,
+          3.559999942779541,
+          5.199999809265137
+        ]
+      ]
+    },
+    "Lift_Roof_Cap": {
+      "triangles": 12,
+      "objects": [
+        "Lift_Roof_Cap"
+      ],
+      "notes": "Use once above the highest shaft module, allowing a full module of overhead clearance.",
+      "bounds": [
+        [
+          -1.899999976158142,
+          0.0,
+          0.0
+        ],
+        [
+          1.899999976158142,
+          3.799999952316284,
+          0.23999999463558197
+        ]
+      ]
+    },
+    "Tree_Stylized": {
+      "triangles": 248,
+      "objects": [
+        "Tree_Stylized"
+      ],
+      "notes": "Low-poly tree, origin at ground. Solid foliage clusters, no alpha cards or textures.",
+      "bounds": [
+        [
+          -2.9994072914123535,
+          -2.84608793258667,
+          0.0
+        ],
+        [
+          3.349407434463501,
+          2.4460880756378174,
+          9.100000381469727
+        ]
+      ]
+    }
+  },
+  "existing_wall_reference": [
+    {
+      "name": "Wall",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions": [
+        4.0,
+        5.0,
+        0.5000002384185791
+      ],
+      "local_bounds": [
+        [
+          -400.0,
+          0.0,
+          -25.000003814697266
+        ],
+        [
+          0.0,
+          500.0,
+          25.000017166137695
+        ]
+      ]
+    }
+  ],
+  "total_triangles": 6396
+}
