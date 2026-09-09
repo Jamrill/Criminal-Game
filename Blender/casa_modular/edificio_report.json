@@ -1,0 +1,183 @@
+{
+  "plantas": 4,
+  "viviendas": 8,
+  "modulos_nuevos": 25,
+  "reutilizacion_original": {
+    "Wall_Straight_4x8": 176,
+    "Wall_Window_4x8": 110,
+    "Window_Insert": 110,
+    "Stairs_Start_Landing": 1,
+    "Stairs_U_Floor": 3,
+    "Lift_Shaft_Floor": 5,
+    "Lift_Landing_Doors": 4,
+    "Lift_Cabin": 1,
+    "Wall_Door_4x8": 32,
+    "Door_Frame": 32,
+    "Door_Leaf_Panelled": 32,
+    "Coffee_Table": 8,
+    "TV_Modern_Wall_Large": 8,
+    "Chair_02_Comfort": 16,
+    "Lift_Roof_Cap": 1,
+    "Tree_Stylized": 4
+  },
+  "originales_verificados": 40,
+  "assets": {
+    "Suelo_4x4_Madera": {
+      "triangulos": 132,
+      "objetos": [
+        "Suelo_4x4_Madera"
+      ]
+    },
+    "Suelo_4x4_Terrazo": {
+      "triangulos": 60,
+      "objetos": [
+        "Suelo_4x4_Terrazo"
+      ]
+    },
+    "Suelo_4x4_Terraza": {
+      "triangulos": 60,
+      "objetos": [
+        "Suelo_4x4_Terraza"
+      ]
+    },
+    "Suelo_2x4_Remate": {
+      "triangulos": 12,
+      "objetos": [
+        "Suelo_2x4_Remate"
+      ]
+    },
+    "Muro_Terraza_4x4": {
+      "triangulos": 24,
+      "objetos": [
+        "Muro_Terraza_4x4"
+      ]
+    },
+    "Sofa_2_Plazas": {
+      "triangulos": 572,
+      "objetos": [
+        "Sofa_2_Plazas"
+      ]
+    },
+    "Sofa_3_Plazas": {
+      "triangulos": 660,
+      "objetos": [
+        "Sofa_3_Plazas"
+      ]
+    },
+    "Cama_Doble": {
+      "triangulos": 680,
+      "objetos": [
+        "Cama_Doble"
+      ]
+    },
+    "Cama_Individual": {
+      "triangulos": 592,
+      "objetos": [
+        "Cama_Individual"
+      ]
+    },
+    "Mesita_Noche": {
+      "triangulos": 480,
+      "objetos": [
+        "Mesita_Noche"
+      ]
+    },
+    "Armario_Dos_Puertas": {
+      "triangulos": 436,
+      "objetos": [
+        "Armario_Carcasa_Interior",
+        "Armario_Puerta_Izquierda",
+        "Armario_Puerta_Derecha"
+      ]
+    },
+    "Escritorio_Ordenador": {
+      "triangulos": 1980,
+      "objetos": [
+        "Escritorio_Ordenador"
+      ]
+    },
+    "Silla_Escritorio": {
+      "triangulos": 496,
+      "objetos": [
+        "Silla_Escritorio"
+      ]
+    },
+    "Cocina_Modulo_Cajones": {
+      "triangulos": 364,
+      "objetos": [
+        "Cocina_Modulo_Cajones"
+      ]
+    },
+    "Cocina_Modulo_Fregadero": {
+      "triangulos": 732,
+      "objetos": [
+        "Cocina_Modulo_Fregadero"
+      ]
+    },
+    "Cocina_Modulo_Horno": {
+      "triangulos": 868,
+      "objetos": [
+        "Cocina_Modulo_Horno"
+      ]
+    },
+    "Cocina_Armario_Alto": {
+      "triangulos": 156,
+      "objetos": [
+        "Cocina_Armario_Alto"
+      ]
+    },
+    "Campana_Extractora": {
+      "triangulos": 132,
+      "objetos": [
+        "Campana_Extractora"
+      ]
+    },
+    "Frigorifico_Interior": {
+      "triangulos": 1384,
+      "objetos": [
+        "Frigorifico_Carcasa_Hueca",
+        "Frigorifico_Baldas_Cajones",
+        "Frigorifico_Puerta_Congelador_PIVOTE",
+        "Frigorifico_Puerta_Nevera_PIVOTE"
+      ]
+    },
+    "Mesa_Comedor": {
+      "triangulos": 256,
+      "objetos": [
+        "Mesa_Comedor"
+      ]
+    },
+    "Lavabo_Mueble": {
+      "triangulos": 784,
+      "objetos": [
+        "Lavabo_Mueble"
+      ]
+    },
+    "Vater": {
+      "triangulos": 330,
+      "objetos": [
+        "Vater"
+      ]
+    },
+    "Ducha": {
+      "triangulos": 260,
+      "objetos": [
+        "Ducha"
+      ]
+    },
+    "Buzon_Individual": {
+      "triangulos": 156,
+      "objetos": [
+        "Buzon_Individual"
+      ]
+    },
+    "Corredera_Balcon_8x8": {
+      "triangulos": 332,
+      "objetos": [
+        "Corredera_Marco_Dintel",
+        "Corredera_Hoja_Fija",
+        "Corredera_Hoja_Movil"
+      ]
+    }
+  }
+}

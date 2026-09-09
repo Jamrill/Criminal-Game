@@ -1,0 +1,14 @@
+EDIFICIO MODULAR - 4 PLANTAS / 8 VIVIENDAS
+Escenas: 01 biblioteca original intacta; 02 edificio completo; 03 planta amueblada en corte; 04 catalogo de muebles; 05 nucleo comun.
+Cada planta tiene dos viviendas, salon-cocina, dos dormitorios (cama doble e individual), escritorio, armarios, bano y balcon.
+Escala: cubo 2; personaje 2 x 2 x 4; paredes 8; plantas 8.4. Suelos 4 x 4 x .4, origen en esquina superior.
+En escena 02 ocultar Cubierta y plantas superiores para editar interiores. Cada vivienda tiene tabiques y mobiliario separados.
+La escena 03 comparte los muebles de planta 01 y usa copias recortadas de tabiques solo para mostrar distribucion.
+Frigorifico: seleccionar malla Puerta_Nevera_PIVOTE o Puerta_Congelador_PIVOTE, girar Z local (-110 grados).
+Los estantes interiores de cada puerta viajan con ella. Carcasa hueca y cajones reales. No hay animaciones.
+Corredera: seleccionar Hoja_Movil, trasladar X local -3.8. Dejar Hoja_Fija. Hueco libre aproximado 3.6 x 4.6.
+Las copias comparten mallas. Los objetos de cada mueble tienen un empty padre para mover el conjunto.
+Biblioteca de modulos de origen conservada como colecciones marcadas Asset; catalogo editable en escena 04.
+Escaleras originales: tres tramos de planta, cuatro paradas, una cabina y espacio superior del ascensor. No hay forjados atravesando el hueco.
+Modelado visual: no incluye logica, colliders ni animaciones. FBX existentes sin modificar.
+Referencias de diseno IKEA consultadas; reinterpretaciones propias en proporciones, patas, frentes y combinacion de materiales.

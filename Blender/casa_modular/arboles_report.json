@@ -1,0 +1,51 @@
+{
+  "original_height": 9.10000038,
+  "person_height": 4,
+  "variants": [
+    {
+      "name": "Arbol_Urbano_01_Erguido_oval",
+      "height": 9.6,
+      "triangles": 12102,
+      "branches": 103,
+      "connected_components": 1
+    },
+    {
+      "name": "Arbol_Urbano_02_Vaso_abierto",
+      "height": 9.5,
+      "triangles": 11650,
+      "branches": 148,
+      "connected_components": 1
+    },
+    {
+      "name": "Arbol_Urbano_03_Bifurcado",
+      "height": 10.0,
+      "triangles": 12064,
+      "branches": 121,
+      "connected_components": 1
+    },
+    {
+      "name": "Arbol_Urbano_04_Inclinado_suave",
+      "height": 10.3,
+      "triangles": 12148,
+      "branches": 103,
+      "connected_components": 1
+    },
+    {
+      "name": "Arbol_Urbano_05_Multitronco",
+      "height": 9.8,
+      "triangles": 11574,
+      "branches": 148,
+      "connected_components": 1
+    },
+    {
+      "name": "Arbol_Urbano_06_Compacto_podado",
+      "height": 9.2,
+      "triangles": 13824,
+      "branches": 57,
+      "connected_components": 1
+    }
+  ],
+  "original_objects_preserved": 3019,
+  "no_leaves": true,
+  "new_building_examples": 4
+}

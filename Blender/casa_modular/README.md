@@ -1,4 +1,37 @@
-# Casa modular: modelos de primera versión
+# Casa modular: biblioteca y edificio de cuatro plantas
+
+`Casa_Modular.blend` incluye ahora un edificio completo de **4 plantas con 2 viviendas por planta**, construido con las piezas de la biblioteca original. La colección nueva es `EDIFICIO_4_PLANTAS`, en la escena `02_Edificio_4_plantas`. Se conservan los objetos originales en `01_Biblioteca_original` y una copia previa en `Casa_Modular_antes_edificio.blend`.
+
+## Ampliación del edificio
+
+### Árboles urbanos sin hojas
+
+La escena `06_Arboles_urbanos_sin_hojas` contiene la colección `ARBOLES_URBANOS_6_VARIANTES`: seis árboles de malla continua con tronco, base ensanchada y ramas progresivamente más finas. Portes erguido oval, vaso abierto, bifurcado, inclinado suave, multitronco y compacto podado. Alturas de 9.2 a 10.3 unidades frente a las 9.1 del original; el personaje sigue midiendo 4.
+
+Cada árbol tiene su origen al nivel del suelo, escala aplicada y está marcado como Asset. Cuatro copias se muestran alrededor del edificio. El árbol de la biblioteca original se conserva y sus antiguas copias del entorno están ocultas. La corteza utiliza un material procedural, sin imágenes externas; no hay hojas ni animaciones.
+
+[Vista de las seis variantes](10_arboles_6_variantes.png) · [Detalle](11_arbol_tronco_detalle.png) · [Ejemplo en el edificio](12_edificio_arboles_urbanos.png) · [Referencias](REFERENCIAS_ARBOLES.md).
+
+`Casa_Modular_antes_arboles.blend` conserva el archivo anterior a los árboles. `build_urban_trees.py` reproduce esta ampliación sobre esa copia previa, guardando en `Casa_Modular.blend`; conservar cualquier edición manual antes de ejecutarlo. `arboles_report.json` recoge tamaños y geometría.
+
+### Escenas de arquitectura
+
+- `02_Edificio_4_plantas`: edificio completo, plantas a cotas 0, 8.4, 16.8 y 25.2. Ocultar `Cubierta_OCULTAR_para_ver_planta_04` y las plantas superiores para trabajar dentro. Cada vivienda separa tabiques y mobiliario.
+- `03_Planta_amueblada`: vista de distribución con tabiques recortados para presentación. Los muebles están vinculados a la planta inferior del edificio; los tabiques bajos son copias de presentación.
+- `04_Catalogo_muebles_nuevos`: 25 módulos nuevos, agrupados por mueble y reutilizables. El frigorífico aparece abierto para mostrar el interior.
+- `05_Nucleo_escaleras_ascensor`: tres tramos de escaleras, cuatro paradas y una cabina, aislados para inspección.
+
+Las ocho viviendas tienen salón, cocina equipada, dormitorio doble, dormitorio individual con escritorio y ordenador, silla de oficina, mesitas, armarios, baño con lavabo, váter y ducha, y balcón con puerta corredera y muretes de media altura. El portal tiene ocho buzones. Hay sofás de dos y tres plazas, y losetas modulares de madera, terrazo y terraza de 4 × 4 × 0.4, además de un remate de 2 × 4.
+
+**Piezas móviles:** las dos puertas del frigorífico son mallas independientes con el origen en la bisagra izquierda; girar Z local desde 0 hasta aproximadamente −110°. Los estantes de puerta pertenecen a la hoja superior. Para la corredera, desplazar `Corredera_Hoja_Movil` −3.8 en X local. Los armarios también tienen hojas separadas. Los muebles se mueven completos seleccionando su objeto padre. No hay animaciones creadas.
+
+Vistas: [edificio](04_edificio_4_plantas.png), [planta](05_planta_amueblada.png), [catálogo](06_catalogo_nuevos.png), [frigorífico abierto](07_frigorifico_abierto.png), [vivienda](08_vivienda_detalle.png) y [núcleo común](09_nucleo_comun.png). Las [referencias IKEA](REFERENCIAS_EDIFICIO.md) documentan la inspiración y las diferencias de los modelos propios.
+
+`edificio_report.json` recoge módulos, geometría y reutilización. `validate_building.py` comprueba el número de viviendas, las cotas, las piezas separadas y recorridos en planta para un volumen de personaje de 2 × 2 × 4, suponiendo puertas abiertas. Es una comprobación geométrica de distribución; no una prueba de navegación o físicas en Unity.
+
+`extend_building.py` amplía una biblioteca **sin ampliar previamente** y guarda en `Casa_Modular.blend`. Para reconstruir esta versión, ejecutarlo sobre `Casa_Modular_antes_edificio.blend`, conservando antes cualquier edición posterior. El generador antiguo `build_house_pack.py` recrea solo la biblioteca inicial y **eliminaría la ampliación del archivo si se vuelve a ejecutar**.
+
+## Biblioteca original y FBX existentes
 
 Abre `Casa_Modular.blend` para editar la biblioteca. `FBX/` contiene 24 recursos independientes, con 6396 triángulos en total (sin contar las copias de demostración). Las tres imágenes PNG muestran muebles, paredes y montaje de escaleras/ascensor. No se han sustituido modelos ni escenas de Unity.
 

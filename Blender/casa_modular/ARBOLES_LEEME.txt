@@ -1,0 +1,9 @@
+ARBOLES URBANOS SIN HOJAS - 6 VARIANTES
+Escena 06_Arboles_urbanos_sin_hojas / coleccion ARBOLES_URBANOS_6_VARIANTES.
+Cada arbol es una malla continua cerrada de tronco y ramas, con origen en el suelo y escala aplicada.
+Alturas: 9.6 / 9.5 / 10.0 / 10.3 / 9.8 / 9.2 unidades. Original: 9.1. Personaje: 4.
+Los seis objetos estan marcados como Asset y se pueden duplicar o mover directamente.
+Cuatro copias de ejemplo rodean el edificio. Los arboles anteriores de ese entorno estan ocultos; el original de la biblioteca sigue intacto.
+Corteza procedural discreta; sin texturas externas ni hojas. Las mallas usan sombreado suave y aproximadamente 14500 triangulos cada una.
+No hay animaciones ni colliders. Las referencias de porte urbano estan en REFERENCIAS_ARBOLES.md.
+Una copia del blend anterior a esta ampliacion queda en Casa_Modular_antes_arboles.blend.

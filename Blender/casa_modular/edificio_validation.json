@@ -1,0 +1,249 @@
+{
+  "scene": "02_Edificio_4_plantas",
+  "character": [
+    2,
+    2,
+    4
+  ],
+  "checks": [
+    {
+      "name": "four floors",
+      "passed": true
+    },
+    {
+      "name": "eight apartments",
+      "passed": true
+    },
+    {
+      "name": "floor height 0",
+      "passed": true
+    },
+    {
+      "name": "floor height 1",
+      "passed": true
+    },
+    {
+      "name": "floor height 2",
+      "passed": true
+    },
+    {
+      "name": "floor height 3",
+      "passed": true
+    },
+    {
+      "name": "Stairs_U_Floor count",
+      "passed": true
+    },
+    {
+      "name": "Lift_Landing_Doors count",
+      "passed": true
+    },
+    {
+      "name": "Lift_Cabin count",
+      "passed": true
+    },
+    {
+      "name": "Frigorifico_Interior count",
+      "passed": true
+    },
+    {
+      "name": "Cama_Doble count",
+      "passed": true
+    },
+    {
+      "name": "Cama_Individual count",
+      "passed": true
+    },
+    {
+      "name": "Ducha count",
+      "passed": true
+    },
+    {
+      "name": "Vater count",
+      "passed": true
+    },
+    {
+      "name": "Lavabo_Mueble count",
+      "passed": true
+    },
+    {
+      "name": "Buzon_Individual count",
+      "passed": true
+    },
+    {
+      "name": "01A_Frigorifico_Interior separate hinged doors",
+      "passed": true
+    },
+    {
+      "name": "01A_Frigorifico_Interior no animation",
+      "passed": true
+    },
+    {
+      "name": "01B_Frigorifico_Interior separate hinged doors",
+      "passed": true
+    },
+    {
+      "name": "01B_Frigorifico_Interior no animation",
+      "passed": true
+    },
+    {
+      "name": "02A_Frigorifico_Interior separate hinged doors",
+      "passed": true
+    },
+    {
+      "name": "02A_Frigorifico_Interior no animation",
+      "passed": true
+    },
+    {
+      "name": "02B_Frigorifico_Interior separate hinged doors",
+      "passed": true
+    },
+    {
+      "name": "02B_Frigorifico_Interior no animation",
+      "passed": true
+    },
+    {
+      "name": "03A_Frigorifico_Interior separate hinged doors",
+      "passed": true
+    },
+    {
+      "name": "03A_Frigorifico_Interior no animation",
+      "passed": true
+    },
+    {
+      "name": "03B_Frigorifico_Interior separate hinged doors",
+      "passed": true
+    },
+    {
+      "name": "03B_Frigorifico_Interior no animation",
+      "passed": true
+    },
+    {
+      "name": "04A_Frigorifico_Interior separate hinged doors",
+      "passed": true
+    },
+    {
+      "name": "04A_Frigorifico_Interior no animation",
+      "passed": true
+    },
+    {
+      "name": "04B_Frigorifico_Interior separate hinged doors",
+      "passed": true
+    },
+    {
+      "name": "04B_Frigorifico_Interior no animation",
+      "passed": true
+    },
+    {
+      "name": "Portal_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "01A_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "01B_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "02A_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "02B_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "03A_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "03B_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "04A_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "04B_Corredera_Balcon_8x8 separate sliding leaf",
+      "passed": true
+    },
+    {
+      "name": "shared original stair mesh",
+      "passed": true
+    },
+    {
+      "name": "A accessible double bedroom aisle",
+      "passed": true
+    },
+    {
+      "name": "A accessible single bedroom / desk aisle",
+      "passed": true
+    },
+    {
+      "name": "A accessible bathroom entry",
+      "passed": true
+    },
+    {
+      "name": "A accessible balcony approach",
+      "passed": true
+    },
+    {
+      "name": "A accessible kitchen work aisle",
+      "passed": true
+    },
+    {
+      "name": "A entrance clear",
+      "passed": true
+    },
+    {
+      "name": "B accessible double bedroom aisle",
+      "passed": true
+    },
+    {
+      "name": "B accessible single bedroom / desk aisle",
+      "passed": true
+    },
+    {
+      "name": "B accessible bathroom entry",
+      "passed": true
+    },
+    {
+      "name": "B accessible balcony approach",
+      "passed": true
+    },
+    {
+      "name": "B accessible kitchen work aisle",
+      "passed": true
+    },
+    {
+      "name": "B entrance clear",
+      "passed": true
+    }
+  ],
+  "passages": {
+    "A": {
+      "reachable_cells": 18129,
+      "destinations": {
+        "double bedroom aisle": true,
+        "single bedroom / desk aisle": true,
+        "bathroom entry": true,
+        "balcony approach": true,
+        "kitchen work aisle": true
+      }
+    },
+    "B": {
+      "reachable_cells": 19163,
+      "destinations": {
+        "double bedroom aisle": true,
+        "single bedroom / desk aisle": true,
+        "bathroom entry": true,
+        "balcony approach": true,
+        "kitchen work aisle": true
+      }
+    }
+  },
+  "limitations": "Furniture envelope / open-door plan check only. No physics, colliders or animation simulation."
+}
