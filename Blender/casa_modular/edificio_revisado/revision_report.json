@@ -1,0 +1,30 @@
+{
+  "input": "C:\\Users\\adm_mgarciajavier\\Documents\\Unity projects\\Criminal-Game\\Blender\\casa_modular\\Casa_Modular_antes_arboles.blend",
+  "building_size": [
+    72,
+    32
+  ],
+  "floor_pitch": 8.4,
+  "shops": 4,
+  "apartments": 6,
+  "labels_only_at_apartment_entrances": 6,
+  "windows_on_internal_boundaries": 0,
+  "original_objects_preserved": 3010,
+  "new_asset_triangles": {
+    "REV_Pared_Exterior_InteriorMasY_solid": 24,
+    "REV_Pared_Exterior_InteriorMasY_window": 60,
+    "REV_Pared_Exterior_InteriorMasY_door": 60,
+    "REV_Pared_Interior_Doble_solid": 36,
+    "REV_Pared_Interior_Doble_window": 72,
+    "REV_Pared_Interior_Doble_door": 84,
+    "REV_Expositor_Pared": 656,
+    "REV_Expositor_Isla_Huecos": 224,
+    "REV_Mostrador": 200,
+    "REV_Caja_Registradora": 740,
+    "REV_Cancela_Portal_8x8": 820,
+    "REV_Escaparate_14": 212
+  },
+  "common_floor_surface_samples_passed": 7014,
+  "shop_furniture_pairs_without_overlap": 220,
+  "note": "Visual geometry checks only. No Unity collision/navigation test."
+}

@@ -1,0 +1,488 @@
+{
+  "floor_modules_placed": 1003,
+  "wall_modules_placed": 55,
+  "catalog_resources": 80,
+  "building_meshes_and_texts_covered": 2175,
+  "assets": [
+    {
+      "resource": "KIT_Suelo_4x4_Terrazo",
+      "category": "01_Suelos",
+      "instances": 308,
+      "source": "KIT_Suelo_4x4_Terrazo.001"
+    },
+    {
+      "resource": "KIT_Suelo_2.1x4_Terrazo",
+      "category": "01_Suelos",
+      "instances": 28,
+      "source": "KIT_Suelo_2.1x4_Terrazo.001"
+    },
+    {
+      "resource": "KIT_Suelo_3.8x2.8_Terrazo",
+      "category": "01_Suelos",
+      "instances": 5,
+      "source": "KIT_Suelo_3.8x2.8_Terrazo.001"
+    },
+    {
+      "resource": "KIT_Suelo_3.8x4_Terrazo",
+      "category": "01_Suelos",
+      "instances": 13,
+      "source": "KIT_Suelo_3.8x4_Terrazo.001"
+    },
+    {
+      "resource": "KIT_Suelo_3.8x1.4_Terrazo",
+      "category": "01_Suelos",
+      "instances": 2,
+      "source": "KIT_Suelo_3.8x1.4_Terrazo.001"
+    },
+    {
+      "resource": "REV_Pared_Exterior_InteriorMasY_solid",
+      "category": "02_Paredes",
+      "instances": 138,
+      "source": "REV_Pared_Exterior_InteriorMasY_solid.001"
+    },
+    {
+      "resource": "REV_Cancela_Portal_8x8",
+      "category": "03_Ventanas_Puertas",
+      "instances": 1,
+      "source": "REV_Cancela_Portal_8x8"
+    },
+    {
+      "resource": "REV_Escaparate_14",
+      "category": "03_Ventanas_Puertas",
+      "instances": 4,
+      "source": "REV_Escaparate_14"
+    },
+    {
+      "resource": "Rotulo_ESTUDIO NORTE",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "Rotulo_comercio"
+    },
+    {
+      "resource": "Rotulo_OBJETOS & HOGAR",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "Rotulo_comercio.001"
+    },
+    {
+      "resource": "Rotulo_TALLER URBANO",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "Rotulo_comercio.002"
+    },
+    {
+      "resource": "Rotulo_LA DESPENSA",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "Rotulo_comercio.003"
+    },
+    {
+      "resource": "REV_Pared_Interior_Doble_solid",
+      "category": "02_Paredes",
+      "instances": 106,
+      "source": "Acceso_A_REV_Pared_Interior_Doble_solid"
+    },
+    {
+      "resource": "REV_Pared_Interior_Doble_door",
+      "category": "02_Paredes",
+      "instances": 28,
+      "source": "REV_Pared_Interior_Doble_door.001"
+    },
+    {
+      "resource": "Door_Frame",
+      "category": "03_Ventanas_Puertas",
+      "instances": 28,
+      "source": "Door_Frame.001"
+    },
+    {
+      "resource": "Door_Leaf_Panelled",
+      "category": "03_Ventanas_Puertas",
+      "instances": 28,
+      "source": "Door_Leaf_Panelled.001"
+    },
+    {
+      "resource": "KIT_Tabique_4x8_Doble",
+      "category": "02_Paredes",
+      "instances": 36,
+      "source": "KIT_Tabique_4x8_Doble.017"
+    },
+    {
+      "resource": "KIT_Tabique_2x8_Doble",
+      "category": "02_Paredes",
+      "instances": 10,
+      "source": "KIT_Tabique_2x8_Doble.015"
+    },
+    {
+      "resource": "Stairs_U_Floor",
+      "category": "04_Escaleras_Ascensor",
+      "instances": 3,
+      "source": "Stairs_U_Floor.007"
+    },
+    {
+      "resource": "Lift_Shaft_Floor",
+      "category": "04_Escaleras_Ascensor",
+      "instances": 5,
+      "source": "Lift_Shaft_Floor.011"
+    },
+    {
+      "resource": "Lift_Landing_Doors",
+      "category": "03_Ventanas_Puertas",
+      "instances": 4,
+      "source": "Lift_Landing_Doors.004"
+    },
+    {
+      "resource": "Lift_Cabin",
+      "category": "04_Escaleras_Ascensor",
+      "instances": 1,
+      "source": "Lift_Cabin.001"
+    },
+    {
+      "resource": "REV_Expositor_Pared",
+      "category": "05_Muebles",
+      "instances": 28,
+      "source": "REV_Expositor_Pared"
+    },
+    {
+      "resource": "REV_Expositor_Isla_Huecos",
+      "category": "05_Muebles",
+      "instances": 8,
+      "source": "REV_Expositor_Isla_Huecos.001"
+    },
+    {
+      "resource": "REV_Mostrador",
+      "category": "05_Muebles",
+      "instances": 4,
+      "source": "REV_Mostrador.001"
+    },
+    {
+      "resource": "REV_Caja_Registradora",
+      "category": "05_Muebles",
+      "instances": 4,
+      "source": "REV_Caja_Registradora"
+    },
+    {
+      "resource": "Producto_caja_a53842",
+      "category": "05_Muebles",
+      "instances": 16,
+      "source": "Producto_caja"
+    },
+    {
+      "resource": "KIT_Suelo_3.5x4_Terrazo",
+      "category": "01_Suelos",
+      "instances": 18,
+      "source": "KIT_Suelo_3.5x4_Terrazo.001"
+    },
+    {
+      "resource": "KIT_Suelo_3.5x1.4_Terrazo",
+      "category": "01_Suelos",
+      "instances": 6,
+      "source": "KIT_Suelo_3.5x1.4_Terrazo.001"
+    },
+    {
+      "resource": "KIT_Suelo_4x2.6_Terrazo",
+      "category": "01_Suelos",
+      "instances": 12,
+      "source": "KIT_Suelo_4x2.6_Terrazo.001"
+    },
+    {
+      "resource": "KIT_Suelo_4x4_Roble_miel",
+      "category": "01_Suelos",
+      "instances": 336,
+      "source": "KIT_Suelo_4x4_Roble_miel.001"
+    },
+    {
+      "resource": "KIT_Suelo_4x4_Junta",
+      "category": "01_Suelos",
+      "instances": 232,
+      "source": "KIT_Suelo_4x4_Junta.001"
+    },
+    {
+      "resource": "REV_Pared_Exterior_InteriorMasY_window",
+      "category": "02_Paredes",
+      "instances": 42,
+      "source": "REV_Pared_Exterior_InteriorMasY_window.001"
+    },
+    {
+      "resource": "Window_Insert",
+      "category": "03_Ventanas_Puertas",
+      "instances": 42,
+      "source": "Window_Insert.086"
+    },
+    {
+      "resource": "Corredera_Balcon_8x8",
+      "category": "03_Ventanas_Puertas",
+      "instances": 6,
+      "source": "01A_Corredera_Balcon_8x8.001"
+    },
+    {
+      "resource": "Muro_Terraza_4x4",
+      "category": "07_Remates_y_Otros",
+      "instances": 76,
+      "source": "Muro_Terraza_4x4.002"
+    },
+    {
+      "resource": "Barandilla_e21415",
+      "category": "04_Escaleras_Ascensor",
+      "instances": 12,
+      "source": "Barandilla"
+    },
+    {
+      "resource": "Poste_9506bd",
+      "category": "04_Escaleras_Ascensor",
+      "instances": 96,
+      "source": "Poste"
+    },
+    {
+      "resource": "Barandilla_ee1359",
+      "category": "04_Escaleras_Ascensor",
+      "instances": 12,
+      "source": "Barandilla.004"
+    },
+    {
+      "resource": "Barandilla_5d08c6",
+      "category": "04_Escaleras_Ascensor",
+      "instances": 12,
+      "source": "Barandilla.008"
+    },
+    {
+      "resource": "Rotulo_01A",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "REV_Numero_01A"
+    },
+    {
+      "resource": "Rotulo_01B",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "REV_Numero_01B"
+    },
+    {
+      "resource": "Sofa_3_Plazas",
+      "category": "05_Muebles",
+      "instances": 3,
+      "source": "01A_Sofa_3_Plazas.002"
+    },
+    {
+      "resource": "Coffee_Table",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Coffee_Table.002"
+    },
+    {
+      "resource": "TV_Modern_Wall_Large",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_TV_Modern_Wall_Large.002"
+    },
+    {
+      "resource": "01A_Alfombra_cdd4d8",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "01A_Alfombra.001"
+    },
+    {
+      "resource": "Cama_Doble",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Cama_Doble.002"
+    },
+    {
+      "resource": "Mesita_Noche",
+      "category": "05_Muebles",
+      "instances": 18,
+      "source": "01A_Mesita_Noche.006"
+    },
+    {
+      "resource": "Armario_Dos_Puertas",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Armario_Dos_Puertas.001"
+    },
+    {
+      "resource": "Cama_Individual",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Cama_Individual.002"
+    },
+    {
+      "resource": "Escritorio_Ordenador",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Escritorio_Ordenador.002"
+    },
+    {
+      "resource": "Silla_Escritorio",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Silla_Escritorio.002"
+    },
+    {
+      "resource": "Cocina_Modulo_Fregadero",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Cocina_Modulo_Fregadero.002"
+    },
+    {
+      "resource": "Cocina_Modulo_Horno",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Cocina_Modulo_Horno.002"
+    },
+    {
+      "resource": "Cocina_Modulo_Cajones",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Cocina_Modulo_Cajones.002"
+    },
+    {
+      "resource": "Cocina_Armario_Alto",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Cocina_Armario_Alto.002"
+    },
+    {
+      "resource": "Campana_Extractora",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Campana_Extractora.002"
+    },
+    {
+      "resource": "Frigorifico_Interior",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Frigorifico_Interior.001"
+    },
+    {
+      "resource": "Mesa_Comedor",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Mesa_Comedor.002"
+    },
+    {
+      "resource": "Chair_02_Comfort",
+      "category": "05_Muebles",
+      "instances": 12,
+      "source": "01A_Chair_02_Comfort.004"
+    },
+    {
+      "resource": "Ducha",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Ducha.002"
+    },
+    {
+      "resource": "Vater",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Vater.002"
+    },
+    {
+      "resource": "Lavabo_Mueble",
+      "category": "05_Muebles",
+      "instances": 6,
+      "source": "01A_Lavabo_Mueble.002"
+    },
+    {
+      "resource": "Sofa_2_Plazas",
+      "category": "05_Muebles",
+      "instances": 3,
+      "source": "01B_Sofa_2_Plazas.002"
+    },
+    {
+      "resource": "01B_Alfombra_cdd4d8",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "01B_Alfombra.001"
+    },
+    {
+      "resource": "Rotulo_02A",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "REV_Numero_02A"
+    },
+    {
+      "resource": "Rotulo_02B",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "REV_Numero_02B"
+    },
+    {
+      "resource": "02A_Alfombra_cdd4d8",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "02A_Alfombra.001"
+    },
+    {
+      "resource": "02B_Alfombra_cdd4d8",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "02B_Alfombra.001"
+    },
+    {
+      "resource": "Rotulo_03A",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "REV_Numero_03A"
+    },
+    {
+      "resource": "Rotulo_03B",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "REV_Numero_03B"
+    },
+    {
+      "resource": "03A_Alfombra_cdd4d8",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "03A_Alfombra.001"
+    },
+    {
+      "resource": "03B_Alfombra_cdd4d8",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "03B_Alfombra.001"
+    },
+    {
+      "resource": "Lift_Roof_Cap",
+      "category": "04_Escaleras_Ascensor",
+      "instances": 1,
+      "source": "Lift_Roof_Cap.003"
+    },
+    {
+      "resource": "Referencia_cubo_2_dc594e",
+      "category": "07_Remates_y_Otros",
+      "instances": 2,
+      "source": "Referencia_cubo_2"
+    },
+    {
+      "resource": "Marquesina_portal_ef305c",
+      "category": "07_Remates_y_Otros",
+      "instances": 1,
+      "source": "Marquesina_portal"
+    },
+    {
+      "resource": "KIT_Suelo_2x4_Junta",
+      "category": "01_Suelos",
+      "instances": 11,
+      "source": "KIT_Suelo_2x4_Junta.001"
+    },
+    {
+      "resource": "KIT_Remate_Fachada_4",
+      "category": "07_Remates_y_Otros",
+      "instances": 54,
+      "source": "KIT_Remate_Fachada_4.001"
+    },
+    {
+      "resource": "KIT_Lampara_Pie",
+      "category": "06_Lamparas",
+      "instances": 6,
+      "source": "KIT_Lampara_Pie.001"
+    },
+    {
+      "resource": "KIT_Plafon_Techo",
+      "category": "06_Lamparas",
+      "instances": 50,
+      "source": "KIT_Plafon_Techo.001"
+    }
+  ]
+}

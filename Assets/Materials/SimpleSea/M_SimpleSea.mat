@@ -51,13 +51,13 @@ Material:
     - _FoamSharpness: 4.3
     - _FoamThreshold: 0.546
     - _NormalSpeed: 0.295
-    - _NormalStrength: 0.83
-    - _NormalTiling: 0.09
+    - _NormalStrength: 0.4
+    - _NormalTiling: 0.04
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RippleScale: 2.4
+    - _RippleScale: 1.16
     - _RippleSpeed: 1.3
-    - _RippleStrength: 0.42
+    - _RippleStrength: 0.281
     - _Smoothness: 0.52
     - _TextureInfluence: 0.48
     - _TextureSpeed: 0.025
@@ -66,7 +66,7 @@ Material:
     - _WaveFrequency: 0.1
     - _WaveHeight: 2
     - _WaveSpeed: 1.55
-    - _WaveVariation: 0.41
+    - _WaveVariation: 1
     m_Colors:
     - _DeepColor: {r: 0.015, g: 0.1, b: 0.18, a: 1}
     - _FoamColor: {r: 0.9, g: 0.97, b: 1, a: 1}
