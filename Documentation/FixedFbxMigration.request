@@ -1,0 +1,2 @@
+Requested migration: use Fixed FBX, including incomplete wall prefabs as confirmed by the user.
+Preserve original files. Apply only in Edit mode with Prefab Mode closed.

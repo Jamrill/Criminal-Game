@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 38e94b7fe619f5c4b93a06c7198a2511
+guid: 58654354eb11d794ea8f9de25f4a8e3c
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -89,7 +89,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -108,7 +108,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1

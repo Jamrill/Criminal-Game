@@ -1,0 +1,7 @@
+Assets/Prefabs/Construction/Incompletes/Wall.prefab: altura 8; bounds Center: (2.00, 4.00, 0.00), Extents: (2.00, 4.00, 0.25); mallas y colliders Fixed.
+Assets/Prefabs/Construction/Incompletes/Wall_door_hole.prefab: altura 8; bounds Center: (2.00, 4.00, 0.00), Extents: (2.00, 4.00, 0.25); mallas y colliders Fixed.
+Assets/Prefabs/Construction/Incompletes/Corner_Wall.prefab: altura 8; bounds Center: (2.13, 4.00, 1.88), Extents: (2.13, 4.00, 2.13); mallas y colliders Fixed.
+Assets/Prefabs/Construction/Incompletes/Glass_wall_Incomplete.prefab: altura 8; bounds Center: (2.00, 4.00, 0.00), Extents: (2.00, 4.00, 0.25); mallas y colliders Fixed.
+Assets/Prefabs/Construction/Glass_Wall.prefab: altura 8; bounds Center: (2.00, 4.00, 0.00), Extents: (2.00, 4.00, 0.25); mallas y colliders Fixed.
+Assets/Prefabs/Construction/Diagonal_Wall.prefab: altura 8; bounds Center: (2.00, 4.00, 2.00), Extents: (2.00, 4.00, 2.00); mallas y colliders Fixed.
+Door: abrir/cerrar 95 grados; raiz fija; pomo acompana; collider ajustado; sin Animator.

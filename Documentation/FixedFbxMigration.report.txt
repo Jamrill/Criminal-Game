@@ -1,0 +1,8 @@
+Assets/Prefabs/Construction/Incompletes/Wall.prefab: ya usa Fixed; se conserva sin reconstruir.
+Assets/Prefabs/Construction/Incompletes/Wall_door_hole.prefab: ya usa Fixed; se conserva sin reconstruir.
+Assets/Prefabs/Construction/Incompletes/Corner_Wall.prefab: ya usa Fixed; se conserva sin reconstruir.
+Assets/Prefabs/Construction/Incompletes/Glass_wall_Incomplete.prefab: ya usa Fixed; se conserva sin reconstruir.
+Assets/Prefabs/Construction/Glass_Wall.prefab: ya usa Fixed; se conserva sin reconstruir.
+Assets/Prefabs/Construction/Diagonal_Wall.prefab: ya usa Fixed; se conserva sin reconstruir.
+Assets/Prefabs/Door.prefab -> Fixed/Door + Fixed/Knob; sin Animator; bisagra=Sheet; pomo=KnobPoint
+SUCCESS. Originales conservados. Prefabs verificados sin dependencias de los FBX sustituidos ni Animator.

@@ -24,10 +24,16 @@ namespace JuegoCriminal.UI
         [SerializeField] private TMP_Text windowModeLabel;
         [SerializeField] private Button vsyncButton;
         [SerializeField] private TMP_Text vsyncLabel;
+        [SerializeField] private Button reflectionsButton;
+        [SerializeField] private TMP_Text reflectionsLabel;
         private GameObject popup;
 
         private void Awake()
         {
+            EnsureReflectionsRow();
+            if (reflectionsButton != null)
+                reflectionsButton.onClick.AddListener(() => ShowChoices(reflectionsButton,
+                    new[] { "Bajo", "Medio", "Alto", "Ultra" }, VideoSettings.Reflections, VideoSettings.SetReflections));
             presetButton.onClick.AddListener(() => ShowChoices(presetButton,
                 new[] { "Bajo", "Medio", "Alto", "Ultra", "Personalizado" }, (int)VideoSettings.Preset, VideoSettings.SetPreset));
             antialiasingButton.onClick.AddListener(() => ShowChoices(antialiasingButton,
@@ -48,6 +54,28 @@ namespace JuegoCriminal.UI
         {
             VideoSettings.Changed += RefreshLabel;
             RefreshLabel();
+        }
+
+        private void EnsureReflectionsRow()
+        {
+            if (reflectionsButton != null)
+            {
+                if (reflectionsLabel == null) reflectionsLabel = reflectionsButton.GetComponentInChildren<TMP_Text>(true);
+                return;
+            }
+            // Reuse the existing row's font, sizing, layout and button transitions.
+            // Both Main Menu and Pause use OptionsPanel, so neither needs rewiring.
+            if (vsyncButton == null || vsyncButton.transform.parent == null) return;
+            Transform template = vsyncButton.transform.parent;
+            var row = Instantiate(template.gameObject, template.parent);
+            row.name = "Reflections";
+            row.transform.SetSiblingIndex(template.GetSiblingIndex() + 1);
+            reflectionsButton = row.GetComponentInChildren<Button>(true);
+            reflectionsButton.onClick = new Button.ButtonClickedEvent();
+            reflectionsLabel = reflectionsButton.GetComponentInChildren<TMP_Text>(true);
+            foreach (var label in row.GetComponentsInChildren<TMP_Text>(true))
+                if (label != reflectionsLabel) label.text = "Reflejos";
+            row.SetActive(true);
         }
 
         private void OnDisable()
@@ -91,6 +119,7 @@ namespace JuegoCriminal.UI
             resolutionLabel.text = DisplaySettings.Resolution.x + " x " + DisplaySettings.Resolution.y + "  v";
             windowModeLabel.text = DisplaySettings.ModeLabels[DisplaySettings.Mode] + "  v";
             vsyncLabel.text = (DisplaySettings.VSyncEnabled ? "Activado" : "Desactivado") + "  v";
+            if (reflectionsLabel != null) reflectionsLabel.text = VideoSettings.ReflectionsLabel + "  v";
         }
 
         private void CloseChoices()

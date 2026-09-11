@@ -97,6 +97,16 @@ namespace JuegoCriminal.Interaction
             return new[] { fallback };
         }
 
+        public Transform CurrentInteractor { get; private set; }
+
+        public void Interact(Transform interactor)
+        {
+            Transform previous = CurrentInteractor;
+            CurrentInteractor = interactor;
+            try { Interact(); }
+            finally { CurrentInteractor = previous; }
+        }
+
         public void Interact()
         {
             if (!CanInteract())

@@ -70,7 +70,7 @@ namespace JuegoCriminal.Player
 
             if (GameInput.InteractPressed && _current.CanInteract())
             {
-                _current.Interact();
+                _current.Interact(transform);
                 RefreshPromptVisuals();
             }
         }
