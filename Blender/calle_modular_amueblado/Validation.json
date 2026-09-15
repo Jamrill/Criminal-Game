@@ -1,0 +1,52 @@
+{
+  "original_meshes_and_origins_unchanged": 13,
+  "assets": {
+    "Alfombra": [
+      788,
+      92,
+      12
+    ],
+    "Escalera_U_7m": [
+      2108,
+      1468,
+      684
+    ],
+    "Lampara_Pie": [
+      416,
+      180,
+      84
+    ],
+    "Mesa_Cafe": [
+      608,
+      200,
+      72
+    ],
+    "Mueble_TV": [
+      1012,
+      372,
+      96
+    ],
+    "Silla_Roble": [
+      956,
+      340,
+      108
+    ],
+    "Sofa_3Plazas": [
+      4136,
+      1516,
+      564
+    ],
+    "TV_Pies": [
+      696,
+      168,
+      72
+    ],
+    "Table": [
+      2252,
+      1080,
+      450
+    ]
+  },
+  "floor_pitch": 7,
+  "tiles": 31
+}

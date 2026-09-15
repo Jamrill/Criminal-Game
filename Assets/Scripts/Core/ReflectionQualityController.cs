@@ -1,122 +1,98 @@
-using JuegoCriminal.Player;
+using System.Collections.Generic;
+using JuegoCriminal.Environment;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 namespace JuegoCriminal.Core
 {
-    /// <summary>
-    /// One budgeted local environment capture. Authored room probes take priority.
-    /// Created by VideoSettings; never modifies scene assets or material settings.
-    /// </summary>
+    // Coordinates fixed scene zones and the global sky. No player-following probe.
     public sealed class ReflectionQualityController : MonoBehaviour
     {
-        [SerializeField, Min(8f)] private float influenceSize = 64f;
-        [SerializeField, Min(1f)] private float captureDistance = 96f;
-        [SerializeField] private Vector3 captureOffset = new Vector3(0f, 1.8f, 0f);
-        [SerializeField] private LayerMask reflectedLayers = ~(1 << 5); // Exclude UI.
-
-        private LocalPlayerMarker player;
-        private ReflectionProbe probe;
-        private int renderId = -1;
-        private int appliedQuality = -1;
-        private float nextCapture;
-        private float nextPlayerSearch;
+        private readonly Dictionary<ReflectionZone, BlendedReflectionCapture> zones = new();
+        private readonly List<ReflectionZone> removed = new();
+        private BlendedReflectionCapture sky;
+        private Texture previousReflection;
+        private DefaultReflectionMode previousMode;
+        private int ownerScene;
+        private int quality = -1;
+        private float nextScan;
 
         public static int ResolutionFor(int quality) => quality <= 0 ? 0 : quality == 1 ? 128 : quality == 2 ? 256 : 512;
         public static float IntervalFor(int quality) => quality <= 0 ? float.PositiveInfinity : quality == 1 ? 5f : quality == 2 ? 2f : 0.5f;
 
-        private void OnEnable()
-        {
-            VideoSettings.Changed += SettingsChanged;
-            SceneManager.sceneLoaded += SceneLoaded;
-        }
-
+        private void OnEnable() => SceneManager.activeSceneChanged += ActiveSceneChanged;
         private void OnDisable()
         {
-            VideoSettings.Changed -= SettingsChanged;
-            SceneManager.sceneLoaded -= SceneLoaded;
-            ReleaseProbe();
+            SceneManager.activeSceneChanged -= ActiveSceneChanged;
+            Release();
+        }
+        private void ActiveSceneChanged(Scene previous, Scene current) => Release();
+
+        private void LateUpdate()
+        {
+            if (quality != VideoSettings.Reflections)
+            {
+                Release();
+                quality = VideoSettings.Reflections;
+            }
+            if (quality <= 0 || Time.timeScale <= 0f) return;
+            if (Time.unscaledTime >= nextScan)
+            {
+                nextScan = Time.unscaledTime + 1f;
+                if (sky == null && FindFirstObjectByType<DayNightCycle>() != null)
+                {
+                    previousReflection = RenderSettings.customReflectionTexture;
+                    previousMode = RenderSettings.defaultReflectionMode;
+                    ownerScene = SceneManager.GetActiveScene().handle;
+                    sky = new BlendedReflectionCapture(transform, "Global Sky", Vector3.zero,
+                        128, 0, 10f, null, previousReflection);
+                }
+                foreach (ReflectionZone zone in FindObjectsByType<ReflectionZone>(FindObjectsSortMode.None))
+                {
+                    if (!zone.isActiveAndEnabled || zones.ContainsKey(zone)) continue;
+                    zones.Add(zone, new BlendedReflectionCapture(zone.transform, zone.name,
+                        zone.CapturePosition, Mathf.Min(ResolutionFor(quality), zone.MaxResolution),
+                        zone.ReflectedLayers, zone.CaptureDistance, zone,
+                        sky != null && sky.Ready ? sky.Output : RenderSettings.customReflectionTexture));
+                }
+            }
+            if (sky != null)
+            {
+                sky.Tick(Mathf.Min(2f, IntervalFor(quality)), 2f);
+                if (sky.Ready)
+                {
+                    RenderSettings.customReflectionTexture = sky.Output;
+                    RenderSettings.defaultReflectionMode = DefaultReflectionMode.Custom;
+                }
+            }
+            removed.Clear();
+            foreach (var entry in zones)
+            {
+                if (entry.Key == null || !entry.Key.isActiveAndEnabled)
+                {
+                    entry.Value.Dispose();
+                    removed.Add(entry.Key);
+                    continue;
+                }
+                entry.Value.Tick(Mathf.Max(IntervalFor(quality), entry.Key.RefreshInterval), entry.Key.TransitionSeconds);
+            }
+            foreach (ReflectionZone zone in removed) zones.Remove(zone);
         }
 
-        private void SceneLoaded(Scene scene, LoadSceneMode mode)
+        private void Release()
         {
-            ReleaseProbe();
-            player = null;
-            nextPlayerSearch = 0f;
-        }
-
-        private void SettingsChanged()
-        {
-            if (VideoSettings.Reflections == 0) ReleaseProbe();
-            nextCapture = 0f;
-        }
-
-        private void Update()
-        {
-            if (VideoSettings.Reflections == 0 || !SystemInfo.supportsRenderToCubemap) return;
-            if (player == null || !player.isActiveAndEnabled)
+            if (sky != null && RenderSettings.customReflectionTexture == sky.Output)
             {
-                ReleaseProbe();
-                if (Time.unscaledTime < nextPlayerSearch) return;
-                nextPlayerSearch = Time.unscaledTime + 1f;
-                player = FindFirstObjectByType<LocalPlayerMarker>();
-                if (player == null || !player.isActiveAndEnabled) return;
+                bool sameScene = ownerScene == SceneManager.GetActiveScene().handle;
+                RenderSettings.customReflectionTexture = sameScene ? previousReflection : null;
+                RenderSettings.defaultReflectionMode = sameScene ? previousMode : DefaultReflectionMode.Skybox;
             }
-
-            // Do not recapture a paused game. Wait for the whole cubemap before
-            // moving the origin, changing resolution or submitting more GPU work.
-            if (Time.timeScale <= 0f) return;
-            if (probe != null && renderId >= 0)
-            {
-                if (!probe.IsFinishedRendering(renderId)) return;
-                renderId = -1;
-            }
-            int quality = VideoSettings.Reflections;
-            if (probe == null)
-            {
-                var go = new GameObject("LocalEnvironmentProbe");
-                go.transform.SetParent(transform, false);
-                go.SetActive(false);
-                probe = go.AddComponent<ReflectionProbe>();
-                probe.mode = ReflectionProbeMode.Realtime;
-                probe.refreshMode = ReflectionProbeRefreshMode.ViaScripting;
-                probe.timeSlicingMode = ReflectionProbeTimeSlicingMode.IndividualFaces;
-                probe.size = Vector3.one * influenceSize;
-                probe.blendDistance = Mathf.Min(8f, influenceSize * 0.25f);
-                probe.importance = -100; // Prefer deliberately placed room probes.
-                probe.boxProjection = false; // Moving volume is not a room boundary.
-                probe.nearClipPlane = 0.3f;
-                probe.farClipPlane = captureDistance;
-                probe.cullingMask = reflectedLayers;
-                probe.clearFlags = ReflectionProbeClearFlags.Skybox;
-                probe.hdr = true;
-                probe.resolution = ResolutionFor(quality);
-                go.SetActive(true);
-            }
-            if (appliedQuality != quality)
-            {
-                probe.resolution = ResolutionFor(quality);
-                appliedQuality = quality;
-                nextCapture = 0f;
-            }
-            if (Time.unscaledTime < nextCapture) return;
-            probe.transform.SetPositionAndRotation(player.transform.position + captureOffset, Quaternion.identity);
-            renderId = probe.RenderProbe();
-            nextCapture = Time.unscaledTime + IntervalFor(quality);
-        }
-
-        private void ReleaseProbe()
-        {
-            if (probe != null)
-            {
-                probe.enabled = false;
-                Destroy(probe.gameObject);
-                probe = null;
-            }
-            renderId = -1;
-            appliedQuality = -1;
-            nextCapture = 0f;
+            sky?.Dispose();
+            sky = null;
+            foreach (var capture in zones.Values) capture.Dispose();
+            zones.Clear();
+            nextScan = 0f;
         }
     }
 }

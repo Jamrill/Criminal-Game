@@ -1,0 +1,156 @@
+{
+  "floor_pitch": 7,
+  "floor_tile": [
+    4,
+    4,
+    0.02
+  ],
+  "assets": {
+    "Silla_Roble": [
+      {
+        "lod": 0,
+        "triangles": 956,
+        "vertices": 504
+      },
+      {
+        "lod": 1,
+        "triangles": 340,
+        "vertices": 192
+      },
+      {
+        "lod": 2,
+        "triangles": 108,
+        "vertices": 72
+      }
+    ],
+    "Sofa_3Plazas": [
+      {
+        "lod": 0,
+        "triangles": 4136,
+        "vertices": 2108
+      },
+      {
+        "lod": 1,
+        "triangles": 1516,
+        "vertices": 792
+      },
+      {
+        "lod": 2,
+        "triangles": 564,
+        "vertices": 312
+      }
+    ],
+    "Mesa_Cafe": [
+      {
+        "lod": 0,
+        "triangles": 608,
+        "vertices": 320
+      },
+      {
+        "lod": 1,
+        "triangles": 200,
+        "vertices": 112
+      },
+      {
+        "lod": 2,
+        "triangles": 72,
+        "vertices": 48
+      }
+    ],
+    "Mueble_TV": [
+      {
+        "lod": 0,
+        "triangles": 1012,
+        "vertices": 528
+      },
+      {
+        "lod": 1,
+        "triangles": 372,
+        "vertices": 208
+      },
+      {
+        "lod": 2,
+        "triangles": 96,
+        "vertices": 64
+      }
+    ],
+    "TV_Pies": [
+      {
+        "lod": 0,
+        "triangles": 696,
+        "vertices": 368
+      },
+      {
+        "lod": 1,
+        "triangles": 168,
+        "vertices": 96
+      },
+      {
+        "lod": 2,
+        "triangles": 72,
+        "vertices": 48
+      }
+    ],
+    "Alfombra": [
+      {
+        "lod": 0,
+        "triangles": 788,
+        "vertices": 520
+      },
+      {
+        "lod": 1,
+        "triangles": 92,
+        "vertices": 56
+      },
+      {
+        "lod": 2,
+        "triangles": 12,
+        "vertices": 8
+      }
+    ],
+    "Lampara_Pie": [
+      {
+        "lod": 0,
+        "triangles": 416,
+        "vertices": 216
+      },
+      {
+        "lod": 1,
+        "triangles": 180,
+        "vertices": 96
+      },
+      {
+        "lod": 2,
+        "triangles": 84,
+        "vertices": 48
+      }
+    ],
+    "Escalera_U_7m": [
+      {
+        "lod": 0,
+        "triangles": 2108,
+        "vertices": 1192
+      },
+      {
+        "lod": 1,
+        "triangles": 1468,
+        "vertices": 872
+      },
+      {
+        "lod": 2,
+        "triangles": 684,
+        "vertices": 456
+      }
+    ],
+    "Table": [
+      {
+        "lod": 1,
+        "triangles": 1080
+      },
+      {
+        "lod": 2,
+        "triangles": 450
+      }
+    ]
+  }
+}
