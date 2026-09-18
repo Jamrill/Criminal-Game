@@ -1,0 +1,1 @@
+PASS: cuatro prefabs con MeshCollider no convexo, misma malla que el MeshFilter; sin BoxCollider. 2026-09-17T18:09:48.4328239+02:00

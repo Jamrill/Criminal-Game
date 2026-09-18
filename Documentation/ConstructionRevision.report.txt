@@ -1,0 +1,19 @@
+Assets/Prefabs/Construction/Completes/Corner_Wall.prefab -> Assets/Original_assets/Walls/Complete/Corner_Wall_complete.fbx; bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13); BoxColliders=2
+Assets/Prefabs/Construction/Incompletes/Corner_Wall.prefab -> Assets/Original_assets/Walls/Incomplete/Corner_Wall_incomplete.fbx; bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13); BoxColliders=2
+Assets/Prefabs/Construction/Completes/Diagonal_Wall.prefab -> Assets/Original_assets/Walls/Complete/Diagonal_Wall_complete.fbx; bounds=Center: (2.12, 3.50, 2.13), Extents: (2.13, 3.50, 2.13); BoxColliders=1
+Assets/Prefabs/Construction/Incompletes/Diagonal_Wall.prefab -> Assets/Original_assets/Walls/Incomplete/Diagonal_Wall_incomplete.fbx; bounds=Center: (2.12, 3.50, 2.13), Extents: (2.13, 3.50, 2.13); BoxColliders=1
+Assets/Prefabs/Construction/Completes/Glass_wall.prefab -> Assets/Original_assets/Walls/Complete/Glass_Wall_complete.fbx; bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25); BoxColliders=1
+Assets/Prefabs/Construction/Incompletes/Glass_wall.prefab -> Assets/Original_assets/Walls/Incomplete/Glass_Wall_incomplete.fbx; bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25); BoxColliders=1
+Assets/Prefabs/Construction/Completes/Wall.prefab -> Assets/Original_assets/Walls/Complete/Wall_Complete.fbx; bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25); BoxColliders=1
+Assets/Prefabs/Construction/Incompletes/Wall.prefab -> Assets/Original_assets/Walls/Incomplete/Wall_incomplete.fbx; bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25); BoxColliders=1
+Assets/Prefabs/Construction/Completes/Wall_door_hole.prefab -> Assets/Original_assets/Walls/Complete/Wall_door_hole_complete.fbx; bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25); BoxColliders=1
+Assets/Prefabs/Construction/Incompletes/Wall_door_hole.prefab -> Assets/Original_assets/Walls/Incomplete/Wall_door_hole_incomplete.fbx; bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25); BoxColliders=1
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab -> Assets/Original_assets/Walls/Complete/Window_wall_complete.fbx; bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25); BoxColliders=2
+Assets/Prefabs/Construction/Incompletes/Window_Wall.prefab -> Assets/Original_assets/Walls/Incomplete/Window_wall_incomplete.fbx; bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25); BoxColliders=2
+Assets/Scenes/10_World_City.unity: 88 instancias ahora Incompletes; IDs y overrides conservados.
+Scene load PASS Assets/Scenes\00_Bootstrap.unity: 0 raices Incompletes.
+Scene load PASS Assets/Scenes\01_MainMenu.unity: 0 raices Incompletes.
+Scene load PASS Assets/Scenes\10_World_City.unity: 88 raices Incompletes.
+Scene load PASS Assets/Scenes\20_SimpleSea.unity: 0 raices Incompletes.
+VALIDATION PASS: modelos correctos, colliders presentes, sin Old ni Complete en referencias directas de escena.
+SUCCESS. Old conservado. Seis completos y seis incompletos.
