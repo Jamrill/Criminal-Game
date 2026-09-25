@@ -3,7 +3,12 @@ guid: b0c03353665df364c93305a33f0e10fe
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CM_Roble_miel
+    second: {fileID: 2100000, guid: b71490f824bb4d04aa41be610aae0001, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

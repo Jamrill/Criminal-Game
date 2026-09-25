@@ -62,7 +62,10 @@ namespace JuegoCriminal.Core
                 visual.SetActive(true);
                 display.enabled = false;
             }
-            if (seed != null && seed.dimension == TextureDimension.Cube && seed.width == resolution)
+            // A zone must first capture its own surroundings. Seeding an interior
+            // with the global sky publishes an exterior reflection inside the room
+            // and then blends it away, particularly visible on walls and floors.
+            if (zone == null && seed != null && seed.dimension == TextureDimension.Cube && seed.width == resolution)
             {
                 Ready = ReflectionProbe.BlendCubemap(seed, seed, 0f, Output);
                 if (display != null) display.enabled = Ready;

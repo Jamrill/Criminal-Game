@@ -3,7 +3,17 @@ guid: 888916509679f0c4db2a691ab7c47e7a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CM_Metal_grafito
+    second: {fileID: 2100000, guid: b71490f824bb4d04aa41be610aae0002, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CM_Pantalla_apagada
+    second: {fileID: 2100000, guid: b71490f824bb4d04aa41be610aae0003, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

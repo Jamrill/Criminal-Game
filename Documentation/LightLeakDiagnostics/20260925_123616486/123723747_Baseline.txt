@@ -1,0 +1,303 @@
+Test=Baseline; frame=1453; scene=Assets/Scenes/10_World_City.unity
+Camera=MainCamera; position=(487.48, 107.74, 491.08); rotation=(37.80, 106.30, 0.00)
+RenderSettings.sun=Directional Light (UnityEngine.Light); ambient=Trilight; intensity=1; sky=RGBA(0.216, 0.446, 0.619, 0.720); equator=RGBA(0.126, 0.260, 0.361, 0.420); ground=RGBA(0.045, 0.075, 0.085, 1.000); skybox=Day Night Sky (runtime) (UnityEngine.Material); reflectionIntensity=1; lightmaps=0
+Pipeline=PC_RPAsset (Video Settings) (UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset); path=
+{
+    "MonoBehaviour": {
+        "m_Enabled": true,
+        "m_EditorHideFlags": 0,
+        "m_Name": "PC_RPAsset (Video Settings)",
+        "m_EditorClassIdentifier": "",
+        "k_AssetVersion": 13,
+        "k_AssetPreviousVersion": 13,
+        "m_RendererType": 1,
+        "m_RendererData": {
+            "instanceID": 0
+        },
+        "m_RendererDataList": [
+            {
+                "fileID": 11400000,
+                "guid": "f288ae1f4751b564a96ac7587541f7a2",
+                "type": 2
+            }
+        ],
+        "m_DefaultRendererIndex": 0,
+        "m_RequireDepthTexture": true,
+        "m_RequireOpaqueTexture": true,
+        "m_OpaqueDownsampling": 1,
+        "m_SupportsTerrainHoles": true,
+        "m_SupportsHDR": true,
+        "m_HDRColorBufferPrecision": 0,
+        "m_MSAA": 1,
+        "m_RenderScale": 1.0,
+        "m_UpscalingFilter": 0,
+        "m_FsrOverrideSharpness": false,
+        "m_FsrSharpness": 0.9200000166893005,
+        "m_EnableLODCrossFade": true,
+        "m_LODCrossFadeDitheringType": 1,
+        "m_ShEvalMode": 0,
+        "m_LightProbeSystem": 0,
+        "m_ProbeVolumeMemoryBudget": 1024,
+        "m_ProbeVolumeBlendingMemoryBudget": 256,
+        "m_SupportProbeVolumeGPUStreaming": false,
+        "m_SupportProbeVolumeDiskStreaming": false,
+        "m_SupportProbeVolumeScenarios": false,
+        "m_SupportProbeVolumeScenarioBlending": false,
+        "m_ProbeVolumeSHBands": 1,
+        "m_MainLightRenderingMode": 1,
+        "m_MainLightShadowsSupported": true,
+        "m_MainLightShadowmapResolution": 2048,
+        "m_AdditionalLightsRenderingMode": 1,
+        "m_AdditionalLightsPerObjectLimit": 4,
+        "m_AdditionalLightShadowsSupported": true,
+        "m_AdditionalLightsShadowmapResolution": 2048,
+        "m_AdditionalLightsShadowResolutionTierLow": 256,
+        "m_AdditionalLightsShadowResolutionTierMedium": 512,
+        "m_AdditionalLightsShadowResolutionTierHigh": 1024,
+        "m_ReflectionProbeBlending": true,
+        "m_ReflectionProbeBoxProjection": true,
+        "m_ReflectionProbeAtlas": true,
+        "m_ShadowDistance": 50.0,
+        "m_ShadowCascadeCount": 4,
+        "m_Cascade2Split": 0.25,
+        "m_Cascade3Split": {
+            "x": 0.10000000149011612,
+            "y": 0.30000001192092898
+        },
+        "m_Cascade4Split": {
+            "x": 0.12299998849630356,
+            "y": 0.29260000586509707,
+            "z": 0.5359999537467957
+        },
+        "m_CascadeBorder": 0.10775860399007797,
+        "m_ShadowDepthBias": 0.10000000149011612,
+        "m_ShadowNormalBias": 0.5,
+        "m_AnyShadowsSupported": true,
+        "m_SoftShadowsSupported": true,
+        "m_ConservativeEnclosingSphere": true,
+        "m_NumIterationsEnclosingSphere": 64,
+        "m_SoftShadowQuality": 3,
+        "m_AdditionalLightsCookieResolution": 2048,
+        "m_AdditionalLightsCookieFormat": 3,
+        "m_UseSRPBatcher": true,
+        "m_SupportsDynamicBatching": false,
+        "m_MixedLightingSupported": true,
+        "m_SupportsLightCookies": true,
+        "m_SupportsLightLayers": true,
+        "m_DebugLevel": 0,
+        "m_StoreActionsOptimization": 0,
+        "m_UseAdaptivePerformance": true,
+        "m_ColorGradingMode": 0,
+        "m_ColorGradingLutSize": 32,
+        "m_AllowPostProcessAlphaOutput": false,
+        "m_UseFastSRGBLinearConversion": false,
+        "m_SupportDataDrivenLensFlare": true,
+        "m_SupportScreenSpaceLensFlare": true,
+        "m_GPUResidentDrawerMode": 0,
+        "m_SmallMeshScreenPercentage": 0.0,
+        "m_GPUResidentDrawerEnableOcclusionCullingInCameras": false,
+        "m_ShadowType": 1,
+        "m_LocalShadowsSupported": false,
+        "m_LocalShadowsAtlasResolution": 256,
+        "m_MaxPixelLights": 0,
+        "m_ShadowAtlasResolution": 256,
+        "m_VolumeFrameworkUpdateMode": 0,
+        "m_VolumeProfile": {
+            "fileID": 11400000,
+            "guid": "10fc4df2da32a41aaa32d77bc913491c",
+            "type": 2
+        },
+        "apvScenesData": {
+            "obsoleteSceneBounds": {
+                "m_Keys": [],
+                "m_Values": []
+            },
+            "obsoleteHasProbeVolumes": {
+                "m_Keys": [],
+                "m_Values": []
+            }
+        },
+        "m_PrefilteringModeMainLightShadows": 3,
+        "m_PrefilteringModeAdditionalLight": 4,
+        "m_PrefilteringModeAdditionalLightShadows": 0,
+        "m_PrefilterXRKeywords": true,
+        "m_PrefilteringModeForwardPlus": 1,
+        "m_PrefilteringModeDeferredRendering": 0,
+        "m_PrefilteringModeScreenSpaceOcclusion": 1,
+        "m_PrefilterDebugKeywords": true,
+        "m_PrefilterWriteRenderingLayers": false,
+        "m_PrefilterHDROutput": true,
+        "m_PrefilterAlphaOutput": false,
+        "m_PrefilterSSAODepthNormals": false,
+        "m_PrefilterSSAOSourceDepthLow": true,
+        "m_PrefilterSSAOSourceDepthMedium": true,
+        "m_PrefilterSSAOSourceDepthHigh": true,
+        "m_PrefilterSSAOInterleaved": true,
+        "m_PrefilterSSAOBlueNoise": false,
+        "m_PrefilterSSAOSampleCountLow": true,
+        "m_PrefilterSSAOSampleCountMedium": false,
+        "m_PrefilterSSAOSampleCountHigh": true,
+        "m_PrefilterDBufferMRT1": true,
+        "m_PrefilterDBufferMRT2": true,
+        "m_PrefilterDBufferMRT3": false,
+        "m_PrefilterSoftShadowsQualityLow": false,
+        "m_PrefilterSoftShadowsQualityMedium": false,
+        "m_PrefilterSoftShadowsQualityHigh": false,
+        "m_PrefilterSoftShadows": false,
+        "m_PrefilterScreenCoord": true,
+        "m_PrefilterScreenSpaceIrradiance": false,
+        "m_PrefilterNativeRenderPass": true,
+        "m_PrefilterUseLegacyLightmaps": false,
+        "m_PrefilterBicubicLightmapSampling": false,
+        "m_PrefilterReflectionProbeRotation": false,
+        "m_PrefilterReflectionProbeBlending": false,
+        "m_PrefilterReflectionProbeBoxProjection": false,
+        "m_PrefilterReflectionProbeAtlas": false,
+        "m_ShaderVariantLogLevel": 0,
+        "m_ShadowCascades": 0,
+        "m_Textures": {
+            "blueNoise64LTex": {
+                "fileID": 2800000,
+                "guid": "e3d24661c1e055f45a7560c033dbb837",
+                "type": 3
+            },
+            "bayerMatrixTex": {
+                "fileID": 2800000,
+                "guid": "f9ee4ed84c1d10c49aabb9b210b0fc44",
+                "type": 3
+            }
+        }
+    }
+}
+DayNight=Directional Light; hour=9,197707; enabled=False
+Light=Moon; id=108484; selectedSun=False; type=Directional; enabled=False; intensity=0; shadows=None; strength=1; bias=0,05; normalBias=0,4; near=0,2; pipelineBias=True
+Light=Directional Light; id=107970; selectedSun=True; type=Directional; enabled=True; intensity=0,8541545; shadows=Soft; strength=1; bias=0,05; normalBias=0,2; near=0,2; pipelineBias=False
+Light=Luz_Calida_Real; id=106958; selectedSun=False; type=Spot; enabled=True; intensity=7; shadows=Soft; strength=1; bias=0,05; normalBias=0,2; near=0,1; pipelineBias=True
+Light=Luz_Calida_Real; id=108110; selectedSun=False; type=Spot; enabled=True; intensity=7; shadows=Soft; strength=1; bias=0,05; normalBias=0,2; near=0,1; pipelineBias=True
+Renderer=Glass_wall (1)/FixedVisual; boundsMin=(495.75, 101.00, 489.00); boundsMax=(496.25, 108.00, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Player_0; boundsMin=(491.65, 101.09, 490.09); boundsMax=(492.89, 103.09, 491.33); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (41); boundsMin=(472.00, 100.99, 509.00); boundsMax=(476.00, 101.01, 513.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Glass_Wall_door_incomplete/Glass_door; boundsMin=(495.70, 101.00, 497.80); boundsMax=(496.30, 105.80, 500.20); scale=(0.01, 0.01, 0.01); determinant=9,999999E-07; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Road/Parking_signal_right; boundsMin=(511.20, 100.00, 491.50); boundsMax=(512.00, 100.00, 494.50); scale=(0.08, 1.00, 0.30); determinant=0,024; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (50); boundsMin=(476.00, 107.99, 493.00); boundsMax=(480.00, 108.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (21); boundsMin=(480.00, 100.99, 489.00); boundsMax=(484.00, 101.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Plane (1); boundsMin=(-1000.00, 94.00, 0.00); boundsMax=(1000.00, 94.00, 2000.00); scale=(200.00, 1.00, 200.00); determinant=40000; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (56); boundsMin=(472.00, 107.99, 493.00); boundsMax=(476.00, 108.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (39); boundsMin=(472.00, 100.99, 497.00); boundsMax=(476.00, 101.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (12); boundsMin=(492.00, 100.99, 509.00); boundsMax=(496.00, 101.01, 513.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Wall/FixedVisual; boundsMin=(488.00, 101.00, 508.75); boundsMax=(492.00, 108.00, 509.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=SideWalk_large_incomplete (1); boundsMin=(460.00, 100.00, 477.00); boundsMax=(492.00, 101.01, 485.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (45); boundsMin=(488.00, 107.99, 485.00); boundsMax=(492.00, 108.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (34); boundsMin=(476.00, 100.99, 489.00); boundsMax=(480.00, 101.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (74); boundsMin=(472.00, 107.99, 497.00); boundsMax=(476.00, 108.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Corner_Wall/FixedVisual; boundsMin=(492.00, 101.00, 484.75); boundsMax=(496.25, 108.00, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (71); boundsMin=(476.00, 107.99, 505.00); boundsMax=(480.00, 108.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (44); boundsMin=(476.00, 107.99, 485.00); boundsMax=(480.00, 108.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (20); boundsMin=(484.00, 100.99, 489.00); boundsMax=(488.00, 101.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (26); boundsMin=(480.00, 100.99, 505.00); boundsMax=(484.00, 101.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=SideWalk_large_incomplete; boundsMin=(496.00, 100.00, 489.00); boundsMax=(504.00, 101.01, 521.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (54); boundsMin=(488.00, 107.99, 493.00); boundsMax=(492.00, 108.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Glass_Wall_door_incomplete/Sheet; boundsMin=(495.81, 101.00, 498.00); boundsMax=(496.19, 105.60, 500.04); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=New_Cheap_3D_Printer/Structure/Head; boundsMin=(493.57, 103.63, 511.06); boundsMax=(493.77, 103.95, 511.28); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=T_wall_incomplete (1); boundsMin=(468.00, 101.00, 484.75); boundsMax=(476.00, 108.00, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (43); boundsMin=(484.00, 107.99, 485.00); boundsMax=(488.00, 108.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (35); boundsMin=(472.00, 100.99, 489.00); boundsMax=(476.00, 101.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (36); boundsMin=(476.00, 100.99, 497.00); boundsMax=(480.00, 101.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (68); boundsMin=(476.00, 107.99, 497.00); boundsMax=(480.00, 108.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Traffic_light; boundsMin=(494.99, 101.00, 479.44); boundsMax=(501.99, 112.49, 480.60); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Glass_wall/FixedVisual; boundsMin=(488.00, 101.00, 484.75); boundsMax=(492.00, 108.00, 485.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (5); boundsMin=(488.00, 100.99, 493.00); boundsMax=(492.00, 101.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Glass_wall (4)/FixedVisual; boundsMin=(480.00, 101.00, 484.75); boundsMax=(484.00, 108.00, 485.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (65); boundsMin=(472.00, 107.99, 489.00); boundsMax=(476.00, 108.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Wall (2)/FixedVisual; boundsMin=(480.00, 101.00, 508.75); boundsMax=(484.00, 108.00, 509.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (7); boundsMin=(488.00, 100.99, 497.00); boundsMax=(492.00, 101.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (59); boundsMin=(472.00, 107.99, 501.00); boundsMax=(476.00, 108.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Glass_wall (5)/FixedVisual; boundsMin=(476.00, 101.00, 484.75); boundsMax=(480.00, 108.00, 485.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Glass_wall (3)/FixedVisual; boundsMin=(484.00, 101.00, 484.75); boundsMax=(488.00, 108.00, 485.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (49); boundsMin=(484.00, 107.99, 493.00); boundsMax=(488.00, 108.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (17); boundsMin=(484.00, 100.99, 501.00); boundsMax=(488.00, 101.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (63); boundsMin=(488.00, 107.99, 489.00); boundsMax=(492.00, 108.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (62); boundsMin=(476.00, 107.99, 489.00); boundsMax=(480.00, 108.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (9); boundsMin=(488.00, 100.99, 501.00); boundsMax=(492.00, 101.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (61); boundsMin=(484.00, 107.99, 489.00); boundsMax=(488.00, 108.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Centrl_display_unit; boundsMin=(480.30, 101.00, 489.35); boundsMax=(487.70, 104.00, 492.65); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (55); boundsMin=(480.00, 107.99, 493.00); boundsMax=(484.00, 108.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (72); boundsMin=(488.00, 107.99, 497.00); boundsMax=(492.00, 108.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Counter/Cash_register; boundsMin=(488.30, 104.00, 501.30); boundsMax=(490.30, 105.59, 503.30); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (8); boundsMin=(492.00, 100.99, 501.00); boundsMax=(496.00, 101.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=New_Cheap_3D_Printer/Structure; boundsMin=(493.30, 103.00, 510.30); boundsMax=(494.70, 104.95, 511.70); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (18); boundsMin=(480.00, 100.99, 493.00); boundsMax=(484.00, 101.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (75); boundsMin=(488.00, 107.99, 505.00); boundsMax=(492.00, 108.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (51); boundsMin=(492.00, 107.99, 501.00); boundsMax=(496.00, 108.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Table_3DPrinter; boundsMin=(493.00, 101.00, 510.00); boundsMax=(495.00, 103.04, 512.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (10); boundsMin=(492.00, 100.99, 505.00); boundsMax=(496.00, 101.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (73); boundsMin=(480.00, 107.99, 497.00); boundsMax=(484.00, 108.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (52); boundsMin=(484.00, 107.99, 501.00); boundsMax=(488.00, 108.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (37); boundsMin=(476.00, 100.99, 505.00); boundsMax=(480.00, 101.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Road/Parking_signal_right; boundsMin=(511.20, 100.00, 487.50); boundsMax=(512.00, 100.00, 490.50); scale=(0.08, 1.00, 0.30); determinant=0,024; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (32); boundsMin=(472.00, 100.99, 493.00); boundsMax=(476.00, 101.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (16); boundsMin=(484.00, 100.99, 493.00); boundsMax=(488.00, 101.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (30); boundsMin=(476.00, 100.99, 493.00); boundsMax=(480.00, 101.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Wall (3)/FixedVisual; boundsMin=(476.00, 101.00, 508.75); boundsMax=(480.00, 108.00, 509.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (13); boundsMin=(488.00, 100.99, 509.00); boundsMax=(492.00, 101.01, 513.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (53); boundsMin=(476.00, 107.99, 501.00); boundsMax=(480.00, 108.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Road/Parking_signal_right; boundsMin=(511.20, 100.00, 499.50); boundsMax=(512.00, 100.00, 502.50); scale=(0.08, 1.00, 0.30); determinant=0,024; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=New_Cheap_3D_Printer/Structure/Base/Result_Spawn_Point/Printing_Reveal/Estilete_handguard(Clone); boundsMin=(493.69, 103.39, 510.77); boundsMax=(494.31, 103.44, 511.23); scale=(0.05, 0.05, 0.10); determinant=0,0002497466; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (77); boundsMin=(472.00, 107.99, 505.00); boundsMax=(476.00, 108.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Counter; boundsMin=(488.30, 101.00, 501.30); boundsMax=(495.70, 104.00, 503.30); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Wall (6)/FixedVisual; boundsMin=(471.75, 101.00, 497.00); boundsMax=(472.25, 108.00, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Road/Parking_signal_right; boundsMin=(511.20, 100.00, 507.50); boundsMax=(512.00, 100.00, 510.50); scale=(0.08, 1.00, 0.30); determinant=0,024; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Counter/Cash_register/Caja; boundsMin=(488.39, 104.08, 501.42); boundsMax=(490.21, 104.52, 503.28); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=T_wall_incomplete; boundsMin=(492.00, 101.00, 505.00); boundsMax=(496.25, 108.00, 513.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor; boundsMin=(492.00, 100.99, 485.00); boundsMax=(496.00, 101.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (28); boundsMin=(476.00, 100.99, 485.00); boundsMax=(480.00, 101.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (23); boundsMin=(484.00, 100.99, 505.00); boundsMax=(488.00, 101.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (27); boundsMin=(480.00, 100.99, 509.00); boundsMax=(484.00, 101.01, 513.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (15); boundsMin=(480.00, 100.99, 485.00); boundsMax=(484.00, 101.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (38); boundsMin=(476.00, 100.99, 509.00); boundsMax=(480.00, 101.01, 513.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Road/Parking_signal_right; boundsMin=(511.20, 100.00, 495.50); boundsMax=(512.00, 100.00, 498.50); scale=(0.08, 1.00, 0.30); determinant=0,024; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (33); boundsMin=(472.00, 100.99, 501.00); boundsMax=(476.00, 101.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=SideWalk_large_incomplete (2); boundsMin=(428.00, 100.00, 477.00); boundsMax=(460.00, 101.01, 485.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Wall (1)/FixedVisual; boundsMin=(484.00, 101.00, 508.75); boundsMax=(488.00, 108.00, 509.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Display_shelving_unit; boundsMin=(472.30, 101.00, 493.30); boundsMax=(474.30, 107.33, 500.70); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Display_shelving_unit; boundsMin=(472.30, 101.00, 485.30); boundsMax=(474.30, 107.33, 492.70); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (42); boundsMin=(492.00, 107.99, 485.00); boundsMax=(496.00, 108.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (46); boundsMin=(480.00, 107.99, 485.00); boundsMax=(484.00, 108.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (1); boundsMin=(492.00, 100.99, 489.00); boundsMax=(496.00, 101.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (48); boundsMin=(492.00, 107.99, 493.00); boundsMax=(496.00, 108.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (31); boundsMin=(476.00, 100.99, 501.00); boundsMax=(480.00, 101.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (3); boundsMin=(492.00, 100.99, 497.00); boundsMax=(496.00, 101.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Wall (5)/FixedVisual; boundsMin=(471.75, 101.00, 501.00); boundsMax=(472.25, 108.00, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (29); boundsMin=(472.00, 100.99, 485.00); boundsMax=(476.00, 101.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (60); boundsMin=(492.00, 107.99, 489.00); boundsMax=(496.00, 108.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (69); boundsMin=(492.00, 107.99, 505.00); boundsMax=(496.00, 108.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=T_wall_incomplete (2); boundsMin=(468.00, 101.00, 505.00); boundsMax=(476.00, 108.00, 509.25); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (57); boundsMin=(488.00, 107.99, 501.00); boundsMax=(492.00, 108.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (67); boundsMin=(484.00, 107.99, 497.00); boundsMax=(488.00, 108.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (14); boundsMin=(484.00, 100.99, 485.00); boundsMax=(488.00, 101.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (2); boundsMin=(492.00, 100.99, 493.00); boundsMax=(496.00, 101.01, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Road; boundsMin=(502.00, 100.00, 477.00); boundsMax=(562.00, 100.00, 597.00); scale=(6.00, 1.00, 12.00); determinant=72; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=SideWalk_big_round_incomplete; boundsMin=(492.00, 100.00, 469.00); boundsMax=(512.00, 101.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (66); boundsMin=(492.00, 107.99, 497.00); boundsMax=(496.00, 108.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (76); boundsMin=(480.00, 107.99, 505.00); boundsMax=(484.00, 108.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (11); boundsMin=(488.00, 100.99, 505.00); boundsMax=(492.00, 101.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Light_point; boundsMin=(480.00, 107.80, 489.00); boundsMax=(482.00, 108.00, 491.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (40); boundsMin=(472.00, 100.99, 505.00); boundsMax=(476.00, 101.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (64); boundsMin=(480.00, 107.99, 489.00); boundsMax=(484.00, 108.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Road/Parking_signal_right; boundsMin=(511.20, 100.00, 503.50); boundsMax=(512.00, 100.00, 506.50); scale=(0.08, 1.00, 0.30); determinant=0,024; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Light_point (1); boundsMin=(480.00, 107.80, 504.00); boundsMax=(482.00, 108.00, 506.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Wall (8)/FixedVisual; boundsMin=(471.75, 101.00, 489.00); boundsMax=(472.25, 108.00, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (6); boundsMin=(488.00, 100.99, 489.00); boundsMax=(492.00, 101.01, 493.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=New_Cheap_3D_Printer/Structure/Rails; boundsMin=(493.28, 103.77, 510.93); boundsMax=(494.73, 103.87, 511.08); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (58); boundsMin=(480.00, 107.99, 501.00); boundsMax=(484.00, 108.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (24); boundsMin=(484.00, 100.99, 509.00); boundsMax=(488.00, 101.01, 513.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (4); boundsMin=(488.00, 100.99, 485.00); boundsMax=(492.00, 101.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (70); boundsMin=(484.00, 107.99, 505.00); boundsMax=(488.00, 108.01, 509.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (25); boundsMin=(480.00, 100.99, 497.00); boundsMax=(484.00, 101.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Wall (7)/FixedVisual; boundsMin=(471.75, 101.00, 493.00); boundsMax=(472.25, 108.00, 497.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (47); boundsMin=(472.00, 107.99, 485.00); boundsMax=(476.00, 108.01, 489.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (19); boundsMin=(480.00, 100.99, 501.00); boundsMax=(484.00, 101.01, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=New_Cheap_3D_Printer/Structure/Base; boundsMin=(493.50, 103.27, 510.46); boundsMax=(494.50, 103.40, 511.46); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Glass_Wall_door_incomplete; boundsMin=(495.75, 101.00, 493.00); boundsMax=(496.25, 108.00, 505.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Floor (22); boundsMin=(484.00, 100.99, 497.00); boundsMax=(488.00, 101.01, 501.00); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes
+Renderer=Display_shelving_unit; boundsMin=(472.30, 101.00, 501.30); boundsMax=(474.30, 107.33, 508.70); scale=(1.00, 1.00, 1.00); determinant=1; cast=On; receive=True; lightmap=-1; probes=BlendProbes

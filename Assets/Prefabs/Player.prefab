@@ -182,6 +182,7 @@ MonoBehaviour:
   catalog: {fileID: 11400000, guid: 5e3dc20826a24ae3830aa1cc21b78f8e, type: 2}
   baseCapacity: 50
   equippedItems: []
+  columns: 10
 --- !u!114 &7021432719448263519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +205,8 @@ MonoBehaviour:
   itemCellColor: {r: 1, g: 1, b: 1, a: 0.9}
   emptyCellSprite: {fileID: 0}
   occupiedCellSprite: {fileID: 0}
+  unusableCellSprite: {fileID: 0}
+  unusableCellColor: {r: 0.32, g: 0.32, b: 0.32, a: 0.95}
   itemIconScale: 1.7
 --- !u!1 &4732369120335464968
 GameObject:

@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: CM_Cojin_teja
-    second: {fileID: 6884641104170794246, guid: c8999bc94999b9042aad5dd756f8baae, type: 3}
+    second: {fileID: 2100000, guid: b71490f824bb4d04aa41be610aae0005, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
