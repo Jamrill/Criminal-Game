@@ -1,0 +1,560 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.8f1 (1c7db571dde0) revision 1867189'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'es' Physical Memory: 15750 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier" at "2026-10-02T08:23:37.1492299Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-02T08:23:37Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-projectPath
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+-executeMethod
+PlayerLocomotionSetup.FinalizeGroundAlignment
+-logFile
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game/Documentation/PlayerGroundAlignmentComplete.txt
+Successfully changed project path to: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [37976]  Target information:
+
+Player connection [37976]  * "[IP] 169.254.83.107 [Port] 55506 [Flags] 2 [Guid] 1411579198 [EditorId] 1411579198 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [37976]  * "[IP] 10.225.3.143 [Port] 55506 [Flags] 2 [Guid] 1411579198 [EditorId] 1411579198 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [37976] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [37976] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-23332" after 0.4 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              f423c35c1931480798b9b199dd0ef90c
+  Correlation Id:          54fa6951693184acbf5e18a37c7d2537
+  External correlation Id: 1246007088654723947
+  Machine Id:              /vGJGymoPSYuLyiSLmM/5/OP03Q=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-adm_mgarciajavier" (connect: 0.00s, validation: 0.00s, handshake: 1.75s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier-notifications" at "2026-10-02T08:23:38.9066869Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 6872099004708-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 1.78s
+[Licensing::Module] Licensing is initialized (took 0.94s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.8f1 (1c7db571dde0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56332
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002808 seconds.
+- Loaded All Assemblies, in  0.440 seconds
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.448 seconds
+Domain Reload Profiling: 885ms
+	BeginReloadAssembly (156ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (4ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (176ms)
+		LoadAssemblies (147ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (172ms)
+			TypeCache.Refresh (170ms)
+				TypeCache.ScanAssembly (157ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (449ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (408ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (49ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (177ms)
+			ProcessInitializeOnLoadMethodAttributes (83ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 60 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ai.navigation@c33a115e9883)
+    com.unity.collab-proxy@2.11.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collab-proxy@e566cd3e7623)
+    com.unity.formats.fbx@5.1.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.formats.fbx@86d1698ebb13)
+    com.unity.ide.rider@3.0.39 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.rider@4504839d03f7)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.18.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.inputsystem@57d0e36f6123)
+    com.unity.postprocessing@3.5.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.postprocessing@4a41da475b74)
+    com.unity.timeline@1.8.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.timeline@7f8b2fb101b6)
+    com.unity.visualscripting@1.9.9 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.visualscripting@191c0d7e3b69)
+    com.unity.searcher@4.9.4 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.autodesk.fbx@5.1.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.autodesk.fbx@90432ec06ab5)
+    com.unity.burst@1.8.27 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.burst@973857688024)
+    com.unity.mathematics@1.3.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.2 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collections@aea9d3bd5e19)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.2.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562)
+  Built-in packages:
+    com.unity.multiplayer.center@1.0.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal@a6e30d1f59f5)
+    com.unity.shadergraph@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.shadergraph@d44b48771ebb)
+    com.unity.test-framework@1.6.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework@0b7a23ab2e1d)
+    com.unity.ugui@2.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ugui@bb329a87fcdc)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.core@d6dfd1e235d5)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.05 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 2s428ms
+[729/932    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[928/932    1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[929/932    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 137 defines and 339 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[930/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[931/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (2.34 seconds), 5 items updated, 932 evaluated
+AssetDatabase: script compilation time: 3.158186s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.083 seconds
+Refreshing native plugins compatible for Editor in 3.46 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.024 seconds
+Domain Reload Profiling: 4099ms
+	BeginReloadAssembly (366ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (169ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (618ms)
+		LoadAssemblies (482ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (263ms)
+			TypeCache.Refresh (171ms)
+				TypeCache.ScanAssembly (159ms)
+			BuildScriptInfoCaches (76ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (3025ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2688ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (204ms)
+			ProcessInitializeOnLoadAttributes (2303ms)
+			ProcessInitializeOnLoadMethodAttributes (138ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Refreshing native plugins compatible for Editor in 3.51 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8cfc8ebec3cbb354da665422f0871f8d): Total: 8.421 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=3606 ms
+		Asset DB Callback time: managed=437 ms, native=65 ms
+		Scripting: domain reloads=1, domain reload time=1084 ms, compile time=3160 ms, other=65 ms
+		Project Asset Count: scripts=1430, non-scripts=3278
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 61.084ms
+	ApplyChangesToAssetFolders: 0.729ms
+	Scan: 143.785ms
+	OnSourceAssetsModified: 0.909ms
+	CategorizeAssetsWithTransientArtifact: 59.002ms
+	ProcessAssetsWithTransientArtifactChanges: 85.542ms
+	CategorizeAssets: 88.278ms
+	ImportOutOfDateAssets: 3041.894ms (-121.657ms without children)
+		CompileScripts: 3159.873ms
+		ReloadNativeAssets: 0.040ms
+		UnloadImportedAssets: 1.621ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.144ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.871ms
+	PostProcessAllAssets: 440.431ms
+	Hotreload: 5.686ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 2.771ms
+	PersistCurrentRevisions: 0.128ms
+	UnloadStreamsEnd: 0.004ms
+	GenerateScriptTypeHashes: 4.808ms
+	Untracked: 4490.575ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 4.609ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Criminal Bussines
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6622 unused Assets / (3.4 MB). Loaded Objects now: 7481.
+Memory consumption went from 208.3 MB to 204.9 MB.
+Total: 15.829800 ms (FindLiveObjects: 1.007900 ms CreateObjectMapping: 1.262600 ms MarkObjects: 9.590600 ms  DeleteObjects: 3.967000 ms)
+
+Loaded scene 'Library/Unused/7b663d3ed6442814095838f78c00e51c'
+	Deserialize:            33.774 ms
+	Integration:            72.116 ms
+	Integration of assets:  17.097 ms
+	Thread Wait Time:       0.029 ms
+	Total Operation Time:   123.016 ms
+FOOT_ALIGNMENT correction=-0,164081 sampledMinimum=0,234081
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:204)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 204)
+
+Loaded scene 'Library/Unused/898b102ebd0701f4c918afed8ce58b76'
+	Deserialize:            1.427 ms
+	Integration:            2.196 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.021 ms
+	Total Operation Time:   3.646 ms
+Start importing Assets/Prefabs/Player.prefab using Guid(1feb3ceb66b1a334a8e6c9491bfe68a9) (PrefabImporter) -> (artifact id: '36fb5832a6a30f43a6b8ac137522905b') in 0.0207306 seconds
+Refreshing native plugins compatible for Editor in 3.88 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=25e86655294fbd346a995672d606f5ed): Total: 0.154 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/a9d728da49d633e42af279e57a2562b1'
+	Deserialize:            1.038 ms
+	Integration:            3.399 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   4.451 ms
+PLACEMENT Interior clothes: old=(0.00000, 2.26433, 0.09470), new=(0.00000, 2.33236, 0.09405), delta=0,068036, size=(0.96425, 0.40520, 0.78219)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:236)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 236)
+
+PLACEMENT Interior clothes_2: old=(0.00000, 1.60528, 0.10840), new=(0.00000, 1.67669, 0.10840), delta=0,071411, size=(1.11539, 0.94490, 0.88656)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:236)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 236)
+
+PLACEMENT Ojos_femeninos: old=(-0.15440, 3.00117, 0.34825), new=(-0.15440, 3.07156, 0.34857), delta=0,070383, size=(0.74941, 0.37042, 0.37042)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:236)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 236)
+
+PLACEMENT Pelo_01: old=(0.00000, 3.28287, -0.16779), new=(0.00000, 3.34830, -0.16575), delta=0,065457, size=(1.03114, 1.09831, 1.32402)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:236)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 236)
+
+PLACEMENT Retopo_Cejas_femenino: old=(-0.13828, 3.17342, 0.73138), new=(-0.13828, 3.24312, 0.73196), delta=0,069698, size=(0.78094, 0.36358, 0.15401)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:236)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 236)
+
+PLACEMENT Retopo_Personaje_femenino: old=(0.00000, 1.65592, 0.08795), new=(0.00000, 1.72423, 0.08862), delta=0,068317, size=(2.81192, 3.75686, 1.08207)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:236)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 236)
+
+FEET Standing Idle: meshBottom=0,07000, capsuleBottom=0,15000, difference=-0,08000
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:265)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 265)
+
+ANIMATION Standing Idle: legDelta=0,75588, headDelta=3,30418, state=1590449116, human=True
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:266)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 266)
+
+FEET Walking: meshBottom=0,06044, capsuleBottom=0,15000, difference=-0,08956
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:265)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 265)
+
+ANIMATION Walking: legDelta=24,17469, headDelta=2,72228, state=1744665739, human=True
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:266)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 266)
+
+PLAYER_VALIDATION_COMPLETE
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateInstalled () (at Assets/Editor/PlayerLocomotionSetup.cs:268)
+PlayerLocomotionSetup:AlignFeetAndValidate () (at Assets/Editor/PlayerLocomotionSetup.cs:217)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:134)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 268)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1112 unused Assets / (2.7 MB). Loaded Objects now: 7501.
+Memory consumption went from 191.3 MB to 188.6 MB.
+Total: 11.505800 ms (FindLiveObjects: 0.866400 ms CreateObjectMapping: 0.613100 ms MarkObjects: 8.899600 ms  DeleteObjects: 1.124800 ms)
+
+GROUND_CONTACT Standing Idle: grounded=True, rootY=-0,07000, feetY=0,00000, groundY=0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateGroundContact () (at Assets/Editor/PlayerLocomotionSetup.cs:165)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:135)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 165)
+
+GROUND_CONTACT Walking: grounded=True, rootY=-0,07000, feetY=-0,00956, groundY=0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PlayerLocomotionSetup:ValidateGroundContact () (at Assets/Editor/PlayerLocomotionSetup.cs:165)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:135)
+
+(Filename: Assets/Editor/PlayerLocomotionSetup.cs Line: 165)
+
+Unloading the last loaded scene (build index: -1), is not supported. Please use SceneManager.LoadScene()/EditorSceneManager.OpenScene() to switch to another scene.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:CloseScene (UnityEngine.SceneManagement.Scene,bool)
+PlayerLocomotionSetup:ValidateGroundContact () (at Assets/Editor/PlayerLocomotionSetup.cs:168)
+PlayerLocomotionSetup:FinalizeGroundAlignment () (at Assets/Editor/PlayerLocomotionSetup.cs:135)
+
+[Assets/Editor/PlayerLocomotionSetup.cs line 168]
+
+Batchmode quit successfully invoked - shutting down!
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-adm_mgarciajavier-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-adm_mgarciajavier channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

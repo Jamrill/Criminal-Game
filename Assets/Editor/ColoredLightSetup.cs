@@ -97,10 +97,10 @@ public static class ColoredLightSetup
                         light.type = LightType.Spot;
                         light.color = color;
                         light.useColorTemperature = false;
-                        light.intensity = 10;
-                        light.range = 20;
-                        light.spotAngle = 120;
-                        light.innerSpotAngle = 75;
+                        light.intensity = 1.5f;
+                        light.range = 8;
+                        light.spotAngle = 175;
+                        light.innerSpotAngle = 110;
                         light.shadows = LightShadows.Soft;
                         light.shadowBias = .03f;
                         light.shadowNormalBias = .1f;

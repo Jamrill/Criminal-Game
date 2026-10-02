@@ -41,6 +41,7 @@ namespace JuegoCriminal.Player
         private Vector3 _standingCapsuleCenter;
 
         public float LookPitch => _pitch;
+        public Vector3 LocalAnimationVelocity { get; private set; }
 
         private void Awake()
         {
@@ -61,6 +62,7 @@ namespace JuegoCriminal.Player
 
         private void Update()
         {
+            LocalAnimationVelocity = Vector3.zero;
             if (!CanReceiveInput())
                 return;
 
@@ -116,6 +118,9 @@ namespace JuegoCriminal.Player
             finalVelocity.y = _verticalVelocity;
 
             _cc.Move(finalVelocity * Time.deltaTime);
+            Vector3 horizontal = _cc.velocity;
+            horizontal.y = 0f;
+            LocalAnimationVelocity = transform.InverseTransformDirection(horizontal);
         }
 
         private Vector2 ReadMoveInput()
