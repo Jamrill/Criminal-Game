@@ -1,0 +1,36 @@
+PASS Character avatar valid
+PASS 13 animation states assigned
+PASS Standing Idle uses its own valid humanoid avatar
+PASS Walking uses its own valid humanoid avatar
+PASS Left Strafe Walk uses its own valid humanoid avatar
+PASS Right Strafe Walk uses its own valid humanoid avatar
+PASS Pistol Aim uses its own valid humanoid avatar
+PASS Pistol Idle uses its own valid humanoid avatar
+PASS Crouched To Standing uses its own valid humanoid avatar
+PASS Crouched Walking uses its own valid humanoid avatar
+PASS Locomotion Standing Idle
+PASS Locomotion Walking
+PASS Locomotion Walking Backward
+PASS Locomotion Left Strafe Walk
+PASS Locomotion Right Strafe Walk
+PASS Right click draws
+PASS Draw ends in pistol idle
+PASS Movement holsters before translation
+PASS Movement released after holster
+PASS Control starts crouch
+PASS Crouch remains after releasing Control
+PASS Crouched S reverses walk
+PASS Second Control starts stand up
+PASS Stand up completes
+PASS Walking reversed clip remains Humanoid
+PASS Walking reversed curves match source
+PASS Crouched Walking reversed clip remains Humanoid
+PASS Crouched Walking reversed curves match source
+PASS Pistol Aim reversed clip remains Humanoid
+PASS Pistol Aim reversed curves match source
+PASS Crouched To Standing reversed clip remains Humanoid
+PASS Crouched To Standing reversed curves match source
+PASS Crouch clip lowers the character hips
+PASS Reversed crouch endpoints retarget correctly
+PASS Interrupted draw holsters
+PASS Queued crouch follows partial holster

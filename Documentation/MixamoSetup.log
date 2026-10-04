@@ -1,0 +1,43 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.8f1 (1c7db571dde0) revision 1867189'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Javier" at "2026-10-04T13:51:16.6460301Z"
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'es' Physical Memory: 65245 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-04T13:51:16Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 14396, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              ead33feb645541a5a67ca4ac0bf39179
+  Correlation Id:          6d9adaa472416268dc9b9aa0153e6e88
+  External correlation Id: 8446347359496733608
+  Machine Id:              iA6RS4T8ju1UFFmlMdH7AkxvQFg=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Javier" (connect: 0.00s, validation: 0.00s, handshake: 0.03s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Javier-notifications" at "2026-10-04T13:51:16.6773297Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 6872099004708-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.04s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-projectPath
+C:\Users\jrjav\Documents\GitHub\Criminal-Game
+-executeMethod
+PlayerAnimationExpansion.ConfigureAndValidate
+-logFile
+C:\Users\jrjav\Documents\GitHub\Criminal-Game\Documentation\MixamoSetup.log
+Successfully changed project path to: C:\Users\jrjav\Documents\GitHub\Criminal-Game
+C:/Users/jrjav/Documents/GitHub/Criminal-Game
+Exiting without the bug reporter. Application will terminate with return code 1

@@ -15,6 +15,9 @@ namespace JuegoCriminal.Player
         [Header("Crouch")]
         [SerializeField, Range(0.25f, 0.9f)] private float crouchedHeightMultiplier = 0.5f;
         [SerializeField, Min(0.1f)] private float crouchTransitionSpeed = 8f;
+        [SerializeField, Min(0.1f)] private float crouchMoveSpeed = 1.75f;
+        [SerializeField, Min(0)] private float crouchTurnSpeed = 110f;
+        private PlayerLocomotionAnimation animationDriver;
 
         [Header("Jump / Gravity")]
         [SerializeField] private bool canJump = true;
@@ -46,6 +49,7 @@ namespace JuegoCriminal.Player
         private void Awake()
         {
             _cc = GetComponent<CharacterController>();
+            animationDriver = GetComponent<PlayerLocomotionAnimation>();
             _standingCapsuleHeight = _cc.height;
             _standingCapsuleCenter = _cc.center;
 
@@ -109,6 +113,16 @@ namespace JuegoCriminal.Player
         private void Move()
         {
             Vector2 input = ReadMoveInput();
+            if (animationDriver && animationDriver.BlocksMovement)
+            {
+                input = Vector2.zero;
+                _horizontalVelocity = Vector3.zero;
+            }
+            else if (animationDriver && animationDriver.IsCrouched)
+            {
+                transform.Rotate(0, input.x * crouchTurnSpeed * Time.deltaTime, 0);
+                input.x = 0;
+            }
 
             Vector3 targetHorizontalVelocity = CalculateTargetHorizontalVelocity(input);
             UpdateHorizontalVelocity(targetHorizontalVelocity);
@@ -147,7 +161,8 @@ namespace JuegoCriminal.Player
             moveDirection.y = 0f;
             moveDirection.Normalize();
 
-            float speed = GameInput.SprintHeld ? runSpeed : walkSpeed;
+            float speed = animationDriver && animationDriver.IsCrouched ? crouchMoveSpeed :
+                (GameInput.SprintHeld ? runSpeed : walkSpeed);
 
             return moveDirection * speed;
         }
@@ -172,7 +187,7 @@ namespace JuegoCriminal.Player
                 if (_verticalVelocity < 0f)
                     _verticalVelocity = groundedStickForce;
 
-                if (canJump && GameInput.JumpPressed)
+                if (canJump && (!animationDriver || !animationDriver.BlocksJump) && GameInput.JumpPressed)
                 {
                     // Fórmula física básica para alcanzar jumpHeight.
                     _verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -208,13 +223,30 @@ namespace JuegoCriminal.Player
         private void UpdateCrouch()
         {
             float crouchedHeight = _standingCapsuleHeight * crouchedHeightMultiplier;
-            float targetHeight = GameInput.CrouchHeld ? crouchedHeight : _standingCapsuleHeight;
+            float amount = animationDriver ? animationDriver.CrouchAmount : (GameInput.CrouchHeld ? 1 : 0);
+            float targetHeight = Mathf.Lerp(_standingCapsuleHeight, crouchedHeight, amount);
             float standingBottom = _standingCapsuleCenter.y - _standingCapsuleHeight * 0.5f;
             Vector3 targetCenter = _standingCapsuleCenter;
             targetCenter.y = standingBottom + targetHeight * 0.5f;
 
             _cc.height = Mathf.MoveTowards(_cc.height, targetHeight, crouchTransitionSpeed * Time.deltaTime);
             _cc.center = Vector3.MoveTowards(_cc.center, targetCenter, crouchTransitionSpeed * Time.deltaTime);
+        }
+
+        public bool CanStandUp()
+        {
+            if (!_cc) return true;
+            float scale = Mathf.Abs(transform.lossyScale.y);
+            float radius = _cc.radius * Mathf.Max(Mathf.Abs(transform.lossyScale.x), Mathf.Abs(transform.lossyScale.z)) * .95f;
+            Vector3 center = transform.TransformPoint(_standingCapsuleCenter);
+            float half = Mathf.Max(0, _standingCapsuleHeight * scale * .5f - radius);
+            // Test only the space above the current capsule; the floor must not block standing up.
+            Vector3 currentTop = transform.TransformPoint(_cc.center) + transform.up *
+                Mathf.Max(0, _cc.height * scale * .5f - radius);
+            foreach (var hit in Physics.OverlapCapsule(currentTop, center + transform.up * half,
+                         radius, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+                if (hit != _cc && !hit.transform.IsChildOf(transform)) return false;
+            return true;
         }
 
         public void SetLookRotation(float yaw, float pitch)

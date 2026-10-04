@@ -37,35 +37,9 @@ public static class PlayerLocomotionSetup
         }
         try
         {
-            ConfigurePlayerAvatar();
-            var idle = ConfigureClip("Assets/Animations/Standing Idle.fbx", "Standing Idle");
-            var walk = ConfigureClip("Assets/Animations/Walking.fbx", "Walking");
+            // Preserve the valid character Avatar and its user-adjusted T-pose.
             var avatar = ValidAvatar(PlayerModel);
-            var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(ControllerPath);
-            if (!controller)
-            {
-                controller = AnimatorController.CreateAnimatorControllerAtPath(ControllerPath);
-                controller.AddParameter("IsMoving", AnimatorControllerParameterType.Bool);
-                controller.AddParameter(new AnimatorControllerParameter {
-                    name = "PlaybackSpeed", type = AnimatorControllerParameterType.Float, defaultFloat = 1f });
-                var machine = controller.layers[0].stateMachine;
-                var standing = machine.AddState("Standing Idle");
-                standing.motion = idle;
-                var walking = machine.AddState("Walking");
-                walking.motion = walk;
-                walking.speedParameter = "PlaybackSpeed";
-                walking.speedParameterActive = true;
-                machine.defaultState = standing;
-                Transition(standing, walking, AnimatorConditionMode.If);
-                Transition(walking, standing, AnimatorConditionMode.IfNot);
-            }
-            // Reimports can change clip local IDs. Always refresh the managed states.
-            foreach (var state in controller.layers[0].stateMachine.states)
-            {
-                if (state.state.name == "Standing Idle") { state.state.motion = idle; state.state.iKOnFeet = true; }
-                if (state.state.name == "Walking") { state.state.motion = walk; state.state.iKOnFeet = false; }
-            }
-            EditorUtility.SetDirty(controller);
+            var controller = PlayerAnimationExpansion.BuildController();
             var root = PrefabUtility.LoadPrefabContents(PlayerPrefab);
             try
             {
@@ -102,11 +76,13 @@ public static class PlayerLocomotionSetup
                 var driver = root.GetComponent<PlayerLocomotionAnimation>();
                 if (!driver) driver = root.AddComponent<PlayerLocomotionAnimation>();
                 driver.Configure(animator);
+                driver.ConfigureTimings(controller.animationClips.First(c => c.name == "Pistol Aim").length,
+                    controller.animationClips.First(c => c.name == "Crouched To Standing").length);
                 PrefabUtility.SaveAsPrefabAsset(root, PlayerPrefab);
             }
             finally { PrefabUtility.UnloadPrefabContents(root); }
             AssetDatabase.SaveAssets();
-            Debug.Log("Jugador configurado: Standing Idle al parar, Walking al moverse y reproducción inversa al retroceder. Comprueba la pose Humanoid y los pies en Play.");
+            Debug.Log("Jugador configurado: caminar, strafe, pistola y agachado con transiciones. Avatar del personaje conservado.");
         }
         catch (Exception error) { Debug.LogError("No se ha completado la configuración de animaciones: " + error); }
     }

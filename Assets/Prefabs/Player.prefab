@@ -142,6 +142,8 @@ MonoBehaviour:
   deceleration: 18
   crouchedHeightMultiplier: 0.5
   crouchTransitionSpeed: 8
+  crouchMoveSpeed: 1.75
+  crouchTurnSpeed: 110
   canJump: 1
   jumpHeight: 1.2
   gravity: -20
@@ -225,7 +227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.PlayerLocomotionAnimation
   animator: {fileID: 9007120408980444057}
   movementThreshold: 0.08
-  reverseWalkingWhenBackingUp: 1
+  blendDuration: 0.16
+  pistolDuration: 7.1000004
+  crouchDuration: 0.6333334
 --- !u!1 &4732369120335464968
 GameObject:
   m_ObjectHideFlags: 0

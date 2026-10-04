@@ -43,7 +43,7 @@
     <UnityVersion>6000.3.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\jrjav\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.3.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\jrjav\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.3.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -53,9 +53,17 @@
     <Compile Include="Assets\Editor\FixedFbxMigration.cs" />
     <Compile Include="Assets\Editor\SimpleSeaSceneCreator.cs" />
     <Compile Include="Assets\Editor\InventoryItemDefinitionEditor.cs" />
+    <Compile Include="Assets\Editor\PlayerAnimationExpansion.cs" />
+    <Compile Include="Assets\Editor\MixamoFixOnce.cs" />
+    <Compile Include="Assets\Editor\WalkingDiagnostics.cs" />
+    <Compile Include="Assets\Editor\ColoredLightSetup.cs" />
     <Compile Include="Assets\Editor\SidewalkMeshColliderMigration.cs" />
     <Compile Include="Assets\Editor\ConstructionRevisionMigration.cs" />
+    <Compile Include="Assets\Editor\PlayerLocomotionSetup.cs" />
     <Compile Include="Assets\IgniteCoders\Simple Water Shader\Info\Scripts\Editor\ReadmeEditor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Editor\ColoredLightSetup.completed.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
