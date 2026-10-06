@@ -73,11 +73,17 @@ public static class PlayerLocomotionSetup
                 animator.avatar = avatar;
                 animator.runtimeAnimatorController = controller;
                 animator.applyRootMotion = false;
+                if (!model.GetComponent<PlayerHeadLook>()) model.gameObject.AddComponent<PlayerHeadLook>();
                 var driver = root.GetComponent<PlayerLocomotionAnimation>();
                 if (!driver) driver = root.AddComponent<PlayerLocomotionAnimation>();
                 driver.Configure(animator);
                 driver.ConfigureTimings(controller.animationClips.First(c => c.name == "Pistol Aim").length,
                     controller.animationClips.First(c => c.name == "Crouched To Standing").length);
+                driver.ConfigureJumpTimings(controller.animationClips.First(c => c.name == "Jump_on_site In Place").length,
+                    controller.animationClips.First(c => c.name == "Jump_in_movement In Place").length);
+                var stationaryContact = PlayerAnimationExpansion.JumpContacts["Jump_on_site"];
+                var movingContact = PlayerAnimationExpansion.JumpContacts["Jump_in_movement"];
+                driver.ConfigureJumpContacts(stationaryContact.takeoff, stationaryContact.landing, movingContact.takeoff, movingContact.landing);
                 PrefabUtility.SaveAsPrefabAsset(root, PlayerPrefab);
             }
             finally { PrefabUtility.UnloadPrefabContents(root); }

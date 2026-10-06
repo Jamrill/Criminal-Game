@@ -140,6 +140,7 @@ MonoBehaviour:
   runSpeed: 8
   acceleration: 14
   deceleration: 18
+  runTransitionDuration: 0.4
   crouchedHeightMultiplier: 0.5
   crouchTransitionSpeed: 8
   crouchMoveSpeed: 1.75
@@ -228,8 +229,16 @@ MonoBehaviour:
   animator: {fileID: 9007120408980444057}
   movementThreshold: 0.08
   blendDuration: 0.16
+  locomotionBlendDuration: 0.08
+  runningBlendDuration: 0.3
+  diagonalBodyAngle: 35
+  bodyTurnSpeed: 240
   pistolDuration: 7.1000004
   crouchDuration: 0.6333334
+  stationaryJumpDuration: 2.6000001
+  movingJumpDuration: 1
+  stationaryJumpContact: {x: 0.745223, y: 1.3910829}
+  movingJumpContact: {x: 0.016666668, y: 0.65}
 --- !u!1 &4732369120335464968
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,8 +749,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40444f4b6923b3741aea69f6408c1593, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1977449283578731931}
   m_SourcePrefab: {fileID: 100100000, guid: 40444f4b6923b3741aea69f6408c1593, type: 3}
+--- !u!1 &2401619484272939865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 40444f4b6923b3741aea69f6408c1593, type: 3}
+  m_PrefabInstance: {fileID: 3284581959198830088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1977449283578731931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401619484272939865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0c3964461d6948ac3f5f3edbd6b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.PlayerHeadLook
+  aimTarget: {fileID: 0}
+  weight: 0.85
+  response: 6
+  maxYaw: 65
+  maxPitch: 35
 --- !u!4 &3035308083670583779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 40444f4b6923b3741aea69f6408c1593, type: 3}

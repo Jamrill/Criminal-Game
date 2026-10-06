@@ -1,0 +1,38 @@
+PASS FurnitureBasic.v1 2026-10-06T13:49:03.1986599+02:00
+Counter/Counter material 0: Crema_Mate -> Crema_Mate
+Counter/Counter material 1: Madera_Miel -> Madera_Miel
+Counter/Counter Box center=(4.0000, 1.0777, 1.3000) size=(7.4000, 2.1553, 2.0000)
+Counter/Cash_register material 0: Metal_Grafito_Satinado -> Metal_Grafito_Satinado
+Counter/Cash_register material 1: Crema_Mate -> Pantalla_Apagada
+Counter/Cash_register Box center=(1.3000, 3.7967, 1.3000) size=(2.0000, 1.5934, 2.0000)
+Counter/Caja material 0: Metal_Grafito_Satinado -> Metal_Grafito_Satinado
+Counter/Caja Box center=(1.3000, 3.2979, 1.3499) size=(1.8286, 0.4349, 1.8612)
+PASS Counter: 3 BoxCollider(s)
+Central_display_unit/Central_display_unit material 0: Madera_Miel -> Madera_Miel
+Central_display_unit/Central_display_unit Box center=(4.0000, 1.3500, 2.0009) size=(7.4000, 2.7000, 3.3059)
+PASS Central_display_unit: 1 BoxCollider(s)
+Bed/Bed material 0: Madera_Miel -> Madera_Miel
+Bed/Bed Box center=(4.0000, 1.2077, 2.0000) size=(7.4000, 2.4155, 3.4000)
+Bed/Almohada material 0: cloth -> cloth
+Bed/Almohada Box center=(0.0000, 0.0325, 0.0000) size=(1.9977, 0.4628, 1.9982)
+Bed/colchon material 0: cloth -> cloth
+Bed/colchon Box center=(0.0000, 0.0325, 0.0000) size=(2.0224, 0.4640, 1.9962)
+PASS Bed: 3 BoxCollider(s)
+Chair/Chair material 0: Madera_Miel -> Madera_Miel
+Chair/Chair Box center=(2.0000, 1.5046, 2.0539) size=(2.1012, 3.0091, 2.0392)
+PASS Chair: 1 BoxCollider(s)
+Table/Table material 0: Madera_Miel -> Madera_Miel
+Table/Table Box center=(3.9999, 0.9373, 2.0000) size=(7.4064, 1.8746, 3.4000)
+PASS Table: 1 BoxCollider(s)
+Sofa/Sofa material 0: cloth -> cloth
+Sofa/Sofa material 1: Metal_Grafito_Satinado -> Metal_Grafito_Satinado
+Sofa/Sofa Box center=(4.0000, 1.3000, 1.7000) size=(7.6000, 2.6000, 2.4000)
+Sofa/Asiento material 0: cloth -> cloth
+Sofa/Asiento Box center=(0.9949, 0.5616, -0.0555) size=(2.0094, 1.7122, 2.1079)
+PASS Sofa: 2 BoxCollider(s)
+Toilet/Toilet material 0: Glass -> Glass
+Toilet/Toilet material 1: White -> White
+Toilet/Toilet Box center=(2.0000, 1.3175, 1.9489) size=(1.5809, 2.6351, 1.5796)
+Toilet/Tapa material 0: White -> White
+Toilet/Tapa Box center=(0.0000, 0.0414, 0.7427) size=(1.9966, 0.0828, 1.4736)
+PASS Toilet: 2 BoxCollider(s)

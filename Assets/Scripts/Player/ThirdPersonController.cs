@@ -11,6 +11,8 @@ namespace JuegoCriminal.Player
         [SerializeField] private float runSpeed = 6.0f;
         [SerializeField] private float acceleration = 14f;
         [SerializeField] private float deceleration = 18f;
+        [SerializeField, Min(.05f)] private float runTransitionDuration = .4f;
+        private float currentMoveSpeed;
 
         [Header("Crouch")]
         [SerializeField, Range(0.25f, 0.9f)] private float crouchedHeightMultiplier = 0.5f;
@@ -49,6 +51,7 @@ namespace JuegoCriminal.Player
         private void Awake()
         {
             _cc = GetComponent<CharacterController>();
+            currentMoveSpeed = walkSpeed;
             animationDriver = GetComponent<PlayerLocomotionAnimation>();
             _standingCapsuleHeight = _cc.height;
             _standingCapsuleCenter = _cc.center;
@@ -100,7 +103,7 @@ namespace JuegoCriminal.Player
 
             // De momento mantenemos el sistema actual:
             // el ratón rota al jugador en Y, y la cámara sigue al jugador.
-            transform.Rotate(0f, mx, 0f);
+            RotateMovementFrame(mx);
 
             // Pitch vertical del CameraPivot.
             _pitch -= my;
@@ -108,6 +111,15 @@ namespace JuegoCriminal.Player
 
             if (cameraPivot != null)
                 cameraPivot.localRotation = Quaternion.Euler(_pitch, 0f, 0f);
+        }
+
+        private void RotateMovementFrame(float yaw)
+        {
+            Quaternion previousRotation = transform.rotation;
+            transform.Rotate(0f, yaw, 0f);
+            // Movement is player-relative: turning changes its world direction,
+            // not its speed. Keep acceleration for input/speed changes only.
+            _horizontalVelocity = (transform.rotation * Quaternion.Inverse(previousRotation)) * _horizontalVelocity;
         }
 
         private void Move()
@@ -120,18 +132,22 @@ namespace JuegoCriminal.Player
             }
             else if (animationDriver && animationDriver.IsCrouched)
             {
-                transform.Rotate(0, input.x * crouchTurnSpeed * Time.deltaTime, 0);
+                RotateMovementFrame(input.x * crouchTurnSpeed * Time.deltaTime);
                 input.x = 0;
             }
 
             Vector3 targetHorizontalVelocity = CalculateTargetHorizontalVelocity(input);
-            UpdateHorizontalVelocity(targetHorizontalVelocity);
+            // Releasing movement stops translation immediately; keep acceleration
+            // for starting and changing direction, without a residual walking tail.
+            if (input.sqrMagnitude <= .001f) _horizontalVelocity = Vector3.zero;
+            else UpdateHorizontalVelocity(targetHorizontalVelocity);
             UpdateVerticalVelocity();
 
             Vector3 finalVelocity = _horizontalVelocity;
             finalVelocity.y = _verticalVelocity;
 
             _cc.Move(finalVelocity * Time.deltaTime);
+            if (animationDriver) animationDriver.UpdateJumpContact(_cc.isGrounded, _verticalVelocity);
             Vector3 horizontal = _cc.velocity;
             horizontal.y = 0f;
             LocalAnimationVelocity = transform.InverseTransformDirection(horizontal);
@@ -161,10 +177,12 @@ namespace JuegoCriminal.Player
             moveDirection.y = 0f;
             moveDirection.Normalize();
 
-            float speed = animationDriver && animationDriver.IsCrouched ? crouchMoveSpeed :
+            float targetSpeed = animationDriver && animationDriver.IsCrouched ? crouchMoveSpeed :
                 (GameInput.SprintHeld ? runSpeed : walkSpeed);
+            currentMoveSpeed = Mathf.MoveTowards(currentMoveSpeed, targetSpeed,
+                Mathf.Max(1, runSpeed - walkSpeed) / runTransitionDuration * Time.deltaTime);
 
-            return moveDirection * speed;
+            return moveDirection * currentMoveSpeed;
         }
 
         private void UpdateHorizontalVelocity(Vector3 targetHorizontalVelocity)
@@ -190,8 +208,14 @@ namespace JuegoCriminal.Player
                 if (canJump && (!animationDriver || !animationDriver.BlocksJump) && GameInput.JumpPressed)
                 {
                     // Fórmula física básica para alcanzar jumpHeight.
-                    _verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    float launchVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    if (animationDriver)
+                        animationDriver.BeginJump(_horizontalVelocity.sqrMagnitude > .01f,
+                            2f * launchVelocity / Mathf.Max(.01f, -gravity));
+                    else _verticalVelocity = launchVelocity;
                 }
+                if (animationDriver && animationDriver.ConsumeJumpTakeoff())
+                    _verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
             else
             {

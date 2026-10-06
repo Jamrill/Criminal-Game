@@ -1,0 +1,7 @@
+PASS Sofa: 10 BoxColliders; empty-space checks passed.
+PASS Floor_lamp: 10 BoxColliders; empty-space checks passed.
+PASS Toilet: 7 BoxColliders; empty-space checks passed.
+PASS Table: 9 BoxColliders; empty-space checks passed.
+PASS Chair: 11 BoxColliders; empty-space checks passed.
+PASS Bed: 9 BoxColliders; empty-space checks passed.
+PASS Kitchen cabinet: 8 BoxColliders; empty-space checks passed.

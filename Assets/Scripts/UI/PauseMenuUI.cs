@@ -36,6 +36,7 @@ namespace JuegoCriminal.UI
         private SlotsPanelUI _slotsPanel;
         private Coroutine _transition;
         private bool _overlayOpen;
+        public bool IsOpen => _overlayOpen || (panel != null && panel.activeInHierarchy);
 
         private RectTransform _slotsScrollView;
         private RectTransform _slotsBackButton;
