@@ -70,6 +70,7 @@ namespace JuegoCriminal.World
 
             if (_economy != null)
                 _economy.OnMoneyChanged += HandleMoneyChanged;
+            if (_properties != null) _properties.OnOwnershipChanged += HandleOwnershipChanged;
 
             if (interactableObject != null)
                 interactableObject.AddInteractionListener(BuyFromInteraction);
@@ -79,6 +80,7 @@ namespace JuegoCriminal.World
         {
             if (_economy != null)
                 _economy.OnMoneyChanged -= HandleMoneyChanged;
+            if (_properties != null) _properties.OnOwnershipChanged -= HandleOwnershipChanged;
 
             if (interactableObject != null)
                 interactableObject.RemoveInteractionListener(BuyFromInteraction);
@@ -120,6 +122,11 @@ namespace JuegoCriminal.World
             TryBuy();
         }
 
+        private void HandleOwnershipChanged(int id)
+        {
+            if (id == propertyId) RefreshState();
+        }
+
         public bool TryBuy()
         {
             EnsureServices();
@@ -138,13 +145,11 @@ namespace JuegoCriminal.World
                 return false;
             }
 
-            if (!_economy.TrySpend(price))
+            if (!_properties.TryBuy(propertyId, price))
             {
                 RefreshState();
                 return false;
             }
-
-            _properties.AddOwned(propertyId);
 
             if (debugLogs)
                 Debug.Log($"PropertyMarker: propiedad {propertyId} comprada por ${price}.", this);

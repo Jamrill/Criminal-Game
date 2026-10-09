@@ -1,0 +1,1 @@
+Solar: ID=1, price=1, buildable=True, origin=(474.00, 101.00, 507.00)

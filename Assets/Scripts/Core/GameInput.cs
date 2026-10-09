@@ -17,7 +17,9 @@ namespace JuegoCriminal.Core
         CameraZoom,
         Inventory,
         Crouch,
-        RotateInventory
+        RotateInventory,
+        Construction,
+        BuildRotate
     }
 
     public static class GameInput
@@ -37,18 +39,23 @@ namespace JuegoCriminal.Core
 
         public static Vector2 Move => ReadVector2(GameInputAction.Move);
         public static Vector2 Look => ReadVector2(GameInputAction.Look);
-        public static float CameraZoom => ReadVector2(GameInputAction.CameraZoom).y;
+        public static float CameraZoom => JuegoCriminal.Construction.ConstructionController.Active ? 0 : ReadVector2(GameInputAction.CameraZoom).y;
+        public static bool ConstructionPressed => WasPressedThisFrame(GameInputAction.Construction);
+        public static bool BuildRotatePressed => WasPressedThisFrame(GameInputAction.BuildRotate);
 
         public static bool JumpPressed => WasPressedThisFrame(GameInputAction.Jump);
         public static bool SprintHeld => IsPressed(GameInputAction.Sprint);
-        public static bool InteractPressed => WasPressedThisFrame(GameInputAction.Interact);
+        public static bool ConstructionControlsActive => JuegoCriminal.Construction.ConstructionController.Active;
+        public static bool CrouchPressed => !ConstructionControlsActive && WasPressedThisFrame(GameInputAction.Crouch);
+        public static bool InteractPressed => !ConstructionControlsActive && WasPressedThisFrame(GameInputAction.Interact);
         public static bool PausePressed =>
             _pauseConsumedFrame != Time.frameCount && WasPressedThisFrame(GameInputAction.Pause);
-        public static bool SwitchTargetPressed => WasPressedThisFrame(GameInputAction.SwitchTarget);
-        public static bool SwitchShoulderPressed => WasPressedThisFrame(GameInputAction.SwitchShoulder);
-        public static bool InventoryPressed => WasPressedThisFrame(GameInputAction.Inventory);
-        public static bool CrouchHeld => IsPressed(GameInputAction.Crouch);
-        public static bool RotateInventoryPressed => WasPressedThisFrame(GameInputAction.RotateInventory);
+        public static bool BuildCursorHeld => IsPressed(GameInputAction.SwitchTarget);
+        public static bool SwitchTargetPressed => !JuegoCriminal.Construction.ConstructionController.Active && WasPressedThisFrame(GameInputAction.SwitchTarget);
+        public static bool SwitchShoulderPressed => !ConstructionControlsActive && WasPressedThisFrame(GameInputAction.SwitchShoulder);
+        public static bool InventoryPressed => !ConstructionControlsActive && WasPressedThisFrame(GameInputAction.Inventory);
+        public static bool CrouchHeld => !ConstructionControlsActive && IsPressed(GameInputAction.Crouch);
+        public static bool RotateInventoryPressed => !ConstructionControlsActive && WasPressedThisFrame(GameInputAction.RotateInventory);
 
         public static void ConsumePausePress()
         {
@@ -164,18 +171,21 @@ namespace JuegoCriminal.Core
 
         private static Vector2 ReadVector2(GameInputAction action)
         {
+            if(Bootstrapper.Instance && Bootstrapper.Instance.SceneLoader && Bootstrapper.Instance.SceneLoader.IsLoading) return Vector2.zero;
             InputAction inputAction = GetAction(action);
             return inputAction != null ? inputAction.ReadValue<Vector2>() : Vector2.zero;
         }
 
         private static bool WasPressedThisFrame(GameInputAction action)
         {
+            if(Bootstrapper.Instance && Bootstrapper.Instance.SceneLoader && Bootstrapper.Instance.SceneLoader.IsLoading) return false;
             InputAction inputAction = GetAction(action);
             return inputAction != null && inputAction.WasPressedThisFrame();
         }
 
         private static bool IsPressed(GameInputAction action)
         {
+            if(Bootstrapper.Instance && Bootstrapper.Instance.SceneLoader && Bootstrapper.Instance.SceneLoader.IsLoading) return false;
             InputAction inputAction = GetAction(action);
             return inputAction != null && inputAction.IsPressed();
         }
@@ -223,6 +233,8 @@ namespace JuegoCriminal.Core
                 GameInputAction.Inventory => ("Player", "Inventory"),
                 GameInputAction.Crouch => ("Player", "Crouch"),
                 GameInputAction.RotateInventory => ("Player", "RotateInventory"),
+                GameInputAction.Construction => ("Player", "Construction"),
+                GameInputAction.BuildRotate => ("Player", "BuildRotate"),
                 _ => throw new ArgumentOutOfRangeException(nameof(action), action, null)
             };
         }

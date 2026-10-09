@@ -53,6 +53,7 @@ namespace JuegoCriminal.Core
         [SerializeField] private int shaderVariantsPerFrame = 8;
 
         private string _readySceneName;
+        [SerializeField] private bool prepareLoadedShaders = true;
 
         public bool IsLoading { get; private set; }
         public event Action<string> OnSceneLoadStarted;
@@ -156,6 +157,9 @@ namespace JuegoCriminal.Core
                     yield return null;
                 }
             }
+
+            if(prepareLoadedShaders && loadingScreen != null)
+                yield return LoadingShaderPreparation.Prepare();
 
             for (int i = 0; i < framesToWaitAfterLoad; i++)
                 yield return null;

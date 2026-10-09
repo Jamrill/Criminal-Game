@@ -150,6 +150,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1703052767748091143}
+  - component: {fileID: 4568588678494214099}
+  - component: {fileID: 9167300713301624748}
   m_Layer: 0
   m_Name: Window_Wall
   m_TagString: Untagged
@@ -174,6 +176,56 @@ Transform:
   - {fileID: 7514732719474025846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4568588678494214099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083378634968446909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30c0a230a7c9564d901f16660907cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Construction.BuildSurface
+  slots:
+  - renderer: {fileID: 6860683752584894718}
+    index: 0
+  - renderer: {fileID: 6860683752584894718}
+    index: 1
+--- !u!114 &9167300713301624748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083378634968446909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5f4338c5193e469a7feec638b2bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Construction.WallTopology
+  wall: {fileID: 8706298999659637812}
+  variants:
+  - {fileID: 4300000, guid: 236c80305baafd44086a5cbeb1c219a4, type: 2}
+  - {fileID: 4300000, guid: e7a84234738f98f41b6bec1bb01fdb78, type: 2}
+  - {fileID: 4300000, guid: a117a9681b075314b8380097d7bf845a, type: 2}
+  variantMaterials:
+  - values:
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+  - values:
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+  - values:
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+  connections:
+  - {x: 0, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
+  bottomCenter: {x: 2, y: 0, z: 0}
+  height: 7
+  currentVariant: 0
 --- !u!1001 &5257844983938892922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,6 +274,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5e6a46e53c16e314db609d28e4d55233, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 5e6a46e53c16e314db609d28e4d55233, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 5e6a46e53c16e314db609d28e4d55233, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 236c80305baafd44086a5cbeb1c219a4, type: 2}
     - target: {fileID: 919132149155446097, guid: 5e6a46e53c16e314db609d28e4d55233, type: 3}
       propertyPath: m_Name
       value: FixedVisual
@@ -234,5 +298,15 @@ PrefabInstance:
 --- !u!4 &5727777571421168529 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5e6a46e53c16e314db609d28e4d55233, type: 3}
+  m_PrefabInstance: {fileID: 5257844983938892922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6860683752584894718 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 5e6a46e53c16e314db609d28e4d55233, type: 3}
+  m_PrefabInstance: {fileID: 5257844983938892922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &8706298999659637812 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: 5e6a46e53c16e314db609d28e4d55233, type: 3}
   m_PrefabInstance: {fileID: 5257844983938892922}
   m_PrefabAsset: {fileID: 0}

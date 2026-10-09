@@ -76,6 +76,7 @@ namespace JuegoCriminal.Environment
 
         private void Update()
         {
+            if(JuegoCriminal.Core.LoadingShaderPreparation.IsPreparing) return;
             UpdateCloudVariation(Time.deltaTime);
             _cloudAngle = Mathf.Repeat(_cloudAngle + _currentCloudSpeed * Mathf.Deg2Rad * Time.deltaTime, Mathf.PI * 2f);
             if (cycleEnabled)
@@ -128,15 +129,31 @@ namespace JuegoCriminal.Environment
             _currentCloudSpeed = Mathf.Lerp(speed.x, speed.y, (Mathf.Sin(_speedPhase) + 1f) * 0.5f);
         }
 
-        private void ApplyLighting()
+        public System.Collections.IEnumerator PrepareLightingVariants()
         {
-            float orbitAngle = _currentHour / 24f * 360f - 90f;
+            try
+            {
+                foreach(float hour in new[]{12f,18f,0f,6f})
+                {
+                    ApplyLighting(hour);
+                    yield return null;
+                    yield return null;
+                }
+            }
+            finally { ApplyLighting(); }
+            yield return null;
+        }
+
+        private void ApplyLighting(float? previewHour=null)
+        {
+            float hour=previewHour ?? _currentHour;
+            float orbitAngle = hour / 24f * 360f - 90f;
             if (sun != null)
                 sun.transform.rotation = Quaternion.Euler(orbitAngle, -35f, 0f);
             if (moon != null)
                 moon.transform.rotation = Quaternion.Euler(orbitAngle + 180f, -35f, 0f);
 
-            float sunHeight = Mathf.Sin((_currentHour - 6f) / 12f * Mathf.PI);
+            float sunHeight = Mathf.Sin((hour - 6f) / 12f * Mathf.PI);
             float daylight = Mathf.SmoothStep(0f, 1f, Mathf.InverseLerp(-0.12f, 0.22f, sunHeight));
             float night = 1f - Mathf.SmoothStep(0f, 1f, Mathf.InverseLerp(-0.25f, 0.05f, sunHeight));
             float horizon = Mathf.Clamp01(1f - Mathf.Abs(sunHeight) * 4f) * (1f - night * 0.65f);

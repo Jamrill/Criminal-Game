@@ -28,9 +28,11 @@ namespace JuegoCriminal.Core
             Release();
         }
         private void ActiveSceneChanged(Scene previous, Scene current) => Release();
+        public void InvalidateAfterLightingPreparation() => Release();
 
         private void LateUpdate()
         {
+            if(LoadingShaderPreparation.IsPreparing) return;
             if (quality != VideoSettings.Reflections)
             {
                 Release();

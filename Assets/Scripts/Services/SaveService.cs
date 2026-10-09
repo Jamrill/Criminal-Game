@@ -59,7 +59,7 @@ namespace JuegoCriminal.Services
     [Serializable]
     public sealed class SaveData
     {
-        public const int CurrentVersion = 5;
+        public const int CurrentVersion = 6;
 
         public int version = CurrentVersion;
         public int money = 1000;
@@ -70,6 +70,7 @@ namespace JuegoCriminal.Services
         public int inventoryColumns = 10;
         public string[] equippedItemIds = Array.Empty<string>();
         public PrinterSaveState[] printers = Array.Empty<PrinterSaveState>();
+        public JuegoCriminal.Construction.BuildRecord[] buildings = Array.Empty<JuegoCriminal.Construction.BuildRecord>();
 
         // Compat (puedes quitarlo más adelante)
         public float playerX;
@@ -115,6 +116,18 @@ namespace JuegoCriminal.Services
         public bool HasCurrentGame => Current != null && IsValidSlotId(Current.slotId);
         public int CurrentSlotId => HasCurrentGame ? Current.slotId : -1;
         public int CurrentMoney => Current != null ? Current.money : 0;
+        public void UpdateBuildingStates(string scene, JuegoCriminal.Construction.BuildRecord[] records)
+        {
+            if (Current == null) return;
+            var all = new List<JuegoCriminal.Construction.BuildRecord>();
+            if (Current.buildings != null)
+                foreach (var record in Current.buildings)
+                    if (record != null && record.sceneName != scene) all.Add(record);
+            if (records != null)
+                foreach (var record in records)
+                    if (record != null && record.sceneName == scene && !string.IsNullOrWhiteSpace(record.id)) all.Add(record);
+            Current.buildings = all.ToArray();
+        }
         public string CurrentSceneName => Current != null ? Current.lastScene : string.Empty;
 
         private string BasePath => Application.persistentDataPath;
@@ -765,6 +778,7 @@ namespace JuegoCriminal.Services
             data.inventoryItems ??= Array.Empty<InventoryPlacement>();
             data.equippedItemIds ??= Array.Empty<string>();
             data.printers ??= Array.Empty<PrinterSaveState>();
+            data.buildings ??= Array.Empty<JuegoCriminal.Construction.BuildRecord>();
             data.px = ResizeArray(data.px, SaveData.MaxPlayers);
             data.py = ResizeArray(data.py, SaveData.MaxPlayers);
             data.pz = ResizeArray(data.pz, SaveData.MaxPlayers);

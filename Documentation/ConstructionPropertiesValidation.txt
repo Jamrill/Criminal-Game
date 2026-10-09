@@ -1,0 +1,14 @@
+PASS: UI hija del prefab Player
+PASS: Una sola UI incorporada
+PASS: Player inicia persistencia
+PASS: Sin host de persistencia sobrante en la escena
+PASS: ID invalido no cobra
+PASS: Precio negativo no cobra
+PASS: Sin saldo no compra
+PASS: Solar disponible listado para compra
+PASS: Boton compra por 1 y registra propiedad
+PASS: Propiedad comprada desactiva compra y habilita construccion
+PASS: Compra duplicada no cobra de nuevo
+PASS: Propiedad y saldo persisten en SaveData
+PASS: Restauracion repetida no duplica ni reinicia objetos
+PASS: Respawn conserva construccion independiente del Player

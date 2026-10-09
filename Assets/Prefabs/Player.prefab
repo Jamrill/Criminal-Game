@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 6285136973182459142}
   - component: {fileID: 7021432719448263519}
   - component: {fileID: 7074521019820577947}
+  - component: {fileID: 1407612425606875919}
+  - component: {fileID: 9105260164997638365}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -40,6 +42,7 @@ Transform:
   - {fileID: 6805830296971774128}
   - {fileID: 6804532286353262933}
   - {fileID: 3035308083670583779}
+  - {fileID: 438622127730484062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7156025261398757371
@@ -239,6 +242,34 @@ MonoBehaviour:
   movingJumpDuration: 1
   stationaryJumpContact: {x: 0.745223, y: 1.3910829}
   movingJumpContact: {x: 0.016666668, y: 0.65}
+--- !u!114 &1407612425606875919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021932728646410389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771e3dbd31490834c81a6ce866b7dc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Construction.ConstructionController
+  catalog: {fileID: 11400000, guid: 4299d26f285f9354ea11c6692df13743, type: 2}
+  uiPrefab: {fileID: 2506006912951942396, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+  embeddedUI: {fileID: 5557185031675255595}
+--- !u!114 &9105260164997638365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021932728646410389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7823e801732b2e64883d820704b3c6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Construction.ConstructionPersistence
+  catalog: {fileID: 11400000, guid: 4299d26f285f9354ea11c6692df13743, type: 2}
 --- !u!1 &4732369120335464968
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,3 +927,116 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ae059883696db84fa1d4388a9d1d526, type: 3}
   m_PrefabInstance: {fileID: 6483375753993219931}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8059251273476827095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 869279624956867578}
+    m_Modifications:
+    - target: {fileID: 7591148218892328312, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_Name
+      value: ConstructionUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+--- !u!224 &438622127730484062 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7624166274652898441, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+  m_PrefabInstance: {fileID: 8059251273476827095}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5557185031675255595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2506006912951942396, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
+  m_PrefabInstance: {fileID: 8059251273476827095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e83b319e5ef6840ac75506bfd6e79b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Construction.BuildMenuView

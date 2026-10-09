@@ -46,6 +46,11 @@ namespace JuegoCriminal.Player
         private Vector3 _standingCapsuleCenter;
 
         public float LookPitch => _pitch;
+        public void StopHorizontalMotion()
+        {
+            _horizontalVelocity = Vector3.zero;
+            LocalAnimationVelocity = Vector3.zero;
+        }
         public Vector3 LocalAnimationVelocity { get; private set; }
 
         private void Awake()

@@ -1,0 +1,1034 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier" at "2026-10-09T07:54:21.9554216Z"
+Built from '6000.3/staging' branch; Version is '6000.3.8f1 (1c7db571dde0) revision 1867189'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'es' Physical Memory: 15750 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-09T07:54:21Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+-executeMethod
+WallVariantsSetup.Run
+-logFile
+Documentation/WallVariantsSetup.log
+Successfully changed project path to: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [19256]  Target information:
+
+Player connection [19256]  * "[IP] 169.254.83.107 [Port] 55506 [Flags] 2 [Guid] 1640827638 [EditorId] 1640827638 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19256]  * "[IP] 10.225.3.143 [Port] 55506 [Flags] 2 [Guid] 1640827638 [EditorId] 1640827638 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19256] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19256] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-16964" after 0.9 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              1e88e80cf4f3451091ec5e0412c4a34e
+  Correlation Id:          54fa6951693184acbf5e18a37c7d2537
+  External correlation Id: 7306749912143419668
+  Machine Id:              /vGJGymoPSYuLyiSLmM/5/OP03Q=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-adm_mgarciajavier" (connect: 0.00s, validation: 0.00s, handshake: 2.86s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier-notifications" at "2026-10-09T07:54:24.821251Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 6872099004708-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 2.88s
+[Licensing::Module] Licensing is initialized (took 1.29s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.8f1 (1c7db571dde0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1638)
+    Vendor:   ATI
+    VRAM:     7875 MB
+    Driver:   31.0.21921.1000
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56964
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004248 seconds.
+- Loaded All Assemblies, in  0.832 seconds
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.626 seconds
+Domain Reload Profiling: 1451ms
+	BeginReloadAssembly (315ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (17ms)
+	RebuildCommonClasses (69ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (110ms)
+	LoadAllAssembliesAndSetupDomain (308ms)
+		LoadAssemblies (284ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (304ms)
+			TypeCache.Refresh (301ms)
+				TypeCache.ScanAssembly (280ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (627ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (568ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (55ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (103ms)
+			ProcessInitializeOnLoadAttributes (226ms)
+			ProcessInitializeOnLoadMethodAttributes (178ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 60 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ai.navigation@c33a115e9883)
+    com.unity.collab-proxy@2.11.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collab-proxy@e566cd3e7623)
+    com.unity.formats.fbx@5.1.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.formats.fbx@86d1698ebb13)
+    com.unity.ide.rider@3.0.39 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.rider@4504839d03f7)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.18.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.inputsystem@57d0e36f6123)
+    com.unity.postprocessing@3.5.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.postprocessing@4a41da475b74)
+    com.unity.timeline@1.8.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.timeline@7f8b2fb101b6)
+    com.unity.visualscripting@1.9.9 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.visualscripting@191c0d7e3b69)
+    com.unity.searcher@4.9.4 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.autodesk.fbx@5.1.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.autodesk.fbx@90432ec06ab5)
+    com.unity.burst@1.8.27 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.burst@973857688024)
+    com.unity.mathematics@1.3.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.2 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collections@aea9d3bd5e19)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.2.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562)
+  Built-in packages:
+    com.unity.multiplayer.center@1.0.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal@a6e30d1f59f5)
+    com.unity.shadergraph@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.shadergraph@d44b48771ebb)
+    com.unity.test-framework@1.6.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework@0b7a23ab2e1d)
+    com.unity.ugui@2.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ugui@bb329a87fcdc)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.core@d6dfd1e235d5)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.13 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+DisplayProgressbar: Compiling Scripts
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+ExitCode: 4 Duration: 0s862ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[727/932    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra requires additional run (0.71 seconds), 1 items updated, 725 evaluated
+ExitCode: 0 Duration: 1s440ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+ExitCode: 0 Duration: 5s700ms
+Finished compiling graph: 936 nodes, 17246 flattened edges (14322 ToBuild, 146 ToUse), maximum node priority 980
+[513/932    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp
+[516/932    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp
+[728/932    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[924/932    3s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+[925/932    1s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll, with 139 defines and 320 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[926/932    1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[927/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[928/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[929/932    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 137 defines and 339 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[930/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[931/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (5.60 seconds), 11 items updated, 932 evaluated
+AssetDatabase: script compilation time: 9.667320s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.964 seconds
+Refreshing native plugins compatible for Editor in 4.75 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  6.904 seconds
+Domain Reload Profiling: 8854ms
+	BeginReloadAssembly (525ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (26ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (223ms)
+	RebuildCommonClasses (79ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (81ms)
+	LoadAllAssembliesAndSetupDomain (1243ms)
+		LoadAssemblies (881ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (548ms)
+			TypeCache.Refresh (365ms)
+				TypeCache.ScanAssembly (339ms)
+			BuildScriptInfoCaches (156ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (6905ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (6331ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (42ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (347ms)
+			ProcessInitializeOnLoadAttributes (5614ms)
+			ProcessInitializeOnLoadMethodAttributes (249ms)
+			AfterProcessingInitializeOnLoad (70ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (29ms)
+Refreshing native plugins compatible for Editor in 6.93 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6e6737d540c559c459fd38ecfea28365): Total: 20.574 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=8157 ms
+		Asset DB Callback time: managed=549 ms, native=157 ms
+		Scripting: domain reloads=1, domain reload time=1965 ms, compile time=9671 ms, other=72 ms
+		Project Asset Count: scripts=1435, non-scripts=3333
+		Asset File Changes: new=3, changed=14, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.003ms
+	InvokePackagesCallback: 179.743ms
+	ApplyChangesToAssetFolders: 1.185ms
+	Scan: 387.622ms
+	OnSourceAssetsModified: 1.080ms
+	CategorizeAssetsWithTransientArtifact: 99.214ms
+	ProcessAssetsWithTransientArtifactChanges: 155.841ms
+	CategorizeAssets: 179.691ms
+	ImportOutOfDateAssets: 6957.250ms (-2724.594ms without children)
+		CompileScripts: 9670.862ms
+		ReloadNativeAssets: 0.063ms
+		UnloadImportedAssets: 4.212ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.888ms
+		InitializingProgressBar: 0.002ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.004ms
+		OnDemandSchedulerStart: 3.814ms
+	PostProcessAllAssets: 549.747ms
+	Hotreload: 19.137ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.003ms
+	UnloadStreamsBegin: 5.399ms
+	PersistCurrentRevisions: 0.162ms
+	UnloadStreamsEnd: 0.003ms
+	GenerateScriptTypeHashes: 13.643ms
+	Untracked: 12037.543ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Scanning for USB devices : 7.673ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Criminal Bussines
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6650 unused Assets / (7.0 MB). Loaded Objects now: 7510.
+Memory consumption went from 219.5 MB to 212.5 MB.
+Total: 18.456100 ms (FindLiveObjects: 1.326300 ms CreateObjectMapping: 1.564000 ms MarkObjects: 9.774900 ms  DeleteObjects: 5.788800 ms)
+
+Start importing Assets/Construction using Guid(b798fe02daac6534ea04334d2ee3314f) (DefaultImporter) -> (artifact id: '58174acd2f5380d78f4952d4324f6df9') in 0.0145931 seconds
+Refreshing native plugins compatible for Editor in 6.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8b228e3959b85ff4dbfcb6d8573e61f6): Total: 0.199 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes using Guid(de3c64ca0fd17084bac4afabe7f44350) (DefaultImporter) -> (artifact id: '6076677adb8c593c2d72c57a95294353') in 0.0142451 seconds
+Refreshing native plugins compatible for Editor in 17.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9bd0a4f3e1a12b3499b61e52928032f9): Total: 0.149 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/+_wall_complete.prefab using Guid(a4a67795b05c777478dd3f88ada70df5) (PrefabImporter) -> (artifact id: '248f7569bd4f30fc9745173c6e3e0a10') in 0.0343207 seconds
+Refreshing native plugins compatible for Editor in 7.18 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4cd7ff1e4b383e743b68c000ff73341a): Total: 0.188 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/4bebfbcbd6a7ca641a53b5db05b4bc90'
+	Deserialize:            0.713 ms
+	Integration:            1.008 ms
+	Integration of assets:  0.008 ms
+	Thread Wait Time:       116.551 ms
+	Total Operation Time:   118.281 ms
+Start importing Assets/Construction/WallMeshes/+_wall_complete_complete.asset using Guid(54f00f755f36d8743b3b67c562c8a847) (NativeFormatImporter) -> (artifact id: '7f74f009d15f1f7f6593e964f9455542') in 0.0056512 seconds
+Refreshing native plugins compatible for Editor in 4.46 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=12e67f53669e9aa45862e23eaa553fde): Total: 0.074 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/+_wall_complete_semincomplete.asset using Guid(670ca4bdebce5264aae44c2aa1e1ed2d) (NativeFormatImporter) -> (artifact id: 'b40240cbe79f354404c30d511c6ac759') in 0.0050068 seconds
+Refreshing native plugins compatible for Editor in 4.42 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=312324ca585c9e74498aad5797b00669): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/+_wall_complete_incomplete.asset using Guid(eaf2bd529d705c0408f03a84614953b0) (NativeFormatImporter) -> (artifact id: '60452a335070951c1dbbd6c92ac5f8c5') in 0.0078958 seconds
+Refreshing native plugins compatible for Editor in 8.96 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=347d692ab092b9a42bc401d0fea8958f): Total: 0.077 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/+_wall_complete.prefab using Guid(a4a67795b05c777478dd3f88ada70df5) (PrefabImporter) -> (artifact id: 'cb0bd21a42c79467425c473dacc3ef96') in 0.0170965 seconds
+Refreshing native plugins compatible for Editor in 5.97 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6bceab5be76439341b91942277dff97b): Total: 0.138 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/+_wall_semincomplete.prefab using Guid(d078e604b1c1d5144acad8bc0c9f70d1) (PrefabImporter) -> (artifact id: 'd487386bda156efafb817a29751e4d4f') in 0.015287 seconds
+Refreshing native plugins compatible for Editor in 5.30 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=27cb693b3d585ac43bcaf5cff737e317): Total: 0.170 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/5944fd029d83b93448c4d09eb7fb34b4'
+	Deserialize:            0.343 ms
+	Integration:            0.238 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   0.598 ms
+Start importing Assets/Construction/WallMeshes/+_wall_semincomplete_complete.asset using Guid(e8279c78242b09948ac40605697dc176) (NativeFormatImporter) -> (artifact id: 'ce322ed666f61826f6ab51a6bce514a9') in 0.0170692 seconds
+Refreshing native plugins compatible for Editor in 11.21 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5a58e8c163210b744bf1bf989f240141): Total: 0.151 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/+_wall_semincomplete_semincomplete.asset using Guid(9939051c2ce3cb04398d2f56d7cc0e3e) (NativeFormatImporter) -> (artifact id: 'b998003b0573c1a684b5880d55c59a15') in 0.0128927 seconds
+Refreshing native plugins compatible for Editor in 5.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=df8d1f10667d1b0428b89f8aed841ce5): Total: 0.116 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/+_wall_semincomplete_incomplete.asset using Guid(e51644f81a5f09d46bdd46404342d5de) (NativeFormatImporter) -> (artifact id: '707f39a23045d2caee1f8737199dd4b9') in 0.0107584 seconds
+Refreshing native plugins compatible for Editor in 5.95 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=dc002485b65f21c44be548937ba824bd): Total: 0.105 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/+_wall_semincomplete.prefab using Guid(d078e604b1c1d5144acad8bc0c9f70d1) (PrefabImporter) -> (artifact id: 'b1c3af78a8b0630b317c6fa8f017e863') in 0.0170134 seconds
+Refreshing native plugins compatible for Editor in 7.27 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=20f02dca8dcde234a9851cca3c4775b6): Total: 0.148 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/+_Wall_incomplete.prefab using Guid(bb9bf390923bc0b4a80cdc49e8260a75) (PrefabImporter) -> (artifact id: '40d3da2d8276ff469650be621d940bb4') in 0.0154352 seconds
+Refreshing native plugins compatible for Editor in 7.97 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=aba137ef5142ed04882ff118fb7760e7): Total: 0.122 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/044649e484f3c27458a98df8105b4280'
+	Deserialize:            0.408 ms
+	Integration:            0.897 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   1.327 ms
+Start importing Assets/Construction/WallMeshes/+_Wall_incomplete_complete.asset using Guid(16b5c70137833bd49b3cfb20a1c34a8b) (NativeFormatImporter) -> (artifact id: '5babb5905d47e483e078b33dbec581fc') in 0.0101375 seconds
+Refreshing native plugins compatible for Editor in 6.47 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ef03ab94957f06441a93c0eae6f274bf): Total: 0.091 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/+_Wall_incomplete_semincomplete.asset using Guid(ab5739034bb602a4db7308a1fa7d0ecf) (NativeFormatImporter) -> (artifact id: 'b68b01439bd98416f1f200069c141814') in 0.0103248 seconds
+Refreshing native plugins compatible for Editor in 6.90 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=be03498e52e076d48a49a2591e25a6f2): Total: 0.112 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/+_Wall_incomplete_incomplete.asset using Guid(cf83e2836783989499d9cf495d5f1cd4) (NativeFormatImporter) -> (artifact id: '29040b5a1ed16f3d58e29a05e44ceb7c') in 0.0086457 seconds
+Refreshing native plugins compatible for Editor in 5.07 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e0533a79670d5e749ba9d1c6b0c8bb09): Total: 0.112 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/+_Wall_incomplete.prefab using Guid(bb9bf390923bc0b4a80cdc49e8260a75) (PrefabImporter) -> (artifact id: '45006292f9bcd03affd96b9fc09927a0') in 0.0080421 seconds
+Refreshing native plugins compatible for Editor in 3.88 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d2c9cd78a2eaaa6478f2a810931496d4): Total: 0.090 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/eb1da40db1906bd488c8dce5a1d6e25b'
+	Deserialize:            1.579 ms
+	Integration:            1.758 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.010 ms
+	Total Operation Time:   3.350 ms
+Start importing Assets/Construction/WallMeshes/Corner_Wall_complete.asset using Guid(75f6a26b389e47340977d71c1c6bac21) (NativeFormatImporter) -> (artifact id: '861ea9cf4976270b4db0ca097d77110e') in 0.013888 seconds
+Refreshing native plugins compatible for Editor in 5.92 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c2734f5d9fd6cea4eb8e104242a1efb1): Total: 0.121 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Corner_Wall_semincomplete.asset using Guid(ab8ea171f00f7cd40bb0c4b7ca42aae5) (NativeFormatImporter) -> (artifact id: '44b873c858663528c643353ec57ebd5f') in 0.0102756 seconds
+Refreshing native plugins compatible for Editor in 4.46 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a021dbc5efd6971438cd2663e200df50): Total: 0.112 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Corner_Wall_incomplete.asset using Guid(c321e2f9e3df8a547847a76626071862) (NativeFormatImporter) -> (artifact id: '2d2d20c43050a13d8d6a1b80d7e2fa01') in 0.0090304 seconds
+Refreshing native plugins compatible for Editor in 7.53 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7d1d1a9a8a650ff46a7a0d3f0ba994df): Total: 0.097 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/Corner_Wall.prefab using Guid(8fb093df2ca49ef44b97c736bf909d95) (PrefabImporter) -> (artifact id: '1d02eaa26e255bf4e59c03154fea6dfb') in 0.0193521 seconds
+Refreshing native plugins compatible for Editor in 7.26 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=30d5d2446f4e5e249bfd894622ae3ae8): Total: 0.119 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/1665656cbb6c36146b7e3f92ee415343'
+	Deserialize:            1.507 ms
+	Integration:            3.223 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   4.751 ms
+Start importing Assets/Construction/WallMeshes/Corner_Wall_semincomplete_complete.asset using Guid(f4d6e7f8506fc6c4caca0f752ce03cf5) (NativeFormatImporter) -> (artifact id: '9849e2e98244d5fd8aa8a8bef84f58ad') in 0.0062569 seconds
+Refreshing native plugins compatible for Editor in 5.22 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=764ea3622f2b4e443b351a61e4359aec): Total: 0.080 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Corner_Wall_semincomplete_semincomplete.asset using Guid(c7bd1d2607201b24ca69dd6d7a21324d) (NativeFormatImporter) -> (artifact id: 'd03b75ca962b924708d5a767fc643ad4') in 0.010904 seconds
+Refreshing native plugins compatible for Editor in 9.91 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e24e04f10a170e34f90b17d2a788ee5f): Total: 0.145 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Corner_Wall_semincomplete_incomplete.asset using Guid(f4eba724d98df464780a56e486463aa6) (NativeFormatImporter) -> (artifact id: 'f4b48d968ec0d527bedb9bd87f2cf9cf') in 0.0082579 seconds
+Refreshing native plugins compatible for Editor in 6.86 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ede9a8b165a7bea41a59fbd1c27c311d): Total: 0.105 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/Corner_Wall_semincomplete.prefab using Guid(403aa113c8205994995c6862a59c3e3b) (PrefabImporter) -> (artifact id: '730ad46907cbe56d1ab403a1d1d7b86f') in 0.0126687 seconds
+Refreshing native plugins compatible for Editor in 5.73 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=fd9b8d4ae6b58d34da7d8ac2ec850353): Total: 0.105 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Corner_Wall_incomplete.prefab using Guid(c1ae351280896ea4488d45bf28d6d036) (PrefabImporter) -> (artifact id: 'e99160ccc2b106f70623693d47fee948') in 0.0172552 seconds
+Refreshing native plugins compatible for Editor in 9.35 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2f1b4caeb58ac3c4ea044b577158a47f): Total: 0.139 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/24fdd167ec8eb384a8e434d1b17843cb'
+	Deserialize:            0.946 ms
+	Integration:            28.742 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.031 ms
+	Total Operation Time:   29.721 ms
+Start importing Assets/Construction/WallMeshes/Corner_Wall_incomplete_complete.asset using Guid(32923d53ec0f146469e29e5d10afc5dd) (NativeFormatImporter) -> (artifact id: '2f43651fa5814a2bdf20149e33b198b9') in 0.0098339 seconds
+Refreshing native plugins compatible for Editor in 7.09 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=46b1a56f5ceaedc4b8b2baf8f10add4e): Total: 0.124 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Corner_Wall_incomplete_semincomplete.asset using Guid(b9ad206df27da4f4babff9b666c1702d) (NativeFormatImporter) -> (artifact id: 'f97d5f5f427ce16155a80b25c239d626') in 0.0082244 seconds
+Refreshing native plugins compatible for Editor in 4.13 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=fa9453b05f37e6d4fb933d1530c87e03): Total: 0.104 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Corner_Wall_incomplete_incomplete.asset using Guid(7801be07458680d4983497bd248111e1) (NativeFormatImporter) -> (artifact id: 'de8f03e485abfeff33b06c2bfc0dd62b') in 0.0072811 seconds
+Refreshing native plugins compatible for Editor in 6.25 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=74ede7505c0c48343bb84ecb81abc25f): Total: 0.105 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Corner_Wall_incomplete.prefab using Guid(c1ae351280896ea4488d45bf28d6d036) (PrefabImporter) -> (artifact id: '7c31ff5d741713017b42a79e69f5c6de') in 0.0095588 seconds
+Refreshing native plugins compatible for Editor in 4.81 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b6c3257132a096c42b82f75c5b379135): Total: 0.067 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/26fae186f7ff9ba4d91f7b0f507f6f12'
+	Deserialize:            0.345 ms
+	Integration:            0.283 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   0.642 ms
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_complete.asset using Guid(c6e02787e1fbc0848919ebebb7e7abda) (NativeFormatImporter) -> (artifact id: 'cec0d0b360ca1334eb1f5205fa1bda3d') in 0.008563 seconds
+Refreshing native plugins compatible for Editor in 5.61 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b3284b816d4c8074baa2556116ec2976): Total: 0.102 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_semincomplete.asset using Guid(e601fa7b3efb99b4ba4f160110e531ef) (NativeFormatImporter) -> (artifact id: 'ac62bfe5271cea379d2b73aa4f4d0524') in 0.0284953 seconds
+Refreshing native plugins compatible for Editor in 4.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=947fe08b5606d884080d9381dab8ac63): Total: 0.125 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_incomplete.asset using Guid(91359640ed76ae94380c48881bffecc9) (NativeFormatImporter) -> (artifact id: 'de6273030c0ea3ecacb6cc1b01cdad9e') in 0.0078015 seconds
+Refreshing native plugins compatible for Editor in 5.71 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=073e0e0dcf7a905438987de03e23c61e): Total: 0.100 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/Diagonal_Wall.prefab using Guid(e344f589e56a23f4788f3cb2cb09b269) (PrefabImporter) -> (artifact id: 'bbf5ada437d8f6eef6f220b5606435ce') in 0.0127361 seconds
+Refreshing native plugins compatible for Editor in 4.67 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cf3abb44af221bd40aa016fcf6cac70d): Total: 0.102 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/2e4ed87a23b360c419a92de998b88bbc'
+	Deserialize:            0.726 ms
+	Integration:            0.562 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   1.312 ms
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_semincomplete_complete.asset using Guid(85bdf90a72480b8489388edc7e6a8cf9) (NativeFormatImporter) -> (artifact id: '59202fa3af99ebd95c771efd2dfd6206') in 0.0077463 seconds
+Refreshing native plugins compatible for Editor in 10.38 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c26da984f134dde48855c474294a3fcf): Total: 0.114 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_semincomplete_semincomplete.asset using Guid(acbd3288dea67894a9afb5f6a5f9bcd7) (NativeFormatImporter) -> (artifact id: '163f5edc7201c4bd28a760aef235a571') in 0.0072621 seconds
+Refreshing native plugins compatible for Editor in 5.28 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e759d14aa60989041a5931f10bc9715c): Total: 0.104 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_semincomplete_incomplete.asset using Guid(73974864e890045488c18bc580c5a600) (NativeFormatImporter) -> (artifact id: 'ba5a509ebead48c0d8a11ec1498e5dc0') in 0.0153049 seconds
+Refreshing native plugins compatible for Editor in 7.76 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=41f25096f9b691c4abe61a7b066c53ff): Total: 0.131 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/Diagonal_Wall_semincomplete.prefab using Guid(97b9d91e78333de49b76d1bf79f542ba) (PrefabImporter) -> (artifact id: 'ce7b87e76a338198351b633c967af35a') in 0.0157982 seconds
+Refreshing native plugins compatible for Editor in 6.23 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=47974bcab86c2be42b7416192bf07c9f): Total: 0.130 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Diagonal_Wall_incomplete.prefab using Guid(46523dcdc7ff85d4b8bb81dfddcb7484) (PrefabImporter) -> (artifact id: '2d2d0dfa229e660a9587c09508169197') in 0.0131495 seconds
+Refreshing native plugins compatible for Editor in 6.28 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=85c74f5ea7f30914da5af831a0ebdafc): Total: 0.107 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/1503080ebe20b424c8a1be94a74c2e06'
+	Deserialize:            0.637 ms
+	Integration:            0.617 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   1.279 ms
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_incomplete_complete.asset using Guid(0f73625be132b1848a73ab16780131a0) (NativeFormatImporter) -> (artifact id: '0ba04ad84f6e6c7e71bf102c585d6de5') in 0.0057077 seconds
+Refreshing native plugins compatible for Editor in 5.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=29de69b59f121144390f695e6063201d): Total: 0.092 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_incomplete_semincomplete.asset using Guid(a052d781853831a45b121bfacb041c87) (NativeFormatImporter) -> (artifact id: '339778e025cd23c99ddaa361893b74c0') in 0.0084512 seconds
+Refreshing native plugins compatible for Editor in 5.56 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bc88c2c35583f5543b009992ef009f9c): Total: 0.080 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Diagonal_Wall_incomplete_incomplete.asset using Guid(09bc53f59471fb34a9b6e6b7b21cefe3) (NativeFormatImporter) -> (artifact id: '437261c6f0474498f44ba3500526b661') in 0.0075064 seconds
+Refreshing native plugins compatible for Editor in 5.40 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c89a5152e55750a4bacb70eb487fa3c4): Total: 0.086 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Diagonal_Wall_incomplete.prefab using Guid(46523dcdc7ff85d4b8bb81dfddcb7484) (PrefabImporter) -> (artifact id: 'ec06d311841dd67c66d138be14ebde6c') in 0.008665 seconds
+Refreshing native plugins compatible for Editor in 6.66 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5ef7690fce7dc7b48bdbdb1782fc165b): Total: 0.078 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/5966cdb06f6760d47ab73408916ccd1b'
+	Deserialize:            0.379 ms
+	Integration:            0.290 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   0.683 ms
+Start importing Assets/Construction/WallMeshes/Glass_wall_complete.asset using Guid(26adb48a88dc20c4babbd44c91bc98d5) (NativeFormatImporter) -> (artifact id: '360d26544f1d7af5321c270d3f4c91eb') in 0.0054599 seconds
+Refreshing native plugins compatible for Editor in 4.97 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=86ce9cdda4649514a87c2a308c1003fa): Total: 0.065 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_wall_semincomplete.asset using Guid(69f57dc9a14cc0e4888069524dc9314f) (NativeFormatImporter) -> (artifact id: 'e057e46dabc06baee4a454d4edb5ec26') in 0.0049956 seconds
+Refreshing native plugins compatible for Editor in 3.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7e2e0569a7770df45bfbd134533665d3): Total: 0.058 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_wall_incomplete.asset using Guid(a77f58ff9fd12e94191df5e2063451bb) (NativeFormatImporter) -> (artifact id: '34a4edf69fc7fba8059ffb3abdefdeb2') in 0.0052401 seconds
+Refreshing native plugins compatible for Editor in 3.82 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5059cf82cd39cb14584ff4cec3585c89): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/Glass_wall.prefab using Guid(baab1af5f60364743a492de426b6dc07) (PrefabImporter) -> (artifact id: 'cac0d74d0e8f3f465c253751b3beae6b') in 0.008775 seconds
+Refreshing native plugins compatible for Editor in 5.20 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f506b316c5904a74b9f8ad1e5675d445): Total: 0.064 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/518cb8da827f10d48a60405cfb9abdda'
+	Deserialize:            0.491 ms
+	Integration:            0.481 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   0.996 ms
+Start importing Assets/Construction/WallMeshes/Glass_wall_semincomplete_complete.asset using Guid(c64e6c375738c9745b89cf429d6cfb26) (NativeFormatImporter) -> (artifact id: 'b621a9a7645727403c9ed5d7c83e3662') in 0.0050541 seconds
+Refreshing native plugins compatible for Editor in 4.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=fde818ae93100e64abc1943f330e3cb7): Total: 0.070 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_wall_semincomplete_semincomplete.asset using Guid(f9e90d13dfb726a4e8b30126d3106bf0) (NativeFormatImporter) -> (artifact id: '1c2905073f2fba59f8f70f0802b16605') in 0.0044951 seconds
+Refreshing native plugins compatible for Editor in 5.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d37cd335e173bde4ea982a3d6da353ad): Total: 0.053 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_wall_semincomplete_incomplete.asset using Guid(420de20e9c76ea14db00109ed2ab809f) (NativeFormatImporter) -> (artifact id: 'ee12720d319baaccb15cdf8551dee6ad') in 0.0044331 seconds
+Refreshing native plugins compatible for Editor in 3.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0d7304acd0006b547a1f0998b97577d0): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/Glass_wall_semincomplete.prefab using Guid(f16f2597f8413044aa62588ee0fa33cc) (PrefabImporter) -> (artifact id: '33aaa4e9988fbef3bd1527e3c319c88c') in 0.0067977 seconds
+Refreshing native plugins compatible for Editor in 3.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=312240c1852324c4389b398457d06cd6): Total: 0.057 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Glass_Wall_incomplete.prefab using Guid(b869fa446a9f22c4cb2529bf576ef668) (PrefabImporter) -> (artifact id: 'e201f0263b8dd847c77702a2a85419af') in 0.0281246 seconds
+Refreshing native plugins compatible for Editor in 6.92 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=29fea7e24dff70b478fc43e1f2a164cc): Total: 0.122 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/46781263a0832bb42a908bc446fa27ea'
+	Deserialize:            0.985 ms
+	Integration:            1.014 ms
+	Integration of assets:  0.006 ms
+	Thread Wait Time:       1.044 ms
+	Total Operation Time:   3.050 ms
+Start importing Assets/Construction/WallMeshes/Glass_Wall_incomplete_complete.asset using Guid(aa8be6e6cedc5e34b8a08f7b6f3b299e) (NativeFormatImporter) -> (artifact id: '523c70016d56af0409334627474c3394') in 0.0062327 seconds
+Refreshing native plugins compatible for Editor in 5.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=33b5719e4a86aee4ebeee32d885b42d4): Total: 0.129 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_Wall_incomplete_semincomplete.asset using Guid(180f8a0fc95897b4ca24866b16055f3c) (NativeFormatImporter) -> (artifact id: '9f77841958674a678f297cb34cf2ed8e') in 0.0048817 seconds
+Refreshing native plugins compatible for Editor in 5.36 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ea8ce1f585269ef4db79a7eb4202e1db): Total: 0.068 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_Wall_incomplete_incomplete.asset using Guid(595a7478ec18ebb44b0ffcdd52bc2daf) (NativeFormatImporter) -> (artifact id: '1e980e7e1e52c50820f4ad200060ed5d') in 0.0049756 seconds
+Refreshing native plugins compatible for Editor in 4.30 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9cab77982978be945b271d40955bf5ca): Total: 0.063 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Glass_Wall_incomplete.prefab using Guid(b869fa446a9f22c4cb2529bf576ef668) (PrefabImporter) -> (artifact id: '3fc7712bdc5bdde2d2b0f5c05e1160d0') in 0.0078156 seconds
+Refreshing native plugins compatible for Editor in 4.86 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=95f526b189b589242a401eb5a89fb5ca): Total: 0.069 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/Glass_Wall_door_complete.prefab using Guid(b1f3a2c3c79693843898053f78707663) (PrefabImporter) -> (artifact id: '4f2739fcc97ac02ff8acd213f7a9b1f5') in 0.1143672 seconds
+Refreshing native plugins compatible for Editor in 13.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f897e76abafb4d446b3e622b57705b7e): Total: 0.244 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/9214553c6028ca248aa91a02f0b7d43d'
+	Deserialize:            31.610 ms
+	Integration:            0.289 ms
+	Integration of assets:  25.741 ms
+	Thread Wait Time:       0.056 ms
+	Total Operation Time:   57.696 ms
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_complete_complete.asset using Guid(2e9a4bfbe5e7b3649a6272a249f6a007) (NativeFormatImporter) -> (artifact id: 'e511aab4aa8804e959d6aefeb43d5b1e') in 0.0051178 seconds
+Refreshing native plugins compatible for Editor in 4.75 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e6559063da0d1ef47acf0e03322e9e5a): Total: 0.058 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_complete_semincomplete.asset using Guid(9acfd7961b9ef574cb8ff6b1efe7ff22) (NativeFormatImporter) -> (artifact id: 'ceff6bf192e44e76d42df91ed412a698') in 0.0047974 seconds
+Refreshing native plugins compatible for Editor in 4.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0c60dcfa0c021974a97acd7bf2d86613): Total: 0.072 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_complete_incomplete.asset using Guid(127d04a17c78b9b48a127bc10e8fed2b) (NativeFormatImporter) -> (artifact id: '80f7d2c8585a7f05b4b643b7e2423deb') in 0.0127888 seconds
+Refreshing native plugins compatible for Editor in 6.82 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a238a5341ca1d2c42a95ec82d8f57679): Total: 0.134 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/Glass_Wall_door_complete.prefab using Guid(b1f3a2c3c79693843898053f78707663) (PrefabImporter) -> (artifact id: '01e15cc78c0203329d3eb1c51e20f922') in 0.0070786 seconds
+Refreshing native plugins compatible for Editor in 3.91 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=77f89a0a0c549d74aa6b60482d057623): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/5e5e6bdd82d6d874fa3d3f61fd70db71'
+	Deserialize:            0.667 ms
+	Integration:            0.234 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   0.917 ms
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_semincomplete_complete.asset using Guid(091348c4de411eb47ad75adbef83057d) (NativeFormatImporter) -> (artifact id: '4a66dafebddd023879651225692df324') in 0.0047057 seconds
+Refreshing native plugins compatible for Editor in 4.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2d9f291abc5d27f4880a5110fa2fae84): Total: 0.052 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_semincomplete_semincomplete.asset using Guid(287b5ef3963c7a04bb72b7c97080edf7) (NativeFormatImporter) -> (artifact id: '3bb79f14ed0340d0cdca2f069922d792') in 0.0053639 seconds
+Refreshing native plugins compatible for Editor in 3.67 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=992a165b9cff8154cbadceaf6cd0e519): Total: 0.052 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_semincomplete_incomplete.asset using Guid(473ed28bdf25b044babcaa18d1983fef) (NativeFormatImporter) -> (artifact id: '5d38c93d35d90b0aa463c70be13f5a6e') in 0.0073064 seconds
+Refreshing native plugins compatible for Editor in 5.00 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0df488364c82c1641a2ab252a57e75ba): Total: 0.113 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/Glass_Wall_door_semincomplete.prefab using Guid(9a6c37167f64f0e4ca4708a6bf67cdfd) (PrefabImporter) -> (artifact id: '284820748bd0af4b35c5af5a9b0cd81a') in 0.0137084 seconds
+Refreshing native plugins compatible for Editor in 4.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f13d74592b1d3e04391ac7df92f51e22): Total: 0.094 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Glass_Wall_door_incomplete.prefab using Guid(e8e219ceaca215749bdd33ed134b2849) (PrefabImporter) -> (artifact id: '1419763b144c870d3eccc98ff2b7ef75') in 0.01176 seconds
+Refreshing native plugins compatible for Editor in 5.48 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=220a328fb806c214f9a3a79466f0fd53): Total: 0.094 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/42133e884f0f0df4c9be7084bcf9c25a'
+	Deserialize:            1.232 ms
+	Integration:            0.543 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.031 ms
+	Total Operation Time:   1.809 ms
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_incomplete_complete.asset using Guid(d83a4d5100c5af3438efcdca8cc10f00) (NativeFormatImporter) -> (artifact id: '9f3c64a7d090aa479de119deb72506fc') in 0.0094738 seconds
+Refreshing native plugins compatible for Editor in 5.30 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d10a8af78d63da443b07f3199c2573f3): Total: 0.088 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_incomplete_semincomplete.asset using Guid(3c78067f95b432b488b4289028b9e8d2) (NativeFormatImporter) -> (artifact id: '6707441ae31eb59375adb58c538729bb') in 0.0116288 seconds
+Refreshing native plugins compatible for Editor in 5.57 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0104326701eb145458fdde7b290d84b2): Total: 0.106 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Glass_Wall_door_incomplete_incomplete.asset using Guid(01044ac04dfe07e49bd18c4cdac99645) (NativeFormatImporter) -> (artifact id: 'dc86a12a6df488679932c4b4648d1e24') in 0.0049108 seconds
+Refreshing native plugins compatible for Editor in 4.70 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ea339ed2d6267c94488b836a74a809f5): Total: 0.063 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Glass_Wall_door_incomplete.prefab using Guid(e8e219ceaca215749bdd33ed134b2849) (PrefabImporter) -> (artifact id: 'cff1854d88bd735652bfc97112856ea9') in 0.0160835 seconds
+Refreshing native plugins compatible for Editor in 6.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=07e852d243feca34d92bbacf69145709): Total: 0.098 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/7ece263a00cfb7a419427ee5d358cdbe'
+	Deserialize:            0.683 ms
+	Integration:            11.063 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   11.769 ms
+Start importing Assets/Construction/WallMeshes/T_wall_complete_complete.asset using Guid(e4a6980a38797ae4fbd5a0744242095c) (NativeFormatImporter) -> (artifact id: 'caa86f20cdfbd798618f01c2b5499ac1') in 0.0087441 seconds
+Refreshing native plugins compatible for Editor in 7.31 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e76dbb4d7575baa478ee39ffe75bde75): Total: 0.096 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/T_wall_complete_semincomplete.asset using Guid(c0c438588668b544ba0ce7e44a67639a) (NativeFormatImporter) -> (artifact id: '23a22c3746ea286202e0249425a299c3') in 0.0056697 seconds
+Refreshing native plugins compatible for Editor in 5.68 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a5a98dd47f4e9314199d36973d19d3ca): Total: 0.078 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/T_wall_complete_incomplete.asset using Guid(4a0e5eaddb8f75847b2172f78fa63d99) (NativeFormatImporter) -> (artifact id: '1e915b9e887e40481de23e88efe4803e') in 0.0083893 seconds
+Refreshing native plugins compatible for Editor in 7.04 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e01ecedce1f45324c95437bbf9126e74): Total: 0.098 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/T_wall_complete.prefab using Guid(df5a3bf947a2f4b4ea327b50d1351d65) (PrefabImporter) -> (artifact id: 'c8cdf7c658e1193962de2a724d81df71') in 0.0128655 seconds
+Refreshing native plugins compatible for Editor in 4.68 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8fd54595facce8740a44794504ee6283): Total: 0.095 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/6ff21f9083d620147a59ce80053588b5'
+	Deserialize:            0.467 ms
+	Integration:            0.317 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   0.800 ms
+Start importing Assets/Construction/WallMeshes/T_wall_semincomplete_complete.asset using Guid(4acf1659f6797d84996536e1b9c521e2) (NativeFormatImporter) -> (artifact id: '1af4672fd65bd28ca04ac38f6873d48c') in 0.0047126 seconds
+Refreshing native plugins compatible for Editor in 5.95 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9e7d272503379c944915bbf24de08677): Total: 0.072 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/T_wall_semincomplete_semincomplete.asset using Guid(03dfc1a3cfb145446845e88c0810bd12) (NativeFormatImporter) -> (artifact id: '0bf76e80cc443946a8a1a41162710d75') in 0.0049368 seconds
+Refreshing native plugins compatible for Editor in 4.39 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5e7e0d0efecf8f242a5d2141251abade): Total: 0.078 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/T_wall_semincomplete_incomplete.asset using Guid(69cb7d5084eb0c846a7b65083d7c6ebc) (NativeFormatImporter) -> (artifact id: 'f12280f72e12d97e67a7cad1b195585e') in 0.0053655 seconds
+Refreshing native plugins compatible for Editor in 5.30 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8b2c0ed84018ef8419d6c4aa890456ed): Total: 0.070 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/T_wall_semincomplete.prefab using Guid(54053540c1fdbd641b72620b22dddc7f) (PrefabImporter) -> (artifact id: '97e8dee6557636b1aa9fe2d5c1ebbd36') in 0.0094956 seconds
+Refreshing native plugins compatible for Editor in 5.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=98995d5ab5621eb4185862ddd4e52dfb): Total: 0.077 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/T_Wall_incomplete.prefab using Guid(74dd621f1c6776545904f36a81094f81) (PrefabImporter) -> (artifact id: 'e7e8c8588c29041f2b54b2d8ffa893f5') in 0.0118741 seconds
+Refreshing native plugins compatible for Editor in 4.55 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=adb8cf641a955a146bf0bdbf2ad9d235): Total: 0.084 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/595a2d6b28a2efc439cee26e922fdd05'
+	Deserialize:            0.437 ms
+	Integration:            0.322 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   0.774 ms
+Start importing Assets/Construction/WallMeshes/T_Wall_incomplete_complete.asset using Guid(e1d0cf3134dc5bc43911ed35ff63607b) (NativeFormatImporter) -> (artifact id: '7a1ca49d0e82a06efaa4e8dddab60ee2') in 0.0058038 seconds
+Refreshing native plugins compatible for Editor in 5.25 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=501cea6e84aabfd41ad0b833aa6a9f15): Total: 0.074 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/T_Wall_incomplete_semincomplete.asset using Guid(cb7402ac2e2b4bc49bc527baa096f9e3) (NativeFormatImporter) -> (artifact id: '1e13507b8e7398a638d70fa9261a4755') in 0.004974 seconds
+Refreshing native plugins compatible for Editor in 11.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8ac0cb6c05031b445b668d65f92bbcd6): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/T_Wall_incomplete_incomplete.asset using Guid(9d838cd5237edf34bbf21c14f5d03979) (NativeFormatImporter) -> (artifact id: 'f7e2dcee34fe6e273c43bbb0a9af673a') in 0.0103748 seconds
+Refreshing native plugins compatible for Editor in 5.14 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=77e70c4cddb15fe48952b031e1afb9c6): Total: 0.129 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/T_Wall_incomplete.prefab using Guid(74dd621f1c6776545904f36a81094f81) (PrefabImporter) -> (artifact id: 'cc78ed5dff9dfc0fe2d313cdde341cdd') in 0.0285705 seconds
+Refreshing native plugins compatible for Editor in 13.27 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b0084895a003c8b4b8cd52d7244248c8): Total: 0.223 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/5bf9e8d3168afc4448eec0a36c2fd81b'
+	Deserialize:            0.827 ms
+	Integration:            4.947 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.029 ms
+	Total Operation Time:   5.807 ms
+Start importing Assets/Construction/WallMeshes/Wall_complete.asset using Guid(7e50276332b54ca48a15b3dd0c92ef45) (NativeFormatImporter) -> (artifact id: 'a0091ab8389510bd7225c9dbd3d537f9') in 0.0054931 seconds
+Refreshing native plugins compatible for Editor in 4.56 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2b2dda43517d1254aa54dddb4d8953d2): Total: 0.102 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_semincomplete.asset using Guid(8253369f505904c45a460d4b07f4d710) (NativeFormatImporter) -> (artifact id: '2b38e93741e4b4f527e0192afe784cb1') in 0.0064041 seconds
+Refreshing native plugins compatible for Editor in 5.17 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ad84ebd14976cf44490ba0cd12dcc49a): Total: 0.086 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_incomplete.asset using Guid(bec9a4f877071fe449b1e7517f009ade) (NativeFormatImporter) -> (artifact id: 'bdc2799c30cea73a3eead80df16d6a7d') in 0.0100543 seconds
+Refreshing native plugins compatible for Editor in 12.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8d976bf6cb1e06140be43745ece15b78): Total: 0.153 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/Wall.prefab using Guid(646161ef561b93c4e895b13fc557dca2) (PrefabImporter) -> (artifact id: '78f55fd66cb8594905f814a9f988bfec') in 0.0231096 seconds
+Refreshing native plugins compatible for Editor in 5.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f9a1fd47d66e7a54a85086d9d1d9e893): Total: 0.182 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/3d4bba3f4aaaf0f40bda065f01c6bc19'
+	Deserialize:            0.693 ms
+	Integration:            0.548 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.026 ms
+	Total Operation Time:   1.270 ms
+Start importing Assets/Construction/WallMeshes/Wall_semincomplete_complete.asset using Guid(ac79f046e38c1f643b8be98dc3c44213) (NativeFormatImporter) -> (artifact id: 'b8944022700858b6b6af748636569bef') in 0.0137546 seconds
+Refreshing native plugins compatible for Editor in 16.58 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=00ae07564dd5319499d437088f9a0b97): Total: 0.159 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_semincomplete_semincomplete.asset using Guid(326422c0c79cf9c42b861796c096de4d) (NativeFormatImporter) -> (artifact id: 'd586e06a2af9f4ea82a7fbc476141008') in 0.0065547 seconds
+Refreshing native plugins compatible for Editor in 4.76 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0542bcbfc184d504c9efb7f32dfaa5bf): Total: 0.092 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_semincomplete_incomplete.asset using Guid(227ac6dd59d81df4498d664f384da662) (NativeFormatImporter) -> (artifact id: '91352f9b73ef943f3c51d1895ed79210') in 0.0048684 seconds
+Refreshing native plugins compatible for Editor in 3.79 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a4172fd751eb3c746969bab3a71a3bac): Total: 0.085 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/Wall_semincomplete.prefab using Guid(6ec25e1073a9318478e52e0246c86058) (PrefabImporter) -> (artifact id: '444f687dcca0a812676e80bdc39ca1eb') in 0.0085871 seconds
+Refreshing native plugins compatible for Editor in 4.38 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=73a4a26e46fe21047943f48a641a46c5): Total: 0.069 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Wall_incomplete.prefab using Guid(0919cb0e26a17054a9de78c131d8331e) (PrefabImporter) -> (artifact id: '2ce6911a22f84440c93b74d2acbec93d') in 0.0094752 seconds
+Refreshing native plugins compatible for Editor in 4.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e6ee9a978e84d1741a855232d1c98741): Total: 0.083 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/26da46b07f3cf52408dc7f69597012ff'
+	Deserialize:            0.799 ms
+	Integration:            0.324 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.139 ms
+Start importing Assets/Construction/WallMeshes/Wall_incomplete_complete.asset using Guid(fcd4367d453e91840a2df4b3e8f542a2) (NativeFormatImporter) -> (artifact id: 'a278e7c64a816861c316260c4e6a0217') in 0.0069371 seconds
+Refreshing native plugins compatible for Editor in 4.87 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=149225b5016368f44851337168622360): Total: 0.074 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_incomplete_semincomplete.asset using Guid(c04416b94d026464f87840f453f9e2d2) (NativeFormatImporter) -> (artifact id: 'b055269731f2e8fb8ff91dcb35efb1cb') in 0.0053487 seconds
+Refreshing native plugins compatible for Editor in 3.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f6291e1241356d2448fce243b5179b5e): Total: 0.055 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_incomplete_incomplete.asset using Guid(6592e8a3716a5974fb633fcd8456dec5) (NativeFormatImporter) -> (artifact id: '3136090b4bcd8b8e42668a11af9efaeb') in 0.004258 seconds
+Refreshing native plugins compatible for Editor in 3.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=26def383ae0bf234fabf22fb6254fb32): Total: 0.073 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Wall_incomplete.prefab using Guid(0919cb0e26a17054a9de78c131d8331e) (PrefabImporter) -> (artifact id: 'c6ee6877d0fae52a6a5cb33f3f32bd14') in 0.0068518 seconds
+Refreshing native plugins compatible for Editor in 3.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d4f02a49712a4d149a14dbde08ed902b): Total: 0.054 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/3e85ee0ad41c2124b8360e102cb515b1'
+	Deserialize:            0.350 ms
+	Integration:            0.284 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.010 ms
+	Total Operation Time:   0.645 ms
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_complete.asset using Guid(393f47ca85ffb894db702be7fc7d0018) (NativeFormatImporter) -> (artifact id: '0fe4d81727acab60faa43b4ccfb18593') in 0.0047414 seconds
+Refreshing native plugins compatible for Editor in 5.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=43e70805a363c104fa7ceda3bbe280c6): Total: 0.056 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_semincomplete.asset using Guid(1f7570d47621ab0429664191d2601b93) (NativeFormatImporter) -> (artifact id: '6867f9680a349c3dbbc4016310a1c9a4') in 0.0098111 seconds
+Refreshing native plugins compatible for Editor in 6.92 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a966ba36fe1564b43864e3840613edc0): Total: 0.064 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_incomplete.asset using Guid(023a5ae97c6062d43a7cf1be9ea653dc) (NativeFormatImporter) -> (artifact id: '3d3255147b892f73afe388506239b969') in 0.0070214 seconds
+Refreshing native plugins compatible for Editor in 4.72 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0b9fa8faf3d2c86418341e63b252892a): Total: 0.093 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/Wall_door_hole.prefab using Guid(503a480c185e59340b02ae885887e4ab) (PrefabImporter) -> (artifact id: '3f0576a049cc4822bf88c7b6c4e39f3f') in 0.0109527 seconds
+Refreshing native plugins compatible for Editor in 4.88 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8883a4e21c611574e841dc6b274264a6): Total: 0.089 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/0c6a50d62694709489bdb035eb5a0f04'
+	Deserialize:            0.535 ms
+	Integration:            0.621 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   1.175 ms
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_semincomplete_complete.asset using Guid(c7672dd35d7a8594c91e0f79f2ec55bb) (NativeFormatImporter) -> (artifact id: '4a12af55267defadec4efe7a5c8793c8') in 0.0068499 seconds
+Refreshing native plugins compatible for Editor in 5.56 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e6bbdb6deca0fa24f9124c0d3a22370c): Total: 0.084 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_semincomplete_semincomplete.asset using Guid(19cd3f76f52d0854fbc601f599796f16) (NativeFormatImporter) -> (artifact id: 'adedf282ad28d5e7a566759b88771dfe') in 0.0066633 seconds
+Refreshing native plugins compatible for Editor in 4.76 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d5f7ce199bd9a88458e65b2b9542a068): Total: 0.085 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_semincomplete_incomplete.asset using Guid(e70232d4e7fbef340a16c260ea91a3d3) (NativeFormatImporter) -> (artifact id: 'f60a88fc1efdaf233b3e45bca6716a0b') in 0.0086936 seconds
+Refreshing native plugins compatible for Editor in 5.53 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c60e56320f7bcce439321aef337de81e): Total: 0.089 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/Wall_door_hole_semincomplete.prefab using Guid(08ce2cefb8ac21f4ebe9757cda618f7e) (PrefabImporter) -> (artifact id: '4e70243eb1bc8dcb42c2493310152037') in 0.0162345 seconds
+Refreshing native plugins compatible for Editor in 5.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f51c4db4b8c9b9b498f270e6c5bc05ae): Total: 0.092 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Wall_door_hole_incomplete.prefab using Guid(6ff5f68d0eb38784187792e41aed06d0) (PrefabImporter) -> (artifact id: '93accc25ef4041398a735441ab630831') in 0.0124158 seconds
+Refreshing native plugins compatible for Editor in 7.11 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d71838b4a996c0447b7a74d95b19d07b): Total: 0.105 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/84b3d30c92bcef54a9cf46e8b8b9a6b9'
+	Deserialize:            0.957 ms
+	Integration:            0.389 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.027 ms
+	Total Operation Time:   1.376 ms
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_incomplete_complete.asset using Guid(02aae9b3a4133004c8d8f8903e1fdde8) (NativeFormatImporter) -> (artifact id: '822774d0f06f9c60f6043c37605de12a') in 0.0114972 seconds
+Refreshing native plugins compatible for Editor in 4.82 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=259ec9884b2f28f448361b47f1355382): Total: 0.096 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_incomplete_semincomplete.asset using Guid(6e533ad1b3d1d03448981af216ddc29b) (NativeFormatImporter) -> (artifact id: 'b7594ee1eadd9ba868ce432a20faa9bd') in 0.0053563 seconds
+Refreshing native plugins compatible for Editor in 3.61 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=055fbfe50106ea94f8146ffea4a0ae22): Total: 0.068 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Wall_door_hole_incomplete_incomplete.asset using Guid(01baa1af61141f44282f3c1bf9b20330) (NativeFormatImporter) -> (artifact id: '90848e5e6b3dca2dee68667f168b4d9f') in 0.0058138 seconds
+Refreshing native plugins compatible for Editor in 4.22 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=be5b75cad4bd0ce49b253fa836ba2551): Total: 0.068 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Wall_door_hole_incomplete.prefab using Guid(6ff5f68d0eb38784187792e41aed06d0) (PrefabImporter) -> (artifact id: 'fed1ff191b326a0f395c7ee1f24d700b') in 0.0157189 seconds
+Refreshing native plugins compatible for Editor in 4.73 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0182cab63c29b1a42b12b609ac27fe43): Total: 0.090 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/3e9a11e9b420a594f801343e8eae7505'
+	Deserialize:            0.871 ms
+	Integration:            0.464 ms
+	Integration of assets:  0.005 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   1.359 ms
+Start importing Assets/Construction/WallMeshes/Window_Wall_complete.asset using Guid(236c80305baafd44086a5cbeb1c219a4) (NativeFormatImporter) -> (artifact id: '271355416a25924fe3268fee548a959c') in 0.0060881 seconds
+Refreshing native plugins compatible for Editor in 5.17 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bb81cadd4722d3248b744e7a4c37be77): Total: 0.094 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Window_Wall_semincomplete.asset using Guid(e7a84234738f98f41b6bec1bb01fdb78) (NativeFormatImporter) -> (artifact id: '815aa6be6f724dff297f8d59cdb515da') in 0.0097042 seconds
+Refreshing native plugins compatible for Editor in 5.38 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=925fdb2499663a34891e7eccf2a765be): Total: 0.100 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Window_Wall_incomplete.asset using Guid(a117a9681b075314b8380097d7bf845a) (NativeFormatImporter) -> (artifact id: 'ffd5d184135a5ba71d2b21717ce3bd83') in 0.0081115 seconds
+Refreshing native plugins compatible for Editor in 4.60 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2363aeb838bb8dd4e847de34acd53a85): Total: 0.095 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Completes/Window_Wall.prefab using Guid(a18105208714efd438e17be7d2d0bc64) (PrefabImporter) -> (artifact id: '108aec213741737691a4f3bef855d845') in 0.0115041 seconds
+Refreshing native plugins compatible for Editor in 6.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4c969354d0f48694cb740a50befdc558): Total: 0.089 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/c8e853d12de41f74db6d49f756872100'
+	Deserialize:            0.717 ms
+	Integration:            0.532 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   1.270 ms
+Start importing Assets/Construction/WallMeshes/Window_Wall_semincomplete_complete.asset using Guid(e2df6ebcdae917e4591d77af197fd562) (NativeFormatImporter) -> (artifact id: '9fae1958da9db94710ebd3f3883da487') in 0.0064559 seconds
+Refreshing native plugins compatible for Editor in 4.79 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3ff1f31cad6693d4bada397eb4d7cbc1): Total: 0.081 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Window_Wall_semincomplete_semincomplete.asset using Guid(e4d4b70a3c81692478a27230b571f2bc) (NativeFormatImporter) -> (artifact id: 'e45a79bfd0e53d5b2cc0d65eaf8a9cd9') in 0.0065405 seconds
+Refreshing native plugins compatible for Editor in 4.15 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0628d000d9e6e2d409d89c019180d006): Total: 0.076 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Window_Wall_semincomplete_incomplete.asset using Guid(54805a0f3ae221e4aaf697bb8af1fbaf) (NativeFormatImporter) -> (artifact id: 'b9be958d7497ebb1a7a8733c07e66603') in 0.0082259 seconds
+Refreshing native plugins compatible for Editor in 5.66 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9d36f30c20338c24e88026389b57f0ba): Total: 0.082 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab using Guid(ae7ed4ae87725af438ad687da77c2c46) (PrefabImporter) -> (artifact id: '311f91c1e8c9d57d2c64c002b507492f') in 0.010029 seconds
+Refreshing native plugins compatible for Editor in 4.23 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5c8b65ec1633a304b8a9a27cc13d4840): Total: 0.082 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab using Guid(1d6e052f43496cd4d89fd31eac8fcc7b) (PrefabImporter) -> (artifact id: '4792106b03bb17117659a466d5b3cc6e') in 0.0187692 seconds
+Refreshing native plugins compatible for Editor in 12.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=13de06b2dee51be4898c18c2e5d7da67): Total: 0.121 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/571400f38560f394f964c64b74901a1b'
+	Deserialize:            0.670 ms
+	Integration:            0.517 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.091 ms
+	Total Operation Time:   1.281 ms
+Start importing Assets/Construction/WallMeshes/Window_wall_incomplete_complete.asset using Guid(f0b10ba9a75b1c14d8c032a29c4fd557) (NativeFormatImporter) -> (artifact id: 'e63ca3bd87261b0c388676836b7b574e') in 0.0084373 seconds
+Refreshing native plugins compatible for Editor in 6.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=05a760ea7a6d8e64bad8a0c0c9c7f1d0): Total: 0.089 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Window_wall_incomplete_semincomplete.asset using Guid(a5b325f129691a14eaa74f0872212713) (NativeFormatImporter) -> (artifact id: '41aba7951c4bfd4ee51afadc0440cca6') in 0.0046539 seconds
+Refreshing native plugins compatible for Editor in 3.83 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bb36b71f55accc24b97e60c2939ebec8): Total: 0.057 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Construction/WallMeshes/Window_wall_incomplete_incomplete.asset using Guid(7cca11a212b980b4da0c4370d6dd6ed6) (NativeFormatImporter) -> (artifact id: '58173365dca110646618407568807807') in 0.0075787 seconds
+Refreshing native plugins compatible for Editor in 6.26 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b1613555b216dc84f80a633b23934453): Total: 0.095 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab using Guid(1d6e052f43496cd4d89fd31eac8fcc7b) (PrefabImporter) -> (artifact id: '2a6f27bd9f83ebcd9da1e3830a9bf4df') in 0.0085047 seconds
+Refreshing native plugins compatible for Editor in 4.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2e0e43e4d202ca84cb6f6ba94fbe5ecc): Total: 0.068 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/ConstructionCatalog.asset using Guid(4299d26f285f9354ea11c6692df13743) (NativeFormatImporter) -> (artifact id: '0195208cd3102c985007a781a8e0c647') in 0.0084796 seconds
+Refreshing native plugins compatible for Editor in 6.39 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=97f91149c53f22e40ab6756a8b69643c): Total: 0.095 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+WALL_VARIANTS_SETUP_OK prefabs=27
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallVariantsSetup:Run () (at Assets/Editor/WallVariantsSetup.cs:112)
+
+(Filename: Assets/Editor/WallVariantsSetup.cs Line: 112)
+
+Batchmode quit successfully invoked - shutting down!
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-adm_mgarciajavier-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-adm_mgarciajavier channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

@@ -1,0 +1,99 @@
+Assets/Original_assets/Walls/Complete/+_wall_complete.fbx scale=(1.00, 1.00, 1.00)
+  +_wall_complete mesh=+ Wall bounds=Center: (4.00, 3.50, 0.00), Extents: (4.00, 3.50, 4.00) materials=Int_1,Ext_1,Ext_2,Int_3,Int_2,Int_4,Ext_4,Ext_3
+  X=0,3,75,4,4,25,8 Y=0,7 Z=-4,-0,25,0,0,25,4
+Assets/Original_assets/Walls/Complete/Corner_Wall_complete.fbx scale=(1.00, 1.00, 1.00)
+  Corner_Wall_complete mesh=Corner Wall bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) materials=Int_1,Ext_2,Ext_2.001,Int_2
+  X=0,3,75,4,4,25 Y=0,7 Z=-0,25,0,0,25,4
+Assets/Original_assets/Walls/Complete/Diagonal_Wall_complete.fbx scale=(1.00, 1.00, 1.00)
+  Diagonal_Wall_complete mesh=Diagonal Wall bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) materials=Ext,Int
+  X=0,3,75,4,4,25 Y=0,7 Z=-0,25,0,0,25,4
+Assets/Original_assets/Walls/Complete/Glass_Wall_complete.fbx scale=(1.00, 1.00, 1.00)
+  Glass_Wall_complete mesh=Glass Wall bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Bordillo,Glass
+  X=0,0,2,3,8,4 Y=0,6,75,7 Z=-0,25,-0,05,0,05,0,25
+Assets/Original_assets/Walls/Complete/Glass_Wall_door_complete.fbx scale=(1.00, 1.00, 1.00)
+  Glass_door mesh=Glass_door bounds=Center: (6.00, 2.40, 0.00), Extents: (1.20, 2.40, 0.30) materials=Bordillo
+  X=4,8,4,805,4,977,4,982,4,987,7,013,7,018,7,023,7,195,7,2 Y=0,004,4,617,4,622,4,627,4,799,4,804 Z=-0,3,-0,295,0,0,295,0,3
+  Glass_Wall_door_complete mesh=Glass_Wall_door_complete bounds=Center: (6.00, 3.50, 0.00), Extents: (6.00, 3.50, 0.25) materials=Bordillo,Glass
+  X=0,0,01,0,19,0,2,0,21,3,79,3,8,3,81,3,99,4,4,01,4,79,4,8,4,81,7,19,7,2,7,21,7,99,8,8,01,8,19,8,2,8,21,11,79,11,8,11,81,11,99,12 Y=0,0,01,4,793,4,794,4,795,4,803,4,804,4,805,4,813,4,814,4,815,6,74,6,75,6,76,6,99,7 Z=-0,25,-0,24,-0,06,-0,05,-0,04,0,04,0,05,0,06,0,24,0,25
+  Sheet.001 mesh=Sheet.001 bounds=Center: (-0.01, 0.00, 0.00), Extents: (0.01, 0.00, 0.02) materials=Glass,Bordillo
+  X=-0,02,-0,018,-0,017,-0,016,0 Y=-0,002,-0,001,0,001,0,002 Z=-0,023,0,0,001,0,005,0,006,0,007,0,023
+Assets/Original_assets/Walls/Complete/T_wall_complete.fbx scale=(1.00, 1.00, 1.00)
+  T_wall_complete mesh=T wall bounds=Center: (2.13, 3.50, 0.00), Extents: (2.13, 3.50, 4.00) materials=Int_1,Ext_1,Int_3,Int_2,Int_4,Ext_2
+  X=0,3,75,4,4,25 Y=0,7 Z=-4,-0,25,0,0,25,4
+Assets/Original_assets/Walls/Complete/Wall_Complete.fbx scale=(1.00, 1.00, 1.00)
+  Wall_Complete mesh=Wall bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Int,Ext
+  X=0,4 Y=0,7 Z=-0,25,0,0,25
+Assets/Original_assets/Walls/Complete/Wall_door_hole_complete.fbx scale=(0.01, 0.01, 0.01)
+  Wall_door_hole_complete mesh=Wall door hole bounds=Center: (200.00, 0.00, -350.00), Extents: (200.00, 25.00, 350.00) materials=Int,Ext
+  X=0,80,320,400 Y=-25,0,25 Z=-700,-480,0
+Assets/Original_assets/Walls/Complete/Window_wall_complete.fbx scale=(1.00, 1.00, 1.00)
+  Window_wall_complete mesh=Window wall bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Int,Ext
+  X=0,0,467,3,533,4 Y=0,1,867,6,133,7 Z=-0,25,0,0,121,0,25
+  Window mesh=Window bounds=Center: (2.00, 4.00, 0.19), Extents: (1.53, 2.13, 0.06) materials=Wood,Glass
+  X=0,467,0,56,1,949,1,952,2,048,2,051,3,44,3,533 Y=1,867,1,997,6,003,6,133 Z=0,121,0,125,0,185,0,246,0,25
+Assets/Original_assets/Walls/incomplete/+_Wall_incomplete.fbx scale=(1.00, 1.00, 1.00)
+  +_Wall_incomplete mesh=+ Wall_incomplete bounds=Center: (4.00, 3.50, 0.00), Extents: (4.00, 3.50, 4.00) materials=Int_1,Ext_2,Int_2,Int_3,Int_4,Ext_4,Ext_1,Ext_3
+  X=0,3,75,4,25,8 Y=0,7 Z=-4,-0,25,0,25,4
+Assets/Original_assets/Walls/incomplete/Corner_Wall_incomplete.fbx scale=(1.00, 1.00, 1.00)
+  Corner_Wall_incomplete mesh=Corner Wall_incomplete bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) materials=Int_1,Ext_2,Int_2,Ext_1
+  X=0,3,75,4,25 Y=0,7 Z=-0,25,0,25,4
+Assets/Original_assets/Walls/incomplete/Diagonal_Wall_incomplete.fbx scale=(1.00, 1.00, 1.00)
+  Diagonal_Wall_incomplete mesh=Diagonal Wall_incomplete bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) materials=Int,Ext
+  X=0,3,75,4,25 Y=0,7 Z=-0,25,0,25,4
+Assets/Original_assets/Walls/incomplete/Glass_Wall_door_incomplete.fbx scale=(1.00, 1.00, 1.00)
+  Glass_door mesh=Glass_door bounds=Center: (6.00, 2.40, 0.00), Extents: (1.20, 2.40, 0.30) materials=Bordillo
+  X=4,8,4,805,4,977,4,982,4,987,7,013,7,018,7,023,7,195,7,2 Y=0,004,4,617,4,622,4,627,4,799,4,804 Z=-0,3,-0,295,0,0,295,0,3
+  Glass_Wall_door_incomplete mesh=Glass_Wall_door_incomplete bounds=Center: (6.00, 3.50, 0.00), Extents: (6.00, 3.50, 0.25) materials=Bordillo,Glass
+  X=0,0,19,0,2,0,21,3,79,3,8,3,81,3,99,4,4,01,4,79,4,8,4,81,7,19,7,2,7,21,7,99,8,8,01,8,19,8,2,8,21,11,79,11,8,11,81,12 Y=0,4,793,4,794,4,795,4,803,4,804,4,805,4,813,4,814,4,815,6,74,6,75,6,76,7 Z=-0,25,-0,24,-0,06,-0,05,-0,04,0,04,0,05,0,06,0,24,0,25
+  Sheet.001 mesh=Sheet.001 bounds=Center: (-0.01, 0.00, 0.00), Extents: (0.01, 0.00, 0.02) materials=Glass,Bordillo
+  X=-0,02,-0,018,-0,017,-0,016,0 Y=-0,002,-0,001,0,001,0,002 Z=-0,023,0,0,001,0,005,0,006,0,007,0,023
+Assets/Original_assets/Walls/incomplete/Glass_Wall_incomplete.fbx scale=(1.00, 1.00, 1.00)
+  Glass_Wall_incomplete mesh=Glass Wall_incomplete bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Bordillo,Glass
+  X=0,0,2,3,8,4 Y=0,6,75,7 Z=-0,25,-0,05,0,05,0,25
+Assets/Original_assets/Walls/incomplete/T_Wall_incomplete.fbx scale=(1.00, 1.00, 1.00)
+  T_Wall_incomplete mesh=T wall_incomplete bounds=Center: (2.13, 3.50, 0.00), Extents: (2.13, 3.50, 4.00) materials=Int_1,Ext_1,Int_2,Int_3,Int_4,Ext_2
+  X=0,3,75,4,25 Y=0,7 Z=-4,-0,25,0,0,25,4
+Assets/Original_assets/Walls/incomplete/Wall_door_hole_incomplete.fbx scale=(0.01, 0.01, 0.01)
+  Wall_door_hole_incomplete mesh=Wall door hole_incomplete bounds=Center: (200.00, 0.00, -350.00), Extents: (200.00, 25.00, 350.00) materials=Int,Ext
+  X=0,80,320,400 Y=-25,0,25 Z=-700,-480,0
+Assets/Original_assets/Walls/incomplete/Wall_incomplete.fbx scale=(1.00, 1.00, 1.00)
+  Wall_incomplete mesh=Wall_incomplete bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Int,Ext
+  X=0,4 Y=0,7 Z=-0,25,0,25
+Assets/Original_assets/Walls/incomplete/Window_wall_incomplete.fbx scale=(1.00, 1.00, 1.00)
+  Window mesh=Window bounds=Center: (2.00, 4.00, 0.19), Extents: (1.53, 2.13, 0.06) materials=Wood,Glass
+  X=0,467,0,56,1,949,1,952,2,048,2,051,3,44,3,533 Y=1,867,1,997,6,003,6,133 Z=0,121,0,125,0,185,0,246,0,25
+  Window wall_incomplete mesh=Window wall_incomplete bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Int,Ext
+  X=0,0,467,3,533,4 Y=0,1,867,6,133,7 Z=-0,25,0,25
+Assets/Original_assets/Walls/semIncomplete/+_wall_semincomplete.fbx scale=(1.00, 1.00, 1.00)
+  +_wall_semincomplete mesh=+ Wall_incom bounds=Center: (4.00, 3.50, 0.00), Extents: (4.00, 3.50, 4.00) materials=Int_1,Ext_2,Int_2,Int_3,Ext_1,Int_4,Ext_4,Ext_3
+  X=0,3,75,4,4,25,8 Y=0,7 Z=-4,-0,25,0,0,25,4
+Assets/Original_assets/Walls/semIncomplete/Corner_Wall_semincomplete.fbx scale=(1.00, 1.00, 1.00)
+  Corner_Wall_semincomplete mesh=Corner Wall.002 bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) materials=Int_1,Ext_2,Ext_2.001,Int_2
+  X=0,3,75,4,4,25 Y=0,7 Z=-0,25,0,0,25,4
+Assets/Original_assets/Walls/semIncomplete/Diagonal_Wall_semincomplete.fbx scale=(1.00, 1.00, 1.00)
+  Diagonal_Wall_semincomplete mesh=Diagonal Wall_incomplete bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) materials=Int,Ext
+  X=0,3,75,4,4,25 Y=0,7 Z=-0,25,0,0,25,4
+Assets/Original_assets/Walls/semIncomplete/Glass_Wall_door_semincomplete.fbx scale=(1.00, 1.00, 1.00)
+  Glass_Wall_door_semincomplete mesh=Glass Wall.001 bounds=Center: (6.00, 3.50, 0.00), Extents: (6.00, 3.50, 0.25) materials=Bordillo,Glass
+  X=0,0,19,0,2,0,21,3,79,3,8,3,81,3,99,4,4,01,4,79,4,8,4,81,7,19,7,2,7,21,7,99,8,8,01,8,19,8,2,8,21,11,79,11,8,11,81,12 Y=0,4,793,4,794,4,795,4,803,4,804,4,805,4,813,4,814,4,815,6,74,6,75,6,76,7 Z=-0,25,-0,24,-0,06,-0,05,-0,04,0,04,0,05,0,06,0,24,0,25
+  Glass_door mesh=Glass_door bounds=Center: (6.00, 2.40, 0.00), Extents: (1.20, 2.40, 0.30) materials=Bordillo
+  X=4,8,4,805,4,977,4,982,4,987,7,013,7,018,7,023,7,195,7,2 Y=0,004,4,617,4,622,4,627,4,799,4,804 Z=-0,3,-0,295,0,0,295,0,3
+  Sheet.001 mesh=Sheet.001 bounds=Center: (-0.01, 0.00, 0.00), Extents: (0.01, 0.00, 0.02) materials=Glass,Bordillo
+  X=-0,02,-0,018,-0,017,-0,016,0 Y=-0,002,-0,001,0,001,0,002 Z=-0,023,0,0,001,0,005,0,006,0,007,0,023
+Assets/Original_assets/Walls/semIncomplete/Glass_Wall_semincomplete.fbx scale=(1.00, 1.00, 1.00)
+  Glass_Wall_semincomplete mesh=Glass Wall_incomplete bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Bordillo,Glass
+  X=0,0,2,3,8,4 Y=0,6,75,7 Z=-0,25,-0,05,0,05,0,25
+Assets/Original_assets/Walls/semIncomplete/T_wall_semincomplete.fbx scale=(1.00, 1.00, 1.00)
+  T_wall_semincomplete mesh=T wall_incom bounds=Center: (2.13, 3.50, 0.00), Extents: (2.13, 3.50, 4.00) materials=Int_1,Ext_1,Int_2,Int_3,Int_4,Ext_2
+  X=0,3,75,4,4,25 Y=0,7 Z=-4,-0,25,0,0,25,4
+Assets/Original_assets/Walls/semIncomplete/Wall_door_hole_semincomplete.fbx scale=(0.01, 0.01, 0.01)
+  Wall_door_hole_semincomplete mesh=Wall door hole_Incomplete bounds=Center: (200.00, 0.00, -350.00), Extents: (200.00, 25.00, 350.00) materials=Int,Ext
+  X=0,80,320,400 Y=-25,0,25 Z=-700,-480,0
+Assets/Original_assets/Walls/semIncomplete/Wall_semincomplete.fbx scale=(1.00, 1.00, 1.00)
+  Wall_semincomplete mesh=Wall_incomplete bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Int,Ext
+  X=0,4 Y=0,7 Z=-0,25,0,0,25
+Assets/Original_assets/Walls/semIncomplete/Window_wall_semincomplete.fbx scale=(1.00, 1.00, 1.00)
+  Window mesh=Window bounds=Center: (2.00, 4.00, 0.19), Extents: (1.53, 2.13, 0.06) materials=Wood,Glass
+  X=0,467,0,56,1,949,1,952,2,048,2,051,3,44,3,533 Y=1,867,1,997,6,003,6,133 Z=0,121,0,125,0,185,0,246,0,25
+  Window wallsemincomplete mesh=Window wallsemincomplete bounds=Center: (2.00, 3.50, 0.00), Extents: (2.00, 3.50, 0.25) materials=Int,Ext
+  X=0,0,467,3,533,4 Y=0,1,867,6,133,7 Z=-0,25,0,0,25

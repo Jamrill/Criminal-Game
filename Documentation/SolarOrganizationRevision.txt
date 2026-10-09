@@ -1,0 +1,70 @@
+ALIGNED generated mesh: Assets/Construction/WallMeshes/Corner_Wall_incomplete.asset
+Corner_Wall collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Glass_Wall_door_complete / Sheet: Assets/Materials/Glass.mat,Assets/Materials/Bordillo.mat -> Glass + Bordillo
+ALIGNED generated mesh: Assets/Construction/WallMeshes/Corner_Wall_incomplete_incomplete.asset
+Corner_Wall_incomplete collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall_incomplete collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall_incomplete collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall_incomplete collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Glass_Wall_door_incomplete / Sheet: Assets/Materials/Glass.mat,Assets/Materials/Bordillo.mat -> Glass + Bordillo
+ALIGNED generated mesh: Assets/Construction/WallMeshes/Corner_Wall_semincomplete_incomplete.asset
+Corner_Wall_semincomplete collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall_semincomplete collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall_semincomplete collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall_semincomplete collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Glass_Wall_door_semincomplete / Sheet: Assets/Materials/Glass.mat,Assets/Materials/Bordillo.mat -> Glass + Bordillo
+Corner_Wall collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (2) collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (2) collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (2) collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (2) collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (3) collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (3) collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (3) collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (3) collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (1) collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (1) collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (1) collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (1) collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Glass_Wall_door_semincomplete / Sheet: Assets/Materials/Glass.mat,Assets/Materials/Bordillo.mat -> Glass + Bordillo
+Corner_Wall (4) collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (4) collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (4) collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (4) collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (5) collider BEFORE (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (5) collider AFTER (2.13, 3.50, 0.00) / (4.25, 7.00, 0.50)
+Corner_Wall (5) collider BEFORE (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+Corner_Wall (5) collider AFTER (4.00, 3.50, 2.13) / (0.50, 7.00, 3.75)
+ROOT remaining: Reflections_Exterior_Test | 
+ROOT remaining: Reflections_Interior_Small_Property | 
+ROOT remaining: Directional Light | 
+ROOT remaining: Cube | 
+ROOT remaining: @Scene | 
+ROOT remaining: PlayerSpawn | 
+ROOT remaining: Canvas | 
+ROOT remaining: EventSystem | 
+ROOT remaining: CameraRig | 
+ROOT remaining: Terrain_port | 
+ROOT remaining: Terrain_City_2 | 
+ROOT remaining: Terrain_Mountain | 
+ROOT remaining: Terrain_City_1 | 
+ROOT remaining: Limit_1 | 
+ROOT remaining: Limit_2 | 
+ROOT remaining: Limit_3 | 
+ROOT remaining: Calle01 | 
+ROOT remaining: Port | 
+ROOT remaining: Plane | 
+ROOT remaining: Road | 
+ROOT remaining: Table_3DPrinter | Assets/Original_assets/Table_3DPrinter.fbx
+ROOT remaining: Plane (1) | 
+ROOT remaining: Sea_Tile | 
+ROOT remaining: Solar | 
+ROOT remaining: Traffic_light | Assets/Original_assets/Traffic_light.fbx
+ROOT remaining: GameplayHUD | 
+SUCCESS walls swapped=56; roots parented=0; backup=Documentation/SolarOrganizationBackup/20261009_121135

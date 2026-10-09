@@ -106,6 +106,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5615188332238754129}
+  - component: {fileID: 6426819940870154176}
+  - component: {fileID: 3904615468643456115}
   m_Layer: 0
   m_Name: Wall_door_hole
   m_TagString: Untagged
@@ -130,6 +132,56 @@ Transform:
   - {fileID: 1360969059744078452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6426819940870154176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091029817293409259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30c0a230a7c9564d901f16660907cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Construction.BuildSurface
+  slots:
+  - renderer: {fileID: 2390122423469191251}
+    index: 0
+  - renderer: {fileID: 2390122423469191251}
+    index: 1
+--- !u!114 &3904615468643456115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091029817293409259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5f4338c5193e469a7feec638b2bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Construction.WallTopology
+  wall: {fileID: 490783403285890201}
+  variants:
+  - {fileID: 4300000, guid: 393f47ca85ffb894db702be7fc7d0018, type: 2}
+  - {fileID: 4300000, guid: 1f7570d47621ab0429664191d2601b93, type: 2}
+  - {fileID: 4300000, guid: 023a5ae97c6062d43a7cf1be9ea653dc, type: 2}
+  variantMaterials:
+  - values:
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+  - values:
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+  - values:
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+  connections:
+  - {x: 0, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
+  bottomCenter: {x: 2, y: 0, z: 0}
+  height: 7
+  currentVariant: 0
 --- !u!1001 &3957254565496171735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,6 +230,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b2951ab18d33a954793a7182d8ec0eb2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: b2951ab18d33a954793a7182d8ec0eb2, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+    - target: {fileID: -5754084199372789682, guid: b2951ab18d33a954793a7182d8ec0eb2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 393f47ca85ffb894db702be7fc7d0018, type: 2}
     - target: {fileID: 919132149155446097, guid: b2951ab18d33a954793a7182d8ec0eb2, type: 3}
       propertyPath: m_Name
       value: FixedVisual
@@ -187,6 +251,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2951ab18d33a954793a7182d8ec0eb2, type: 3}
+--- !u!33 &490783403285890201 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: b2951ab18d33a954793a7182d8ec0eb2, type: 3}
+  m_PrefabInstance: {fileID: 3957254565496171735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2390122423469191251 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: b2951ab18d33a954793a7182d8ec0eb2, type: 3}
+  m_PrefabInstance: {fileID: 3957254565496171735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3557922264476044092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b2951ab18d33a954793a7182d8ec0eb2, type: 3}

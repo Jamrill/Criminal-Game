@@ -1,0 +1,15 @@
+Assets/Prefabs/Construction/Completes/Corner_Wall.prefab variant=0 bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=0;3,75;4;4,25 Z=-0,25;0;0,25;4
+Assets/Prefabs/Construction/Completes/Corner_Wall.prefab variant=1 bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=0;3,75;4;4,25 Z=-0,25;0;0,25;4
+Assets/Prefabs/Construction/Completes/Corner_Wall.prefab variant=2 bounds=Center: (1.88, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=-0,25;0,25;4 Z=-0,25;0,25;4
+derived box Center: (2.13, 3.50, 0.00), Extents: (2.13, 3.50, 0.25)
+derived box Center: (4.00, 3.50, 2.13), Extents: (0.25, 3.50, 1.88)
+Assets/Prefabs/Construction/Incompletes/Corner_Wall_incomplete.prefab variant=0 bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=0;3,75;4;4,25 Z=-0,25;0;0,25;4
+Assets/Prefabs/Construction/Incompletes/Corner_Wall_incomplete.prefab variant=1 bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=0;3,75;4;4,25 Z=-0,25;0;0,25;4
+Assets/Prefabs/Construction/Incompletes/Corner_Wall_incomplete.prefab variant=2 bounds=Center: (1.88, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=-0,25;0,25;4 Z=-0,25;0,25;4
+derived box Center: (2.13, 3.50, 0.00), Extents: (2.13, 3.50, 0.25)
+derived box Center: (4.00, 3.50, 2.13), Extents: (0.25, 3.50, 1.88)
+Assets/Prefabs/Construction/Semincompletes/Corner_Wall_semincomplete.prefab variant=0 bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=0;3,75;4;4,25 Z=-0,25;0;0,25;4
+Assets/Prefabs/Construction/Semincompletes/Corner_Wall_semincomplete.prefab variant=1 bounds=Center: (2.13, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=0;3,75;4;4,25 Z=-0,25;0;0,25;4
+Assets/Prefabs/Construction/Semincompletes/Corner_Wall_semincomplete.prefab variant=2 bounds=Center: (1.88, 3.50, 1.88), Extents: (2.13, 3.50, 2.13) X=-0,25;0,25;4 Z=-0,25;0,25;4
+derived box Center: (2.13, 3.50, 0.00), Extents: (2.13, 3.50, 0.25)
+derived box Center: (4.00, 3.50, 2.13), Extents: (0.25, 3.50, 1.88)

@@ -26,6 +26,9 @@ namespace JuegoCriminal.UI
 
             EnsureRuntimeBindingRow("Crouch", GameInputAction.Crouch, 1);
             EnsureRuntimeBindingRow("Rotate Inventory Item", GameInputAction.RotateInventory, 0);
+            EnsureRuntimeBindingRow("Construction Menu", GameInputAction.Construction, 0);
+            EnsureRuntimeBindingRow("Rotate Building", GameInputAction.BuildRotate, 0);
+            OrganizeSections();
 
             panelRoot.SetActive(false);
         }
@@ -71,6 +74,38 @@ namespace JuegoCriminal.UI
 
             var row = rowObject.AddComponent<ControlRebindButtonUI>();
             row.Configure(action, bindingIndex, displayName, actionText, bindingText, button);
+        }
+
+        public void OrganizeSections()
+        {
+            if(!contentRoot) return;
+            Transform Header(string name,string label)
+            {
+                var existing=contentRoot.Find(name); if(existing) return existing;
+                var text=CreateRuntimeText(name,contentRoot,label);
+                text.fontStyle=FontStyles.Bold; text.color=new Color(.65f,.85f,1); text.raycastTarget=false;
+                var layout=text.gameObject.AddComponent<LayoutElement>(); layout.minHeight=layout.preferredHeight=52;
+                return text.transform;
+            }
+            Header("NormalControlsHeader","CONTROLES NORMALES").SetAsFirstSibling();
+            Header("ConstructionControlsHeader","CONSTRUCCION").SetAsLastSibling();
+            void Row(string name,GameInputAction action,int binding)
+            {
+                EnsureRuntimeBindingRow(name,action,binding);
+                contentRoot.Find("Binding_"+name.Replace(" ",string.Empty)).SetAsLastSibling();
+            }
+            Row("Construction Menu",GameInputAction.Construction,0);
+            Row("Build Move Forward",GameInputAction.Move,2);
+            Row("Build Move Backward",GameInputAction.Move,4);
+            Row("Build Move Left",GameInputAction.Move,6);
+            Row("Build Move Right",GameInputAction.Move,8);
+            Row("Build Jump",GameInputAction.Jump,0);
+            Row("Build Sprint",GameInputAction.Sprint,0);
+            Row("Build Cursor (hold)",GameInputAction.SwitchTarget,1);
+            Row("Rotate Building",GameInputAction.BuildRotate,0);
+            Header("ConstructionControlsHelp","Raton: mirar / colocar con clic\nRueda: distancia de preview\nEsc: salir | Movimiento compartido con controles normales").SetAsLastSibling();
+            contentRoot.Find("ConstructionControlsHelp").GetComponent<TMP_Text>().fontSize=17;
+            contentRoot.Find("ConstructionControlsHelp").GetComponent<LayoutElement>().preferredHeight=84;
         }
 
         private static TMP_Text CreateRuntimeText(string objectName, Transform parent, string value)
@@ -148,6 +183,8 @@ namespace JuegoCriminal.UI
             CreateRow("Inventory", GameInputAction.Inventory, 0);
             CreateRow("Crouch", GameInputAction.Crouch, 1);
             CreateRow("Rotate Inventory Item", GameInputAction.RotateInventory, 0);
+            CreateRow("Construction Menu", GameInputAction.Construction, 0);
+            CreateRow("Rotate Building", GameInputAction.BuildRotate, 0);
 
             UnityEditor.EditorUtility.SetDirty(this);
         }

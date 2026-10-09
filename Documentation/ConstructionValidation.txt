@@ -1,0 +1,27 @@
+PASS: Catalogo disponible
+PASS: GUID de catalogo unicos
+PASS: Prefabs y volumenes validos
+PASS: Player enlazado a catalogo y Canvas
+PASS: Referencias de UI completas
+PASS: Tab asignado
+PASS: R asignada
+PASS: Persistencia en prefab Player
+PASS: Solar conserva origen y trigger
+INFO: solar Property Id y Buildable: 1, True
+PASS: Solar ajeno impide construir
+PASS: Solar propio habilita construir
+PASS: Buildable desactivado bloquea construccion
+PASS: Rejilla 4x4
+PASS: Rejilla funciona en coordenadas negativas
+PASS: Pivote bajo el suelo no excluye una capsula interior
+PASS: Capsula fuera del solar sigue excluida
+PASS: Capsula completamente bajo el solar sigue excluida
+PASS: Zona vacia valida
+PASS: Solapamiento rechaza colocacion
+PASS: Fuera de solar rechazado
+PASS: Celda ocupada bloqueada aun sin collider
+PASS: SaveData conserva construccion y acabado
+PASS: Restauracion de prefab colocado
+PASS: Acabado restaurado en slots pintables
+PASS: Shader sin errores importados
+PASS: Shader tras render de prueba

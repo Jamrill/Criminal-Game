@@ -1,0 +1,19 @@
+Assets/Prefabs/Construction/Completes/Corner_Wall.prefab | FixedVisual | Int_1, Ext_2, Ext_2.001, Int_2
+Assets/Prefabs/Construction/Completes/Diagonal_Wall.prefab | FixedVisual | Ext, Int
+Assets/Prefabs/Construction/Completes/Glass_wall.prefab | FixedVisual | Bordillo, Glass
+Assets/Prefabs/Construction/Completes/T_wall_complete.prefab | T_wall_complete | Int_1, Ext_1, Int_3, Int_2, Int_4, Ext_2
+Assets/Prefabs/Construction/Completes/Wall.prefab | FixedVisual | Int, Ext
+Assets/Prefabs/Construction/Completes/Wall_door_hole.prefab | FixedVisual | Int, Ext
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab | FixedVisual | Int, Ext
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab | Window | Wood, Glass
+Assets/Prefabs/Construction/Semincompletes/Corner_Wall_semincomplete.prefab | FixedVisual | Black_Paint, White_Paint, White_Paint, Black_Paint
+Assets/Prefabs/Construction/Semincompletes/Diagonal_Wall_semincomplete.prefab | FixedVisual | Int, Ext
+Assets/Prefabs/Construction/Semincompletes/Glass_Wall_door_semincomplete.prefab | Glass_Wall_door_semincomplete | Bordillo, Glass
+Assets/Prefabs/Construction/Semincompletes/Glass_Wall_door_semincomplete.prefab | Glass_door | Bordillo
+Assets/Prefabs/Construction/Semincompletes/Glass_Wall_door_semincomplete.prefab | Sheet | Glass, Bordillo
+Assets/Prefabs/Construction/Semincompletes/Glass_wall_semincomplete.prefab | FixedVisual | Bordillo, Glass
+Assets/Prefabs/Construction/Semincompletes/T_wall_semincomplete.prefab | T_wall_semincomplete | Int_1, Ext_1, Int_2, Int_3, Int_4, Ext_2
+Assets/Prefabs/Construction/Semincompletes/Wall_door_hole_semincomplete.prefab | FixedVisual | White_Paint, Black_Paint
+Assets/Prefabs/Construction/Semincompletes/Wall_semincomplete.prefab | FixedVisual | White_Paint, Black_Paint
+Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab | FixedVisual | White_Paint, Black_Paint
+Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab | Window.001 | Wood, Glass

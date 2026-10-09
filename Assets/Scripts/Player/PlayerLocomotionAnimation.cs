@@ -94,8 +94,9 @@ namespace JuegoCriminal.Player
                 return;
             }
             animator.speed = 1;
-            AdvanceInput(GameInput.Move, GameInput.GetAction(GameInputAction.Crouch)?.WasPressedThisFrame() == true,
-                Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame, Time.deltaTime);
+            if(GameInput.ConstructionControlsActive) wantsCrouch=false;
+            AdvanceInput(GameInput.Move, GameInput.CrouchPressed,
+                !GameInput.ConstructionControlsActive && Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame, Time.deltaTime);
             ApplyBodyOrientation();
         }
         // Explicit input also allows deterministic action-sequence validation in the editor.
@@ -110,12 +111,12 @@ namespace JuegoCriminal.Player
             if (crouchPressed) wantsCrouch = !wantsCrouch;
             bool moving = input.sqrMagnitude > .001f;
             elapsed += Mathf.Max(0, deltaTime);
-            if (Phase == ActionPhase.Drawing && (moving || wantsCrouch))
+            if (Phase == ActionPhase.Drawing && (moving || wantsCrouch || GameInput.ConstructionControlsActive))
             {
                 float position = Mathf.Clamp(pistolDuration - elapsed * DrawSpeed, 0, pistolDuration);
                 Begin(ActionPhase.Holstering, "Pistol Holster", (pistolDuration - position) / HolsterSpeed, position);
             }
-            else if (Phase == ActionPhase.Aiming && (moving || wantsCrouch))
+            else if (Phase == ActionPhase.Aiming && (moving || wantsCrouch || GameInput.ConstructionControlsActive))
                 Begin(ActionPhase.Holstering, "Pistol Holster", pistolDuration / HolsterSpeed);
             if (Phase == ActionPhase.Crouching) CrouchAmount = Mathf.Clamp01(elapsed / crouchDuration);
             if (Phase == ActionPhase.Standing) CrouchAmount = 1 - Mathf.Clamp01(elapsed / crouchDuration);

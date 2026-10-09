@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "InputSystem_Actions",
     "maps": [
         {
@@ -109,6 +110,24 @@
                     "type": "Button",
                     "id": "cca48a99-0b91-4da8-9de2-2f71ac29f14a",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Construction",
+                    "type": "Button",
+                    "id": "3728475e-3a6d-45ae-b1fc-65cbeef54a71",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BuildRotate",
+                    "type": "Button",
+                    "id": "89ee565f-b15d-46dd-ac7f-bbfb1c3170c4",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -552,6 +571,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "RotateInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a521f647-d8d1-4143-ab92-7b797e03b2df",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Construction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6347d82d-fed2-4849-a833-434bcd975bdc",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BuildRotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

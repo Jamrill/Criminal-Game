@@ -1,0 +1,106 @@
+PASS: 27 prefabs de pared
+PASS: Solo 9 completas en el menu
+PASS: Corner_Wall tiene 3 mallas
+PASS: Corner_Wall altura coherente
+PASS: Corner_Wall conserva BoxColliders
+PASS: Diagonal_Wall tiene 3 mallas
+PASS: Diagonal_Wall altura coherente
+PASS: Diagonal_Wall conserva BoxColliders
+PASS: Glass_wall tiene 3 mallas
+PASS: Glass_wall altura coherente
+PASS: Glass_wall conserva BoxColliders
+PASS: T_wall_complete tiene 3 mallas
+PASS: T_wall_complete altura coherente
+PASS: T_wall_complete conserva BoxColliders
+PASS: Wall tiene 3 mallas
+PASS: Wall altura coherente
+PASS: Wall conserva BoxColliders
+PASS: Wall_door_hole tiene 3 mallas
+PASS: Wall_door_hole altura coherente
+PASS: Wall_door_hole conserva BoxColliders
+PASS: Window_Wall tiene 3 mallas
+PASS: Window_Wall altura coherente
+PASS: Window_Wall conserva BoxColliders
+PASS: Corner_Wall_semincomplete tiene 3 mallas
+PASS: Corner_Wall_semincomplete altura coherente
+PASS: Corner_Wall_semincomplete conserva BoxColliders
+PASS: Diagonal_Wall_semincomplete tiene 3 mallas
+PASS: Diagonal_Wall_semincomplete altura coherente
+PASS: Diagonal_Wall_semincomplete conserva BoxColliders
+PASS: Glass_Wall_door_semincomplete tiene 3 mallas
+PASS: Glass_Wall_door_semincomplete altura coherente
+PASS: Glass_Wall_door_semincomplete conserva BoxColliders
+PASS: Glass_wall_semincomplete tiene 3 mallas
+PASS: Glass_wall_semincomplete altura coherente
+PASS: Glass_wall_semincomplete conserva BoxColliders
+PASS: T_wall_semincomplete tiene 3 mallas
+PASS: T_wall_semincomplete altura coherente
+PASS: T_wall_semincomplete conserva BoxColliders
+PASS: Wall_door_hole_semincomplete tiene 3 mallas
+PASS: Wall_door_hole_semincomplete altura coherente
+PASS: Wall_door_hole_semincomplete conserva BoxColliders
+PASS: Wall_semincomplete tiene 3 mallas
+PASS: Wall_semincomplete altura coherente
+PASS: Wall_semincomplete conserva BoxColliders
+PASS: Window_Wall_semincomplete tiene 3 mallas
+PASS: Window_Wall_semincomplete altura coherente
+PASS: Window_Wall_semincomplete conserva BoxColliders
+PASS: +_wall_complete tiene 3 mallas
+PASS: +_wall_complete altura coherente
+PASS: +_wall_complete conserva BoxColliders
+PASS: +_wall_semincomplete tiene 3 mallas
+PASS: +_wall_semincomplete altura coherente
+PASS: +_wall_semincomplete conserva BoxColliders
+PASS: +_Wall_incomplete tiene 3 mallas
+PASS: +_Wall_incomplete altura coherente
+PASS: +_Wall_incomplete conserva BoxColliders
+PASS: Corner_Wall_incomplete tiene 3 mallas
+PASS: Corner_Wall_incomplete altura coherente
+PASS: Corner_Wall_incomplete conserva BoxColliders
+PASS: Diagonal_Wall_incomplete tiene 3 mallas
+PASS: Diagonal_Wall_incomplete altura coherente
+PASS: Diagonal_Wall_incomplete conserva BoxColliders
+PASS: Glass_Wall_incomplete tiene 3 mallas
+PASS: Glass_Wall_incomplete altura coherente
+PASS: Glass_Wall_incomplete conserva BoxColliders
+PASS: Glass_Wall_door_complete tiene 3 mallas
+PASS: Glass_Wall_door_complete altura coherente
+PASS: Glass_Wall_door_complete conserva BoxColliders
+PASS: Glass_Wall_door_incomplete tiene 3 mallas
+PASS: Glass_Wall_door_incomplete altura coherente
+PASS: Glass_Wall_door_incomplete conserva BoxColliders
+PASS: T_Wall_incomplete tiene 3 mallas
+PASS: T_Wall_incomplete altura coherente
+PASS: T_Wall_incomplete conserva BoxColliders
+PASS: Wall_incomplete tiene 3 mallas
+PASS: Wall_incomplete altura coherente
+PASS: Wall_incomplete conserva BoxColliders
+PASS: Wall_door_hole_incomplete tiene 3 mallas
+PASS: Wall_door_hole_incomplete altura coherente
+PASS: Wall_door_hole_incomplete conserva BoxColliders
+PASS: Window_wall_incomplete tiene 3 mallas
+PASS: Window_wall_incomplete altura coherente
+PASS: Window_wall_incomplete conserva BoxColliders
+PASS: Dos vecinos cambian la central a semincompleta
+PASS: Extremos permanecen completos
+PASS: Pared superior cambia central a incompleta
+PASS: Acabado conservado al cambiar variante
+PASS: Quitar pared superior recupera semincompleta
+PASS: Quitar vecino recupera completa
+PASS: Esquina reconoce vecino girado
+PASS: T conserva caras con un extremo abierto
+PASS: T cambia al conectar sus tres extremos
+PASS: Permite unir pared por extremo
+PASS: Rechaza superponer una pared existente
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion no avanza el reloj
+PASS: Preparacion restaura iluminacion inicial
+PASS: Encabezados de controles sin duplicados
+PASS: Seccion de construccion con rotacion
