@@ -49,18 +49,32 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\ConstructionPropertyValidation.cs" />
+    <Compile Include="Assets\Editor\WallVariantsSetup.cs" />
+    <Compile Include="Assets\Editor\WallRevisionInspection.cs" />
     <Compile Include="Assets\Editor\LightLeakDiagnostics.cs" />
+    <Compile Include="Assets\Editor\ConstructionValidation.cs" />
+    <Compile Include="Assets\Editor\MovementHUDRefinement.cs" />
+    <Compile Include="Assets\Editor\JumpMotionProcessing.cs" />
     <Compile Include="Assets\Editor\FixedFbxMigration.cs" />
     <Compile Include="Assets\Editor\SimpleSeaSceneCreator.cs" />
+    <Compile Include="Assets\Editor\FurnitureColliderRefinement.cs" />
     <Compile Include="Assets\Editor\InventoryItemDefinitionEditor.cs" />
     <Compile Include="Assets\Editor\PlayerAnimationExpansion.cs" />
+    <Compile Include="Assets\Editor\SolarOrganizationRevision.cs" />
     <Compile Include="Assets\Editor\MixamoFixOnce.cs" />
+    <Compile Include="Assets\Editor\FurnitureBasicSetup.cs" />
     <Compile Include="Assets\Editor\WalkingDiagnostics.cs" />
     <Compile Include="Assets\Editor\ColoredLightSetup.cs" />
     <Compile Include="Assets\Editor\SidewalkMeshColliderMigration.cs" />
+    <Compile Include="Assets\Editor\ConstructionSceneCapture.cs" />
+    <Compile Include="Assets\Editor\StairsRampSetup.cs" />
     <Compile Include="Assets\Editor\ConstructionRevisionMigration.cs" />
     <Compile Include="Assets\Editor\PlayerLocomotionSetup.cs" />
     <Compile Include="Assets\IgniteCoders\Simple Water Shader\Info\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\Editor\WallVariantsValidation.cs" />
+    <Compile Include="Assets\Editor\ConstructionPropertySetup.cs" />
+    <Compile Include="Assets\Editor\ConstructionSetup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\ColoredLightSetup.completed.txt" />

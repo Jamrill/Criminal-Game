@@ -53,6 +53,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\UI\WorldPromptUI.cs" />
     <Compile Include="Assets\Scripts\Core\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Construction\BuildSurface.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Inventory\PlayerInventory.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Assets\Scripts\UI\Main_Menu\ControlRebindButtonUI.cs" />
     <Compile Include="Assets\Scripts\Scenes\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\UI\UIHoverFX.cs" />
+    <Compile Include="Assets\Scripts\Construction\PropertyListView.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Localization\DateFormatUtil.cs" />
     <Compile Include="Assets\Scripts\UI\Main_Menu\SlotsPanelUI.cs" />
@@ -75,12 +77,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\IgniteCoders\Simple Water Shader\Info\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Core\DisplaySettings.cs" />
+    <Compile Include="Assets\Scripts\Construction\BuildPlot.cs" />
     <Compile Include="Assets\Scripts\Services\WorldSaveService.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\UI\MoneyHUD.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\Construction\WallTopology.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\Core\SceneContext.cs" />
@@ -88,6 +92,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Services\EconomyService.cs" />
+    <Compile Include="Assets\Scripts\Core\LoadingShaderPreparation.cs" />
     <Compile Include="Assets\Scripts\UI\Main_Menu\MenuTransitionController.cs" />
     <Compile Include="Assets\Scripts\UI\Main_Menu\ControlsMenuUI.cs" />
     <Compile Include="Assets\Scripts\Core\VideoSettings.cs" />
@@ -98,11 +103,15 @@
     <Compile Include="Assets\Scripts\States\WorldModeController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Scripts\Construction\BuildPlacement.cs" />
+    <Compile Include="Assets\Scripts\Construction\BuildMenuView.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerHeadLook.cs" />
     <Compile Include="Assets\Scripts\Core\BlendedReflectionCapture.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItemCatalog.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\Scripts\Construction\PlacedBuildObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Core\ReflectionZone.cs" />
     <Compile Include="Assets\Scripts\Core\GameInput.cs" />
@@ -120,6 +129,7 @@
     <Compile Include="Assets\Scripts\Environment\DayNightCycle.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\Scripts\Construction\ConstructionController.cs" />
     <Compile Include="Assets\Scripts\Interaction\DoorController.cs" />
     <Compile Include="Assets\Scripts\Core\ReflectionQualityController.cs" />
     <Compile Include="Assets\Scripts\UI\Main_Menu\VideoMenuUI.cs" />
@@ -130,15 +140,18 @@
     <Compile Include="Assets\Scripts\Inventory\ConsumableItemDefinition.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\Construction\ConstructionPersistence.cs" />
     <Compile Include="Assets\Scripts\Inventory\ClothingItemDefinition.cs" />
     <Compile Include="Assets\Scripts\Player\LocalPlayerMarker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Scenes\PlayerSpawner.cs" />
+    <Compile Include="Assets\Scripts\UI\GameplayHUD.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Interaction\InteractableObject.cs" />
     <Compile Include="Assets\Scripts\Printing\Printer3DProfile.cs" />
+    <Compile Include="Assets\Scripts\Construction\BuildCatalog.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenuUI.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryGrid.cs" />
   </ItemGroup>
@@ -166,6 +179,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Shaders\WorldWall.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Scripts\Environment\FlatDayNightSky.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
