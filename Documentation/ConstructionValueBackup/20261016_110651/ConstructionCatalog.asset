@@ -1,0 +1,331 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134a38b204bce5141b8ad1e074ccefad, type: 3}
+  m_Name: ConstructionCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Construction.BuildCatalog
+  entries:
+  - id: 8fb093df2ca49ef44b97c736bf909d95
+    title: Corner_Wall
+    category: 0
+    prefab: {fileID: 7355819384855162839, guid: 8fb093df2ca49ef44b97c736bf909d95, type: 3}
+    bounds:
+      m_Center: {x: 2.125, y: 3.5, z: 1.875}
+      m_Extent: {x: 2.125, y: 3.5, z: 2.125}
+    hiddenInMenu: 0
+  - id: e344f589e56a23f4788f3cb2cb09b269
+    title: Diagonal_Wall
+    category: 0
+    prefab: {fileID: 5982971567515722319, guid: e344f589e56a23f4788f3cb2cb09b269, type: 3}
+    bounds:
+      m_Center: {x: 2.1249995, y: 3.4999998, z: 1.8750002}
+      m_Extent: {x: 2.1250005, y: 3.5, z: 2.1249995}
+    hiddenInMenu: 0
+  - id: baab1af5f60364743a492de426b6dc07
+    title: Glass_wall
+    category: 0
+    prefab: {fileID: 1181832663095470365, guid: baab1af5f60364743a492de426b6dc07, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: 0}
+      m_Extent: {x: 2, y: 3.5, z: 0.25}
+    hiddenInMenu: 0
+  - id: df5a3bf947a2f4b4ea327b50d1351d65
+    title: T_wall_complete
+    category: 0
+    prefab: {fileID: 995230004910084848, guid: df5a3bf947a2f4b4ea327b50d1351d65, type: 3}
+    bounds:
+      m_Center: {x: 2.125, y: 3.5, z: 0}
+      m_Extent: {x: 2.125, y: 3.5, z: 4}
+    hiddenInMenu: 0
+  - id: 646161ef561b93c4e895b13fc557dca2
+    title: Wall
+    category: 0
+    prefab: {fileID: 2083378634968446909, guid: 646161ef561b93c4e895b13fc557dca2, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: 0}
+      m_Extent: {x: 2, y: 3.5, z: 0.25}
+    hiddenInMenu: 0
+  - id: 503a480c185e59340b02ae885887e4ab
+    title: Wall_door_hole
+    category: 0
+    prefab: {fileID: 5091029817293409259, guid: 503a480c185e59340b02ae885887e4ab, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5000038, z: 0}
+      m_Extent: {x: 2, y: 3.4999962, z: 0.25}
+    hiddenInMenu: 0
+  - id: a18105208714efd438e17be7d2d0bc64
+    title: Window_Wall
+    category: 0
+    prefab: {fileID: 2083378634968446909, guid: a18105208714efd438e17be7d2d0bc64, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: 0}
+      m_Extent: {x: 2, y: 3.5, z: 0.25}
+    hiddenInMenu: 0
+  - id: 403aa113c8205994995c6862a59c3e3b
+    title: Corner_Wall_semincomplete
+    category: 0
+    prefab: {fileID: 7355819384855162839, guid: 403aa113c8205994995c6862a59c3e3b, type: 3}
+    bounds:
+      m_Center: {x: 2.125, y: 3.5, z: 1.875}
+      m_Extent: {x: 2.125, y: 3.5, z: 2.125}
+    hiddenInMenu: 1
+  - id: 97b9d91e78333de49b76d1bf79f542ba
+    title: Diagonal_Wall_semincomplete
+    category: 0
+    prefab: {fileID: 5982971567515722319, guid: 97b9d91e78333de49b76d1bf79f542ba, type: 3}
+    bounds:
+      m_Center: {x: 2.1249995, y: 3.5, z: 1.8750002}
+      m_Extent: {x: 2.1250005, y: 3.5000002, z: 2.1249995}
+    hiddenInMenu: 1
+  - id: 9a6c37167f64f0e4ca4708a6bf67cdfd
+    title: Glass_Wall_door_semincomplete
+    category: 0
+    prefab: {fileID: 7504913747145616511, guid: 9a6c37167f64f0e4ca4708a6bf67cdfd, type: 3}
+    bounds:
+      m_Center: {x: 6.000001, y: 3.5, z: 0.00000071525574}
+      m_Extent: {x: 6.000001, y: 3.5, z: 0.29998797}
+    hiddenInMenu: 1
+  - id: f16f2597f8413044aa62588ee0fa33cc
+    title: Glass_wall_semincomplete
+    category: 0
+    prefab: {fileID: 1181832663095470365, guid: f16f2597f8413044aa62588ee0fa33cc, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: -0.00000032782555}
+      m_Extent: {x: 2, y: 3.5, z: 0.2500004}
+    hiddenInMenu: 1
+  - id: 54053540c1fdbd641b72620b22dddc7f
+    title: T_wall_semincomplete
+    category: 0
+    prefab: {fileID: 5494424387414063322, guid: 54053540c1fdbd641b72620b22dddc7f, type: 3}
+    bounds:
+      m_Center: {x: 2.125, y: 3.5, z: 0}
+      m_Extent: {x: 2.125, y: 3.5, z: 4}
+    hiddenInMenu: 1
+  - id: 08ce2cefb8ac21f4ebe9757cda618f7e
+    title: Wall_door_hole_semincomplete
+    category: 0
+    prefab: {fileID: 5091029817293409259, guid: 08ce2cefb8ac21f4ebe9757cda618f7e, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5000038, z: 0}
+      m_Extent: {x: 2, y: 3.4999962, z: 0.25}
+    hiddenInMenu: 1
+  - id: 6ec25e1073a9318478e52e0246c86058
+    title: Wall_semincomplete
+    category: 0
+    prefab: {fileID: 2083378634968446909, guid: 6ec25e1073a9318478e52e0246c86058, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: -0.00000023841858}
+      m_Extent: {x: 2, y: 3.5, z: 0.25000042}
+    hiddenInMenu: 1
+  - id: ae7ed4ae87725af438ad687da77c2c46
+    title: Window_Wall_semincomplete
+    category: 0
+    prefab: {fileID: 2083378634968446909, guid: ae7ed4ae87725af438ad687da77c2c46, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: 0}
+      m_Extent: {x: 2, y: 3.5, z: 0.25}
+    hiddenInMenu: 1
+  - id: d9a7cd68f6dd0364ab6cbed3bcf45121
+    title: Bed
+    category: 1
+    prefab: {fileID: 2342829669101212167, guid: d9a7cd68f6dd0364ab6cbed3bcf45121, type: 3}
+    bounds:
+      m_Center: {x: 4, y: 1.2077293, z: 2}
+      m_Extent: {x: 3.7000122, y: 1.2077293, z: 1.7000122}
+    hiddenInMenu: 0
+  - id: cbb405c88e00dc147b0e4456c3c0de2c
+    title: Central_display_unit
+    category: 1
+    prefab: {fileID: 423930160624609496, guid: cbb405c88e00dc147b0e4456c3c0de2c, type: 3}
+    bounds:
+      m_Center: {x: 4, y: 1.3499985, z: 2.0009308}
+      m_Extent: {x: 3.7000122, y: 1.3499985, z: 1.6529388}
+    hiddenInMenu: 0
+  - id: 03a350de3a27ab2478a99b3ece457b58
+    title: Chair
+    category: 1
+    prefab: {fileID: 6548986726909955145, guid: 03a350de3a27ab2478a99b3ece457b58, type: 3}
+    bounds:
+      m_Center: {x: 2.0000157, y: 1.5045509, z: 2.0539243}
+      m_Extent: {x: 1.0506134, y: 1.5045509, z: 1.0195925}
+    hiddenInMenu: 0
+  - id: 7b27343617cd5934cb5cf5a2c3de7459
+    title: Counter
+    category: 1
+    prefab: {fileID: 19411269337498589, guid: 7b27343617cd5934cb5cf5a2c3de7459, type: 3}
+    bounds:
+      m_Center: {x: 4, y: 1.8717041, z: 1.2999878}
+      m_Extent: {x: 3.7000122, y: 1.8717041, z: 1}
+    hiddenInMenu: 0
+  - id: 2b859df46f2fa5948854603f81521828
+    title: Display_shelving_unit
+    category: 1
+    prefab: {fileID: 881040000, guid: 2b859df46f2fa5948854603f81521828, type: 3}
+    bounds:
+      m_Center: {x: 4, y: 3.166504, z: 1.2999884}
+      m_Extent: {x: 3.7000132, y: 3.166504, z: 1.0000006}
+    hiddenInMenu: 0
+  - id: 1b38fb04332e3304fae9383e5dbdbca6
+    title: Floor_lamp
+    category: 1
+    prefab: {fileID: 8813270897259591138, guid: 1b38fb04332e3304fae9383e5dbdbca6, type: 3}
+    bounds:
+      m_Center: {x: 0, y: 2.3637085, z: 0}
+      m_Extent: {x: 0.7000122, y: 2.463707, z: 0.7000122}
+    hiddenInMenu: 0
+  - id: 90b86c97877483a4d9c9bce6e789f4ed
+    title: Kitchen cabinet
+    category: 1
+    prefab: {fileID: 4324714281591231726, guid: 90b86c97877483a4d9c9bce6e789f4ed, type: 3}
+    bounds:
+      m_Center: {x: 1.1499939, y: 0.9719467, z: 1.3649902}
+      m_Extent: {x: 0.8500061, y: 0.9719467, z: 1.0650024}
+    hiddenInMenu: 0
+  - id: aafc4fba92ebfa447a83a17f9da70fbc
+    title: Light_point
+    category: 1
+    prefab: {fileID: 2410258819500375088, guid: aafc4fba92ebfa447a83a17f9da70fbc, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 6.9000015, z: 2}
+      m_Extent: {x: 1, y: 0.099998474, z: 1}
+    hiddenInMenu: 0
+  - id: aa90664cf445c9545843dd27d38e9bcc
+    title: Light_point_Cold
+    category: 1
+    prefab: {fileID: 1844494396981180390, guid: aa90664cf445c9545843dd27d38e9bcc, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 6.8999996, z: 2}
+      m_Extent: {x: 1, y: 0.10000038, z: 1}
+    hiddenInMenu: 0
+  - id: 6c0a14b8019d80946a0586b61a032ac1
+    title: Sofa
+    category: 1
+    prefab: {fileID: 2209420597990998432, guid: 6c0a14b8019d80946a0586b61a032ac1, type: 3}
+    bounds:
+      m_Center: {x: 4, y: 1.3563004, z: 1.7498474}
+      m_Extent: {x: 3.7999878, y: 1.3563004, z: 1.2498474}
+    hiddenInMenu: 0
+  - id: 678941914fe4d21479a3808404f12b9d
+    title: Table
+    category: 1
+    prefab: {fileID: 6379414749159468482, guid: 678941914fe4d21479a3808404f12b9d, type: 3}
+    bounds:
+      m_Center: {x: 3.999939, y: 0.93730545, z: 2}
+      m_Extent: {x: 3.703186, y: 0.93730545, z: 1.7000122}
+    hiddenInMenu: 0
+  - id: a3cd32c6e62b6af4f9da7546452734dd
+    title: Toilet
+    category: 1
+    prefab: {fileID: 6528730910650641111, guid: a3cd32c6e62b6af4f9da7546452734dd, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 1.3175507, z: 1.9489136}
+      m_Extent: {x: 0.7904358, y: 1.3175507, z: 0.7897949}
+    hiddenInMenu: 0
+  - id: a4a67795b05c777478dd3f88ada70df5
+    title: +_wall_complete
+    category: 0
+    prefab: {fileID: 7347928728582819752, guid: a4a67795b05c777478dd3f88ada70df5, type: 3}
+    bounds:
+      m_Center: {x: 4, y: 3.5000002, z: 0}
+      m_Extent: {x: 4, y: 3.5000002, z: 4}
+    hiddenInMenu: 0
+  - id: d078e604b1c1d5144acad8bc0c9f70d1
+    title: +_wall_semincomplete
+    category: 0
+    prefab: {fileID: 9198030676196079051, guid: d078e604b1c1d5144acad8bc0c9f70d1, type: 3}
+    bounds:
+      m_Center: {x: 4, y: 3.5000002, z: 0}
+      m_Extent: {x: 4, y: 3.5000002, z: 4}
+    hiddenInMenu: 1
+  - id: bb9bf390923bc0b4a80cdc49e8260a75
+    title: +_Wall_incomplete
+    category: 0
+    prefab: {fileID: 4331064118648692427, guid: bb9bf390923bc0b4a80cdc49e8260a75, type: 3}
+    bounds:
+      m_Center: {x: 4, y: 3.5000002, z: 0}
+      m_Extent: {x: 4, y: 3.5000002, z: 4}
+    hiddenInMenu: 1
+  - id: c1ae351280896ea4488d45bf28d6d036
+    title: Corner_Wall_incomplete
+    category: 0
+    prefab: {fileID: 7355819384855162839, guid: c1ae351280896ea4488d45bf28d6d036, type: 3}
+    bounds:
+      m_Center: {x: 1.875, y: 3.5, z: 1.875}
+      m_Extent: {x: 2.125, y: 3.5, z: 2.125}
+    hiddenInMenu: 1
+  - id: 46523dcdc7ff85d4b8bb81dfddcb7484
+    title: Diagonal_Wall_incomplete
+    category: 0
+    prefab: {fileID: 5982971567515722319, guid: 46523dcdc7ff85d4b8bb81dfddcb7484, type: 3}
+    bounds:
+      m_Center: {x: 2.1249995, y: 3.4999998, z: 1.8750002}
+      m_Extent: {x: 2.1250005, y: 3.5, z: 2.1249995}
+    hiddenInMenu: 1
+  - id: b869fa446a9f22c4cb2529bf576ef668
+    title: Glass_Wall_incomplete
+    category: 0
+    prefab: {fileID: 1181832663095470365, guid: b869fa446a9f22c4cb2529bf576ef668, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: 0}
+      m_Extent: {x: 2, y: 3.5, z: 0.25}
+    hiddenInMenu: 1
+  - id: b1f3a2c3c79693843898053f78707663
+    title: Glass_Wall_door_complete
+    category: 0
+    prefab: {fileID: 7504913747145616511, guid: b1f3a2c3c79693843898053f78707663, type: 3}
+    bounds:
+      m_Center: {x: 6.000001, y: 3.5, z: 0.00000071525574}
+      m_Extent: {x: 6.000001, y: 3.5, z: 0.29998797}
+    hiddenInMenu: 0
+  - id: e8e219ceaca215749bdd33ed134b2849
+    title: Glass_Wall_door_incomplete
+    category: 0
+    prefab: {fileID: 7504913747145616511, guid: e8e219ceaca215749bdd33ed134b2849, type: 3}
+    bounds:
+      m_Center: {x: 6.000001, y: 3.5, z: 0.00000071525574}
+      m_Extent: {x: 6.000001, y: 3.5, z: 0.29998797}
+    hiddenInMenu: 1
+  - id: 74dd621f1c6776545904f36a81094f81
+    title: T_Wall_incomplete
+    category: 0
+    prefab: {fileID: 995230004910084848, guid: 74dd621f1c6776545904f36a81094f81, type: 3}
+    bounds:
+      m_Center: {x: 2.125, y: 3.5, z: 0}
+      m_Extent: {x: 2.125, y: 3.5, z: 4}
+    hiddenInMenu: 1
+  - id: 0919cb0e26a17054a9de78c131d8331e
+    title: Wall_incomplete
+    category: 0
+    prefab: {fileID: 2083378634968446909, guid: 0919cb0e26a17054a9de78c131d8331e, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: 0}
+      m_Extent: {x: 2, y: 3.5, z: 0.25}
+    hiddenInMenu: 1
+  - id: 6ff5f68d0eb38784187792e41aed06d0
+    title: Wall_door_hole_incomplete
+    category: 0
+    prefab: {fileID: 5091029817293409259, guid: 6ff5f68d0eb38784187792e41aed06d0, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5000038, z: 0}
+      m_Extent: {x: 2, y: 3.4999962, z: 0.25}
+    hiddenInMenu: 1
+  - id: 1d6e052f43496cd4d89fd31eac8fcc7b
+    title: Window_wall_incomplete
+    category: 0
+    prefab: {fileID: 2083378634968446909, guid: 1d6e052f43496cd4d89fd31eac8fcc7b, type: 3}
+    bounds:
+      m_Center: {x: 2, y: 3.5, z: 0}
+      m_Extent: {x: 2, y: 3.5, z: 0.25}
+    hiddenInMenu: 1
+  finishes:
+  - {fileID: 2100000, guid: 702d1c82148b6da4aa27ab9885c15a4f, type: 2}
+  - {fileID: 2100000, guid: 3971b5da1202ffe45b650781334ec9c1, type: 2}
+  - {fileID: 2100000, guid: db7fbe4d34e3cc544a355fe87d570cb3, type: 2}

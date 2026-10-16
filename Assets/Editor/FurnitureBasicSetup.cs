@@ -21,7 +21,6 @@ public static class FurnitureBasicSetup
         SessionState.SetBool("FurnitureBasic.v1", true);
         try { Apply(); } catch (Exception e) { File.WriteAllText(Report, e.ToString()); Debug.LogException(e); }
     }
-    [MenuItem("Tools/Criminal Game/Ajustar siete muebles basicos")]
     public static void Apply()
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode || PrefabStageUtility.GetCurrentPrefabStage() != null)

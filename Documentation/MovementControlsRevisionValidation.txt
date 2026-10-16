@@ -1,0 +1,9 @@
+PASS Backward walk is 65 percent
+PASS Sprint translation speed unchanged in reverse
+PASS Reverse sprint turns body and uses forward running clip
+PASS Head/body reverse-run mode clears on walk
+PASS Running clip speed 0.9
+PASS Construction section has exactly four bindings after repeated organization
+PASS Tablet appears in normal controls
+PASS Wheel preview distance exposed
+PASS Wheel action correctly bound

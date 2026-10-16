@@ -26,7 +26,6 @@ public static class ConstructionSetup
         File.WriteAllLines("Documentation/ConstructionInspection.txt",lines);
         Debug.Log("CONSTRUCTION_INSPECTION_OK");
     }
-    [MenuItem("Tools/Criminal Game/Construccion/Preparar sistema")]
     public static void Apply()
     {
         if(EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Sal de Play.");

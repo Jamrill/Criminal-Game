@@ -56,7 +56,10 @@ namespace JuegoCriminal.Construction
         {
             foreach(Transform child in content) Destroy(child.gameObject);
             foreach(var entry in catalog.entries)
-                if(entry.category==category && !entry.hiddenInMenu) { var e=entry; var b=Button(entry.title,content); b.onClick.AddListener(()=>selected(e)); }
+                if(entry.category==category && !entry.hiddenInMenu && !entry.IsOpening) { var e=entry; var b=Button(entry.title+" | $"+catalog.Cost(entry),content); b.onClick.AddListener(()=>selected(e)); }
+            if(category==BuildCategory.Walls)
+                foreach(var entry in catalog.entries)
+                    if(entry.IsOpening && !entry.hiddenInMenu) { var e=entry;var b=Button("Convertir pared: "+(entry.prefab.name.StartsWith("Window",StringComparison.OrdinalIgnoreCase)?"ventana":"puerta"),content);b.onClick.AddListener(()=>selected(e)); }
         }
         public static Button Button(string label,Transform parent)
         {
@@ -87,7 +90,7 @@ namespace JuegoCriminal.Construction
             }
             view.menu=Panel("TabMenu",new Vector2(.5f,.5f),new Vector2(500,170));
             var layout=view.menu.AddComponent<VerticalLayoutGroup>(); layout.padding=new RectOffset(20,20,20,20); layout.spacing=12;
-            Text("Construccion · Tab para cerrar",view.menu.transform);
+            Text("Tablet · Tab para cerrar",view.menu.transform);
             view.buildButton=Button("Construir",view.menu.transform); view.buildLabel=view.buildButton.GetComponentInChildren<TMP_Text>();
             view.hud=Panel("BuildHUD",new Vector2(1,.5f),new Vector2(300,760));
             var group=view.hud.AddComponent<VerticalLayoutGroup>(); group.padding=new RectOffset(12,12,12,12); group.spacing=8; group.childControlHeight=true; group.childForceExpandHeight=false;

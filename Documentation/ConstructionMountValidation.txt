@@ -1,0 +1,32 @@
+PASS Door bounds are placement-relative, not saved world coordinates
+PASS Floor catalog bounds corrected without changing prefab origins
+PASS Complete, semi and incomplete doorway apertures come from colliders
+PASS Door finds the aperture even when ray passes through empty space
+PASS Door anchor sits at centre/bottom of hole
+PASS Door fits between original wall box colliders
+PASS Door flips 180 degrees from either side without leaving its aperture
+PASS Spawned door geometry is in the hole, not merely its pivot
+PASS Mounted door remains a child of Solar
+PASS Door mounted position survives serialization and restore
+PASS An open door still reserves its aperture; no duplicate door
+PASS Cannot snap through unrelated blocking objects
+PASS Door respects rotated wall origin/orientation
+PASS Light_point uses ceiling placement
+PASS Light_point finds real ceiling underside
+PASS Light_point top touches underside without penetrating floor
+PASS Light_point real light points down and belongs to Solar
+PASS Light_point actual visible mesh meets the ceiling
+PASS Light_point mounted position survives save/restore
+PASS Light_point rejects floor top as a ceiling
+PASS Light_point cannot float outside ceiling footprint
+PASS Light_point rejects partial support over ceiling edge
+PASS Light_point_Cold uses ceiling placement
+PASS Light_point_Cold finds real ceiling underside
+PASS Light_point_Cold top touches underside without penetrating floor
+PASS Light_point_Cold real light points down and belongs to Solar
+PASS Light_point_Cold actual visible mesh meets the ceiling
+PASS Light_point_Cold mounted position survives save/restore
+PASS Light_point_Cold rejects floor top as a ceiling
+PASS Light_point_Cold cannot float outside ceiling footprint
+PASS Light_point_Cold rejects partial support over ceiling edge
+PASS Doors cannot be freely placed without a doorway

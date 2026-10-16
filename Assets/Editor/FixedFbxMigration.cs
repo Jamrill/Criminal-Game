@@ -54,7 +54,6 @@ public static class FixedFbxMigration
         Run();
     }
 
-    [MenuItem("Tools/Criminal Game/Aplicar FBX Fixed y puerta por codigo")]
     public static void Run()
     {
         if (File.Exists(Done)) { Debug.Log("Fixed FBX: migracion ya aplicada. Consultar " + Report); return; }

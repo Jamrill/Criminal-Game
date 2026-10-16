@@ -50,7 +50,6 @@ public static class ConstructionPropertySetup
         }
     }
 
-    [MenuItem("Tools/Criminal Game/Construccion/Integrar propiedades y UI del Player")]
     public static void Apply()
     {
         if(EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Sal de Play.");

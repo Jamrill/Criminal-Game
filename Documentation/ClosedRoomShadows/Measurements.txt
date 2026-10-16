@@ -1,0 +1,50 @@
+mode=0 angle=0 distance=0 brightContactPixels=0
+mode=0 angle=0 distance=1 brightContactPixels=380
+mode=0 sunlitExteriorCenter=RGBA(0.851, 0.816, 0.784, 1.000)
+mode=0 angle=1 distance=0 brightContactPixels=0
+mode=0 angle=1 distance=1 brightContactPixels=380
+mode=1 angle=0 distance=0 brightContactPixels=0
+mode=1 angle=0 distance=1 brightContactPixels=380
+mode=1 sunlitExteriorCenter=RGBA(0.851, 0.816, 0.784, 1.000)
+mode=1 angle=1 distance=0 brightContactPixels=0
+mode=1 angle=1 distance=1 brightContactPixels=380
+mode=2 angle=0 distance=0 brightContactPixels=0
+mode=2 angle=0 distance=1 brightContactPixels=380
+mode=2 sunlitExteriorCenter=RGBA(0.984, 0.984, 0.984, 1.000)
+mode=2 angle=1 distance=0 brightContactPixels=0
+mode=2 angle=1 distance=1 brightContactPixels=380
+mode=3 angle=0 distance=0 brightContactPixels=0
+mode=3 angle=0 distance=1 brightContactPixels=380
+mode=3 sunlitExteriorCenter=RGBA(0.984, 0.984, 0.984, 1.000)
+mode=3 angle=1 distance=0 brightContactPixels=0
+mode=3 angle=1 distance=1 brightContactPixels=380
+mode=4 angle=0 distance=0 brightContactPixels=0
+mode=4 angle=0 distance=1 brightContactPixels=380
+mode=4 sunlitExteriorCenter=RGBA(0.984, 0.984, 0.984, 1.000)
+mode=4 angle=1 distance=0 brightContactPixels=0
+mode=4 angle=1 distance=1 brightContactPixels=380
+mode=5 angle=0 distance=0 brightContactPixels=0
+mode=5 angle=0 distance=1 brightContactPixels=380
+mode=5 sunlitExteriorCenter=RGBA(0.984, 0.984, 0.984, 1.000)
+mode=5 angle=1 distance=0 brightContactPixels=0
+mode=5 angle=1 distance=1 brightContactPixels=380
+mode=6 angle=0 distance=0 brightContactPixels=1140
+mode=6 angle=0 distance=1 brightContactPixels=760
+mode=6 sunlitExteriorCenter=RGBA(0.984, 0.984, 0.984, 1.000)
+mode=6 angle=1 distance=0 brightContactPixels=760
+mode=6 angle=1 distance=1 brightContactPixels=380
+mode=7 angle=0 distance=0 brightContactPixels=0
+mode=7 angle=0 distance=1 brightContactPixels=380
+mode=7 sunlitExteriorCenter=RGBA(0.984, 0.984, 0.984, 1.000)
+mode=7 angle=1 distance=0 brightContactPixels=0
+mode=7 angle=1 distance=1 brightContactPixels=380
+mode=8 angle=0 distance=0 brightContactPixels=0
+mode=8 angle=0 distance=1 brightContactPixels=380
+mode=8 sunlitExteriorCenter=RGBA(0.851, 0.816, 0.784, 1.000)
+mode=8 angle=1 distance=0 brightContactPixels=0
+mode=8 angle=1 distance=1 brightContactPixels=0
+mode=9 angle=0 distance=0 brightContactPixels=0
+mode=9 angle=0 distance=1 brightContactPixels=0
+mode=9 sunlitExteriorCenter=RGBA(0.851, 0.816, 0.784, 1.000)
+mode=9 angle=1 distance=0 brightContactPixels=0
+mode=9 angle=1 distance=1 brightContactPixels=0

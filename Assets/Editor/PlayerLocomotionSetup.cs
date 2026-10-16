@@ -27,7 +27,6 @@ public static class PlayerLocomotionSetup
         Configure();
     }
 
-    [MenuItem("Tools/Criminal Game/Configurar animaciones del jugador")]
     public static void Configure()
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode || PrefabStageUtility.GetCurrentPrefabStage() != null)

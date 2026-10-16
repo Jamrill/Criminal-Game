@@ -24,7 +24,6 @@ namespace JuegoCriminal.EditorTools
             EditorApplication.delayCall += EnsureSceneExists;
         }
 
-        [MenuItem("Tools/Juego Criminal/Create Simple Sea Scene")]
         public static void CreateOrRebuildScene()
         {
             EnsureFolder();

@@ -8,7 +8,6 @@ using UnityEngine;
 public static class FurnitureColliderRefinement
 {
     static readonly string[] Names = { "Sofa", "Floor_lamp", "Toilet", "Table", "Chair", "Bed", "Kitchen cabinet" };
-    [MenuItem("Tools/Criminal Game/Ajustar colision detallada de muebles")]
     public static void Apply()
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode || UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() != null)

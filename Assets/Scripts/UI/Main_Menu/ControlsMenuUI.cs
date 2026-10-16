@@ -26,7 +26,7 @@ namespace JuegoCriminal.UI
 
             EnsureRuntimeBindingRow("Crouch", GameInputAction.Crouch, 1);
             EnsureRuntimeBindingRow("Rotate Inventory Item", GameInputAction.RotateInventory, 0);
-            EnsureRuntimeBindingRow("Construction Menu", GameInputAction.Construction, 0);
+            EnsureTabletBinding();
             EnsureRuntimeBindingRow("Rotate Building", GameInputAction.BuildRotate, 0);
             OrganizeSections();
 
@@ -76,6 +76,17 @@ namespace JuegoCriminal.UI
             row.Configure(action, bindingIndex, displayName, actionText, bindingText, button);
         }
 
+        private void EnsureTabletBinding()
+        {
+            if(!contentRoot)return;
+            var old=contentRoot.Find("Binding_ConstructionMenu");
+            var tablet=contentRoot.Find("Binding_Tablet");
+            if(old && !tablet) { old.name="Binding_Tablet";tablet=old; }
+            else if(old)old.gameObject.SetActive(false);
+            EnsureRuntimeBindingRow("Tablet",GameInputAction.Construction,0);
+            tablet=contentRoot.Find("Binding_Tablet");
+            if(tablet)tablet.GetComponent<ControlRebindButtonUI>().SetDisplayName("Tablet");
+        }
         public void OrganizeSections()
         {
             if(!contentRoot) return;
@@ -88,24 +99,23 @@ namespace JuegoCriminal.UI
                 return text.transform;
             }
             Header("NormalControlsHeader","CONTROLES NORMALES").SetAsFirstSibling();
+            foreach(var name in new[]{"BuildMoveForward","BuildMoveBackward","BuildMoveLeft","BuildMoveRight","BuildJump","BuildSprint"})
+            {
+                var obsolete=contentRoot.Find("Binding_"+name);if(obsolete)obsolete.gameObject.SetActive(false);
+            }
+            EnsureTabletBinding();
+            contentRoot.Find("Binding_Tablet").SetAsLastSibling();
             Header("ConstructionControlsHeader","CONSTRUCCION").SetAsLastSibling();
             void Row(string name,GameInputAction action,int binding)
             {
                 EnsureRuntimeBindingRow(name,action,binding);
                 contentRoot.Find("Binding_"+name.Replace(" ",string.Empty)).SetAsLastSibling();
             }
-            Row("Construction Menu",GameInputAction.Construction,0);
-            Row("Build Move Forward",GameInputAction.Move,2);
-            Row("Build Move Backward",GameInputAction.Move,4);
-            Row("Build Move Left",GameInputAction.Move,6);
-            Row("Build Move Right",GameInputAction.Move,8);
-            Row("Build Jump",GameInputAction.Jump,0);
-            Row("Build Sprint",GameInputAction.Sprint,0);
-            Row("Build Cursor (hold)",GameInputAction.SwitchTarget,1);
             Row("Rotate Building",GameInputAction.BuildRotate,0);
-            Header("ConstructionControlsHelp","Raton: mirar / colocar con clic\nRueda: distancia de preview\nEsc: salir | Movimiento compartido con controles normales").SetAsLastSibling();
-            contentRoot.Find("ConstructionControlsHelp").GetComponent<TMP_Text>().fontSize=17;
-            contentRoot.Find("ConstructionControlsHelp").GetComponent<LayoutElement>().preferredHeight=84;
+            Row("Demolish Building",GameInputAction.BuildDemolish,0);
+            Row("Build Cursor (hold)",GameInputAction.SwitchTarget,1);
+            Row("Build Preview Distance",GameInputAction.BuildDistance,0);
+            var help=contentRoot.Find("ConstructionControlsHelp");if(help)help.gameObject.SetActive(false);
         }
 
         private static TMP_Text CreateRuntimeText(string objectName, Transform parent, string value)
@@ -183,8 +193,9 @@ namespace JuegoCriminal.UI
             CreateRow("Inventory", GameInputAction.Inventory, 0);
             CreateRow("Crouch", GameInputAction.Crouch, 1);
             CreateRow("Rotate Inventory Item", GameInputAction.RotateInventory, 0);
-            CreateRow("Construction Menu", GameInputAction.Construction, 0);
+            CreateRow("Tablet", GameInputAction.Construction, 0);
             CreateRow("Rotate Building", GameInputAction.BuildRotate, 0);
+            OrganizeSections();
 
             UnityEditor.EditorUtility.SetDirty(this);
         }

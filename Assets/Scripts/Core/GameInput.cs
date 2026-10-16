@@ -19,7 +19,9 @@ namespace JuegoCriminal.Core
         Crouch,
         RotateInventory,
         Construction,
-        BuildRotate
+        BuildRotate,
+        BuildDemolish,
+        BuildDistance
     }
 
     public static class GameInput
@@ -40,8 +42,11 @@ namespace JuegoCriminal.Core
         public static Vector2 Move => ReadVector2(GameInputAction.Move);
         public static Vector2 Look => ReadVector2(GameInputAction.Look);
         public static float CameraZoom => JuegoCriminal.Construction.ConstructionController.Active ? 0 : ReadVector2(GameInputAction.CameraZoom).y;
-        public static bool ConstructionPressed => WasPressedThisFrame(GameInputAction.Construction);
+        public static bool TabletPressed => WasPressedThisFrame(GameInputAction.Construction);
+        public static bool ConstructionPressed => TabletPressed;
+        public static float BuildDistance => ReadVector2(GameInputAction.BuildDistance).y;
         public static bool BuildRotatePressed => WasPressedThisFrame(GameInputAction.BuildRotate);
+        public static bool BuildDemolishPressed => WasPressedThisFrame(GameInputAction.BuildDemolish);
 
         public static bool JumpPressed => WasPressedThisFrame(GameInputAction.Jump);
         public static bool SprintHeld => IsPressed(GameInputAction.Sprint);
@@ -235,6 +240,8 @@ namespace JuegoCriminal.Core
                 GameInputAction.RotateInventory => ("Player", "RotateInventory"),
                 GameInputAction.Construction => ("Player", "Construction"),
                 GameInputAction.BuildRotate => ("Player", "BuildRotate"),
+                GameInputAction.BuildDemolish => ("Player", "BuildDemolish"),
+                GameInputAction.BuildDistance => ("Player", "BuildDistance"),
                 _ => throw new ArgumentOutOfRangeException(nameof(action), action, null)
             };
         }

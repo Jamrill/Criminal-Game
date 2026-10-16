@@ -15,7 +15,7 @@ namespace JuegoCriminal.Player
         [SerializeField] private Animator animator;
         [SerializeField, Min(.01f)] private float movementThreshold = .08f;
         [SerializeField, Min(0)] private float blendDuration = .16f;
-        [SerializeField, Range(0f, .2f)] private float locomotionBlendDuration = .08f;
+        [SerializeField, Range(0f, .3f)] private float locomotionBlendDuration = .18f;
         [SerializeField, Range(.1f, .8f)] private float runningBlendDuration = .3f;
         [SerializeField, Range(0f, 60f)] private float diagonalBodyAngle = 35f;
         [SerializeField, Min(1f)] private float bodyTurnSpeed = 240f;
@@ -31,8 +31,9 @@ namespace JuegoCriminal.Player
         [SerializeField] private Vector2 movingJumpContact = new Vector2(.1f, .8f);
         private float jumpClock, jumpTakeoff, jumpLanding, jumpDuration, jumpFlightDuration;
         private bool jumpLaunched, jumpRecovering;
-        private int runningTurn;
         public bool IsJumping { get; private set; }
+        public bool IsMovingJump { get; private set; }
+        public bool IsBackwardRunning { get; private set; }
         private ThirdPersonController movement;
         private string currentState;
         private bool wantsCrouch;
@@ -40,7 +41,7 @@ namespace JuegoCriminal.Player
         public ActionPhase Phase { get; private set; }
         public bool IsCrouched { get; private set; }
         public float CrouchAmount { get; private set; }
-        public bool BlocksMovement => Phase != ActionPhase.Locomotion;
+        public bool BlocksMovement => (IsJumping && !IsMovingJump) || Phase != ActionPhase.Locomotion;
         public bool BlocksJump => IsJumping || IsCrouched || wantsCrouch || BlocksMovement;
         public void Configure(Animator target) => animator = target;
         public void ConfigureTimings(float pistol, float crouch)
@@ -53,13 +54,14 @@ namespace JuegoCriminal.Player
         {
             if (BlocksJump || !animator) return;
             IsJumping = true;
-            runningTurn = 0;
+            IsMovingJump = moving;
             jumpClock = 0; jumpLaunched = false; jumpRecovering = false;
             var contact = moving ? movingJumpContact : stationaryJumpContact;
             jumpTakeoff = contact.x; jumpLanding = contact.y;
             jumpDuration = moving ? movingJumpDuration : stationaryJumpDuration;
             jumpFlightDuration = Mathf.Max(.1f, flightDuration);
             animator.SetFloat("JumpSpeed", 1);
+            if(!moving)movement.StopHorizontalMotion();
             Play(moving ? "Jump Moving" : "Jump On Site");
         }
         public bool ConsumeJumpTakeoff()
@@ -105,7 +107,7 @@ namespace JuegoCriminal.Player
             if (IsJumping)
             {
                 jumpClock += Mathf.Max(0, deltaTime);
-                if (jumpRecovering && (jumpClock >= jumpDuration - jumpLanding || input.sqrMagnitude > .01f)) IsJumping = false;
+                if (jumpRecovering && jumpClock >= jumpDuration - jumpLanding) IsJumping = false;
                 return;
             }
             if (crouchPressed) wantsCrouch = !wantsCrouch;
@@ -153,6 +155,7 @@ namespace JuegoCriminal.Player
         // never afterwards (which would rotate an already solved gaze).
         private void ApplyBodyOrientation()
         {
+            if(IsJumping)return;
             if (animator && animator.transform != transform)
             {
                 if (orientedModel != animator.transform)
@@ -174,10 +177,9 @@ namespace JuegoCriminal.Player
         public void UpdateLocomotion(Vector3 velocity, Vector2 input, bool sprinting)
         {
             if (IsJumping) return;
+            IsBackwardRunning=false;
             targetBodyYaw = 0;
             if (Phase != ActionPhase.Locomotion) return;
-            bool forwardRun = sprinting && !IsCrouched && input.y > .01f && velocity.sqrMagnitude > movementThreshold * movementThreshold;
-            if (!forwardRun) runningTurn = 0;
             if (IsCrouched)
             {
                 if (Mathf.Abs(velocity.z) <= movementThreshold) Play("Crouched Idle");
@@ -185,48 +187,27 @@ namespace JuegoCriminal.Player
             }
             else if (velocity.sqrMagnitude <= movementThreshold * movementThreshold)
                 Play("Standing Idle");
-            else if (Mathf.Abs(input.y) > .01f)
+            else if (input.sqrMagnitude > .001f)
             {
-                // W/S wins over strafing: measured diagonal velocity varies slightly
-                // with collisions and must not alternate the two animation states.
-                if (forwardRun)
-                {
-                    int turn = Mathf.Abs(input.x) > .01f ? (input.x > 0 ? 1 : -1) : 0;
-                    if (turn != 0 && turn != runningTurn)
-                    {
-                        runningTurn = turn;
-                        Play(turn > 0 ? "Run Right Turn" : "Run Left Turn");
-                    }
-                    else if (turn == 0 || !IsRunTurnPlaying())
-                    {
-                        runningTurn = turn;
-                        Play("Fast Run");
-                    }
-                }
-                else Play(input.y < 0 ? "Walking Backward" : "Walking");
-                if (Mathf.Abs(input.x) > .01f)
-                    targetBodyYaw = Mathf.Clamp(Mathf.Atan2(input.x * Mathf.Sign(input.y), Mathf.Abs(input.y)) * Mathf.Rad2Deg,
-                        -diagonalBodyAngle, diagonalBodyAngle);
+                bool backward=input.y<-.01f;
+                IsBackwardRunning=backward && sprinting;
+                // Sideways motion uses the forward gait with the visual body turned;
+                // S retains the reversed walking gait, including backward diagonals.
+                targetBodyYaw=IsBackwardRunning ? Mathf.Atan2(input.x,input.y)*Mathf.Rad2Deg :
+                    Mathf.Atan2(backward?-input.x:input.x,Mathf.Abs(input.y))*Mathf.Rad2Deg;
+                Play(sprinting ? "Fast Run" : backward ? "Walking Backward" : "Walking");
             }
-            else if (Mathf.Abs(input.x) > .01f)
-                Play(input.x < 0 ? "Left Strafe Walk" : "Right Strafe Walk");
             else Play("Standing Idle");
-        }
-        private bool IsRunTurnPlaying()
-        {
-            if (currentState != "Run Right Turn" && currentState != "Run Left Turn") return false;
-            if (animator.IsInTransition(0)) return true;
-            return animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .9f;
         }
         private void Play(string state, float offset = 0)
         {
             if (currentState == state || !animator || !animator.runtimeAnimatorController) return;
             bool runBlend = IsRunningState(state) || IsRunningState(currentState);
-            bool urgentStop = state == "Standing Idle" || state.StartsWith("Jump");
+            bool urgentStop = state.StartsWith("Jump");
             currentState = state;
             animator.CrossFadeInFixedTime("Base Layer." + state,
                 Phase == ActionPhase.Locomotion ? (runBlend && !urgentStop ? runningBlendDuration : locomotionBlendDuration) : blendDuration, 0, offset);
         }
-        private static bool IsRunningState(string state) => state == "Fast Run" || state == "Run Right Turn" || state == "Run Left Turn";
+        private static bool IsRunningState(string state) => state == "Fast Run";
     }
 }

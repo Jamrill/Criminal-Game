@@ -6,6 +6,7 @@ Shader "CriminalGame/World Wall"
         _BaseColor("Tint",Color)=(1,1,1,1)
         _MetersPerRepeat("World metres per repeat",Float)=4
         _Smoothness("Smoothness",Range(0,1))=.15
+        _ShadowReceiverInset("Wall shadow contact offset (metres)",Range(0,.1))=0
     }
     SubShader
     {
@@ -32,6 +33,7 @@ Shader "CriminalGame/World Wall"
                 half4 _BaseColor;
                 float _MetersPerRepeat;
                 half _Smoothness;
+                float _ShadowReceiverInset;
             CBUFFER_END
             struct Attributes { float4 positionOS:POSITION; float3 normalOS:NORMAL; };
             struct Varyings { float4 positionCS:SV_POSITION; float3 positionWS:TEXCOORD0; half3 normalWS:TEXCOORD1; half fog:TEXCOORD2; };
@@ -50,7 +52,21 @@ Shader "CriminalGame/World Wall"
                     SAMPLE_TEXTURE2D(_BaseMap,sampler_BaseMap,p.xy).rgb*w.z;
                 InputData d=(InputData)0; d.positionWS=i.positionWS; d.normalWS=n;
                 d.viewDirectionWS=GetWorldSpaceNormalizeViewDir(i.positionWS);
-                d.shadowCoord=TransformWorldToShadowCoord(i.positionWS); d.bakedGI=SampleSH(n);
+                // Shift along vertical wall surfaces, never into their volume: an
+                // inward normal offset would incorrectly self-shadow sunlit exteriors.
+                // Keep the receiver above the wall's base. Applying the full contact
+                // offset here would sample beneath the floor and create a dark strip.
+                float baseY=GetObjectToWorldMatrix()._m13;
+                float heightAboveBase=max(0,i.positionWS.y-baseY);
+                float safeOffset=min(_ShadowReceiverInset,max(0,heightAboveBase-.025));
+                safeOffset*=smoothstep(.025,.2,heightAboveBase);
+                float3 shadowPosition=i.positionWS-float3(0,safeOffset*(1-abs(n.y)),0);
+                #if defined(_MAIN_LIGHT_SHADOWS_SCREEN)
+                    d.shadowCoord=ComputeScreenPos(TransformWorldToHClip(shadowPosition));
+                #else
+                    d.shadowCoord=TransformWorldToShadowCoord(shadowPosition);
+                #endif
+                d.bakedGI=SampleSH(n);
                 d.vertexLighting=VertexLighting(i.positionWS,n); d.shadowMask=half4(1,1,1,1);
                 d.normalizedScreenSpaceUV=GetNormalizedScreenSpaceUV(i.positionCS);
                 SurfaceData s=(SurfaceData)0; s.albedo=color*_BaseColor.rgb; s.alpha=1;

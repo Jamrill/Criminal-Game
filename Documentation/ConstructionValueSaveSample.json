@@ -1,0 +1,181 @@
+{
+    "version": 7,
+    "money": 500,
+    "lastScene": "",
+    "ownedProperties": [
+        71
+    ],
+    "inventoryItems": [],
+    "inventoryColumns": 10,
+    "equippedItemIds": [],
+    "printers": [],
+    "buildings": [
+        {
+            "id": "free",
+            "definitionId": "646161ef561b93c4e895b13fc557dca2",
+            "sceneName": "",
+            "propertyId": 71,
+            "finish": -1,
+            "deleted": true,
+            "position": {
+                "x": 8.0,
+                "y": 3.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "cellCenter": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "id": "runtime",
+            "definitionId": "a18105208714efd438e17be7d2d0bc64",
+            "sceneName": "",
+            "propertyId": 71,
+            "finish": -1,
+            "deleted": true,
+            "position": {
+                "x": 8.0,
+                "y": 3.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "cellCenter": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "id": "kept",
+            "definitionId": "646161ef561b93c4e895b13fc557dca2",
+            "sceneName": "",
+            "propertyId": 71,
+            "finish": -1,
+            "deleted": false,
+            "position": {
+                "x": 8.0,
+                "y": 3.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "cellCenter": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "id": "authored",
+            "definitionId": "646161ef561b93c4e895b13fc557dca2",
+            "sceneName": "",
+            "propertyId": 71,
+            "finish": -1,
+            "deleted": true,
+            "position": {
+                "x": 8.0,
+                "y": 3.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "cellCenter": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        }
+    ],
+    "playerX": 0.0,
+    "playerY": 0.0,
+    "playerZ": 0.0,
+    "hasPlayerPos": false,
+    "playerCount": 0,
+    "px": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "py": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "pz": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "hasPos": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "playerYaw": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "cameraPitch": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "hasLookRotation": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "slotId": 1,
+    "displayName": "Slot 1",
+    "gameMode": "Single",
+    "lastPlayedUtc": ""
+}

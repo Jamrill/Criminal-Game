@@ -1,0 +1,3 @@
+Scene markers added=71
+Backup=Documentation/ConstructionEditingBackup/20261015_114826
+Reflection adjustment requires visual day-time comparison.

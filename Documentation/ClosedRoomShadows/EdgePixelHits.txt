@@ -1,0 +1,11 @@
+pixelY=363 color=RGBA(0.027, 0.024, 0.024, 1.000) mesh=FixedVisual point=(484.016800, 107.858600, 508.750000) normal=(0.00, 0.00, -1.00) triangle=0
+pixelY=364 color=RGBA(0.027, 0.024, 0.024, 1.000) mesh=FixedVisual point=(484.016800, 107.890000, 508.750000) normal=(0.00, 0.00, -1.00) triangle=0
+pixelY=365 color=RGBA(0.027, 0.024, 0.024, 1.000) mesh=FixedVisual point=(484.016800, 107.920700, 508.750000) normal=(0.00, 0.00, -1.00) triangle=0
+pixelY=366 color=RGBA(0.027, 0.024, 0.024, 1.000) mesh=FixedVisual point=(484.016900, 107.952100, 508.750000) normal=(0.00, 0.00, -1.00) triangle=0
+pixelY=367 color=RGBA(0.847, 0.812, 0.780, 1.000) mesh=FixedVisual point=(484.016900, 107.984000, 508.750000) normal=(0.00, 0.00, -1.00) triangle=1
+pixelY=368 color=RGBA(0.031, 0.031, 0.031, 1.000) mesh=Floor(Clone) point=(484.016800, 107.990000, 508.631700) normal=(0.00, -1.00, 0.00) triangle=10
+pixelY=369 color=RGBA(0.031, 0.031, 0.031, 1.000) mesh=Floor(Clone) point=(484.016600, 107.990000, 508.486900) normal=(0.00, -1.00, 0.00) triangle=10
+pixelY=370 color=RGBA(0.031, 0.031, 0.031, 1.000) mesh=Floor(Clone) point=(484.016500, 107.990000, 508.342300) normal=(0.00, -1.00, 0.00) triangle=10
+pixelY=371 color=RGBA(0.031, 0.031, 0.031, 1.000) mesh=Floor(Clone) point=(484.016400, 107.990000, 508.202000) normal=(0.00, -1.00, 0.00) triangle=10
+pixelY=372 color=RGBA(0.031, 0.031, 0.031, 1.000) mesh=Floor(Clone) point=(484.016300, 107.990000, 508.066300) normal=(0.00, -1.00, 0.00) triangle=10
+pixelY=373 color=RGBA(0.031, 0.031, 0.031, 1.000) mesh=Floor(Clone) point=(484.016200, 107.990000, 507.929700) normal=(0.00, -1.00, 0.00) triangle=10

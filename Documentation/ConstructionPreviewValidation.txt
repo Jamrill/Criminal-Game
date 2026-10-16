@@ -1,0 +1,4 @@
+PASS default opacity 55%
+PASS URP transparent surface and queue
+PASS alpha blending, depth writing disabled
+PASS live Inspector opacity update

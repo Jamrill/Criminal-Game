@@ -43,17 +43,18 @@ namespace JuegoCriminal.Construction
             {
                 var p=plots[i]; bool owned=properties && properties.IsOwned(p.propertyId);
                 bool valid=p.propertyId>=0 && p.price>=0 && plots.Count(other=>other.propertyId==p.propertyId)==1;
-                bool affordable=economy && economy.CanAfford(p.price);
+                int value=p.TotalValue;
+                bool affordable=economy && economy.CanAfford(value);
                 rows[i].interactable=valid && !owned && affordable && properties;
                 string state=!valid ? "Revisar ID/precio en Inspector" : owned ? "En propiedad" : affordable ? "Comprar" : "Saldo insuficiente";
-                labels[i].text=p.DisplayName+" | Precio: "+p.price+"\n"+state+(p.buildable ? "" : " (no construible)");
+                labels[i].text=p.DisplayName+" | Valor: $"+value+"\n"+state+(p.buildable ? "" : " (no construible)");
             }
         }
         private void Buy(BuildPlot target)
         {
             if (!target || !target.isActiveAndEnabled || !properties || target.gameObject.scene!=gameObject.scene) return;
             if (BuildPlot.Active.Count(p=>p && p.gameObject.scene==gameObject.scene && p.propertyId==target.propertyId)!=1) return;
-            properties.TryBuy(target.propertyId,target.price);
+            properties.TryBuy(target.propertyId,target.TotalValue);
             Refresh();
         }
     }

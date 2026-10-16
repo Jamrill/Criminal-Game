@@ -20,7 +20,6 @@ public static class ConstructionRevisionMigration
     static readonly string[] Incomplete = { "Corner_Wall_incomplete", "Diagonal_Wall_incomplete", "Glass_Wall_incomplete", "Wall_incomplete", "Wall_door_hole_incomplete", "Window_wall_incomplete" };
     static readonly List<string> Log = new();
 
-    [MenuItem("Tools/Criminal Game/Migrar Construction Complete e Incomplete")]
     public static void Run()
     {
         if (File.Exists(Done)) { Debug.Log("Construction: migracion ya aplicada."); return; }

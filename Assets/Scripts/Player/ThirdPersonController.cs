@@ -9,6 +9,7 @@ namespace JuegoCriminal.Player
         [Header("Movement")]
         [SerializeField] private float walkSpeed = 3.5f;
         [SerializeField] private float runSpeed = 6.0f;
+        [SerializeField, Range(.1f,1f)] private float backwardWalkMultiplier = .65f;
         [SerializeField] private float acceleration = 14f;
         [SerializeField] private float deceleration = 18f;
         [SerializeField, Min(.05f)] private float runTransitionDuration = .4f;
@@ -127,6 +128,7 @@ namespace JuegoCriminal.Player
             _horizontalVelocity = (transform.rotation * Quaternion.Inverse(previousRotation)) * _horizontalVelocity;
         }
 
+        private Vector3 jumpHorizontalVelocity;
         private void Move()
         {
             Vector2 input = ReadMoveInput();
@@ -147,6 +149,9 @@ namespace JuegoCriminal.Player
             if (input.sqrMagnitude <= .001f) _horizontalVelocity = Vector3.zero;
             else UpdateHorizontalVelocity(targetHorizontalVelocity);
             UpdateVerticalVelocity();
+            // BeginJump can become active in this very frame, after horizontal input.
+            if(animationDriver && animationDriver.IsJumping)
+                _horizontalVelocity=animationDriver.IsMovingJump ? jumpHorizontalVelocity : Vector3.zero;
 
             Vector3 finalVelocity = _horizontalVelocity;
             finalVelocity.y = _verticalVelocity;
@@ -182,13 +187,14 @@ namespace JuegoCriminal.Player
             moveDirection.y = 0f;
             moveDirection.Normalize();
 
-            float targetSpeed = animationDriver && animationDriver.IsCrouched ? crouchMoveSpeed :
-                (GameInput.SprintHeld ? runSpeed : walkSpeed);
+            float targetSpeed = MovementSpeedFor(input,GameInput.SprintHeld,animationDriver && animationDriver.IsCrouched);
             currentMoveSpeed = Mathf.MoveTowards(currentMoveSpeed, targetSpeed,
                 Mathf.Max(1, runSpeed - walkSpeed) / runTransitionDuration * Time.deltaTime);
 
             return moveDirection * currentMoveSpeed;
         }
+        public float MovementSpeedFor(Vector2 input,bool sprinting,bool crouched)
+            => crouched ? crouchMoveSpeed : sprinting ? runSpeed : walkSpeed*(input.y<-.01f ? backwardWalkMultiplier : 1f);
 
         private void UpdateHorizontalVelocity(Vector3 targetHorizontalVelocity)
         {
@@ -215,8 +221,12 @@ namespace JuegoCriminal.Player
                     // Fórmula física básica para alcanzar jumpHeight.
                     float launchVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
                     if (animationDriver)
-                        animationDriver.BeginJump(_horizontalVelocity.sqrMagnitude > .01f,
+                    {
+                        bool moving=ReadMoveInput().sqrMagnitude>.001f;
+                        jumpHorizontalVelocity=moving ? _horizontalVelocity : Vector3.zero;
+                        animationDriver.BeginJump(moving,
                             2f * launchVelocity / Mathf.Max(.01f, -gravity));
+                    }
                     else _verticalVelocity = launchVelocity;
                 }
                 if (animationDriver && animationDriver.ConsumeJumpTakeoff())

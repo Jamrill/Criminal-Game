@@ -79,9 +79,9 @@ namespace JuegoCriminal.Core
 
             // Capturar SceneContext (si existe)
             CurrentSceneContext = FindAnyObjectByType<SceneContext>();
-            if (CurrentSceneContext == null)
+            if (CurrentSceneContext == null && sceneName != fallbackMenuScene)
                 Debug.LogWarning("[GSM] No SceneContext found in scene: " + sceneName);
-            else
+            else if (CurrentSceneContext != null)
                 Debug.Log("[GSM] SceneContext registered.");
 
             // Las escenas sin contexto de mundo (por ejemplo, el menú) no intentan crear jugadores.

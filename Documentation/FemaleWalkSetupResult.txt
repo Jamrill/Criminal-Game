@@ -1,1 +1,5 @@
-PASS 2026-10-13T20:50:25.5372488+02:00
+System.Exception: Locomotion Walking
+  at PlayerAnimationExpansion.<Validate>g__Check|7_1 (System.Boolean value, System.String message, PlayerAnimationExpansion+<>c__DisplayClass7_0& ) [0x00020] in C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Assets\Editor\PlayerAnimationExpansion.cs:212 
+  at PlayerAnimationExpansion.Validate () [0x0024a] in C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Assets\Editor\PlayerAnimationExpansion.cs:230 
+  at PlayerAnimationExpansion.ConfigureAndValidate () [0x00029] in C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Assets\Editor\PlayerAnimationExpansion.cs:199 
+  at MixamoFixOnce.Run () [0x00063] in C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Assets\Editor\MixamoFixOnce.cs:18 

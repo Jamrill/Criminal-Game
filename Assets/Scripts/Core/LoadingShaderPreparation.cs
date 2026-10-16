@@ -20,9 +20,9 @@ namespace JuegoCriminal.Core
             try
             {
                 yield return null;
-                // Includes currently loaded scene, catalog and rendering-pipeline shaders.
-                // Does not claim to cover future assets or every platform-specific PSO.
-                Shader.WarmupAllShaders();
+                // Avoid global warmup of unrelated loaded/editor shaders (including
+                // particle fallbacks). SceneLoader warms explicitly assigned collections;
+                // the cycle below prepares actual scene lighting behind the loading UI.
                 foreach(var cycle in Object.FindObjectsByType<DayNightCycle>(FindObjectsSortMode.None))
                     yield return cycle.PrepareLightingVariants();
 #if UNITY_EDITOR

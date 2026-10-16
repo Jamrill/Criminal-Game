@@ -1,0 +1,317 @@
+Assets/Original_assets/Floor.fbx / Floor bounds=Center: (2.00, 0.00, 2.00), Extents: (2.00, 0.01, 2.00) shadows=On
+MATERIAL Sup path=Assets/Original_assets/Floor.fbx shader=Universal Render Pipeline/Lit
+_Metallic=0
+_Smoothness=0,5
+_Glossiness=0,5
+_Surface=0
+_Cull=2
+_ReceiveShadows=1
+MATERIAL Inf path=Assets/Original_assets/Floor.fbx shader=Universal Render Pipeline/Lit
+_Metallic=0
+_Smoothness=0,5
+_Glossiness=0,5
+_Surface=0
+_Cull=2
+_ReceiveShadows=1
+Assets/Prefabs/Floor.prefab / Floor bounds=Center: (2.00, 0.00, 2.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided
+MATERIAL Floor_Sup_Matte path=Assets/Materials/Floor_Sup_Matte.mat shader=Universal Render Pipeline/Lit
+_Metallic=0
+_Smoothness=0,12
+_Glossiness=0,12
+_Surface=0
+_Cull=2
+_ReceiveShadows=1
+MATERIAL Floor_Inf_Matte path=Assets/Materials/Floor_Inf_Matte.mat shader=Universal Render Pipeline/Lit
+_Metallic=0
+_Smoothness=0,12
+_Glossiness=0,12
+_Surface=0
+_Cull=2
+_ReceiveShadows=1
+Assets/Prefabs/Floor.prefab / Floor_ShadowBlocker bounds=Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) shadows=ShadowsOnly
+MATERIAL Floor_Sup_Matte path=Assets/Materials/Floor_Sup_Matte.mat shader=Universal Render Pipeline/Lit
+_Metallic=0
+_Smoothness=0,12
+_Glossiness=0,12
+_Surface=0
+_Cull=2
+_ReceiveShadows=1
+LIGHT Directional Light shadows=Hard bias=0 normal=0 pipeline=False
+LIGHT Moon shadows=None bias=0,05 normal=0,4 pipeline=True
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (67) Center: (486.00, 108.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (94) Center: (474.00, 101.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 107.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (7) Center: (490.00, 101.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 107.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 107.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (84) Center: (494.00, 101.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 111.35, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 107.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (5) Center: (490.00, 101.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (17) Center: (486.00, 101.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (80) Center: (478.00, 101.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (59) Center: (474.00, 108.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (114) Center: (486.00, 115.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (109) Center: (494.00, 115.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (66) Center: (494.00, 108.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 107.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 107.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 114.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (54) Center: (490.00, 108.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 107.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (92) Center: (482.00, 101.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (112) Center: (486.00, 108.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (74) Center: (474.00, 108.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (83) Center: (474.00, 101.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (73) Center: (482.00, 108.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (87) Center: (486.00, 101.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (70) Center: (486.00, 108.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (10) Center: (494.00, 101.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 107.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_lamp Center: (482.00, 110.46, 503.00), Extents: (0.70, 2.46, 0.70) shadows=On materials=CM_Lino_arena,CM_Metal_grafito,Light,CM_Alfombra_crudo
+SCENE Floor (129) Center: (486.00, 108.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 107.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 114.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 104.35, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (113) Center: (486.00, 115.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (85) Center: (494.00, 101.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (78) Center: (494.00, 101.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (116) Center: (478.00, 108.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (52) Center: (486.00, 108.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (117) Center: (490.00, 108.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (42) Center: (494.00, 108.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (31) Center: (478.00, 101.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (1) Center: (494.00, 101.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (14) Center: (486.00, 101.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (134) Center: (490.00, 108.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (72) Center: (490.00, 108.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor Center: (494.00, 101.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 107.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (51) Center: (494.00, 108.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (32) Center: (474.00, 101.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (131) Center: (486.00, 108.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (48) Center: (494.00, 108.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (95) Center: (474.00, 101.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 114.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (34) Center: (478.00, 101.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 107.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (13) Center: (490.00, 101.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (88) Center: (478.00, 101.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (18) Center: (482.00, 101.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 107.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (125) Center: (474.00, 108.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (57) Center: (490.00, 108.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 114.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 104.35, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (55) Center: (482.00, 108.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (60) Center: (494.00, 108.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (62) Center: (478.00, 108.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (100) Center: (482.00, 101.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (39) Center: (474.00, 101.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (98) Center: (478.00, 101.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (133) Center: (490.00, 108.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 114.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (76) Center: (482.00, 108.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (41) Center: (474.00, 101.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 107.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (9) Center: (490.00, 101.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (3) Center: (494.00, 101.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (106) Center: (494.00, 115.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (56) Center: (474.00, 108.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 107.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (50) Center: (478.00, 108.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (35) Center: (474.00, 101.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (121) Center: (490.00, 115.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (19) Center: (482.00, 101.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (4) Center: (490.00, 101.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (26) Center: (482.00, 101.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (97) Center: (486.00, 101.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (68) Center: (478.00, 108.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (33) Center: (474.00, 101.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 107.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (77) Center: (474.00, 108.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (99) Center: (490.00, 101.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (122) Center: (482.00, 108.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (104) Center: (474.00, 111.50, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 104.35, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (15) Center: (482.00, 101.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (124) Center: (474.00, 108.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (58) Center: (482.00, 108.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (118) Center: (490.00, 115.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (104) Center: (474.00, 104.50, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 111.35, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 114.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (46) Center: (482.00, 108.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 107.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (102) Center: (474.00, 111.50, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (20) Center: (486.00, 101.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 107.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (93) Center: (482.00, 101.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (36) Center: (478.00, 101.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 107.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (22) Center: (486.00, 101.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (30) Center: (478.00, 101.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (126) Center: (494.00, 108.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 100.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 107.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (115) Center: (478.00, 108.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (24) Center: (486.00, 101.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (108) Center: (494.00, 115.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 114.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (37) Center: (478.00, 101.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (44) Center: (478.00, 108.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 511.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (119) Center: (490.00, 108.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (29) Center: (474.00, 101.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (47) Center: (474.00, 108.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 111.35, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (27) Center: (482.00, 101.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (90) Center: (490.00, 101.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (96) Center: (494.00, 101.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (49) Center: (486.00, 108.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (81) Center: (490.00, 101.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (105) Center: (494.00, 108.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (8) Center: (494.00, 101.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (64) Center: (482.00, 108.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (89) Center: (478.00, 101.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (25) Center: (482.00, 101.00, 499.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (79) Center: (486.00, 101.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 107.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (43) Center: (486.00, 108.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (128) Center: (494.00, 108.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (38) Center: (478.00, 101.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 495.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (101) Center: (474.00, 101.00, 527.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 107.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (23) Center: (486.00, 101.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (2) Center: (494.00, 101.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (65) Center: (474.00, 108.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 107.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 107.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 107.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (6) Center: (490.00, 101.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 487.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (110) Center: (486.00, 108.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (86) Center: (486.00, 101.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (478.00, 100.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (53) Center: (478.00, 108.00, 503.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (12) Center: (494.00, 101.00, 511.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 503.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (75) Center: (490.00, 108.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (102) Center: (474.00, 104.50, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (69) Center: (494.00, 108.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (132) Center: (490.00, 108.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (123) Center: (482.00, 108.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 114.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (28) Center: (478.00, 101.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (107) Center: (494.00, 108.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 114.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (127) Center: (494.00, 108.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 107.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (130) Center: (486.00, 108.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (120) Center: (490.00, 115.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (482.00, 107.85, 515.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (40) Center: (474.00, 101.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (103) Center: (474.00, 111.50, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (45) Center: (490.00, 108.00, 487.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (63) Center: (490.00, 108.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (103) Center: (474.00, 104.50, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (21) Center: (482.00, 101.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (61) Center: (486.00, 108.00, 491.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (16) Center: (486.00, 101.00, 495.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (490.00, 100.85, 523.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (91) Center: (490.00, 101.00, 523.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (71) Center: (478.00, 108.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 499.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (82) Center: (482.00, 101.00, 515.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 519.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor (111) Center: (486.00, 115.00, 519.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor (11) Center: (490.00, 101.00, 507.00), Extents: (2.00, 0.01, 2.00) shadows=TwoSided materials=Floor_Sup_Matte,Floor_Inf_Matte
+SCENE Floor_ShadowBlocker Center: (474.00, 100.85, 491.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 107.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (494.00, 100.85, 507.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte
+SCENE Floor_ShadowBlocker Center: (486.00, 100.85, 527.00), Extents: (2.04, 0.15, 2.04) shadows=ShadowsOnly materials=Floor_Sup_Matte

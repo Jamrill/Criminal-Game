@@ -17,7 +17,7 @@ public static class ConstructionSceneCapture
     {
         if(!EditorApplication.isPlaying) { EditorUtility.DisplayDialog("Construccion","Usa esta opcion durante Play. Al salir se aplicara a la escena y podras guardarla con Ctrl+S.","Aceptar"); return; }
         var scene=SceneManager.GetActiveScene();
-        var records=UnityEngine.Object.FindObjectsByType<PlacedBuildObject>(FindObjectsSortMode.None)
+        var records=UnityEngine.Object.FindObjectsByType<PlacedBuildObject>(FindObjectsInactive.Include,FindObjectsSortMode.None)
             .Where(p=>p.gameObject.scene==scene).Select(p=>p.Capture()).ToArray();
         EditorPrefs.SetString(Key,JsonUtility.ToJson(new Snapshot{scenePath=scene.path,records=records}));
         Debug.Log("Construccion capturada: "+records.Length+" objetos. Sal de Play para aplicarla; despues guarda la escena.");
@@ -35,6 +35,13 @@ public static class ConstructionSceneCapture
         {
             var entry=catalog.Find(record.definitionId); if(entry==null || !entry.prefab) continue;
             var marker=scene.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<PlacedBuildObject>(true)).FirstOrDefault(p=>p.persistentId==record.id);
+            if(marker && marker.definitionId!=record.definitionId && !record.deleted)
+            {
+                Undo.DestroyObjectImmediate(marker.gameObject);
+                var replacement=(GameObject)PrefabUtility.InstantiatePrefab(entry.prefab,scene);
+                Undo.RegisterCreatedObjectUndo(replacement,"Sustituir pared");
+                marker=Undo.AddComponent<PlacedBuildObject>(replacement);
+            }
             if(!marker)
             {
                 var go=(GameObject)PrefabUtility.InstantiatePrefab(entry.prefab,scene);
@@ -60,7 +67,6 @@ public static class ConstructionSceneCapture
 
 public sealed class ConstructionToolsWindow : EditorWindow
 {
-    [MenuItem("Tools/Criminal Game/Construccion/Abrir herramienta")]
     static void Open() => GetWindow<ConstructionToolsWindow>("Construccion");
     void OnGUI()
     {

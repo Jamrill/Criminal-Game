@@ -165,7 +165,8 @@ namespace JuegoCriminal.World
 
             bool owned = IsOwned;
             int money = _economy != null ? _economy.Money : 0;
-            bool canAfford = money >= price;
+            int currentPrice=_properties ? _properties.GetPurchasePrice(propertyId,price) : price;
+            bool canAfford = money >= currentPrice;
 
             if (owned) ShowSold();
             else ShowForSale();
@@ -185,12 +186,12 @@ namespace JuegoCriminal.World
 
             if (canAfford)
             {
-                interactableObject.SetInteractionText($"{buyText} ${price}");
+                interactableObject.SetInteractionText($"{buyText} ${currentPrice}");
                 interactableObject.SetCanInteract(true);
             }
             else
             {
-                interactableObject.SetInteractionText($"{needMoneyText} ${price}");
+                interactableObject.SetInteractionText($"{needMoneyText} ${currentPrice}");
                 interactableObject.SetCanInteract(false);
             }
         }

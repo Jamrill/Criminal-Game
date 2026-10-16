@@ -1,0 +1,39 @@
+Luz_Calida_Real type=Spot pos=(481.00, 107.76, 489.00) angle=150 range=24 intensity=7 shadow=Soft bias=0,05 normal=0,2 pipeline=True
+Directional Light type=Directional pos=(0.00, 3.00, 0.00) angle=30 range=10 intensity=1 shadow=Hard bias=0 normal=0 pipeline=False
+Luz_Real_2 type=Spot pos=(501.41, 104.29, 479.62) angle=175 range=8 intensity=1,5 shadow=Soft bias=0,03 normal=0,1 pipeline=True
+Luz_Real_3 type=Spot pos=(501.41, 104.75, 479.62) angle=175 range=8 intensity=1,5 shadow=Soft bias=0,03 normal=0,1 pipeline=True
+Luz_Real_4 type=Spot pos=(501.41, 105.35, 479.62) angle=175 range=8 intensity=1,5 shadow=Soft bias=0,03 normal=0,1 pipeline=True
+Luz_Calida_Real type=Spot pos=(481.00, 107.76, 505.00) angle=150 range=24 intensity=7 shadow=Soft bias=0,05 normal=0,2 pipeline=True
+Moon type=Directional pos=(-1.15, 4.93, 1.99) angle=30 range=10 intensity=0,16 shadow=None bias=0,05 normal=0,4 pipeline=True
+mode=0 view=0 wallY=101,02 screen=(640.00, 130.10, 3.98) color=RGBA(0.435, 0.471, 0.525, 1.000)
+mode=0 view=0 wallY=101,05 screen=(640.00, 134.53, 3.97) color=RGBA(0.431, 0.467, 0.522, 1.000)
+mode=0 view=0 wallY=101,1 screen=(640.00, 141.95, 3.97) color=RGBA(0.435, 0.471, 0.522, 1.000)
+mode=0 view=0 wallY=101,25 screen=(640.00, 164.33, 3.95) color=RGBA(0.431, 0.467, 0.518, 1.000)
+mode=0 view=0 wallY=101,5 screen=(640.00, 202.14, 3.92) color=RGBA(0.435, 0.475, 0.525, 1.000)
+mode=0 view=0 wallY=102 screen=(640.00, 279.72, 3.85) color=RGBA(0.761, 0.745, 0.710, 1.000)
+BASE_COMPARE view=0 world=(486,101,02) before=RGBA(0.435, 0.471, 0.525, 1.000) after=RGBA(0.435, 0.471, 0.525, 1.000)
+BASE_COMPARE view=0 world=(486,101,04) before=RGBA(0.435, 0.471, 0.522, 1.000) after=RGBA(0.435, 0.471, 0.522, 1.000)
+BASE_COMPARE view=0 world=(486,101,08) before=RGBA(0.435, 0.471, 0.522, 1.000) after=RGBA(0.435, 0.471, 0.522, 1.000)
+BASE_COMPARE view=0 world=(486,101,15) before=RGBA(0.431, 0.467, 0.518, 1.000) after=RGBA(0.431, 0.467, 0.518, 1.000)
+BASE_COMPARE view=0 world=(486,101,3) before=RGBA(0.435, 0.471, 0.525, 1.000) after=RGBA(0.435, 0.471, 0.525, 1.000)
+BASE_COMPARE view=0 world=(487,101,02) before=RGBA(0.388, 0.420, 0.459, 1.000) after=RGBA(0.388, 0.420, 0.459, 1.000)
+BASE_COMPARE view=0 world=(487,101,04) before=RGBA(0.408, 0.435, 0.482, 1.000) after=RGBA(0.408, 0.435, 0.482, 1.000)
+BASE_COMPARE view=0 world=(487,101,08) before=RGBA(0.416, 0.451, 0.494, 1.000) after=RGBA(0.416, 0.451, 0.494, 1.000)
+BASE_COMPARE view=0 world=(487,101,15) before=RGBA(0.420, 0.447, 0.494, 1.000) after=RGBA(0.420, 0.447, 0.494, 1.000)
+BASE_COMPARE view=0 world=(487,101,3) before=RGBA(0.435, 0.475, 0.525, 1.000) after=RGBA(0.435, 0.475, 0.525, 1.000)
+mode=0 view=1 wallY=101,02 screen=(640.00, 282.02, 11.82) color=RGBA(0.435, 0.471, 0.522, 1.000)
+mode=0 view=1 wallY=101,05 screen=(640.00, 283.59, 11.82) color=RGBA(0.435, 0.471, 0.522, 1.000)
+mode=0 view=1 wallY=101,1 screen=(640.00, 286.21, 11.82) color=RGBA(0.431, 0.471, 0.522, 1.000)
+mode=0 view=1 wallY=101,25 screen=(640.00, 294.08, 11.81) color=RGBA(0.431, 0.467, 0.518, 1.000)
+mode=0 view=1 wallY=101,5 screen=(640.00, 307.22, 11.80) color=RGBA(0.435, 0.475, 0.525, 1.000)
+mode=0 view=1 wallY=102 screen=(640.00, 333.56, 11.78) color=RGBA(0.761, 0.745, 0.710, 1.000)
+BASE_COMPARE view=1 world=(486,101,02) before=RGBA(0.435, 0.471, 0.522, 1.000) after=RGBA(0.435, 0.471, 0.522, 1.000)
+BASE_COMPARE view=1 world=(486,101,04) before=RGBA(0.431, 0.471, 0.522, 1.000) after=RGBA(0.431, 0.471, 0.522, 1.000)
+BASE_COMPARE view=1 world=(486,101,08) before=RGBA(0.431, 0.471, 0.522, 1.000) after=RGBA(0.431, 0.471, 0.522, 1.000)
+BASE_COMPARE view=1 world=(486,101,15) before=RGBA(0.431, 0.467, 0.522, 1.000) after=RGBA(0.431, 0.467, 0.522, 1.000)
+BASE_COMPARE view=1 world=(486,101,3) before=RGBA(0.435, 0.471, 0.525, 1.000) after=RGBA(0.435, 0.471, 0.525, 1.000)
+BASE_COMPARE view=1 world=(487,101,02) before=RGBA(0.761, 0.741, 0.706, 1.000) after=RGBA(0.761, 0.741, 0.706, 1.000)
+BASE_COMPARE view=1 world=(487,101,04) before=RGBA(0.761, 0.741, 0.706, 1.000) after=RGBA(0.761, 0.741, 0.706, 1.000)
+BASE_COMPARE view=1 world=(487,101,08) before=RGBA(0.761, 0.741, 0.710, 1.000) after=RGBA(0.761, 0.741, 0.710, 1.000)
+BASE_COMPARE view=1 world=(487,101,15) before=RGBA(0.761, 0.737, 0.702, 1.000) after=RGBA(0.761, 0.737, 0.702, 1.000)
+BASE_COMPARE view=1 world=(487,101,3) before=RGBA(0.761, 0.741, 0.710, 1.000) after=RGBA(0.761, 0.741, 0.710, 1.000)

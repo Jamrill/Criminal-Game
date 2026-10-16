@@ -76,6 +76,7 @@ namespace JuegoCriminal.Construction
                     }
                     if(covered) { above=true; break; }
                 }
+            if(closed && !above)above=BuildFloorCoverage.Covers(this);
             SetVariant(ChooseVariant(closed,above));
         }
         public void SetVariant(int index)

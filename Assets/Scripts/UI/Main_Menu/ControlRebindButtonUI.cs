@@ -54,6 +54,10 @@ namespace JuegoCriminal.UI
             if (bindingLabel != null)
                 bindingLabel.text = GameInput.GetBindingDisplayString(action, bindingIndex);
         }
+        public void SetDisplayName(string value)
+        {
+            if(actionLabel)actionLabel.text=value;
+        }
 
         public void Configure(
             GameInputAction inputAction,

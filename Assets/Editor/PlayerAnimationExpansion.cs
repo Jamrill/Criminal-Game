@@ -106,7 +106,7 @@ public static class PlayerAnimationExpansion
         Add("Crouch Down", "Crouched To Standing Reverse"); Add("Stand Up", "Crouched To Standing");
         Add("Crouched Idle", "Crouched To Standing", 0);
         Add("Crouched Walking", "Crouched Walking"); Add("Crouched Backward", "Crouched Walking Reverse");
-        Add("Fast Run", "Fast Run");
+        Add("Fast Run", "Fast Run", .9f);
         Add("Run Right Turn", "Running Right Turn");
         Add("Run Left Turn", "Running Right Turn").mirror = true;
         foreach (var pair in new[] { ("Jump On Site", "Jump_on_site"), ("Jump Moving", "Jump_in_movement") })

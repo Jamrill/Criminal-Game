@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Player.ThirdPersonController
   walkSpeed: 3.5
   runSpeed: 8
+  backwardWalkMultiplier: 0.65
   acceleration: 14
   deceleration: 18
   runTransitionDuration: 0.4
@@ -232,7 +233,7 @@ MonoBehaviour:
   animator: {fileID: 9007120408980444057}
   movementThreshold: 0.08
   blendDuration: 0.16
-  locomotionBlendDuration: 0.08
+  locomotionBlendDuration: 0.18
   runningBlendDuration: 0.3
   diagonalBodyAngle: 35
   bodyTurnSpeed: 240
@@ -807,6 +808,8 @@ MonoBehaviour:
   response: 6
   maxYaw: 65
   maxPitch: 35
+  sideLookDelay: 2
+  sideLookBlendDuration: 0.8
 --- !u!4 &3035308083670583779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 40444f4b6923b3741aea69f6408c1593, type: 3}

@@ -1,0 +1,3 @@
+LAMP PREFAB Assets/Prefabs/Furniture/Light_point.prefab
+LAMP PREFAB Assets/Prefabs/Furniture/Light_point_Cold.prefab
+floors=132; lights=2; backup=Documentation/InteriorLightingBackup/20261016_100457

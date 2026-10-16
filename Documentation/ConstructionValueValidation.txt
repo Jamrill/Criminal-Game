@@ -1,0 +1,25 @@
+PASS Solar references the priced catalog
+PASS Real building price exceeds initial balance; development override is respected
+PASS Stable unique scene identities
+PASS All registered elements have a definition and correct property
+PASS Base floor: 121 tiles without duplicates
+PASS Existing four-unit tile lattice preserved
+PASS All base tiles belong to Solar and can be saved/sold
+PASS All corner variants share price 70
+PASS All doorway variants share price 200
+PASS Cannot build on unowned plot; no debit
+PASS Property purchase resolves actual value, not caller's cheap price
+PASS Build parents to Solar, debits 50 and adds value 50
+PASS Save/restore world transform under scaled Solar
+PASS Window conversion charges only price difference and updates value
+PASS Conversion preserves persistent identity
+PASS Sale pays value once and removes building value
+PASS Repeated sale cannot duplicate money
+PASS Insufficient funds creates nothing
+PASS Development toggle: free construction/value without losing real prices
+PASS Free mode sale pays zero
+PASS World save captures construction and balance
+PASS Serialized save includes built objects, sold tombstones and balance together
+PASS Load restores all objects under their Solar
+PASS Sold authored objects stay absent; loaded value matches remaining walls
+PASS Repeated restoration does not duplicate objects

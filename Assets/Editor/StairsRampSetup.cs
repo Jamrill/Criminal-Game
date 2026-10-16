@@ -9,7 +9,6 @@ public static class StairsRampSetup
 {
     const string Path = "Assets/Prefabs/Stairs.prefab";
 
-    [MenuItem("Tools/Criminal Game/Ajustar rampas de Stairs")]
     public static void ApplyAndValidate()
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode || PrefabStageUtility.GetCurrentPrefabStage() != null)

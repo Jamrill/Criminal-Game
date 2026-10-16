@@ -15,12 +15,17 @@ namespace JuegoCriminal.Construction
         public BuildCatalog catalog;
         public BuildMenuView uiPrefab;
         public BuildMenuView embeddedUI;
+        [Header("Construction preview")]
+        [Tooltip("Opacidad del resaltado verde/rojo. Un valor menor permite ver mejor las formas interiores.")]
+        [Range(.1f,1f)] public float previewOpacity=.55f;
         public static ConstructionController Active { get; private set; }
         public bool CapturesInput => captured;
+        public BuildPlot VisiblePlot => building && captured ? plot : null;
         private BuildMenuView view;
         private CanvasGroup hudInput;
         private BuildPlot plot;
         private PropertyService properties;
+        private EconomyService economy;
         private CharacterController capsule;
         private bool freeCursor;
         private string blockedReason;
@@ -34,6 +39,8 @@ namespace JuegoCriminal.Construction
         private InventoryMenuUI inventory;
         private int rotationSteps, finish=-1;
         private float distanceOffset;
+        private bool demolishing;
+        private readonly ConstructionEditing editing=new ConstructionEditing();
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] static void Clear() => Active=null;
         private void Start()
         {
@@ -48,23 +55,26 @@ namespace JuegoCriminal.Construction
             view.buildButton.onClick.AddListener(()=>{ if(building || plot) building=!building; RefreshUI(); });
             view.wallsButton.onClick.AddListener(()=>ShowCategory(BuildCategory.Walls));
             view.furnitureButton.onClick.AddListener(()=>ShowCategory(BuildCategory.Furniture));
-            view.finishButton.onClick.AddListener(()=>{ finish++; if(finish>=catalog.finishes.Length) finish=-1; });
-            var shader=Shader.Find("Universal Render Pipeline/Unlit");
-            validMaterial=new Material(shader); validMaterial.SetColor("_BaseColor",new Color(.15f,.9f,.3f));
-            invalidMaterial=new Material(shader); invalidMaterial.SetColor("_BaseColor",new Color(.95f,.12f,.12f));
+            view.finishButton.onClick.AddListener(()=>{ demolishing=false;editing.Clear();finish++; if(finish>=catalog.finishes.Length) finish=-1; });
+            validMaterial=CreatePreviewMaterial(new Color(.15f,.9f,.3f));
+            invalidMaterial=CreatePreviewMaterial(new Color(.95f,.12f,.12f));
             if(catalog && catalog.entries.Length>0) Select(catalog.entries.First(e=>!e.hiddenInMenu));
             RefreshUI();
         }
         private void Update()
         {
+            UpdatePreviewOpacity(validMaterial);
+            UpdatePreviewOpacity(invalidMaterial);
+            editing.Clear();
             if(!view || !catalog) return;
             if(!properties) properties=FindAnyObjectByType<PropertyService>();
+            if(!economy) economy=FindAnyObjectByType<EconomyService>();
             var occupied=BuildPlot.Active.Where(p=>p && p.gameObject.scene==gameObject.scene && p.ContainsPlayer(transform,capsule)).ToArray();
             plot=occupied.FirstOrDefault(p=>p.CanBuild(properties));
             blockedReason=!properties ? "Servicios no disponibles" : occupied.Length==0 ? "Entra en tu solar para construir" :
                 occupied.Any(p=>properties.IsOwned(p.propertyId)) ? "Este solar no es construible" : "Compra este solar en Propiedades";
             if(captured && (Time.timeScale<=0 || (building && !plot))) { Exit(); return; }
-            if(GameInput.ConstructionPressed && (captured || (Time.timeScale>0 && Cursor.lockState==CursorLockMode.Locked)))
+            if(GameInput.TabletPressed && (captured || (Time.timeScale>0 && Cursor.lockState==CursorLockMode.Locked)))
             { menuOpen=!menuOpen; SetCaptured(menuOpen||building); RefreshUI(); }
             if(captured && GameInput.PausePressed) { GameInput.ConsumePausePress(); Exit(); return; }
             UpdateControlMode();
@@ -73,11 +83,20 @@ namespace JuegoCriminal.Construction
                 view.buildButton.interactable=building || plot;
                 view.buildLabel.text=building ? "Salir de construccion" : plot ? "Construir" : blockedReason;
             }
-            if(ghost) ghost.SetActive(building && !menuOpen && finish<0);
+            if(building && !menuOpen && !freeCursor && GameInput.BuildDemolishPressed) { demolishing=!demolishing;finish=-1; }
+            if(ghost) ghost.SetActive(building && !menuOpen && finish<0 && !demolishing && !(selected?.IsOpening??false));
             if(!building || menuOpen || !plot || Mouse.current==null) return;
+            // Alt is exclusively for the HUD: freeze the preview and forbid world actions,
+            // even when the pointer is outside a button or over an empty UI area.
+            if(freeCursor) return;
             var camera=Camera.main; if(!camera) return;
             bool overUI=freeCursor && EventSystem.current && EventSystem.current.IsPointerOverGameObject();
             Ray ray=freeCursor ? camera.ScreenPointToRay(Mouse.current.position.ReadValue()) : camera.ViewportPointToRay(new Vector3(.5f,.5f,0));
+            if(demolishing || (finish<0 && (selected?.IsOpening??false)))
+            {
+                view.status.text=editing.Tick(ray,plot,catalog,demolishing?null:selected,invalidMaterial,validMaterial,Mouse.current.leftButton.wasPressedThisFrame && plot.CanBuild(properties),transform,economy);
+                return;
+            }
             if(finish>=0)
             {
                 view.status.text="Pintar: "+catalog.finishes[finish].name+"\nClic en una pared propia · Esc: salir";
@@ -94,46 +113,116 @@ namespace JuegoCriminal.Construction
                 return;
             }
             if(!selected?.prefab || !ghost) return;
-            if(!overUI) distanceOffset=Mathf.Clamp(distanceOffset+Mouse.current.scroll.ReadValue().y*.01f,-20,20);
+            if(!overUI) distanceOffset=Mathf.Clamp(distanceOffset+GameInput.BuildDistance*.01f,-20,20);
             if(GameInput.BuildRotatePressed) rotationSteps=(rotationSteps+1)%4;
-            var plane=new Plane(plot.Grid.up,plot.Grid.position);
-            if(!plane.Raycast(ray,out float travel) || travel>100) { ghost.SetActive(false); return; }
-            var point=ray.GetPoint(travel);
+            if(selected.mount!=BuildMount.Ground)
+            {
+                UpdateMountedPreview(ray);
+                return;
+            }
+            // Prefer the actual floor under the pointer, including upper/basement floors.
+            bool hasHit=Physics.Raycast(ray,out var supportHit,100,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore);
+            var level=plot.Grid.position;
+            if(Physics.Raycast(transform.position+plot.Grid.up*.2f,-plot.Grid.up,out var below,20,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore))
+                level=below.point;
+            var plane=new Plane(plot.Grid.up,level);
+            Vector3 point;
+            if(hasHit && Vector3.Dot(supportHit.normal,plot.Grid.up)>.7f)point=supportHit.point;
+            else if(plane.Raycast(ray,out float travel) && travel<=100)point=ray.GetPoint(travel);
+            else { ghost.SetActive(false); return; }
             point+=Vector3.ProjectOnPlane(point-transform.position,plot.Grid.up).normalized*distanceOffset;
-            var cellCenter=plot.Center(plot.Cell(point));
+            var selectedWall=selected.prefab.GetComponent<WallTopology>();
+            var cellCenter=plot.SnapOrigin(point);
             // Aim at the upper part of an existing wall to stack the next storey.
-            if(selected.prefab.GetComponent<WallTopology>() && Physics.Raycast(ray,out var supportHit,100,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore))
+            if(selectedWall && hasHit)
             {
                 var support=supportHit.collider.GetComponentInParent<WallTopology>();
                 if(support && supportHit.point.y>support.Bottom.y+support.WorldHeight*.65f)
                 {
-                    cellCenter=plot.Center(plot.Cell(support.Bottom));
-                    cellCenter.y=support.Bottom.y+support.WorldHeight;
+                    cellCenter=support.transform.position+support.transform.up*support.WorldHeight;
                 }
             }
             var rotation=plot.Grid.rotation*Quaternion.Euler(0,rotationSteps*90,0);
             var position=BuildPlacement.Position(selected,cellCenter,rotation);
+            if(selectedWall)
+            {
+                position=BuildPlacement.SnapWall(selected,plot,position,rotation);
+                cellCenter=position+rotation*Vector3.Scale(selectedWall.bottomCenter,selected.prefab.transform.localScale);
+            }
             ghost.transform.SetPositionAndRotation(position,rotation);
             Physics.SyncTransforms();
             bool valid=BuildPlacement.IsValid(selected,plot,position,rotation,cellCenter);
+            bool affordable=ConstructionEconomy.CanAfford(catalog,selected,economy);
             foreach(var renderer in ghost.GetComponentsInChildren<MeshRenderer>())
-                renderer.sharedMaterials=Enumerable.Repeat(valid ? validMaterial : invalidMaterial,renderer.sharedMaterials.Length).ToArray();
-            view.status.text=selected.title+"\n"+(valid ? "Verde: clic para colocar" : "Rojo: ocupado o fuera del solar")+"\nAlt: cursor · R: girar\nRueda: distancia · Esc: salir";
-            if(!overUI && valid && Mouse.current.leftButton.wasPressedThisFrame && plot.CanBuild(properties))
+                renderer.sharedMaterials=Enumerable.Repeat(valid && affordable ? validMaterial : invalidMaterial,renderer.sharedMaterials.Length).ToArray();
+            view.status.text=selected.title+" | $"+catalog.Cost(selected)+"\n"+(!affordable ? "Saldo insuficiente" : valid ? "Verde: clic para colocar" : "Rojo: ocupado o fuera del solar")+"\nAlt: cursor · R: girar\nRueda: distancia · Esc: salir";
+            if(!overUI && valid && affordable && Mouse.current.leftButton.wasPressedThisFrame && plot.CanBuild(properties))
             {
                 var record=new BuildRecord { id=Guid.NewGuid().ToString("N"),definitionId=selected.id,propertyId=plot.propertyId,
                     position=position,rotation=rotation,scale=selected.prefab.transform.localScale,cellCenter=cellCenter,sceneName=gameObject.scene.name };
-                ConstructionPersistence.Spawn(catalog,record,true);
+                ConstructionEconomy.Build(catalog,record,plot,economy);
             }
         }
         private void ShowCategory(BuildCategory category) => view.Populate(catalog,category,Select);
+        private Material CreatePreviewMaterial(Color color)
+        {
+            var material=new Material(Shader.Find("Universal Render Pipeline/Unlit"));
+            color.a=previewOpacity;material.SetColor("_BaseColor",color);
+            material.SetFloat("_Surface",1);
+            material.SetFloat("_Blend",0);
+            material.SetFloat("_SrcBlend",(float)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            material.SetFloat("_DstBlend",(float)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            material.SetFloat("_SrcBlendAlpha",(float)UnityEngine.Rendering.BlendMode.One);
+            material.SetFloat("_DstBlendAlpha",(float)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            material.SetFloat("_ZWrite",0);
+            material.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+            material.SetOverrideTag("RenderType","Transparent");
+            material.renderQueue=(int)UnityEngine.Rendering.RenderQueue.Transparent;
+            material.SetShaderPassEnabled("ShadowCaster",false);
+            return material;
+        }
+        private void UpdatePreviewOpacity(Material material)
+        {
+            if(!material)return;
+            var color=material.GetColor("_BaseColor");
+            if(Mathf.Approximately(color.a,previewOpacity))return;
+            color.a=previewOpacity;material.SetColor("_BaseColor",color);
+        }
+        private void UpdateMountedPreview(Ray ray)
+        {
+            Physics.SyncTransforms();
+            if(!BuildMounting.TryPose(selected,catalog,plot,ray,rotationSteps,transform,out var pose))
+            {
+                ghost.SetActive(false);
+                view.status.text=selected.mount==BuildMount.Doorway ? "Apunta al hueco de una pared con puerta libre" : "Apunta a la cara inferior del techo de tu solar";
+                return;
+            }
+            ghost.SetActive(true);ghost.transform.SetPositionAndRotation(pose.position,pose.rotation);
+            bool affordable=ConstructionEconomy.CanAfford(catalog,selected,economy);
+            bool valid=BuildMounting.IsValid(selected,catalog,plot,pose);
+            foreach(var renderer in ghost.GetComponentsInChildren<MeshRenderer>())
+                renderer.sharedMaterials=Enumerable.Repeat(valid && affordable ? validMaterial : invalidMaterial,renderer.sharedMaterials.Length).ToArray();
+            view.status.text=selected.title+" | $"+catalog.Cost(selected)+"\n"+
+                (!affordable ? "Saldo insuficiente" : valid ? "Verde: clic para colocar" : "Rojo: espacio ocupado o fuera del solar")+
+                (selected.mount==BuildMount.Doorway ? "\nR: invertir puerta" : "\nR: girar plafon")+" | Alt: cursor";
+            if(valid && affordable && Mouse.current.leftButton.wasPressedThisFrame && plot.CanBuild(properties))
+                ConstructionEconomy.Build(catalog,new BuildRecord{id=Guid.NewGuid().ToString("N"),definitionId=selected.id,
+                    propertyId=plot.propertyId,position=pose.position,rotation=pose.rotation,scale=selected.prefab.transform.localScale,
+                    cellCenter=pose.anchor,finish=-1,sceneName=gameObject.scene.name},plot,economy);
+        }
         private void Select(BuildEntry entry)
         {
+            editing.Clear();demolishing=false;
+            var previewPosition=ghost ? ghost.transform.position : transform.position;
+            var previewRotation=ghost ? ghost.transform.rotation : Quaternion.identity;
             selected=entry; finish=-1; rotationSteps=0; distanceOffset=0;
             if(ghost) Destroy(ghost);
             ghost=new GameObject("ConstructionPreview"); ghost.layer=2; ghost.transform.localScale=entry.prefab.transform.localScale;
+            ghost.transform.SetPositionAndRotation(previewPosition,previewRotation);
             void Clone(Transform source,Transform target)
             {
+                var sourceRenderer=source.GetComponent<Renderer>();
+                if(sourceRenderer && sourceRenderer.shadowCastingMode==UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly)return;
                 var mesh=source.GetComponent<MeshFilter>();
                 if(mesh && mesh.sharedMesh)
                 {
@@ -188,7 +277,7 @@ namespace JuegoCriminal.Construction
                 Cursor.lockState=oldLock; Cursor.visible=oldCursor;
             }
         }
-        private void Exit() { building=false; menuOpen=false; if(view) RefreshUI(); SetCaptured(false); if(ghost) ghost.SetActive(false); }
+        private void Exit() { editing.Clear();demolishing=false;building=false; menuOpen=false; if(view) RefreshUI(); SetCaptured(false); if(ghost) ghost.SetActive(false); }
         private void OnDisable() { Exit(); }
         private void OnDestroy() { if(view) Destroy(view.gameObject); if(ghost) Destroy(ghost); if(validMaterial) Destroy(validMaterial); if(invalidMaterial) Destroy(invalidMaterial); }
     }

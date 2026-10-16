@@ -48,6 +48,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: dcb90b5cd334c2045909fa2ae8a5401e, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: dcb90b5cd334c2045909fa2ae8a5401e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b4a3d77ebfedb745ad5f5044cb95066, type: 2}
+    - target: {fileID: -7511558181221131132, guid: dcb90b5cd334c2045909fa2ae8a5401e, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 80eebef1c860e38499985705e468148f, type: 2}
     - target: {fileID: 919132149155446097, guid: dcb90b5cd334c2045909fa2ae8a5401e, type: 3}
       propertyPath: m_Name
       value: Floor
@@ -58,6 +70,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dcb90b5cd334c2045909fa2ae8a5401e, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 778653001234567890}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dcb90b5cd334c2045909fa2ae8a5401e, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6101081920420414825}
   m_SourcePrefab: {fileID: 100100000, guid: dcb90b5cd334c2045909fa2ae8a5401e, type: 3}
 --- !u!1 &147649691786896363 stripped
@@ -65,6 +80,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dcb90b5cd334c2045909fa2ae8a5401e, type: 3}
   m_PrefabInstance: {fileID: 1066763005228375738}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &778653001234567890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147649691786896363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 092c48ddf1834fb69ca1cbb695a54697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &6101081920420414825
 BoxCollider:
   m_ObjectHideFlags: 0

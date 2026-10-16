@@ -29,7 +29,6 @@ public static class ColoredLightSetup
         Run();
     }
 
-    [MenuItem("Tools/Criminal Game/Configurar luces de colores y fria")]
     static void Run()
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode) return;

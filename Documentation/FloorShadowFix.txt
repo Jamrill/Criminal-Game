@@ -1,0 +1,2 @@
+Backup=Documentation/FloorShadowBackup/20261015_153915
+Metallic=0; smoothness=.12. Invisible shadow blocker 4.08 x .30 x 4.08, no collider. PC main shadow atlas 4096. Scene transforms unchanged.

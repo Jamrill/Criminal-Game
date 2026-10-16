@@ -124,6 +124,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "BuildDemolish",
+                    "type": "Button",
+                    "id": "34a0b5ac-1727-480c-aa01-5b402bf34428",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BuildDistance",
+                    "type": "Value",
+                    "id": "d58372a8-0870-427c-a596-8f4073e79c93",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "BuildRotate",
                     "type": "Button",
                     "id": "89ee565f-b15d-46dd-ac7f-bbfb1c3170c4",
@@ -593,6 +611,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "BuildRotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "734e7607-d8b6-496a-9a90-49c777ff48b0",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BuildDemolish",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ec7b187-c510-4c18-89cb-af00d8bcda95",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BuildDistance",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

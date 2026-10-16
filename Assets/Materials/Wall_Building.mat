@@ -30,6 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _MetersPerRepeat: 4
+    - _ShadowReceiverInset: 0.05
     - _Smoothness: 0.15
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

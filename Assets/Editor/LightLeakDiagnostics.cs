@@ -28,7 +28,6 @@ public sealed class LightLeakDiagnostics : EditorWindow
     string capturePrefix;
     bool captureRequested;
 
-    [MenuItem("Tools/Criminal Game/Diagnostico Light Leaks")]
     static void Open() => GetWindow<LightLeakDiagnostics>("Light Leaks A-B");
 
     void OnEnable()
@@ -70,6 +69,31 @@ public sealed class LightLeakDiagnostics : EditorWindow
         {
             GUILayout.Label("Prueba: " + test);
             if (GUILayout.Button("Base original")) Test("Baseline", () => { });
+            if (GUILayout.Button("H - Sin bloqueadores invisibles del suelo")) Test("H_FloorBlockersOff", () =>
+            {
+                foreach(var r in Object.FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None))
+                    if(r.name=="Floor_ShadowBlocker")
+                    {
+                        bool enabled=r.enabled;restoreTest.Add(()=>{if(r)r.enabled=enabled;});r.enabled=false;
+                    }
+            });
+            if (GUILayout.Button("I - Paredes con shader URP Lit de prueba")) Test("I_StandardWallShader", () =>
+            {
+                foreach(var r in Object.FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None))
+                {
+                    var old=r.sharedMaterials;var next=(Material[])old.Clone();var temporary=new List<Material>();
+                    for(int i=0;i<next.Length;i++)if(next[i] && next[i].shader.name=="CriminalGame/World Wall")
+                    {
+                        var m=new Material(Shader.Find("Universal Render Pipeline/Lit"));
+                        m.SetColor("_BaseColor",next[i].GetColor("_BaseColor"));
+                        m.SetFloat("_Metallic",0);m.SetFloat("_Smoothness",next[i].GetFloat("_Smoothness"));
+                        next[i]=m;temporary.Add(m);
+                    }
+                    if(temporary.Count==0)continue;
+                    restoreTest.Add(()=>{if(r)r.sharedMaterials=old;foreach(var m in temporary)if(m)Object.DestroyImmediate(m);});
+                    r.sharedMaterials=next;
+                }
+            });
             if (GUILayout.Button("A - Solo sol sin intensidad")) Test("A_SunOff", () =>
             {
                 float intensity = sun.intensity;
@@ -338,6 +362,7 @@ public sealed class LightLeakDiagnostics : EditorWindow
         var b = new StringBuilder();
         b.AppendLine($"Test={test}; frame={Time.frameCount}; scene={SceneManager.GetActiveScene().path}");
         b.AppendLine($"Camera={cameraUnderTest.name}; position={cameraUnderTest.transform.position}; rotation={cameraUnderTest.transform.eulerAngles}");
+        b.AppendLine($"CameraLens fov={cameraUnderTest.fieldOfView}; near={cameraUnderTest.nearClipPlane}; far={cameraUnderTest.farClipPlane}; aspect={cameraUnderTest.aspect}");
         b.AppendLine($"RenderSettings.sun={RenderSettings.sun}; ambient={RenderSettings.ambientMode}; intensity={RenderSettings.ambientIntensity}; sky={RenderSettings.ambientSkyColor}; equator={RenderSettings.ambientEquatorColor}; ground={RenderSettings.ambientGroundColor}; skybox={RenderSettings.skybox}; reflectionIntensity={RenderSettings.reflectionIntensity}; lightmaps={LightmapSettings.lightmaps.Length}");
         var pipeline = GraphicsSettings.currentRenderPipeline;
         b.AppendLine($"Pipeline={pipeline}; path={AssetDatabase.GetAssetPath(pipeline)}");
@@ -347,6 +372,7 @@ public sealed class LightLeakDiagnostics : EditorWindow
         foreach (var light in Object.FindObjectsByType<Light>(FindObjectsSortMode.None))
         {
             var data = light.GetComponent<UniversalAdditionalLightData>();
+            b.AppendLine($"LightPose={light.name}; position={light.transform.position}; rotation={light.transform.eulerAngles}");
             b.AppendLine($"Light={light.name}; id={light.GetInstanceID()}; selectedSun={light == sun}; type={light.type}; enabled={light.isActiveAndEnabled}; intensity={light.intensity}; shadows={light.shadows}; strength={light.shadowStrength}; bias={light.shadowBias}; normalBias={light.shadowNormalBias}; near={light.shadowNearPlane}; pipelineBias={(data ? data.usePipelineSettings.ToString() : "default")}");
         }
         foreach (var r in Object.FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None))

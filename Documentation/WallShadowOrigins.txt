@@ -1,0 +1,83 @@
+Assets/Prefabs/Construction/Completes/+_wall_complete.prefab base=0 rendererOrigin=0 difference=0
+Assets/Prefabs/Construction/Completes/Corner_Wall.prefab base=100 rendererOrigin=100 difference=0
+Assets/Prefabs/Construction/Completes/Diagonal_Wall.prefab base=0 rendererOrigin=2,384186E-07 difference=2,384186E-07
+Assets/Prefabs/Construction/Completes/Glass_wall.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Completes/Glass_Wall_door_complete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Completes/T_wall_complete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Completes/Wall_complete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Completes/Wall_door_hole.prefab base=100 rendererOrigin=100 difference=0
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Incompletes/+_Wall_incomplete.prefab base=0 rendererOrigin=0 difference=0
+Assets/Prefabs/Construction/Incompletes/Corner_Wall_incomplete.prefab base=100 rendererOrigin=100 difference=0
+Assets/Prefabs/Construction/Incompletes/Diagonal_Wall_incomplete.prefab base=0 rendererOrigin=2,384186E-07 difference=2,384186E-07
+Assets/Prefabs/Construction/Incompletes/Glass_Wall_door_incomplete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Incompletes/Glass_Wall_incomplete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Incompletes/T_Wall_incomplete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Incompletes/Wall_door_hole_incomplete.prefab base=100 rendererOrigin=100 difference=0
+Assets/Prefabs/Construction/Incompletes/Wall_incomplete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Semincompletes/+_wall_semincomplete.prefab base=0 rendererOrigin=0 difference=0
+Assets/Prefabs/Construction/Semincompletes/Corner_Wall_semincomplete.prefab base=100 rendererOrigin=100 difference=0
+Assets/Prefabs/Construction/Semincompletes/Diagonal_Wall_semincomplete.prefab base=0 rendererOrigin=2,384186E-07 difference=2,384186E-07
+Assets/Prefabs/Construction/Semincompletes/Glass_Wall_door_semincomplete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Semincompletes/Glass_wall_semincomplete.prefab base=0 rendererOrigin=0 difference=0
+Assets/Prefabs/Construction/Semincompletes/T_wall_semincomplete.prefab base=101 rendererOrigin=101 difference=0
+Assets/Prefabs/Construction/Semincompletes/Wall_door_hole_semincomplete.prefab base=100 rendererOrigin=100 difference=0
+Assets/Prefabs/Construction/Semincompletes/Wall_semincomplete.prefab base=0 rendererOrigin=0 difference=0
+Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab base=101 rendererOrigin=101 difference=0
+Wall (39) base=108 rendererOrigin=108 difference=0
+Glass_Wall_door_semincomplete base=101 rendererOrigin=101 difference=0
+Corner_Wall (5) base=108 rendererOrigin=108 difference=0
+T_wall_semincomplete base=108 rendererOrigin=108 difference=0
+Wall (6) base=101 rendererOrigin=101 difference=0
+Wall (22) base=108 rendererOrigin=108 difference=0
+T_wall_semincomplete (1) base=101,0099 rendererOrigin=101,0099 difference=0
+Wall (1) base=101 rendererOrigin=101 difference=0
+Wall (15) base=101 rendererOrigin=101 difference=0
+Corner_Wall (2) base=101 rendererOrigin=101 difference=0
+Wall (36) base=108 rendererOrigin=108 difference=0
+T_wall_semincomplete base=108 rendererOrigin=108 difference=0
+Wall (16) base=101 rendererOrigin=101 difference=0
+Glass_wall (1) base=101 rendererOrigin=101 difference=0
+Wall (32) base=101 rendererOrigin=101 difference=0
+Wall base=101 rendererOrigin=101 difference=0
+Wall (21) base=108 rendererOrigin=108 difference=0
+Wall (8) base=101 rendererOrigin=101 difference=0
+Corner_Wall base=101 rendererOrigin=101 difference=0
+T_wall_incomplete base=101 rendererOrigin=101 difference=0
+Wall (12) base=108 rendererOrigin=108 difference=0
+Wall (37) base=108 rendererOrigin=108 difference=0
+Wall (9) base=108 rendererOrigin=108 difference=0
+Glass_wall (3) base=101 rendererOrigin=101 difference=0
+Wall (14) base=101 rendererOrigin=101 difference=0
+Glass_wall (6) base=101 rendererOrigin=101 difference=0
+Corner_Wall (4) base=101 rendererOrigin=101 difference=0
+Glass_wall (5) base=101 rendererOrigin=101 difference=0
+Wall (23) base=108 rendererOrigin=108 difference=0
+Wall (38) base=108 rendererOrigin=108 difference=0
+Wall (3) base=101 rendererOrigin=101 difference=0
+Corner_Wall (1) base=108 rendererOrigin=108 difference=0
+Wall (29) base=108 rendererOrigin=108 difference=0
+Wall (25) base=108 rendererOrigin=108 difference=0
+Wall (28) base=108 rendererOrigin=108 difference=0
+Wall_door_hole base=101 rendererOrigin=101 difference=0
+Wall (20) base=108 rendererOrigin=108 difference=0
+Glass_wall base=101 rendererOrigin=101 difference=0
+Wall (26) base=108 rendererOrigin=108 difference=0
+Wall_complete base=101 rendererOrigin=101 difference=0
+Wall (11) base=108 rendererOrigin=108 difference=0
+Glass_wall (4) base=101 rendererOrigin=101 difference=0
+Wall (27) base=108 rendererOrigin=108 difference=0
+Wall (18) base=101 rendererOrigin=101 difference=0
+Corner_Wall (3) base=108 rendererOrigin=108 difference=0
+Wall (42) base=101 rendererOrigin=101 difference=0
+Wall (4) base=101 rendererOrigin=101 difference=0
+Wall_door_hole (1) base=108 rendererOrigin=108 difference=0
+Wall (10) base=108 rendererOrigin=108 difference=0
+Wall (2) base=101 rendererOrigin=101 difference=0
+T_wall_semincomplete (2) base=101 rendererOrigin=101 difference=0
+Wall (24) base=108 rendererOrigin=108 difference=0
+Wall (30) base=108 rendererOrigin=108 difference=0
+Wall (5) base=101 rendererOrigin=101 difference=0
+Wall (7) base=101 rendererOrigin=101 difference=0
+Wall (17) base=101 rendererOrigin=101 difference=0

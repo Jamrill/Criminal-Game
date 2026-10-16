@@ -32,7 +32,6 @@ public static class SidewalkMeshColliderMigration
         Run();
     }
 
-    [MenuItem("Tools/Criminal Game/Ajustar colision exacta de Sidewalk")]
     public static void Run()
     {
         if (File.Exists(Done)) return;
