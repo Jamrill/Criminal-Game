@@ -1,0 +1,7 @@
+Backup: Documentation/UIPrefabOverridesBackup/20261022_120417
+Construction status present: True; buildLabel present: True
+Applied and verified layout: Assets/Prefabs/UI/ConstructionUI.prefab (22 RectTransforms)
+Preserved scene binding: SlotsPanelController / transitions
+Applied and verified layout: Assets/Prefabs/UI/SlotsPanel.prefab (21 RectTransforms)
+Preserved scene binding: Back / m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+Applied and verified layout: Assets/Prefabs/UI/OptionsPanel.prefab (106 RectTransforms)

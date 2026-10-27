@@ -11,12 +11,12 @@
     "printers": [],
     "buildings": [
         {
-            "id": "free",
+            "id": "kept",
             "definitionId": "646161ef561b93c4e895b13fc557dca2",
             "sceneName": "",
             "propertyId": 71,
             "finish": -1,
-            "deleted": true,
+            "deleted": false,
             "position": {
                 "x": 8.0,
                 "y": 3.0,
@@ -37,7 +37,8 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 0.0
-            }
+            },
+            "floorTriangles": []
         },
         {
             "id": "runtime",
@@ -66,15 +67,16 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 0.0
-            }
+            },
+            "floorTriangles": []
         },
         {
-            "id": "kept",
+            "id": "free",
             "definitionId": "646161ef561b93c4e895b13fc557dca2",
             "sceneName": "",
             "propertyId": 71,
             "finish": -1,
-            "deleted": false,
+            "deleted": true,
             "position": {
                 "x": 8.0,
                 "y": 3.0,
@@ -95,7 +97,8 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 0.0
-            }
+            },
+            "floorTriangles": []
         },
         {
             "id": "authored",
@@ -124,7 +127,8 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 0.0
-            }
+            },
+            "floorTriangles": []
         }
     ],
     "playerX": 0.0,

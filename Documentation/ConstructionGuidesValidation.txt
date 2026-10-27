@@ -1,0 +1,23 @@
+PASS Chair and ceiling light reserve one 4x4 cell
+PASS Bed, sofa and table reserve two cells on the model's long axis
+PASS Structural walls, floors and mounted doors retain their existing placement rules
+PASS Small objects snap to centres of 4x4 grid cells
+PASS Double footprint matches actual 8x4 model direction
+PASS Rotating a double object rotates its reserved cells
+PASS Reserved cells reject overlap even when a small mesh leaves empty space
+PASS Neighbouring touching cells remain legal with actual geometry checks
+PASS Furniture on another storey does not reserve the lower floor
+PASS White alignment guide joins matching sides in a row
+PASS White alignment guide joins matching sides in a column
+PASS Misaligned objects do not show a false alignment line
+PASS Ground shows grid, preview footprint and alignment to existing furniture
+PASS Small gaps between modular floor tiles do not erase the grid at its vertices
+PASS Double object footprint includes the dividing cell line
+PASS Ceiling light snaps to a real ceiling cell
+PASS Furniture underneath does not consume ceiling light cells
+PASS Ceiling grid and footprint are rendered on the underside
+PASS A second light cannot reserve an occupied ceiling cell
+PASS Ceiling cell reservation survives save/restore without new save fields
+PASS Sold objects release their reserved cells immediately
+PASS Guides can be hidden on tablet, pause, mode exit or selection change
+PASS Grid respects authored origin, storey height and rotated plots

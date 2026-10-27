@@ -1,0 +1,92 @@
+Assets/Prefabs/UI/SlotsPanel.prefab | Scroll View/Button_Back | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/Button_sample_small.prefab | text=Text (TMP)
+Assets/Prefabs/UI/SlotsPanel.prefab | Scroll View/Button_Load | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/Button_sample_small.prefab | text=Text (TMP)
+Assets/Prefabs/UI/SlotsPanel.prefab | Scroll View/Button_Delete | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/Button_sample_small.prefab | text=Text (TMP)
+Assets/Prefabs/UI/SlotsPanel.prefab | ConfirmPanel/ConfirmNoButton | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/Button_sample_small.prefab | text=Text (TMP)
+Assets/Prefabs/UI/SlotsPanel.prefab | ConfirmPanel/ConfirmYesButton | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/Button_sample_small.prefab | text=Text (TMP)
+Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab | Screen_Camera/Canvas_Screen_info/Back | size=(80.00, 80.00) rect=(80.00, 80.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab | Screen_Camera/Canvas_Screen_info/Next | size=(80.00, 80.00) rect=(80.00, 80.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab | Screen_Camera/Canvas_Screen_info/Print_button | size=(150.00, 40.00) rect=(150.00, 40.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab | Screen_Camera/Canvas_Screen_info/Exit_button | size=(150.00, 40.00) rect=(150.00, 40.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/UI/SlotRow.prefab |  | size=(530.00, 50.00) rect=(530.00, 50.00) | source= | text=Text (TMP),DateText
+Assets/Prefabs/UI/ConstructionUI.prefab | TabMenu/Construir | size=(250.00, 250.00) rect=(250.00, 250.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Label
+Assets/Prefabs/UI/ConstructionUI.prefab | TabMenu/Prueba | size=(250.00, 250.00) rect=(250.00, 250.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Label
+Assets/Prefabs/UI/ConstructionUI.prefab | TabMenu/Propiedades | size=(250.00, 250.00) rect=(250.00, 250.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Label
+Assets/Prefabs/UI/ConstructionUI.prefab | BuildHUD/Paredes | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/Button_sample_small.prefab | text=Label
+Assets/Prefabs/UI/ConstructionUI.prefab | BuildHUD/Muebles | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/Button_sample_small.prefab | text=Label
+Assets/Prefabs/UI/ConstructionUI.prefab | BuildHUD/Acabado: colocar / pintar | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/Button_sample_small.prefab | text=Label
+Assets/Prefabs/Player.prefab | ConstructionUI/TabMenu/Construir | size=(250.00, 250.00) rect=(250.00, 250.00) | source=Assets/Prefabs/UI/ConstructionUI.prefab | text=Label
+Assets/Prefabs/Player.prefab | ConstructionUI/TabMenu/Prueba | size=(250.00, 250.00) rect=(250.00, 250.00) | source=Assets/Prefabs/UI/ConstructionUI.prefab | text=Label
+Assets/Prefabs/Player.prefab | ConstructionUI/TabMenu/Propiedades | size=(250.00, 250.00) rect=(250.00, 250.00) | source=Assets/Prefabs/UI/ConstructionUI.prefab | text=Label
+Assets/Prefabs/Player.prefab | ConstructionUI/BuildHUD/Paredes | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/ConstructionUI.prefab | text=Label
+Assets/Prefabs/Player.prefab | ConstructionUI/BuildHUD/Muebles | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/ConstructionUI.prefab | text=Label
+Assets/Prefabs/Player.prefab | ConstructionUI/BuildHUD/Acabado: colocar / pintar | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/ConstructionUI.prefab | text=Label
+Assets/Prefabs/UI/OptionsPanel.prefab | VideoMenuUI/VideoScrollView/Viewport/Content/resolution/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | VideoMenuUI/VideoScrollView/Viewport/Content/windowMode/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | VideoMenuUI/VideoScrollView/Viewport/Content/vsync/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | VideoMenuUI/VideoScrollView/Viewport/Content/preset/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | VideoMenuUI/VideoScrollView/Viewport/Content/Antialiasing/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | VideoMenuUI/VideoScrollView/Viewport/Content/msaa/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | VideoMenuUI/VideoScrollView/Viewport/Content/smaaQuality/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | Controls | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/UI/OptionsPanel.prefab | Video | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/UI/OptionsPanel.prefab | Audio | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/UI/OptionsPanel.prefab | Online | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/UI/OptionsPanel.prefab | Accesibility | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/UI/OptionsPanel.prefab | Back | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/UI/OptionsPanel.prefab | Reset | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_MoveForward/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_MoveBackward/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_MoveLeft/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_MoveRight/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_Jump/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_Sprint/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_Interact/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_Pause/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_SwitchTarget/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/OptionsPanel.prefab | ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_SwitchShoulder/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Binding
+Assets/Prefabs/UI/SlotRowCoop.prefab |  | size=(530.00, 50.00) rect=(530.00, 50.00) | source= | text=Text (TMP),DateText
+Assets/Scenes/01_MainMenu.unity | MainPanel/Button_Continue | size=(-1620.00, -990.00) rect=(42.77, 257.08) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | MainPanel/Button_New_Game | size=(-1620.00, -990.00) rect=(42.77, 257.08) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | MainPanel/Button_Load_Game | size=(-1620.00, -990.00) rect=(42.77, 257.08) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | MainPanel/Button_Coop | size=(-1620.00, -990.00) rect=(42.77, 257.08) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | MainPanel/Button_Options | size=(-1620.00, -990.00) rect=(42.77, 257.08) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | MainPanel/Button_Quit | size=(-1620.00, -990.00) rect=(42.77, 257.08) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | SlotsPanel/Scroll View/Button_Back | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/SlotsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | SlotsPanel/Scroll View/Button_Load | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/SlotsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | SlotsPanel/Scroll View/Button_Delete | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/SlotsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | SlotsPanel/ConfirmPanel/ConfirmNoButton | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/SlotsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | SlotsPanel/ConfirmPanel/ConfirmYesButton | size=(150.00, 45.00) rect=(150.00, 45.00) | source=Assets/Prefabs/UI/SlotsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/VideoMenuUI/VideoScrollView/Viewport/Content/resolution/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/VideoMenuUI/VideoScrollView/Viewport/Content/windowMode/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/VideoMenuUI/VideoScrollView/Viewport/Content/vsync/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/VideoMenuUI/VideoScrollView/Viewport/Content/preset/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/VideoMenuUI/VideoScrollView/Viewport/Content/Antialiasing/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/VideoMenuUI/VideoScrollView/Viewport/Content/msaa/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/VideoMenuUI/VideoScrollView/Viewport/Content/smaaQuality/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/Controls | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/Video | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/Audio | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/Online | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/Accesibility | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/Back | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/Reset | size=(160.00, 30.00) rect=(160.00, 30.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_MoveForward/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_MoveBackward/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_MoveLeft/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_MoveRight/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_Jump/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_Sprint/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_Interact/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_Pause/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_SwitchTarget/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport/Content/Binding_SwitchShoulder/RebindButton | size=(0.00, 0.00) rect=(0.00, 0.00) | source=Assets/Prefabs/UI/OptionsPanel.prefab | text=Binding
+Assets/Scenes/01_MainMenu.unity | NewGamePanel/BackButton | size=(-250.00, -255.00) rect=(-107.23, 212.08) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/01_MainMenu.unity | NewGamePanel/AcceptButton | size=(-250.00, -255.00) rect=(-107.23, 212.08) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/10_World_City.unity | PausePanel/Panel/SaveButton | size=(300.00, 90.00) rect=(300.00, 90.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/10_World_City.unity | PausePanel/Panel/LoadButton | size=(300.00, 90.00) rect=(300.00, 90.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/10_World_City.unity | PausePanel/Panel/OptionsButton | size=(300.00, 90.00) rect=(300.00, 90.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/10_World_City.unity | PausePanel/Panel/QuitButton | size=(300.00, 90.00) rect=(300.00, 90.00) | source=Assets/Prefabs/UI/Button_sample.prefab | text=Text (TMP)
+Assets/Scenes/10_World_City.unity | New_Cheap_3D_Printer/Screen_Camera/Canvas_Screen_info/Back | size=(80.00, 80.00) rect=(80.00, 80.00) | source=Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab | text=Text (TMP)
+Assets/Scenes/10_World_City.unity | New_Cheap_3D_Printer/Screen_Camera/Canvas_Screen_info/Next | size=(80.00, 80.00) rect=(80.00, 80.00) | source=Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab | text=Text (TMP)
+Assets/Scenes/10_World_City.unity | New_Cheap_3D_Printer/Screen_Camera/Canvas_Screen_info/Print_button | size=(150.00, 40.00) rect=(150.00, 40.00) | source=Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab | text=Text (TMP)
+Assets/Scenes/10_World_City.unity | New_Cheap_3D_Printer/Screen_Camera/Canvas_Screen_info/Exit_button | size=(150.00, 40.00) rect=(150.00, 40.00) | source=Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab | text=Text (TMP)

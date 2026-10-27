@@ -30,6 +30,7 @@ namespace JuegoCriminal.Scenes
 
         private SaveService _save;
         private SceneLoader _loader;
+        private OptionsPanelNavigation optionsNavigation;
 
         private void Awake()
         {
@@ -56,6 +57,11 @@ namespace JuegoCriminal.Scenes
             if (coopButton != null) coopButton.onClick.AddListener(OpenCoop);
             if (optionsButton != null) optionsButton.onClick.AddListener(OpenOptions);
             if (quitButton != null) quitButton.onClick.AddListener(Quit);
+            if(optionsPanel)
+            {
+                optionsNavigation=optionsPanel.GetComponent<OptionsPanelNavigation>();
+                if(optionsNavigation)optionsNavigation.Bind(CloseOptions);
+            }
         }
 
         private void OnEnable()
@@ -80,6 +86,7 @@ namespace JuegoCriminal.Scenes
             if (mainButtonsPanel != null) mainButtonsPanel.SetActive(true);
             RefreshButtons();
         }
+        private void OnDestroy(){if(optionsNavigation)optionsNavigation.Unbind(CloseOptions);}
 
         private void RefreshButtons()
         {

@@ -1,0 +1,21 @@
+PASS Money tool does not create a save or modify a game that is not loaded
+PASS Money tool sets exactly five million and refreshes the HUD through EconomyService
+PASS Money tool also works if the balance was higher than five million
+PASS Development free-cost toggle remains available in the Editor
+PASS Restore real prices re-enables catalogue prices without losing or rewriting them
+PASS A real purchase deducts its real cost after restoring prices
+PASS Validation preserves the project's current free-cost selection
+PASS Reproduced: authored centre-origin grid rejects the parcel's near corner
+PASS 44.5x44.5 plot fits 11x11 full cells instead of only 10x10
+PASS Fitted origin matches floor tile phase while preserving Grid Origin transform and height
+PASS Aiming at plot corner 451,76,484,76 snaps to its closest complete usable cell
+PASS Visual grid indexes use the same fitted origin as snapping
+PASS Aiming at plot corner 451,76,529,24 snaps to its closest complete usable cell
+PASS Visual grid indexes use the same fitted origin as snapping
+PASS Aiming at plot corner 496,24,484,76 snaps to its closest complete usable cell
+PASS Visual grid indexes use the same fitted origin as snapping
+PASS Aiming at plot corner 496,24,529,24 snaps to its closest complete usable cell
+PASS Visual grid indexes use the same fitted origin as snapping
+PASS Rotated two-cell furniture fits near the far corner without changing storey height
+PASS Wall-origin snapping is unchanged
+PASS Automatic fitting supports rotated rectangular parcels

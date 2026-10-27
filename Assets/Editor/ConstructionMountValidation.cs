@@ -79,7 +79,7 @@ public static class ConstructionMountValidation
             Check(!BuildMounting.TryPose(lamp,catalog,plot,new Ray(new Vector3(2,10,2),Vector3.down),0,null,out _),lamp.title+" rejects floor top as a ceiling");
             Check(!BuildMounting.TryPose(lamp,catalog,plot,new Ray(new Vector3(6,2,2),Vector3.up),0,null,out _),lamp.title+" cannot float outside ceiling footprint");
             Check(BuildMounting.TryPose(lamp,catalog,plot,new Ray(new Vector3(.1f,2,2),Vector3.up),0,null,out var edge) &&
-                !BuildMounting.IsValid(lamp,catalog,plot,edge),lamp.title+" rejects partial support over ceiling edge");
+                BuildMounting.IsValid(lamp,catalog,plot,edge) && Mathf.Abs(edge.anchor.x-2)<.001f,lamp.title+" snaps edge aiming to the supported 4x4 cell centre");
         }
         Object.DestroyImmediate(host.gameObject);Physics.SyncTransforms();
         Check(!BuildMounting.TryPose(door,catalog,plot,new Ray(new Vector3(2,2,-4),Vector3.forward),0,null,out _),"Doors cannot be freely placed without a doorway");

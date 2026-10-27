@@ -1,12 +1,11 @@
 PASS Character avatar valid
-PASS 22 animation states assigned
+PASS 20 animation states assigned without draw/holster
 PASS Standing Idle uses its own valid humanoid avatar
 PASS Female Start Walking uses its own valid humanoid avatar
 PASS Female Walk uses its own valid humanoid avatar
 PASS Female Stop Walking uses its own valid humanoid avatar
 PASS Left Strafe Walk uses its own valid humanoid avatar
 PASS Right Strafe Walk uses its own valid humanoid avatar
-PASS Pistol Aim uses its own valid humanoid avatar
 PASS Pistol Idle uses its own valid humanoid avatar
 PASS Crouched To Standing uses its own valid humanoid avatar
 PASS Crouched Walking uses its own valid humanoid avatar
@@ -17,11 +16,11 @@ PASS Running Right Turn uses its own valid humanoid avatar
 PASS Locomotion Standing Idle
 PASS Locomotion Walking
 PASS Locomotion Walking Backward
-PASS Locomotion Left Strafe Walk
-PASS Locomotion Right Strafe Walk
-PASS Release stops feet immediately 1
+PASS Locomotion Walking
+PASS Locomotion Walking
+PASS Release blends back to idle 1
 PASS Stop completes 1
-PASS Release stops feet immediately -1
+PASS Release blends back to idle -1
 PASS Stop completes -1
 PASS Diagonal keeps longitudinal animation (-1.00, 1.00) frame 0
 PASS Diagonal keeps longitudinal animation (-1.00, 1.00) frame 1
@@ -72,12 +71,12 @@ PASS Diagonal keeps longitudinal animation (1.00, -1.00) frame 9
 PASS Diagonal keeps longitudinal animation (1.00, -1.00) frame 10
 PASS Diagonal keeps longitudinal animation (1.00, -1.00) frame 11
 PASS Sprint uses Fast Run
-PASS Running turn 1
+PASS Diagonal uses forward running gait 1
 PASS Holding diagonal does not loop turn 1
-PASS Running turn -1
+PASS Diagonal uses forward running gait -1
 PASS Holding diagonal does not loop turn -1
 PASS Left turn mirrors right turn
-PASS Jump blocks second jump but permits translation
+PASS Only moving jump permits horizontal translation
 PASS Jump clip selected False
 PASS Preparation precedes physical takeoff
 PASS Jump launches after preparation
@@ -85,7 +84,7 @@ PASS Airborne actions do not interrupt jump
 PASS Ground contact on ascending launch does not cancel jump
 PASS Descending in air keeps jump
 PASS Landing resumes locomotion
-PASS Jump blocks second jump but permits translation
+PASS Only moving jump permits horizontal translation
 PASS Jump clip selected True
 PASS Preparation precedes physical takeoff
 PASS Jump launches after preparation
@@ -93,13 +92,10 @@ PASS Airborne actions do not interrupt jump
 PASS Ground contact on ascending launch does not cancel jump
 PASS Descending in air keeps jump
 PASS Landing resumes locomotion
-PASS Right click draws
-PASS Draw state speed matches action timer
-PASS Holster state speed matches action timer
-PASS Draw stays active until adjusted clip duration
-PASS Draw ends in pistol idle
-PASS Movement holsters before translation
-PASS Movement released after holster
+PASS Right click goes directly to pistol idle
+PASS Pistol Aim is not used by the controller
+PASS Movement/crouch do not cancel aiming
+PASS Second right click releases aiming directly
 PASS Control starts crouch
 PASS Crouch remains after releasing Control
 PASS Crouched S reverses walk
@@ -109,8 +105,6 @@ PASS Walking reversed clip remains Humanoid
 PASS Walking reversed curves match source
 PASS Crouched Walking reversed clip remains Humanoid
 PASS Crouched Walking reversed curves match source
-PASS Pistol Aim reversed clip remains Humanoid
-PASS Pistol Aim reversed curves match source
 PASS Crouched To Standing reversed clip remains Humanoid
 PASS Crouched To Standing reversed curves match source
 PASS Jump_on_site preserves source pose RootQ.x sample 0
@@ -10808,6 +10802,6 @@ PASS Crouched Backward stays in place at 19
 PASS Crouched Backward stays in place at 20
 PASS Crouch clip lowers the character hips
 PASS Reversed crouch endpoints retarget correctly
-PASS Interrupted draw holsters
-PASS Partial holster accounts for both playback speeds
-PASS Queued crouch follows partial holster
+PASS Aiming remains active while movement is held
+PASS Toggle off returns directly to locomotion
+PASS Crouch still works after toggling aim off

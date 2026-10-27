@@ -19,6 +19,8 @@ namespace JuegoCriminal.Core
         private float blendElapsed;
         private bool blending;
         private bool failed;
+        private bool geometryChangedDuringCapture;
+        private Vector3 zonePosition, zoneSize, capturePosition;
 
         public BlendedReflectionCapture(Transform parent, string name, Vector3 position,
             int resolution, int mask, float farClip, ReflectionZone zone, Texture seed)
@@ -61,6 +63,7 @@ namespace JuegoCriminal.Core
                 display.customBakedTexture = Output;
                 visual.SetActive(true);
                 display.enabled = false;
+                UpdateZone(zone);
             }
             // A zone must first capture its own surroundings. Seeding an interior
             // with the global sky publishes an exterior reflection inside the room
@@ -72,6 +75,32 @@ namespace JuegoCriminal.Core
             }
         }
 
+        public void UpdateZone(ReflectionZone zone)
+        {
+            if(!zone || !display)return;
+            bool changed=zonePosition!=zone.transform.position || zoneSize!=zone.Size || capturePosition!=zone.CapturePosition;
+            zonePosition=zone.transform.position;zoneSize=zone.Size;capturePosition=zone.CapturePosition;
+            // Probe size is world-space, irrespective of the zone's parent scale.
+            SetWorldTransform(capture.transform,capturePosition);
+            SetWorldTransform(display.transform,capturePosition);
+            display.size=zoneSize;display.center=zonePosition-capturePosition;
+            display.blendDistance=zone.BlendDistance;display.boxProjection=zone.BoxProjection;display.importance=zone.Importance;
+            capture.cullingMask=zone.ReflectedLayers;capture.farClipPlane=zone.CaptureDistance;
+            if(changed)
+            {
+                nextCapture=0;
+                if(renderId>=0)geometryChangedDuringCapture=true;
+            }
+        }
+
+        static void SetWorldTransform(Transform target,Vector3 position)
+        {
+            target.SetPositionAndRotation(position,Quaternion.identity);
+            var scale=target.parent?target.parent.lossyScale:Vector3.one;
+            target.localScale=new Vector3(1f/Mathf.Max(.0001f,Mathf.Abs(scale.x)),
+                1f/Mathf.Max(.0001f,Mathf.Abs(scale.y)),1f/Mathf.Max(.0001f,Mathf.Abs(scale.z)));
+        }
+
         public void Tick(float interval, float duration)
         {
             if (failed) return;
@@ -80,19 +109,27 @@ namespace JuegoCriminal.Core
                 if (!capture.IsFinishedRendering(renderId)) return;
                 renderId = -1;
                 captureOwner = null;
-                if (!Ready)
+                if(geometryChangedDuringCapture)
                 {
-                    Graphics.CopyTexture(next, Output);
-                    Ready = true;
-                    if (display != null) display.enabled = true;
+                    // The completed cubemap belongs to the previous room geometry.
+                    geometryChangedDuringCapture=false;nextCapture=0;
                 }
                 else
                 {
-                    Graphics.CopyTexture(Output, previous);
-                    blending = true;
-                    blendElapsed = 0f;
+                    if (!Ready)
+                    {
+                        Graphics.CopyTexture(next, Output);
+                        Ready = true;
+                        if (display != null) display.enabled = true;
+                    }
+                    else
+                    {
+                        Graphics.CopyTexture(Output, previous);
+                        blending = true;
+                        blendElapsed = 0f;
+                    }
+                    nextCapture = Time.time + interval;
                 }
-                nextCapture = Time.time + interval;
             }
             if (blending)
             {

@@ -19,10 +19,8 @@ namespace JuegoCriminal.Services
 
             CapturePlayers(save);
             CapturePrinters(save);
-            var buildings = new List<JuegoCriminal.Construction.BuildRecord>();
-            foreach (var building in FindObjectsByType<JuegoCriminal.Construction.PlacedBuildObject>(FindObjectsInactive.Include,FindObjectsSortMode.None))
-                if (building.gameObject.scene == SceneManager.GetActiveScene()) buildings.Add(building.Capture());
-            save.UpdateBuildingStates(SceneManager.GetActiveScene().name, buildings.ToArray());
+            var buildings=JuegoCriminal.Construction.BuildDeletionLedger.CaptureScene(SceneManager.GetActiveScene());
+            save.UpdateBuildingStates(SceneManager.GetActiveScene().name, buildings);
             save.SetLastScene(SceneManager.GetActiveScene().name);
             return true;
         }

@@ -1,0 +1,8 @@
+corner=0 distance=50 meanDirectSunLeak=0,017429
+corner=0 distance=100 meanDirectSunLeak=0,000129
+corner=1 distance=50 meanDirectSunLeak=0,001199
+corner=1 distance=100 meanDirectSunLeak=0,000000
+corner=2 distance=50 meanDirectSunLeak=0,017263
+corner=2 distance=100 meanDirectSunLeak=0,000017
+corner=3 distance=50 meanDirectSunLeak=0,001199
+corner=3 distance=100 meanDirectSunLeak=0,000000

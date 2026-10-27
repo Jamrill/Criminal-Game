@@ -1,0 +1,11 @@
+PASS Assets/Prefabs/Construction/Completes/Window_Wall.prefab uses canonical Glass
+PASS Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab uses canonical Glass
+PASS Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab uses canonical Glass
+PASS Closed room gets one probe
+PASS Initial reflection spans four units
+PASS Moving/scaling walls invalidates room detection
+PASS Automatic room scan resizes reflection to eight units
+PASS Old room reflection is removed on resize
+PASS Native influence volume follows new room bounds
+PASS Native cubemap capture origin follows resized room
+PASS Probe projection and blending remain configured

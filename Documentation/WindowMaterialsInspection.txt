@@ -1,0 +1,14 @@
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab / FixedVisual [0] Wall_Building :: Assets/Materials/Wall_Building.mat
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab / FixedVisual [1] Wall_Building :: Assets/Materials/Wall_Building.mat
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab / Window [0] Wood :: Assets/Original_assets/Walls/Complete/Window_wall_complete.fbx
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab / Window [1] Glass :: Assets/Original_assets/Walls/Complete/Window_wall_complete.fbx
+Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab / FixedVisual [0] Wall_Building :: Assets/Materials/Wall_Building.mat
+Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab / FixedVisual [1] Wall_Building :: Assets/Materials/Wall_Building.mat
+Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab / Window [0] Wood :: Assets/Original_assets/Walls/Complete/Window_wall_complete.fbx
+Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab / Window [1] Glass :: Assets/Original_assets/Walls/Complete/Window_wall_complete.fbx
+Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab / Window [0] Wood :: Assets/Original_assets/Walls/semIncomplete/Window_wall_semincomplete.fbx
+Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab / Window [1] Glass :: Assets/Original_assets/Walls/semIncomplete/Window_wall_semincomplete.fbx
+Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab / Window wallsemincomplete [0] Wall_Building :: Assets/Materials/Wall_Building.mat
+Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab / Window wallsemincomplete [1] Wall_Building :: Assets/Materials/Wall_Building.mat
+Assets/Prefabs/Construction/Completes/Glass_wall.prefab / FixedVisual [0] Bordillo :: Assets/Materials/Bordillo.mat
+Assets/Prefabs/Construction/Completes/Glass_wall.prefab / FixedVisual [1] Glass :: Assets/Materials/Glass.mat

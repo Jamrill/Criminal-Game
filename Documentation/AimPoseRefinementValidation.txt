@@ -1,0 +1,8 @@
+PASS Hand correction saved on the animated model
+PASS No hand correction in normal idle
+PASS Entry still blends after 150 ms
+PASS Hand correction blends with the incoming pose
+PASS Final pistol pose gets full correction
+PASS Hand separation increases modestly: 0,084 -> 0,145 m
+PASS Exit blends pose and hand correction out together
+PASS No correction remains after exit

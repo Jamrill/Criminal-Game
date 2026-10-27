@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 namespace JuegoCriminal.Construction
 {
@@ -11,25 +12,35 @@ namespace JuegoCriminal.Construction
         [Serializable] public class Materials { public Material[] values; }
         public Materials[] variantMaterials = new Materials[3];
         public Vector3[] connections;
+        [Tooltip("Pares inicio/fin de cada brazo de la pared, en coordenadas locales.")]
+        public Vector3[] segmentPoints;
         public Vector3 bottomCenter;
         public float height=7;
         public int currentVariant;
         public bool automaticVariants=true;
         private static readonly HashSet<WallTopology> active=new HashSet<WallTopology>();
         private static bool dirty;
+        private Matrix4x4 observedTransform;
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] static void ResetRegistry() { active.Clear(); dirty=true; }
-        private void OnEnable() { active.Add(this); dirty=true; }
-        private void OnDisable() { active.Remove(this); dirty=true; }
-        private void LateUpdate() { if(dirty) RefreshAll(); }
+        private void OnEnable() { observedTransform=transform.localToWorldMatrix; active.Add(this); MarkDirty(); }
+        private void OnDisable() { active.Remove(this); MarkDirty(); }
+        private void LateUpdate()
+        {
+            // Inspector moves/scales and parent transforms must invalidate rooms too.
+            // Keep our own snapshot: other components may clear Transform.hasChanged.
+            var matrix=transform.localToWorldMatrix;
+            if(matrix!=observedTransform){observedTransform=matrix;MarkDirty();}
+            if(dirty) RefreshAll();
+        }
         public Vector3 Bottom => transform.TransformPoint(bottomCenter);
         public float WorldHeight => height*Mathf.Abs(transform.lossyScale.y);
-        public static void MarkDirty() => dirty=true;
+        public static void MarkDirty() { dirty=true;RoomConstruction.MarkDirty(); }
         public bool JoinsAt(Vector3 position, Quaternion rotation, Vector3 scale, WallTopology other)
         {
             if(!other || connections==null || other.connections==null) return false;
             int matches=0;
-            foreach(var local in connections)
-                foreach(var end in other.connections)
+            foreach(var local in WallGeometry.Contacts(this).Distinct())
+                foreach(var end in WallGeometry.Contacts(other).Distinct())
                     if(Vector3.Distance(position+rotation*Vector3.Scale(local,scale),other.transform.TransformPoint(end))<.06f) { matches++; break; }
             return matches==1;
         }
@@ -37,6 +48,7 @@ namespace JuegoCriminal.Construction
         public static void RefreshAll()
         {
             dirty=false;
+            active.RemoveWhere(item=>!item || !item.isActiveAndEnabled);
             foreach(var item in active) if(item) item.RefreshVariant();
         }
         public static void RefreshScene(UnityEngine.SceneManagement.Scene scene)
@@ -56,26 +68,13 @@ namespace JuegoCriminal.Construction
                 foreach(var other in active)
                 {
                     if(!other || other==this || other.gameObject.scene!=gameObject.scene || other.connections==null) continue;
-                    foreach(var end in other.connections)
+                    foreach(var end in WallGeometry.Contacts(other))
                         if(Vector3.Distance(point,other.transform.TransformPoint(end))<.06f) { joined=true; break; }
                     if(joined) break;
                 }
                 if(!joined) { closed=false; break; }
             }
-            foreach(var other in active)
-                if(other && other!=this && other.gameObject.scene==gameObject.scene && other.connections!=null &&
-                    Vector3.Distance(Bottom+transform.up*WorldHeight,other.Bottom)<.06f)
-                {
-                    bool covered=true;
-                    foreach(var end in connections)
-                    {
-                        bool match=false;
-                        foreach(var otherEnd in other.connections)
-                            if(Vector3.Distance(transform.TransformPoint(end)+transform.up*WorldHeight,other.transform.TransformPoint(otherEnd))<.06f) { match=true; break; }
-                        if(!match) { covered=false; break; }
-                    }
-                    if(covered) { above=true; break; }
-                }
+            above=WallGeometry.CoveredAbove(this,active);
             if(closed && !above)above=BuildFloorCoverage.Covers(this);
             SetVariant(ChooseVariant(closed,above));
         }

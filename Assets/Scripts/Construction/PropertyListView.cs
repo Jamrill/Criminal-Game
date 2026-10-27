@@ -4,6 +4,7 @@ using JuegoCriminal.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static JuegoCriminal.Localization.GameLanguage;
 
 namespace JuegoCriminal.Construction
 {
@@ -38,7 +39,7 @@ namespace JuegoCriminal.Construction
                     rows[i].onClick.AddListener(()=>Buy(target));
                 }
             }
-            message.text=plots.Length==0 ? "No hay solares disponibles en esta escena." : "Saldo: "+(economy ? economy.Money : 0)+" | Selecciona un solar para comprarlo";
+            message.text=plots.Length==0 ? T("No plots available in this scene.","No hay solares disponibles en esta escena.") : T("Balance: ${0} | Select a plot to buy it","Saldo: ${0} | Selecciona un solar para comprarlo",economy ? economy.Money : 0);
             for (int i=0;i<plots.Length;i++)
             {
                 var p=plots[i]; bool owned=properties && properties.IsOwned(p.propertyId);
@@ -46,8 +47,8 @@ namespace JuegoCriminal.Construction
                 int value=p.TotalValue;
                 bool affordable=economy && economy.CanAfford(value);
                 rows[i].interactable=valid && !owned && affordable && properties;
-                string state=!valid ? "Revisar ID/precio en Inspector" : owned ? "En propiedad" : affordable ? "Comprar" : "Saldo insuficiente";
-                labels[i].text=p.DisplayName+" | Valor: $"+value+"\n"+state+(p.buildable ? "" : " (no construible)");
+                string state=!valid ? T("Check ID/price in Inspector","Revisar ID/precio en Inspector") : owned ? T("Owned","En propiedad") : affordable ? T("Buy","Comprar") : T("Insufficient funds","Saldo insuficiente");
+                labels[i].text=p.DisplayName+T(" | Value: ${0}\n"," | Valor: ${0}\n",value)+state+(p.buildable ? "" : T(" (not buildable)"," (no construible)"));
             }
         }
         private void Buy(BuildPlot target)

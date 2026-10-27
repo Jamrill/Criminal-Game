@@ -14,11 +14,11 @@ namespace JuegoCriminal.Core
         public static int MsaaSamples { get; private set; } = 4;
         public static int SmaaQuality { get; private set; } = 1;
         public static int Reflections { get; private set; } = 2;
-        public static string ReflectionsLabel => new[] { "Bajo", "Medio", "Alto", "Ultra" }[Reflections];
+        public static string ReflectionsLabel => JuegoCriminal.Localization.GameLanguage.T(new[] { "Low", "Medium", "High", "Ultra" }[Reflections],new[] { "Bajo", "Medio", "Alto", "Ultra" }[Reflections]);
         public static event Action Changed;
         public static string AntialiasingLabel => new[] { "Off", "FXAA", "SMAA", "TAA" }[Antialiasing];
-        public static string PresetLabel => new[] { "Bajo", "Medio", "Alto", "Ultra", "Personalizado" }[(int)Preset];
-        public static string SmaaQualityLabel => new[] { "Baja", "Media", "Alta" }[SmaaQuality];
+        public static string PresetLabel => JuegoCriminal.Localization.GameLanguage.T(new[] { "Low", "Medium", "High", "Ultra", "Custom" }[(int)Preset],new[] { "Bajo", "Medio", "Alto", "Ultra", "Personalizado" }[(int)Preset]);
+        public static string SmaaQualityLabel => JuegoCriminal.Localization.GameLanguage.T(new[] { "Low", "Medium", "High" }[SmaaQuality],new[] { "Baja", "Media", "Alta" }[SmaaQuality]);
         private static RenderPipelineAsset originalQualityPipeline;
         private static UniversalRenderPipelineAsset runtimePipeline;
         private static ReflectionQualityController reflectionController;

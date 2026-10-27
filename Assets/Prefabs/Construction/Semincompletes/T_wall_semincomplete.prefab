@@ -212,9 +212,17 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 4, y: 0, z: -4}
   - {x: 4, y: 0, z: 4}
+  segmentPoints:
+  - {x: 4, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
+  - {x: 4, y: 0, z: -4}
+  - {x: 4, y: 0, z: 0}
+  - {x: 4, y: 0, z: 4}
   bottomCenter: {x: 2, y: 0, z: 0}
   height: 7
   currentVariant: 1
+  automaticVariants: 1
 --- !u!23 &6287273219793705231 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 66afd79b8b5e1194c8d1f938637c696b, type: 3}

@@ -1,0 +1,133 @@
+PASS Corner_Wall turn=0 arm=1 connection plan is physically valid: 
+PASS Corner_Wall connection applies atomically and charges its value difference
+PASS Corner_Wall turn=0 consolidates ordinary wall endpoints into one correct prefab
+PASS Corner_Wall turn=0 keeps every arm at exactly the original position
+PASS Corner_Wall turn=0 keeps the merged shape after save/restore
+PASS Corner_Wall turn=1 arm=1 connection plan is physically valid: 
+PASS Corner_Wall connection applies atomically and charges its value difference
+PASS Corner_Wall turn=1 consolidates ordinary wall endpoints into one correct prefab
+PASS Corner_Wall turn=1 keeps every arm at exactly the original position
+PASS Corner_Wall turn=1 keeps the merged shape after save/restore
+PASS Corner_Wall turn=2 arm=1 connection plan is physically valid: 
+PASS Corner_Wall connection applies atomically and charges its value difference
+PASS Corner_Wall turn=2 consolidates ordinary wall endpoints into one correct prefab
+PASS Corner_Wall turn=2 keeps every arm at exactly the original position
+PASS Corner_Wall turn=2 keeps the merged shape after save/restore
+PASS Corner_Wall turn=3 arm=1 connection plan is physically valid: 
+PASS Corner_Wall connection applies atomically and charges its value difference
+PASS Corner_Wall turn=3 consolidates ordinary wall endpoints into one correct prefab
+PASS Corner_Wall turn=3 keeps every arm at exactly the original position
+PASS Corner_Wall turn=3 keeps the merged shape after save/restore
+PASS T_wall_complete turn=0 arm=1 connection plan is physically valid: 
+PASS T_wall_complete connection applies atomically and charges its value difference
+PASS T_wall_complete turn=0 arm=2 connection plan is physically valid: 
+PASS T_wall_complete connection applies atomically and charges its value difference
+PASS T_wall_complete turn=0 consolidates ordinary wall endpoints into one correct prefab
+PASS T_wall_complete turn=0 keeps every arm at exactly the original position
+PASS T_wall_complete turn=0 keeps the merged shape after save/restore
+PASS T_wall_complete turn=1 arm=1 connection plan is physically valid: 
+PASS T_wall_complete connection applies atomically and charges its value difference
+PASS T_wall_complete turn=1 arm=2 connection plan is physically valid: 
+PASS T_wall_complete connection applies atomically and charges its value difference
+PASS T_wall_complete turn=1 consolidates ordinary wall endpoints into one correct prefab
+PASS T_wall_complete turn=1 keeps every arm at exactly the original position
+PASS T_wall_complete turn=1 keeps the merged shape after save/restore
+PASS T_wall_complete turn=2 arm=1 connection plan is physically valid: 
+PASS T_wall_complete connection applies atomically and charges its value difference
+PASS T_wall_complete turn=2 arm=2 connection plan is physically valid: 
+PASS T_wall_complete connection applies atomically and charges its value difference
+PASS T_wall_complete turn=2 consolidates ordinary wall endpoints into one correct prefab
+PASS T_wall_complete turn=2 keeps every arm at exactly the original position
+PASS T_wall_complete turn=2 keeps the merged shape after save/restore
+PASS T_wall_complete turn=3 arm=1 connection plan is physically valid: 
+PASS T_wall_complete connection applies atomically and charges its value difference
+PASS T_wall_complete turn=3 arm=2 connection plan is physically valid: 
+PASS T_wall_complete connection applies atomically and charges its value difference
+PASS T_wall_complete turn=3 consolidates ordinary wall endpoints into one correct prefab
+PASS T_wall_complete turn=3 keeps every arm at exactly the original position
+PASS T_wall_complete turn=3 keeps the merged shape after save/restore
+PASS +_wall_complete turn=0 arm=2 connection plan is physically valid: 
+PASS +_wall_complete connection applies atomically and charges its value difference
+PASS +_wall_complete turn=0 arm=3 connection plan is physically valid: 
+PASS +_wall_complete connection applies atomically and charges its value difference
+PASS +_wall_complete turn=0 consolidates ordinary wall endpoints into one correct prefab
+PASS +_wall_complete turn=0 keeps every arm at exactly the original position
+PASS +_wall_complete turn=0 keeps the merged shape after save/restore
+PASS +_wall_complete turn=1 arm=2 connection plan is physically valid: 
+PASS +_wall_complete connection applies atomically and charges its value difference
+PASS +_wall_complete turn=1 arm=3 connection plan is physically valid: 
+PASS +_wall_complete connection applies atomically and charges its value difference
+PASS +_wall_complete turn=1 consolidates ordinary wall endpoints into one correct prefab
+PASS +_wall_complete turn=1 keeps every arm at exactly the original position
+PASS +_wall_complete turn=1 keeps the merged shape after save/restore
+PASS +_wall_complete turn=2 arm=2 connection plan is physically valid: 
+PASS +_wall_complete connection applies atomically and charges its value difference
+PASS +_wall_complete turn=2 arm=3 connection plan is physically valid: 
+PASS +_wall_complete connection applies atomically and charges its value difference
+PASS +_wall_complete turn=2 consolidates ordinary wall endpoints into one correct prefab
+PASS +_wall_complete turn=2 keeps every arm at exactly the original position
+PASS +_wall_complete turn=2 keeps the merged shape after save/restore
+PASS +_wall_complete turn=3 arm=2 connection plan is physically valid: 
+PASS +_wall_complete connection applies atomically and charges its value difference
+PASS +_wall_complete turn=3 arm=3 connection plan is physically valid: 
+PASS +_wall_complete connection applies atomically and charges its value difference
+PASS +_wall_complete turn=3 consolidates ordinary wall endpoints into one correct prefab
+PASS +_wall_complete turn=3 keeps every arm at exactly the original position
+PASS +_wall_complete turn=3 keeps the merged shape after save/restore
+PASS Collinear walls remain separate when no longer straight template exists
+PASS An exact duplicate remains red rather than being treated as an endpoint join
+PASS Different storeys are never merged at endpoints
+PASS Automatic solid joins do not remove or overwrite existing windows
+PASS Joining a painted wall preserves its finish on the merged piece
+PASS Glass_Wall_door_semincomplete whole visible prefab now has normal wall thickness, not 0.6
+PASS Glass_Wall_door_semincomplete edge=0 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_semincomplete edge=0 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_semincomplete edge=0 fits next to an existing endpoint wall
+PASS Glass_Wall_door_semincomplete edge=0 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_semincomplete edge=1 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_semincomplete edge=1 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_semincomplete edge=1 fits next to an existing endpoint wall
+PASS Glass_Wall_door_semincomplete edge=1 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_semincomplete edge=2 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_semincomplete edge=2 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_semincomplete edge=2 fits next to an existing endpoint wall
+PASS Glass_Wall_door_semincomplete edge=2 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_semincomplete edge=3 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_semincomplete edge=3 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_semincomplete edge=3 fits next to an existing endpoint wall
+PASS Glass_Wall_door_semincomplete edge=3 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_complete whole visible prefab now has normal wall thickness, not 0.6
+PASS Glass_Wall_door_complete edge=0 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_complete edge=0 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_complete edge=0 fits next to an existing endpoint wall
+PASS Glass_Wall_door_complete edge=0 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_complete edge=1 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_complete edge=1 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_complete edge=1 fits next to an existing endpoint wall
+PASS Glass_Wall_door_complete edge=1 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_complete edge=2 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_complete edge=2 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_complete edge=2 fits next to an existing endpoint wall
+PASS Glass_Wall_door_complete edge=2 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_complete edge=3 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_complete edge=3 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_complete edge=3 fits next to an existing endpoint wall
+PASS Glass_Wall_door_complete edge=3 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_incomplete whole visible prefab now has normal wall thickness, not 0.6
+PASS Glass_Wall_door_incomplete edge=0 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_incomplete edge=0 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_incomplete edge=0 fits next to an existing endpoint wall
+PASS Glass_Wall_door_incomplete edge=0 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_incomplete edge=1 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_incomplete edge=1 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_incomplete edge=1 fits next to an existing endpoint wall
+PASS Glass_Wall_door_incomplete edge=1 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_incomplete edge=2 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_incomplete edge=2 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_incomplete edge=2 fits next to an existing endpoint wall
+PASS Glass_Wall_door_incomplete edge=2 still rejects genuine construction outside the plot
+PASS Glass_Wall_door_incomplete edge=3 reproduces the previous red-border rejection at 0.6 thickness
+PASS Glass_Wall_door_incomplete edge=3 now fits the original plot boundary without expanding the plot
+PASS Glass_Wall_door_incomplete edge=3 fits next to an existing endpoint wall
+PASS Glass_Wall_door_incomplete edge=3 still rejects genuine construction outside the plot
+PASS Glass-door duplicate geometry remains blocked

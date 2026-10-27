@@ -128,9 +128,19 @@ MonoBehaviour:
   - {x: 8, y: 0, z: 0}
   - {x: 4, y: 0, z: -4}
   - {x: 4, y: 0, z: 4}
+  segmentPoints:
+  - {x: 4, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
+  - {x: 8, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
+  - {x: 4, y: 0, z: -4}
+  - {x: 4, y: 0, z: 0}
+  - {x: 4, y: 0, z: 4}
   bottomCenter: {x: 4, y: 0, z: 0}
   height: 7
   currentVariant: 2
+  automaticVariants: 1
 --- !u!114 &6850946257911391764
 MonoBehaviour:
   m_ObjectHideFlags: 0

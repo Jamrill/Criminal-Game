@@ -13,6 +13,8 @@ namespace JuegoCriminal.Player
         [SerializeField] private float acceleration = 14f;
         [SerializeField] private float deceleration = 18f;
         [SerializeField, Min(.05f)] private float runTransitionDuration = .4f;
+        [Tooltip("Segundos para completar aproximadamente el 90% de un cambio de direccion. No modifica la aceleracion ni la velocidad de carrera. Cero: giro inmediato.")]
+        [SerializeField, Range(0f,.3f)] private float directionChangeTime = .08f;
         private float currentMoveSpeed;
 
         [Header("Crouch")]
@@ -198,15 +200,23 @@ namespace JuegoCriminal.Player
 
         private void UpdateHorizontalVelocity(Vector3 targetHorizontalVelocity)
         {
-            float rate = targetHorizontalVelocity.sqrMagnitude > 0.001f
-                ? acceleration
-                : deceleration;
+            _horizontalVelocity=StepHorizontalVelocity(_horizontalVelocity,targetHorizontalVelocity,Time.deltaTime);
+        }
 
-            _horizontalVelocity = Vector3.MoveTowards(
-                _horizontalVelocity,
-                targetHorizontalVelocity,
-                rate * Time.deltaTime
-            );
+        // Speed and heading have independent responses: steering should not need
+        // to brake through zero and accelerate again just to change direction.
+        private Vector3 StepHorizontalVelocity(Vector3 current,Vector3 target,float deltaTime)
+        {
+            current.y=0;target.y=0;
+            float speed=current.magnitude,targetSpeed=target.magnitude;
+            float rate=targetSpeed>speed?acceleration:deceleration;
+            float nextSpeed=Mathf.MoveTowards(speed,targetSpeed,Mathf.Max(0,rate)*Mathf.Max(0,deltaTime));
+            if(targetSpeed<.001f)return speed>.001f?current.normalized*nextSpeed:Vector3.zero;
+            if(speed<.001f)return target.normalized*nextSpeed;
+            float response=directionChangeTime<=0?1:1-Mathf.Exp(-Mathf.Log(10)*Mathf.Max(0,deltaTime)/directionChangeTime);
+            float angle=Vector3.SignedAngle(current,target,Vector3.up);
+            var direction=Quaternion.AngleAxis(angle*response,Vector3.up)*current.normalized;
+            return direction*nextSpeed;
         }
 
         private void UpdateVerticalVelocity()

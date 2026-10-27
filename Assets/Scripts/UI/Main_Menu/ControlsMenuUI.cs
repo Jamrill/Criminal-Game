@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using JuegoCriminal.Core;
+using static JuegoCriminal.Localization.GameLanguage;
 
 namespace JuegoCriminal.UI
 {
@@ -12,6 +13,7 @@ namespace JuegoCriminal.UI
         [SerializeField] private RectTransform contentRoot;
         [SerializeField] private Button backButton;
         [SerializeField] private Button resetButton;
+        [SerializeField] private Button buttonTemplate;
 
         private void Awake()
         {
@@ -57,14 +59,8 @@ namespace JuegoCriminal.UI
             layout.childForceExpandWidth = true;
 
             TMP_Text actionText = CreateRuntimeText("Action", rowObject.transform, displayName);
-            var buttonObject = new GameObject("RebindButton", typeof(RectTransform), typeof(Image), typeof(Button));
-            buttonObject.transform.SetParent(rowObject.transform, false);
-            Image image = buttonObject.GetComponent<Image>();
-            image.color = new Color(0.22f, 0.22f, 0.22f, 1f);
-            Button button = buttonObject.GetComponent<Button>();
-            button.targetGraphic = image;
-
-            TMP_Text bindingText = CreateRuntimeText("Binding", buttonObject.transform, "Unassigned");
+            Button button=ButtonTemplate.Create(buttonTemplate,rowObject.transform,"RebindButton",out TMP_Text bindingText);
+            bindingText.text="Unassigned";
             bindingText.alignment = TextAlignmentOptions.Center;
             RectTransform textRect = bindingText.rectTransform;
             textRect.anchorMin = Vector2.zero;
@@ -92,20 +88,20 @@ namespace JuegoCriminal.UI
             if(!contentRoot) return;
             Transform Header(string name,string label)
             {
-                var existing=contentRoot.Find(name); if(existing) return existing;
+                var existing=contentRoot.Find(name); if(existing){existing.GetComponent<TMP_Text>().text=label;return existing;}
                 var text=CreateRuntimeText(name,contentRoot,label);
                 text.fontStyle=FontStyles.Bold; text.color=new Color(.65f,.85f,1); text.raycastTarget=false;
                 var layout=text.gameObject.AddComponent<LayoutElement>(); layout.minHeight=layout.preferredHeight=52;
                 return text.transform;
             }
-            Header("NormalControlsHeader","CONTROLES NORMALES").SetAsFirstSibling();
+            Header("NormalControlsHeader",T("NORMAL CONTROLS","CONTROLES NORMALES")).SetAsFirstSibling();
             foreach(var name in new[]{"BuildMoveForward","BuildMoveBackward","BuildMoveLeft","BuildMoveRight","BuildJump","BuildSprint"})
             {
                 var obsolete=contentRoot.Find("Binding_"+name);if(obsolete)obsolete.gameObject.SetActive(false);
             }
             EnsureTabletBinding();
             contentRoot.Find("Binding_Tablet").SetAsLastSibling();
-            Header("ConstructionControlsHeader","CONSTRUCCION").SetAsLastSibling();
+            Header("ConstructionControlsHeader",T("CONSTRUCTION","CONSTRUCCIÓN")).SetAsLastSibling();
             void Row(string name,GameInputAction action,int binding)
             {
                 EnsureRuntimeBindingRow(name,action,binding);
@@ -116,6 +112,7 @@ namespace JuegoCriminal.UI
             Row("Build Cursor (hold)",GameInputAction.SwitchTarget,1);
             Row("Build Preview Distance",GameInputAction.BuildDistance,0);
             var help=contentRoot.Find("ConstructionControlsHelp");if(help)help.gameObject.SetActive(false);
+            foreach(var row in contentRoot.GetComponentsInChildren<ControlRebindButtonUI>(true))row.RefreshLayout();
         }
 
         private static TMP_Text CreateRuntimeText(string objectName, Transform parent, string value)
@@ -139,9 +136,12 @@ namespace JuegoCriminal.UI
             if (resetButton != null)
                 resetButton.onClick.RemoveListener(ResetBindings);
         }
+        private void OnEnable()=>JuegoCriminal.Localization.GameLanguage.Changed+=OrganizeSections;
+        private void OnDisable()=>JuegoCriminal.Localization.GameLanguage.Changed-=OrganizeSections;
 
         public void Open()
         {
+            OrganizeSections();
             if (transform.parent != null)
             {
                 var videoMenu = transform.parent.GetComponentInChildren<VideoMenuUI>(true);
@@ -149,6 +149,7 @@ namespace JuegoCriminal.UI
             }
             panelRoot.SetActive(true);
             RefreshRows();
+            GetComponentInParent<OptionsPanelNavigation>()?.RaiseNavigation();
         }
 
         public void Close()
@@ -339,16 +340,8 @@ namespace JuegoCriminal.UI
 
         private Button CreateButton(Transform parent, out TMP_Text bindingText)
         {
-            var buttonObject = new GameObject("RebindButton", typeof(RectTransform), typeof(Image), typeof(Button));
-            buttonObject.transform.SetParent(parent, false);
-
-            var image = buttonObject.GetComponent<Image>();
-            image.color = new Color(0.22f, 0.22f, 0.22f, 1f);
-
-            var button = buttonObject.GetComponent<Button>();
-            button.targetGraphic = image;
-
-            bindingText = CreateText("Binding", buttonObject.transform, "Unassigned");
+            var button=ButtonTemplate.Create(buttonTemplate,parent,"RebindButton",out bindingText);
+            bindingText.text="Unassigned";
             bindingText.alignment = TextAlignmentOptions.Center;
 
             RectTransform textRect = bindingText.rectTransform;

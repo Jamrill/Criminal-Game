@@ -1,0 +1,7 @@
+PLOT Solar_1 position=(474.0000, 109.0000, 507.0000) rotation=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00)
+VOLUME center=(0.0000, 6.0000, 0.0000) size=(44.5000, 28.0000, 44.5000) world=Center: (474.00, 115.00, 507.00), Extents: (22.25, 14.00, 22.25)
+GRID Grid Origin position=(474.0000, 101.0000, 507.0000) rotation=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00)
+FLOOR Floor position=(492.0000, 101.0000, 485.0000)
+FLOOR Floor (42) position=(492.0000, 108.0000, 485.0000)
+FLOOR Floor (14) position=(484.0000, 101.0000, 485.0000)
+FLOOR Floor (43) position=(484.0000, 108.0000, 485.0000)

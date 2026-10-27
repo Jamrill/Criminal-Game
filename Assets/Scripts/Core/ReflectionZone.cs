@@ -28,6 +28,16 @@ namespace JuegoCriminal.Core
         public int MaxResolution => Mathf.Clamp(Mathf.ClosestPowerOfTwo(maxResolution), 128, 512);
         public float RefreshInterval => Mathf.Max(0.5f, refreshInterval);
         public float TransitionSeconds => Mathf.Max(0.2f, transitionSeconds);
+        public void ConfigureRoom(Bounds bounds,Vector3 capture,ReflectionZone template=null)
+        {
+            transform.position=bounds.center;volumeSize=bounds.size;captureOffset=capture-bounds.center;
+            boxProjection=true;importance=20;blendDistance=.1f;
+            if(template)
+            {
+                reflectedLayers=template.reflectedLayers;maxResolution=template.maxResolution;
+                refreshInterval=template.refreshInterval;transitionSeconds=template.transitionSeconds;captureDistance=template.captureDistance;
+            }
+        }
 
         private void OnDrawGizmosSelected()
         {

@@ -31,6 +31,7 @@ namespace JuegoCriminal.UI
         private SceneLoader _loader;
         private WorldSaveService _worldSave;
         private GameObject _optionsPanelInstance;
+        private GameObject _optionsCanvas;
         private GameObject _slotsPanelInstance;
         private ControlsMenuUI _controlsMenu;
         private SlotsPanelUI _slotsPanel;
@@ -85,6 +86,7 @@ namespace JuegoCriminal.UI
             if (quitButton != null) quitButton.onClick.RemoveListener(QuitToMenu);
 
             if (_slotsPanel != null) _slotsPanel.CloseRequested -= CloseOverlay;
+            if(_optionsCanvas)Destroy(_optionsCanvas);
         }
 
         private void Update()
@@ -172,13 +174,25 @@ namespace JuegoCriminal.UI
                 return false;
             }
 
-            _optionsPanelInstance = Instantiate(optionsPanelPrefab, transform, false);
+            // Options is authored at the MainMenu's 1920x1080 reference size.
+            // The world's HUD may use constant pixels; do not inherit its scale
+            // or alter the rest of that HUD just to display this shared panel.
+            _optionsCanvas=new GameObject("Pause Options Canvas",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(UnityEngine.UI.GraphicRaycaster));
+            UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(_optionsCanvas,gameObject.scene);
+            var canvas=_optionsCanvas.GetComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=pauseCanvasSortingOrder+1;
+            var scaler=_optionsCanvas.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution=new Vector2(1920,1080);scaler.matchWidthOrHeight=.5f;
+            _optionsPanelInstance = Instantiate(optionsPanelPrefab, _optionsCanvas.transform, false);
             _optionsPanelInstance.name = optionsPanelPrefab.name;
             _controlsMenu = _optionsPanelInstance.GetComponentInChildren<ControlsMenuUI>(true);
 
-            Button back = FindButton(_optionsPanelInstance, "Back");
-            if (back != null)
-                back.onClick.AddListener(CloseOverlay);
+            var navigation=_optionsPanelInstance.GetComponent<OptionsPanelNavigation>();
+            if(navigation)navigation.Bind(CloseOverlay);
+            else
+            {
+                Button back=FindButton(_optionsPanelInstance,"Back");
+                if(back!=null)back.onClick.AddListener(CloseOverlay);
+            }
 
             _optionsPanelInstance.SetActive(false);
             return true;

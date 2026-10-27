@@ -20,6 +20,6 @@ PASS Development toggle: free construction/value without losing real prices
 PASS Free mode sale pays zero
 PASS World save captures construction and balance
 PASS Serialized save includes built objects, sold tombstones and balance together
-PASS Load restores all objects under their Solar
-PASS Sold authored objects stay absent; loaded value matches remaining walls
+PASS Load restores live objects and separate deletion data under their Solar
+PASS Sold authored objects are destroyed; loaded value matches remaining walls
 PASS Repeated restoration does not duplicate objects

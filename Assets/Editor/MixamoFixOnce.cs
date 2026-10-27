@@ -1,15 +1,14 @@
 using UnityEditor;
 using UnityEngine;
 
-[InitializeOnLoad]
 public static class MixamoFixOnce
 {
-    static MixamoFixOnce() { EditorApplication.update += Run; }
-    static void Run()
+    // Legacy migration. Run explicitly only: reopening Unity must never regenerate
+    // an already configured controller or execute historical validation tests.
+    public static void Run()
     {
         if (Application.isBatchMode || EditorApplication.isCompiling || EditorApplication.isUpdating || EditorApplication.isPlayingOrWillChangePlaymode ||
             UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() != null) return;
-        EditorApplication.update -= Run;
         const string key = "MixamoFix.JumpSprintTurns.v3";
         if (SessionState.GetBool(key, false)) return;
         SessionState.SetBool(key, true);

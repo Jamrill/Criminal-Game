@@ -1,0 +1,53 @@
+Backup: Documentation/ButtonPrefabBackup/20261023_114135
+Assets/Prefabs/UI/SlotRow.prefab / SlotRow -> shared palette Assets/Prefabs/UI/Button_sample.prefab (specialized slot prefab preserved)
+Assets/Prefabs/UI/SlotRowCoop.prefab / SlotRowCoop -> shared palette Assets/Prefabs/UI/Button_sample.prefab (specialized slot prefab preserved)
+Assets/Prefabs/UI/ConstructionUI.prefab / Construir -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/ConstructionUI.prefab / Prueba -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/ConstructionUI.prefab / Propiedades -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/ConstructionUI.prefab / Paredes -> Assets/Prefabs/UI/Button_sample_small.prefab
+Assets/Prefabs/UI/ConstructionUI.prefab / Muebles -> Assets/Prefabs/UI/Button_sample_small.prefab
+Assets/Prefabs/UI/ConstructionUI.prefab / Acabado: colocar / pintar -> Assets/Prefabs/UI/Button_sample_small.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / Controls -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / Video -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / Audio -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / Online -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / Accesibility -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / Back -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / Reset -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/OptionsPanel.prefab / RebindButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/UI/SlotsPanel.prefab / Button_Back -> Assets/Prefabs/UI/Button_sample_small.prefab
+Assets/Prefabs/UI/SlotsPanel.prefab / Button_Load -> Assets/Prefabs/UI/Button_sample_small.prefab
+Assets/Prefabs/UI/SlotsPanel.prefab / Button_Delete -> Assets/Prefabs/UI/Button_sample_small.prefab
+Assets/Prefabs/UI/SlotsPanel.prefab / ConfirmNoButton -> Assets/Prefabs/UI/Button_sample_small.prefab
+Assets/Prefabs/UI/SlotsPanel.prefab / ConfirmYesButton -> Assets/Prefabs/UI/Button_sample_small.prefab
+Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab / Back -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab / Next -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab / Print_button -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab / Exit_button -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/01_MainMenu.unity / Button_New_Game -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/01_MainMenu.unity / Button_Load_Game -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/01_MainMenu.unity / Button_Coop -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/01_MainMenu.unity / Button_Options -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/01_MainMenu.unity / Button_Quit -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/01_MainMenu.unity / BackButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/01_MainMenu.unity / AcceptButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/10_World_City.unity / SaveButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/10_World_City.unity / LoadButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/10_World_City.unity / OptionsButton -> Assets/Prefabs/UI/Button_sample.prefab
+Assets/Scenes/10_World_City.unity / QuitButton -> Assets/Prefabs/UI/Button_sample.prefab

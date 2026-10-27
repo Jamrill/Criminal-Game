@@ -1,0 +1,13 @@
+PASS Real Animator OnAnimatorIK callback executes in Play
+PASS Real humanoid solver raises left foot onto 24cm curb independently of right foot
+PASS Both planted feet have IK weight
+PASS Feet smoothly return to matching height after removing the curb
+PASS Flat-ground support stays active after stepping down
+PASS IK preserves animated foot spacing and stride in idle/walk/backward/run at elevation=0; maximum horizontal error=0
+PASS Flat-ground IK preserves the original foot rotations; maximum error=0
+PASS IK preserves animated foot spacing and stride in idle/walk/backward/run at elevation=0,15; maximum horizontal error=0,01714528
+PASS Elevated support retains the animated vertical swing arc; maximum error=0,0002920847
+PASS Pause/resume preserves LeftFoot spacing
+PASS Pause/resume preserves RightFoot spacing
+PASS Jump animation immediately releases both feet
+PASS Airborne character does not snap to distant ground

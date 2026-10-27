@@ -17,8 +17,7 @@ public static class ConstructionSceneCapture
     {
         if(!EditorApplication.isPlaying) { EditorUtility.DisplayDialog("Construccion","Usa esta opcion durante Play. Al salir se aplicara a la escena y podras guardarla con Ctrl+S.","Aceptar"); return; }
         var scene=SceneManager.GetActiveScene();
-        var records=UnityEngine.Object.FindObjectsByType<PlacedBuildObject>(FindObjectsInactive.Include,FindObjectsSortMode.None)
-            .Where(p=>p.gameObject.scene==scene).Select(p=>p.Capture()).ToArray();
+        var records=BuildDeletionLedger.CaptureScene(scene);
         EditorPrefs.SetString(Key,JsonUtility.ToJson(new Snapshot{scenePath=scene.path,records=records}));
         Debug.Log("Construccion capturada: "+records.Length+" objetos. Sal de Play para aplicarla; despues guarda la escena.");
     }
@@ -35,6 +34,17 @@ public static class ConstructionSceneCapture
         {
             var entry=catalog.Find(record.definitionId); if(entry==null || !entry.prefab) continue;
             var marker=scene.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<PlacedBuildObject>(true)).FirstOrDefault(p=>p.persistentId==record.id);
+            var plot=scene.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<BuildPlot>(true)).SingleOrDefault(p=>p.propertyId==record.propertyId);
+            if(record.deleted)
+            {
+                if(!plot)continue;
+                var ledger=plot.GetComponent<BuildDeletionLedger>()??Undo.AddComponent<BuildDeletionLedger>(plot.gameObject);
+                Undo.RecordObject(ledger,"Guardar borrado");ledger.Remember(record);
+                if(marker)Undo.DestroyObjectImmediate(marker.gameObject);
+                continue;
+            }
+            if(plot && plot.GetComponent<BuildDeletionLedger>() is BuildDeletionLedger existingLedger)
+            {Undo.RecordObject(existingLedger,"Restaurar construccion");existingLedger.Forget(record.id);}
             if(marker && marker.definitionId!=record.definitionId && !record.deleted)
             {
                 Undo.DestroyObjectImmediate(marker.gameObject);
@@ -50,7 +60,7 @@ public static class ConstructionSceneCapture
             Undo.RegisterFullObjectHierarchyUndo(marker.gameObject,"Actualizar construccion");
             marker.Restore(record,catalog); marker.runtimePlaced=false;
             PrefabUtility.RecordPrefabInstancePropertyModifications(marker.transform);
-            foreach(var r in marker.GetComponentsInChildren<Renderer>(true)) PrefabUtility.RecordPrefabInstancePropertyModifications(r);
+            foreach(var r in marker.GetComponentsInChildren<Renderer>(true)) if(PrefabUtility.IsPartOfPrefabInstance(r)) PrefabUtility.RecordPrefabInstancePropertyModifications(r);
         }
         foreach(var root in scene.GetRootGameObjects()) foreach(var wall in root.GetComponentsInChildren<WallTopology>())
             Undo.RegisterFullObjectHierarchyUndo(wall.gameObject,"Actualizar variantes de pared");

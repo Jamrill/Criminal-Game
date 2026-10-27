@@ -1,0 +1,4 @@
+Backup=Documentation/WallJoinBackup/20261021_121247
+Glass_Wall_door_semincomplete: frame depth 0,6000006 -> 0,5000001; total wall depth=0,5000029; transforms/leaf/hinge unchanged
+Glass_Wall_door_complete: frame depth 0,6000006 -> 0,5000001; total wall depth=0,5000029; transforms/leaf/hinge unchanged
+Glass_Wall_door_incomplete: frame depth 0,6000006 -> 0,5000001; total wall depth=0,5000029; transforms/leaf/hinge unchanged

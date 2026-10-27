@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 6851332707514897800}
   - component: {fileID: 7778118005720238578}
   - component: {fileID: 5331540182615867310}
+  - component: {fileID: 4504791676883720491}
   m_Layer: 5
   m_Name: Button_sample
   m_TagString: Untagged
@@ -248,10 +249,10 @@ RectTransform:
   - {fileID: 2905714864318061592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 600, y: 275}
-  m_SizeDelta: {x: -1620, y: -990}
+  m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7878328750377575828
 CanvasRenderer:
@@ -347,3 +348,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4504791676883720491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236846228930573523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a1d4e643a7d9945aad2b0a4d8817c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.UI.ButtonTextStateColors
+  labels:
+  - {fileID: 6880233339789842671}
+  normal: {r: 0.48235294, g: 0.42745098, b: 0.36862746, a: 1}
+  highlighted: {r: 0.8039216, g: 0.7294118, b: 0.6039216, a: 1}
+  pressed: {r: 0.7294118, g: 0.57254905, b: 0.39215687, a: 1}
+  selected: {r: 0.7294118, g: 0.57254905, b: 0.39215687, a: 1}
+  disabled: {r: 0.38039216, g: 0.38039216, b: 0.3764706, a: 0.6}
+  fadeDuration: 0.1

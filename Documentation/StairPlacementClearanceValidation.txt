@@ -1,0 +1,27 @@
+PASS Stairs allows 0.4 side overlap: yaw=0 side=-1
+PASS Stairs rejects 0.65 side overlap: yaw=0 side=-1
+PASS Stairs allows 0.4 side overlap: yaw=0 side=1
+PASS Stairs rejects 0.65 side overlap: yaw=0 side=1
+PASS Stairs still blocks front/back overlap: yaw=0 end=-1
+PASS Stairs still blocks front/back overlap: yaw=0 end=1
+PASS Stairs allows 0.4 side overlap: yaw=90 side=-1
+PASS Stairs rejects 0.65 side overlap: yaw=90 side=-1
+PASS Stairs allows 0.4 side overlap: yaw=90 side=1
+PASS Stairs rejects 0.65 side overlap: yaw=90 side=1
+PASS Stairs still blocks front/back overlap: yaw=90 end=-1
+PASS Stairs still blocks front/back overlap: yaw=90 end=1
+PASS Stairs allows 0.4 side overlap: yaw=180 side=-1
+PASS Stairs rejects 0.65 side overlap: yaw=180 side=-1
+PASS Stairs allows 0.4 side overlap: yaw=180 side=1
+PASS Stairs rejects 0.65 side overlap: yaw=180 side=1
+PASS Stairs still blocks front/back overlap: yaw=180 end=-1
+PASS Stairs still blocks front/back overlap: yaw=180 end=1
+PASS Stairs allows 0.4 side overlap: yaw=270 side=-1
+PASS Stairs rejects 0.65 side overlap: yaw=270 side=-1
+PASS Stairs allows 0.4 side overlap: yaw=270 side=1
+PASS Stairs rejects 0.65 side overlap: yaw=270 side=1
+PASS Stairs still blocks front/back overlap: yaw=270 end=-1
+PASS Stairs still blocks front/back overlap: yaw=270 end=1
+PASS Central obstruction still blocks stairs
+PASS Other furniture receives no extra clearance
+PASS Real stair colliders remain unchanged

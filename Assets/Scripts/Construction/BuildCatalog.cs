@@ -14,6 +14,8 @@ namespace JuegoCriminal.Construction
         public bool hiddenInMenu;
         [Min(0)] public int price;
         public BuildMount mount;
+        [Tooltip("Reserved 4x4 cells along the prefab's local X/Z axes. Rotation rotates this footprint.")]
+        public Vector2Int footprintCells=Vector2Int.one;
         [Tooltip("Hueco disponible en el marco de colocacion del prefab; solo paredes con hueco de puerta.")]
         public Bounds doorway;
         public bool IsOpening => prefab && (prefab.name.StartsWith("Wall_door_hole",StringComparison.OrdinalIgnoreCase) || prefab.name.StartsWith("Window_Wall",StringComparison.OrdinalIgnoreCase));
@@ -23,13 +25,13 @@ namespace JuegoCriminal.Construction
     {
         public BuildEntry[] entries = Array.Empty<BuildEntry>();
         public Material[] finishes = Array.Empty<Material>();
-        [Tooltip("Solo Editor/Development Build. No modifica los precios reales del catalogo.")]
+        [Tooltip("Editor only. Ignored in every exported build; real catalogue prices are unchanged.")]
         public bool developmentFreeConstruction;
         public bool FreeConstruction
         {
             get
             {
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
+#if UNITY_EDITOR
                 return developmentFreeConstruction;
 #else
                 return false;

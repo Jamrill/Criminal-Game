@@ -10,11 +10,10 @@ namespace JuegoCriminal.Player
     public sealed class PlayerLocomotionAnimation : MonoBehaviour
     {
         public enum ActionPhase { Locomotion, Drawing, Aiming, Holstering, Crouching, Standing }
-        public const float DrawSpeed = 3f;
-        public const float HolsterSpeed = 2f;
         [SerializeField] private Animator animator;
         [SerializeField, Min(.01f)] private float movementThreshold = .08f;
         [SerializeField, Min(0)] private float blendDuration = .16f;
+        [SerializeField, Range(.1f, 1f)] private float aimBlendDuration = .4f;
         [SerializeField, Range(0f, .3f)] private float locomotionBlendDuration = .18f;
         [SerializeField, Range(.1f, .8f)] private float runningBlendDuration = .3f;
         [SerializeField, Range(0f, 60f)] private float diagonalBodyAngle = 35f;
@@ -23,7 +22,6 @@ namespace JuegoCriminal.Player
         private Transform orientedModel;
         private float bodyYaw, targetBodyYaw;
         private float bodyYawVelocity;
-        [SerializeField, Min(.01f)] private float pistolDuration = 1;
         [SerializeField, Min(.01f)] private float crouchDuration = 1;
         [SerializeField, Min(.01f)] private float stationaryJumpDuration = 1;
         [SerializeField, Min(.01f)] private float movingJumpDuration = 1;
@@ -44,8 +42,8 @@ namespace JuegoCriminal.Player
         public bool BlocksMovement => (IsJumping && !IsMovingJump) || Phase != ActionPhase.Locomotion;
         public bool BlocksJump => IsJumping || IsCrouched || wantsCrouch || BlocksMovement;
         public void Configure(Animator target) => animator = target;
-        public void ConfigureTimings(float pistol, float crouch)
-        { pistolDuration = Mathf.Max(.01f, pistol); crouchDuration = Mathf.Max(.01f, crouch); }
+        public void ConfigureTimings(float crouch)
+        { crouchDuration = Mathf.Max(.01f, crouch); }
         public void ConfigureJumpTimings(float stationary, float moving)
         { stationaryJumpDuration = stationary; movingJumpDuration = moving; }
         public void ConfigureJumpContacts(float takeoff, float landing, float movingTakeoff, float movingLanding)
@@ -110,23 +108,22 @@ namespace JuegoCriminal.Player
                 if (jumpRecovering && jumpClock >= jumpDuration - jumpLanding) IsJumping = false;
                 return;
             }
-            if (crouchPressed) wantsCrouch = !wantsCrouch;
-            bool moving = input.sqrMagnitude > .001f;
-            elapsed += Mathf.Max(0, deltaTime);
-            if (Phase == ActionPhase.Drawing && (moving || wantsCrouch || GameInput.ConstructionControlsActive))
+            // Aiming is a toggle, not a draw/holster sequence. Movement and crouch
+            // cannot cancel the pose until aiming locomotion is implemented.
+            if (Phase == ActionPhase.Aiming)
             {
-                float position = Mathf.Clamp(pistolDuration - elapsed * DrawSpeed, 0, pistolDuration);
-                Begin(ActionPhase.Holstering, "Pistol Holster", (pistolDuration - position) / HolsterSpeed, position);
+                if (aimPressed || GameInput.ConstructionControlsActive)
+                { Phase = ActionPhase.Locomotion; Play("Standing Idle"); }
+                return;
             }
-            else if (Phase == ActionPhase.Aiming && (moving || wantsCrouch || GameInput.ConstructionControlsActive))
-                Begin(ActionPhase.Holstering, "Pistol Holster", pistolDuration / HolsterSpeed);
+            if (crouchPressed) wantsCrouch = !wantsCrouch;
+            elapsed += Mathf.Max(0, deltaTime);
             if (Phase == ActionPhase.Crouching) CrouchAmount = Mathf.Clamp01(elapsed / crouchDuration);
             if (Phase == ActionPhase.Standing) CrouchAmount = 1 - Mathf.Clamp01(elapsed / crouchDuration);
             if (Phase != ActionPhase.Locomotion && Phase != ActionPhase.Aiming && elapsed >= actionLength)
             {
                 switch (Phase)
                 {
-                    case ActionPhase.Drawing: Phase = ActionPhase.Aiming; Play("Pistol Idle"); break;
                     case ActionPhase.Crouching: IsCrouched = true; CrouchAmount = 1; Phase = ActionPhase.Locomotion; break;
                     case ActionPhase.Standing: IsCrouched = false; CrouchAmount = 0; Phase = ActionPhase.Locomotion; break;
                     default: Phase = ActionPhase.Locomotion; break;
@@ -139,8 +136,12 @@ namespace JuegoCriminal.Player
                 Begin(wantsCrouch ? ActionPhase.Crouching : ActionPhase.Standing,
                     wantsCrouch ? "Crouch Down" : "Stand Up", crouchDuration);
             }
-            else if (aimPressed && !IsCrouched && !moving)
-                Begin(ActionPhase.Drawing, "Pistol Draw", pistolDuration / DrawSpeed);
+            else if (aimPressed && !IsCrouched && !GameInput.ConstructionControlsActive)
+            {
+                movement.StopHorizontalMotion();
+                Phase = ActionPhase.Aiming;
+                Play("Pistol Idle");
+            }
         }
         private void Begin(ActionPhase phase, string state, float duration, float offset = 0)
         {
@@ -203,10 +204,11 @@ namespace JuegoCriminal.Player
         {
             if (currentState == state || !animator || !animator.runtimeAnimatorController) return;
             bool runBlend = IsRunningState(state) || IsRunningState(currentState);
+            bool aimBlend = state == "Pistol Idle" || currentState == "Pistol Idle";
             bool urgentStop = state.StartsWith("Jump");
             currentState = state;
             animator.CrossFadeInFixedTime("Base Layer." + state,
-                Phase == ActionPhase.Locomotion ? (runBlend && !urgentStop ? runningBlendDuration : locomotionBlendDuration) : blendDuration, 0, offset);
+                aimBlend ? aimBlendDuration : Phase == ActionPhase.Locomotion ? (runBlend && !urgentStop ? runningBlendDuration : locomotionBlendDuration) : blendDuration, 0, offset);
         }
         private static bool IsRunningState(string state) => state == "Fast Run";
     }

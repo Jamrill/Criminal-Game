@@ -1,0 +1,4 @@
+Backup=Documentation/ConstructionUIBackup/20261020_114100
+Preserved authored tablet/HUD sizes and embedded Player RectTransform overrides.
+Removed outer layout groups; catalogue only uses a two-column grid.
+Language dropdown added to shared OptionsPanel.

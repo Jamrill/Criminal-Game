@@ -1,0 +1,5 @@
+Backup=Documentation/PlayerFootIKBackup/20261020_100716
+Left box=(0.29, 0.25, 0.57)
+Right box=(0.29, 0.25, 0.57)
+Rest sole height=0,07141215
+Original bone transforms unchanged

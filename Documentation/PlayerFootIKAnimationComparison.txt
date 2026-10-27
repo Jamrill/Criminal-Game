@@ -1,0 +1,80 @@
+support=0 Standing Idle t=0 LeftFoot reference=(-0.4791, 0.2368, 0.1334) IK=(-0.4791, 0.2368, 0.1334) horizontalError=0
+support=0 Standing Idle t=0 RightFoot reference=(0.0869, 0.2280, -0.0740) IK=(0.0869, 0.2280, -0.0740) horizontalError=0
+support=0 Standing Idle t=0,2 LeftFoot reference=(-0.4762, 0.2348, 0.1402) IK=(-0.4762, 0.2348, 0.1402) horizontalError=0
+support=0 Standing Idle t=0,2 RightFoot reference=(0.0871, 0.2293, -0.0721) IK=(0.0871, 0.2293, -0.0721) horizontalError=0
+support=0 Standing Idle t=0,4 LeftFoot reference=(-0.4762, 0.2353, 0.1386) IK=(-0.4762, 0.2353, 0.1386) horizontalError=0
+support=0 Standing Idle t=0,4 RightFoot reference=(0.0886, 0.2296, -0.0761) IK=(0.0886, 0.2296, -0.0761) horizontalError=0
+support=0 Standing Idle t=0,6 LeftFoot reference=(-0.4790, 0.2361, 0.1356) IK=(-0.4790, 0.2361, 0.1356) horizontalError=0
+support=0 Standing Idle t=0,6 RightFoot reference=(0.0872, 0.2286, -0.0722) IK=(0.0872, 0.2286, -0.0722) horizontalError=0
+support=0 Standing Idle t=0,8 LeftFoot reference=(-0.4782, 0.2372, 0.1313) IK=(-0.4782, 0.2372, 0.1313) horizontalError=0
+support=0 Standing Idle t=0,8 RightFoot reference=(0.0871, 0.2271, -0.0740) IK=(0.0871, 0.2271, -0.0740) horizontalError=0
+support=0 Walking t=0 LeftFoot reference=(-0.3993, 0.2889, 0.0391) IK=(-0.3993, 0.2889, 0.0391) horizontalError=0
+support=0 Walking t=0 RightFoot reference=(0.0692, 0.2269, -0.0743) IK=(0.0692, 0.2269, -0.0743) horizontalError=0
+support=0 Walking t=0,2 LeftFoot reference=(-0.3175, 0.1912, 0.5668) IK=(-0.3175, 0.1912, 0.5668) horizontalError=0
+support=0 Walking t=0,2 RightFoot reference=(0.0023, 0.3019, -0.5490) IK=(0.0023, 0.3019, -0.5490) horizontalError=0
+support=0 Walking t=0,4 LeftFoot reference=(-0.3626, 0.2136, 0.1450) IK=(-0.3626, 0.2136, 0.1450) horizontalError=0
+support=0 Walking t=0,4 RightFoot reference=(0.0938, 0.4398, -0.3871) IK=(0.0938, 0.4398, -0.3871) horizontalError=0
+support=0 Walking t=0,6 LeftFoot reference=(-0.3189, 0.2449, -0.3175) IK=(-0.3189, 0.2449, -0.3175) horizontalError=0
+support=0 Walking t=0,6 RightFoot reference=(0.1674, 0.2145, 0.5341) IK=(0.1674, 0.2145, 0.5341) horizontalError=0
+support=0 Walking t=0,8 LeftFoot reference=(-0.3157, 0.3712, -0.5585) IK=(-0.3157, 0.3712, -0.5585) horizontalError=0
+support=0 Walking t=0,8 RightFoot reference=(0.1617, 0.1921, 0.3552) IK=(0.1617, 0.1921, 0.3552) horizontalError=0
+support=0 Walking Backward t=0 LeftFoot reference=(-0.3993, 0.2889, 0.0390) IK=(-0.3993, 0.2889, 0.0390) horizontalError=0
+support=0 Walking Backward t=0 RightFoot reference=(0.0692, 0.2269, -0.0744) IK=(0.0692, 0.2269, -0.0744) horizontalError=0
+support=0 Walking Backward t=0,2 LeftFoot reference=(-0.3157, 0.3712, -0.5586) IK=(-0.3157, 0.3712, -0.5586) horizontalError=0
+support=0 Walking Backward t=0,2 RightFoot reference=(0.1617, 0.1921, 0.3553) IK=(0.1617, 0.1921, 0.3553) horizontalError=0
+support=0 Walking Backward t=0,4 LeftFoot reference=(-0.3189, 0.2449, -0.3176) IK=(-0.3189, 0.2449, -0.3176) horizontalError=0
+support=0 Walking Backward t=0,4 RightFoot reference=(0.1674, 0.2145, 0.5340) IK=(0.1674, 0.2145, 0.5340) horizontalError=0
+support=0 Walking Backward t=0,6 LeftFoot reference=(-0.3626, 0.2136, 0.1449) IK=(-0.3626, 0.2136, 0.1449) horizontalError=0
+support=0 Walking Backward t=0,6 RightFoot reference=(0.0938, 0.4399, -0.3871) IK=(0.0938, 0.4399, -0.3871) horizontalError=0
+support=0 Walking Backward t=0,8 LeftFoot reference=(-0.3175, 0.1912, 0.5667) IK=(-0.3175, 0.1912, 0.5667) horizontalError=0
+support=0 Walking Backward t=0,8 RightFoot reference=(0.0023, 0.3019, -0.5491) IK=(0.0023, 0.3019, -0.5491) horizontalError=0
+support=0 Fast Run t=0 LeftFoot reference=(-0.4956, 0.8593, -0.3416) IK=(-0.4956, 0.8593, -0.3416) horizontalError=0
+support=0 Fast Run t=0 RightFoot reference=(-0.0066, 0.2738, -0.7389) IK=(-0.0066, 0.2738, -0.7389) horizontalError=0
+support=0 Fast Run t=0,2 LeftFoot reference=(-0.3694, 0.3060, 0.3962) IK=(-0.3694, 0.3060, 0.3962) horizontalError=0
+support=0 Fast Run t=0,2 RightFoot reference=(-0.1039, 0.6420, -1.1847) IK=(-0.1039, 0.6420, -1.1847) horizontalError=0
+support=0 Fast Run t=0,4 LeftFoot reference=(-0.2988, 0.1902, -0.2297) IK=(-0.2988, 0.1902, -0.2297) horizontalError=0
+support=0 Fast Run t=0,4 RightFoot reference=(0.1194, 1.0064, -0.7264) IK=(0.1194, 1.0064, -0.7264) horizontalError=0
+support=0 Fast Run t=0,6 LeftFoot reference=(-0.1732, 0.4167, -1.0063) IK=(-0.1732, 0.4167, -1.0063) horizontalError=0
+support=0 Fast Run t=0,6 RightFoot reference=(0.2251, 0.5108, 0.0631) IK=(0.2251, 0.5108, 0.0631) horizontalError=0
+support=0 Fast Run t=0,8 LeftFoot reference=(-0.1618, 0.9778, -1.0361) IK=(-0.1618, 0.9778, -1.0361) horizontalError=0
+support=0 Fast Run t=0,8 RightFoot reference=(0.0141, 0.1699, 0.1768) IK=(0.0141, 0.1699, 0.1768) horizontalError=0
+support=0,15 Standing Idle t=0 LeftFoot reference=(-0.4791, 0.2368, 0.1334) IK=(-0.4791, 0.3968, 0.1334) horizontalError=1,940587E-06
+support=0,15 Standing Idle t=0 RightFoot reference=(0.0869, 0.2280, -0.0740) IK=(0.0869, 0.3880, -0.0740) horizontalError=3,017255E-07
+support=0,15 Standing Idle t=0,2 LeftFoot reference=(-0.4762, 0.2348, 0.1402) IK=(-0.4762, 0.3948, 0.1402) horizontalError=2,330544E-06
+support=0,15 Standing Idle t=0,2 RightFoot reference=(0.0871, 0.2293, -0.0721) IK=(0.0871, 0.3893, -0.0721) horizontalError=3,514432E-07
+support=0,15 Standing Idle t=0,4 LeftFoot reference=(-0.4762, 0.2353, 0.1386) IK=(-0.4762, 0.3953, 0.1386) horizontalError=2,220823E-06
+support=0,15 Standing Idle t=0,4 RightFoot reference=(0.0886, 0.2296, -0.0761) IK=(0.0886, 0.3896, -0.0761) horizontalError=3,465922E-07
+support=0,15 Standing Idle t=0,6 LeftFoot reference=(-0.4790, 0.2361, 0.1356) IK=(-0.4790, 0.3961, 0.1356) horizontalError=2,139186E-06
+support=0,15 Standing Idle t=0,6 RightFoot reference=(0.0872, 0.2286, -0.0722) IK=(0.0872, 0.3886, -0.0722) horizontalError=4,235706E-07
+support=0,15 Standing Idle t=0,8 LeftFoot reference=(-0.4782, 0.2372, 0.1313) IK=(-0.4782, 0.3972, 0.1313) horizontalError=2,518473E-06
+support=0,15 Standing Idle t=0,8 RightFoot reference=(0.0871, 0.2271, -0.0740) IK=(0.0871, 0.3871, -0.0740) horizontalError=7,033601E-07
+support=0,15 Walking t=0 LeftFoot reference=(-0.3993, 0.2889, 0.0391) IK=(-0.3993, 0.4489, 0.0391) horizontalError=2,199121E-06
+support=0,15 Walking t=0 RightFoot reference=(0.0692, 0.2269, -0.0743) IK=(0.0692, 0.3869, -0.0743) horizontalError=2,938968E-07
+support=0,15 Walking t=0,2 LeftFoot reference=(-0.3175, 0.1912, 0.5668) IK=(-0.3175, 0.3512, 0.5668) horizontalError=1,770168E-06
+support=0,15 Walking t=0,2 RightFoot reference=(0.0023, 0.3019, -0.5490) IK=(0.0023, 0.4619, -0.5490) horizontalError=3,883316E-07
+support=0,15 Walking t=0,4 LeftFoot reference=(-0.3626, 0.2136, 0.1450) IK=(-0.3626, 0.3736, 0.1450) horizontalError=2,122304E-06
+support=0,15 Walking t=0,4 RightFoot reference=(0.0938, 0.4398, -0.3871) IK=(0.0938, 0.5998, -0.3871) horizontalError=6,476436E-07
+support=0,15 Walking t=0,6 LeftFoot reference=(-0.3189, 0.2449, -0.3175) IK=(-0.3189, 0.4049, -0.3175) horizontalError=2,50995E-06
+support=0,15 Walking t=0,6 RightFoot reference=(0.1674, 0.2145, 0.5341) IK=(0.1674, 0.3745, 0.5341) horizontalError=1,074538E-07
+support=0,15 Walking t=0,8 LeftFoot reference=(-0.3157, 0.3712, -0.5585) IK=(-0.3157, 0.5312, -0.5585) horizontalError=2,492907E-06
+support=0,15 Walking t=0,8 RightFoot reference=(0.1617, 0.1921, 0.3552) IK=(0.1617, 0.3521, 0.3552) horizontalError=6,738555E-07
+support=0,15 Walking Backward t=0 LeftFoot reference=(-0.3993, 0.2889, 0.0390) IK=(-0.3993, 0.4489, 0.0390) horizontalError=1,938583E-06
+support=0,15 Walking Backward t=0 RightFoot reference=(0.0692, 0.2269, -0.0744) IK=(0.0692, 0.3869, -0.0744) horizontalError=3,224475E-07
+support=0,15 Walking Backward t=0,2 LeftFoot reference=(-0.3157, 0.3712, -0.5586) IK=(-0.3157, 0.5312, -0.5586) horizontalError=2,729476E-06
+support=0,15 Walking Backward t=0,2 RightFoot reference=(0.1617, 0.1921, 0.3553) IK=(0.1617, 0.3521, 0.3553) horizontalError=5,075153E-07
+support=0,15 Walking Backward t=0,4 LeftFoot reference=(-0.3189, 0.2449, -0.3176) IK=(-0.3189, 0.4049, -0.3176) horizontalError=2,530215E-06
+support=0,15 Walking Backward t=0,4 RightFoot reference=(0.1674, 0.2145, 0.5340) IK=(0.1674, 0.3745, 0.5340) horizontalError=9,541399E-08
+support=0,15 Walking Backward t=0,6 LeftFoot reference=(-0.3626, 0.2136, 0.1449) IK=(-0.3626, 0.3736, 0.1449) horizontalError=2,162107E-06
+support=0,15 Walking Backward t=0,6 RightFoot reference=(0.0938, 0.4399, -0.3871) IK=(0.0938, 0.5999, -0.3871) horizontalError=3,6386E-07
+support=0,15 Walking Backward t=0,8 LeftFoot reference=(-0.3175, 0.1912, 0.5667) IK=(-0.3175, 0.3512, 0.5667) horizontalError=1,587096E-06
+support=0,15 Walking Backward t=0,8 RightFoot reference=(0.0023, 0.3019, -0.5491) IK=(0.0023, 0.4619, -0.5491) horizontalError=6,633059E-07
+support=0,15 Fast Run t=0 LeftFoot reference=(-0.4956, 0.8593, -0.3416) IK=(-0.4956, 0.8593, -0.3416) horizontalError=0
+support=0,15 Fast Run t=0 RightFoot reference=(-0.0066, 0.2738, -0.7389) IK=(-0.0066, 0.4338, -0.7389) horizontalError=7,302402E-07
+support=0,15 Fast Run t=0,2 LeftFoot reference=(-0.3694, 0.3060, 0.3962) IK=(-0.3695, 0.4660, 0.3962) horizontalError=1,322767E-06
+support=0,15 Fast Run t=0,2 RightFoot reference=(-0.1039, 0.6420, -1.1847) IK=(-0.1039, 0.6420, -1.1847) horizontalError=0
+support=0,15 Fast Run t=0,4 LeftFoot reference=(-0.2988, 0.1902, -0.2297) IK=(-0.2988, 0.3502, -0.2297) horizontalError=2,549971E-06
+support=0,15 Fast Run t=0,4 RightFoot reference=(0.1194, 1.0064, -0.7264) IK=(0.1194, 1.0064, -0.7264) horizontalError=0
+support=0,15 Fast Run t=0,6 LeftFoot reference=(-0.1732, 0.4167, -1.0063) IK=(-0.1732, 0.5767, -1.0063) horizontalError=2,831691E-06
+support=0,15 Fast Run t=0,6 RightFoot reference=(0.2251, 0.5108, 0.0631) IK=(0.2422, 0.5629, 0.0639) horizontalError=0,01714528
+support=0,15 Fast Run t=0,8 LeftFoot reference=(-0.1618, 0.9778, -1.0361) IK=(-0.1618, 0.9778, -1.0361) horizontalError=0
+support=0,15 Fast Run t=0,8 RightFoot reference=(0.0141, 0.1699, 0.1768) IK=(0.0141, 0.3299, 0.1768) horizontalError=3,593747E-07

@@ -1,0 +1,17 @@
+PASS Foundation tile cannot be sold
+PASS Direct demolition also protects foundations
+PASS A closed room's upper slab can be sold
+PASS Automatic room completion does not refill or charge for a sold upper slab
+PASS Removed upper slab remains absent after JSON save/load
+PASS Stair with hall builds successfully
+PASS Stair can be sold independently of its hall
+PASS Sold staircase can be placed again at its exact original pose
+PASS Sold staircase can reuse its existing hall: 
+PASS Nearby rounded preview snaps to sold stair's original pivot
+PASS Vacated-position snap does not pull a stair down from another storey
+PASS Vacated-position snap respects deliberate rotation
+PASS Removing the stair leaves its opening empty without a refill charge
+PASS Player may manually close an opening after the stair is removed
+PASS Sold-stair opening remains open after save/load and automatic completion
+PASS Ordinary non-procedural upper floor is removable too
+PASS Deleted ordinary tile contributes its exact intentional opening

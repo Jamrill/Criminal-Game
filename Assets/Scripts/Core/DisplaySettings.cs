@@ -10,7 +10,8 @@ namespace JuegoCriminal.Core
         public static Vector2Int Resolution { get; private set; }
         public static int Mode { get; private set; }
         public static bool VSyncEnabled { get; private set; }
-        public static readonly string[] ModeLabels = { "Pantalla completa", "Ventana (con bordes)", "Ventana sin bordes" };
+        public static string[] ModeLabels => JuegoCriminal.Localization.GameLanguage.Current==JuegoCriminal.Localization.GameLocale.Spanish ?
+            new[] { "Pantalla completa", "Ventana (con bordes)", "Ventana sin bordes" } : new[] { "Fullscreen", "Windowed", "Borderless window" };
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()

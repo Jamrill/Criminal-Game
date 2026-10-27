@@ -1,0 +1,12 @@
+PASS Opening Properties preserves authored tablet and HUD dimensions: (1820.00, 980.00) / (500.00, 760.00)
+PASS Tablet, HUD and property panel have no automatic layout groups
+PASS ConstructionController uses the UI nested inside Player, not a second instance
+PASS Walls catalogue uses two responsive columns
+PASS Walls cards occupy separate columns
+PASS Furniture catalogue uses two responsive columns
+PASS Furniture cards occupy separate columns
+PASS Catalogue displays readable English names
+PASS Language change updates construction navigation
+PASS Language change updates catalogue names without modifying definitions
+PASS Language selection is persisted
+PASS Shared Options prefab includes English/Spanish dropdown

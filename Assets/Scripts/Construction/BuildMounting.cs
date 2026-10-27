@@ -25,13 +25,14 @@ namespace JuegoCriminal.Construction
             {
                 if(!FirstHit(ray,100,player,out var hit) || Vector3.Dot(hit.normal,plot.Grid.up)>-.7f)return false;
                 if(!IsCeiling(hit.collider,plot))return false;
-                var anchor=plot.SnapOrigin(hit.point);
+                var rotation=plot.Grid.rotation*Quaternion.Euler(0,(turns%4)*90,0);
+                var anchor=BuildFootprint.SnapAnchor(entry,plot,hit.point,rotation);
                 // Snapping may cross an edge or a stair opening. Verify the actual
                 // underside again instead of floating over a missing ceiling tile.
                 if(!FirstHit(new Ray(anchor+hit.normal*.1f,-hit.normal),.2f,player,out var snapped) ||
                     !IsCeiling(snapped.collider,plot) || Vector3.Dot(snapped.normal,plot.Grid.up)>-.7f)return false;
                 pose.anchor=snapped.point+snapped.normal*.002f;
-                pose.rotation=plot.Grid.rotation*Quaternion.Euler(0,(turns%4)*90,0);
+                pose.rotation=rotation;
                 pose.position=pose.anchor-pose.rotation*new Vector3(entry.bounds.center.x,entry.bounds.max.y,entry.bounds.center.z);
                 return true;
             }
@@ -66,6 +67,17 @@ namespace JuegoCriminal.Construction
         }
         public static bool IsValid(BuildEntry entry,BuildCatalog catalog,BuildPlot plot,Pose pose)
         {
+            if(entry.mount==BuildMount.Ceiling && BuildFootprint.Uses(entry))
+            {
+                var rect=BuildFootprint.RectOnGrid(entry,plot,pose.position,pose.rotation);
+                float y=plot.Grid.InverseTransformPoint(pose.anchor).y;
+                foreach(float x in new[]{rect.xMin+.02f,rect.xMax-.02f})foreach(float z in new[]{rect.yMin+.02f,rect.yMax-.02f})
+                {
+                    var point=plot.Grid.TransformPoint(new Vector3(x,y,z));
+                    if(!FirstHit(new Ray(point-plot.Grid.up*.05f,plot.Grid.up),.15f,null,out var support) || !IsCeiling(support.collider,plot) ||
+                        Vector3.Dot(support.normal,plot.Grid.up)>-.7f || Mathf.Abs(Vector3.Dot(support.point-pose.anchor,plot.Grid.up))>.025f)return false;
+                }
+            }
             if(entry.mount==BuildMount.Ceiling)
                 foreach(float x in new[]{entry.bounds.min.x+.01f,entry.bounds.max.x-.01f})
                     foreach(float z in new[]{entry.bounds.min.z+.01f,entry.bounds.max.z-.01f})

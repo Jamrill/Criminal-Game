@@ -17,11 +17,20 @@ public static class ConstructionValueSetup
     {
         var catalog=AssetDatabase.LoadAssetAtPath<BuildCatalog>(ConstructionSetup.CatalogPath);
         if(!catalog)return;
+        SetFreeConstruction(catalog,!catalog.developmentFreeConstruction);
+    }
+    public static void SetFreeConstruction(BuildCatalog catalog,bool free)
+    {
+        if(!catalog)return;
         Undo.RecordObject(catalog,"Cambiar costes de desarrollo");
-        catalog.developmentFreeConstruction=!catalog.developmentFreeConstruction;
+        catalog.developmentFreeConstruction=free;
         EditorUtility.SetDirty(catalog);AssetDatabase.SaveAssets();
+        if(EditorApplication.isPlaying)
+            foreach(var view in Object.FindObjectsByType<BuildMenuView>(FindObjectsInactive.Include,FindObjectsSortMode.None))view.RefreshCatalogPrices();
         Debug.Log("Costes cero: "+catalog.developmentFreeConstruction+". Los precios reales no se han modificado.");
     }
+    [MenuItem("Tools/Criminal Game/Construccion/Restaurar precios reales")]
+    public static void RestoreRealPrices()=>SetFreeConstruction(AssetDatabase.LoadAssetAtPath<BuildCatalog>(ConstructionSetup.CatalogPath),false);
     [MenuItem(FreeMenu,true)] static bool CheckFree()
     {
         var catalog=AssetDatabase.LoadAssetAtPath<BuildCatalog>(ConstructionSetup.CatalogPath);

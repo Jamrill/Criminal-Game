@@ -1,0 +1,7 @@
+PASS Runtime sale succeeds
+PASS Sale suppresses physics immediately and records deletion before deferred Destroy
+PASS After a frame, neither sold nor suppressed authored model remains in the hierarchy
+PASS Save capture retains only one data record for the deletion
+PASS Loading a live identity replaces a legacy model already scheduled for destruction
+PASS Live restored replacement survives the frame while the legacy model is destroyed
+PASS Restoring a live identity removes its obsolete deletion record

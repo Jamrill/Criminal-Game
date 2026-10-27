@@ -82,9 +82,13 @@ MonoBehaviour:
   connections:
   - {x: 0, y: 0, z: 0}
   - {x: 4, y: 0, z: 0}
+  segmentPoints:
+  - {x: 0, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
   bottomCenter: {x: 2, y: 0, z: 0}
   height: 7
   currentVariant: 2
+  automaticVariants: 1
 --- !u!1 &8947740130778791708
 GameObject:
   m_ObjectHideFlags: 0

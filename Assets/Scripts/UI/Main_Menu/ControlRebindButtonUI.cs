@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using JuegoCriminal.Core;
+using JuegoCriminal.Localization;
 
 namespace JuegoCriminal.UI
 {
@@ -16,6 +17,8 @@ namespace JuegoCriminal.UI
         [SerializeField] private string waitingText = "Press a key...";
 
         private InputActionRebindingExtensions.RebindingOperation _operation;
+        private string englishDisplayName;
+        public void RefreshLayout()=>SettingsRowLayout.Configure(transform,actionLabel,rebindButton);
 
         private void Awake()
         {
@@ -28,11 +31,14 @@ namespace JuegoCriminal.UI
 
         private void OnEnable()
         {
+            RefreshLayout();
+            GameLanguage.Changed+=Refresh;
             Refresh();
         }
 
         private void OnDisable()
         {
+            GameLanguage.Changed-=Refresh;
             if (_operation != null)
                 _operation.Cancel();
         }
@@ -51,12 +57,26 @@ namespace JuegoCriminal.UI
 
         public void Refresh()
         {
+            if(actionLabel)
+            {
+                if(string.IsNullOrEmpty(englishDisplayName))englishDisplayName=actionLabel.text;
+                string spanish=englishDisplayName switch
+                {
+                    "Move Forward"=>"Avanzar","Move Backward"=>"Retroceder","Move Left"=>"Mover a la izquierda","Move Right"=>"Mover a la derecha",
+                    "Jump"=>"Saltar","Sprint"=>"Correr","Interact"=>"Interactuar","Pause"=>"Pausa","Switch Target"=>"Cambiar objetivo",
+                    "Switch Shoulder"=>"Cambiar hombro","Camera Zoom"=>"Zoom de cámara","Inventory"=>"Inventario","Crouch"=>"Agacharse",
+                    "Rotate Inventory Item"=>"Rotar objeto del inventario","Tablet"=>"Tablet","Rotate Building"=>"Rotar construcción",
+                    "Demolish Building"=>"Vender construcción","Build Cursor (hold)"=>"Cursor de construcción (mantener)","Build Preview Distance"=>"Distancia de previsualización",
+                    _=>englishDisplayName
+                };
+                actionLabel.text=GameLanguage.T(englishDisplayName,spanish);
+            }
             if (bindingLabel != null)
                 bindingLabel.text = GameInput.GetBindingDisplayString(action, bindingIndex);
         }
         public void SetDisplayName(string value)
         {
-            if(actionLabel)actionLabel.text=value;
+            englishDisplayName=value;Refresh();
         }
 
         public void Configure(
@@ -79,6 +99,8 @@ namespace JuegoCriminal.UI
             if (Application.isPlaying && rebindButton != null)
                 rebindButton.onClick.AddListener(BeginRebind);
 
+            englishDisplayName=displayName;
+            RefreshLayout();
             if (actionLabel != null)
                 actionLabel.text = displayName;
 
@@ -91,7 +113,7 @@ namespace JuegoCriminal.UI
                 return;
 
             if (bindingLabel != null)
-                bindingLabel.text = waitingText;
+                bindingLabel.text = GameLanguage.T(waitingText,"Pulsa una tecla...");
 
             if (rebindButton != null)
                 rebindButton.interactable = false;

@@ -1,0 +1,245 @@
+{
+    "version": 7,
+    "money": 9700,
+    "lastScene": "",
+    "ownedProperties": [
+        881
+    ],
+    "inventoryItems": [],
+    "inventoryColumns": 10,
+    "equippedItemIds": [],
+    "printers": [],
+    "buildings": [
+        {
+            "id": "01df421ca30840e396ade32a7ccadee8",
+            "definitionId": "646161ef561b93c4e895b13fc557dca2",
+            "sceneName": "",
+            "propertyId": 881,
+            "finish": 0,
+            "deleted": false,
+            "position": {
+                "x": 3.999999761581421,
+                "y": 0.0,
+                "z": -3.999999761581421
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": -0.7071068286895752
+            },
+            "scale": {
+                "x": 1.000000238418579,
+                "y": 1.0,
+                "z": 1.000000238418579
+            },
+            "cellCenter": {
+                "x": 3.999999523162842,
+                "y": 0.0,
+                "z": -1.9999995231628419
+            },
+            "floorTriangles": []
+        },
+        {
+            "id": "2da8211c645b4487a7f51675e57d8cb1",
+            "definitionId": "503a480c185e59340b02ae885887e4ab",
+            "sceneName": "",
+            "propertyId": 881,
+            "finish": 0,
+            "deleted": false,
+            "position": {
+                "x": 3.9999992847442629,
+                "y": 0.0,
+                "z": 7.152557373046875e-7
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": -4.371138828673793e-8
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "cellCenter": {
+                "x": 1.9999992847442628,
+                "y": 0.0,
+                "z": 8.901013188733486e-7
+            },
+            "floorTriangles": []
+        },
+        {
+            "id": "7d8812290e514333a40df9713b0b6159",
+            "definitionId": "a18105208714efd438e17be7d2d0bc64",
+            "sceneName": "",
+            "propertyId": 881,
+            "finish": 0,
+            "deleted": false,
+            "position": {
+                "x": 4.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": -0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "scale": {
+                "x": 1.000000238418579,
+                "y": 1.0,
+                "z": 1.000000238418579
+            },
+            "cellCenter": {
+                "x": 4.0,
+                "y": 0.0,
+                "z": 1.9999998807907105
+            },
+            "floorTriangles": []
+        },
+        {
+            "id": "authored",
+            "definitionId": "646161ef561b93c4e895b13fc557dca2",
+            "sceneName": "",
+            "propertyId": 881,
+            "finish": -1,
+            "deleted": true,
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "cellCenter": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "floorTriangles": []
+        },
+        {
+            "id": "b1bb2bb639414a208eb1b1a39783035d",
+            "definitionId": "df5a3bf947a2f4b4ea327b50d1351d65",
+            "sceneName": "",
+            "propertyId": 881,
+            "finish": 0,
+            "deleted": true,
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "cellCenter": {
+                "x": 2.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "floorTriangles": []
+        },
+        {
+            "id": "ab15b3b688ca427493dcd76a6241e010",
+            "definitionId": "8fb093df2ca49ef44b97c736bf909d95",
+            "sceneName": "",
+            "propertyId": 881,
+            "finish": 0,
+            "deleted": true,
+            "position": {
+                "x": 3.999999761581421,
+                "y": 0.0,
+                "z": -3.999999761581421
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": -0.7071068286895752
+            },
+            "scale": {
+                "x": 1.000000238418579,
+                "y": 1.0,
+                "z": 1.000000238418579
+            },
+            "cellCenter": {
+                "x": 2.0,
+                "y": 0.0,
+                "z": -1.999999761581421
+            },
+            "floorTriangles": []
+        }
+    ],
+    "playerX": 0.0,
+    "playerY": 0.0,
+    "playerZ": 0.0,
+    "hasPlayerPos": false,
+    "playerCount": 0,
+    "px": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "py": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "pz": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "hasPos": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "playerYaw": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "cameraPitch": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "hasLookRotation": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "slotId": 1,
+    "displayName": "Slot 1",
+    "gameMode": "Single",
+    "lastPlayedUtc": ""
+}

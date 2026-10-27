@@ -1,0 +1,38 @@
+PASS Four walls enclose one room
+PASS Open outline is not a room
+PASS Small genuine wall gap prevents closure
+PASS T junction divides rooms even without endpoint on long wall
+PASS Cross intersection yields four rooms
+PASS Diagonal walls enclose triangular room
+PASS Concave room has interior capture position
+PASS Concave triangulation preserves area
+PASS Nested closed room does not double-count floor
+PASS Dangling internal wall does not invent a room
+PASS Existing complete floor creates no duplicates
+PASS Narrow uncovered strip is detected exactly
+PASS Large tiled floor with internal room has no numerical gaps
+PASS Insufficient funds leaves no half-built floor or charge
+PASS Room automatically charges and builds one floor and one ceiling tile
+PASS One reflection volume only after complete enclosure
+PASS Floor tiles belong to plot and are protected
+PASS Cannot sell foundation tile
+PASS Cannot demolish foundation tile
+PASS Automatic upper floor is editable
+PASS Blocked floor sale never refunds money
+PASS Repeated room scan neither duplicates nor charges again
+PASS Generated floor supports character collision
+PASS Generated ceiling supports underside raycasts
+PASS Save/load rebuilds geometry and enclosure without another payment
+PASS Opening room removes capture but keeps permanent floors
+PASS Closing again reuses permanent tiles
+PASS Upper storey reuses lower ceiling as floor and charges only new roof
+PASS Independent reflection for each storey
+PASS Diagonal room gets clipped tiles, not square overhangs
+PASS Separate rooms have independent captures
+PASS Staircase enclosure plan is clear: 
+PASS Stairs plan includes upper walls, landing and roof
+PASS Staircase removes the intervening protected ceiling through an explicit exception
+PASS Staircase cannot cut ceiling or partly build with insufficient funds
+PASS Staircase charges all parts and cuts old ceiling atomically
+PASS Room scan preserves staircase opening instead of rebuilding its ceiling
+PASS Existing upper room is reused without charging another enclosure: error= additions=0 cost=80 rooms=0 (0.00, 0.00)..(4.00, 4.00);0 (8.00, 0.00)..(12.00, 4.00);4 (0.00, 0.00)..(4.00, 4.00);7 (12.00, 8.00)..(32.00, 28.00)

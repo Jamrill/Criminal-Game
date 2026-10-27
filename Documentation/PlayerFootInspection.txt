@@ -1,0 +1,10 @@
+root=(0.00, 0.00, 0.00) animator=Player_Humanoid scale=(1.00, 1.00, 1.00) humanScale=1,730167
+bottoms L=0,223064 R=0,2230642
+LeftUpperLeg=DEF-thigh.L pos=(-0.1444, 1.6351, 0.1532) rotation=(12.48, 35.87, 176.39) scale=(100.00, 100.00, 100.00)
+LeftLowerLeg=DEF-shin.L pos=(-0.2587, 1.0076, 0.0644) rotation=(6.89, 36.22, 176.45) scale=(100.00, 100.00, 100.00)
+LeftFoot=DEF-foot.L pos=(-0.3456, 0.2945, 0.0212) rotation=(57.99, 165.00, 180.00) scale=(100.00, 100.00, 100.00)
+LeftToes=DEF-toe.L pos=(-0.4051, 0.1508, 0.2433) rotation=(270.00, 165.02, 0.00) scale=(100.00, 100.00, 100.00)
+RightFoot=DEF-foot.R pos=(0.3456, 0.2945, 0.0212) rotation=(57.99, 195.00, 180.00) scale=(100.00, 100.00, 100.00)
+RightToes=DEF-toe.R pos=(0.4051, 0.1508, 0.2433) rotation=(270.00, 195.00, 0.00) scale=(100.00, 100.00, 100.00)
+MESH Retopo_Personaje_femenino LeftFoot Center: (-0.38, 0.19, 0.19), Extents: (0.16, 0.12, 0.28)
+MESH Retopo_Personaje_femenino RightFoot Center: (0.38, 0.19, 0.19), Extents: (0.16, 0.12, 0.28)

@@ -1,0 +1,25 @@
+PASS Steering at 30 FPS, 45 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 30 FPS, -45 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 30 FPS, 90 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 30 FPS, -90 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 30 FPS, 135 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 30 FPS, 180 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 60 FPS, 45 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 60 FPS, -45 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 60 FPS, 90 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 60 FPS, -90 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 60 FPS, 135 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 60 FPS, 180 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 144 FPS, 45 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 144 FPS, -45 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 144 FPS, 90 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 144 FPS, -90 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 144 FPS, 135 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Steering at 144 FPS, 180 degrees: less than 10.2 degrees residual after 100ms, full speed
+PASS Starting still accelerates gradually
+PASS Run-to-walk speed does not snap
+PASS Zero input/velocity is stable
+PASS Fast mouse yaw rotates movement immediately without speed loss
+PASS Inspector allows instant steering at zero response time
+PASS Explicit stop still clears movement
+PASS Existing sprint transition duration remains unchanged

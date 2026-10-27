@@ -1,0 +1,242 @@
+PASS Sold model and all its children are actually destroyed
+PASS Deletion refunds once, never twice
+PASS Only plain deletion data remains, no inactive construction object
+PASS Old save tombstones delete authored scene models on load without recreating hidden prefabs
+PASS Legacy inactive sold models migrate to data-only records
+PASS Deleted-opening data follows a moved, rotated and scaled Solar without retaining its old model
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_wall / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_wall / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_wall / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_wall / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_wall_complete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_wall_complete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_wall_complete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_wall_complete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_complete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_complete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_complete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_complete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_Wall / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_Wall / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_Wall / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_Wall / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_wall_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_wall_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_wall_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_wall_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_wall_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_wall_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_wall_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_wall_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_Wall_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_Wall_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_Wall_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_Wall_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_wall_complete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_wall_complete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_wall_complete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_wall_complete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_wall_semincomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_wall_semincomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_wall_semincomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_wall_semincomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_Wall_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_Wall_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_Wall_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: +_Wall_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Corner_Wall_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Diagonal_Wall_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_complete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_complete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_complete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_complete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Glass_Wall_door_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_Wall_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_Wall_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_Wall_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: T_Wall_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Wall_door_hole_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_wall_incomplete / 0
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_wall_incomplete / 90
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_wall_incomplete / 180
+PASS Boundary clamping preserves floor height
+PASS Full bounds fit rotated/scaled plot edge: Window_wall_incomplete / 270
+PASS Boundary clamping preserves floor height
+PASS Economy independently rejects outside-plot construction without a debit
+PASS Boundary adjustment keeps a complete perimeter closed for automatic room detection
+PASS Successful straight-wall click begins a stroke
+PASS Camera jump fills consecutive span 1 instead of skipping walls
+PASS Brush span joins its neighbour without overlapping it
+PASS Brush placement succeeds
+PASS Camera jump fills consecutive span 2 instead of skipping walls
+PASS Brush span joins its neighbour without overlapping it
+PASS Brush placement succeeds
+PASS Camera jump fills consecutive span 3 instead of skipping walls
+PASS Brush span joins its neighbour without overlapping it
+PASS Brush placement succeeds
+PASS Holding over an existing stamped span neither duplicates nor charges it again
+PASS Stroke can extend backwards from the original click
+PASS Release/cancel resets the wall stroke
+PASS Pending wall records do not build or charge before release
+PASS Release builds all pending walls with one combined price
+PASS Invalid batch neither builds nor charges
+PASS Failure between pending walls rolls back the whole batch and payment
+PASS Insufficient total funds leaves no partial construction

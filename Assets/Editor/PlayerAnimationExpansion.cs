@@ -13,7 +13,7 @@ public static class PlayerAnimationExpansion
     public static readonly Dictionary<string, (float takeoff, float landing)> JumpContacts = new Dictionary<string, (float, float)>();
     const string ControllerPath = "Assets/Animations/PlayerLocomotion.controller";
     static readonly string[] Sources = { "Standing Idle", "Female Start Walking", "Female Walk", "Female Stop Walking", "Left Strafe Walk", "Right Strafe Walk",
-        "Pistol Aim", "Pistol Idle", "Crouched To Standing", "Crouched Walking",
+        "Pistol Idle", "Crouched To Standing", "Crouched Walking",
         "Jump_on_site", "Jump_in_movement", "Fast Run", "Running Right Turn" };
 
     public static AnimatorController BuildController()
@@ -77,7 +77,6 @@ public static class PlayerAnimationExpansion
         clips["Backward Start"] = Reverse(clips["Female Stop Walking"], "Backward Start");
         clips["Backward Stop"] = Reverse(clips["Female Start Walking"], "Backward Stop");
         clips["Crouched Walking Reverse"] = Reverse(clips["Crouched Walking"], "Crouched Walking Reverse");
-        clips["Pistol Aim Reverse"] = Reverse(clips["Pistol Aim"], "Pistol Aim Reverse");
         clips["Crouched To Standing Reverse"] = Reverse(clips["Crouched To Standing"], "Crouched To Standing Reverse");
         var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(ControllerPath);
         if (!controller) controller = AnimatorController.CreateAnimatorControllerAtPath(ControllerPath);
@@ -102,7 +101,7 @@ public static class PlayerAnimationExpansion
         Add("Walk Start", "Female Start Walking"); Add("Walk Stop", "Female Stop Walking");
         Add("Backward Start", "Backward Start"); Add("Backward Stop", "Backward Stop");
         Add("Left Strafe Walk", "Left Strafe Walk"); Add("Right Strafe Walk", "Right Strafe Walk");
-        Add("Pistol Draw", "Pistol Aim Reverse", PlayerLocomotionAnimation.DrawSpeed); Add("Pistol Idle", "Pistol Idle"); Add("Pistol Holster", "Pistol Aim", PlayerLocomotionAnimation.HolsterSpeed);
+        Add("Pistol Idle", "Pistol Idle");
         Add("Crouch Down", "Crouched To Standing Reverse"); Add("Stand Up", "Crouched To Standing");
         Add("Crouched Idle", "Crouched To Standing", 0);
         Add("Crouched Walking", "Crouched Walking"); Add("Crouched Backward", "Crouched Walking Reverse");
@@ -212,11 +211,16 @@ public static class PlayerAnimationExpansion
         void Check(bool value, string message) { if (!value) throw new Exception(message); report.Add("PASS " + message); }
         try
         {
+            // Edit-mode prefab instantiation does not invoke MonoBehaviour.Awake.
+            // Initialise only this driver's dependency, without starting gameplay systems.
+            driver.Configure(animator);
+            typeof(PlayerLocomotionAnimation).GetField("movement",System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                .SetValue(driver,root.GetComponent<ThirdPersonController>());
             animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
             animator.Rebind(); animator.Update(0);
             Check(animator.avatar.isValid && animator.avatar.isHuman, "Character avatar valid");
             var controller = (AnimatorController)animator.runtimeAnimatorController;
-            Check(controller.layers[0].stateMachine.states.Length == 22, "22 animation states assigned");
+            Check(controller.layers[0].stateMachine.states.Length == 20, "20 animation states assigned without draw/holster");
             foreach (string name in Sources)
             {
                 var importer = (ModelImporter)AssetImporter.GetAtPath("Assets/Animations/" + name + ".fbx");
@@ -224,17 +228,17 @@ public static class PlayerAnimationExpansion
                 Check(importer.avatarSetup == ModelImporterAvatarSetup.CreateFromThisModel && !importer.sourceAvatar && av && av.isHuman && av.isValid, name + " uses its own valid humanoid avatar");
             }
             foreach (var pair in new[] { (Vector3.zero,"Standing Idle"), (Vector3.forward,"Walking"),
-                (Vector3.back,"Walking Backward"), (Vector3.left,"Left Strafe Walk"), (Vector3.right,"Right Strafe Walk") })
+                (Vector3.back,"Walking Backward"), (Vector3.left,"Walking"), (Vector3.right,"Walking") })
             {
-                driver.UpdateLocomotion(pair.Item1); animator.Update(.10f);
+                driver.UpdateLocomotion(pair.Item1); animator.Update(.4f);
                 Check(animator.GetCurrentAnimatorStateInfo(0).IsName(pair.Item2), "Locomotion " + pair.Item2);
             }
             foreach (var direction in new[] {Vector3.forward, Vector3.back})
             {
                 driver.UpdateLocomotion(direction); animator.Update(10);
                 driver.UpdateLocomotion(direction); animator.Update(.20f);
-                driver.UpdateLocomotion(Vector3.zero); animator.Update(.10f);
-                Check(animator.GetCurrentAnimatorStateInfo(0).IsName("Standing Idle"), "Release stops feet immediately " + direction.z);
+                driver.UpdateLocomotion(Vector3.zero); animator.Update(.4f);
+                Check(animator.GetCurrentAnimatorStateInfo(0).IsName("Standing Idle"), "Release blends back to idle " + direction.z);
                 animator.Update(10); driver.UpdateLocomotion(Vector3.zero); animator.Update(.20f);
                 Check(animator.GetCurrentAnimatorStateInfo(0).IsName("Standing Idle"), "Stop completes " + direction.z);
             }
@@ -244,7 +248,7 @@ public static class PlayerAnimationExpansion
                 {
                     float jitter = frame % 2 == 0 ? .02f : -.02f;
                     driver.UpdateLocomotion(new Vector3(input.x * (.7f + jitter), 0, input.y * (.7f - jitter)), input);
-                    animator.Update(.1f);
+                    animator.Update(.4f);
                     Check(animator.GetCurrentAnimatorStateInfo(0).IsName(input.y > 0 ? "Walking" : "Walking Backward"),
                         "Diagonal keeps longitudinal animation " + input + " frame " + frame);
                 }
@@ -256,15 +260,15 @@ public static class PlayerAnimationExpansion
             {
                 var input = new Vector2(direction, 1);
                 driver.UpdateLocomotion(new Vector3(direction,0,1), input, true); animator.Update(.4f);
-                Check(animator.GetCurrentAnimatorStateInfo(0).IsName(direction > 0 ? "Run Right Turn" : "Run Left Turn"), "Running turn " + direction);
+                Check(animator.GetCurrentAnimatorStateInfo(0).IsName("Fast Run"), "Diagonal uses forward running gait " + direction);
                 animator.Update(10); driver.UpdateLocomotion(new Vector3(direction,0,1), input, true); animator.Update(.4f);
                 Check(animator.GetCurrentAnimatorStateInfo(0).IsName("Fast Run"), "Holding diagonal does not loop turn " + direction);
             }
             Check(controller.layers[0].stateMachine.states.First(s => s.state.name == "Run Left Turn").state.mirror, "Left turn mirrors right turn");
             foreach (bool moving in new[] {false,true})
             {
-                driver.BeginJump(moving, .7f); animator.Update(.1f);
-                Check(driver.IsJumping && driver.BlocksJump && !driver.BlocksMovement, "Jump blocks second jump but permits translation");
+                driver.BeginJump(moving, .7f); animator.Update(.4f);
+                Check(driver.IsJumping && driver.BlocksJump && driver.BlocksMovement == !moving, "Only moving jump permits horizontal translation");
                 Check(animator.GetCurrentAnimatorStateInfo(0).IsName(moving ? "Jump Moving" : "Jump On Site"), "Jump clip selected " + moving);
                 Check(!driver.ConsumeJumpTakeoff(), "Preparation precedes physical takeoff");
                 driver.AdvanceInput(Vector2.zero, false, false, 10);
@@ -281,20 +285,14 @@ public static class PlayerAnimationExpansion
                 driver.UpdateLocomotion(Vector3.zero); animator.Update(.2f);
                 Check(!driver.IsJumping && animator.GetCurrentAnimatorStateInfo(0).IsName("Standing Idle"), "Landing resumes locomotion");
             }
-            float pistol = controller.animationClips.First(c => c.name == "Pistol Aim").length;
             float crouch = controller.animationClips.First(c => c.name == "Crouched To Standing").length;
-            driver.AdvanceInput(Vector2.zero, false, true, 0); animator.Update(.05f);
-            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Drawing, "Right click draws");
-            Check(controller.layers[0].stateMachine.states.First(s => s.state.name == "Pistol Draw").state.speed == PlayerLocomotionAnimation.DrawSpeed, "Draw state speed matches action timer");
-            Check(controller.layers[0].stateMachine.states.First(s => s.state.name == "Pistol Holster").state.speed == PlayerLocomotionAnimation.HolsterSpeed, "Holster state speed matches action timer");
-            driver.AdvanceInput(Vector2.zero, false, false, pistol / PlayerLocomotionAnimation.DrawSpeed - .01f);
-            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Drawing, "Draw stays active until adjusted clip duration");
-            driver.AdvanceInput(Vector2.zero, false, false, .02f); animator.Update(.2f);
-            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Aiming, "Draw ends in pistol idle");
-            driver.AdvanceInput(Vector2.right, false, false, .01f);
-            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Holstering && driver.BlocksMovement, "Movement holsters before translation");
-            driver.AdvanceInput(Vector2.right, false, false, pistol + .01f);
-            Check(!driver.BlocksMovement, "Movement released after holster");
+            driver.AdvanceInput(Vector2.zero, false, true, 0); animator.Update(.4f);
+            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Aiming && animator.GetCurrentAnimatorStateInfo(0).IsName("Pistol Idle"), "Right click goes directly to pistol idle");
+            Check(!controller.animationClips.Any(c=>c.name.StartsWith("Pistol Aim")), "Pistol Aim is not used by the controller");
+            driver.AdvanceInput(Vector2.right, true, false, 10);
+            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Aiming && driver.BlocksMovement && driver.BlocksJump, "Movement/crouch do not cancel aiming");
+            driver.AdvanceInput(Vector2.zero, false, true, 0);
+            Check(!driver.BlocksMovement, "Second right click releases aiming directly");
             driver.AdvanceInput(Vector2.zero, true, false, 0);
             Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Crouching, "Control starts crouch");
             driver.AdvanceInput(Vector2.zero, false, false, crouch + .01f); driver.UpdateLocomotion(Vector3.zero); animator.Update(.2f);
@@ -306,7 +304,7 @@ public static class PlayerAnimationExpansion
             driver.AdvanceInput(Vector2.zero, false, false, crouch + .01f);
             Check(!driver.IsCrouched && !driver.BlocksMovement, "Stand up completes");
             // Check the reversed curves against the source at multiple points over the clip.
-            foreach (var sourceName in new[] { "Walking", "Crouched Walking", "Pistol Aim", "Crouched To Standing" })
+            foreach (var sourceName in new[] { "Walking", "Crouched Walking", "Crouched To Standing" })
             {
                 var source = controller.animationClips.First(c => c.name == (sourceName == "Walking" ? "Female Walk" : sourceName) +
                     (sourceName == "Walking" || sourceName == "Crouched Walking" ? " In Place" : ""));
@@ -381,15 +379,14 @@ public static class PlayerAnimationExpansion
             Debug.Log($"CROUCH_POSES low={low:F5} high={high:F5} reverseStart={reverseHigh:F5} reverseEnd={reverseLow:F5}");
             Check(Vector3.Distance(reverseHigh, high) < .01f &&
                   Vector3.Distance(reverseLow, low) < .01f, "Reversed crouch endpoints retarget correctly");
-            // Interrupting the draw must return from the same point, then allow crouch.
+            // No pending holster or queued crouch survives the aiming toggle.
             driver.AdvanceInput(Vector2.zero, false, true, 0);
-            driver.AdvanceInput(Vector2.zero, false, false, pistol * .5f / PlayerLocomotionAnimation.DrawSpeed);
             driver.AdvanceInput(Vector2.up, true, false, 0);
-            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Holstering, "Interrupted draw holsters");
-            driver.AdvanceInput(Vector2.zero, false, false, pistol * .49f / PlayerLocomotionAnimation.HolsterSpeed);
-            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Holstering, "Partial holster accounts for both playback speeds");
-            driver.AdvanceInput(Vector2.zero, false, false, pistol * .02f / PlayerLocomotionAnimation.HolsterSpeed);
-            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Crouching, "Queued crouch follows partial holster");
+            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Aiming, "Aiming remains active while movement is held");
+            driver.AdvanceInput(Vector2.up, false, true, 0);
+            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Locomotion && !driver.IsCrouched, "Toggle off returns directly to locomotion");
+            driver.AdvanceInput(Vector2.zero, true, false, 0);
+            Check(driver.Phase == PlayerLocomotionAnimation.ActionPhase.Crouching, "Crouch still works after toggling aim off");
             File.WriteAllLines("Documentation/MixamoAnimationValidation.txt", report);
             Debug.Log("MIXAMO_VALIDATION_PASSED " + report.Count);
         }

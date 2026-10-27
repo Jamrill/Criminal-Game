@@ -95,10 +95,10 @@ public static class ConstructionValueValidation
         var persistence=services.AddComponent<ConstructionPersistence>();persistence.catalog=testCatalog;
         persistence.RestoreScene(data,scene);
         var restored=plot.GetComponentsInChildren<PlacedBuildObject>(true);
-        Check(restored.Length==4 && restored.All(p=>p.transform.parent==plot.transform),"Load restores all objects under their Solar");
-        Check(authored.deleted && !authored.gameObject.activeSelf && restored.Count(p=>!p.deleted)==1 && plot.TotalValue==150,"Sold authored objects stay absent; loaded value matches remaining walls");
+        Check(restored.Length==1 && restored.All(p=>p.transform.parent==plot.transform) && BuildDeletionLedger.Deleted(plot).Count()==3,"Load restores live objects and separate deletion data under their Solar");
+        Check(!authored && restored.Count(p=>!p.deleted)==1 && plot.TotalValue==150,"Sold authored objects are destroyed; loaded value matches remaining walls");
         persistence.RestoreScene(data,scene);
-        Check(plot.GetComponentsInChildren<PlacedBuildObject>(true).Length==4,"Repeated restoration does not duplicate objects");
+        Check(plot.GetComponentsInChildren<PlacedBuildObject>(true).Length==1,"Repeated restoration does not duplicate objects");
         Object.DestroyImmediate(testCatalog);
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         Debug.Log("CONSTRUCTION_VALUE_VALIDATION_OK checks="+results.Count);

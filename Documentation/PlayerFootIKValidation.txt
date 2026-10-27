@@ -1,0 +1,14 @@
+PASS Prefab has a grounding solver and two assigned foot boxes
+PASS Foot boxes are non-blocking sensors excluded from interaction rays
+PASS Sensors follow the correct humanoid bones
+PASS Sensor scale compensates the FBX bones' 100x scale
+PASS Feet detect the supporting ground
+PASS Left foot detects a 24cm curb
+PASS Right foot independently remains on lower ground
+PASS Ground query ignores all player colliders
+PASS Ground query ignores triggers
+PASS Feet recognize dropped objects with their own colliders
+PASS Surface normals retain gentle slope information
+PASS Inspector ground layer mask is honored
+PASS No foot snapping to distant ground while airborne
+PASS Head-look solver and body CharacterController are preserved

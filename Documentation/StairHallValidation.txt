@@ -1,0 +1,29 @@
+PASS Floor is visible in the construction catalogue
+PASS Upper exit found at yaw=0
+PASS Stair opening never consumes the landing at yaw=0
+PASS Hall plan is placeable at yaw=0: 
+PASS Full landing floor is included before building at yaw=0
+PASS Upper exit found at yaw=90
+PASS Stair opening never consumes the landing at yaw=90
+PASS Hall plan is placeable at yaw=90: 
+PASS Full landing floor is included before building at yaw=90
+PASS Upper exit found at yaw=180
+PASS Stair opening never consumes the landing at yaw=180
+PASS Hall plan is placeable at yaw=180: 
+PASS Full landing floor is included before building at yaw=180
+PASS Upper exit found at yaw=270
+PASS Stair opening never consumes the landing at yaw=270
+PASS Hall plan is placeable at yaw=270: 
+PASS Full landing floor is included before building at yaw=270
+PASS Insufficient funds creates neither stair nor partial hall
+PASS Stairs, walls, hall floor and roof use one paid transaction
+PASS Real collider supports the player immediately past the last step
+PASS Upper stair landing is editable under the foundation-only rule
+PASS Nested intermediate landings do not classify the whole staircase as a floor
+PASS Existing complete hall is reused without duplicate charges
+PASS Intentionally removed upper floor stays removed when a hall is reused
+PASS Manual floors cannot seal an active staircase opening
+PASS An upper-storey open tile is removable
+PASS Selling allowed open floor records deletion and refunds its catalogue price
+PASS Manual floors align their walkable top to the storey height
+PASS Read-only floor checks preserve pending automatic-floor costs and warnings

@@ -28,6 +28,8 @@ namespace JuegoCriminal.Construction
         public bool buildable;
         [Tooltip("Origen y altura del suelo de la rejilla; usar escala 1 y rotacion solo Y.")]
         public Transform gridOrigin;
+        [Tooltip("Height of the protected foundation floor, relative to Grid Origin. Upper storeys remain removable.")]
+        public float foundationHeight;
         [Header("Construction boundary")]
         public bool showBoundary = true;
         public Color boundaryColor = new Color(.85f,.88f,.9f,1);
@@ -37,6 +39,30 @@ namespace JuegoCriminal.Construction
         private Material boundaryMaterial;
         public const float CellSize = 4;
         [Header("Placement grid")]
+        [Tooltip("Centre the largest complete 4x4 furniture grid inside the plot. Keeps Grid Origin height/rotation and does not move existing objects or change wall snapping.")]
+        public bool fitFurnitureGridToPlot;
+        public bool TryFurnitureGridLayout(out Vector2 origin,out Vector2Int cells)
+        {
+            origin=Vector2.zero;cells=Vector2Int.zero;
+            if(!fitFurnitureGridToPlot)return false;
+            var matrix=Grid.worldToLocalMatrix*Volume.transform.localToWorldMatrix;
+            var right=matrix.MultiplyVector(Vector3.right);var forward=matrix.MultiplyVector(Vector3.forward);var up=matrix.MultiplyVector(Vector3.up);
+            // A non-axis-aligned parcel needs a polygonal layout, not its larger
+            // enclosing AABB. Retain the authored grid in that unsupported case.
+            if(Mathf.Max(Mathf.Abs(right.normalized.x),Mathf.Abs(right.normalized.z))<.999f || Mathf.Abs(up.normalized.y)<.999f)return false;
+            var center=matrix.MultiplyPoint3x4(Volume.center);var half=Volume.size*.5f;
+            float width=2*(Mathf.Abs(right.x)*half.x+Mathf.Abs(up.x)*half.y+Mathf.Abs(forward.x)*half.z);
+            float depth=2*(Mathf.Abs(right.z)*half.x+Mathf.Abs(up.z)*half.y+Mathf.Abs(forward.z)*half.z);
+            cells=new Vector2Int(Mathf.FloorToInt((width+.001f)/CellSize),Mathf.FloorToInt((depth+.001f)/CellSize));
+            if(cells.x<1 || cells.y<1)return false;
+            origin=new Vector2(center.x-cells.x*CellSize*.5f,center.z-cells.y*CellSize*.5f);return true;
+        }
+        public Vector2 FurnitureGridOffset=>TryFurnitureGridLayout(out var origin,out _)?origin:Vector2.zero;
+        public Vector2Int FurnitureCell(Vector3 world)
+        {
+            var local=Grid.InverseTransformPoint(world);var origin=FurnitureGridOffset;
+            return new Vector2Int(Mathf.FloorToInt((local.x-origin.x)/CellSize),Mathf.FloorToInt((local.z-origin.y)/CellSize));
+        }
         [Tooltip("Paso de colocacion en X/Z. No cambia el tamano de los objetos ni la altura de las plantas.")]
         [Min(.1f)] public float placementStep = 1f;
         [Tooltip("Distancia maxima de ajuste a un extremo vecino. Cero desactiva este ajuste.")]
@@ -45,8 +71,9 @@ namespace JuegoCriminal.Construction
         public BoxCollider Volume => GetComponent<BoxCollider>();
         public Transform Grid => gridOrigin ? gridOrigin : transform;
         private void Reset() { Volume.isTrigger = true; Volume.size = new Vector3(32,12,32); Volume.center = new Vector3(0,6,0); }
-        private void OnEnable() { Active.Add(this); }
+        private void OnEnable() { Active.Add(this);if(Application.isPlaying && !GetComponent<RoomConstruction>())gameObject.AddComponent<RoomConstruction>(); }
         private void OnDisable() { Active.Remove(this); if(boundary) boundary.enabled=false; }
+        private void Start(){if(Application.isPlaying)BuildDeletionLedger.Migrate(this);}
         private void LateUpdate()
         {
             bool visible=showBoundary && ConstructionController.Active && ConstructionController.Active.VisiblePlot==this;

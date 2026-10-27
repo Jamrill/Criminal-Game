@@ -1,0 +1,6 @@
+Backup Documentation/WindowRoomAimBackup/20261023_153242
+Assets/Prefabs/Construction/Completes/Window_Wall.prefab replaced glass slots=1
+Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab replaced glass slots=1
+Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab replaced glass slots=1
+Removed state Pistol Draw
+Removed state Pistol Holster

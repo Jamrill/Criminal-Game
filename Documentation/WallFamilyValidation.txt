@@ -1,0 +1,122 @@
+PASS Wall_complete cannot replace itself at 0
+PASS Wall_complete cannot replace itself at 1
+PASS Wall_complete cannot replace itself at 2
+PASS Wall_complete cannot replace itself at 3
+PASS Wall_complete -> Window_Wall pose valid at 0: 
+PASS Wall_complete -> Window_Wall transaction at 0: 
+PASS Wall_complete -> Window_Wall pose valid at 1: 
+PASS Wall_complete -> Window_Wall transaction at 1: 
+PASS Wall_complete -> Window_Wall pose valid at 2: 
+PASS Wall_complete -> Window_Wall transaction at 2: 
+PASS Wall_complete -> Window_Wall pose valid at 3: 
+PASS Wall_complete -> Window_Wall transaction at 3: 
+PASS Wall_complete -> Wall_door_hole pose valid at 0: 
+PASS Wall_complete -> Wall_door_hole transaction at 0: 
+PASS Wall_complete -> Wall_door_hole pose valid at 1: 
+PASS Wall_complete -> Wall_door_hole transaction at 1: 
+PASS Wall_complete -> Wall_door_hole pose valid at 2: 
+PASS Wall_complete -> Wall_door_hole transaction at 2: 
+PASS Wall_complete -> Wall_door_hole pose valid at 3: 
+PASS Wall_complete -> Wall_door_hole transaction at 3: 
+PASS Wall_complete -> Glass_wall pose valid at 0: 
+PASS Wall_complete -> Glass_wall transaction at 0: 
+PASS Wall_complete -> Glass_wall pose valid at 1: 
+PASS Wall_complete -> Glass_wall transaction at 1: 
+PASS Wall_complete -> Glass_wall pose valid at 2: 
+PASS Wall_complete -> Glass_wall transaction at 2: 
+PASS Wall_complete -> Glass_wall pose valid at 3: 
+PASS Wall_complete -> Glass_wall transaction at 3: 
+PASS Window_Wall -> Wall_complete pose valid at 0: 
+PASS Window_Wall -> Wall_complete transaction at 0: 
+PASS Window_Wall -> Wall_complete pose valid at 1: 
+PASS Window_Wall -> Wall_complete transaction at 1: 
+PASS Window_Wall -> Wall_complete pose valid at 2: 
+PASS Window_Wall -> Wall_complete transaction at 2: 
+PASS Window_Wall -> Wall_complete pose valid at 3: 
+PASS Window_Wall -> Wall_complete transaction at 3: 
+PASS Window_Wall cannot replace itself at 0
+PASS Window_Wall cannot replace itself at 1
+PASS Window_Wall cannot replace itself at 2
+PASS Window_Wall cannot replace itself at 3
+PASS Window_Wall -> Wall_door_hole pose valid at 0: 
+PASS Window_Wall -> Wall_door_hole transaction at 0: 
+PASS Window_Wall -> Wall_door_hole pose valid at 1: 
+PASS Window_Wall -> Wall_door_hole transaction at 1: 
+PASS Window_Wall -> Wall_door_hole pose valid at 2: 
+PASS Window_Wall -> Wall_door_hole transaction at 2: 
+PASS Window_Wall -> Wall_door_hole pose valid at 3: 
+PASS Window_Wall -> Wall_door_hole transaction at 3: 
+PASS Window_Wall -> Glass_wall pose valid at 0: 
+PASS Window_Wall -> Glass_wall transaction at 0: 
+PASS Window_Wall -> Glass_wall pose valid at 1: 
+PASS Window_Wall -> Glass_wall transaction at 1: 
+PASS Window_Wall -> Glass_wall pose valid at 2: 
+PASS Window_Wall -> Glass_wall transaction at 2: 
+PASS Window_Wall -> Glass_wall pose valid at 3: 
+PASS Window_Wall -> Glass_wall transaction at 3: 
+PASS Wall_door_hole -> Wall_complete pose valid at 0: 
+PASS Wall_door_hole -> Wall_complete transaction at 0: 
+PASS Wall_door_hole -> Wall_complete pose valid at 1: 
+PASS Wall_door_hole -> Wall_complete transaction at 1: 
+PASS Wall_door_hole -> Wall_complete pose valid at 2: 
+PASS Wall_door_hole -> Wall_complete transaction at 2: 
+PASS Wall_door_hole -> Wall_complete pose valid at 3: 
+PASS Wall_door_hole -> Wall_complete transaction at 3: 
+PASS Wall_door_hole -> Window_Wall pose valid at 0: 
+PASS Wall_door_hole -> Window_Wall transaction at 0: 
+PASS Wall_door_hole -> Window_Wall pose valid at 1: 
+PASS Wall_door_hole -> Window_Wall transaction at 1: 
+PASS Wall_door_hole -> Window_Wall pose valid at 2: 
+PASS Wall_door_hole -> Window_Wall transaction at 2: 
+PASS Wall_door_hole -> Window_Wall pose valid at 3: 
+PASS Wall_door_hole -> Window_Wall transaction at 3: 
+PASS Wall_door_hole cannot replace itself at 0
+PASS Wall_door_hole cannot replace itself at 1
+PASS Wall_door_hole cannot replace itself at 2
+PASS Wall_door_hole cannot replace itself at 3
+PASS Wall_door_hole -> Glass_wall pose valid at 0: 
+PASS Wall_door_hole -> Glass_wall transaction at 0: 
+PASS Wall_door_hole -> Glass_wall pose valid at 1: 
+PASS Wall_door_hole -> Glass_wall transaction at 1: 
+PASS Wall_door_hole -> Glass_wall pose valid at 2: 
+PASS Wall_door_hole -> Glass_wall transaction at 2: 
+PASS Wall_door_hole -> Glass_wall pose valid at 3: 
+PASS Wall_door_hole -> Glass_wall transaction at 3: 
+PASS Glass_wall -> Wall_complete pose valid at 0: 
+PASS Glass_wall -> Wall_complete transaction at 0: 
+PASS Glass_wall -> Wall_complete pose valid at 1: 
+PASS Glass_wall -> Wall_complete transaction at 1: 
+PASS Glass_wall -> Wall_complete pose valid at 2: 
+PASS Glass_wall -> Wall_complete transaction at 2: 
+PASS Glass_wall -> Wall_complete pose valid at 3: 
+PASS Glass_wall -> Wall_complete transaction at 3: 
+PASS Glass_wall -> Window_Wall pose valid at 0: 
+PASS Glass_wall -> Window_Wall transaction at 0: 
+PASS Glass_wall -> Window_Wall pose valid at 1: 
+PASS Glass_wall -> Window_Wall transaction at 1: 
+PASS Glass_wall -> Window_Wall pose valid at 2: 
+PASS Glass_wall -> Window_Wall transaction at 2: 
+PASS Glass_wall -> Window_Wall pose valid at 3: 
+PASS Glass_wall -> Window_Wall transaction at 3: 
+PASS Glass_wall -> Wall_door_hole pose valid at 0: 
+PASS Glass_wall -> Wall_door_hole transaction at 0: 
+PASS Glass_wall -> Wall_door_hole pose valid at 1: 
+PASS Glass_wall -> Wall_door_hole transaction at 1: 
+PASS Glass_wall -> Wall_door_hole pose valid at 2: 
+PASS Glass_wall -> Wall_door_hole transaction at 2: 
+PASS Glass_wall -> Wall_door_hole pose valid at 3: 
+PASS Glass_wall -> Wall_door_hole transaction at 3: 
+PASS Glass_wall cannot replace itself at 0
+PASS Glass_wall cannot replace itself at 1
+PASS Glass_wall cannot replace itself at 2
+PASS Glass_wall cannot replace itself at 3
+PASS Corner_Wall arm converts to glass and preserves the remainder: 
+PASS T_wall_complete arm converts to glass and preserves the remainder: 
+PASS +_wall_complete arm converts to glass and preserves the remainder: 
+PASS Installed door blocks removal of its supporting hole even while open
+PASS Selling the door permits conversion of its old doorway
+PASS Ray through an empty doorway still finds the supporting wall
+PASS Real aimed click replaces an empty doorway with glass
+PASS Virtual wall targeting cannot pass through furniture/obstacles
+PASS Glass semi/complete variants count as the same type
+PASS An end-cap hit selects the actual front arm, not a virtual wall behind it

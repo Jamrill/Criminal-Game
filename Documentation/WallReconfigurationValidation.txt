@@ -1,0 +1,88 @@
+PASS Straight wall -> T, price difference 70
+PASS Replace wall atomically: 
+PASS Original is a tombstone, not a duplicate; correct debit
+PASS T arm -> Corner + Window, price difference 50
+PASS First illustrated split applies: 
+PASS First split preserves exactly all original segments
+PASS Corner arm -> Straight + Doorway, price difference 180
+PASS Second illustrated split applies: 
+PASS Final result: Straight + Window + Doorway; conserved value/balance
+PASS Second split preserves geometry, no extra or lost arms
+PASS Every resulting piece is a child of Solar
+PASS Save records three tombstones and three final pieces
+PASS Reload does not resurrect original wall and restores building value/balance
+PASS Repeated load creates no duplicates
+PASS T_wall_complete rotation=0 arm=0 split is valid and exact: 
+PASS T_wall_complete rotation=0 arm=1 split is valid and exact: 
+PASS T_wall_complete rotation=0 arm=2 split is valid and exact: 
+PASS T_wall_complete rotation=90 arm=0 split is valid and exact: 
+PASS T_wall_complete rotation=90 arm=1 split is valid and exact: 
+PASS T_wall_complete rotation=90 arm=2 split is valid and exact: 
+PASS T_wall_complete rotation=180 arm=0 split is valid and exact: 
+PASS T_wall_complete rotation=180 arm=1 split is valid and exact: 
+PASS T_wall_complete rotation=180 arm=2 split is valid and exact: 
+PASS T_wall_complete rotation=270 arm=0 split is valid and exact: 
+PASS T_wall_complete rotation=270 arm=1 split is valid and exact: 
+PASS T_wall_complete rotation=270 arm=2 split is valid and exact: 
+PASS +_wall_complete rotation=0 arm=0 split is valid and exact: 
+PASS +_wall_complete rotation=0 arm=1 split is valid and exact: 
+PASS +_wall_complete rotation=0 arm=2 split is valid and exact: 
+PASS +_wall_complete rotation=0 arm=3 split is valid and exact: 
+PASS +_wall_complete rotation=90 arm=0 split is valid and exact: 
+PASS +_wall_complete rotation=90 arm=1 split is valid and exact: 
+PASS +_wall_complete rotation=90 arm=2 split is valid and exact: 
+PASS +_wall_complete rotation=90 arm=3 split is valid and exact: 
+PASS +_wall_complete rotation=180 arm=0 split is valid and exact: 
+PASS +_wall_complete rotation=180 arm=1 split is valid and exact: 
+PASS +_wall_complete rotation=180 arm=2 split is valid and exact: 
+PASS +_wall_complete rotation=180 arm=3 split is valid and exact: 
+PASS +_wall_complete rotation=270 arm=0 split is valid and exact: 
+PASS +_wall_complete rotation=270 arm=1 split is valid and exact: 
+PASS +_wall_complete rotation=270 arm=2 split is valid and exact: 
+PASS +_wall_complete rotation=270 arm=3 split is valid and exact: 
+PASS Corner_Wall rotation=0 arm=0 split is valid and exact: 
+PASS Corner_Wall rotation=0 arm=1 split is valid and exact: 
+PASS Corner_Wall rotation=90 arm=0 split is valid and exact: 
+PASS Corner_Wall rotation=90 arm=1 split is valid and exact: 
+PASS Corner_Wall rotation=180 arm=0 split is valid and exact: 
+PASS Corner_Wall rotation=180 arm=1 split is valid and exact: 
+PASS Corner_Wall rotation=270 arm=0 split is valid and exact: 
+PASS Corner_Wall rotation=270 arm=1 split is valid and exact: 
+PASS Wall_complete rotation=0 arm=0 split is valid and exact: 
+PASS Wall_complete rotation=90 arm=0 split is valid and exact: 
+PASS Wall_complete rotation=180 arm=0 split is valid and exact: 
+PASS Wall_complete rotation=270 arm=0 split is valid and exact: 
+PASS Three ordinary walls merge to T and refund 30
+PASS Merge has no duplicated solids or duplicated charges
+PASS Identical T stays red
+PASS Ordinary wall over a T arm stays red
+PASS Obstacle rejects replacement without modifying old wall or money
+PASS Insufficient funds leaves originals intact
+PASS Free construction also applies to wall restructuring
+PASS All split pieces preserve painted finish
+PASS Painted split applies: 
+PASS Split pieces use semi variant when all outer ends are covered, including internal corner joints
+PASS One T above covers a split Corner + Window: incomplete variants
+PASS Unconnected compound stays complete
+PASS Split upper floor still covers all segments of lower T
+PASS Editing upstairs never replaces the lower storey
+PASS Corner_Wall snaps and replaces a pointed wall at rotation 0
+PASS Corner_Wall snaps and replaces a pointed wall at rotation 90
+PASS Corner_Wall snaps and replaces a pointed wall at rotation 180
+PASS Corner_Wall snaps and replaces a pointed wall at rotation 270
+PASS T_wall_complete snaps and replaces a pointed wall at rotation 0
+PASS T_wall_complete snaps and replaces a pointed wall at rotation 90
+PASS T_wall_complete snaps and replaces a pointed wall at rotation 180
+PASS T_wall_complete snaps and replaces a pointed wall at rotation 270
+PASS +_wall_complete snaps and replaces a pointed wall at rotation 0
+PASS +_wall_complete snaps and replaces a pointed wall at rotation 90
+PASS +_wall_complete snaps and replaces a pointed wall at rotation 180
+PASS +_wall_complete snaps and replaces a pointed wall at rotation 270
+PASS Explicit compound substitution replaces an existing window with the selected solid type: 
+PASS Real aimed editing previews the chosen arm and temporarily hides old geometry
+PASS Clearing preview restores original renderer
+PASS Real click converts aimed T arm through ConstructionEditing
+PASS Partial misalignment does not erase a wall or allow overlap
+PASS Incompatible painted finishes are not silently discarded during a merge
+PASS Authored default finish and old runtime base finish can merge
+PASS Incompatible diagonal opening is safely refused instead of changing wall length

@@ -1,0 +1,19 @@
+PASS Main menu exists
+PASS Runtime action labels and button columns have usable width
+PASS Back is interactable
+PASS Back is not covered by another UI raycast target: point=(460.87, 44.86) screen=640x480 hits=Canvas/OptionsPanel/Back/Text (TMP);Canvas/OptionsPanel/Back;Canvas/OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport;Canvas/OptionsPanel/ControlsMenuUI/ControlsScrollView;Canvas/MainPanel
+PASS Controls Back returns to MainMenu
+PASS Runtime action labels and button columns have usable width
+PASS Back is interactable
+PASS Back is not covered by another UI raycast target: point=(460.87, 44.86) screen=640x480 hits=Canvas/OptionsPanel/Back/Text (TMP);Canvas/OptionsPanel/Back;Canvas/OptionsPanel/VideoMenuUI/VideoScrollView/Viewport;Canvas/OptionsPanel/VideoMenuUI/VideoScrollView;Canvas/MainPanel
+PASS Video Back returns to MainMenu
+PASS World pause menu exists
+PASS Pause UI works with time stopped
+PASS Runtime action labels and button columns have usable width
+PASS Back is interactable
+PASS Back is not covered by another UI raycast target: point=(460.87, 44.86) screen=640x480 hits=Pause Options Canvas/OptionsPanel/Back/Text (TMP);Pause Options Canvas/OptionsPanel/Back;Pause Options Canvas/OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport;Pause Options Canvas/OptionsPanel/ControlsMenuUI/ControlsScrollView
+PASS Controls Back returns to PauseMenu
+PASS Runtime action labels and button columns have usable width
+PASS Back is interactable
+PASS Back is not covered by another UI raycast target: point=(460.87, 44.86) screen=640x480 hits=Pause Options Canvas/OptionsPanel/Back/Text (TMP);Pause Options Canvas/OptionsPanel/Back;Pause Options Canvas/OptionsPanel/VideoMenuUI/VideoScrollView/Viewport;Pause Options Canvas/OptionsPanel/VideoMenuUI/VideoScrollView
+PASS Video Back returns to PauseMenu

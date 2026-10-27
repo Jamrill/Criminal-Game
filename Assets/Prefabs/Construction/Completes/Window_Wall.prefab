@@ -223,9 +223,13 @@ MonoBehaviour:
   connections:
   - {x: 0, y: 0, z: 0}
   - {x: 4, y: 0, z: 0}
+  segmentPoints:
+  - {x: 0, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
   bottomCenter: {x: 2, y: 0, z: 0}
   height: 7
   currentVariant: 0
+  automaticVariants: 1
 --- !u!1001 &5257844983938892922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -290,6 +294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FixedVisual
       objectReference: {fileID: 0}
+    - target: {fileID: 2005229715816757442, guid: 5e6a46e53c16e314db609d28e4d55233, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c20bc2edbd93de84cadf81cba5a8bc43, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

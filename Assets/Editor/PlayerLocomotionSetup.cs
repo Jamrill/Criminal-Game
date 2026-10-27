@@ -76,8 +76,7 @@ public static class PlayerLocomotionSetup
                 var driver = root.GetComponent<PlayerLocomotionAnimation>();
                 if (!driver) driver = root.AddComponent<PlayerLocomotionAnimation>();
                 driver.Configure(animator);
-                driver.ConfigureTimings(controller.animationClips.First(c => c.name == "Pistol Aim").length,
-                    controller.animationClips.First(c => c.name == "Crouched To Standing").length);
+                driver.ConfigureTimings(controller.animationClips.First(c => c.name == "Crouched To Standing").length);
                 driver.ConfigureJumpTimings(controller.animationClips.First(c => c.name == "Jump_on_site In Place").length,
                     controller.animationClips.First(c => c.name == "Jump_in_movement In Place").length);
                 var stationaryContact = PlayerAnimationExpansion.JumpContacts["Jump_on_site"];

@@ -19,7 +19,7 @@ PASS Light_point actual visible mesh meets the ceiling
 PASS Light_point mounted position survives save/restore
 PASS Light_point rejects floor top as a ceiling
 PASS Light_point cannot float outside ceiling footprint
-PASS Light_point rejects partial support over ceiling edge
+PASS Light_point snaps edge aiming to the supported 4x4 cell centre
 PASS Light_point_Cold uses ceiling placement
 PASS Light_point_Cold finds real ceiling underside
 PASS Light_point_Cold top touches underside without penetrating floor
@@ -28,5 +28,5 @@ PASS Light_point_Cold actual visible mesh meets the ceiling
 PASS Light_point_Cold mounted position survives save/restore
 PASS Light_point_Cold rejects floor top as a ceiling
 PASS Light_point_Cold cannot float outside ceiling footprint
-PASS Light_point_Cold rejects partial support over ceiling edge
+PASS Light_point_Cold snaps edge aiming to the supported 4x4 cell centre
 PASS Doors cannot be freely placed without a doorway

@@ -15,6 +15,11 @@ namespace JuegoCriminal.Construction
 
         public static bool Covers(WallTopology wall)
         {
+            try{return CoversGeometry(wall);}
+            catch(RoomGeometry.GeometryLimitException){return false;} // Keep the cap when coverage cannot be proved safely.
+        }
+        static bool CoversGeometry(WallTopology wall)
+        {
             bool tested=false;
             foreach(var box in wall.GetComponentsInChildren<BoxCollider>())
             {
@@ -23,10 +28,17 @@ namespace JuegoCriminal.Construction
                 if(Mathf.Abs(Vector3.Dot(top-wall.Bottom,wall.transform.up)-wall.WorldHeight)>.06f)continue;
                 tested=true;
                 var min=box.center-box.size*.5f;var max=box.center+box.size*.5f;
-                var regions=new List<Bounds>();var xs=new List<float>{min.x,max.x};var zs=new List<float>{min.z,max.z};
+                var pieces=new List<List<Vector2>>();
                 foreach(var floor in Active)
                 {
-                    if(!floor || floor.gameObject.scene!=wall.gameObject.scene)continue;
+                    if(!floor || !floor.isActiveAndEnabled || floor.gameObject.scene!=wall.gameObject.scene)continue;
+                    var patch=floor.GetComponent<RoomFloorPatch>();
+                    if(patch)
+                    {
+                        float patchTop=box.transform.InverseTransformPoint(patch.transform.position).y;
+                        if(patchTop>=max.y-.06f && patchTop-RoomFloorPatch.Thickness<=max.y+.06f)pieces.AddRange(patch.PlanarPieces(box.transform));
+                        continue;
+                    }
                     foreach(var slab in floor.GetComponentsInChildren<BoxCollider>())
                     {
                         if(!slab.enabled || slab.isTrigger)continue;
@@ -39,19 +51,11 @@ namespace JuegoCriminal.Construction
                         var b=new Bounds(m.MultiplyPoint3x4(low),Vector3.zero);
                         foreach(float x in new[]{low.x,high.x})foreach(float y in new[]{low.y,high.y})foreach(float z in new[]{low.z,high.z})b.Encapsulate(m.MultiplyPoint3x4(new Vector3(x,y,z)));
                         if(b.min.y>max.y+.06f || b.max.y<max.y-.06f)continue;
-                        regions.Add(b);
-                        xs.Add(Mathf.Clamp(b.min.x,min.x,max.x));xs.Add(Mathf.Clamp(b.max.x,min.x,max.x));
-                        zs.Add(Mathf.Clamp(b.min.z,min.z,max.z));zs.Add(Mathf.Clamp(b.max.z,min.z,max.z));
+                        pieces.Add(new List<Vector2>{new Vector2(b.min.x,b.min.z),new Vector2(b.max.x,b.min.z),new Vector2(b.max.x,b.max.z),new Vector2(b.min.x,b.max.z)});
                     }
                 }
-                xs.Sort();zs.Sort();
-                // Partition at every slab edge: partial coverage and gaps remain capped.
-                for(int x=1;x<xs.Count;x++)for(int z=1;z<zs.Count;z++)
-                {
-                    if(xs[x]-xs[x-1]<.0001f || zs[z]-zs[z-1]<.0001f)continue;
-                    float px=(xs[x]+xs[x-1])*.5f,pz=(zs[z]+zs[z-1])*.5f;
-                    if(!regions.Exists(b=>px>=b.min.x && px<=b.max.x && pz>=b.min.z && pz<=b.max.z))return false;
-                }
+                var region=new RoomGeometry.Region{min=new Vector2(min.x,min.z),max=new Vector2(max.x,max.z),outline=new List<Vector2>{new Vector2(min.x,min.z),new Vector2(max.x,min.z),new Vector2(max.x,max.z),new Vector2(min.x,max.z)}};
+                if(RoomGeometry.Missing(region,pieces).Count>0)return false;
             }
             return tested;
         }

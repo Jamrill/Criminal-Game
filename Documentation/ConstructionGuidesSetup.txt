@@ -1,0 +1,13 @@
+Backup=Documentation/ConstructionGuidesBackup/20261021_091043
+Bed: (2, 1) cells (local X/Z)
+Central_display_unit: (2, 1) cells (local X/Z)
+Chair: (1, 1) cells (local X/Z)
+Counter: (2, 1) cells (local X/Z)
+Display_shelving_unit: (2, 1) cells (local X/Z)
+Floor_lamp: (1, 1) cells (local X/Z)
+Kitchen cabinet: (1, 1) cells (local X/Z)
+Light_point: (1, 1) cells (local X/Z)
+Light_point_Cold: (1, 1) cells (local X/Z)
+Sofa: (2, 1) cells (local X/Z)
+Table: (2, 1) cells (local X/Z)
+Toilet: (1, 1) cells (local X/Z)

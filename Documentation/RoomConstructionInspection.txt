@@ -1,0 +1,2 @@
+Solar_1 grid=(474.00, 101.00, 507.00) floor count=121 rooms=0
+Authored floor level 0: 121

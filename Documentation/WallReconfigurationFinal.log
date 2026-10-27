@@ -1,0 +1,2613 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.8f1 (1c7db571dde0) revision 1867189'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'es' Physical Memory: 15750 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier" at "2026-10-19T10:25:18.1147081Z"
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-19T10:25:18Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+-executeMethod
+WallReconfigurationRegression.Full
+-logFile
+Documentation/WallReconfigurationFinal.log
+Successfully changed project path to: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [31304]  Target information:
+
+Player connection [31304]  * "[IP] 169.254.83.107 [Port] 55504 [Flags] 2 [Guid] 323707903 [EditorId] 323707903 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [31304]  * "[IP] 192.168.131.143 [Port] 55504 [Flags] 2 [Guid] 323707903 [EditorId] 323707903 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [31304] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [31304] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-28268" after 0.7 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              3c40f59a61c14682bf2a6a2e0386b41a
+  Correlation Id:          f7fbf9a5bab222456457b6b2f009a999
+  External correlation Id: 3009613527351251205
+  Machine Id:              /vGJGymoPSYuLyiSLmM/5/OP03Q=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-adm_mgarciajavier" (connect: 0.00s, validation: 0.00s, handshake: 2.23s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier-notifications" at "2026-10-19T10:25:20.3436833Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 6872099004708-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 2.24s
+[Licensing::Module] Licensing is initialized (took 0.96s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.8f1 (1c7db571dde0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1638)
+    Vendor:   ATI
+    VRAM:     7875 MB
+    Driver:   31.0.21921.1000
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56268
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002968 seconds.
+- Loaded All Assemblies, in  0.485 seconds
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.501 seconds
+Domain Reload Profiling: 982ms
+	BeginReloadAssembly (168ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (197ms)
+		LoadAssemblies (161ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (192ms)
+			TypeCache.Refresh (190ms)
+				TypeCache.ScanAssembly (174ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (502ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (456ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (54ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (106ms)
+			ProcessInitializeOnLoadAttributes (194ms)
+			ProcessInitializeOnLoadMethodAttributes (98ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 60 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ai.navigation@c33a115e9883)
+    com.unity.collab-proxy@2.11.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collab-proxy@e566cd3e7623)
+    com.unity.formats.fbx@5.1.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.formats.fbx@86d1698ebb13)
+    com.unity.ide.rider@3.0.39 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.rider@4504839d03f7)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.18.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.inputsystem@57d0e36f6123)
+    com.unity.postprocessing@3.5.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.postprocessing@4a41da475b74)
+    com.unity.timeline@1.8.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.timeline@7f8b2fb101b6)
+    com.unity.visualscripting@1.9.9 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.visualscripting@191c0d7e3b69)
+    com.unity.searcher@4.9.4 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.autodesk.fbx@5.1.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.autodesk.fbx@90432ec06ab5)
+    com.unity.burst@1.8.27 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.burst@973857688024)
+    com.unity.mathematics@1.3.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.2 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collections@aea9d3bd5e19)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.2.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562)
+  Built-in packages:
+    com.unity.multiplayer.center@1.0.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal@a6e30d1f59f5)
+    com.unity.shadergraph@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.shadergraph@d44b48771ebb)
+    com.unity.test-framework@1.6.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework@0b7a23ab2e1d)
+    com.unity.ugui@2.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ugui@bb329a87fcdc)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.core@d6dfd1e235d5)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.05 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 4s71ms
+[728/932    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[924/932    2s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+Assets\Scripts\Player\PlayerLocomotionAnimation.cs(20,56): warning CS0414: The field 'PlayerLocomotionAnimation.diagonalBodyAngle' is assigned but its value is never used
+[925/932    1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[926/932    1s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll, with 139 defines and 320 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[927/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[928/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[929/932    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 137 defines and 339 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[930/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[931/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (3.94 seconds), 9 items updated, 932 evaluated
+Assets\Scripts\Player\PlayerLocomotionAnimation.cs(20,56): warning CS0414: The field 'PlayerLocomotionAnimation.diagonalBodyAngle' is assigned but its value is never used
+AssetDatabase: script compilation time: 5.038866s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.354 seconds
+Refreshing native plugins compatible for Editor in 3.51 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.972 seconds
+Domain Reload Profiling: 5316ms
+	BeginReloadAssembly (385ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (175ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (52ms)
+	LoadAllAssembliesAndSetupDomain (851ms)
+		LoadAssemblies (704ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (278ms)
+			TypeCache.Refresh (184ms)
+				TypeCache.ScanAssembly (172ms)
+			BuildScriptInfoCaches (78ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (3973ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (3469ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (221ms)
+			ProcessInitializeOnLoadAttributes (3013ms)
+			ProcessInitializeOnLoadMethodAttributes (193ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (22ms)
+Refreshing native plugins compatible for Editor in 3.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2b8f227433beb2d4d9ffd185451e93d2): Total: 11.932 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=4759 ms
+		Asset DB Callback time: managed=614 ms, native=91 ms
+		Scripting: domain reloads=1, domain reload time=1355 ms, compile time=5042 ms, other=69 ms
+		Project Asset Count: scripts=1436, non-scripts=3424
+		Asset File Changes: new=0, changed=6, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 63.678ms
+	ApplyChangesToAssetFolders: 0.884ms
+	Scan: 160.716ms
+	OnSourceAssetsModified: 1.148ms
+	CategorizeAssetsWithTransientArtifact: 100.103ms
+	ProcessAssetsWithTransientArtifactChanges: 95.569ms
+	CategorizeAssets: 93.418ms
+	ImportOutOfDateAssets: 3995.929ms (-1050.947ms without children)
+		CompileScripts: 5041.539ms
+		ReloadNativeAssets: 0.053ms
+		UnloadImportedAssets: 2.808ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.501ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 0.974ms
+	PostProcessAllAssets: 639.982ms
+	Hotreload: 7.061ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 2.896ms
+	PersistCurrentRevisions: 0.171ms
+	UnloadStreamsEnd: 0.006ms
+	GenerateScriptTypeHashes: 5.389ms
+	Untracked: 6770.925ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Scanning for USB devices : 5.934ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Criminal Bussines
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6677 unused Assets / (7.9 MB). Loaded Objects now: 7537.
+Memory consumption went from 223.4 MB to 215.5 MB.
+Total: 13.004300 ms (FindLiveObjects: 0.753100 ms CreateObjectMapping: 0.493000 ms MarkObjects: 7.532000 ms  DeleteObjects: 4.224100 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (4.9 KB). Loaded Objects now: 7542.
+Memory consumption went from 207.9 MB to 207.9 MB.
+Total: 9.096500 ms (FindLiveObjects: 0.423300 ms CreateObjectMapping: 0.252000 ms MarkObjects: 8.388900 ms  DeleteObjects: 0.030400 ms)
+
+WALL_GRAPH_TEST_PASS Straight wall -> T, price difference 70
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:64)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Replace wall atomically: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:65)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Original is a tombstone, not a duplicate; correct debit
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:66)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T arm -> Corner + Window, price difference 50
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:69)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS First illustrated split applies: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:70)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS First split preserves exactly all original segments
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:71)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Corner arm -> Straight + Doorway, price difference 180
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:74)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Second illustrated split applies: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:75)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Final result: Straight + Window + Doorway; conserved value/balance
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:76)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Second split preserves geometry, no extra or lost arms
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:77)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Every resulting piece is a child of Solar
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:78)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Save records three tombstones and three final pieces
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:81)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 166 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (22.4 KB). Loaded Objects now: 8473.
+Memory consumption went from 223.2 MB to 223.1 MB.
+Total: 13.375500 ms (FindLiveObjects: 1.129000 ms CreateObjectMapping: 0.923900 ms MarkObjects: 11.233700 ms  DeleteObjects: 0.087300 ms)
+
+WALL_GRAPH_TEST_PASS Reload does not resurrect original wall and restores building value/balance
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:85)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Repeated load creates no duplicates
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:86)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 214.1 MB to 214.1 MB.
+Total: 11.147900 ms (FindLiveObjects: 1.232600 ms CreateObjectMapping: 0.619900 ms MarkObjects: 9.238400 ms  DeleteObjects: 0.054800 ms)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=0 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=0 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=0 arm=2 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 214.2 MB to 214.1 MB.
+Total: 10.693300 ms (FindLiveObjects: 0.449800 ms CreateObjectMapping: 0.297100 ms MarkObjects: 9.831600 ms  DeleteObjects: 0.113900 ms)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=90 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=90 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=90 arm=2 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 214.2 MB to 214.2 MB.
+Total: 10.161900 ms (FindLiveObjects: 0.448900 ms CreateObjectMapping: 0.311000 ms MarkObjects: 9.342000 ms  DeleteObjects: 0.058100 ms)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=180 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=180 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=180 arm=2 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (Unknown). Loaded Objects now: 8473.
+Memory consumption went from 214.2 MB to 214.2 MB.
+Total: 13.558300 ms (FindLiveObjects: 0.416700 ms CreateObjectMapping: 0.282400 ms MarkObjects: 12.818600 ms  DeleteObjects: 0.039900 ms)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=270 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=270 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS T_wall_complete rotation=270 arm=2 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 214.2 MB to 214.2 MB.
+Total: 10.855200 ms (FindLiveObjects: 0.570300 ms CreateObjectMapping: 0.818800 ms MarkObjects: 9.370200 ms  DeleteObjects: 0.093900 ms)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=0 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=0 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=0 arm=2 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=0 arm=3 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 214.2 MB to 214.2 MB.
+Total: 11.207700 ms (FindLiveObjects: 0.596200 ms CreateObjectMapping: 0.559400 ms MarkObjects: 9.980000 ms  DeleteObjects: 0.071100 ms)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=90 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=90 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=90 arm=2 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=90 arm=3 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 214.2 MB to 214.2 MB.
+Total: 12.040000 ms (FindLiveObjects: 0.712700 ms CreateObjectMapping: 0.479700 ms MarkObjects: 10.803800 ms  DeleteObjects: 0.042700 ms)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=180 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=180 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=180 arm=2 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=180 arm=3 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (1.8 KB). Loaded Objects now: 8473.
+Memory consumption went from 214.2 MB to 214.2 MB.
+Total: 12.467000 ms (FindLiveObjects: 0.570700 ms CreateObjectMapping: 0.553700 ms MarkObjects: 11.090200 ms  DeleteObjects: 0.250800 ms)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=270 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=270 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=270 arm=2 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS +_wall_complete rotation=270 arm=3 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 11.967700 ms (FindLiveObjects: 1.031000 ms CreateObjectMapping: 0.549200 ms MarkObjects: 10.347700 ms  DeleteObjects: 0.038300 ms)
+
+WALL_GRAPH_TEST_PASS Corner_Wall rotation=0 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Corner_Wall rotation=0 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 8.765200 ms (FindLiveObjects: 0.443600 ms CreateObjectMapping: 0.270000 ms MarkObjects: 8.013000 ms  DeleteObjects: 0.037900 ms)
+
+WALL_GRAPH_TEST_PASS Corner_Wall rotation=90 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Corner_Wall rotation=90 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 10.360200 ms (FindLiveObjects: 0.432400 ms CreateObjectMapping: 0.276300 ms MarkObjects: 9.556400 ms  DeleteObjects: 0.094000 ms)
+
+WALL_GRAPH_TEST_PASS Corner_Wall rotation=180 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Corner_Wall rotation=180 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 10.238200 ms (FindLiveObjects: 0.348800 ms CreateObjectMapping: 0.200300 ms MarkObjects: 9.574100 ms  DeleteObjects: 0.113600 ms)
+
+WALL_GRAPH_TEST_PASS Corner_Wall rotation=270 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Corner_Wall rotation=270 arm=1 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 14.079200 ms (FindLiveObjects: 0.676000 ms CreateObjectMapping: 0.376400 ms MarkObjects: 12.970100 ms  DeleteObjects: 0.055700 ms)
+
+WALL_GRAPH_TEST_PASS Wall_complete rotation=0 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 10.907500 ms (FindLiveObjects: 0.549400 ms CreateObjectMapping: 0.381200 ms MarkObjects: 9.924800 ms  DeleteObjects: 0.050600 ms)
+
+WALL_GRAPH_TEST_PASS Wall_complete rotation=90 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 9.653100 ms (FindLiveObjects: 0.442800 ms CreateObjectMapping: 0.272900 ms MarkObjects: 8.901100 ms  DeleteObjects: 0.035600 ms)
+
+WALL_GRAPH_TEST_PASS Wall_complete rotation=180 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 14.358000 ms (FindLiveObjects: 0.878000 ms CreateObjectMapping: 1.142700 ms MarkObjects: 12.288600 ms  DeleteObjects: 0.048000 ms)
+
+WALL_GRAPH_TEST_PASS Wall_complete rotation=270 arm=0 split is valid and exact: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:98)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 10.523500 ms (FindLiveObjects: 0.609600 ms CreateObjectMapping: 0.270800 ms MarkObjects: 9.577100 ms  DeleteObjects: 0.064400 ms)
+
+WALL_GRAPH_TEST_PASS Three ordinary walls merge to T and refund 30
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:106)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Merge has no duplicated solids or duplicated charges
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:107)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Identical T stays red
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:109)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Ordinary wall over a T arm stays red
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:111)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8473.
+Memory consumption went from 207.3 MB to 207.3 MB.
+Total: 13.861200 ms (FindLiveObjects: 0.662900 ms CreateObjectMapping: 0.362000 ms MarkObjects: 12.700800 ms  DeleteObjects: 0.133700 ms)
+
+WALL_GRAPH_TEST_PASS Obstacle rejects replacement without modifying old wall or money
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:116)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Insufficient funds leaves originals intact
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:118)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Free construction also applies to wall restructuring
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:120)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (4.9 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.6 MB to 205.6 MB.
+Total: 11.957000 ms (FindLiveObjects: 0.595100 ms CreateObjectMapping: 0.635600 ms MarkObjects: 10.675800 ms  DeleteObjects: 0.049500 ms)
+
+WALL_GRAPH_TEST_PASS All split pieces preserve painted finish
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:124)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Painted split applies: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:125)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Split pieces use semi variant when all outer ends are covered, including internal corner joints
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:137)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS One T above covers a split Corner + Window: incomplete variants
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:139)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 10.730700 ms (FindLiveObjects: 0.693000 ms CreateObjectMapping: 0.815500 ms MarkObjects: 9.159200 ms  DeleteObjects: 0.062000 ms)
+
+WALL_GRAPH_TEST_PASS Unconnected compound stays complete
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:141)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Split upper floor still covers all segments of lower T
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:144)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Editing upstairs never replaces the lower storey
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:145)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 11.860500 ms (FindLiveObjects: 0.371300 ms CreateObjectMapping: 0.214300 ms MarkObjects: 11.232400 ms  DeleteObjects: 0.041800 ms)
+
+WALL_GRAPH_TEST_PASS Corner_Wall snaps and replaces a pointed wall at rotation 0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (15.1 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 15.404300 ms (FindLiveObjects: 2.015000 ms CreateObjectMapping: 1.854100 ms MarkObjects: 11.428800 ms  DeleteObjects: 0.105000 ms)
+
+WALL_GRAPH_TEST_PASS Corner_Wall snaps and replaces a pointed wall at rotation 90
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 12.163400 ms (FindLiveObjects: 0.663100 ms CreateObjectMapping: 0.508700 ms MarkObjects: 10.861700 ms  DeleteObjects: 0.129000 ms)
+
+WALL_GRAPH_TEST_PASS Corner_Wall snaps and replaces a pointed wall at rotation 180
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 10.124500 ms (FindLiveObjects: 0.593400 ms CreateObjectMapping: 0.422200 ms MarkObjects: 9.066900 ms  DeleteObjects: 0.041200 ms)
+
+WALL_GRAPH_TEST_PASS Corner_Wall snaps and replaces a pointed wall at rotation 270
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (15.1 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 9.318400 ms (FindLiveObjects: 0.617600 ms CreateObjectMapping: 0.487000 ms MarkObjects: 8.147800 ms  DeleteObjects: 0.064900 ms)
+
+WALL_GRAPH_TEST_PASS T_wall_complete snaps and replaces a pointed wall at rotation 0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 17.486500 ms (FindLiveObjects: 0.620900 ms CreateObjectMapping: 0.509500 ms MarkObjects: 16.287500 ms  DeleteObjects: 0.066000 ms)
+
+WALL_GRAPH_TEST_PASS T_wall_complete snaps and replaces a pointed wall at rotation 90
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (14.1 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 30.846800 ms (FindLiveObjects: 2.348000 ms CreateObjectMapping: 0.968800 ms MarkObjects: 27.441000 ms  DeleteObjects: 0.086100 ms)
+
+WALL_GRAPH_TEST_PASS T_wall_complete snaps and replaces a pointed wall at rotation 180
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 23.457300 ms (FindLiveObjects: 0.755900 ms CreateObjectMapping: 0.607300 ms MarkObjects: 22.037000 ms  DeleteObjects: 0.055800 ms)
+
+WALL_GRAPH_TEST_PASS T_wall_complete snaps and replaces a pointed wall at rotation 270
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 9.254700 ms (FindLiveObjects: 0.504600 ms CreateObjectMapping: 0.373900 ms MarkObjects: 8.333000 ms  DeleteObjects: 0.042000 ms)
+
+WALL_GRAPH_TEST_PASS +_wall_complete snaps and replaces a pointed wall at rotation 0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 14.044000 ms (FindLiveObjects: 0.688300 ms CreateObjectMapping: 0.503000 ms MarkObjects: 12.639800 ms  DeleteObjects: 0.210700 ms)
+
+WALL_GRAPH_TEST_PASS +_wall_complete snaps and replaces a pointed wall at rotation 90
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 10.334800 ms (FindLiveObjects: 0.623400 ms CreateObjectMapping: 0.417000 ms MarkObjects: 9.204000 ms  DeleteObjects: 0.088500 ms)
+
+WALL_GRAPH_TEST_PASS +_wall_complete snaps and replaces a pointed wall at rotation 180
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 11.121000 ms (FindLiveObjects: 0.612800 ms CreateObjectMapping: 0.611800 ms MarkObjects: 9.834500 ms  DeleteObjects: 0.060600 ms)
+
+WALL_GRAPH_TEST_PASS +_wall_complete snaps and replaces a pointed wall at rotation 270
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:154)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 9.475500 ms (FindLiveObjects: 0.518100 ms CreateObjectMapping: 0.358200 ms MarkObjects: 8.545600 ms  DeleteObjects: 0.052500 ms)
+
+WALL_GRAPH_TEST_PASS Upgrading around an existing window preserves the opening instead of filling it with solid wall: 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:158)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 10.337400 ms (FindLiveObjects: 0.514500 ms CreateObjectMapping: 0.356500 ms MarkObjects: 9.391800 ms  DeleteObjects: 0.073600 ms)
+
+WALL_GRAPH_TEST_PASS Real aimed editing previews the chosen arm and temporarily hides old geometry
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:163)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Clearing preview restores original renderer
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:164)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Real click converts aimed T arm through ConstructionEditing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:166)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 9.394500 ms (FindLiveObjects: 0.374700 ms CreateObjectMapping: 0.207200 ms MarkObjects: 8.775400 ms  DeleteObjects: 0.036700 ms)
+
+WALL_GRAPH_TEST_PASS Partial misalignment does not erase a wall or allow overlap
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:170)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 11.873700 ms (FindLiveObjects: 0.397000 ms CreateObjectMapping: 0.227100 ms MarkObjects: 11.189300 ms  DeleteObjects: 0.059500 ms)
+
+WALL_GRAPH_TEST_PASS Incompatible painted finishes are not silently discarded during a merge
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:175)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+WALL_GRAPH_TEST_PASS Authored default finish and old runtime base finish can merge
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:179)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 9.170600 ms (FindLiveObjects: 0.360900 ms CreateObjectMapping: 0.194400 ms MarkObjects: 8.564900 ms  DeleteObjects: 0.049300 ms)
+
+WALL_GRAPH_TEST_PASS Incompatible diagonal opening is safely refused instead of changing wall length
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Check (bool,string) (at Assets/Editor/WallReconfigurationValidation.cs:25)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:182)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 25)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8474.
+Memory consumption went from 205.5 MB to 205.5 MB.
+Total: 9.564400 ms (FindLiveObjects: 0.620900 ms CreateObjectMapping: 0.357300 ms MarkObjects: 8.541100 ms  DeleteObjects: 0.044400 ms)
+
+WALL_RECONFIGURATION_VALIDATION_OK checks=88
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationValidation:Run () (at Assets/Editor/WallReconfigurationValidation.cs:184)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationValidation.cs Line: 184)
+
+Opening scene 'Assets/Scenes/10_World_City.unity'
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/10_World_City.unity'
+	Deserialize:            91.891 ms
+	Integration:            578.383 ms
+	Integration of assets:  13.635 ms
+	Thread Wait Time:       0.092 ms
+	Total Operation Time:   684.001 ms
+Unloading 2 unused Assets / (1.3 KB). Loaded Objects now: 13898.
+Memory consumption went from 277.1 MB to 277.1 MB.
+Total: 19.679900 ms (FindLiveObjects: 1.993700 ms CreateObjectMapping: 1.514100 ms MarkObjects: 16.062000 ms  DeleteObjects: 0.109000 ms)
+
+Unloading 65 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1501 unused Assets / (44.0 MB). Loaded Objects now: 8485.
+Memory consumption went from 274.1 MB to 230.2 MB.
+Total: 15.207900 ms (FindLiveObjects: 0.868100 ms CreateObjectMapping: 0.644400 ms MarkObjects: 11.816700 ms  DeleteObjects: 1.876500 ms)
+
+MOUNT_TEST_PASS Door bounds are placement-relative, not saved world coordinates
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:33)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Floor catalog bounds corrected without changing prefab origins
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:34)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Complete, semi and incomplete doorway apertures come from colliders
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:35)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Door finds the aperture even when ray passes through empty space
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:44)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Door anchor sits at centre/bottom of hole
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:45)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Door fits between original wall box colliders
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:46)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Door flips 180 degrees from either side without leaving its aperture
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:47)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Spawned door geometry is in the hole, not merely its pivot
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:52)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Mounted door remains a child of Solar
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:53)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Door mounted position survives serialization and restore
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:55)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS An open door still reserves its aperture; no duplicate door
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:57)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Cannot snap through unrelated blocking objects
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:60)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Door respects rotated wall origin/orientation
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:63)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point uses ceiling placement
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:67)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point finds real ceiling underside
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:69)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point top touches underside without penetrating floor
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:70)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point real light points down and belongs to Solar
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:73)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point actual visible mesh meets the ceiling
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:75)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point mounted position survives save/restore
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:77)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point rejects floor top as a ceiling
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:79)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point cannot float outside ceiling footprint
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:80)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point rejects partial support over ceiling edge
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:81)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold uses ceiling placement
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:67)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold finds real ceiling underside
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:69)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold top touches underside without penetrating floor
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:70)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold real light points down and belongs to Solar
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:73)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold actual visible mesh meets the ceiling
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:75)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold mounted position survives save/restore
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:77)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold rejects floor top as a ceiling
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:79)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold cannot float outside ceiling footprint
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:80)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Light_point_Cold rejects partial support over ceiling edge
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:81)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+MOUNT_TEST_PASS Doors cannot be freely placed without a doorway
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Check (bool,string) (at Assets/Editor/ConstructionMountValidation.cs:19)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:85)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 19)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8485.
+Memory consumption went from 222.4 MB to 222.4 MB.
+Total: 11.218300 ms (FindLiveObjects: 0.431200 ms CreateObjectMapping: 0.331100 ms MarkObjects: 10.413200 ms  DeleteObjects: 0.042200 ms)
+
+CONSTRUCTION_MOUNT_VALIDATION_OK checks=32
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionMountValidation:Run () (at Assets/Editor/ConstructionMountValidation.cs:87)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:27)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionMountValidation.cs Line: 87)
+
+Opening scene 'Assets/Scenes/10_World_City.unity'
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/10_World_City.unity'
+	Deserialize:            53.512 ms
+	Integration:            419.403 ms
+	Integration of assets:  8.423 ms
+	Thread Wait Time:       0.143 ms
+	Total Operation Time:   481.481 ms
+Unloading 2 unused Assets / (1.3 KB). Loaded Objects now: 13898.
+Memory consumption went from 277.1 MB to 277.1 MB.
+Total: 11.997600 ms (FindLiveObjects: 1.169800 ms CreateObjectMapping: 0.607900 ms MarkObjects: 10.157800 ms  DeleteObjects: 0.061000 ms)
+
+VALUE_TEST_PASS Solar references the priced catalog
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:32)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Real building price exceeds initial balance; development override is respected
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:35)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Stable unique scene identities
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:36)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS All registered elements have a definition and correct property
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:37)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Base floor: 121 tiles without duplicates
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:40)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Existing four-unit tile lattice preserved
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:41)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS All base tiles belong to Solar and can be saved/sold
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:43)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS All corner variants share price 70
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:44)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS All doorway variants share price 200
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:45)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+Unloading 77 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1511 unused Assets / (44.0 MB). Loaded Objects now: 8650.
+Memory consumption went from 277.0 MB to 233.0 MB.
+Total: 12.818100 ms (FindLiveObjects: 0.729600 ms CreateObjectMapping: 0.328200 ms MarkObjects: 10.510700 ms  DeleteObjects: 1.248700 ms)
+
+VALUE_TEST_PASS Cannot build on unowned plot; no debit
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:65)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Property purchase resolves actual value, not caller's cheap price
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:66)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Build parents to Solar, debits 50 and adds value 50
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:68)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Save/restore world transform under scaled Solar
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:70)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Window conversion charges only price difference and updates value
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:71)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Conversion preserves persistent identity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:73)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Sale pays value once and removes building value
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:74)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Repeated sale cannot duplicate money
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:75)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Insufficient funds creates nothing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:77)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Development toggle: free construction/value without losing real prices
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:80)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Free mode sale pays zero
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:81)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS World save captures construction and balance
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:87)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Serialized save includes built objects, sold tombstones and balance together
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:91)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Load restores all objects under their Solar
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:98)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Sold authored objects stay absent; loaded value matches remaining walls
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:99)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+VALUE_TEST_PASS Repeated restoration does not duplicate objects
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Check (bool,string) (at Assets/Editor/ConstructionValueValidation.cs:22)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:101)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 22)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 8650.
+Memory consumption went from 223.3 MB to 223.3 MB.
+Total: 9.215200 ms (FindLiveObjects: 0.351800 ms CreateObjectMapping: 0.188800 ms MarkObjects: 8.635200 ms  DeleteObjects: 0.038600 ms)
+
+CONSTRUCTION_VALUE_VALIDATION_OK checks=25
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionValueValidation:Run () (at Assets/Editor/ConstructionValueValidation.cs:104)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:28)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionValueValidation.cs Line: 104)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 8650.
+Memory consumption went from 223.3 MB to 223.3 MB.
+Total: 9.084800 ms (FindLiveObjects: 0.309900 ms CreateObjectMapping: 0.177300 ms MarkObjects: 8.584500 ms  DeleteObjects: 0.012600 ms)
+
+CONSTRUCTION_PREVIEW_VALIDATION_OK
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ConstructionPreviewValidation:Run () (at Assets/Editor/ConstructionPreviewValidation.cs:27)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:29)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/ConstructionPreviewValidation.cs Line: 27)
+
+WALL_GRAPH_REGRESSIONS_OK sceneWalls=59
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WallReconfigurationRegression:Run () (at Assets/Editor/WallReconfigurationRegression.cs:30)
+WallReconfigurationRegression:Full () (at Assets/Editor/WallReconfigurationRegression.cs:11)
+
+(Filename: Assets/Editor/WallReconfigurationRegression.cs Line: 30)
+
+Batchmode quit successfully invoked - shutting down!
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-adm_mgarciajavier-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-adm_mgarciajavier channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

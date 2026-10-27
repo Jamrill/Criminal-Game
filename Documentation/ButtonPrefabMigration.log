@@ -1,0 +1,1188 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.8f1 (1c7db571dde0) revision 1867189'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'es' Physical Memory: 15750 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier" at "2026-10-23T11:41:20.3010992Z"
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-23T11:41:20Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+-executeMethod
+ButtonPrefabMigration.Apply
+-logFile
+Documentation/ButtonPrefabMigration.log
+Successfully changed project path to: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [6100]  Target information:
+
+Player connection [6100]  * "[IP] 169.254.83.107 [Port] 55504 [Flags] 2 [Guid] 4231499661 [EditorId] 4231499661 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [6100]  * "[IP] 192.168.131.143 [Port] 55504 [Flags] 2 [Guid] 4231499661 [EditorId] 4231499661 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [6100] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [6100] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-5408" after 0.4 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              066d989edae04aa0a786a2e1002d48b9
+  Correlation Id:          f7fbf9a5bab222456457b6b2f009a999
+  External correlation Id: 8397978249837249747
+  Machine Id:              /vGJGymoPSYuLyiSLmM/5/OP03Q=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-adm_mgarciajavier" (connect: 0.00s, validation: 0.00s, handshake: 1.87s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier-notifications" at "2026-10-23T11:41:22.1700039Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 6872099004708-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 1.88s
+[Licensing::Module] Licensing is initialized (took 1.04s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.8f1 (1c7db571dde0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1638)
+    Vendor:   ATI
+    VRAM:     7875 MB
+    Driver:   31.0.21921.1000
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56408
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002834 seconds.
+- Loaded All Assemblies, in  0.533 seconds
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.474 seconds
+Domain Reload Profiling: 1003ms
+	BeginReloadAssembly (229ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (186ms)
+		LoadAssemblies (193ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (182ms)
+			TypeCache.Refresh (180ms)
+				TypeCache.ScanAssembly (166ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (475ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (428ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (50ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (99ms)
+			ProcessInitializeOnLoadAttributes (187ms)
+			ProcessInitializeOnLoadMethodAttributes (88ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 60 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ai.navigation@c33a115e9883)
+    com.unity.collab-proxy@2.11.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collab-proxy@e566cd3e7623)
+    com.unity.formats.fbx@5.1.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.formats.fbx@86d1698ebb13)
+    com.unity.ide.rider@3.0.39 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.rider@4504839d03f7)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.18.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.inputsystem@57d0e36f6123)
+    com.unity.postprocessing@3.5.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.postprocessing@4a41da475b74)
+    com.unity.timeline@1.8.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.timeline@7f8b2fb101b6)
+    com.unity.visualscripting@1.9.9 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.visualscripting@191c0d7e3b69)
+    com.unity.searcher@4.9.4 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.autodesk.fbx@5.1.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.autodesk.fbx@90432ec06ab5)
+    com.unity.burst@1.8.27 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.burst@973857688024)
+    com.unity.mathematics@1.3.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.2 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collections@aea9d3bd5e19)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.2.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562)
+  Built-in packages:
+    com.unity.multiplayer.center@1.0.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal@a6e30d1f59f5)
+    com.unity.shadergraph@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.shadergraph@d44b48771ebb)
+    com.unity.test-framework@1.6.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework@0b7a23ab2e1d)
+    com.unity.ugui@2.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ugui@bb329a87fcdc)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.core@d6dfd1e235d5)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.05 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 2s884ms
+[728/932    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[924/932    1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+Assets\Scripts\Player\PlayerLocomotionAnimation.cs(20,56): warning CS0414: The field 'PlayerLocomotionAnimation.diagonalBodyAngle' is assigned but its value is never used
+[925/932    0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[926/932    1s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll, with 139 defines and 320 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[927/932    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 137 defines and 339 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[928/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[929/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+[930/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[931/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+*** Tundra build success (2.79 seconds), 9 items updated, 932 evaluated
+Assets\Scripts\Player\PlayerLocomotionAnimation.cs(20,56): warning CS0414: The field 'PlayerLocomotionAnimation.diagonalBodyAngle' is assigned but its value is never used
+AssetDatabase: script compilation time: 3.897898s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.391 seconds
+Refreshing native plugins compatible for Editor in 4.48 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.938 seconds
+Domain Reload Profiling: 5320ms
+	BeginReloadAssembly (440ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (22ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (192ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (827ms)
+		LoadAssemblies (576ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (405ms)
+			TypeCache.Refresh (249ms)
+				TypeCache.ScanAssembly (235ms)
+			BuildScriptInfoCaches (131ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (3939ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (3518ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (36ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (334ms)
+			ProcessInitializeOnLoadAttributes (3006ms)
+			ProcessInitializeOnLoadMethodAttributes (119ms)
+			AfterProcessingInitializeOnLoad (16ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Start importing Assets/Prefabs/UI/Button_sample.prefab using Guid(644a088161a6dd3459a45d77a1597d5d) (PrefabImporter) -> (artifact id: 'f6ef4d26e41fbe2008b5894a9bc6ce61') in 0.0765928 seconds
+Start importing Assets/Prefabs/UI/Button_sample_small.prefab using Guid(154f879b81613d047b6d9115e316d4f0) (PrefabImporter) -> (artifact id: 'b1319ea1ae7b249d0bcfae9a82c91738') in 0.0110788 seconds
+Refreshing native plugins compatible for Editor in 3.55 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=eb5f4b16534e6b34dbd10341abb5e3de): Total: 10.553 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=4 ms, native=4746 ms
+		Asset DB Callback time: managed=385 ms, native=59 ms
+		Scripting: domain reloads=1, domain reload time=1391 ms, compile time=3900 ms, other=64 ms
+		Project Asset Count: scripts=1439, non-scripts=3433
+		Asset File Changes: new=0, changed=2, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 56.248ms
+	ApplyChangesToAssetFolders: 0.842ms
+	Scan: 160.820ms
+	OnSourceAssetsModified: 1.003ms
+	CategorizeAssetsWithTransientArtifact: 72.918ms
+	ProcessAssetsWithTransientArtifactChanges: 120.062ms
+	CategorizeAssets: 114.298ms
+	ImportOutOfDateAssets: 4056.115ms (56.956ms without children)
+		ImportManagerImport: 95.480ms (4.965ms without children)
+			ImportInProcess: 90.515ms
+		CompileScripts: 3900.030ms
+		ReloadNativeAssets: 0.064ms
+		UnloadImportedAssets: 1.681ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.326ms
+		InitializingProgressBar: 0.008ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.569ms
+	PostProcessAllAssets: 387.753ms
+	Hotreload: 6.507ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 2.775ms
+	PersistCurrentRevisions: 0.380ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 27.511ms
+	Untracked: 5573.607ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Scanning for USB devices : 5.676ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Criminal Bussines
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6700 unused Assets / (7.7 MB). Loaded Objects now: 7562.
+Memory consumption went from 223.6 MB to 215.9 MB.
+Total: 15.579300 ms (FindLiveObjects: 1.024000 ms CreateObjectMapping: 1.269900 ms MarkObjects: 9.280200 ms  DeleteObjects: 4.002500 ms)
+
+Loaded scene 'Library/Unused/41222c7a86955eb4bbd68550c1c5cbd1'
+	Deserialize:            0.920 ms
+	Integration:            11.341 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       62.724 ms
+	Total Operation Time:   74.987 ms
+Loaded scene 'Library/Unused/eb80fb639b56f8b4db1c8945cad5858a'
+	Deserialize:            0.442 ms
+	Integration:            2.018 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.027 ms
+	Total Operation Time:   2.490 ms
+Loaded scene 'Library/Unused/7dbbbda6eddfde340b3b04f451efd8ae'
+	Deserialize:            0.340 ms
+	Integration:            1.388 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   1.745 ms
+Loaded scene 'Library/Unused/f6038639ee3ccd642be69a11edc86a80'
+	Deserialize:            0.434 ms
+	Integration:            1.067 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   1.520 ms
+Loaded scene 'Library/Unused/9559e4f98f8021f468e841d735d6186c'
+	Deserialize:            0.513 ms
+	Integration:            2.395 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   2.924 ms
+Loaded scene 'Library/Unused/cc2c6591b306d1f41a11340523d076d9'
+	Deserialize:            0.328 ms
+	Integration:            1.275 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.619 ms
+Loaded scene 'Library/Unused/52c6bb24e49a9644d9d4dd57d3de8381'
+	Deserialize:            0.478 ms
+	Integration:            2.097 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   2.594 ms
+Loaded scene 'Library/Unused/9e6988caa93a843498221142009f7e52'
+	Deserialize:            0.348 ms
+	Integration:            1.282 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   1.651 ms
+Loaded scene 'Library/Unused/36007375edfc9c04385098f33cd4ef05'
+	Deserialize:            0.334 ms
+	Integration:            1.560 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   1.916 ms
+Loaded scene 'Library/Unused/8e55448859c8ade40be95464ad8d8413'
+	Deserialize:            0.293 ms
+	Integration:            1.453 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   1.766 ms
+Loaded scene 'Library/Unused/d8ef1bf345e12924c8882e8d40e82e96'
+	Deserialize:            0.274 ms
+	Integration:            1.304 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   1.597 ms
+Loaded scene 'Library/Unused/15d35a08649c9bd4f9c433827940690b'
+	Deserialize:            0.280 ms
+	Integration:            0.973 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   1.272 ms
+Loaded scene 'Library/Unused/6284f8c49a6f46c498884d838602394e'
+	Deserialize:            0.320 ms
+	Integration:            1.142 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   1.478 ms
+Loaded scene 'Library/Unused/b35696fcbc6c62c458606cd72faa0292'
+	Deserialize:            0.420 ms
+	Integration:            18.326 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   18.769 ms
+Loaded scene 'Library/Unused/a42920e8b5118554aa9aa25b7eafbaf3'
+	Deserialize:            0.915 ms
+	Integration:            35.335 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       2.357 ms
+	Total Operation Time:   38.609 ms
+Loaded scene 'Library/Unused/99a266bcfff22e142a499f6f9d12c127'
+	Deserialize:            1.223 ms
+	Integration:            2.943 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.030 ms
+	Total Operation Time:   4.200 ms
+Loaded scene 'Library/Unused/9a0834216a5e4924bac519611571240f'
+	Deserialize:            0.405 ms
+	Integration:            2.064 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   2.488 ms
+Loaded scene 'Library/Unused/79c4c86d913e7cc45bf0a1817afc1d4c'
+	Deserialize:            0.510 ms
+	Integration:            8.572 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.034 ms
+	Total Operation Time:   9.118 ms
+Loaded scene 'Library/Unused/541c1a3063307624baba98d875de9a40'
+	Deserialize:            0.396 ms
+	Integration:            1.672 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.028 ms
+	Total Operation Time:   2.099 ms
+Loaded scene 'Library/Unused/0a8d4283afa1fac45a50a38c5364d0da'
+	Deserialize:            0.284 ms
+	Integration:            1.255 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   1.555 ms
+Loaded scene 'Library/Unused/09d65136cc0041d44b51d08be5046848'
+	Deserialize:            0.675 ms
+	Integration:            0.367 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   1.059 ms
+Loaded scene 'Library/Unused/1ee5acc2bba4e27409e459eba0125e3c'
+	Deserialize:            5.767 ms
+	Integration:            0.698 ms
+	Integration of assets:  0.325 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   6.812 ms
+Loaded scene 'Library/Unused/3a56e8722174bca4b99866060f5b3d11'
+	Deserialize:            3.024 ms
+	Integration:            0.318 ms
+	Integration of assets:  0.439 ms
+	Thread Wait Time:       0.107 ms
+	Total Operation Time:   3.888 ms
+Loaded scene 'Library/Unused/df99ea929db48cb40986cb9ee398d7fa'
+	Deserialize:            3.670 ms
+	Integration:            0.248 ms
+	Integration of assets:  0.300 ms
+	Thread Wait Time:       0.034 ms
+	Total Operation Time:   4.251 ms
+Loaded scene 'Library/Unused/ed77d828b7620764087c848815c5adf2'
+	Deserialize:            0.386 ms
+	Integration:            2.472 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   2.877 ms
+Loaded scene 'Library/Unused/7576dd38cb0008c42ad7206ebc17f36b'
+	Deserialize:            0.483 ms
+	Integration:            2.447 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   2.947 ms
+Loaded scene 'Library/Unused/dae51e01b1a021b418ee5bb8805e4f4f'
+	Deserialize:            3.773 ms
+	Integration:            1.056 ms
+	Integration of assets:  0.307 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   5.158 ms
+Loaded scene 'Library/Unused/db2479030f407c9458108849bb652440'
+	Deserialize:            2.393 ms
+	Integration:            1.240 ms
+	Integration of assets:  0.341 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   3.993 ms
+Loaded scene 'Library/Unused/f2f69950421919a48915a8f371feb387'
+	Deserialize:            18.127 ms
+	Integration:            0.400 ms
+	Integration of assets:  20.999 ms
+	Thread Wait Time:       0.139 ms
+	Total Operation Time:   39.664 ms
+Loaded scene 'Library/Unused/291e5f37de846bc468ed5147da533276'
+	Deserialize:            2.328 ms
+	Integration:            0.832 ms
+	Integration of assets:  0.438 ms
+	Thread Wait Time:       0.036 ms
+	Total Operation Time:   3.633 ms
+Loaded scene 'Library/Unused/44d3fa62cd318184583b5b622caef410'
+	Deserialize:            1.778 ms
+	Integration:            1.592 ms
+	Integration of assets:  0.373 ms
+	Thread Wait Time:       0.027 ms
+	Total Operation Time:   3.770 ms
+Loaded scene 'Library/Unused/4a6ffad685ff8ac42b7c655ecc7f736a'
+	Deserialize:            1.992 ms
+	Integration:            1.037 ms
+	Integration of assets:  0.580 ms
+	Thread Wait Time:       0.024 ms
+	Total Operation Time:   3.633 ms
+Loaded scene 'Library/Unused/2cd964be88e55ab4b91be69f98cca6b4'
+	Deserialize:            2.104 ms
+	Integration:            1.304 ms
+	Integration of assets:  0.315 ms
+	Thread Wait Time:       0.028 ms
+	Total Operation Time:   3.751 ms
+Loaded scene 'Library/Unused/5e8765a1258678c468a93bc08ab45a1a'
+	Deserialize:            2.154 ms
+	Integration:            1.204 ms
+	Integration of assets:  0.431 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   3.807 ms
+Loaded scene 'Library/Unused/1da1450fb9d3afc4db45f026ffa91f4e'
+	Deserialize:            2.141 ms
+	Integration:            1.058 ms
+	Integration of assets:  0.283 ms
+	Thread Wait Time:       0.026 ms
+	Total Operation Time:   3.508 ms
+Loaded scene 'Library/Unused/c9ec54886d475fb45bb0a7439c21cdb9'
+	Deserialize:            2.299 ms
+	Integration:            1.204 ms
+	Integration of assets:  0.239 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   3.764 ms
+Loaded scene 'Library/Unused/37d418e9b31a96a4798d583e20c02154'
+	Deserialize:            2.121 ms
+	Integration:            0.840 ms
+	Integration of assets:  0.281 ms
+	Thread Wait Time:       0.025 ms
+	Total Operation Time:   3.267 ms
+Loaded scene 'Library/Unused/77fc79c2640012b48af92b8f508711fa'
+	Deserialize:            1.625 ms
+	Integration:            0.510 ms
+	Integration of assets:  0.223 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   2.377 ms
+Loaded scene 'Library/Unused/ff5639ae32c372f4cab94170f8c572c6'
+	Deserialize:            2.035 ms
+	Integration:            0.320 ms
+	Integration of assets:  0.274 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   2.651 ms
+Loaded scene 'Library/Unused/d4dfd42290dc284408dc261428e0062c'
+	Deserialize:            2.249 ms
+	Integration:            1.800 ms
+	Integration of assets:  0.472 ms
+	Thread Wait Time:       0.026 ms
+	Total Operation Time:   4.548 ms
+Loaded scene 'Library/Unused/04892e560ff33d4449921341dad2d071'
+	Deserialize:            2.481 ms
+	Integration:            1.002 ms
+	Integration of assets:  0.267 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   3.767 ms
+Loaded scene 'Library/Unused/d7e6150d3f1911d4d9dc6c3be9cd1b04'
+	Deserialize:            2.424 ms
+	Integration:            0.291 ms
+	Integration of assets:  0.260 ms
+	Thread Wait Time:       0.027 ms
+	Total Operation Time:   3.002 ms
+Loaded scene 'Library/Unused/525f4eefee8f47f4a843bbca2ab16875'
+	Deserialize:            2.183 ms
+	Integration:            1.412 ms
+	Integration of assets:  0.264 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   3.882 ms
+Loaded scene 'Library/Unused/f711179746d286242a41f80e5dafd875'
+	Deserialize:            1.877 ms
+	Integration:            0.453 ms
+	Integration of assets:  0.396 ms
+	Thread Wait Time:       0.049 ms
+	Total Operation Time:   2.775 ms
+Loaded scene 'Library/Unused/b4a10781babc1214f864653fb4a1d3d0'
+	Deserialize:            2.302 ms
+	Integration:            0.543 ms
+	Integration of assets:  0.210 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   3.070 ms
+Loaded scene 'Library/Unused/ef63bb059de3a9d44a3eb0ec350638ce'
+	Deserialize:            2.345 ms
+	Integration:            1.081 ms
+	Integration of assets:  0.283 ms
+	Thread Wait Time:       0.021 ms
+	Total Operation Time:   3.730 ms
+Loaded scene 'Library/Unused/fce65929bfd51454bb98dbad83e31d22'
+	Deserialize:            1.864 ms
+	Integration:            0.336 ms
+	Integration of assets:  0.217 ms
+	Thread Wait Time:       0.010 ms
+	Total Operation Time:   2.427 ms
+Loaded scene 'Library/Unused/8d4f55fd59830d24e89f093ed8cab64b'
+	Deserialize:            1.791 ms
+	Integration:            1.196 ms
+	Integration of assets:  0.243 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   3.252 ms
+Loaded scene 'Library/Unused/91f11d1518f87ba44b6d74a9b6387673'
+	Deserialize:            2.917 ms
+	Integration:            53.742 ms
+	Integration of assets:  0.058 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   56.738 ms
+Loaded scene 'Library/Unused/6d78bd8d4f8d14847a3c3c33d2e4aec9'
+	Deserialize:            3.940 ms
+	Integration:            4.334 ms
+	Integration of assets:  0.073 ms
+	Thread Wait Time:       0.028 ms
+	Total Operation Time:   8.376 ms
+Start importing Assets/Prefabs/UI/SlotRow.prefab using Guid(3a61147fd586723469916eec6ad4e1aa) (PrefabImporter) -> (artifact id: '8212c2ba884b3f186aed8f41442508c6') in 0.009271 seconds
+Refreshing native plugins compatible for Editor in 4.08 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4d1ef9455883c1746bcd45d50883ae39): Total: 0.172 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/70490e88b2023474c8bdbd08bac6d1c5'
+	Deserialize:            2.594 ms
+	Integration:            1.472 ms
+	Integration of assets:  0.051 ms
+	Thread Wait Time:       0.026 ms
+	Total Operation Time:   4.143 ms
+Start importing Assets/Prefabs/UI/SlotRowCoop.prefab using Guid(9f93b4855cb747f4294b9b6c2b9fe680) (PrefabImporter) -> (artifact id: 'c024465a10bc2e1136333bb1dfc0326b') in 0.0118794 seconds
+Refreshing native plugins compatible for Editor in 4.18 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=03b6290d5dfaf44429ba85a933c79336): Total: 0.066 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/507657a1835228349a1a09bb891e1643'
+	Deserialize:            6.274 ms
+	Integration:            4.367 ms
+	Integration of assets:  0.040 ms
+	Thread Wait Time:       0.034 ms
+	Total Operation Time:   10.715 ms
+Start importing Assets/Prefabs/UI/ConstructionUI.prefab using Guid(d74e274f730bcca45b57ab16184dec48) (PrefabImporter) -> (artifact id: 'd2a23541928b10e83b84a146326e7eed') in 0.0181448 seconds
+Start importing Assets/Prefabs/Player.prefab using Guid(1feb3ceb66b1a334a8e6c9491bfe68a9) (PrefabImporter) -> (artifact id: '05f3e48d71c1337bd5379a01336e9938') in 0.1015128 seconds
+Refreshing native plugins compatible for Editor in 3.78 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9d6b69b97243c614893f113223b262b4): Total: 0.185 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/327a24c9bbcda38499a569abf67067b7'
+	Deserialize:            0.664 ms
+	Integration:            1.264 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   1.945 ms
+Loaded scene 'Library/Unused/b02f1952738761143843b04de5dc6fbb'
+	Deserialize:            16.555 ms
+	Integration:            9.133 ms
+	Integration of assets:  0.006 ms
+	Thread Wait Time:       0.077 ms
+	Total Operation Time:   25.771 ms
+Start importing Assets/Prefabs/UI/OptionsPanel.prefab using Guid(4d6b9cae4f9c5ff4d98a7886f457c829) (PrefabImporter) -> (artifact id: 'b0d334a7bd7fddc4a0f372125f9379d6') in 0.0426313 seconds
+Refreshing native plugins compatible for Editor in 4.11 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=76c96290ca11fc44d9db2a866f856be8): Total: 0.120 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/6d42e7c84e7cba64fa1d6f76097c07e1'
+	Deserialize:            2.905 ms
+	Integration:            1.492 ms
+	Integration of assets:  0.271 ms
+	Thread Wait Time:       0.021 ms
+	Total Operation Time:   4.689 ms
+Loaded scene 'Library/Unused/81fc714d55df6a347b6453c992a16ddc'
+	Deserialize:            3.975 ms
+	Integration:            0.327 ms
+	Integration of assets:  0.296 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   4.621 ms
+Loaded scene 'Library/Unused/50076c9997c1b5245bc6706b474f8bc7'
+	Deserialize:            2.900 ms
+	Integration:            0.288 ms
+	Integration of assets:  0.283 ms
+	Thread Wait Time:       0.036 ms
+	Total Operation Time:   3.507 ms
+Loaded scene 'Library/Unused/51e574169a7bebd4c8bac271870c2465'
+	Deserialize:            4.138 ms
+	Integration:            5.100 ms
+	Integration of assets:  0.045 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   9.302 ms
+Start importing Assets/Prefabs/UI/SlotsPanel.prefab using Guid(f12c47651b35eb64da72f0fcfabbab56) (PrefabImporter) -> (artifact id: '84a6bda51856d3d480ce78efcf8ccc47') in 0.0146549 seconds
+Refreshing native plugins compatible for Editor in 3.69 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b9df3014193321d4998e341454bf4d90): Total: 0.075 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/f2dc6291133bad64e8d8bb5fc78a1602'
+	Deserialize:            5.242 ms
+	Integration:            2.873 ms
+	Integration of assets:  0.398 ms
+	Thread Wait Time:       0.026 ms
+	Total Operation Time:   8.539 ms
+Start importing Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab using Guid(97850e1cfad4b1e489acc1f1cb30f77f) (PrefabImporter) -> (artifact id: '8b638eeb3c1bfdd93b199013b5dff0c7') in 0.0120554 seconds
+Refreshing native plugins compatible for Editor in 3.19 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9688f65b5340542428c1bb8b0030f2dc): Total: 0.067 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/df5fa04525e02e04f8e0b28a46de3d22'
+	Deserialize:            6.828 ms
+	Integration:            208.394 ms
+	Integration of assets:  0.213 ms
+	Thread Wait Time:       0.044 ms
+	Total Operation Time:   215.479 ms
+Opening scene 'Assets/Scenes/01_MainMenu.unity'
+Unloading 40 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/01_MainMenu.unity'
+	Deserialize:            13.135 ms
+	Integration:            268.415 ms
+	Integration of assets:  0.993 ms
+	Thread Wait Time:       0.030 ms
+	Total Operation Time:   282.573 ms
+Unloading 1993 unused Assets / (20.1 MB). Loaded Objects now: 9159.
+Memory consumption went from 247.5 MB to 227.4 MB.
+Total: 16.757300 ms (FindLiveObjects: 1.230700 ms CreateObjectMapping: 1.202600 ms MarkObjects: 10.399000 ms  DeleteObjects: 3.923100 ms)
+
+Start importing Assets/Scenes/01_MainMenu.unity using Guid(62382a76d60dd304fb7a088c09bdaf51) (DefaultImporter) -> (artifact id: '9d5980d75416a466866b4109a5ac34c0') in 0.0022227 seconds
+Refreshing native plugins compatible for Editor in 3.18 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ff889e513fdc5e34588d6b81df71a3f4): Total: 0.052 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Opening scene 'Assets/Scenes/10_World_City.unity'
+Unloading 174 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/10_World_City.unity'
+	Deserialize:            107.014 ms
+	Integration:            434.736 ms
+	Integration of assets:  29.651 ms
+	Thread Wait Time:       0.076 ms
+	Total Operation Time:   571.477 ms
+Unloading 166 unused Assets / (4.0 MB). Loaded Objects now: 14443.
+Memory consumption went from 333.9 MB to 329.9 MB.
+Total: 12.695600 ms (FindLiveObjects: 1.197900 ms CreateObjectMapping: 0.983800 ms MarkObjects: 9.543300 ms  DeleteObjects: 0.969400 ms)
+
+Start importing Assets/Scenes/10_World_City.unity using Guid(a6b5732f9273c2648a7317671c528327) (DefaultImporter) -> (artifact id: 'f4541d0154c3650dfa65bd50b12250cb') in 0.0022027 seconds
+Refreshing native plugins compatible for Editor in 3.58 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=38e779a0439dfdd4680e98865f29c89a): Total: 0.056 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+BUTTON_PREFAB_MIGRATION_OK count=52
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ButtonPrefabMigration:Apply () (at Assets/Editor/ButtonPrefabMigration.cs:187)
+
+(Filename: Assets/Editor/ButtonPrefabMigration.cs Line: 187)
+
+Loaded scene 'Library/Unused/80ff34c32b3108744a7369d580d8d1a4'
+	Deserialize:            0.330 ms
+	Integration:            0.884 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   1.234 ms
+Loaded scene 'Library/Unused/785a976f5c3e3de4aa539475bc1ed562'
+	Deserialize:            0.336 ms
+	Integration:            0.910 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   1.268 ms
+Loaded scene 'Library/Unused/e264c378f7cc8904d85239a7eaa73673'
+	Deserialize:            0.369 ms
+	Integration:            0.687 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.030 ms
+	Total Operation Time:   1.088 ms
+Loaded scene 'Library/Unused/05baa2b9faff67945a32a23fd720d816'
+	Deserialize:            0.462 ms
+	Integration:            0.848 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   1.327 ms
+Loaded scene 'Library/Unused/9b516b960b6f9584db2351d0a3797408'
+	Deserialize:            0.749 ms
+	Integration:            0.221 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   0.987 ms
+Loaded scene 'Library/Unused/361bc2118829d0d4bbb7a95ff1a112ee'
+	Deserialize:            0.270 ms
+	Integration:            0.672 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   0.957 ms
+Loaded scene 'Library/Unused/8c64dbb264e81414d80f21b33bdebf99'
+	Deserialize:            0.413 ms
+	Integration:            0.162 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   0.592 ms
+Loaded scene 'Library/Unused/7a65afdc061e92744924b9c82fc77d71'
+	Deserialize:            0.390 ms
+	Integration:            1.001 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.408 ms
+Loaded scene 'Library/Unused/b1efd64d2b0c3794b8f5cf032a6d1784'
+	Deserialize:            1.297 ms
+	Integration:            2.040 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   3.354 ms
+Loaded scene 'Library/Unused/f60ad8741d657f649a33752a19193e73'
+	Deserialize:            0.475 ms
+	Integration:            0.191 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   0.685 ms
+Loaded scene 'Library/Unused/7e7e06763153c784f8d9db160086b6db'
+	Deserialize:            0.193 ms
+	Integration:            0.642 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   0.855 ms
+Loaded scene 'Library/Unused/f31be7eb6bc2cdb47b87429235972ae4'
+	Deserialize:            1.364 ms
+	Integration:            3.349 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   4.732 ms
+Loaded scene 'Library/Unused/10289ca398e69744d806f47c193fa216'
+	Deserialize:            0.250 ms
+	Integration:            0.808 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   1.076 ms
+Loaded scene 'Library/Unused/8bfd41c9801b4314390454abaeba6e42'
+	Deserialize:            0.512 ms
+	Integration:            0.202 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   0.739 ms
+Loaded scene 'Library/Unused/39fed4d672c7c7448966d34183980080'
+	Deserialize:            0.253 ms
+	Integration:            0.647 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   0.917 ms
+Loaded scene 'Library/Unused/130a80d3d1331e0489867729f84cfc26'
+	Deserialize:            1.196 ms
+	Integration:            0.725 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.940 ms
+Loaded scene 'Library/Unused/470faa95ecc8fd84294baf50d2a01e77'
+	Deserialize:            0.516 ms
+	Integration:            1.205 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   1.742 ms
+Loaded scene 'Library/Unused/5ef842dbadd69d5409260d606f1d2c73'
+	Deserialize:            0.920 ms
+	Integration:            0.330 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   1.275 ms
+Loaded scene 'Library/Unused/74120a196f24a6d4aa099d9c1395a8e0'
+	Deserialize:            0.398 ms
+	Integration:            1.099 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   1.518 ms
+Loaded scene 'Library/Unused/fcbd2d1210f371e4ab465707b9cd717d'
+	Deserialize:            0.641 ms
+	Integration:            1.266 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   1.924 ms
+Loaded scene 'Library/Unused/a8b4583116ee8ea4baae799563d357bd'
+	Deserialize:            0.785 ms
+	Integration:            0.319 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   1.122 ms
+Loaded scene 'Library/Unused/c91507e97fe50ac42be11d954bc79d51'
+	Deserialize:            0.644 ms
+	Integration:            1.187 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   1.855 ms
+Loaded scene 'Library/Unused/ab348ec1ac9b65f41b8218ca955063e8'
+	Deserialize:            0.437 ms
+	Integration:            0.749 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   1.204 ms
+Loaded scene 'Library/Unused/ed03e9205f4e0544babbc8de6aedfe5a'
+	Deserialize:            0.549 ms
+	Integration:            1.391 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.021 ms
+	Total Operation Time:   1.964 ms
+Loaded scene 'Library/Unused/d671ab8d7dfc12e4fab1561311259dda'
+	Deserialize:            0.403 ms
+	Integration:            1.646 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.034 ms
+	Total Operation Time:   2.085 ms
+Loaded scene 'Library/Unused/44048d62574516f49a3c463e7f5f4996'
+	Deserialize:            0.449 ms
+	Integration:            1.055 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.010 ms
+	Total Operation Time:   1.515 ms
+Loaded scene 'Library/Unused/8d62e11849904a34796aec2d0c62f9ba'
+	Deserialize:            0.275 ms
+	Integration:            0.635 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   0.924 ms
+Loaded scene 'Library/Unused/1662c649b734e684086e41a638c59038'
+	Deserialize:            0.523 ms
+	Integration:            1.093 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   1.630 ms
+Loaded scene 'Library/Unused/c75a6c616e46eaf49a17d8ce76494c8b'
+	Deserialize:            0.507 ms
+	Integration:            0.803 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.021 ms
+	Total Operation Time:   1.334 ms
+Loaded scene 'Library/Unused/13016cae1a731d543a4c48a494be1646'
+	Deserialize:            0.310 ms
+	Integration:            1.003 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   1.333 ms
+Loaded scene 'Library/Unused/81424e75a5b4dcc41b2111568e1f7bff'
+	Deserialize:            3.900 ms
+	Integration:            4.213 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.024 ms
+	Total Operation Time:   8.138 ms
+Loaded scene 'Library/Unused/927871cd701c3df4daaecbbc2a19a411'
+	Deserialize:            0.397 ms
+	Integration:            0.778 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.025 ms
+	Total Operation Time:   1.201 ms
+Loaded scene 'Library/Unused/28d40a02152b80741a37fb90cb755833'
+	Deserialize:            0.240 ms
+	Integration:            0.631 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   0.884 ms
+Loaded scene 'Library/Unused/0732977e67378fa448976d36388e128f'
+	Deserialize:            0.467 ms
+	Integration:            0.902 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.384 ms
+Loaded scene 'Library/Unused/dfc3289c8257ba6418fa7e99dff6314d'
+	Deserialize:            0.357 ms
+	Integration:            0.270 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   0.647 ms
+Loaded scene 'Library/Unused/b27742c794f5ac14392852602e9ec531'
+	Deserialize:            0.337 ms
+	Integration:            0.222 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.008 ms
+	Total Operation Time:   0.569 ms
+Loaded scene 'Library/Unused/adbdfc75bdc28df418f592b64b1035e4'
+	Deserialize:            0.470 ms
+	Integration:            0.171 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   0.655 ms
+Loaded scene 'Library/Unused/a23597b97f897c04fb008aa3c74e3c18'
+	Deserialize:            0.197 ms
+	Integration:            0.568 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   0.782 ms
+Loaded scene 'Library/Unused/66e4a656f5e74214e9437c681b5a27d6'
+	Deserialize:            0.604 ms
+	Integration:            2.757 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   3.375 ms
+Loaded scene 'Library/Unused/29f692cd2de2f8049b87142b972e0d66'
+	Deserialize:            0.429 ms
+	Integration:            0.817 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   1.259 ms
+Loaded scene 'Library/Unused/933cff22cffedc04ab00b850a7cb2ba9'
+	Deserialize:            0.412 ms
+	Integration:            0.732 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   1.161 ms
+Loaded scene 'Library/Unused/78ff257a18015854ea82f4ab99e78ca3'
+	Deserialize:            0.365 ms
+	Integration:            0.735 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   1.113 ms
+Loaded scene 'Library/Unused/3e14f5af245356e41a6679f25b64fd36'
+	Deserialize:            0.390 ms
+	Integration:            0.225 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   0.627 ms
+Loaded scene 'Library/Unused/682ca2d64ba823848832584a65371560'
+	Deserialize:            0.396 ms
+	Integration:            1.007 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.419 ms
+Loaded scene 'Library/Unused/bb5cce8479df8ef449d8c1347605ec1b'
+	Deserialize:            0.638 ms
+	Integration:            0.486 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   1.141 ms
+Loaded scene 'Library/Unused/5f81d30ff12ecdd4d89c2cc5dd5f450a'
+	Deserialize:            0.220 ms
+	Integration:            0.855 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.091 ms
+Loaded scene 'Library/Unused/c5a7f38f1fddcb14bb3ed5d0ed88c0f4'
+	Deserialize:            0.514 ms
+	Integration:            0.291 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   0.824 ms
+Loaded scene 'Library/Unused/709a3b61d66de454fae1184c8f9871ed'
+	Deserialize:            1.289 ms
+	Integration:            193.069 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   194.384 ms
+Loaded scene 'Library/Unused/c50b8addbc869df49b6c287cc4719507'
+	Deserialize:            0.527 ms
+	Integration:            1.173 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   1.719 ms
+Loaded scene 'Library/Unused/36d143e00c9d2d040939b4cedd569c95'
+	Deserialize:            0.305 ms
+	Integration:            0.810 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.021 ms
+	Total Operation Time:   1.138 ms
+Loaded scene 'Library/Unused/7a02e103c35939c4484b29efd61fcf0f'
+	Deserialize:            0.374 ms
+	Integration:            0.853 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.242 ms
+Loaded scene 'Library/Unused/5efe247482d8fe944b1602e4cf490c94'
+	Deserialize:            0.200 ms
+	Integration:            0.562 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   0.779 ms
+Loaded scene 'Library/Unused/982b9c65542742d4699e21e384d7ef24'
+	Deserialize:            0.226 ms
+	Integration:            0.538 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   0.777 ms
+Loaded scene 'Library/Unused/8d8859a2984e57e4cbcc44a2d118a005'
+	Deserialize:            0.594 ms
+	Integration:            0.119 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   0.728 ms
+Loaded scene 'Library/Unused/c6d9915ff7b9aa24a86b7d423f9ce881'
+	Deserialize:            7.912 ms
+	Integration:            6.803 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.025 ms
+	Total Operation Time:   14.745 ms
+Loaded scene 'Library/Unused/839cd88cc9c940e4282dc18e0ff918b0'
+	Deserialize:            0.730 ms
+	Integration:            0.392 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   1.140 ms
+Loaded scene 'Library/Unused/b2c51a095fe61f945b6971f53462014e'
+	Deserialize:            0.535 ms
+	Integration:            0.385 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   0.938 ms
+Loaded scene 'Library/Unused/1ea1f731fcb83fc46878b0f8a38d01df'
+	Deserialize:            0.521 ms
+	Integration:            0.371 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   0.914 ms
+Loaded scene 'Library/Unused/84a662f29109bfd4f87195367bc60f31'
+	Deserialize:            0.357 ms
+	Integration:            1.035 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   1.413 ms
+Loaded scene 'Library/Unused/516c8b48cd37eec41834fdddc109b0cc'
+	Deserialize:            0.530 ms
+	Integration:            0.326 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   0.875 ms
+Opening scene 'Assets/Scenes/01_MainMenu.unity'
+Unloading 154 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/01_MainMenu.unity'
+	Deserialize:            6.560 ms
+	Integration:            263.189 ms
+	Integration of assets:  2.549 ms
+	Thread Wait Time:       0.026 ms
+	Total Operation Time:   272.325 ms
+Unloading 2941 unused Assets / (69.2 MB). Loaded Objects now: 9215.
+Memory consumption went from 316.2 MB to 247.0 MB.
+Total: 20.195100 ms (FindLiveObjects: 1.762500 ms CreateObjectMapping: 0.963700 ms MarkObjects: 10.604000 ms  DeleteObjects: 6.862600 ms)
+
+Opening scene 'Assets/Scenes/10_World_City.unity'
+Unloading 154 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/10_World_City.unity'
+	Deserialize:            145.309 ms
+	Integration:            372.080 ms
+	Integration of assets:  30.394 ms
+	Thread Wait Time:       0.075 ms
+	Total Operation Time:   547.859 ms
+Unloading 10 unused Assets / (29.4 KB). Loaded Objects now: 14455.
+Memory consumption went from 297.9 MB to 297.9 MB.
+Total: 12.736000 ms (FindLiveObjects: 1.452200 ms CreateObjectMapping: 0.722400 ms MarkObjects: 10.415100 ms  DeleteObjects: 0.145100 ms)
+
+BUTTON_PREFAB_INSPECTION_OK count=92
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ButtonPrefabMigration:Inspect () (at Assets/Editor/ButtonPrefabMigration.cs:38)
+ButtonPrefabMigration:Apply () (at Assets/Editor/ButtonPrefabMigration.cs:188)
+
+(Filename: Assets/Editor/ButtonPrefabMigration.cs Line: 38)
+
+Batchmode quit successfully invoked - shutting down!
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-adm_mgarciajavier-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-adm_mgarciajavier channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

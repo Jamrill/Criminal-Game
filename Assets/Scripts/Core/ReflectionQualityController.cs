@@ -77,6 +77,7 @@ namespace JuegoCriminal.Core
                     removed.Add(entry.Key);
                     continue;
                 }
+                entry.Value.UpdateZone(entry.Key);
                 entry.Value.Tick(Mathf.Max(IntervalFor(quality), entry.Key.RefreshInterval), entry.Key.TransitionSeconds);
             }
             foreach (ReflectionZone zone in removed) zones.Remove(zone);

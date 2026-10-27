@@ -1,0 +1,14 @@
+PASS SlotRow(Clone) layout height=50
+PASS SlotRowCoop(Clone) layout height=50
+PASS SlotRow(Clone) layout height=50
+PASS SlotRowCoop(Clone) layout height=50
+PASS SlotRow(Clone) layout height=50
+PASS SlotRowCoop(Clone) layout height=50
+PASS SlotRow(Clone) layout height=50
+PASS SlotRowCoop(Clone) layout height=50
+PASS SlotRow(Clone) layout height=50
+PASS SlotRowCoop(Clone) layout height=50
+PASS SlotRow(Clone) layout height=50
+PASS SlotRowCoop(Clone) layout height=50
+PASS content grows for all rows: 760
+PASS animation validation without regenerating controller

@@ -4,6 +4,8 @@ using JuegoCriminal.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using JuegoCriminal.Localization;
+using static JuegoCriminal.Localization.GameLanguage;
 
 namespace JuegoCriminal.UI
 {
@@ -26,6 +28,7 @@ namespace JuegoCriminal.UI
         [SerializeField] private TMP_Text vsyncLabel;
         [SerializeField] private Button reflectionsButton;
         [SerializeField] private TMP_Text reflectionsLabel;
+        [SerializeField] private Button buttonTemplate;
         private GameObject popup;
 
         private void Awake()
@@ -33,26 +36,27 @@ namespace JuegoCriminal.UI
             EnsureReflectionsRow();
             if (reflectionsButton != null)
                 reflectionsButton.onClick.AddListener(() => ShowChoices(reflectionsButton,
-                    new[] { "Bajo", "Medio", "Alto", "Ultra" }, VideoSettings.Reflections, VideoSettings.SetReflections));
+                    new[] { T("Low","Bajo"), T("Medium","Medio"), T("High","Alto"), "Ultra" }, VideoSettings.Reflections, VideoSettings.SetReflections));
             presetButton.onClick.AddListener(() => ShowChoices(presetButton,
-                new[] { "Bajo", "Medio", "Alto", "Ultra", "Personalizado" }, (int)VideoSettings.Preset, VideoSettings.SetPreset));
+                new[] { T("Low","Bajo"), T("Medium","Medio"), T("High","Alto"), "Ultra", T("Custom","Personalizado") }, (int)VideoSettings.Preset, VideoSettings.SetPreset));
             antialiasingButton.onClick.AddListener(() => ShowChoices(antialiasingButton,
                 new[] { "Off", "FXAA", "SMAA", "TAA" }, VideoSettings.Antialiasing, VideoSettings.SetAntialiasing));
             msaaButton.onClick.AddListener(() => ShowChoices(msaaButton,
                 new[] { "Off", "x2", "x4", "x8" }, Array.IndexOf(new[] { 1, 2, 4, 8 }, VideoSettings.MsaaSamples),
                 index => VideoSettings.SetMsaa(new[] { 1, 2, 4, 8 }[index])));
             smaaQualityButton.onClick.AddListener(() => ShowChoices(smaaQualityButton,
-                new[] { "Baja", "Media", "Alta" }, VideoSettings.SmaaQuality, VideoSettings.SetSmaaQuality));
+                new[] { T("Low","Baja"), T("Medium","Media"), T("High","Alta") }, VideoSettings.SmaaQuality, VideoSettings.SetSmaaQuality));
             resolutionButton.onClick.AddListener(OpenResolutions);
             windowModeButton.onClick.AddListener(() => ShowChoices(windowModeButton,
                 DisplaySettings.ModeLabels, DisplaySettings.Mode, DisplaySettings.SetMode));
             vsyncButton.onClick.AddListener(() => ShowChoices(vsyncButton,
-                new[] { "Desactivado", "Activado" }, DisplaySettings.VSyncEnabled ? 1 : 0, DisplaySettings.SetVSync));
+                new[] { T("Off","Desactivado"), T("On","Activado") }, DisplaySettings.VSyncEnabled ? 1 : 0, DisplaySettings.SetVSync));
         }
 
         private void OnEnable()
         {
             VideoSettings.Changed += RefreshLabel;
+            GameLanguage.Changed += LanguageChanged;
             RefreshLabel();
         }
 
@@ -74,13 +78,20 @@ namespace JuegoCriminal.UI
             reflectionsButton.onClick = new Button.ButtonClickedEvent();
             reflectionsLabel = reflectionsButton.GetComponentInChildren<TMP_Text>(true);
             foreach (var label in row.GetComponentsInChildren<TMP_Text>(true))
-                if (label != reflectionsLabel) label.text = "Reflejos";
+                if (label != reflectionsLabel)
+                {
+                    var localized=label.GetComponent<LocalizedText>();if(!localized)localized=label.gameObject.AddComponent<LocalizedText>();
+                    localized.english="Reflections";localized.spanish="Reflejos";localized.Refresh();
+                }
             row.SetActive(true);
+            var actionLabel=Array.Find(row.GetComponentsInChildren<TMP_Text>(true),t=>!t.GetComponentInParent<Button>());
+            SettingsRowLayout.Configure(row.transform,actionLabel,reflectionsButton);
         }
 
         private void OnDisable()
         {
             VideoSettings.Changed -= RefreshLabel;
+            GameLanguage.Changed -= LanguageChanged;
             CloseChoices();
             if (gameObject.activeSelf) gameObject.SetActive(false);
         }
@@ -90,9 +101,11 @@ namespace JuegoCriminal.UI
             if (controlsMenu != null) controlsMenu.Close();
             gameObject.SetActive(true);
             RefreshLabel();
+            GetComponentInParent<OptionsPanelNavigation>()?.RaiseNavigation();
         }
 
         public void Close() => gameObject.SetActive(false);
+        private void LanguageChanged(){CloseChoices();RefreshLabel();}
 
         private void OpenResolutions()
         {
@@ -115,10 +128,10 @@ namespace JuegoCriminal.UI
             msaaLabel.text = VideoSettings.Antialiasing == 3 ? "Off (TAA)" :
                 (VideoSettings.MsaaSamples == 1 ? "Off" : "x" + VideoSettings.MsaaSamples) + "  v";
             smaaQualityButton.interactable = VideoSettings.Antialiasing == 2;
-            smaaQualityLabel.text = VideoSettings.Antialiasing == 2 ? VideoSettings.SmaaQualityLabel + "  v" : "No aplicable";
+            smaaQualityLabel.text = VideoSettings.Antialiasing == 2 ? VideoSettings.SmaaQualityLabel + "  v" : T("Not applicable","No aplicable");
             resolutionLabel.text = DisplaySettings.Resolution.x + " x " + DisplaySettings.Resolution.y + "  v";
             windowModeLabel.text = DisplaySettings.ModeLabels[DisplaySettings.Mode] + "  v";
-            vsyncLabel.text = (DisplaySettings.VSyncEnabled ? "Activado" : "Desactivado") + "  v";
+            vsyncLabel.text = (DisplaySettings.VSyncEnabled ? T("On","Activado") : T("Off","Desactivado")) + "  v";
             if (reflectionsLabel != null) reflectionsLabel.text = VideoSettings.ReflectionsLabel + "  v";
         }
 
@@ -195,7 +208,8 @@ namespace JuegoCriminal.UI
             for (int i = 0; i < options.Count; i++)
             {
                 int index = i;
-                var item = new GameObject("Option_" + i, typeof(RectTransform), typeof(Image), typeof(Button));
+                var button=ButtonTemplate.Create(buttonTemplate,contentRect,"Option_"+i,out var text);
+                var item=button.gameObject;
                 var itemRect = (RectTransform)item.transform;
                 itemRect.SetParent(contentRect, false);
                 itemRect.anchorMin = new Vector2(0, 1);
@@ -204,13 +218,9 @@ namespace JuegoCriminal.UI
                 itemRect.sizeDelta = new Vector2(0, 48);
                 itemRect.anchoredPosition = new Vector2(0, -i * 48);
                 var background = item.GetComponent<Image>();
-                background.color = i == selected ? new Color(0.25f, 0.35f, 0.45f) : new Color(0.16f, 0.16f, 0.16f);
-                var button = item.GetComponent<Button>();
+                background.color = buttonTemplate?Color.white:i == selected ? new Color(0.25f, 0.35f, 0.45f) : new Color(0.16f, 0.16f, 0.16f);
                 button.targetGraphic = background;
                 button.onClick.AddListener(() => { CloseChoices(); select(index); RefreshLabel(); });
-                var labelObject = new GameObject("Label", typeof(RectTransform), typeof(TextMeshProUGUI));
-                labelObject.transform.SetParent(itemRect, false);
-                var text = labelObject.GetComponent<TextMeshProUGUI>();
                 text.font = antialiasingLabel.font;
                 text.fontSize = antialiasingLabel.fontSize;
                 text.enableAutoSizing = true;
