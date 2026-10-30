@@ -11,14 +11,35 @@ namespace JuegoCriminal.Construction
         readonly Dictionary<Renderer,Material[]> highlighted=new();
         readonly Dictionary<Renderer,bool> visibility=new();
         readonly WallChangePreview preview=new();
+        readonly StairChangePreview stairPreview=new();
         public void Clear()
         {
             foreach(var pair in highlighted)if(pair.Key)pair.Key.sharedMaterials=pair.Value;
             highlighted.Clear();
             foreach(var pair in visibility)if(pair.Key)pair.Key.enabled=pair.Value;
-            visibility.Clear();preview.Hide();
+            visibility.Clear();preview.Hide();stairPreview.Hide();
         }
-        public void Dispose(){Clear();preview.Dispose();}
+        public void Dispose(){Clear();preview.Dispose();stairPreview.Dispose();}
+        public void ShowStairPlan(StairBuildPlan plan,BuildCatalog catalog,Material green,Material red)
+        {
+            stairPreview.Show(plan,catalog,green,red);
+            HighlightBlockers(plan.edits.Where(e=>e.item && e.item.GetComponent<WallTopology>()).SelectMany(e=>e.item.GetComponentsInChildren<Collider>()),red);
+        }
+        public void HighlightBlockers(IEnumerable<Collider> blockers,Material red)
+        {
+            foreach(var collider in blockers)
+            {
+                if(!collider)continue;
+                var item=collider.GetComponentInParent<PlacedBuildObject>();
+                var root=item?item.transform:collider.transform;
+                foreach(var renderer in root.GetComponentsInChildren<Renderer>())
+                {
+                    if(!renderer.enabled || renderer.shadowCastingMode==UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly || highlighted.ContainsKey(renderer))continue;
+                    highlighted[renderer]=renderer.sharedMaterials;
+                    renderer.sharedMaterials=Enumerable.Repeat(red,renderer.sharedMaterials.Length).ToArray();
+                }
+            }
+        }
         public void ShowPlan(WallChangePlan plan,BuildCatalog catalog,Material material)
         {
             foreach(var item in plan.removed)foreach(var renderer in item.GetComponentsInChildren<Renderer>())
@@ -91,11 +112,13 @@ namespace JuegoCriminal.Construction
             if(replacing)
             {
                 var plan=WallReconfiguration.Opening(catalog,plot,target,opening,aim);
-                bool valid=WallReconfiguration.Validate(plan,catalog,out var reason);
+                var blockers=new List<Collider>();
+                bool valid=WallReconfiguration.Validate(plan,catalog,out var reason,blockers);
                 if(!valid)
                 {
+                    HighlightBlockers(blockers,red);
                     foreach(var renderer in target.GetComponentsInChildren<Renderer>())
-                    {highlighted[renderer]=renderer.sharedMaterials;renderer.sharedMaterials=System.Linq.Enumerable.Repeat(red,renderer.sharedMaterials.Length).ToArray();}
+                    {if(!highlighted.ContainsKey(renderer))highlighted[renderer]=renderer.sharedMaterials;renderer.sharedMaterials=System.Linq.Enumerable.Repeat(red,renderer.sharedMaterials.Length).ToArray();}
                     return reason;
                 }
                 difference=plan.Difference(catalog);affordable=economy && (difference<=0 || economy.CanAfford(difference));

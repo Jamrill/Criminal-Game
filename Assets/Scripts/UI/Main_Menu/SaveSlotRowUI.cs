@@ -17,6 +17,19 @@ namespace JuegoCriminal.UI
         [SerializeField] private TMP_Text nameText;
         [SerializeField] private TMP_Text dateText;
         [SerializeField] private Button rowButton;
+        [SerializeField] private Button renameButton;
+        public TMP_Text NameText => nameText;
+        public Button RenameButton => renameButton;
+
+        [Header("Save name editing")]
+        [SerializeField] private Color nameSelectionColor = new Color(1f, .85f, .35f, .45f);
+        [SerializeField] private Color nameCaretColor = Color.white;
+        [SerializeField, Range(1, 5)] private int nameCaretWidth = 2;
+        [SerializeField] private bool underlineNameWhileEditing = true;
+        public Color NameSelectionColor => nameSelectionColor;
+        public Color NameCaretColor => nameCaretColor;
+        public int NameCaretWidth => nameCaretWidth;
+        public bool UnderlineNameWhileEditing => underlineNameWhileEditing;
 
         [Header("Visual")]
         [SerializeField] private bool isCoopVisual; // Normal=false, Coop=true
@@ -32,13 +45,13 @@ namespace JuegoCriminal.UI
         {
             _slotId = slotId;
 
-            // Asegurar que el botÛn es clicable
+            // Asegurar que el bot√≥n es clicable
             if (rowButton != null) rowButton.interactable = true;
         }
 
         public void SetMode(SlotPanelMode mode)
         {
-            // Actualmente solo lo usamos en LoadOnly, asÌ que no necesitamos lÛgica extra aquÌ.
+            // Actualmente solo lo usamos en LoadOnly, as√≠ que no necesitamos l√≥gica extra aqu√≠.
         }
 
         public void Refresh(SaveData dataOrNull)
@@ -47,14 +60,13 @@ namespace JuegoCriminal.UI
 
             if (!SlotExists)
             {
-                if (nameText != null) nameText.text = "";
+                SetName("");
                 if (dateText != null) dateText.text = "";
                 if (rowButton != null) rowButton.interactable = false;
                 return;
             }
 
-            if (nameText != null)
-                nameText.text = dataOrNull.displayName;
+            SetName(dataOrNull.displayName);
 
             /*if (dateText != null)
             {
@@ -65,7 +77,7 @@ namespace JuegoCriminal.UI
 
             if (dateText != null)
             {
-                // M·s adelante: cultureCode vendr· de Settings (por ejemplo "es-ES" o "en-US")
+                // M√°s adelante: cultureCode vendr√° de Settings (por ejemplo "es-ES" o "en-US")
                 string cultureCode = null; // TODO: leerlo de SettingsService
                 dateText.text = DateFormatUtil.FormatLastPlayedWithTime(dataOrNull.lastPlayedUtc, cultureCode);
             }
@@ -76,6 +88,14 @@ namespace JuegoCriminal.UI
         public void OnPointerDown(PointerEventData eventData)
         {
             Clicked?.Invoke(this);
+        }
+
+        private void SetName(string name)
+        {
+            if (nameText == null) return;
+            var editor = nameText.GetComponent<SaveSlotNameEditor>();
+            if (editor != null) editor.SetDisplayName(name);
+            else nameText.text = name;
         }
     }
 }

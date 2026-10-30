@@ -63,7 +63,7 @@ namespace JuegoCriminal.Construction
                 var patch=floor.GetComponent<RoomFloorPatch>();
                 if(patch)
                 {
-                    float top=plot.Grid.InverseTransformPoint(patch.transform.position).y;
+                    float top=plot.Grid.InverseTransformPoint(patch.SurfacePoint).y;
                     result.Add(new Surface{owner=marker,bottom=top-RoomFloorPatch.Thickness,top=top,pieces=patch.PlanarPieces(plot.Grid).ToList()});continue;
                 }
                 foreach(var box in floor.GetComponentsInChildren<BoxCollider>())
@@ -152,8 +152,10 @@ namespace JuegoCriminal.Construction
                     for(int i=1;i<clipped.Count-1;i++)
                     {
                         var triangle=new[]{clipped[0],clipped[i],clipped[i+1]};
-                        if(Mathf.Abs(RoomGeometry.SignedArea(triangle))<=RoomGeometry.MinimumArea)continue;
-                        foreach(var point in triangle)triangles.Add(new Vector3(point.x-origin.x,0,point.y-origin.y));
+                        if(!RoomGeometry.HasTriangleSurface(triangle[0],triangle[1],triangle[2]))continue;
+                        // Keep the storey datum at the authored origin and put
+                        // thickness in local geometry, as in the imported Floor.
+                        foreach(var point in triangle)triangles.Add(new Vector3(point.x-origin.x,entry.bounds.max.y,point.y-origin.y));
                     }
                 }
                 if(triangles.Count==0)continue;
@@ -168,7 +170,7 @@ namespace JuegoCriminal.Construction
             if(!money || !plot.CanBuild(money.GetComponent<PropertyService>()))return false;
             var entry=plot.catalog?plot.catalog.entries.FirstOrDefault(e=>e.prefab && e.prefab.GetComponent<BuildFloorCoverage>()):null;
             if(entry==null){Warning=T("Room needs a floor prefab in its construction catalogue","La sala necesita un prefab de suelo en su catálogo");return false;}
-            var plan=PlanTiles(ground,room.floor,entry);plan.AddRange(PlanTiles(roof,room.ceiling+RoomFloorPatch.Thickness,entry));
+            var plan=PlanTiles(ground,room.floor,entry);plan.AddRange(PlanTiles(roof,room.ceiling,entry));
             long cost=(long)plan.Count*plot.catalog.Cost(entry);
             if(cost>int.MaxValue || !money || !money.CanAfford((int)cost))
             {

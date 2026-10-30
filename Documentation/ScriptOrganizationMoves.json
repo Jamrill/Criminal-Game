@@ -1,0 +1,600 @@
+{
+  "moves": [
+    {
+      "name": "AimPoseRefinement.cs",
+      "source": "Assets/Editor/AimPoseRefinement.cs",
+      "guid": "32c1720eda0005b42b1b41b4c1c1b871",
+      "hash": "1977F1A041428FE3EA11A7F389EE38ED8451AEE97E3CD6C95FA23FDF9FE6652B",
+      "destination": "Assets/Scripts/Player/Tools/Animation/AimPoseRefinement.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "BuildInputAndHeightValidation.cs",
+      "source": "Assets/Editor/BuildInputAndHeightValidation.cs",
+      "guid": "c1b3ed9651b25084794a1ecbf0a52b44",
+      "hash": "2E25B5D2A40DE8695A9084B9DA3EAA6F78984F9A696076DDEEA02789C9B8BCAF",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/BuildInputAndHeightValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ButtonPrefabMigration.cs",
+      "source": "Assets/Editor/ButtonPrefabMigration.cs",
+      "guid": "ef42f0e8e64459a438b13f0180a93cfb",
+      "hash": "48FCB4DE92FEAB1E4B3AA1FEACA12224115A5778BD1757F3DBB9FF89AE65C272",
+      "destination": "Assets/Scripts/UI/Tools/ButtonPrefabMigration.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ButtonSampleTextSetup.cs",
+      "source": "Assets/Editor/ButtonSampleTextSetup.cs",
+      "guid": "6158967dbc70ebe4eb291abcfc58687d",
+      "hash": "9BACB0088D89544041E2455302E4BA78009AC0D6D0A811F08EB0DD930EAF2400",
+      "destination": "Assets/Scripts/UI/Tools/ButtonSampleTextSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ClosedRoomShadowValidation.cs",
+      "source": "Assets/Editor/ClosedRoomShadowValidation.cs",
+      "guid": "2a7545b49cd03be4cb0a86971134eb26",
+      "hash": "4136B536DC4C5185D8C86297B4C556ADF97E118EA715CA39BFCF6A58F31D29DA",
+      "destination": "Assets/Scripts/Environment/Tools/Validation/ClosedRoomShadowValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ColoredLightSetup.cs",
+      "source": "Assets/Editor/ColoredLightSetup.cs",
+      "guid": "00d9a23e043c696488f29f67495a85c5",
+      "hash": "61E714ECD3FEC837F25E47B801F7056A6E92DFFE242A54716AF2AB43D090A912",
+      "destination": "Assets/Scripts/Environment/Tools/Lighting/ColoredLightSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionDeletionPlayValidation.cs",
+      "source": "Assets/Editor/ConstructionDeletionPlayValidation.cs",
+      "guid": "2da3c7549b738834ca3699ac62ad7ca1",
+      "hash": "F18D95B38FB5CEDD3DE8876D97084E6AD77EAEDEF75A5D48D2EA664FEE33BC14",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/ConstructionDeletionPlayValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionEconomyGridRevision.cs",
+      "source": "Assets/Editor/ConstructionEconomyGridRevision.cs",
+      "guid": "18ebc48fc81d46f43b0896a3e03852c4",
+      "hash": "9DBAD941D0C5B34BF52FE97DBEA6A3A548E0E36AC84350CA437F85E8A678AF38",
+      "destination": "Assets/Scripts/Construction/Tools/Setup/ConstructionEconomyGridRevision.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionEditingSetup.cs",
+      "source": "Assets/Editor/ConstructionEditingSetup.cs",
+      "guid": "9c3992bb0fa8d234a97437e5ff28074e",
+      "hash": "93A6529EE5D38CB0901A4CE1BBE38828C4E58E3F59122C4714010D047F93BDF6",
+      "destination": "Assets/Scripts/Construction/Tools/Setup/ConstructionEditingSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionEditingUpgradeValidation.cs",
+      "source": "Assets/Editor/ConstructionEditingUpgradeValidation.cs",
+      "guid": "f26b989ee5f79514892d6053e3556347",
+      "hash": "24F1FA7EE3E17F20C1847BC719D9B97A30F5E5B6C6489400B58AEEAFBF7FFCF6",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/ConstructionEditingUpgradeValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionGuidesValidation.cs",
+      "source": "Assets/Editor/ConstructionGuidesValidation.cs",
+      "guid": "3356cad351384524699078966d344cfc",
+      "hash": "514891A5B40BD84D6051FCFFA3F5EB245E736EEE2943B0C7C05054B443617A3A",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/ConstructionGuidesValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionMountSetup.cs",
+      "source": "Assets/Editor/ConstructionMountSetup.cs",
+      "guid": "be00d2bad665e3343acb11daddbf9844",
+      "hash": "88C4E833AF1DBF7C390F36BA2535723FB83F38DD95586E8F614E4CFD5B81D2C1",
+      "destination": "Assets/Scripts/Construction/Tools/Setup/ConstructionMountSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionMountValidation.cs",
+      "source": "Assets/Editor/ConstructionMountValidation.cs",
+      "guid": "498cf9dd9d9b666409958e8bd1455d0c",
+      "hash": "5C5EC6206FA0F1507FF661479A4D8EB120EC6DCDBE5AAD56966C4D653969B895",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/ConstructionMountValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionPreviewValidation.cs",
+      "source": "Assets/Editor/ConstructionPreviewValidation.cs",
+      "guid": "2b43e5f7dc893b147a5f86a0708a0822",
+      "hash": "DB37D41C43D53A1A9680B48D557479C165F316CBDB053F50E74473D200271B00",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/ConstructionPreviewValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionPropertySetup.cs",
+      "source": "Assets/Editor/ConstructionPropertySetup.cs",
+      "guid": "e949424f03e7b574da63746547076a74",
+      "hash": "79C5A6D2A9C58A3DED66D9EBA00D02399B72FC7295B537FE93E0D5B6A06DF1FA",
+      "destination": "Assets/Scripts/Construction/Tools/Setup/ConstructionPropertySetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionPropertyValidation.cs",
+      "source": "Assets/Editor/ConstructionPropertyValidation.cs",
+      "guid": "1b6592b95b45ffb4ab8553bb0058bdbe",
+      "hash": "02FFC284BD8062435555C73078969548EA3872FE7231A6AD054FBC2069797FE0",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/ConstructionPropertyValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionRevisionMigration.cs",
+      "source": "Assets/Editor/ConstructionRevisionMigration.cs",
+      "guid": "4cf41933e484437bb151fa71665ce6c2",
+      "hash": "E19EB287ABE6CB8D9984F2D5DB7CA042A4F55AC21E4899DDF4D5220DEE60006D",
+      "destination": "Assets/Scripts/Construction/Tools/Migrations/ConstructionRevisionMigration.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionSceneCapture.cs",
+      "source": "Assets/Editor/ConstructionSceneCapture.cs",
+      "guid": "eeaea4a0b50fd644788d4bf6459ec606",
+      "hash": "EFDF2AC89843AB2E6B6221D6827845EB6C1FA5B929B5E8D4DB051B5E26A18530",
+      "destination": "Assets/Scripts/Construction/Tools/ConstructionSceneCapture.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionSetup.cs",
+      "source": "Assets/Editor/ConstructionSetup.cs",
+      "guid": "4a0f1f5034dff44428c6e96d220e2a6d",
+      "hash": "48B449F8E9C0DC72C40CEB8BEF3900AA13F1B42EAC1801339B65E3766F62F2A9",
+      "destination": "Assets/Scripts/Construction/Tools/Setup/ConstructionSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionUIRevision.cs",
+      "source": "Assets/Editor/ConstructionUIRevision.cs",
+      "guid": "702c454350107ce4d9e34b07f8cf9fe7",
+      "hash": "DAC967F6696D5434431EF1284AE668434F92DB4E4542097C8DB7C6D1117331B8",
+      "destination": "Assets/Scripts/Construction/Tools/Setup/ConstructionUIRevision.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionValidation.cs",
+      "source": "Assets/Editor/ConstructionValidation.cs",
+      "guid": "ba94b306a0433fe4ab0d6aa128a0a1f8",
+      "hash": "03A4B8472F89133113F427F6E4A26616C96CD6568C2DAE31418A4479B7F7AE4F",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/ConstructionValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionValueSetup.cs",
+      "source": "Assets/Editor/ConstructionValueSetup.cs",
+      "guid": "03e88b93ef0976141922ae9cb8f89ff6",
+      "hash": "AA86E54E3F9DE19A9A34C7DA91538375E92807FA95B3270EFAC19BCA36105B4F",
+      "destination": "Assets/Scripts/Construction/Tools/ConstructionValueSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "ConstructionValueValidation.cs",
+      "source": "Assets/Editor/ConstructionValueValidation.cs",
+      "guid": "f52fa5c5e2c830149a42e390aa43231b",
+      "hash": "7365C065BF996A4F7847F651F47DE462FAE57016F9E546694E1D0ECC03D40F8D",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/ConstructionValueValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "DevelopmentEconomyTools.cs",
+      "source": "Assets/Editor/DevelopmentEconomyTools.cs",
+      "guid": "19dee9b1c7d36b64b8061b633133ed21",
+      "hash": "B3C3C83D8077A119547E7C8A1205599E0EDE33632ED41D8A104449E3A0E5E54D",
+      "destination": "Assets/Scripts/Construction/Tools/DevelopmentEconomyTools.cs",
+      "editorOnly": true,
+      "mergedInto": "Assets/Scripts/Construction/Tools/ConstructionValueSetup.cs"
+    },
+    {
+      "name": "FixedFbxMigration.cs",
+      "source": "Assets/Editor/FixedFbxMigration.cs",
+      "guid": "0ea8ce6706584650b3926c6f79127859",
+      "hash": "9539B80F771386D1DB7EC7DDCF29FD98A34F5A476C9EB8BB175C5A845CC77179",
+      "destination": "Assets/Scripts/Construction/Tools/Migrations/FixedFbxMigration.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "FloorFoundationValidation.cs",
+      "source": "Assets/Editor/FloorFoundationValidation.cs",
+      "guid": "27245c212d1813648b5276a7ec264f43",
+      "hash": "669E2BA67DA87D48EBB2674524B1B90CBCB8FB8C7D1B769FF7EAE1D795CA5AEE",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/FloorFoundationValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "FloorNormalsReview.cs",
+      "source": "Assets/Editor/FloorNormalsReview.cs",
+      "guid": "178c2fb20b055b64f838ba922cb32d25",
+      "hash": "1BDBDDDE1B93190F9A9DA57C0BCD97DEEF7F2E2B7D61EBE2772DD37EC3535012",
+      "destination": "Assets/Scripts/Environment/Tools/Validation/FloorNormalsReview.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "FloorShadowReview.cs",
+      "source": "Assets/Editor/FloorShadowReview.cs",
+      "guid": "6b87ebfdeffe6614ea0d48e71055e3c2",
+      "hash": "F9A1980512C97B4A307AA08D4B27F6878539494B6062A037F8D1F95D26F58DDD",
+      "destination": "Assets/Scripts/Environment/Tools/Validation/FloorShadowReview.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "FurnitureBasicSetup.cs",
+      "source": "Assets/Editor/FurnitureBasicSetup.cs",
+      "guid": "bf58fde53c5516645b2c3bc0d550e02b",
+      "hash": "86E4F89BF3D89B0C2583F1FE6E42BF6289A47B03B4CC2BC998BC4DAEF149B784",
+      "destination": "Assets/Scripts/Construction/Tools/Furniture/FurnitureBasicSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "FurnitureColliderRefinement.cs",
+      "source": "Assets/Editor/FurnitureColliderRefinement.cs",
+      "guid": "9e5f40d9e2772f449a3bb0cff4370df0",
+      "hash": "220BADBD970F6AA1B3F191A3BBD97436F2652A82208D810FFE1F541D2541EFDD",
+      "destination": "Assets/Scripts/Construction/Tools/Furniture/FurnitureColliderRefinement.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "InteriorLightContactReview.cs",
+      "source": "Assets/Editor/InteriorLightContactReview.cs",
+      "guid": "fbb6ac2a28e14a745aa9f272995cdc0e",
+      "hash": "DF5B559BC3CF7A020AB27436DBFB901201B02428F57BDDA5DCF6CD4D31C0DB5D",
+      "destination": "Assets/Scripts/Environment/Tools/Validation/InteriorLightContactReview.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "InteriorLightingCorrection.cs",
+      "source": "Assets/Editor/InteriorLightingCorrection.cs",
+      "guid": "5255a693bccdec743978dc1374126fdf",
+      "hash": "77865C5B0A17AA4126B2AC5420D076AF6C0D1A8412968BF940D23D5B4979FCAB",
+      "destination": "Assets/Scripts/Environment/Tools/Lighting/InteriorLightingCorrection.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "InventoryItemDefinitionEditor.cs",
+      "source": "Assets/Editor/InventoryItemDefinitionEditor.cs",
+      "guid": "c9828247d61141f3bd71702949e235d5",
+      "hash": "3B9C14F460804D3C437925CF8052E611D2927A8357F16BFB28FDA5DEBF3F88F6",
+      "destination": "Assets/Scripts/Inventory/Tools/InventoryItemDefinitionEditor.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "JumpMotionProcessing.cs",
+      "source": "Assets/Editor/JumpMotionProcessing.cs",
+      "guid": "9dce55a7d139c254bb9351f6803a77cd",
+      "hash": "1E0FA851959819B9356D1A7749A486B223AF57F4128450BDFF3213AB3D42DBAB",
+      "destination": "Assets/Scripts/Player/Tools/Animation/JumpMotionProcessing.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "LargeRoofValidation.cs",
+      "source": "Assets/Editor/LargeRoofValidation.cs",
+      "guid": "78f2998ecad88f848b6ac56090c3ca6a",
+      "hash": "C74CFBC786A12ED1672D33DA63D9BB3A70F3D2DF78DE631BD9E1C6BB4EE7DB42",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/LargeRoofValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "LargeRoomShadowDistanceValidation.cs",
+      "source": "Assets/Editor/LargeRoomShadowDistanceValidation.cs",
+      "guid": "49167dd410321014a9bc7e679a7fa5da",
+      "hash": "FC5C154389111310615B236FF6E147870BD105B2B4AE65D75F2022AEC114C7A2",
+      "destination": "Assets/Scripts/Environment/Tools/Validation/LargeRoomShadowDistanceValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "LightLeakDiagnostics.cs",
+      "source": "Assets/Editor/LightLeakDiagnostics.cs",
+      "guid": "c635b111854e435aad3a294a99a4f109",
+      "hash": "C4D89BFA0C342D60D033569452DC10FC0C9E4F6D4A83ABB5FF68A45F779B699A",
+      "destination": "Assets/Scripts/Environment/Tools/Validation/LightLeakDiagnostics.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "MixamoFixOnce.cs",
+      "source": "Assets/Editor/MixamoFixOnce.cs",
+      "guid": "27f937cd3699aa543b5fc02427a58d32",
+      "hash": "CE9AE2925C17EE7B00F6F23D38CC14B9D8A23C58451CF823E957A702356F7887",
+      "destination": "Assets/Scripts/Player/Tools/Animation/MixamoFixOnce.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "MovementControlsRevisionValidation.cs",
+      "source": "Assets/Editor/MovementControlsRevisionValidation.cs",
+      "guid": "c4cefd70c29dfee4d850edb0e2945fcd",
+      "hash": "AE0AE1AAA50036C02D37DD05E1C3AFA9932D68D24B36791B2C2B19CD2A303B85",
+      "destination": "Assets/Scripts/Player/Tools/Validation/MovementControlsRevisionValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "MovementHUDRefinement.cs",
+      "source": "Assets/Editor/MovementHUDRefinement.cs",
+      "guid": "e13e9f3c090ce5e40992f3f4a8fdd653",
+      "hash": "E9F1F8A1AA9553DE4755A00F74E49A42060F6B6901F949F53AAA632DAF16C76D",
+      "destination": "Assets/Scripts/UI/Tools/MovementHUDRefinement.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "MovementSteeringValidation.cs",
+      "source": "Assets/Editor/MovementSteeringValidation.cs",
+      "guid": "0a5d3f341d7bcd243a88eccaf0682fbc",
+      "hash": "3072A2B4575CCD528341699DE1122A9C6B16FC64BC3ABC08821A720CD1F6EE2B",
+      "destination": "Assets/Scripts/Player/Tools/Validation/MovementSteeringValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "OptionsMenuRepair.cs",
+      "source": "Assets/Editor/OptionsMenuRepair.cs",
+      "guid": "b920b3772651ed442880f119e460c46c",
+      "hash": "14FA70D21AC920E9418D689BBBF65E4B282E60C0D5F6965ED5B641EB55075896",
+      "destination": "Assets/Scripts/UI/Tools/OptionsMenuRepair.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "OptionsNavigationPlayValidation.cs",
+      "source": "Assets/Editor/OptionsNavigationPlayValidation.cs",
+      "guid": "4619480c2bdeb2c48b26870d9985e393",
+      "hash": "1C4DF400FD98EF007500FC617660DE59D2E6772B5C9056B21C2792707505BF93",
+      "destination": "Assets/Scripts/UI/Tools/Validation/OptionsNavigationPlayValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "PlayerAnimationExpansion.cs",
+      "source": "Assets/Editor/PlayerAnimationExpansion.cs",
+      "guid": "ecd71c49a87aa7543bd79346b87bc631",
+      "hash": "55E9E5AEE55FD660D210280383268D304EAE6F2134491FC704E0DDAF25C3C0A0",
+      "destination": "Assets/Scripts/Player/Tools/Animation/PlayerAnimationExpansion.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "PlayerFootIKPlayValidation.cs",
+      "source": "Assets/Editor/PlayerFootIKPlayValidation.cs",
+      "guid": "114bf24b9a915d24da50e22dc7a037b0",
+      "hash": "67BCF9B1B9BAF87E391D600D468A89BD0BB1B71138A4777B5A65AC58F4CFD79D",
+      "destination": "Assets/Scripts/Player/Tools/Validation/PlayerFootIKPlayValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "PlayerFootIKSetup.cs",
+      "source": "Assets/Editor/PlayerFootIKSetup.cs",
+      "guid": "0b7e0317ca08ba049a33833f269659b2",
+      "hash": "C7FD7BCE64841D8494B78290980058A12494F88274F00F088689E82F0733CA5B",
+      "destination": "Assets/Scripts/Player/Tools/PlayerFootIKSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "PlayerFootIKValidation.cs",
+      "source": "Assets/Editor/PlayerFootIKValidation.cs",
+      "guid": "76c4d53310a40df42b3cc840248bcfc1",
+      "hash": "1FDB22CA90452CEC24E2A781584B72605640BB2449D8662D9615B4EC16B42CDC",
+      "destination": "Assets/Scripts/Player/Tools/Validation/PlayerFootIKValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "PlayerLocomotionSetup.cs",
+      "source": "Assets/Editor/PlayerLocomotionSetup.cs",
+      "guid": "244b96c9f1af93142b58c282c700774a",
+      "hash": "5CAB6D48FC12ADA5C02C099D145271143F68CE2898EFFD0F5B737CC7541E615A",
+      "destination": "Assets/Scripts/Player/Tools/Animation/PlayerLocomotionSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "RoomConstructionValidation.cs",
+      "source": "Assets/Editor/RoomConstructionValidation.cs",
+      "guid": "7a8083866f6c8f042b6f915a06e7fa99",
+      "hash": "AB72FD7E9D9ADB286FFCCC5015D67B8635518459B8625E26FC05DF4E8A0C798C",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/RoomConstructionValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "SidewalkMeshColliderMigration.cs",
+      "source": "Assets/Editor/SidewalkMeshColliderMigration.cs",
+      "guid": "e738ead09cb4455b9939ba2a12157c41",
+      "hash": "B6B32CABB5C135F477BB810D722C421569A8E81FBA79176CE4E843E3529DF1CD",
+      "destination": "Assets/Scripts/World/Tools/SidewalkMeshColliderMigration.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "SimpleSeaSceneCreator.cs",
+      "source": "Assets/Editor/SimpleSeaSceneCreator.cs",
+      "guid": "37ace63c57654b698419205ed795df7f",
+      "hash": "AE7D4ED9BFA724D34D487D0F60D63B1819FFD10904DD52D54F6D7AF47557D18B",
+      "destination": "Assets/Scripts/Environment/Tools/SimpleSeaSceneCreator.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "SlotsAndAnimationValidation.cs",
+      "source": "Assets/Editor/SlotsAndAnimationValidation.cs",
+      "guid": "31055b7b8235ed644b2f9cbfc5920263",
+      "hash": "0F74A2B07E85BF15887A2A978F24EF100F43658902FA16B5B269B8B62DD523A0",
+      "destination": "Assets/Scripts/UI/Tools/Validation/SlotsAndAnimationValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "SolarOrganizationRevision.cs",
+      "source": "Assets/Editor/SolarOrganizationRevision.cs",
+      "guid": "3d89b962dc38200458c073b695cf1618",
+      "hash": "8F4F2E4769ADB063217AFF43AA153704974D2A20994CDA87B095E25C6E2CA40A",
+      "destination": "Assets/Scripts/Construction/Tools/Migrations/SolarOrganizationRevision.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "StairHallValidation.cs",
+      "source": "Assets/Editor/StairHallValidation.cs",
+      "guid": "3ec48c9b9d0aa7e4d8b1a060d0e01b3e",
+      "hash": "B186F6214EFE692E4BACC3BCE2CE37E3A87735C3D778D6DA3AAD8937A4FC7162",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/StairHallValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "StairPlacementClearanceValidation.cs",
+      "source": "Assets/Editor/StairPlacementClearanceValidation.cs",
+      "guid": "fca523fd6c766554bbe2c1f73ab12fb3",
+      "hash": "973F57610376374D0549B3BF22F8B920690FCEBC927950B5F3C132510C1503AD",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/StairPlacementClearanceValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "StairsRampSetup.cs",
+      "source": "Assets/Editor/StairsRampSetup.cs",
+      "guid": "2f0ab68d26b48864b803ac5b4c79a86a",
+      "hash": "2A8385273F57CCE53EB27AFEADB70AD3FF8DDB0691A73C0D4B91CC9DF67B9E42",
+      "destination": "Assets/Scripts/Construction/Tools/Migrations/StairsRampSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "StationaryJumpValidation.cs",
+      "source": "Assets/Editor/StationaryJumpValidation.cs",
+      "guid": "67231269a6c894d40a21fe1e72578114",
+      "hash": "382C9320E604BA4167554A9A60843987C91EC9ED3D73945748093778518C191B",
+      "destination": "Assets/Scripts/Player/Tools/Validation/StationaryJumpValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WalkingDiagnostics.cs",
+      "source": "Assets/Editor/WalkingDiagnostics.cs",
+      "guid": "21fca3dca204c4241b8b656906303f6b",
+      "hash": "B7D230C7C3D06DB9C6A29614E23023FE4B986273B00A504751CD30A002D6C83B",
+      "destination": "Assets/Scripts/Player/Tools/Validation/WalkingDiagnostics.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallAutoJoinValidation.cs",
+      "source": "Assets/Editor/WallAutoJoinValidation.cs",
+      "guid": "25df42a9648a7a041850c8b2cd09ecd2",
+      "hash": "D3958A2584EF7DA9A5C6B690BF867E83E09775C4488530936F3FBCE5674AD8A5",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/WallAutoJoinValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallBaseShadowValidation.cs",
+      "source": "Assets/Editor/WallBaseShadowValidation.cs",
+      "guid": "958f175016b33fd4b9f4f73476654aba",
+      "hash": "7F60204E7E97F507FF4D1685437CE78836ACA51573AAB40FD9EF7ECC16D44B43",
+      "destination": "Assets/Scripts/Environment/Tools/Validation/WallBaseShadowValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallFamilyValidation.cs",
+      "source": "Assets/Editor/WallFamilyValidation.cs",
+      "guid": "af22439239b8b5b40941202015105c70",
+      "hash": "37FD67D98F4810745C04A3F924D28F69218DF8D980307C7B530FFEFC82BB1FC8",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/WallFamilyValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallJoinRevision.cs",
+      "source": "Assets/Editor/WallJoinRevision.cs",
+      "guid": "0a6b2ec4cd81f2f469742419a83cbc51",
+      "hash": "0300460E5E38C0BA628A158673A28E64F64DA7A6F7FFA6D62171F444775B8BF2",
+      "destination": "Assets/Scripts/Construction/Tools/Migrations/WallJoinRevision.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallReconfigurationRegression.cs",
+      "source": "Assets/Editor/WallReconfigurationRegression.cs",
+      "guid": "92a858bb7b005ad4cb3976b91174bed8",
+      "hash": "AF46FD72101AA3763A608FCD8CAB777C516D4F46275246B35E26F10F0D4A1CE7",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/WallReconfigurationRegression.cs",
+      "editorOnly": true,
+      "mergedInto": "Assets/Scripts/Construction/Tools/Validation/WallReconfigurationValidation.cs"
+    },
+    {
+      "name": "WallReconfigurationSetup.cs",
+      "source": "Assets/Editor/WallReconfigurationSetup.cs",
+      "guid": "a158d07abfbf49d49bd54ba6a09b5e66",
+      "hash": "9139A80971917EE6644B65424C097182DEF4F9A74D14C3422545CC5D8C56DCE8",
+      "destination": "Assets/Scripts/Construction/Tools/Setup/WallReconfigurationSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallReconfigurationValidation.cs",
+      "source": "Assets/Editor/WallReconfigurationValidation.cs",
+      "guid": "ff2d3fcbba31bf047bae2da80a16234f",
+      "hash": "FBAC31765ADE1EB208C1A2DAFF5E6871F2523E4B098AF7A1DE1B7FA302AA3D1B",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/WallReconfigurationValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallRevisionInspection.cs",
+      "source": "Assets/Editor/WallRevisionInspection.cs",
+      "guid": "dfc5307dbf0a023439ea77dcf06f60ff",
+      "hash": "5A2840FA7DC7B0D9FE00D745538B48DB82D22564C21B52109404FFE868FEB193",
+      "destination": "Assets/Scripts/Construction/Tools/Migrations/WallRevisionInspection.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallVariantsSetup.cs",
+      "source": "Assets/Editor/WallVariantsSetup.cs",
+      "guid": "a368a027134790243950cfc2d2867dfb",
+      "hash": "F113EC8E71066633E43ED8046DF21C735875C55F909535DBA33353D1368CA7F0",
+      "destination": "Assets/Scripts/Construction/Tools/Migrations/WallVariantsSetup.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WallVariantsValidation.cs",
+      "source": "Assets/Editor/WallVariantsValidation.cs",
+      "guid": "6116cf400a45e0e4fb9535a515a98565",
+      "hash": "A54F830300A10061B91ABB728C58BB283251333D44E1AD0CDE1200D909B6B8A7",
+      "destination": "Assets/Scripts/Construction/Tools/Validation/WallVariantsValidation.cs",
+      "editorOnly": true
+    },
+    {
+      "name": "WindowRoomAimRepair.cs",
+      "source": "Assets/Editor/WindowRoomAimRepair.cs",
+      "guid": "0dc0dc580251a5d44b13bdd1ab7fc4ce",
+      "hash": "051E692739F40E9CFD110D0321F6FF8166BAEDACDD3F715235ABC5F871E1007A",
+      "destination": "Assets/Scripts/Construction/Tools/Migrations/WindowRoomAimRepair.cs",
+      "editorOnly": true
+    },
+    {
+      "source": "Assets/Scripts/Printer3DAnimation.cs",
+      "destination": "Assets/Scripts/Printing/Printer3DAnimation.cs",
+      "editorOnly": false,
+      "guid": "8024d94940bb4314a9f1ec927f7fe6c2"
+    },
+    {
+      "source": "Assets/Scripts/assetDefinition/PrintablePartDefinition.cs",
+      "destination": "Assets/Scripts/Printing/Definitions/PrintablePartDefinition.cs",
+      "editorOnly": false,
+      "guid": "80e6609c8c8922b428014ddfa363529c"
+    },
+    {
+      "source": "Assets/Scripts/assetDefinition/PrintableProductDefinition.cs",
+      "destination": "Assets/Scripts/Printing/Definitions/PrintableProductDefinition.cs",
+      "editorOnly": false,
+      "guid": "52ea322b475784a4eaf901893ca0fd75"
+    },
+    {
+      "source": "Assets/Scripts/Scenes/MainMenuUI.cs",
+      "destination": "Assets/Scripts/UI/Main_Menu/MainMenuUI.cs",
+      "editorOnly": false,
+      "guid": "b00da8f3109d598479ff01c6617ae978"
+    },
+    {
+      "source": "Assets/Scripts/Core/ReflectionZone.cs",
+      "destination": "Assets/Scripts/Environment/Reflections/ReflectionZone.cs",
+      "editorOnly": false,
+      "guid": "6ef19ec749f94c82b1bcdd0b8f36d457"
+    },
+    {
+      "source": "Assets/Scripts/Core/ReflectionQualityController.cs",
+      "destination": "Assets/Scripts/Environment/Reflections/ReflectionQualityController.cs",
+      "editorOnly": false,
+      "guid": "52b7d3c678e7456baca8367d9b154c22"
+    },
+    {
+      "source": "Assets/Scripts/Core/BlendedReflectionCapture.cs",
+      "destination": "Assets/Scripts/Environment/Reflections/BlendedReflectionCapture.cs",
+      "editorOnly": false,
+      "guid": "791ae0931dcb49299d6da4480332d5a2"
+    }
+  ]
+}

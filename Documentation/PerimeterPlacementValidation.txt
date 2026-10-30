@@ -1,0 +1,65 @@
+PASS Wall ignores terrain below foundation
+PASS Terrain at perimeter does not pull an upper-storey preview down
+PASS Cannot commit wall below foundation
+PASS No supporting tile falls back to foundation, not terrain
+PASS Player's upper-storey floor supplies fallback height
+PASS Directly targeted upper floor remains usable
+PASS Door fits perimeter, rotation 0, side 0
+PASS Entire door stays within plot 0/0
+PASS Door fits perimeter, rotation 0, side 1
+PASS Entire door stays within plot 0/1
+PASS Door fits perimeter, rotation 1, side 0
+PASS Entire door stays within plot 1/0
+PASS Door fits perimeter, rotation 1, side 1
+PASS Entire door stays within plot 1/1
+PASS Door fits perimeter, rotation 2, side 0
+PASS Entire door stays within plot 2/0
+PASS Door fits perimeter, rotation 2, side 1
+PASS Entire door stays within plot 2/1
+PASS Door fits perimeter, rotation 3, side 0
+PASS Entire door stays within plot 3/0
+PASS Door fits perimeter, rotation 3, side 1
+PASS Entire door stays within plot 3/1
+PASS Large glass replaces 1 mixed walls at rotation 0: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 2 mixed walls at rotation 0: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 3 mixed walls at rotation 0: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 1 mixed walls at rotation 1: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 2 mixed walls at rotation 1: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 3 mixed walls at rotation 1: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 1 mixed walls at rotation 2: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 2 mixed walls at rotation 2: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 3 mixed walls at rotation 2: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 1 mixed walls at rotation 3: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 2 mixed walls at rotation 3: 
+PASS Replacement charges only catalogue difference
+PASS Large glass replaces 3 mixed walls at rotation 3: 
+PASS Replacement charges only catalogue difference
+PASS Corner selects inward extension 0
+PASS Corner extension never leaves plot 0
+PASS Corner selects inward extension 1
+PASS Corner extension never leaves plot 1
+PASS Corner selects inward extension 2
+PASS Corner extension never leaves plot 2
+PASS Corner selects inward extension 3
+PASS Corner extension never leaves plot 3
+PASS Large glass cannot replace itself
+PASS Free placement also recognizes short-wall overlap
+PASS Partial cuts never silently delete the rest of a wall
+PASS Does not consume upper-storey walls
+PASS Unrelated furniture still blocks long replacement
+PASS Plot too small rejects replacement
+PASS Extending a T arm preserves the other branches
+PASS Integrated glass replaces three sections including installed door
+PASS Atomic replacement charges once, including old door refund: 
+PASS Save contains one new wall and deletion records for all replaced objects
+PASS Save restore keeps replacement under Solar without resurrecting old walls/door

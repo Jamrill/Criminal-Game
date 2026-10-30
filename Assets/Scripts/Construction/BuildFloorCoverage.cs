@@ -35,7 +35,7 @@ namespace JuegoCriminal.Construction
                     var patch=floor.GetComponent<RoomFloorPatch>();
                     if(patch)
                     {
-                        float patchTop=box.transform.InverseTransformPoint(patch.transform.position).y;
+                        float patchTop=box.transform.InverseTransformPoint(patch.SurfacePoint).y;
                         if(patchTop>=max.y-.06f && patchTop-RoomFloorPatch.Thickness<=max.y+.06f)pieces.AddRange(patch.PlanarPieces(box.transform));
                         continue;
                     }

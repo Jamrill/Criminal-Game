@@ -6,6 +6,18 @@ using Object=UnityEngine.Object;
 
 namespace JuegoCriminal.Construction
 {
+    [Serializable]
+    public sealed class BuildGuideColors
+    {
+        public Color grid=new(1,1,1,.22f);
+        public Color validOutline=new(.3f,1,.4f,.95f);
+        public Color invalidOutline=new(1,.18f,.18f,.95f);
+        public Color validFill=new(.15f,.95f,.25f,.22f);
+        public Color invalidFill=new(1,.12f,.12f,.22f);
+        public Color validArrow=new(.3f,1,.4f,1);
+        public Color invalidArrow=new(1,.18f,.18f,1);
+        public Color alignment=new(1,1,1,.9f);
+    }
     // One transient mesh, not hundreds of colliders or LineRenderer objects.
     public sealed class BuildPlacementGuides : IDisposable
     {
@@ -14,7 +26,8 @@ namespace JuegoCriminal.Construction
         readonly Mesh mesh;
         readonly Material[] materials;
         readonly List<Vector3> vertices=new();
-        readonly List<int>[] indices={new(),new(),new()};
+        readonly List<int>[] indices={new(),new(),new(),new(),new()};
+        readonly BuildGuideColors defaultColors=new();
         readonly List<Segment> grid=new();
         BuildPlot cachedPlot;
         Vector3 cachedAnchor;
@@ -24,12 +37,13 @@ namespace JuegoCriminal.Construction
         public int GridSegments {get;private set;}
         public int FootprintSegments {get;private set;}
         public int AlignmentSegments {get;private set;}
+        public bool HasFrontArrow {get;private set;}
         public bool Visible=>root && root.activeSelf;
         public BuildPlacementGuides()
         {
             root=new GameObject("ConstructionPlacementGuides",typeof(MeshFilter),typeof(MeshRenderer));root.layer=2;root.hideFlags=HideFlags.DontSave;
             mesh=new Mesh{name="Construction guide lines"};mesh.MarkDynamic();root.GetComponent<MeshFilter>().sharedMesh=mesh;
-            materials=new[]{Material(new Color(1,1,1,.22f),3100),Material(new Color(.3f,1,.4f,.9f),3110),Material(new Color(1,1,1,.9f),3120)};
+            materials=new[]{Material(Color.white,3100),Material(Color.white,3110),Material(Color.white,3120),Material(Color.white,3090),Material(Color.white,3130)};
             var renderer=root.GetComponent<MeshRenderer>();renderer.sharedMaterials=materials;renderer.shadowCastingMode=ShadowCastingMode.Off;renderer.receiveShadows=false;
             root.SetActive(false);
         }
@@ -48,6 +62,24 @@ namespace JuegoCriminal.Construction
             var side=Vector3.Cross(normal,b-a).normalized*width*.5f;int start=vertices.Count;
             vertices.Add(a-side);vertices.Add(a+side);vertices.Add(b+side);vertices.Add(b-side);
             var triangles=indices[submesh];triangles.Add(start);triangles.Add(start+1);triangles.Add(start+2);triangles.Add(start);triangles.Add(start+2);triangles.Add(start+3);
+        }
+        void Polygon(Vector3[] points,int submesh)
+        {
+            int start=vertices.Count;vertices.AddRange(points);
+            for(int i=1;i<points.Length-1;i++){indices[submesh].Add(start);indices[submesh].Add(start+i);indices[submesh].Add(start+i+1);}
+        }
+        internal static Rect Footprint(BuildEntry entry,BuildPlot plot,Vector3 position,Quaternion rotation)
+        {
+            if(BuildFootprint.Uses(entry))return BuildFootprint.RectOnGrid(entry,plot,position,rotation);
+            var b=entry.bounds;
+            var rect=StairConstruction.IsStairs(entry)?StairConstruction.LocalFootprint(entry):Rect.MinMaxRect(b.min.x,b.min.z,b.max.x,b.max.z);
+            var min=new Vector2(float.PositiveInfinity,float.PositiveInfinity);var max=new Vector2(float.NegativeInfinity,float.NegativeInfinity);
+            foreach(float x in new[]{rect.xMin,rect.xMax})foreach(float z in new[]{rect.yMin,rect.yMax})
+            {
+                var p=plot.Grid.InverseTransformPoint(position+rotation*new Vector3(x,0,z));var v=new Vector2(p.x,p.z);
+                min=Vector2.Min(min,v);max=Vector2.Max(max,v);
+            }
+            return Rect.MinMaxRect(min.x,min.y,max.x,max.y);
         }
         static bool Supported(BuildPlot plot,Vector3 point,bool ceiling,Transform player)
         {
@@ -111,12 +143,12 @@ namespace JuegoCriminal.Construction
             {start=new Vector2(x,a.center.y);end=new Vector2(x,b.center.y);return true;}
             start=end=default;return false;
         }
-        public void Show(BuildEntry entry,BuildCatalog catalog,BuildPlot plot,Vector3 position,Quaternion rotation,Vector3 anchor,bool valid,Transform player,int radius,float alignmentRange)
+        public void Show(BuildEntry entry,BuildCatalog catalog,BuildPlot plot,Vector3 position,Quaternion rotation,Vector3 anchor,bool valid,Transform player,int radius,float alignmentRange,BuildGuideColors colors=null)
         {
-            if(entry.mount==BuildMount.Doorway){Hide();return;}
+            colors??=defaultColors;
             bool ceiling=entry.mount==BuildMount.Ceiling;var normal=ceiling?-plot.Grid.up:plot.Grid.up;
             RebuildGrid(plot,anchor,ceiling,Mathf.Clamp(radius,1,8),player);
-            vertices.Clear();foreach(var list in indices)list.Clear();GridSegments=grid.Count;FootprintSegments=AlignmentSegments=0;
+            vertices.Clear();foreach(var list in indices)list.Clear();GridSegments=grid.Count;FootprintSegments=AlignmentSegments=0;HasFrontArrow=false;
             var offset=normal*.025f;
             foreach(var line in grid)Line(line.a+offset,line.b+offset,normal,.025f,0);
             var local=plot.Grid.InverseTransformPoint(anchor);
@@ -129,9 +161,38 @@ namespace JuegoCriminal.Construction
                 for(float x=rect.xMin+4;x<rect.xMax-.01f;x+=4){Line(Point(new Vector2(x,rect.yMin)),Point(new Vector2(x,rect.yMax)),normal,.04f,submesh);FootprintSegments++;}
                 for(float z=rect.yMin+4;z<rect.yMax-.01f;z+=4){Line(Point(new Vector2(rect.xMin,z)),Point(new Vector2(rect.xMax,z)),normal,.04f,submesh);FootprintSegments++;}
             }
+            var footprint=Footprint(entry,plot,position,rotation);
+            var wall=entry.prefab.GetComponent<WallTopology>();
+            if(wall)
+            {
+                // Corners and junctions follow their arms, not an enclosing square
+                // which would falsely suggest that the space between arms is used.
+                foreach(var span in WallGeometry.At(wall,position,rotation,entry.prefab.transform.localScale))
+                {
+                    var a=plot.Grid.InverseTransformPoint(span.a);var b=plot.Grid.InverseTransformPoint(span.b);
+                    var start=Point(new Vector2(a.x,a.z));var end=Point(new Vector2(b.x,b.z));
+                    var side=Vector3.Cross(normal,end-start).normalized*.25f;
+                    var corners=new[]{start-side,start+side,end+side,end-side};Polygon(corners,3);
+                    for(int i=0;i<4;i++)Line(corners[i],corners[(i+1)%4],normal,.055f,1);
+                    FootprintSegments+=4;
+                }
+            }
+            else
+            {
+                Rectangle(footprint,1,true);
+                Polygon(new[]{Point(footprint.min),Point(new Vector2(footprint.xMax,footprint.yMin)),Point(footprint.max),Point(new Vector2(footprint.xMin,footprint.yMax))},3);
+            }
             if(BuildFootprint.Uses(entry))
             {
-                var rect=BuildFootprint.RectOnGrid(entry,plot,position,rotation);Rectangle(rect,1,true);
+                var rect=footprint;
+                // Per-entry front calibration preserves the imported mesh origin.
+                var front=Vector3.ProjectOnPlane(rotation*Quaternion.Euler(0,entry.guideFrontYaw,0)*Vector3.forward,normal).normalized;
+                var frontLocal=plot.Grid.InverseTransformDirection(front);
+                float reach=Mathf.Min(Mathf.Abs(frontLocal.x)>.001f?rect.width*.5f/Mathf.Abs(frontLocal.x):float.PositiveInfinity,
+                    Mathf.Abs(frontLocal.z)>.001f?rect.height*.5f/Mathf.Abs(frontLocal.z):float.PositiveInfinity);
+                var edge=Point(rect.center)+front*reach;var right=Vector3.Cross(normal,front).normalized;
+                Polygon(new[]{edge-front*.6f-right*.18f,edge-front*.6f+right*.18f,edge+right*.18f,edge-right*.18f},4);
+                Polygon(new[]{edge-right*.65f,edge+right*.65f,edge+front*.8f},4);HasFrontArrow=true;
                 foreach(var item in plot.GetComponentsInChildren<PlacedBuildObject>())
                 {
                     if(item.deleted || item.propertyId!=plot.propertyId || item.GetComponentInParent<BuildPlot>()!=plot)continue;
@@ -142,9 +203,13 @@ namespace JuegoCriminal.Construction
                     if(TryAlignment(rect,otherRect,out var start,out var end)){Line(Point(start),Point(end),normal,.075f,2);AlignmentSegments++;}
                 }
             }
-            materials[1].SetColor("_BaseColor",valid?new Color(.3f,1,.4f,.9f):new Color(1,.18f,.18f,.9f));
-            mesh.Clear();mesh.SetVertices(vertices);mesh.subMeshCount=3;
-            for(int i=0;i<3;i++)mesh.SetTriangles(indices[i],i);mesh.RecalculateBounds();root.SetActive(vertices.Count>0);
+            materials[0].SetColor("_BaseColor",colors.grid);
+            materials[1].SetColor("_BaseColor",valid?colors.validOutline:colors.invalidOutline);
+            materials[2].SetColor("_BaseColor",colors.alignment);
+            materials[3].SetColor("_BaseColor",valid?colors.validFill:colors.invalidFill);
+            materials[4].SetColor("_BaseColor",valid?colors.validArrow:colors.invalidArrow);
+            mesh.Clear();mesh.SetVertices(vertices);mesh.subMeshCount=materials.Length;
+            for(int i=0;i<materials.Length;i++)mesh.SetTriangles(indices[i],i);mesh.RecalculateBounds();root.SetActive(vertices.Count>0);
         }
         static void Release(Object obj){if(!obj)return;if(Application.isPlaying)Object.Destroy(obj);else Object.DestroyImmediate(obj);}
         public void Dispose(){Release(root);Release(mesh);foreach(var material in materials)Release(material);}

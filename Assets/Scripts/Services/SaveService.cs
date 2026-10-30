@@ -111,6 +111,17 @@ namespace JuegoCriminal.Services
 
         // Por ahora, slot fijo por defecto
         public const int DefaultSlotId = 1;
+        public const int MaxSaveNameLength = 20;
+
+        public static string NormalizeSaveName(string value)
+        {
+            string name = (value ?? string.Empty).Trim();
+            if (name.Length <= MaxSaveNameLength) return name;
+            int length = MaxSaveNameLength;
+            // Do not leave half of a UTF-16 character at the truncation boundary.
+            if (char.IsHighSurrogate(name[length - 1])) length--;
+            return name.Substring(0, length).TrimEnd();
+        }
 
         public SaveData Current { get; private set; }
         public bool HasCurrentGame => Current != null && IsValidSlotId(Current.slotId);
@@ -686,9 +697,8 @@ namespace JuegoCriminal.Services
         {
             if (!IsValidSlotId(slotId) || !SlotExists(slotId)) return false;
 
-            string normalizedName = (newDisplayName ?? string.Empty).Trim();
+            string normalizedName = NormalizeSaveName(newDisplayName);
             if (normalizedName.Length == 0) return false;
-            if (normalizedName.Length > 40) normalizedName = normalizedName.Substring(0, 40);
 
             try
             {
@@ -822,6 +832,7 @@ namespace JuegoCriminal.Services
             else if (!IsValidSlotId(data.slotId))
                 data.slotId = -1;
 
+            data.displayName = NormalizeSaveName(data.displayName);
             if (string.IsNullOrWhiteSpace(data.displayName) && IsValidSlotId(data.slotId))
                 data.displayName = $"Slot {data.slotId}";
 

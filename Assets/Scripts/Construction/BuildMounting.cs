@@ -56,6 +56,14 @@ namespace JuegoCriminal.Construction
                 pose.anchor=host.transform.TransformPoint(opening.center-Vector3.up*opening.extents.y);
                 pose.rotation=host.transform.rotation*Quaternion.Euler(0,(turns%2)*180,0);
                 pose.position=pose.anchor-pose.rotation*new Vector3(entry.bounds.center.x,entry.bounds.min.y,entry.bounds.center.z);
+                // Door trim is slightly deeper than its host wall. At the parcel
+                // perimeter inset only that excess depth; never slide along the
+                // aperture or allow the model to cross the plot boundary.
+                var inset=BuildPlacement.ClampToPlot(entry,plot,pose.position,pose.rotation)-pose.position;
+                float depth=opening.size.z*Mathf.Abs(host.transform.lossyScale.z);
+                float allowance=Mathf.Max(0,(entry.bounds.size.z-depth)*.5f)+.002f;
+                if(Vector3.ProjectOnPlane(inset,host.transform.forward).sqrMagnitude<.000001f && inset.magnitude<=allowance)
+                    pose.position+=inset;
                 nearest=distance;found=true;
             }
             return found;
@@ -65,7 +73,7 @@ namespace JuegoCriminal.Construction
             var floor=collider.GetComponentInParent<BuildFloorCoverage>();
             return floor && floor.GetComponentInParent<BuildPlot>()==plot;
         }
-        public static bool IsValid(BuildEntry entry,BuildCatalog catalog,BuildPlot plot,Pose pose)
+        public static bool IsValid(BuildEntry entry,BuildCatalog catalog,BuildPlot plot,Pose pose,System.Collections.Generic.ICollection<Collider> blockers=null)
         {
             if(entry.mount==BuildMount.Ceiling && BuildFootprint.Uses(entry))
             {
@@ -94,9 +102,10 @@ namespace JuegoCriminal.Construction
                     var other=catalog.Find(item.definitionId);
                     if(other==null || other.mount!=BuildMount.Doorway)continue;
                     var center=item.transform.position+item.transform.rotation*other.bounds.center;
-                    if(Vector3.Distance(center,pose.position+pose.rotation*entry.bounds.center)<.15f)return false;
+                    if(Vector3.Distance(center,pose.position+pose.rotation*entry.bounds.center)<.15f)
+                    {if(blockers!=null)foreach(var collider in item.GetComponentsInChildren<Collider>())if(collider.enabled&&!collider.isTrigger)blockers.Add(collider);return false;}
                 }
-            return BuildPlacement.IsValid(entry,plot,pose.position,pose.rotation,pose.anchor);
+            return BuildPlacement.IsValid(entry,plot,pose.position,pose.rotation,pose.anchor,blockers);
         }
     }
 }

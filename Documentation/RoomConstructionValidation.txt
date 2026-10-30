@@ -35,4 +35,4 @@ PASS Staircase removes the intervening protected ceiling through an explicit exc
 PASS Staircase cannot cut ceiling or partly build with insufficient funds
 PASS Staircase charges all parts and cuts old ceiling atomically
 PASS Room scan preserves staircase opening instead of rebuilding its ceiling
-PASS Existing upper room is reused without charging another enclosure: error= additions=0 cost=80 rooms=0 (0.00, 0.00)..(4.00, 4.00);0 (8.00, 0.00)..(12.00, 4.00);4 (0.00, 0.00)..(4.00, 4.00);7 (12.00, 8.00)..(32.00, 28.00)
+PASS Existing upper room is reused without charging another enclosure: error= additions=0 cost=80 rooms=0 (0.00, 0.00)..(4.00, 4.00);0 (8.00, 0.00)..(12.00, 4.00);4 (0.00, 0.00)..(4.00, 4.00);7 (16.00, 12.00)..(28.00, 28.00)

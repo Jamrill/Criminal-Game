@@ -68,6 +68,7 @@ namespace JuegoCriminal.UI
 
             if (nameInput != null)
             {
+                nameInput.characterLimit = SaveService.MaxSaveNameLength;
                 _submitListener = _ => OnAcceptPressed();
                 nameInput.onSubmit.AddListener(_submitListener);
             }
@@ -98,6 +99,7 @@ namespace JuegoCriminal.UI
 
             if (nameInput != null)
             {
+                nameInput.characterLimit = SaveService.MaxSaveNameLength;
                 nameInput.text = "";
                 nameInput.Select();
                 nameInput.ActivateInputField();
@@ -153,7 +155,7 @@ namespace JuegoCriminal.UI
             if (string.IsNullOrWhiteSpace(displayName))
                 displayName = _mode == "Coop" ? "New Co-op Save" : "New Save";
 
-            return displayName;
+            return SaveService.NormalizeSaveName(displayName);
         }
 
         private void ShowMainMenuButtons()

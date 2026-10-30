@@ -1,0 +1,47 @@
+PASS Upper enclosure valid at real world offset, yaw=0: 
+PASS Four real Corner prefabs, yaw=0
+PASS No numerical floor/roof ribbons, yaw=0
+PASS Existing third arm becomes T, yaw=0: 
+PASS Existing fourth arm becomes +, yaw=0: 
+PASS Only consolidated existing arms are replaced, yaw=0
+PASS Consolidated arms credited in total price, yaw=0
+PASS Actual build uses one transaction, yaw=0
+PASS Save records preserve + and replaced-arm tombstones, yaw=0
+PASS Window and doorway remain intact at corner, yaw=0: 
+PASS No generated solid covers window/doorway, yaw=0
+PASS Upper enclosure valid at real world offset, yaw=90: 
+PASS Four real Corner prefabs, yaw=90
+PASS No numerical floor/roof ribbons, yaw=90
+PASS Existing third arm becomes T, yaw=90: 
+PASS Existing fourth arm becomes +, yaw=90: 
+PASS Only consolidated existing arms are replaced, yaw=90
+PASS Consolidated arms credited in total price, yaw=90
+PASS Actual build uses one transaction, yaw=90
+PASS Save records preserve + and replaced-arm tombstones, yaw=90
+PASS Window and doorway remain intact at corner, yaw=90: 
+PASS No generated solid covers window/doorway, yaw=90
+PASS Upper enclosure valid at real world offset, yaw=180: 
+PASS Four real Corner prefabs, yaw=180
+PASS No numerical floor/roof ribbons, yaw=180
+PASS Existing third arm becomes T, yaw=180: 
+PASS Existing fourth arm becomes +, yaw=180: 
+PASS Only consolidated existing arms are replaced, yaw=180
+PASS Consolidated arms credited in total price, yaw=180
+PASS Actual build uses one transaction, yaw=180
+PASS Save records preserve + and replaced-arm tombstones, yaw=180
+PASS Window and doorway remain intact at corner, yaw=180: 
+PASS No generated solid covers window/doorway, yaw=180
+PASS Upper enclosure valid at real world offset, yaw=270: 
+PASS Four real Corner prefabs, yaw=270
+PASS No numerical floor/roof ribbons, yaw=270
+PASS Existing third arm becomes T, yaw=270: 
+PASS Existing fourth arm becomes +, yaw=270: 
+PASS Only consolidated existing arms are replaced, yaw=270
+PASS Consolidated arms credited in total price, yaw=270
+PASS Actual build uses one transaction, yaw=270
+PASS Save records preserve + and replaced-arm tombstones, yaw=270
+PASS Window and doorway remain intact at corner, yaw=270: 
+PASS No generated solid covers window/doorway, yaw=270
+PASS Legacy ribbon has no visible extruded face
+PASS Empty legacy patch stays empty after save/load
+PASS Legitimate centimetre edge remains buildable

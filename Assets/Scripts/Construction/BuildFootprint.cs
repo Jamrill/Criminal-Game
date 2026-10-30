@@ -39,7 +39,7 @@ namespace JuegoCriminal.Construction
         public static bool Overlap(Rect a,Rect b)=>a.xMin<b.xMax-.01f && a.xMax>b.xMin+.01f && a.yMin<b.yMax-.01f && a.yMax>b.yMin+.01f;
         public static bool SameSurface(BuildEntry a,Vector3 anchorA,BuildEntry b,Vector3 anchorB,BuildPlot plot)
             =>a.mount==b.mount && Mathf.Abs(Vector3.Dot(anchorA-anchorB,plot.Grid.up))<.12f;
-        public static bool IsAvailable(BuildEntry entry,BuildPlot plot,Vector3 position,Quaternion rotation)
+        public static bool IsAvailable(BuildEntry entry,BuildPlot plot,Vector3 position,Quaternion rotation,System.Collections.Generic.ICollection<Collider> blockers=null)
         {
             if(!Uses(entry))return true;
             var anchor=Anchor(entry,position,rotation);var local=plot.Grid.InverseTransformPoint(anchor);
@@ -47,14 +47,19 @@ namespace JuegoCriminal.Construction
             foreach(float x in new[]{rect.xMin+.01f,rect.xMax-.01f})foreach(float z in new[]{rect.yMin+.01f,rect.yMax-.01f})
                 if(!plot.Contains(plot.Grid.TransformPoint(new Vector3(x,local.y,z))))return false;
             var catalog=plot.catalog;if(!catalog)return true;
+            bool available=true;
             foreach(var item in plot.GetComponentsInChildren<PlacedBuildObject>())
             {
                 if(item.deleted || item.propertyId!=plot.propertyId || item.GetComponentInParent<BuildPlot>()!=plot)continue;
                 var other=catalog.Find(item.definitionId);if(!Uses(other))continue;
                 var otherAnchor=Anchor(other,item.transform.position,item.transform.rotation);
-                if(SameSurface(entry,anchor,other,otherAnchor,plot) && Overlap(rect,RectOnGrid(other,plot,item.transform.position,item.transform.rotation)))return false;
+                if(SameSurface(entry,anchor,other,otherAnchor,plot) && Overlap(rect,RectOnGrid(other,plot,item.transform.position,item.transform.rotation)))
+                {
+                    available=false;if(blockers==null)return false;
+                    foreach(var collider in item.GetComponentsInChildren<Collider>())if(collider.enabled&&!collider.isTrigger)blockers.Add(collider);
+                }
             }
-            return true;
+            return available;
         }
     }
 }

@@ -1,0 +1,48 @@
+PASS Wall beside left flight allowed, yaw=0
+PASS Wall beside right flight allowed, yaw=0
+PASS Wall behind landing allowed, yaw=0
+PASS Wall through flight blocked and reports actual stairs, yaw=0
+PASS Excessive side intrusion still blocked, yaw=0
+PASS Blocking object highlighted, yaw=0
+PASS Original materials restored after highlight, yaw=0
+PASS Physical stair colliders unchanged, yaw=0
+PASS Thin slab at height 0 respects wall seams, yaw=0
+PASS Thin slab at height 7 respects wall seams, yaw=0
+PASS Thin slab at height 3,5 respects wall seams, yaw=0
+PASS Wall beside left flight allowed, yaw=90
+PASS Wall beside right flight allowed, yaw=90
+PASS Wall behind landing allowed, yaw=90
+PASS Wall through flight blocked and reports actual stairs, yaw=90
+PASS Excessive side intrusion still blocked, yaw=90
+PASS Blocking object highlighted, yaw=90
+PASS Original materials restored after highlight, yaw=90
+PASS Physical stair colliders unchanged, yaw=90
+PASS Thin slab at height 0 respects wall seams, yaw=90
+PASS Thin slab at height 7 respects wall seams, yaw=90
+PASS Thin slab at height 3,5 respects wall seams, yaw=90
+PASS Wall beside left flight allowed, yaw=180
+PASS Wall beside right flight allowed, yaw=180
+PASS Wall behind landing allowed, yaw=180
+PASS Wall through flight blocked and reports actual stairs, yaw=180
+PASS Excessive side intrusion still blocked, yaw=180
+PASS Blocking object highlighted, yaw=180
+PASS Original materials restored after highlight, yaw=180
+PASS Physical stair colliders unchanged, yaw=180
+PASS Thin slab at height 0 respects wall seams, yaw=180
+PASS Thin slab at height 7 respects wall seams, yaw=180
+PASS Thin slab at height 3,5 respects wall seams, yaw=180
+PASS Wall beside left flight allowed, yaw=270
+PASS Wall beside right flight allowed, yaw=270
+PASS Wall behind landing allowed, yaw=270
+PASS Wall through flight blocked and reports actual stairs, yaw=270
+PASS Excessive side intrusion still blocked, yaw=270
+PASS Blocking object highlighted, yaw=270
+PASS Original materials restored after highlight, yaw=270
+PASS Physical stair colliders unchanged, yaw=270
+PASS Thin slab at height 0 respects wall seams, yaw=270
+PASS Thin slab at height 7 respects wall seams, yaw=270
+PASS Thin slab at height 3,5 respects wall seams, yaw=270
+PASS Pending stroke exists before cancel
+PASS Cancel discards pending purchase and selection
+PASS Cancellation keeps build HUD mode without creating objects
+PASS Cancellation removes ghost and stroke previews

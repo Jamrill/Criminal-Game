@@ -2,24 +2,41 @@ PASS Floor is visible in the construction catalogue
 PASS Upper exit found at yaw=0
 PASS Stair opening never consumes the landing at yaw=0
 PASS Hall plan is placeable at yaw=0: 
+PASS Upper enclosure has no side/back extension at yaw=0
 PASS Full landing floor is included before building at yaw=0
+PASS Only the frontal strip receives new upper floor at yaw=0
+PASS Stair fits narrow plot without lateral/rear tile clearance at yaw=0
+PASS Insufficient frontal landing space is still rejected at yaw=0
 PASS Upper exit found at yaw=90
 PASS Stair opening never consumes the landing at yaw=90
 PASS Hall plan is placeable at yaw=90: 
+PASS Upper enclosure has no side/back extension at yaw=90
 PASS Full landing floor is included before building at yaw=90
+PASS Only the frontal strip receives new upper floor at yaw=90
+PASS Stair fits narrow plot without lateral/rear tile clearance at yaw=90
+PASS Insufficient frontal landing space is still rejected at yaw=90
 PASS Upper exit found at yaw=180
 PASS Stair opening never consumes the landing at yaw=180
 PASS Hall plan is placeable at yaw=180: 
+PASS Upper enclosure has no side/back extension at yaw=180
 PASS Full landing floor is included before building at yaw=180
+PASS Only the frontal strip receives new upper floor at yaw=180
+PASS Stair fits narrow plot without lateral/rear tile clearance at yaw=180
+PASS Insufficient frontal landing space is still rejected at yaw=180
 PASS Upper exit found at yaw=270
 PASS Stair opening never consumes the landing at yaw=270
 PASS Hall plan is placeable at yaw=270: 
+PASS Upper enclosure has no side/back extension at yaw=270
 PASS Full landing floor is included before building at yaw=270
+PASS Only the frontal strip receives new upper floor at yaw=270
+PASS Stair fits narrow plot without lateral/rear tile clearance at yaw=270
+PASS Insufficient frontal landing space is still rejected at yaw=270
 PASS Insufficient funds creates neither stair nor partial hall
 PASS Stairs, walls, hall floor and roof use one paid transaction
 PASS Real collider supports the player immediately past the last step
 PASS Upper stair landing is editable under the foundation-only rule
 PASS Nested intermediate landings do not classify the whole staircase as a floor
+PASS Sell only stairs before testing hall reuse
 PASS Existing complete hall is reused without duplicate charges
 PASS Intentionally removed upper floor stays removed when a hall is reused
 PASS Manual floors cannot seal an active staircase opening

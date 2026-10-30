@@ -1,0 +1,62 @@
+PASS Initial plan: 
+PASS Initial staircase builds
+PASS Missing wall supports included below upper enclosure
+PASS Entry and exit corridors remain open
+PASS Stair sold without removing enclosure
+PASS Reposition (0.00, 0.00, 0.00) rotation=90:  blockers=
+PASS Every added wall/floor appears in the green preview
+PASS Plan preview adds no colliders
+PASS Preview leaves retained surfaces and materials unchanged
+PASS Preview/cancel changes neither persistent objects nor money
+PASS Insufficient funds do not partially sell or build the adaptation
+PASS Adaptation uses one quoted transaction
+PASS New exit has a usable landing after adapting old construction
+PASS Adapted upper landing still belongs to a closed roofed room
+PASS Save/load preserves adaptation, stair count and upper enclosure
+PASS Initial plan: 
+PASS Initial staircase builds
+PASS Missing wall supports included below upper enclosure
+PASS Entry and exit corridors remain open
+PASS Stair sold without removing enclosure
+PASS Reposition (4.00, 0.00, 0.00) rotation=0:  blockers=
+PASS Every added wall/floor appears in the green preview
+PASS Plan preview adds no colliders
+PASS Preview leaves retained surfaces and materials unchanged
+PASS Preview/cancel changes neither persistent objects nor money
+PASS Insufficient funds do not partially sell or build the adaptation
+PASS Adaptation uses one quoted transaction
+PASS New exit has a usable landing after adapting old construction
+PASS Adapted upper landing still belongs to a closed roofed room
+PASS Save/load preserves adaptation, stair count and upper enclosure
+PASS Initial plan: 
+PASS Initial staircase builds
+PASS Missing wall supports included below upper enclosure
+PASS Entry and exit corridors remain open
+PASS Stair sold without removing enclosure
+PASS Reposition (1.00, 0.00, 0.00) rotation=0:  blockers=
+PASS Every added wall/floor appears in the green preview
+PASS Plan preview adds no colliders
+PASS Preview leaves retained surfaces and materials unchanged
+PASS Preview/cancel changes neither persistent objects nor money
+PASS Insufficient funds do not partially sell or build the adaptation
+PASS Adaptation uses one quoted transaction
+PASS New exit has a usable landing after adapting old construction
+PASS Adapted upper landing still belongs to a closed roofed room
+PASS Save/load preserves adaptation, stair count and upper enclosure
+PASS Initial plan: 
+PASS Initial staircase builds
+PASS Missing wall supports included below upper enclosure
+PASS Entry and exit corridors remain open
+PASS Reposition (12.00, 0.00, 0.00) rotation=0:  blockers=
+PASS Every added wall/floor appears in the green preview
+PASS Plan preview adds no colliders
+PASS Preview leaves retained surfaces and materials unchanged
+PASS Preview/cancel changes neither persistent objects nor money
+PASS Insufficient funds do not partially sell or build the adaptation
+PASS Adaptation uses one quoted transaction
+PASS New exit has a usable landing after adapting old construction
+PASS Adapted upper landing still belongs to a closed roofed room
+PASS Save/load preserves adaptation, stair count and upper enclosure
+PASS Covered lower wall selects incomplete skin
+PASS Selling upper wall restores lower wall top cap
+PASS Wall can be placed again on the vacated upper seam

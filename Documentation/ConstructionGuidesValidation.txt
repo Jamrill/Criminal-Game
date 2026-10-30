@@ -11,6 +11,36 @@ PASS White alignment guide joins matching sides in a row
 PASS White alignment guide joins matching sides in a column
 PASS Misaligned objects do not show a false alignment line
 PASS Ground shows grid, preview footprint and alignment to existing furniture
+PASS Filled base and solid front arrow are rendered without colliders
+PASS Guides cannot intercept placement rays
+PASS Inspector grid and invalid arrow colors applied independently
+PASS Front arrow turns with the furniture's 90 degree rotation
+PASS Base fill color and transparency are editable independently
+PASS Stair guide follows authored modular origin rather than decorative mesh bounds
+PASS Filled placement guide for Corner_Wall
+PASS Filled placement guide for Diagonal_Wall
+PASS Filled placement guide for Glass_wall
+PASS Filled placement guide for T_wall_complete
+PASS Filled placement guide for Wall_complete
+PASS Filled placement guide for Wall_door_hole
+PASS Filled placement guide for Window_Wall
+PASS Filled placement guide for Bed
+PASS Filled placement guide for Central_display_unit
+PASS Filled placement guide for Chair
+PASS Filled placement guide for Counter
+PASS Filled placement guide for Display_shelving_unit
+PASS Filled placement guide for Floor_lamp
+PASS Filled placement guide for Kitchen cabinet
+PASS Filled placement guide for Light_point
+PASS Filled placement guide for Light_point_Cold
+PASS Filled placement guide for Sofa
+PASS Filled placement guide for Table
+PASS Filled placement guide for Toilet
+PASS Filled placement guide for +_wall_complete
+PASS Filled placement guide for Glass_Wall_door_complete
+PASS Filled placement guide for Floor
+PASS Filled placement guide for Stairs
+PASS Filled placement guide for Door
 PASS Small gaps between modular floor tiles do not erase the grid at its vertices
 PASS Double object footprint includes the dividing cell line
 PASS Ceiling light snaps to a real ceiling cell

@@ -447,14 +447,7 @@ namespace JuegoCriminal.UI
 
         private void ConfigureNameEditing(SaveSlotRowUI row)
         {
-            TMP_Text[] texts = row.GetComponentsInChildren<TMP_Text>(true);
-            TMP_Text nameText = null;
-            for (int i = 0; i < texts.Length; i++)
-                if (texts[i].name != "DateText")
-                {
-                    nameText = texts[i];
-                    break;
-                }
+            TMP_Text nameText = row.NameText;
 
             if (nameText == null) return;
             SaveSlotNameEditor editor = nameText.GetComponent<SaveSlotNameEditor>();

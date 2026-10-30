@@ -11,7 +11,7 @@
     "printers": [],
     "buildings": [
         {
-            "id": "01df421ca30840e396ade32a7ccadee8",
+            "id": "76026c054cfb4d8687ab563fd680b5ab",
             "definitionId": "646161ef561b93c4e895b13fc557dca2",
             "sceneName": "",
             "propertyId": 881,
@@ -41,7 +41,7 @@
             "floorTriangles": []
         },
         {
-            "id": "2da8211c645b4487a7f51675e57d8cb1",
+            "id": "7cdfa10bbf954e0d9ccc44b32aafb60c",
             "definitionId": "503a480c185e59340b02ae885887e4ab",
             "sceneName": "",
             "propertyId": 881,
@@ -71,7 +71,7 @@
             "floorTriangles": []
         },
         {
-            "id": "7d8812290e514333a40df9713b0b6159",
+            "id": "e5fbe215ff594c9e8e8c62b03dc6f41e",
             "definitionId": "a18105208714efd438e17be7d2d0bc64",
             "sceneName": "",
             "propertyId": 881,
@@ -131,7 +131,7 @@
             "floorTriangles": []
         },
         {
-            "id": "b1bb2bb639414a208eb1b1a39783035d",
+            "id": "9e86da15400245d99743fe4a59f13855",
             "definitionId": "df5a3bf947a2f4b4ea327b50d1351d65",
             "sceneName": "",
             "propertyId": 881,
@@ -161,7 +161,7 @@
             "floorTriangles": []
         },
         {
-            "id": "ab15b3b688ca427493dcd76a6241e010",
+            "id": "bfbc954d0e2f40eb80fe7d4c22feb028",
             "definitionId": "8fb093df2ca49ef44b97c736bf909d95",
             "sceneName": "",
             "propertyId": 881,

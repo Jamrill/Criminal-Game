@@ -11,6 +11,15 @@ namespace JuegoCriminal.Construction
     {
         const float Epsilon=.001f;
         public const float MinimumArea=.000001f;
+        // Area alone accepts metre-long numerical slivers. Extruding one creates
+        // a visible 2 cm edge although its walkable width is only micrometres.
+        public static bool HasTriangleSurface(Vector2 a,Vector2 b,Vector2 c)
+        {
+            double twiceArea=Math.Abs(((double)b.x-a.x)*(c.y-a.y)-((double)b.y-a.y)*(c.x-a.x));
+            float longest=Mathf.Max(Vector2.Distance(a,b),Mathf.Max(Vector2.Distance(b,c),Vector2.Distance(c,a)));
+            return !double.IsNaN(twiceArea) && !double.IsInfinity(twiceArea) &&
+                twiceArea>MinimumArea*2 && twiceArea>longest*.0001;
+        }
         public sealed class GeometryLimitException : InvalidOperationException
         {public GeometryLimitException():base("Room geometry exceeded its safe calculation budget.") {}}
         sealed class Budget

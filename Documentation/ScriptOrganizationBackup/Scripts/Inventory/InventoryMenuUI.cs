@@ -1,0 +1,381 @@
+using JuegoCriminal.CameraSystem;
+using JuegoCriminal.Core;
+using JuegoCriminal.Player;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace JuegoCriminal.Inventory
+{
+    public sealed class InventoryMenuUI : MonoBehaviour
+    {
+        [SerializeField] private PlayerInventory inventory;
+        [SerializeField, Tooltip("Prefab visual que se instancia al aparecer el jugador.")]
+        private GameObject uiPrefab;
+        [SerializeField] private GameObject panelRoot;
+        [SerializeField] private RectTransform gridRoot;
+        [SerializeField] private TMP_Text capacityText;
+        [SerializeField, Min(24f)] private float cellSize = 56f;
+        [SerializeField] private Color cellColor = new Color(0.12f, 0.12f, 0.12f, 0.92f);
+        [SerializeField] private Color itemCellColor = new Color(1f, 1f, 1f, 0.9f);
+        [Header("Optional cell sprites")]
+        [SerializeField, Tooltip("Imagen de cada celda vacia. Sin sprite se utiliza Cell Color.")]
+        private Sprite emptyCellSprite;
+        [SerializeField, Tooltip("Imagen iluminada de cada celda ocupada por un objeto. Sin sprite se utiliza Item Cell Color.")]
+        private Sprite occupiedCellSprite;
+        [SerializeField, Tooltip("Imagen de celdas bloqueadas. Sin sprite se usa Unusable Cell Color.")]
+        private Sprite unusableCellSprite;
+        [SerializeField] private Color unusableCellColor = new Color(0.32f, 0.32f, 0.32f, 0.95f);
+        [SerializeField, Range(0.5f, 2f)] private float itemIconScale = 1.3f;
+
+        private bool _open;
+        private bool _previousCursorVisible;
+        private CursorLockMode _previousCursorLock;
+        private ThirdPersonController _movement;
+        private InteractorRaycast _interactor;
+        private CameraBoomCollision _cameraBoom;
+        private bool _movementWasEnabled;
+        private bool _interactorWasEnabled;
+        private bool _cameraBoomWasEnabled;
+        private GameObject _uiInstance;
+        private CanvasGroup _interactionGroup;
+        private bool _interactionBlocked;
+
+        public RectTransform GridRoot => gridRoot;
+        public float CellSize => cellSize;
+        public bool IsOpen => _open;
+        public bool IsInteractionBlocked => _interactionBlocked;
+
+        private void Awake()
+        {
+            if (inventory == null) inventory = GetComponent<PlayerInventory>();
+            if ((panelRoot == null || gridRoot == null) && uiPrefab != null)
+                CreateUIFromPrefab();
+            if (panelRoot == null || gridRoot == null) CreateDevelopmentUI();
+            _interactionGroup = panelRoot.GetComponent<CanvasGroup>();
+            if (_interactionGroup == null)
+                _interactionGroup = panelRoot.AddComponent<CanvasGroup>();
+            panelRoot.SetActive(false);
+            if (inventory != null) inventory.Changed += Refresh;
+        }
+
+        private void OnDestroy()
+        {
+            if (inventory != null) inventory.Changed -= Refresh;
+        }
+
+        private void Update()
+        {
+            if (GameInput.InventoryPressed && (_open || Cursor.lockState == CursorLockMode.Locked)) Toggle();
+        }
+
+        public void Toggle()
+        {
+            if (_open) Close(); else Open();
+        }
+
+        public void Open()
+        {
+            if (inventory == null) return;
+            _open = true;
+            _previousCursorVisible = Cursor.visible;
+            _previousCursorLock = Cursor.lockState;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            SetPlayerControl(false);
+            panelRoot.SetActive(true);
+            Refresh();
+        }
+
+        public void Close()
+        {
+            _open = false;
+            SetInteractionBlocked(false);
+            panelRoot.SetActive(false);
+            SetPlayerControl(true);
+            Cursor.visible = _previousCursorVisible;
+            Cursor.lockState = _previousCursorLock;
+        }
+
+        public void SetInteractionBlocked(bool blocked)
+        {
+            _interactionBlocked = blocked;
+            if (_interactionGroup == null && panelRoot != null)
+                _interactionGroup = panelRoot.GetComponent<CanvasGroup>();
+            if (_interactionGroup == null)
+                return;
+
+            _interactionGroup.interactable = !blocked;
+            _interactionGroup.blocksRaycasts = !blocked;
+        }
+
+        public void TryDrop(InventoryPlacement placement, Vector2 screenPosition, int rotated)
+        {
+            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(gridRoot, screenPosition, null, out Vector2 local))
+            {
+                Refresh(); return;
+            }
+            int x = Mathf.RoundToInt(local.x / cellSize);
+            int y = Mathf.RoundToInt(-local.y / cellSize);
+            if (!inventory.TryMove(placement.instanceId, x, y, rotated)) Refresh();
+        }
+
+        public void TryDropAtLocalPosition(InventoryPlacement placement, Vector2 localPosition, int rotated)
+        {
+            int x = Mathf.RoundToInt(localPosition.x / cellSize);
+            int y = Mathf.RoundToInt(-localPosition.y / cellSize);
+            if (!inventory.TryMove(placement.instanceId, x, y, rotated)) Refresh();
+        }
+
+        public void TryRotate(InventoryPlacement placement)
+        {
+            InventoryItemDefinition item = inventory.Resolve(placement.itemId);
+            if (item == null || !item.CanRotate
+                || !inventory.TryMove(placement.instanceId, placement.x, placement.y, (placement.Rotation + 1) % 4)) Refresh();
+        }
+
+        public bool CanRotate(InventoryPlacement placement)
+        {
+            InventoryItemDefinition item = placement != null ? inventory.Resolve(placement.itemId) : null;
+            return item != null && item.CanRotate;
+        }
+
+        public void UpdateDraggedItemVisual(InventoryPlacement placement, RectTransform itemRect, int rotated)
+        {
+            InventoryItemDefinition item = placement != null ? inventory.Resolve(placement.itemId) : null;
+            if (item == null || itemRect == null)
+                return;
+
+            Vector2 draggedPosition = itemRect.anchoredPosition;
+            itemRect.sizeDelta = new Vector2(item.Width(rotated) * cellSize, item.Height(rotated) * cellSize);
+            itemRect.anchoredPosition = draggedPosition;
+
+            RectTransform[] children = itemRect.GetComponentsInChildren<RectTransform>(true);
+            int footprintIndex = 0;
+            for (int y = 0; y < item.Height(rotated); y++)
+            for (int x = 0; x < item.Width(rotated); x++)
+            {
+                if (!item.Occupies(x, y, rotated))
+                    continue;
+
+                RectTransform footprint = FindNextFootprint(children, ref footprintIndex);
+                if (footprint == null)
+                    continue;
+                SetGridRect(footprint, x, y, 1, 1);
+                footprint.sizeDelta -= Vector2.one * 5f;
+            }
+
+            for (int i = 0; i < children.Length; i++)
+            {
+                if (children[i].name != "Icon")
+                    continue;
+                children[i].sizeDelta = new Vector2(item.GridWidth * cellSize, item.GridHeight * cellSize) * itemIconScale;
+                children[i].localRotation = Quaternion.Euler(0f, 0f, -90f * rotated);
+                break;
+            }
+        }
+
+        private static RectTransform FindNextFootprint(RectTransform[] children, ref int searchIndex)
+        {
+            while (searchIndex < children.Length)
+            {
+                RectTransform candidate = children[searchIndex++];
+                if (candidate.name.StartsWith("Footprint_"))
+                    return candidate;
+            }
+            return null;
+        }
+
+        public void Refresh()
+        {
+            if (inventory == null || gridRoot == null) return;
+            for (int i = gridRoot.childCount - 1; i >= 0; i--)
+            {
+                gridRoot.GetChild(i).gameObject.SetActive(false);
+                Destroy(gridRoot.GetChild(i).gameObject);
+            }
+
+            int capacity = inventory.Capacity;
+            if (inventory.Grid == null) return;
+            int columns = inventory.Grid.Columns;
+            int rows = inventory.Grid.Rows;
+            gridRoot.sizeDelta = new Vector2(columns * cellSize, rows * cellSize);
+            if (capacityText != null) capacityText.text = $"Inventory {capacity}/{InventoryGrid.MaxCapacity}";
+
+            for (int i = 0; i < rows * columns; i++) CreateCell(i % columns, i / columns, i < capacity);
+            for (int i = 0; i < inventory.Grid.Placements.Count; i++) CreateItem(inventory.Grid.Placements[i]);
+        }
+
+        private void CreateCell(int x, int y, bool usable)
+        {
+            var go = new GameObject($"Cell_{x}_{y}", typeof(RectTransform), typeof(Image));
+            RectTransform rect = (RectTransform)go.transform;
+            rect.SetParent(gridRoot, false);
+            SetGridRect(rect, x, y, 1, 1);
+            rect.sizeDelta -= Vector2.one * 2f;
+            ApplyCellAppearance(go.GetComponent<Image>(), usable ? emptyCellSprite : unusableCellSprite,
+                usable ? cellColor : unusableCellColor);
+            go.GetComponent<Image>().raycastTarget = false;
+        }
+
+        private void CreateItem(InventoryPlacement placement)
+        {
+            InventoryItemDefinition item = inventory.Resolve(placement.itemId);
+            if (item == null) return;
+            var go = new GameObject("Item_" + item.DisplayName, typeof(RectTransform), typeof(Image), typeof(InventoryItemViewUI));
+            RectTransform rect = (RectTransform)go.transform;
+            rect.SetParent(gridRoot, false);
+            SetGridRect(rect, placement.x, placement.y, item.Width(placement.Rotation), item.Height(placement.Rotation));
+            Image hitArea = go.GetComponent<Image>();
+            hitArea.color = Color.clear;
+            hitArea.raycastTarget = false;
+
+            for (int y = 0; y < item.Height(placement.Rotation); y++)
+            for (int x = 0; x < item.Width(placement.Rotation); x++)
+            {
+                if (!item.Occupies(x, y, placement.Rotation)) continue;
+                var cell = new GameObject($"Footprint_{x}_{y}", typeof(RectTransform), typeof(Image));
+                RectTransform cellRect = (RectTransform)cell.transform;
+                cellRect.SetParent(rect, false);
+                SetGridRect(cellRect, x, y, 1, 1);
+                cellRect.sizeDelta -= Vector2.one * 5f;
+                Image background = cell.GetComponent<Image>();
+                ApplyCellAppearance(background, occupiedCellSprite, itemCellColor);
+                background.raycastTarget = true;
+            }
+
+            var iconObject = new GameObject("Icon", typeof(RectTransform), typeof(Image));
+            RectTransform iconRect = (RectTransform)iconObject.transform;
+            iconRect.SetParent(rect, false);
+            iconRect.anchorMin = iconRect.anchorMax = iconRect.pivot = new Vector2(0.5f, 0.5f);
+            iconRect.anchoredPosition = Vector2.zero;
+            iconRect.sizeDelta = rect.sizeDelta * itemIconScale;
+            Image icon = iconObject.GetComponent<Image>();
+            icon.sprite = item.InventorySprite;
+            icon.color = Color.white;
+            icon.preserveAspect = true;
+            icon.raycastTarget = false;
+
+            UpdateDraggedItemVisual(placement, rect, placement.Rotation);
+
+            go.GetComponent<InventoryItemViewUI>().Initialize(this, placement);
+        }
+
+        private static void ApplyCellAppearance(Image image, Sprite sprite, Color fallbackColor)
+        {
+            image.sprite = sprite;
+            // Keep the sprite's authored colors; dark fallback colors must not tint it.
+            image.color = sprite != null ? Color.white : fallbackColor;
+            image.type = sprite != null && sprite.border.sqrMagnitude > 0f
+                ? Image.Type.Sliced : Image.Type.Simple;
+            image.preserveAspect = false;
+        }
+
+        private void SetGridRect(RectTransform rect, int x, int y, int width, int height)
+        {
+            rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0f, 1f);
+            rect.anchoredPosition = new Vector2(x * cellSize, -y * cellSize);
+            rect.sizeDelta = new Vector2(width * cellSize, height * cellSize);
+        }
+
+        private void SetPlayerControl(bool enabled)
+        {
+            if (_movement == null) _movement = GetComponent<ThirdPersonController>();
+            if (_interactor == null) _interactor = GetComponent<InteractorRaycast>();
+            if (_cameraBoom == null) _cameraBoom = FindAnyObjectByType<CameraBoomCollision>();
+            if (!enabled)
+            {
+                if (_movement != null) { _movementWasEnabled = _movement.enabled; _movement.enabled = false; }
+                if (_interactor != null) { _interactorWasEnabled = _interactor.enabled; _interactor.enabled = false; }
+                if (_cameraBoom != null) { _cameraBoomWasEnabled = _cameraBoom.enabled; _cameraBoom.enabled = false; }
+            }
+            else
+            {
+                if (_movement != null) _movement.enabled = _movementWasEnabled;
+                if (_interactor != null) _interactor.enabled = _interactorWasEnabled;
+                if (_cameraBoom != null) _cameraBoom.enabled = _cameraBoomWasEnabled;
+            }
+        }
+
+        private void CreateDevelopmentUI()
+        {
+            var canvasObject = new GameObject("InventoryCanvas_Development", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
+            canvasObject.transform.SetParent(transform, false);
+            Canvas canvas = canvasObject.GetComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 50;
+
+            var panel = new GameObject("InventoryPanel", typeof(RectTransform), typeof(Image));
+            panel.transform.SetParent(canvasObject.transform, false);
+            RectTransform panelRect = (RectTransform)panel.transform;
+            panelRect.anchorMin = panelRect.anchorMax = panelRect.pivot = new Vector2(0.5f, 0.5f);
+            panelRect.sizeDelta = new Vector2(620f, 570f);
+            panel.GetComponent<Image>().color = new Color(0.025f, 0.025f, 0.025f, 0.96f);
+            panelRoot = panel;
+
+            var title = new GameObject("Capacity", typeof(RectTransform), typeof(TextMeshProUGUI));
+            title.transform.SetParent(panel.transform, false);
+            capacityText = title.GetComponent<TextMeshProUGUI>();
+            capacityText.fontSize = 26f; capacityText.alignment = TextAlignmentOptions.Center;
+            RectTransform titleRect = capacityText.rectTransform;
+            titleRect.anchorMin = new Vector2(0f, 1f); titleRect.anchorMax = Vector2.one;
+            titleRect.pivot = new Vector2(0.5f, 1f); titleRect.sizeDelta = new Vector2(0f, 48f);
+
+            var grid = new GameObject("Grid", typeof(RectTransform));
+            grid.transform.SetParent(panel.transform, false);
+            gridRoot = (RectTransform)grid.transform;
+            gridRoot.anchorMin = gridRoot.anchorMax = gridRoot.pivot = new Vector2(0.5f, 1f);
+            gridRoot.anchoredPosition = new Vector2(0f, -60f);
+        }
+
+        private void CreateUIFromPrefab()
+        {
+            _uiInstance = Instantiate(uiPrefab, transform, false);
+            _uiInstance.name = uiPrefab.name;
+            _uiInstance.SetActive(true);
+
+            RectTransform[] rects = _uiInstance.GetComponentsInChildren<RectTransform>(true);
+            for (int i = 0; i < rects.Length; i++)
+            {
+                if (panelRoot == null && rects[i].name == "InventoryPanel")
+                    panelRoot = rects[i].gameObject;
+                else if (gridRoot == null && rects[i].name == "Grid")
+                    gridRoot = rects[i];
+            }
+
+            TMP_Text[] texts = _uiInstance.GetComponentsInChildren<TMP_Text>(true);
+            for (int i = 0; i < texts.Length; i++)
+                if (texts[i].name == "Capacity")
+                {
+                    capacityText = texts[i];
+                    break;
+                }
+
+            if (panelRoot == null || gridRoot == null)
+            {
+                Debug.LogError(
+                    "[InventoryUI] El prefab debe contener objetos llamados InventoryPanel y Grid.", this);
+                Destroy(_uiInstance);
+                _uiInstance = null;
+            }
+        }
+
+#if UNITY_EDITOR
+        [ContextMenu("Create Editable Inventory UI")]
+        private void CreateEditableInventoryUI()
+        {
+            if (panelRoot != null || gridRoot != null)
+            {
+                Debug.LogWarning("[InventoryUI] Ya existe una UI asignada.", this);
+                return;
+            }
+
+            CreateDevelopmentUI();
+            UnityEditor.Undo.RegisterCreatedObjectUndo(
+                panelRoot.transform.parent.gameObject,
+                "Create editable inventory UI");
+            UnityEditor.EditorUtility.SetDirty(this);
+        }
+#endif
+    }
+}

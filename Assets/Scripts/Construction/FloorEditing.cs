@@ -11,7 +11,7 @@ namespace JuegoCriminal.Construction
         static float Top(PlacedBuildObject item,BuildPlot plot)
         {
             var patch=item.GetComponent<RoomFloorPatch>();
-            if(patch)return plot.Grid.InverseTransformPoint(patch.transform.position).y;
+            if(patch)return plot.Grid.InverseTransformPoint(patch.SurfacePoint).y;
             return item.GetComponentsInChildren<BoxCollider>(true).Where(b=>!b.isTrigger)
                 .Select(b=>plot.Grid.InverseTransformPoint(b.transform.TransformPoint(b.center+Vector3.up*b.size.y*.5f)).y).DefaultIfEmpty(float.NaN).Max();
         }

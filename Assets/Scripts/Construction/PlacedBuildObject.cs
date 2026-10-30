@@ -41,7 +41,9 @@ namespace JuegoCriminal.Construction
             transform.SetPositionAndRotation(r.position,r.rotation); transform.localScale=r.scale;
             ConstructionPersistence.ParentToPlot(this);
             var plot=GetComponentInParent<BuildPlot>();if(plot)BuildDeletionLedger.For(plot).Forget(r.id);
-            if(r.floorTriangles!=null && r.floorTriangles.Length>=3)
+            // An empty array is a sanitised legacy patch, not a full prefab tile.
+            // Preserve that distinction when saving/loading removed sliver faces.
+            if(r.floorTriangles!=null)
             {
                 var patch=GetComponent<RoomFloorPatch>();
                 if(!patch)

@@ -1,0 +1,734 @@
+PASS Top-level Editor folder removed
+PASS Old path removed: Assets/Editor/AimPoseRefinement.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Animation/AimPoseRefinement.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Animation/AimPoseRefinement.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Animation/AimPoseRefinement.cs
+PASS Old path removed: Assets/Editor/BuildInputAndHeightValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/BuildInputAndHeightValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/BuildInputAndHeightValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/BuildInputAndHeightValidation.cs
+PASS Old path removed: Assets/Editor/ButtonPrefabMigration.cs
+PASS Script available in its functional folder: Assets/Scripts/UI/Tools/ButtonPrefabMigration.cs
+PASS Script GUID preserved: Assets/Scripts/UI/Tools/ButtonPrefabMigration.cs
+PASS Editor-only compilation guard: Assets/Scripts/UI/Tools/ButtonPrefabMigration.cs
+PASS Old path removed: Assets/Editor/ButtonSampleTextSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/UI/Tools/ButtonSampleTextSetup.cs
+PASS Script GUID preserved: Assets/Scripts/UI/Tools/ButtonSampleTextSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/UI/Tools/ButtonSampleTextSetup.cs
+PASS Old path removed: Assets/Editor/ClosedRoomShadowValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Validation/ClosedRoomShadowValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Validation/ClosedRoomShadowValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Validation/ClosedRoomShadowValidation.cs
+PASS Old path removed: Assets/Editor/ColoredLightSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Lighting/ColoredLightSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Lighting/ColoredLightSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Lighting/ColoredLightSetup.cs
+PASS Old path removed: Assets/Editor/ConstructionDeletionPlayValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/ConstructionDeletionPlayValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/ConstructionDeletionPlayValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/ConstructionDeletionPlayValidation.cs
+PASS Old path removed: Assets/Editor/ConstructionEconomyGridRevision.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Setup/ConstructionEconomyGridRevision.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Setup/ConstructionEconomyGridRevision.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Setup/ConstructionEconomyGridRevision.cs
+PASS Old path removed: Assets/Editor/ConstructionEditingSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Setup/ConstructionEditingSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Setup/ConstructionEditingSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Setup/ConstructionEditingSetup.cs
+PASS Old path removed: Assets/Editor/ConstructionEditingUpgradeValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/ConstructionEditingUpgradeValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/ConstructionEditingUpgradeValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/ConstructionEditingUpgradeValidation.cs
+PASS Old path removed: Assets/Editor/ConstructionGuidesValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/ConstructionGuidesValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/ConstructionGuidesValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/ConstructionGuidesValidation.cs
+PASS Old path removed: Assets/Editor/ConstructionMountSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Setup/ConstructionMountSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Setup/ConstructionMountSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Setup/ConstructionMountSetup.cs
+PASS Old path removed: Assets/Editor/ConstructionMountValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/ConstructionMountValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/ConstructionMountValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/ConstructionMountValidation.cs
+PASS Old path removed: Assets/Editor/ConstructionPreviewValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/ConstructionPreviewValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/ConstructionPreviewValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/ConstructionPreviewValidation.cs
+PASS Old path removed: Assets/Editor/ConstructionPropertySetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Setup/ConstructionPropertySetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Setup/ConstructionPropertySetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Setup/ConstructionPropertySetup.cs
+PASS Old path removed: Assets/Editor/ConstructionPropertyValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/ConstructionPropertyValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/ConstructionPropertyValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/ConstructionPropertyValidation.cs
+PASS Old path removed: Assets/Editor/ConstructionRevisionMigration.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Migrations/ConstructionRevisionMigration.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Migrations/ConstructionRevisionMigration.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Migrations/ConstructionRevisionMigration.cs
+PASS Old path removed: Assets/Editor/ConstructionSceneCapture.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/ConstructionSceneCapture.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/ConstructionSceneCapture.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/ConstructionSceneCapture.cs
+PASS Old path removed: Assets/Editor/ConstructionSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Setup/ConstructionSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Setup/ConstructionSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Setup/ConstructionSetup.cs
+PASS Old path removed: Assets/Editor/ConstructionUIRevision.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Setup/ConstructionUIRevision.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Setup/ConstructionUIRevision.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Setup/ConstructionUIRevision.cs
+PASS Old path removed: Assets/Editor/ConstructionValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/ConstructionValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/ConstructionValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/ConstructionValidation.cs
+PASS Old path removed: Assets/Editor/ConstructionValueSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/ConstructionValueSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/ConstructionValueSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/ConstructionValueSetup.cs
+PASS Old path removed: Assets/Editor/ConstructionValueValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/ConstructionValueValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/ConstructionValueValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/ConstructionValueValidation.cs
+PASS Old path removed: Assets/Editor/DevelopmentEconomyTools.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/ConstructionValueSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/ConstructionValueSetup.cs
+PASS Old path removed: Assets/Editor/FixedFbxMigration.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Migrations/FixedFbxMigration.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Migrations/FixedFbxMigration.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Migrations/FixedFbxMigration.cs
+PASS Old path removed: Assets/Editor/FloorFoundationValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/FloorFoundationValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/FloorFoundationValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/FloorFoundationValidation.cs
+PASS Old path removed: Assets/Editor/FloorNormalsReview.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Validation/FloorNormalsReview.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Validation/FloorNormalsReview.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Validation/FloorNormalsReview.cs
+PASS Old path removed: Assets/Editor/FloorShadowReview.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Validation/FloorShadowReview.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Validation/FloorShadowReview.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Validation/FloorShadowReview.cs
+PASS Old path removed: Assets/Editor/FurnitureBasicSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Furniture/FurnitureBasicSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Furniture/FurnitureBasicSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Furniture/FurnitureBasicSetup.cs
+PASS Old path removed: Assets/Editor/FurnitureColliderRefinement.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Furniture/FurnitureColliderRefinement.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Furniture/FurnitureColliderRefinement.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Furniture/FurnitureColliderRefinement.cs
+PASS Old path removed: Assets/Editor/InteriorLightContactReview.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Validation/InteriorLightContactReview.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Validation/InteriorLightContactReview.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Validation/InteriorLightContactReview.cs
+PASS Old path removed: Assets/Editor/InteriorLightingCorrection.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Lighting/InteriorLightingCorrection.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Lighting/InteriorLightingCorrection.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Lighting/InteriorLightingCorrection.cs
+PASS Old path removed: Assets/Editor/InventoryItemDefinitionEditor.cs
+PASS Script available in its functional folder: Assets/Scripts/Inventory/Tools/InventoryItemDefinitionEditor.cs
+PASS Script GUID preserved: Assets/Scripts/Inventory/Tools/InventoryItemDefinitionEditor.cs
+PASS Editor-only compilation guard: Assets/Scripts/Inventory/Tools/InventoryItemDefinitionEditor.cs
+PASS Old path removed: Assets/Editor/JumpMotionProcessing.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Animation/JumpMotionProcessing.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Animation/JumpMotionProcessing.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Animation/JumpMotionProcessing.cs
+PASS Old path removed: Assets/Editor/LargeRoofValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/LargeRoofValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/LargeRoofValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/LargeRoofValidation.cs
+PASS Old path removed: Assets/Editor/LargeRoomShadowDistanceValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Validation/LargeRoomShadowDistanceValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Validation/LargeRoomShadowDistanceValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Validation/LargeRoomShadowDistanceValidation.cs
+PASS Old path removed: Assets/Editor/LightLeakDiagnostics.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Validation/LightLeakDiagnostics.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Validation/LightLeakDiagnostics.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Validation/LightLeakDiagnostics.cs
+PASS Old path removed: Assets/Editor/MixamoFixOnce.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Animation/MixamoFixOnce.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Animation/MixamoFixOnce.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Animation/MixamoFixOnce.cs
+PASS Old path removed: Assets/Editor/MovementControlsRevisionValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Validation/MovementControlsRevisionValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Validation/MovementControlsRevisionValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Validation/MovementControlsRevisionValidation.cs
+PASS Old path removed: Assets/Editor/MovementHUDRefinement.cs
+PASS Script available in its functional folder: Assets/Scripts/UI/Tools/MovementHUDRefinement.cs
+PASS Script GUID preserved: Assets/Scripts/UI/Tools/MovementHUDRefinement.cs
+PASS Editor-only compilation guard: Assets/Scripts/UI/Tools/MovementHUDRefinement.cs
+PASS Old path removed: Assets/Editor/MovementSteeringValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Validation/MovementSteeringValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Validation/MovementSteeringValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Validation/MovementSteeringValidation.cs
+PASS Old path removed: Assets/Editor/OptionsMenuRepair.cs
+PASS Script available in its functional folder: Assets/Scripts/UI/Tools/OptionsMenuRepair.cs
+PASS Script GUID preserved: Assets/Scripts/UI/Tools/OptionsMenuRepair.cs
+PASS Editor-only compilation guard: Assets/Scripts/UI/Tools/OptionsMenuRepair.cs
+PASS Old path removed: Assets/Editor/OptionsNavigationPlayValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/UI/Tools/Validation/OptionsNavigationPlayValidation.cs
+PASS Script GUID preserved: Assets/Scripts/UI/Tools/Validation/OptionsNavigationPlayValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/UI/Tools/Validation/OptionsNavigationPlayValidation.cs
+PASS Old path removed: Assets/Editor/PlayerAnimationExpansion.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Animation/PlayerAnimationExpansion.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Animation/PlayerAnimationExpansion.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Animation/PlayerAnimationExpansion.cs
+PASS Old path removed: Assets/Editor/PlayerFootIKPlayValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Validation/PlayerFootIKPlayValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Validation/PlayerFootIKPlayValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Validation/PlayerFootIKPlayValidation.cs
+PASS Old path removed: Assets/Editor/PlayerFootIKSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/PlayerFootIKSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/PlayerFootIKSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/PlayerFootIKSetup.cs
+PASS Old path removed: Assets/Editor/PlayerFootIKValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Validation/PlayerFootIKValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Validation/PlayerFootIKValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Validation/PlayerFootIKValidation.cs
+PASS Old path removed: Assets/Editor/PlayerLocomotionSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Animation/PlayerLocomotionSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Animation/PlayerLocomotionSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Animation/PlayerLocomotionSetup.cs
+PASS Old path removed: Assets/Editor/RoomConstructionValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/RoomConstructionValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/RoomConstructionValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/RoomConstructionValidation.cs
+PASS Old path removed: Assets/Editor/SidewalkMeshColliderMigration.cs
+PASS Script available in its functional folder: Assets/Scripts/World/Tools/SidewalkMeshColliderMigration.cs
+PASS Script GUID preserved: Assets/Scripts/World/Tools/SidewalkMeshColliderMigration.cs
+PASS Editor-only compilation guard: Assets/Scripts/World/Tools/SidewalkMeshColliderMigration.cs
+PASS Old path removed: Assets/Editor/SimpleSeaSceneCreator.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/SimpleSeaSceneCreator.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/SimpleSeaSceneCreator.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/SimpleSeaSceneCreator.cs
+PASS Old path removed: Assets/Editor/SlotsAndAnimationValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/UI/Tools/Validation/SlotsAndAnimationValidation.cs
+PASS Script GUID preserved: Assets/Scripts/UI/Tools/Validation/SlotsAndAnimationValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/UI/Tools/Validation/SlotsAndAnimationValidation.cs
+PASS Old path removed: Assets/Editor/SolarOrganizationRevision.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Migrations/SolarOrganizationRevision.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Migrations/SolarOrganizationRevision.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Migrations/SolarOrganizationRevision.cs
+PASS Old path removed: Assets/Editor/StairHallValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/StairHallValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/StairHallValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/StairHallValidation.cs
+PASS Old path removed: Assets/Editor/StairPlacementClearanceValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/StairPlacementClearanceValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/StairPlacementClearanceValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/StairPlacementClearanceValidation.cs
+PASS Old path removed: Assets/Editor/StairsRampSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Migrations/StairsRampSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Migrations/StairsRampSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Migrations/StairsRampSetup.cs
+PASS Old path removed: Assets/Editor/StationaryJumpValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Validation/StationaryJumpValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Validation/StationaryJumpValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Validation/StationaryJumpValidation.cs
+PASS Old path removed: Assets/Editor/WalkingDiagnostics.cs
+PASS Script available in its functional folder: Assets/Scripts/Player/Tools/Validation/WalkingDiagnostics.cs
+PASS Script GUID preserved: Assets/Scripts/Player/Tools/Validation/WalkingDiagnostics.cs
+PASS Editor-only compilation guard: Assets/Scripts/Player/Tools/Validation/WalkingDiagnostics.cs
+PASS Old path removed: Assets/Editor/WallAutoJoinValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/WallAutoJoinValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/WallAutoJoinValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/WallAutoJoinValidation.cs
+PASS Old path removed: Assets/Editor/WallBaseShadowValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Tools/Validation/WallBaseShadowValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Tools/Validation/WallBaseShadowValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Environment/Tools/Validation/WallBaseShadowValidation.cs
+PASS Old path removed: Assets/Editor/WallFamilyValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/WallFamilyValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/WallFamilyValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/WallFamilyValidation.cs
+PASS Old path removed: Assets/Editor/WallJoinRevision.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Migrations/WallJoinRevision.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Migrations/WallJoinRevision.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Migrations/WallJoinRevision.cs
+PASS Old path removed: Assets/Editor/WallReconfigurationRegression.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/WallReconfigurationValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/WallReconfigurationValidation.cs
+PASS Old path removed: Assets/Editor/WallReconfigurationSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Setup/WallReconfigurationSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Setup/WallReconfigurationSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Setup/WallReconfigurationSetup.cs
+PASS Old path removed: Assets/Editor/WallReconfigurationValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/WallReconfigurationValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/WallReconfigurationValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/WallReconfigurationValidation.cs
+PASS Old path removed: Assets/Editor/WallRevisionInspection.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Migrations/WallRevisionInspection.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Migrations/WallRevisionInspection.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Migrations/WallRevisionInspection.cs
+PASS Old path removed: Assets/Editor/WallVariantsSetup.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Migrations/WallVariantsSetup.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Migrations/WallVariantsSetup.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Migrations/WallVariantsSetup.cs
+PASS Old path removed: Assets/Editor/WallVariantsValidation.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Validation/WallVariantsValidation.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Validation/WallVariantsValidation.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Validation/WallVariantsValidation.cs
+PASS Old path removed: Assets/Editor/WindowRoomAimRepair.cs
+PASS Script available in its functional folder: Assets/Scripts/Construction/Tools/Migrations/WindowRoomAimRepair.cs
+PASS Script GUID preserved: Assets/Scripts/Construction/Tools/Migrations/WindowRoomAimRepair.cs
+PASS Editor-only compilation guard: Assets/Scripts/Construction/Tools/Migrations/WindowRoomAimRepair.cs
+PASS Old path removed: Assets/Scripts/Printer3DAnimation.cs
+PASS Script available in its functional folder: Assets/Scripts/Printing/Printer3DAnimation.cs
+PASS Script GUID preserved: Assets/Scripts/Printing/Printer3DAnimation.cs
+PASS Runtime component/type still resolves: Assets/Scripts/Printing/Printer3DAnimation.cs
+PASS Old path removed: Assets/Scripts/assetDefinition/PrintablePartDefinition.cs
+PASS Script available in its functional folder: Assets/Scripts/Printing/Definitions/PrintablePartDefinition.cs
+PASS Script GUID preserved: Assets/Scripts/Printing/Definitions/PrintablePartDefinition.cs
+PASS Runtime component/type still resolves: Assets/Scripts/Printing/Definitions/PrintablePartDefinition.cs
+PASS Old path removed: Assets/Scripts/assetDefinition/PrintableProductDefinition.cs
+PASS Script available in its functional folder: Assets/Scripts/Printing/Definitions/PrintableProductDefinition.cs
+PASS Script GUID preserved: Assets/Scripts/Printing/Definitions/PrintableProductDefinition.cs
+PASS Runtime component/type still resolves: Assets/Scripts/Printing/Definitions/PrintableProductDefinition.cs
+PASS Old path removed: Assets/Scripts/Scenes/MainMenuUI.cs
+PASS Script available in its functional folder: Assets/Scripts/UI/Main_Menu/MainMenuUI.cs
+PASS Script GUID preserved: Assets/Scripts/UI/Main_Menu/MainMenuUI.cs
+PASS Runtime component/type still resolves: Assets/Scripts/UI/Main_Menu/MainMenuUI.cs
+PASS Old path removed: Assets/Scripts/Core/ReflectionZone.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Reflections/ReflectionZone.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Reflections/ReflectionZone.cs
+PASS Runtime component/type still resolves: Assets/Scripts/Environment/Reflections/ReflectionZone.cs
+PASS Old path removed: Assets/Scripts/Core/ReflectionQualityController.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Reflections/ReflectionQualityController.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Reflections/ReflectionQualityController.cs
+PASS Runtime component/type still resolves: Assets/Scripts/Environment/Reflections/ReflectionQualityController.cs
+PASS Old path removed: Assets/Scripts/Core/BlendedReflectionCapture.cs
+PASS Script available in its functional folder: Assets/Scripts/Environment/Reflections/BlendedReflectionCapture.cs
+PASS Script GUID preserved: Assets/Scripts/Environment/Reflections/BlendedReflectionCapture.cs
+PASS Runtime component/type still resolves: Assets/Scripts/Environment/Reflections/BlendedReflectionCapture.cs
+PASS Inventory custom inspector remains registered
+PASS Development balance menu retained after consolidation
+PASS Explicit construction scene capture menu retained
+PASS Prefab has no missing components: Assets/Prefabs/Cartel_Se_Vende.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/+_wall_complete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/Corner_Wall.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/Diagonal_Wall.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/Glass_wall.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/Glass_Wall_door_complete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/T_wall_complete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/Wall_complete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/Wall_door_hole.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Completes/Window_Wall.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Door.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/+_Wall_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/Corner_Wall_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/Diagonal_Wall_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/Glass_Wall_door_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/Glass_Wall_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/T_Wall_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/Wall_door_hole_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/Wall_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Incompletes/Window_wall_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/+_wall_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/Corner_Wall_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/Diagonal_Wall_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/Glass_Wall_door_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/Glass_wall_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/T_wall_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/Wall_door_hole_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/Wall_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Construction/Semincompletes/Window_Wall_semincomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Container.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Floor.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Bed.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Central_display_unit.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Chair.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Counter.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Display_shelving_unit.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Floor_lamp.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Kitchen cabinet.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Light_point.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Light_point_Cold.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Sofa.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Table.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Furniture/Toilet.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Asphalt.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/External_round_sidewalk.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/External_round_sidewalk_with_extra_border.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Fence.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Internal_round_sidewalk.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Median.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Señal_Tráfico_Parking.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Sidewalk.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Sidewalk_Corner_Round.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Signal_Traffic_Lane.prefab
+PASS Prefab has no missing components: Assets/Prefabs/old/Tree_sidewalk.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Player.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab
+PASS Prefab has no missing components: Assets/Prefabs/SideWalk_big_round_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/SideWalk_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/SideWalk_inner_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/SideWalk_large_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/SideWalk_round_incomplete.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Stairs.prefab
+PASS Prefab has no missing components: Assets/Prefabs/Streetlight.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/Button_sample.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/Button_sample_small.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/ConstructionUI.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/InventoryUI.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/OptionsPanel.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/SlotRow.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/SlotRowCoop.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/SlotsPanel.prefab
+PASS Prefab has no missing components: Assets/Prefabs/UI/Text_Prefab.prefab
+PASS Preview excludes physics/scripts/lights: 8fb093df2ca49ef44b97c736bf909d95
+PASS Preview contains geometry: 8fb093df2ca49ef44b97c736bf909d95
+PASS Preview materials and render state: 8fb093df2ca49ef44b97c736bf909d95/FixedVisual
+PASS Preview tint changes for every submesh: 8fb093df2ca49ef44b97c736bf909d95
+PASS Repeated unchanged preview tint allocates zero managed bytes: 8fb093df2ca49ef44b97c736bf909d95
+PASS Preview cleanup removes its generated hierarchy: 8fb093df2ca49ef44b97c736bf909d95
+PASS Preview excludes physics/scripts/lights: e344f589e56a23f4788f3cb2cb09b269
+PASS Preview contains geometry: e344f589e56a23f4788f3cb2cb09b269
+PASS Preview materials and render state: e344f589e56a23f4788f3cb2cb09b269/FixedVisual
+PASS Preview tint changes for every submesh: e344f589e56a23f4788f3cb2cb09b269
+PASS Repeated unchanged preview tint allocates zero managed bytes: e344f589e56a23f4788f3cb2cb09b269
+PASS Preview cleanup removes its generated hierarchy: e344f589e56a23f4788f3cb2cb09b269
+PASS Preview excludes physics/scripts/lights: baab1af5f60364743a492de426b6dc07
+PASS Preview contains geometry: baab1af5f60364743a492de426b6dc07
+PASS Preview materials and render state: baab1af5f60364743a492de426b6dc07/FixedVisual
+PASS Preview tint changes for every submesh: baab1af5f60364743a492de426b6dc07
+PASS Repeated unchanged preview tint allocates zero managed bytes: baab1af5f60364743a492de426b6dc07
+PASS Preview cleanup removes its generated hierarchy: baab1af5f60364743a492de426b6dc07
+PASS Preview excludes physics/scripts/lights: df5a3bf947a2f4b4ea327b50d1351d65
+PASS Preview contains geometry: df5a3bf947a2f4b4ea327b50d1351d65
+PASS Preview materials and render state: df5a3bf947a2f4b4ea327b50d1351d65/Visual preview check
+PASS Preview tint changes for every submesh: df5a3bf947a2f4b4ea327b50d1351d65
+PASS Repeated unchanged preview tint allocates zero managed bytes: df5a3bf947a2f4b4ea327b50d1351d65
+PASS Preview cleanup removes its generated hierarchy: df5a3bf947a2f4b4ea327b50d1351d65
+PASS Preview excludes physics/scripts/lights: 646161ef561b93c4e895b13fc557dca2
+PASS Preview contains geometry: 646161ef561b93c4e895b13fc557dca2
+PASS Preview materials and render state: 646161ef561b93c4e895b13fc557dca2/FixedVisual
+PASS Preview tint changes for every submesh: 646161ef561b93c4e895b13fc557dca2
+PASS Repeated unchanged preview tint allocates zero managed bytes: 646161ef561b93c4e895b13fc557dca2
+PASS Preview cleanup removes its generated hierarchy: 646161ef561b93c4e895b13fc557dca2
+PASS Preview excludes physics/scripts/lights: 503a480c185e59340b02ae885887e4ab
+PASS Preview contains geometry: 503a480c185e59340b02ae885887e4ab
+PASS Preview materials and render state: 503a480c185e59340b02ae885887e4ab/FixedVisual
+PASS Preview tint changes for every submesh: 503a480c185e59340b02ae885887e4ab
+PASS Repeated unchanged preview tint allocates zero managed bytes: 503a480c185e59340b02ae885887e4ab
+PASS Preview cleanup removes its generated hierarchy: 503a480c185e59340b02ae885887e4ab
+PASS Preview excludes physics/scripts/lights: a18105208714efd438e17be7d2d0bc64
+PASS Preview contains geometry: a18105208714efd438e17be7d2d0bc64
+PASS Preview materials and render state: a18105208714efd438e17be7d2d0bc64/FixedVisual
+PASS Preview materials and render state: a18105208714efd438e17be7d2d0bc64/Window
+PASS Preview tint changes for every submesh: a18105208714efd438e17be7d2d0bc64
+PASS Repeated unchanged preview tint allocates zero managed bytes: a18105208714efd438e17be7d2d0bc64
+PASS Preview cleanup removes its generated hierarchy: a18105208714efd438e17be7d2d0bc64
+PASS Preview excludes physics/scripts/lights: 403aa113c8205994995c6862a59c3e3b
+PASS Preview contains geometry: 403aa113c8205994995c6862a59c3e3b
+PASS Preview materials and render state: 403aa113c8205994995c6862a59c3e3b/FixedVisual
+PASS Preview tint changes for every submesh: 403aa113c8205994995c6862a59c3e3b
+PASS Repeated unchanged preview tint allocates zero managed bytes: 403aa113c8205994995c6862a59c3e3b
+PASS Preview cleanup removes its generated hierarchy: 403aa113c8205994995c6862a59c3e3b
+PASS Preview excludes physics/scripts/lights: 97b9d91e78333de49b76d1bf79f542ba
+PASS Preview contains geometry: 97b9d91e78333de49b76d1bf79f542ba
+PASS Preview materials and render state: 97b9d91e78333de49b76d1bf79f542ba/FixedVisual
+PASS Preview tint changes for every submesh: 97b9d91e78333de49b76d1bf79f542ba
+PASS Repeated unchanged preview tint allocates zero managed bytes: 97b9d91e78333de49b76d1bf79f542ba
+PASS Preview cleanup removes its generated hierarchy: 97b9d91e78333de49b76d1bf79f542ba
+PASS Preview excludes physics/scripts/lights: 9a6c37167f64f0e4ca4708a6bf67cdfd
+PASS Preview contains geometry: 9a6c37167f64f0e4ca4708a6bf67cdfd
+PASS Preview materials and render state: 9a6c37167f64f0e4ca4708a6bf67cdfd/Visual preview check
+PASS Preview materials and render state: 9a6c37167f64f0e4ca4708a6bf67cdfd/Glass_door
+PASS Preview materials and render state: 9a6c37167f64f0e4ca4708a6bf67cdfd/Sheet
+PASS Preview tint changes for every submesh: 9a6c37167f64f0e4ca4708a6bf67cdfd
+PASS Repeated unchanged preview tint allocates zero managed bytes: 9a6c37167f64f0e4ca4708a6bf67cdfd
+PASS Preview cleanup removes its generated hierarchy: 9a6c37167f64f0e4ca4708a6bf67cdfd
+PASS Preview excludes physics/scripts/lights: f16f2597f8413044aa62588ee0fa33cc
+PASS Preview contains geometry: f16f2597f8413044aa62588ee0fa33cc
+PASS Preview materials and render state: f16f2597f8413044aa62588ee0fa33cc/FixedVisual
+PASS Preview tint changes for every submesh: f16f2597f8413044aa62588ee0fa33cc
+PASS Repeated unchanged preview tint allocates zero managed bytes: f16f2597f8413044aa62588ee0fa33cc
+PASS Preview cleanup removes its generated hierarchy: f16f2597f8413044aa62588ee0fa33cc
+PASS Preview excludes physics/scripts/lights: 54053540c1fdbd641b72620b22dddc7f
+PASS Preview contains geometry: 54053540c1fdbd641b72620b22dddc7f
+PASS Preview materials and render state: 54053540c1fdbd641b72620b22dddc7f/Visual preview check
+PASS Preview tint changes for every submesh: 54053540c1fdbd641b72620b22dddc7f
+PASS Repeated unchanged preview tint allocates zero managed bytes: 54053540c1fdbd641b72620b22dddc7f
+PASS Preview cleanup removes its generated hierarchy: 54053540c1fdbd641b72620b22dddc7f
+PASS Preview excludes physics/scripts/lights: 08ce2cefb8ac21f4ebe9757cda618f7e
+PASS Preview contains geometry: 08ce2cefb8ac21f4ebe9757cda618f7e
+PASS Preview materials and render state: 08ce2cefb8ac21f4ebe9757cda618f7e/FixedVisual
+PASS Preview tint changes for every submesh: 08ce2cefb8ac21f4ebe9757cda618f7e
+PASS Repeated unchanged preview tint allocates zero managed bytes: 08ce2cefb8ac21f4ebe9757cda618f7e
+PASS Preview cleanup removes its generated hierarchy: 08ce2cefb8ac21f4ebe9757cda618f7e
+PASS Preview excludes physics/scripts/lights: 6ec25e1073a9318478e52e0246c86058
+PASS Preview contains geometry: 6ec25e1073a9318478e52e0246c86058
+PASS Preview materials and render state: 6ec25e1073a9318478e52e0246c86058/FixedVisual
+PASS Preview tint changes for every submesh: 6ec25e1073a9318478e52e0246c86058
+PASS Repeated unchanged preview tint allocates zero managed bytes: 6ec25e1073a9318478e52e0246c86058
+PASS Preview cleanup removes its generated hierarchy: 6ec25e1073a9318478e52e0246c86058
+PASS Preview excludes physics/scripts/lights: ae7ed4ae87725af438ad687da77c2c46
+PASS Preview contains geometry: ae7ed4ae87725af438ad687da77c2c46
+PASS Preview materials and render state: ae7ed4ae87725af438ad687da77c2c46/Window
+PASS Preview materials and render state: ae7ed4ae87725af438ad687da77c2c46/Window wallsemincomplete
+PASS Preview tint changes for every submesh: ae7ed4ae87725af438ad687da77c2c46
+PASS Repeated unchanged preview tint allocates zero managed bytes: ae7ed4ae87725af438ad687da77c2c46
+PASS Preview cleanup removes its generated hierarchy: ae7ed4ae87725af438ad687da77c2c46
+PASS Preview excludes physics/scripts/lights: d9a7cd68f6dd0364ab6cbed3bcf45121
+PASS Preview contains geometry: d9a7cd68f6dd0364ab6cbed3bcf45121
+PASS Preview materials and render state: d9a7cd68f6dd0364ab6cbed3bcf45121/Visual preview check
+PASS Preview materials and render state: d9a7cd68f6dd0364ab6cbed3bcf45121/Almohada
+PASS Preview materials and render state: d9a7cd68f6dd0364ab6cbed3bcf45121/colchon
+PASS Preview tint changes for every submesh: d9a7cd68f6dd0364ab6cbed3bcf45121
+PASS Repeated unchanged preview tint allocates zero managed bytes: d9a7cd68f6dd0364ab6cbed3bcf45121
+PASS Preview cleanup removes its generated hierarchy: d9a7cd68f6dd0364ab6cbed3bcf45121
+PASS Preview excludes physics/scripts/lights: cbb405c88e00dc147b0e4456c3c0de2c
+PASS Preview contains geometry: cbb405c88e00dc147b0e4456c3c0de2c
+PASS Preview materials and render state: cbb405c88e00dc147b0e4456c3c0de2c/Visual preview check
+PASS Preview tint changes for every submesh: cbb405c88e00dc147b0e4456c3c0de2c
+PASS Repeated unchanged preview tint allocates zero managed bytes: cbb405c88e00dc147b0e4456c3c0de2c
+PASS Preview cleanup removes its generated hierarchy: cbb405c88e00dc147b0e4456c3c0de2c
+PASS Preview excludes physics/scripts/lights: 03a350de3a27ab2478a99b3ece457b58
+PASS Preview contains geometry: 03a350de3a27ab2478a99b3ece457b58
+PASS Preview materials and render state: 03a350de3a27ab2478a99b3ece457b58/Visual preview check
+PASS Preview tint changes for every submesh: 03a350de3a27ab2478a99b3ece457b58
+PASS Repeated unchanged preview tint allocates zero managed bytes: 03a350de3a27ab2478a99b3ece457b58
+PASS Preview cleanup removes its generated hierarchy: 03a350de3a27ab2478a99b3ece457b58
+PASS Preview excludes physics/scripts/lights: 7b27343617cd5934cb5cf5a2c3de7459
+PASS Preview contains geometry: 7b27343617cd5934cb5cf5a2c3de7459
+PASS Preview materials and render state: 7b27343617cd5934cb5cf5a2c3de7459/Visual preview check
+PASS Preview materials and render state: 7b27343617cd5934cb5cf5a2c3de7459/Cash_register
+PASS Preview materials and render state: 7b27343617cd5934cb5cf5a2c3de7459/Caja
+PASS Preview tint changes for every submesh: 7b27343617cd5934cb5cf5a2c3de7459
+PASS Repeated unchanged preview tint allocates zero managed bytes: 7b27343617cd5934cb5cf5a2c3de7459
+PASS Preview cleanup removes its generated hierarchy: 7b27343617cd5934cb5cf5a2c3de7459
+PASS Preview excludes physics/scripts/lights: 2b859df46f2fa5948854603f81521828
+PASS Preview contains geometry: 2b859df46f2fa5948854603f81521828
+PASS Preview materials and render state: 2b859df46f2fa5948854603f81521828/Visual preview check
+PASS Preview tint changes for every submesh: 2b859df46f2fa5948854603f81521828
+PASS Repeated unchanged preview tint allocates zero managed bytes: 2b859df46f2fa5948854603f81521828
+PASS Preview cleanup removes its generated hierarchy: 2b859df46f2fa5948854603f81521828
+PASS Preview excludes physics/scripts/lights: 1b38fb04332e3304fae9383e5dbdbca6
+PASS Preview contains geometry: 1b38fb04332e3304fae9383e5dbdbca6
+PASS Preview materials and render state: 1b38fb04332e3304fae9383e5dbdbca6/Visual preview check
+PASS Preview tint changes for every submesh: 1b38fb04332e3304fae9383e5dbdbca6
+PASS Repeated unchanged preview tint allocates zero managed bytes: 1b38fb04332e3304fae9383e5dbdbca6
+PASS Preview cleanup removes its generated hierarchy: 1b38fb04332e3304fae9383e5dbdbca6
+PASS Preview excludes physics/scripts/lights: 90b86c97877483a4d9c9bce6e789f4ed
+PASS Preview contains geometry: 90b86c97877483a4d9c9bce6e789f4ed
+PASS Preview materials and render state: 90b86c97877483a4d9c9bce6e789f4ed/Visual preview check
+PASS Preview materials and render state: 90b86c97877483a4d9c9bce6e789f4ed/Puerta
+PASS Preview tint changes for every submesh: 90b86c97877483a4d9c9bce6e789f4ed
+PASS Repeated unchanged preview tint allocates zero managed bytes: 90b86c97877483a4d9c9bce6e789f4ed
+PASS Preview cleanup removes its generated hierarchy: 90b86c97877483a4d9c9bce6e789f4ed
+PASS Preview excludes physics/scripts/lights: aafc4fba92ebfa447a83a17f9da70fbc
+PASS Preview contains geometry: aafc4fba92ebfa447a83a17f9da70fbc
+PASS Preview materials and render state: aafc4fba92ebfa447a83a17f9da70fbc/Visual preview check
+PASS Preview tint changes for every submesh: aafc4fba92ebfa447a83a17f9da70fbc
+PASS Repeated unchanged preview tint allocates zero managed bytes: aafc4fba92ebfa447a83a17f9da70fbc
+PASS Preview cleanup removes its generated hierarchy: aafc4fba92ebfa447a83a17f9da70fbc
+PASS Preview excludes physics/scripts/lights: aa90664cf445c9545843dd27d38e9bcc
+PASS Preview contains geometry: aa90664cf445c9545843dd27d38e9bcc
+PASS Preview materials and render state: aa90664cf445c9545843dd27d38e9bcc/Visual preview check
+PASS Preview tint changes for every submesh: aa90664cf445c9545843dd27d38e9bcc
+PASS Repeated unchanged preview tint allocates zero managed bytes: aa90664cf445c9545843dd27d38e9bcc
+PASS Preview cleanup removes its generated hierarchy: aa90664cf445c9545843dd27d38e9bcc
+PASS Preview excludes physics/scripts/lights: 6c0a14b8019d80946a0586b61a032ac1
+PASS Preview contains geometry: 6c0a14b8019d80946a0586b61a032ac1
+PASS Preview materials and render state: 6c0a14b8019d80946a0586b61a032ac1/Visual preview check
+PASS Preview materials and render state: 6c0a14b8019d80946a0586b61a032ac1/Asiento
+PASS Preview tint changes for every submesh: 6c0a14b8019d80946a0586b61a032ac1
+PASS Repeated unchanged preview tint allocates zero managed bytes: 6c0a14b8019d80946a0586b61a032ac1
+PASS Preview cleanup removes its generated hierarchy: 6c0a14b8019d80946a0586b61a032ac1
+PASS Preview excludes physics/scripts/lights: 678941914fe4d21479a3808404f12b9d
+PASS Preview contains geometry: 678941914fe4d21479a3808404f12b9d
+PASS Preview materials and render state: 678941914fe4d21479a3808404f12b9d/Visual preview check
+PASS Preview tint changes for every submesh: 678941914fe4d21479a3808404f12b9d
+PASS Repeated unchanged preview tint allocates zero managed bytes: 678941914fe4d21479a3808404f12b9d
+PASS Preview cleanup removes its generated hierarchy: 678941914fe4d21479a3808404f12b9d
+PASS Preview excludes physics/scripts/lights: a3cd32c6e62b6af4f9da7546452734dd
+PASS Preview contains geometry: a3cd32c6e62b6af4f9da7546452734dd
+PASS Preview materials and render state: a3cd32c6e62b6af4f9da7546452734dd/Visual preview check
+PASS Preview materials and render state: a3cd32c6e62b6af4f9da7546452734dd/Tapa
+PASS Preview tint changes for every submesh: a3cd32c6e62b6af4f9da7546452734dd
+PASS Repeated unchanged preview tint allocates zero managed bytes: a3cd32c6e62b6af4f9da7546452734dd
+PASS Preview cleanup removes its generated hierarchy: a3cd32c6e62b6af4f9da7546452734dd
+PASS Preview excludes physics/scripts/lights: a4a67795b05c777478dd3f88ada70df5
+PASS Preview contains geometry: a4a67795b05c777478dd3f88ada70df5
+PASS Preview materials and render state: a4a67795b05c777478dd3f88ada70df5/FixedVisual
+PASS Preview tint changes for every submesh: a4a67795b05c777478dd3f88ada70df5
+PASS Repeated unchanged preview tint allocates zero managed bytes: a4a67795b05c777478dd3f88ada70df5
+PASS Preview cleanup removes its generated hierarchy: a4a67795b05c777478dd3f88ada70df5
+PASS Preview excludes physics/scripts/lights: d078e604b1c1d5144acad8bc0c9f70d1
+PASS Preview contains geometry: d078e604b1c1d5144acad8bc0c9f70d1
+PASS Preview materials and render state: d078e604b1c1d5144acad8bc0c9f70d1/FixedVisual
+PASS Preview tint changes for every submesh: d078e604b1c1d5144acad8bc0c9f70d1
+PASS Repeated unchanged preview tint allocates zero managed bytes: d078e604b1c1d5144acad8bc0c9f70d1
+PASS Preview cleanup removes its generated hierarchy: d078e604b1c1d5144acad8bc0c9f70d1
+PASS Preview excludes physics/scripts/lights: bb9bf390923bc0b4a80cdc49e8260a75
+PASS Preview contains geometry: bb9bf390923bc0b4a80cdc49e8260a75
+PASS Preview materials and render state: bb9bf390923bc0b4a80cdc49e8260a75/FixedVisual
+PASS Preview tint changes for every submesh: bb9bf390923bc0b4a80cdc49e8260a75
+PASS Repeated unchanged preview tint allocates zero managed bytes: bb9bf390923bc0b4a80cdc49e8260a75
+PASS Preview cleanup removes its generated hierarchy: bb9bf390923bc0b4a80cdc49e8260a75
+PASS Preview excludes physics/scripts/lights: c1ae351280896ea4488d45bf28d6d036
+PASS Preview contains geometry: c1ae351280896ea4488d45bf28d6d036
+PASS Preview materials and render state: c1ae351280896ea4488d45bf28d6d036/FixedVisual
+PASS Preview tint changes for every submesh: c1ae351280896ea4488d45bf28d6d036
+PASS Repeated unchanged preview tint allocates zero managed bytes: c1ae351280896ea4488d45bf28d6d036
+PASS Preview cleanup removes its generated hierarchy: c1ae351280896ea4488d45bf28d6d036
+PASS Preview excludes physics/scripts/lights: 46523dcdc7ff85d4b8bb81dfddcb7484
+PASS Preview contains geometry: 46523dcdc7ff85d4b8bb81dfddcb7484
+PASS Preview materials and render state: 46523dcdc7ff85d4b8bb81dfddcb7484/FixedVisual
+PASS Preview tint changes for every submesh: 46523dcdc7ff85d4b8bb81dfddcb7484
+PASS Repeated unchanged preview tint allocates zero managed bytes: 46523dcdc7ff85d4b8bb81dfddcb7484
+PASS Preview cleanup removes its generated hierarchy: 46523dcdc7ff85d4b8bb81dfddcb7484
+PASS Preview excludes physics/scripts/lights: b869fa446a9f22c4cb2529bf576ef668
+PASS Preview contains geometry: b869fa446a9f22c4cb2529bf576ef668
+PASS Preview materials and render state: b869fa446a9f22c4cb2529bf576ef668/FixedVisual
+PASS Preview tint changes for every submesh: b869fa446a9f22c4cb2529bf576ef668
+PASS Repeated unchanged preview tint allocates zero managed bytes: b869fa446a9f22c4cb2529bf576ef668
+PASS Preview cleanup removes its generated hierarchy: b869fa446a9f22c4cb2529bf576ef668
+PASS Preview excludes physics/scripts/lights: b1f3a2c3c79693843898053f78707663
+PASS Preview contains geometry: b1f3a2c3c79693843898053f78707663
+PASS Preview materials and render state: b1f3a2c3c79693843898053f78707663/Visual preview check
+PASS Preview materials and render state: b1f3a2c3c79693843898053f78707663/Glass_door
+PASS Preview materials and render state: b1f3a2c3c79693843898053f78707663/Sheet
+PASS Preview tint changes for every submesh: b1f3a2c3c79693843898053f78707663
+PASS Repeated unchanged preview tint allocates zero managed bytes: b1f3a2c3c79693843898053f78707663
+PASS Preview cleanup removes its generated hierarchy: b1f3a2c3c79693843898053f78707663
+PASS Preview excludes physics/scripts/lights: e8e219ceaca215749bdd33ed134b2849
+PASS Preview contains geometry: e8e219ceaca215749bdd33ed134b2849
+PASS Preview materials and render state: e8e219ceaca215749bdd33ed134b2849/Visual preview check
+PASS Preview materials and render state: e8e219ceaca215749bdd33ed134b2849/Glass_door
+PASS Preview materials and render state: e8e219ceaca215749bdd33ed134b2849/Sheet
+PASS Preview tint changes for every submesh: e8e219ceaca215749bdd33ed134b2849
+PASS Repeated unchanged preview tint allocates zero managed bytes: e8e219ceaca215749bdd33ed134b2849
+PASS Preview cleanup removes its generated hierarchy: e8e219ceaca215749bdd33ed134b2849
+PASS Preview excludes physics/scripts/lights: 74dd621f1c6776545904f36a81094f81
+PASS Preview contains geometry: 74dd621f1c6776545904f36a81094f81
+PASS Preview materials and render state: 74dd621f1c6776545904f36a81094f81/Visual preview check
+PASS Preview tint changes for every submesh: 74dd621f1c6776545904f36a81094f81
+PASS Repeated unchanged preview tint allocates zero managed bytes: 74dd621f1c6776545904f36a81094f81
+PASS Preview cleanup removes its generated hierarchy: 74dd621f1c6776545904f36a81094f81
+PASS Preview excludes physics/scripts/lights: 0919cb0e26a17054a9de78c131d8331e
+PASS Preview contains geometry: 0919cb0e26a17054a9de78c131d8331e
+PASS Preview materials and render state: 0919cb0e26a17054a9de78c131d8331e/FixedVisual
+PASS Preview tint changes for every submesh: 0919cb0e26a17054a9de78c131d8331e
+PASS Repeated unchanged preview tint allocates zero managed bytes: 0919cb0e26a17054a9de78c131d8331e
+PASS Preview cleanup removes its generated hierarchy: 0919cb0e26a17054a9de78c131d8331e
+PASS Preview excludes physics/scripts/lights: 6ff5f68d0eb38784187792e41aed06d0
+PASS Preview contains geometry: 6ff5f68d0eb38784187792e41aed06d0
+PASS Preview materials and render state: 6ff5f68d0eb38784187792e41aed06d0/FixedVisual
+PASS Preview tint changes for every submesh: 6ff5f68d0eb38784187792e41aed06d0
+PASS Repeated unchanged preview tint allocates zero managed bytes: 6ff5f68d0eb38784187792e41aed06d0
+PASS Preview cleanup removes its generated hierarchy: 6ff5f68d0eb38784187792e41aed06d0
+PASS Preview excludes physics/scripts/lights: 1d6e052f43496cd4d89fd31eac8fcc7b
+PASS Preview contains geometry: 1d6e052f43496cd4d89fd31eac8fcc7b
+PASS Preview materials and render state: 1d6e052f43496cd4d89fd31eac8fcc7b/FixedVisual
+PASS Preview materials and render state: 1d6e052f43496cd4d89fd31eac8fcc7b/Window
+PASS Preview tint changes for every submesh: 1d6e052f43496cd4d89fd31eac8fcc7b
+PASS Repeated unchanged preview tint allocates zero managed bytes: 1d6e052f43496cd4d89fd31eac8fcc7b
+PASS Preview cleanup removes its generated hierarchy: 1d6e052f43496cd4d89fd31eac8fcc7b
+PASS Preview excludes physics/scripts/lights: 31b163306facfbd499828c63e309f339
+PASS Preview contains geometry: 31b163306facfbd499828c63e309f339
+PASS Preview materials and render state: 31b163306facfbd499828c63e309f339/Visual preview check
+PASS Preview tint changes for every submesh: 31b163306facfbd499828c63e309f339
+PASS Repeated unchanged preview tint allocates zero managed bytes: 31b163306facfbd499828c63e309f339
+PASS Preview cleanup removes its generated hierarchy: 31b163306facfbd499828c63e309f339
+PASS Preview excludes physics/scripts/lights: 6305ce401969e82438a37b4cc0ebb78d
+PASS Preview contains geometry: 6305ce401969e82438a37b4cc0ebb78d
+PASS Preview materials and render state: 6305ce401969e82438a37b4cc0ebb78d/Visual preview check
+PASS Preview materials and render state: 6305ce401969e82438a37b4cc0ebb78d/Stairs_up
+PASS Preview materials and render state: 6305ce401969e82438a37b4cc0ebb78d/Floor (102)
+PASS Preview materials and render state: 6305ce401969e82438a37b4cc0ebb78d/Floor (103)
+PASS Preview materials and render state: 6305ce401969e82438a37b4cc0ebb78d/Floor (104)
+PASS Preview tint changes for every submesh: 6305ce401969e82438a37b4cc0ebb78d
+PASS Repeated unchanged preview tint allocates zero managed bytes: 6305ce401969e82438a37b4cc0ebb78d
+PASS Preview cleanup removes its generated hierarchy: 6305ce401969e82438a37b4cc0ebb78d
+PASS Preview excludes physics/scripts/lights: 689503e6b7132fa4a8a3b90451bf8cb2
+PASS Preview contains geometry: 689503e6b7132fa4a8a3b90451bf8cb2
+PASS Preview materials and render state: 689503e6b7132fa4a8a3b90451bf8cb2/Visual preview check
+PASS Preview materials and render state: 689503e6b7132fa4a8a3b90451bf8cb2/Sheet
+PASS Preview materials and render state: 689503e6b7132fa4a8a3b90451bf8cb2/Knob
+PASS Preview tint changes for every submesh: 689503e6b7132fa4a8a3b90451bf8cb2
+PASS Repeated unchanged preview tint allocates zero managed bytes: 689503e6b7132fa4a8a3b90451bf8cb2
+PASS Preview cleanup removes its generated hierarchy: 689503e6b7132fa4a8a3b90451bf8cb2
+PASS Preview excludes physics/scripts/lights: 97850e1cfad4b1e489acc1f1cb30f77f
+PASS Preview contains geometry: 97850e1cfad4b1e489acc1f1cb30f77f
+PASS Preview materials and render state: 97850e1cfad4b1e489acc1f1cb30f77f/Structure
+PASS Preview materials and render state: 97850e1cfad4b1e489acc1f1cb30f77f/Base
+PASS Preview materials and render state: 97850e1cfad4b1e489acc1f1cb30f77f/Head
+PASS Preview materials and render state: 97850e1cfad4b1e489acc1f1cb30f77f/Rails
+PASS Preview materials and render state: 97850e1cfad4b1e489acc1f1cb30f77f/Thread_Empty
+PASS Preview materials and render state: 97850e1cfad4b1e489acc1f1cb30f77f/Thread_Full
+PASS Preview tint changes for every submesh: 97850e1cfad4b1e489acc1f1cb30f77f
+PASS Repeated unchanged preview tint allocates zero managed bytes: 97850e1cfad4b1e489acc1f1cb30f77f
+PASS Preview cleanup removes its generated hierarchy: 97850e1cfad4b1e489acc1f1cb30f77f
+PASS Windows player script compilation succeeds
+PASS Player assembly has no UnityEditor references
+PASS Development tool absent from player assembly: AimPoseRefinement
+PASS Development tool absent from player assembly: BuildInputAndHeightValidation
+PASS Development tool absent from player assembly: ButtonPrefabMigration
+PASS Development tool absent from player assembly: ButtonSampleTextSetup
+PASS Development tool absent from player assembly: ClosedRoomShadowValidation
+PASS Development tool absent from player assembly: ColoredLightSetup
+PASS Development tool absent from player assembly: ConstructionDeletionPlayValidation
+PASS Development tool absent from player assembly: ConstructionEconomyGridRevision
+PASS Development tool absent from player assembly: ConstructionEditingSetup
+PASS Development tool absent from player assembly: ConstructionEditingUpgradeValidation
+PASS Development tool absent from player assembly: ConstructionGuidesValidation
+PASS Development tool absent from player assembly: ConstructionMountSetup
+PASS Development tool absent from player assembly: ConstructionMountValidation
+PASS Development tool absent from player assembly: ConstructionPreviewValidation
+PASS Development tool absent from player assembly: ConstructionPropertySetup
+PASS Development tool absent from player assembly: ConstructionPropertyValidation
+PASS Development tool absent from player assembly: ConstructionRevisionMigration
+PASS Development tool absent from player assembly: ConstructionSceneCapture
+PASS Development tool absent from player assembly: ConstructionSetup
+PASS Development tool absent from player assembly: ConstructionUIRevision
+PASS Development tool absent from player assembly: ConstructionValidation
+PASS Development tool absent from player assembly: ConstructionValueSetup
+PASS Development tool absent from player assembly: ConstructionValueValidation
+PASS Development tool absent from player assembly: DevelopmentEconomyTools
+PASS Development tool absent from player assembly: FixedFbxMigration
+PASS Development tool absent from player assembly: FloorFoundationValidation
+PASS Development tool absent from player assembly: FloorNormalsReview
+PASS Development tool absent from player assembly: FloorShadowReview
+PASS Development tool absent from player assembly: FurnitureBasicSetup
+PASS Development tool absent from player assembly: FurnitureColliderRefinement
+PASS Development tool absent from player assembly: InteriorLightContactReview
+PASS Development tool absent from player assembly: InteriorLightingCorrection
+PASS Development tool absent from player assembly: InventoryItemDefinitionEditor
+PASS Development tool absent from player assembly: JumpMotionProcessing
+PASS Development tool absent from player assembly: LargeRoofValidation
+PASS Development tool absent from player assembly: LargeRoomShadowDistanceValidation
+PASS Development tool absent from player assembly: LightLeakDiagnostics
+PASS Development tool absent from player assembly: MixamoFixOnce
+PASS Development tool absent from player assembly: MovementControlsRevisionValidation
+PASS Development tool absent from player assembly: MovementHUDRefinement
+PASS Development tool absent from player assembly: MovementSteeringValidation
+PASS Development tool absent from player assembly: OptionsMenuRepair
+PASS Development tool absent from player assembly: OptionsNavigationPlayValidation
+PASS Development tool absent from player assembly: PlayerAnimationExpansion
+PASS Development tool absent from player assembly: PlayerFootIKPlayValidation
+PASS Development tool absent from player assembly: PlayerFootIKSetup
+PASS Development tool absent from player assembly: PlayerFootIKValidation
+PASS Development tool absent from player assembly: PlayerLocomotionSetup
+PASS Development tool absent from player assembly: RoomConstructionValidation
+PASS Development tool absent from player assembly: SidewalkMeshColliderMigration
+PASS Development tool absent from player assembly: JuegoCriminal.EditorTools.SimpleSeaSceneCreator
+PASS Development tool absent from player assembly: SlotsAndAnimationValidation
+PASS Development tool absent from player assembly: SolarOrganizationRevision
+PASS Development tool absent from player assembly: StairHallValidation
+PASS Development tool absent from player assembly: StairPlacementClearanceValidation
+PASS Development tool absent from player assembly: StairsRampSetup
+PASS Development tool absent from player assembly: StationaryJumpValidation
+PASS Development tool absent from player assembly: WalkingDiagnostics
+PASS Development tool absent from player assembly: WallAutoJoinValidation
+PASS Development tool absent from player assembly: WallBaseShadowValidation
+PASS Development tool absent from player assembly: WallFamilyValidation
+PASS Development tool absent from player assembly: WallJoinRevision
+PASS Development tool absent from player assembly: WallReconfigurationRegression
+PASS Development tool absent from player assembly: WallReconfigurationSetup
+PASS Development tool absent from player assembly: WallReconfigurationValidation
+PASS Development tool absent from player assembly: WallRevisionInspection
+PASS Development tool absent from player assembly: WallVariantsSetup
+PASS Development tool absent from player assembly: WallVariantsValidation
+PASS Development tool absent from player assembly: WindowRoomAimRepair

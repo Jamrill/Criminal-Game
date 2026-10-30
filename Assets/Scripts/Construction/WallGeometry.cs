@@ -15,8 +15,12 @@ namespace JuegoCriminal.Construction
             public float Distance(Vector3 point)
             {
                 point.y=a.y;
-                return Vector3.Distance(point,Vector3.Lerp(a,b,Mathf.Clamp01(Vector3.Dot(point-a,b-a)/(b-a).sqrMagnitude)));
+                return Distance3D(point);
             }
+            // Selection projects a hit onto a wall's base. Structural coverage
+            // must NOT do that: a lower-storey wall cannot fill an upper gap.
+            public float Distance3D(Vector3 point)=>Vector3.Distance(point,
+                (b-a).sqrMagnitude<1e-12f?a:Vector3.Lerp(a,b,Mathf.Clamp01(Vector3.Dot(point-a,b-a)/(b-a).sqrMagnitude)));
         }
         public static bool Near(Vector3 a,Vector3 b)=>Vector3.Distance(a,b)<.06f;
         public static List<Span> Local(WallTopology wall)

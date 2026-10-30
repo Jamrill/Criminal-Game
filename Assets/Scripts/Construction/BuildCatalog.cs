@@ -16,6 +16,8 @@ namespace JuegoCriminal.Construction
         public BuildMount mount;
         [Tooltip("Reserved 4x4 cells along the prefab's local X/Z axes. Rotation rotates this footprint.")]
         public Vector2Int footprintCells=Vector2Int.one;
+        [Tooltip("Front arrow yaw in the imported prefab's local space. 0 = +Z, 90 = +X, 180 = -Z. Does not rotate or move the model.")]
+        public float guideFrontYaw;
         [Tooltip("Hueco disponible en el marco de colocacion del prefab; solo paredes con hueco de puerta.")]
         public Bounds doorway;
         public bool IsOpening => prefab && (prefab.name.StartsWith("Wall_door_hole",StringComparison.OrdinalIgnoreCase) || prefab.name.StartsWith("Window_Wall",StringComparison.OrdinalIgnoreCase));

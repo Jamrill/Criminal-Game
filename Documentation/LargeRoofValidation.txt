@@ -8,8 +8,8 @@ PASS Large roof has exactly 121 paid modular tiles: 121
 PASS Each roof tile is charged once and foundation is reused
 PASS No generated roof triangle has zero area
 PASS Roof surface equals the 44x44 plot without duplicate fragments
-METRIC initial roof completion ms=163
+METRIC initial roof completion ms=148
 PASS Repeated room and wall-cap scans neither duplicate nor charge tiles
-METRIC three scans plus wall coverage ms=97
+METRIC three scans plus wall coverage ms=93
 PASS Loading and capturing old saves removes collapsed triangles from mesh and saved geometry
 PASS Oversized completion shows a warning without charging or spawning a partial roof
