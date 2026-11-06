@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Object=UnityEngine.Object;
@@ -38,6 +39,7 @@ namespace JuegoCriminal.Construction
         public int FootprintSegments {get;private set;}
         public int AlignmentSegments {get;private set;}
         public bool HasFrontArrow {get;private set;}
+        public int AccessArrowCount {get;private set;}
         public bool Visible=>root && root.activeSelf;
         public BuildPlacementGuides()
         {
@@ -80,6 +82,57 @@ namespace JuegoCriminal.Construction
                 min=Vector2.Min(min,v);max=Vector2.Max(max,v);
             }
             return Rect.MinMaxRect(min.x,min.y,max.x,max.y);
+        }
+        internal static List<List<Vector2>> WallShape(IEnumerable<WallGeometry.Span> spans,Transform grid,out List<(Vector2 a,Vector2 b)> contour)
+        {
+            var polygons=new List<List<Vector2>>();var nodes=new List<Vector2>();
+            foreach(var span in spans)
+            {
+                var a=grid.InverseTransformPoint(span.a);var b=grid.InverseTransformPoint(span.b);
+                var start=new Vector2(a.x,a.z);var end=new Vector2(b.x,b.z);var dir=(end-start).normalized;
+                var side=new Vector2(-dir.y,dir.x)*.25f;
+                polygons.Add(new List<Vector2>{start-side,end-side,end+side,start+side});nodes.Add(start);nodes.Add(end);
+            }
+            // Fill the outside quadrant of shared elbows, then trace the union.
+            // No overlapping alpha fill and no end-cap lines through the joint.
+            var joints=new List<Vector2>();
+            foreach(var p in nodes)
+                if(nodes.Count(n=>(n-p).sqrMagnitude<.0001f)>1&&!joints.Any(n=>(n-p).sqrMagnitude<.0001f))
+                {joints.Add(p);polygons.Add(new List<Vector2>{p+new Vector2(-.25f,-.25f),p+new Vector2(.25f,-.25f),p+new Vector2(.25f,.25f),p+new Vector2(-.25f,.25f)});}
+            var fill=new List<List<Vector2>>();
+            for(int i=0;i<polygons.Count;i++)
+            {
+                var pieces=new List<List<Vector2>>{polygons[i]};
+                for(int j=0;j<i;j++)pieces=RoomGeometry.Subtract(pieces,polygons[j]);
+                fill.AddRange(pieces);
+            }
+            contour=new();
+            float Cross(Vector2 a,Vector2 b)=>a.x*b.y-a.y*b.x;
+            bool Inside(Vector2 p)=>polygons.Any(poly=>RoomGeometry.Inside(poly,p));
+            foreach(var poly in polygons)for(int i=0;i<poly.Count;i++)
+            {
+                var a=poly[i];var b=poly[(i+1)%poly.Count];var d=b-a;var cuts=new List<float>{0,1};
+                foreach(var other in polygons)for(int j=0;j<other.Count;j++)
+                {
+                    var c=other[j];var e=other[(j+1)%other.Count]-c;float cross=Cross(d,e);
+                    if(Mathf.Abs(cross)>.000001f)
+                    {
+                        float t=Cross(c-a,e)/cross,u=Cross(c-a,d)/cross;
+                        if(t>0&&t<1&&u>=0&&u<=1)cuts.Add(t);
+                    }
+                    else if(Mathf.Abs(Cross(c-a,d))<.00001f)
+                        foreach(var p in new[]{c,c+e}){float t=Vector2.Dot(p-a,d)/d.sqrMagnitude;if(t>0&&t<1)cuts.Add(t);}
+                }
+                cuts.Sort();var normal=new Vector2(-d.y,d.x).normalized*.002f;
+                for(int j=1;j<cuts.Count;j++)
+                {
+                    var start=a+d*cuts[j-1];var end=a+d*cuts[j];if((end-start).sqrMagnitude<.000001f)continue;
+                    var mid=(start+end)*.5f;if(Inside(mid+normal)==Inside(mid-normal))continue;
+                    if(contour.Any(s=>((s.a-start).sqrMagnitude<.000001f&&(s.b-end).sqrMagnitude<.000001f)||((s.b-start).sqrMagnitude<.000001f&&(s.a-end).sqrMagnitude<.000001f)))continue;
+                    contour.Add((start,end));
+                }
+            }
+            return fill;
         }
         static bool Supported(BuildPlot plot,Vector3 point,bool ceiling,Transform player)
         {
@@ -148,7 +201,7 @@ namespace JuegoCriminal.Construction
             colors??=defaultColors;
             bool ceiling=entry.mount==BuildMount.Ceiling;var normal=ceiling?-plot.Grid.up:plot.Grid.up;
             RebuildGrid(plot,anchor,ceiling,Mathf.Clamp(radius,1,8),player);
-            vertices.Clear();foreach(var list in indices)list.Clear();GridSegments=grid.Count;FootprintSegments=AlignmentSegments=0;HasFrontArrow=false;
+            vertices.Clear();foreach(var list in indices)list.Clear();GridSegments=grid.Count;FootprintSegments=AlignmentSegments=AccessArrowCount=0;HasFrontArrow=false;
             var offset=normal*.025f;
             foreach(var line in grid)Line(line.a+offset,line.b+offset,normal,.025f,0);
             var local=plot.Grid.InverseTransformPoint(anchor);
@@ -165,17 +218,10 @@ namespace JuegoCriminal.Construction
             var wall=entry.prefab.GetComponent<WallTopology>();
             if(wall)
             {
-                // Corners and junctions follow their arms, not an enclosing square
-                // which would falsely suggest that the space between arms is used.
-                foreach(var span in WallGeometry.At(wall,position,rotation,entry.prefab.transform.localScale))
-                {
-                    var a=plot.Grid.InverseTransformPoint(span.a);var b=plot.Grid.InverseTransformPoint(span.b);
-                    var start=Point(new Vector2(a.x,a.z));var end=Point(new Vector2(b.x,b.z));
-                    var side=Vector3.Cross(normal,end-start).normalized*.25f;
-                    var corners=new[]{start-side,start+side,end+side,end-side};Polygon(corners,3);
-                    for(int i=0;i<4;i++)Line(corners[i],corners[(i+1)%4],normal,.055f,1);
-                    FootprintSegments+=4;
-                }
+                var pieces=WallShape(WallGeometry.At(wall,position,rotation,entry.prefab.transform.localScale),plot.Grid,out var contour);
+                foreach(var polygon in pieces)Polygon(polygon.Select(Point).ToArray(),3);
+                foreach(var line in contour)Line(Point(line.a),Point(line.b),normal,.055f,1);
+                FootprintSegments=contour.Count;
             }
             else
             {
@@ -186,13 +232,20 @@ namespace JuegoCriminal.Construction
             {
                 var rect=footprint;
                 // Per-entry front calibration preserves the imported mesh origin.
-                var front=Vector3.ProjectOnPlane(rotation*Quaternion.Euler(0,entry.guideFrontYaw,0)*Vector3.forward,normal).normalized;
+                void Arrow(float yaw)
+                {
+                var front=Vector3.ProjectOnPlane(rotation*Quaternion.Euler(0,entry.guideFrontYaw+yaw,0)*Vector3.forward,normal).normalized;
                 var frontLocal=plot.Grid.InverseTransformDirection(front);
                 float reach=Mathf.Min(Mathf.Abs(frontLocal.x)>.001f?rect.width*.5f/Mathf.Abs(frontLocal.x):float.PositiveInfinity,
                     Mathf.Abs(frontLocal.z)>.001f?rect.height*.5f/Mathf.Abs(frontLocal.z):float.PositiveInfinity);
                 var edge=Point(rect.center)+front*reach;var right=Vector3.Cross(normal,front).normalized;
                 Polygon(new[]{edge-front*.6f-right*.18f,edge-front*.6f+right*.18f,edge+right*.18f,edge-right*.18f},4);
-                Polygon(new[]{edge-right*.65f,edge+right*.65f,edge+front*.8f},4);HasFrontArrow=true;
+                Polygon(new[]{edge-right*.65f,edge+right*.65f,edge+front*.8f},4);HasFrontArrow=true;AccessArrowCount++;
+                }
+                if((entry.guideAccessSides&BuildAccessSides.Front)!=0)Arrow(0);
+                if((entry.guideAccessSides&BuildAccessSides.Back)!=0)Arrow(180);
+                if((entry.guideAccessSides&BuildAccessSides.Left)!=0)Arrow(-90);
+                if((entry.guideAccessSides&BuildAccessSides.Right)!=0)Arrow(90);
                 foreach(var item in plot.GetComponentsInChildren<PlacedBuildObject>())
                 {
                     if(item.deleted || item.propertyId!=plot.propertyId || item.GetComponentInParent<BuildPlot>()!=plot)continue;

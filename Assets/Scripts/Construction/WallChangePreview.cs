@@ -15,8 +15,8 @@ namespace JuegoCriminal.Construction
         public void Dispose(){if(root){root.SetActive(false);Destroy(root);}root=null;previews.Clear();}
         public void Show(WallChangePlan plan,BuildCatalog catalog,Material material)
         {
-            var key=new StringBuilder();
-            foreach(var r in plan.added)key.Append(r.definitionId).Append(r.position.ToString("F3")).Append(r.rotation.ToString("F3")).Append(r.scale.ToString("F3"));
+            var key=new StringBuilder(material?"tint":"original");
+            foreach(var r in plan.added)key.Append(r.definitionId).Append(r.position.ToString("F3")).Append(r.rotation.ToString("F3")).Append(r.scale.ToString("F3")).Append(r.finish);
             string next=key.ToString();
             if(!root || signature!=next)
             {
@@ -25,12 +25,13 @@ namespace JuegoCriminal.Construction
                 foreach(var record in plan.added)
                 {
                     var prefab=catalog.Find(record.definitionId).prefab;
-                    previews.Add(MeshPreview.Create(prefab,record.position,record.rotation,record.scale,material,prefab.name,root.transform));
+                    var paint=material?material:record.finish>=0&&record.finish<catalog.finishes.Length?catalog.finishes[record.finish]:null;
+                    previews.Add(MeshPreview.Create(prefab,record.position,record.rotation,record.scale,paint,prefab.name,root.transform));
                 }
                 signature=next;
             }
             root.SetActive(true);
-            foreach(var preview in previews)preview.SetMaterial(material);
+            if(material)foreach(var preview in previews)preview.SetMaterial(material);
         }
     }
 }

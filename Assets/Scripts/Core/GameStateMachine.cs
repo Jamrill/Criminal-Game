@@ -146,6 +146,11 @@ namespace JuegoCriminal.Core
         private void SetState(GameState state)
         {
             CurrentState = state;
+            // Scene readiness, not the order of player Start callbacks, owns
+            // the initial cursor. Loading/menu must clear any previous lock.
+            bool capture = state == GameState.World;
+            Cursor.lockState = capture ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.visible = !capture;
             Debug.Log($"[GSM] State -> {state}");
 
             if (worldModeController != null)

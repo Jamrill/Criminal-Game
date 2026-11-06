@@ -234,6 +234,7 @@ MonoBehaviour:
     price: 180
     mount: 0
     footprintCells: {x: 2, y: 1}
+    guideAccessSides: 3
     doorway:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
@@ -248,6 +249,7 @@ MonoBehaviour:
     price: 130
     mount: 0
     footprintCells: {x: 2, y: 1}
+    guideAccessSides: 3
     doorway:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
@@ -374,6 +376,7 @@ MonoBehaviour:
     price: 90
     mount: 0
     footprintCells: {x: 2, y: 1}
+    guideAccessSides: 3
     doorway:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}

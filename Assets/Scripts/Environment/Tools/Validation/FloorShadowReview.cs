@@ -33,7 +33,7 @@ public static class FloorShadowReview
         string backup="Documentation/WallContactCorrectionBackup/"+DateTime.UtcNow.ToString("yyyyMMdd_HHmmss");Directory.CreateDirectory(backup);
         foreach(var p in new[]{"Assets/Materials/Wall_Building.mat","Assets/Prefabs/Floor.prefab","Assets/Scenes/10_World_City.unity"})File.Copy(p,backup+"/"+Path.GetFileName(p));
         var material=AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Wall_Building.mat");
-        material.SetFloat("_ShadowReceiverInset",.05f);EditorUtility.SetDirty(material);
+        material.SetFloat("_ShadowReceiverInset",.05f);material.SetFloat("_ShadowContactTexels",3);EditorUtility.SetDirty(material);
         AssetDatabase.SaveAssetIfDirty(material);
         var root=PrefabUtility.LoadPrefabContents("Assets/Prefabs/Floor.prefab");
         try

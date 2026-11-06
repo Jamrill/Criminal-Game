@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 863215088610624690}
   - component: {fileID: 343235756412890606}
   - component: {fileID: 2404802698206086352}
+  - component: {fileID: 7589551835262294984}
   m_Layer: 5
   m_Name: SlotRow
   m_TagString: Untagged
@@ -206,6 +207,21 @@ MonoBehaviour:
   selected: {r: 0.98039216, g: 0.7490196, b: 0.36862746, a: 1}
   disabled: {r: 0.5, g: 0.5, b: 0.5, a: 0.6}
   fadeDuration: 0.1
+--- !u!114 &7589551835262294984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837446200047399068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01d2757c77f552449aa69b9cdc58dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.UI.UIButtonAudio
+  playAppearance: 1
+  playHover: 1
+  playClick: 1
 --- !u!1 &3920465486281743401
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +234,7 @@ GameObject:
   - component: {fileID: 3642509771798608122}
   - component: {fileID: 8120461599975464108}
   - component: {fileID: 4773379469927343555}
+  - component: {fileID: 155094143047453050}
   m_Layer: 5
   m_Name: Pencil
   m_TagString: Untagged
@@ -242,7 +259,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 17.7, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3642509771798608122
 CanvasRenderer:
@@ -326,6 +343,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &155094143047453050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920465486281743401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01d2757c77f552449aa69b9cdc58dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.UI.UIButtonAudio
+  playAppearance: 1
+  playHover: 1
+  playClick: 1
 --- !u!1 &8132054656019985264
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,12 +587,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 18
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 30
+  m_fontSizeMax: 18
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512

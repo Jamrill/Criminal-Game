@@ -171,15 +171,42 @@ namespace JuegoCriminal.Construction
             level=Mathf.Round(points[0].y*20)/20f+wall.prefab.GetComponent<WallTopology>().WorldHeight;
             return true;
         }
-        public static RoomGeometry.Region WithPassages(RoomGeometry.Region source,BuildPlot plot,float level)
+        public static RoomGeometry.Region WithPassages(RoomGeometry.Region source,BuildPlot plot,float level,bool preserveDeleted=true)
         {
             var result=new RoomGeometry.Region{outline=source.outline,min=source.min,max=source.max};result.holes.AddRange(source.holes);
             if(!plot.catalog)return result;
-            var records=plot.GetComponentsInChildren<PlacedBuildObject>().Where(p=>!p.deleted).Select(p=>p.Capture()).Concat(BuildDeletionLedger.Deleted(plot));
+            var records=plot.GetComponentsInChildren<PlacedBuildObject>().Where(p=>!p.deleted).Select(p=>p.Capture());
+            if(preserveDeleted)records=records.Concat(BuildDeletionLedger.Deleted(plot));
             foreach(var record in records)
+            {
                 if(Passage(plot.catalog,plot,record,out var opening,out float y) && Mathf.Abs(y-level)<.06f)
                     result.holes.Add(Rectangle(opening));
-            return FloorEditing.WithRemovedFloors(result,plot,level);
+                // Selling a prefab also removes its embedded landing. Automatic
+                // room completion must not buy that surface back behind the
+                // player's back; a new stair/manual floor can explicitly repair it.
+                if(record.deleted && IsStairs(plot.catalog.Find(record.definitionId)))
+                    result.holes.AddRange(PrefabFloors(plot.catalog.Find(record.definitionId),plot,record,level));
+            }
+            return preserveDeleted?FloorEditing.WithRemovedFloors(result,plot,level):result;
+        }
+        // Include floors authored inside a changed stair prefab in the plan,
+        // before instantiation. Do not charge or overlay another tile on them.
+        internal static List<List<Vector2>> PrefabFloors(BuildEntry entry,BuildPlot plot,BuildRecord record,float level)
+        {
+            var result=new List<List<Vector2>>();
+            var matrix=plot.Grid.worldToLocalMatrix*Matrix4x4.TRS(record.position,record.rotation,record.scale)*entry.prefab.transform.worldToLocalMatrix;
+            foreach(var box in entry.prefab.GetComponentsInChildren<BoxCollider>(true))
+            {
+                if(!box.enabled || box.isTrigger || !box.GetComponentInParent<BuildFloorCoverage>(true))continue;
+                var m=matrix*box.transform.localToWorldMatrix;
+                if(Mathf.Abs(m.MultiplyVector(Vector3.up).normalized.y)<.999f)continue;
+                var low=box.center-box.size*.5f;var high=box.center+box.size*.5f;
+                if(Mathf.Abs(m.MultiplyPoint3x4(high).y-level)>.06f)continue;
+                var polygon=new[]{new Vector3(low.x,high.y,low.z),new Vector3(high.x,high.y,low.z),high,new Vector3(low.x,high.y,high.z)}
+                    .Select(m.MultiplyPoint3x4).Select(p=>RoomGeometry.Snap(new Vector2(p.x,p.z))).ToList();
+                if(RoomGeometry.SignedArea(polygon)<0)polygon.Reverse();result.Add(polygon);
+            }
+            return result;
         }
         static RoomGeometry.Region Region(Rect rect)
             =>new(){outline=Rectangle(rect),min=rect.min,max=rect.max};
@@ -211,7 +238,7 @@ namespace JuegoCriminal.Construction
             // Check before planning sales/cuts. Another staircase is an occupied
             // module, never a ceiling or a wall that this transaction may remove.
             if(!SpaceAvailable(catalog,plot,stairs,plan.blockers))
-            {plan.error=T("Another staircase occupies this space","Otra escalera ocupa este espacio");return plan;}
+            {plan.error=T("Staircases overlap or need a 4 m landing between their fronts","Las escaleras se solapan o necesitan una casilla de 4 m entre sus frentes");return plan;}
             if(!Passage(catalog,plot,stairs,out var opening,out float level)){plan.error=T("No wall template for staircase enclosure","Falta una pared base para cerrar la escalera");return plan;}
             var manager=plot.GetComponent<RoomConstruction>();
             if(!manager){plan.error=T("Plot has no room system","El solar no tiene sistema de salas");return plan;}
@@ -249,6 +276,19 @@ namespace JuegoCriminal.Construction
             // the same exit direction instead of assuming a world-space front.
             var enclosure=Rect.MinMaxRect(Mathf.Min(opening.xMin,landing.xMin),Mathf.Min(opening.yMin,landing.yMin),
                 Mathf.Max(opening.xMax,landing.xMax),Mathf.Max(opening.yMax,landing.yMax));
+            // Facing modules with touching/overlapping landing areas form one
+            // upper hall. Its old internal partitions must not block either exit.
+            bool sharedLanding=false;
+            foreach(var other in plot.GetComponentsInChildren<PlacedBuildObject>())
+            {
+                if(other.deleted || other.propertyId!=plot.propertyId || other.GetComponentInParent<BuildPlot>()!=plot || !IsStairs(catalog.Find(other.definitionId)))continue;
+                var r=other.Capture();
+                if(!Facing(catalog,plot,stairs,r,out float gap,out bool aligned)||!aligned||gap<BuildPlot.CellSize-.02f||gap>BuildPlot.CellSize*2+.02f)continue;
+                sharedLanding=true;
+                Passage(catalog,plot,r,out var otherOpening,out _);Landing(catalog,plot,r,out var otherLanding,out _);
+                enclosure=Rect.MinMaxRect(Mathf.Min(enclosure.xMin,Mathf.Min(otherOpening.xMin,otherLanding.xMin)),Mathf.Min(enclosure.yMin,Mathf.Min(otherOpening.yMin,otherLanding.yMin)),
+                    Mathf.Max(enclosure.xMax,Mathf.Max(otherOpening.xMax,otherLanding.xMax)),Mathf.Max(enclosure.yMax,Mathf.Max(otherOpening.yMax,otherLanding.yMax)));
+            }
             var upper=existingRoom!=null?existingRoom.shape:Region(enclosure);var wallEntry=Wall(catalog);var template=wallEntry.prefab.GetComponent<WallTopology>();
             float height=template.WorldHeight;
             foreach(var point in upper.outline)
@@ -274,7 +314,7 @@ namespace JuegoCriminal.Construction
                     plan.additions.Add(new BuildRecord{definitionId=wallEntry.id,propertyId=plot.propertyId,sceneName=plot.gameObject.scene.name,position=position,rotation=rotation,scale=wallEntry.prefab.transform.localScale,finish=-1});
                 }
             }
-            StairAdaptation.Prepare(plan,catalog,wallEntry,opening,enclosure,level,height);
+            StairAdaptation.Prepare(plan,catalog,wallEntry,opening,enclosure,level,height,sharedLanding);
             if(!string.IsNullOrEmpty(plan.error))return plan;
             var removed=plan.edits.Where(e=>e.after.deleted&&e.item.GetComponent<WallTopology>()).Select(e=>e.item).ToArray();
             var joined=WallReconfiguration.Enclosure(catalog,plot,plan.additions,plot.Grid.rotation,removed);
@@ -288,7 +328,17 @@ namespace JuegoCriminal.Construction
             var floor=catalog.entries.First(e=>e.prefab && e.prefab.GetComponent<BuildFloorCoverage>());
             // Never mutate the cached room outline/holes while preparing a preview.
             var floorRegion=WithPassages(upper,plot,level);floorRegion.holes.Add(hole);
-            plan.additions.AddRange(manager.PlanTiles(RoomGeometry.Missing(floorRegion,manager.SurfacesAt(level,false)),level,floor));
+            // Evaluate the POST-cut floor, not the current world. Historical
+            // holes remain elsewhere, but must never erase a newly required exit.
+            var coverage=RoomGeometry.Subtract(manager.SurfacesAt(level,false),hole);
+            coverage.AddRange(PrefabFloors(catalog.Find(stairs.definitionId),plot,stairs,level));
+            var missing=RoomGeometry.Missing(floorRegion,coverage);
+            var exitRegion=Region(landing);
+            var livePassages=WithPassages(exitRegion,plot,level,false);
+            if(livePassages.holes.Any(h=>RoomGeometry.Subtract(new List<List<Vector2>>{exitRegion.outline},h).Sum(p=>Mathf.Abs(RoomGeometry.SignedArea(p)))<landing.width*landing.height-.001f))
+            {plan.error=T("Another staircase blocks the upper landing","Otra escalera ocupa el desembarco superior");return plan;}
+            missing.AddRange(RoomGeometry.Missing(exitRegion,coverage.Concat(missing).ToArray()));
+            plan.additions.AddRange(manager.PlanTiles(missing,level,floor));
             float roof=existingRoom!=null?existingRoom.ceiling:level+height;
             plan.additions.AddRange(manager.PlanTiles(RoomGeometry.Missing(WithPassages(upper,plot,roof),manager.SurfacesAt(roof,true)),roof,floor));
             return plan;
@@ -311,13 +361,29 @@ namespace JuegoCriminal.Construction
                 float otherBottom=plot.Grid.InverseTransformPoint(item.transform.position).y;
                 // Shared edges and separate storeys are fine. Side/rear wall
                 // tolerances must never shrink stair-versus-stair occupancy.
-                if(top<=otherBottom+.02f || otherTop<=bottom+.02f || !BuildFootprint.Overlap(rect,other))continue;
+                bool overlap=top>otherBottom+.02f&&otherTop>bottom+.02f&&BuildFootprint.Overlap(rect,other);
+                bool shortLanding=Facing(catalog,plot,record,item.Capture(),out float gap,out _)&&gap<BuildPlot.CellSize-.02f;
+                if(!overlap&&!shortLanding)continue;
                 available=false;
                 if(blockers==null)return false;
                 foreach(var collider in item.GetComponentsInChildren<Collider>())
                     if(collider.enabled&&!collider.isTrigger)blockers.Add(collider);
             }
             return available;
+        }
+        internal static bool Facing(BuildCatalog catalog,BuildPlot plot,BuildRecord a,BuildRecord b,out float gap,out bool aligned)
+        {
+            gap=0;aligned=false;
+            if(!Passage(catalog,plot,a,out var ra,out float ya)||!Passage(catalog,plot,b,out var rb,out float yb)||Mathf.Abs(ya-yb)>.06f)return false;
+            if(!Exit(catalog.Find(a.definitionId),plot,a,out _,out var da,out _)||!Exit(catalog.Find(b.definitionId),plot,b,out _,out var db,out _)||Vector3.Dot(da,db)>-.99f)return false;
+            bool x=Mathf.Abs(da.x)>Mathf.Abs(da.z);float sign=Mathf.Sign(x?da.x:da.z);
+            float lowA=x?ra.yMin:ra.xMin,highA=x?ra.yMax:ra.xMax,lowB=x?rb.yMin:rb.xMin,highB=x?rb.yMax:rb.xMax;
+            if(Mathf.Min(highA,highB)-Mathf.Max(lowA,lowB)<.01f)return false;
+            float frontA=x?(sign>0?ra.xMax:ra.xMin):(sign>0?ra.yMax:ra.yMin);
+            float frontB=x?(sign>0?rb.xMin:rb.xMax):(sign>0?rb.yMin:rb.yMax);
+            gap=(frontB-frontA)*sign;
+            aligned=Mathf.Abs(lowA-lowB)<.06f&&Mathf.Abs(highA-highB)<.06f;
+            return gap>=-.02f;
         }
         public static Vector3 SnapBoundary(BuildEntry entry,BuildPlot plot,Vector3 position,Quaternion rotation)
         {

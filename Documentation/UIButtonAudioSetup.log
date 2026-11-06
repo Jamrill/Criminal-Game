@@ -1,0 +1,1050 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier" at "2026-11-06T08:35:49.19824Z"
+Built from '6000.3/staging' branch; Version is '6000.3.8f1 (1c7db571dde0) revision 1867189'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'es' Physical Memory: 15750 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-06T08:35:49Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+-executeMethod
+UIButtonAudioSetup.Apply
+-logFile
+Documentation/UIButtonAudioSetup.log
+Successfully changed project path to: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [38548]  Target information:
+
+Player connection [38548]  * "[IP] 169.254.83.107 [Port] 55504 [Flags] 2 [Guid] 3506081450 [EditorId] 3506081450 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [38548]  * "[IP] 10.80.137.143 [Port] 55504 [Flags] 2 [Guid] 3506081450 [EditorId] 3506081450 [Version] 1048832 [Id] WindowsEditor(7,SEP02003ECP4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [38548] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [38548] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-37912" after 0.5 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              4090be87044d4a79915c3761acb834e3
+  Correlation Id:          f7fbf9a5bab222456457b6b2f009a999
+  External correlation Id: 5260083076831094782
+  Machine Id:              /vGJGymoPSYuLyiSLmM/5/OP03Q=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-adm_mgarciajavier" (connect: 0.00s, validation: 0.01s, handshake: 2.28s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-adm_mgarciajavier-notifications" at "2026-11-06T08:35:51.4821702Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 6872099004708-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 2.31s
+[Licensing::Module] Licensing is initialized (took 1.16s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Artifact Garbage Collection - Removed 9 unused hashed content files
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.8f1 (1c7db571dde0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1638)
+    Vendor:   ATI
+    VRAM:     7875 MB
+    Driver:   31.0.21921.1000
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56912
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003443 seconds.
+- Loaded All Assemblies, in  0.632 seconds
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.491 seconds
+Domain Reload Profiling: 1119ms
+	BeginReloadAssembly (307ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (209ms)
+		LoadAssemblies (295ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (205ms)
+			TypeCache.Refresh (203ms)
+				TypeCache.ScanAssembly (186ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (492ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (449ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (51ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (96ms)
+			ProcessInitializeOnLoadAttributes (189ms)
+			ProcessInitializeOnLoadMethodAttributes (108ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 60 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ai.navigation@c33a115e9883)
+    com.unity.collab-proxy@2.11.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collab-proxy@e566cd3e7623)
+    com.unity.formats.fbx@5.1.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.formats.fbx@86d1698ebb13)
+    com.unity.ide.rider@3.0.39 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.rider@4504839d03f7)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.18.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.inputsystem@57d0e36f6123)
+    com.unity.postprocessing@3.5.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.postprocessing@4a41da475b74)
+    com.unity.timeline@1.8.10 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.timeline@7f8b2fb101b6)
+    com.unity.visualscripting@1.9.9 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.visualscripting@191c0d7e3b69)
+    com.unity.searcher@4.9.4 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.autodesk.fbx@5.1.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.autodesk.fbx@90432ec06ab5)
+    com.unity.burst@1.8.27 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.burst@973857688024)
+    com.unity.mathematics@1.3.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.2 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.collections@aea9d3bd5e19)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.2.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562)
+  Built-in packages:
+    com.unity.multiplayer.center@1.0.1 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal@a6e30d1f59f5)
+    com.unity.shadergraph@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.shadergraph@d44b48771ebb)
+    com.unity.test-framework@1.6.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.test-framework@0b7a23ab2e1d)
+    com.unity.ugui@2.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ugui@bb329a87fcdc)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.core@d6dfd1e235d5)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.07 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 0s420ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+*** Tundra requires additional run (0.27 seconds), 0 items updated, 521 evaluated
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+ExitCode: 0 Duration: 1s97ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/adm_mgarciajavier/Documents/Unity projects/Criminal-Game
+ExitCode: 0 Duration: 5s39ms
+Finished compiling graph: 936 nodes, 17246 flattened edges (14322 ToBuild, 146 ToUse), maximum node priority 980
+[514/932    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp
+[728/932    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[924/932    3s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+Assets\Scripts\Player\PlayerLocomotionAnimation.cs(19,56): warning CS0414: The field 'PlayerLocomotionAnimation.diagonalBodyAngle' is assigned but its value is never used
+[925/932    0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[926/932    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 137 defines and 339 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[927/932    1s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll, with 139 defines and 320 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[928/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[929/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+[930/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[931/932    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+*** Tundra build success (4.90 seconds), 10 items updated, 932 evaluated
+Assets\Scripts\Player\PlayerLocomotionAnimation.cs(19,56): warning CS0414: The field 'PlayerLocomotionAnimation.diagonalBodyAngle' is assigned but its value is never used
+AssetDatabase: script compilation time: 7.544341s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.348 seconds
+Refreshing native plugins compatible for Editor in 6.68 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.341 seconds
+Domain Reload Profiling: 4679ms
+	BeginReloadAssembly (394ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (172ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (838ms)
+		LoadAssemblies (674ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (312ms)
+			TypeCache.Refresh (213ms)
+				TypeCache.ScanAssembly (199ms)
+			BuildScriptInfoCaches (82ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (3341ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2908ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (26ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (241ms)
+			ProcessInitializeOnLoadAttributes (2491ms)
+			ProcessInitializeOnLoadMethodAttributes (125ms)
+			AfterProcessingInitializeOnLoad (15ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Lit Basic.shadergraph using Guid(a2407126e3372f64cacb75ed466a5621) (ScriptedImporter)Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+ -> (artifact id: 'ea43ecfb406caaf6fb68461ac9ceb31f') in 0.7502616 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/Unlit Simple.shadergraph using Guid(2476a2d151e824143af40dce1fc93a12) (ScriptedImporter) -> (artifact id: 'fd6ab3b32876e2b78bca6c747ecb4554') in 0.1283411 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/2_Particle Lit.shadergraph using Guid(a680d9a9f8b66514abbfd3ae1c8f77f7) (ScriptedImporter) -> (artifact id: 'f7137dc99875db5f9db21b5c700a4174') in 0.3489964 seconds
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP UNLIT.shadergraph using Guid(f63d574838ccfb44f84acc05fed0af48) (ScriptedImporter)WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP UNLIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP UNLIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP UNLIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP UNLIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: 'd6f7da0641f73371a8614ac226528395') in 0.2498746 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/1_Decal Material Volume.shadergraph using Guid(1716ff8c1e51af14280cc97fbcba3b11) (ScriptedImporter) -> (artifact id: 'f1306ed2f528cab98f015587799619b1') in 0.1845996 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Decal Simple.shadergraph using Guid(39144937a5efe954dac51acbbe54157e) (ScriptedImporter) -> (artifact id: '4da9f3129a67ab4cb2cc1e642850dbf1') in 0.1680056 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/UGUI Canvas Basic.shadergraph using Guid(5a4a765e921b8554eb959f7cf697b3be) (ScriptedImporter) -> (artifact id: 'f0cfa9f18fb8e5d56a1e7d275dd783bb') in 0.1690931 seconds
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph using Guid(ca2ed216f98028c4dae6c5224a952b3c) (ScriptedImporter)WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP LIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP LIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP LIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP LIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: '959a8a477ba865d72b9077e32b1b5ba6') in 0.2083807 seconds
+Start importing Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/GraphTemplates/Terrain Standard 4 Layers URP.shadergraph using Guid(bc3def193b270c649b041063a70a1a1f) (ScriptedImporter)Shader 'Hidden/Terrain/Terrain Standard 4 Layers URP': dependency 'AddPassShader' shader 'Hidden/Hidden/Terrain/Terrain Standard 4 Layers URP_AddPass' not found
+Shader 'Hidden/Terrain/Terrain Standard 4 Layers URP': dependency 'BaseMapGenShader' shader 'Hidden/Hidden/Terrain/Terrain Standard 4 Layers URP_BaseMapGen' not found
+Shader 'Hidden/Terrain/Terrain Standard 4 Layers URP': dependency 'AddPassShader' shader 'Hidden/Hidden/Terrain/Terrain Standard 4 Layers URP_AddPass' not found
+Shader 'Hidden/Terrain/Terrain Standard 4 Layers URP': dependency 'BaseMapGenShader' shader 'Hidden/Hidden/Terrain/Terrain Standard 4 Layers URP_BaseMapGen' not found
+ -> (artifact id: 'b52d8df0dff22f348870697680e7008f') in 0.4077211 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/UGUI Canvas Meter.shadergraph using Guid(9d4e8ca8c5046914c87ca6ccef140dac) (ScriptedImporter) -> (artifact id: '28d87e48e3cd75db8fbbb36e805a25eb') in 0.0564307 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/1_Lit Full.shadergraph using Guid(aee84ce0dab81b049bb88017d78a63cd) (ScriptedImporter) -> (artifact id: 'e23f7c6e33328bdf9b7d232c2aa12a77') in 0.1918292 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/Terrain Simple.shadergraph using Guid(def488a52add6574d9f295a507032cb8) (ScriptedImporter)Shader 'Hidden/Terrain/Terrain Simple': dependency 'AddPassShader' shader 'Hidden/Hidden/Terrain/Terrain Simple_AddPass' not found
+Shader 'Hidden/Terrain/Terrain Simple': dependency 'BaseMapGenShader' shader 'Hidden/Hidden/Terrain/Terrain Simple_BaseMapGen' not found
+Shader 'Hidden/Terrain/Terrain Simple': dependency 'AddPassShader' shader 'Hidden/Hidden/Terrain/Terrain Simple_AddPass' not found
+Shader 'Hidden/Terrain/Terrain Simple': dependency 'BaseMapGenShader' shader 'Hidden/Hidden/Terrain/Terrain Simple_BaseMapGen' not found
+ -> (artifact id: 'c1c52704622787b20f57e53050b760ac') in 0.2290095 seconds
+Start importing Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Particle Unlit.shadergraph using Guid(af66091e0eca0c04a9c3584ae867418a) (ScriptedImporter) -> (artifact id: '55f1ad39ab53a6e0809373ba455e7f34') in 0.1031533 seconds
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP LIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP LIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP UNLIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'TextMeshPro/SRP/TMP_SDF-HDRP UNLIT' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Refreshing native plugins compatible for Editor in 7.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=efa22411ebf3f4b45a8c9d54fe9251e7): Total: 17.694 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=4 ms, native=7751 ms
+		Asset DB Callback time: managed=356 ms, native=616 ms
+		Scripting: domain reloads=1, domain reload time=1349 ms, compile time=7548 ms, other=66 ms
+		Project Asset Count: scripts=1458, non-scripts=3431
+		Asset File Changes: new=3, changed=9, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.004ms
+	InvokePackagesCallback: 81.550ms
+	ApplyChangesToAssetFolders: 1.281ms
+	Scan: 310.304ms
+	OnSourceAssetsModified: 1.007ms
+	CategorizeAssetsWithTransientArtifact: 83.896ms
+	ProcessAssetsWithTransientArtifactChanges: 103.973ms
+	CategorizeAssets: 221.829ms
+	ImportOutOfDateAssets: 6773.364ms (-4184.718ms without children)
+		ImportManagerImport: 3405.912ms (191.974ms without children)
+			ImportInProcess: 3213.938ms
+		CompileScripts: 7547.980ms
+		ReloadNativeAssets: 0.084ms
+		UnloadImportedAssets: 1.522ms
+		ReloadImportedAssets: 0.003ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.476ms
+		InitializingProgressBar: 0.008ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 1.097ms
+	PostProcessAllAssets: 886.112ms
+	Hotreload: 11.546ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.003ms
+	UnloadStreamsBegin: 3.951ms
+	PersistCurrentRevisions: 0.499ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 15.578ms
+	Untracked: 9214.241ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 7.902ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Criminal Bussines
+Unloading 44 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6777 unused Assets / (16.9 MB). Loaded Objects now: 7611.
+Memory consumption went from 247.8 MB to 230.9 MB.
+Total: 23.600500 ms (FindLiveObjects: 1.352500 ms CreateObjectMapping: 1.402300 ms MarkObjects: 13.044500 ms  DeleteObjects: 7.799300 ms)
+
+Start importing Assets/Audio using Guid(a6ade84aa93d875428122734945f22a4) (DefaultImporter) -> (artifact id: '80e50aa38d530d544f0806faa5515a62') in 0.008464 seconds
+Start importing Assets/Audio/UI using Guid(96165501182755640926bc970462e537) (DefaultImporter) -> (artifact id: '382f550fc2c8e5180be8b8489afb7973') in 0.0049642 seconds
+Start importing Assets/Audio/UI/Resources using Guid(6a3cf5c15efc63740b1b1258e1950b11) (DefaultImporter) -> (artifact id: '1285eb93914da6ae68713f20e70125ca') in 0.0046982 seconds
+Start importing Assets/Audio/UI/UI_Appear_Whoosh.wav using Guid(f95c47e876c493b4ab7a2a84ea945007) (AudioImporter) -> (artifact id: 'afb58c658a07133e65de8bcd19a7620c') in 0.3316202 seconds
+Start importing Assets/Audio/UI/UI_Click_SoftShot.wav using Guid(1a970ee20495d1c498e6116b9abdde62) (AudioImporter) -> (artifact id: '5fc59c88db53cbb5427fb01ef5e30b76') in 0.0948234 seconds
+Start importing Assets/Audio/UI/UI_Hover_Cylinder.wav using Guid(6bea2ac2a29e24d4084a6d1e6e18ccd2) (AudioImporter) -> (artifact id: '3e44ea3019a33dd096ce5896e6554bf1') in 0.0912133 seconds
+Refreshing native plugins compatible for Editor in 4.25 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cda35fb3bf428de4d9d6385156e2c11e): Total: 0.770 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=6 (actual=6, local cache=0, cache server=0)
+		Asset DB Process Time: managed=3 ms, native=752 ms
+		Asset DB Callback time: managed=3 ms, native=10 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=1461, non-scripts=3434
+		Asset File Changes: new=6, changed=6, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.241ms
+	Scan: 71.838ms
+	OnSourceAssetsModified: 0.948ms
+	CategorizeAssetsWithTransientArtifact: 0.031ms
+	ProcessAssetsWithTransientArtifactChanges: 0.281ms
+	CategorizeAssets: 49.035ms
+	ImportOutOfDateAssets: 549.698ms (0.553ms without children)
+		ImportManagerImport: 547.442ms (1.561ms without children)
+			ImportInProcess: 545.722ms
+			UpdateCategorizedAssets: 0.160ms
+		ReloadNativeAssets: 0.041ms
+		UnloadImportedAssets: 0.356ms
+		ReloadImportedAssets: 0.002ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.816ms
+		InitializingProgressBar: 0.009ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.477ms
+	PostProcessAllAssets: 8.744ms
+	Hotreload: 4.888ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.231ms
+	UnloadStreamsBegin: 0.081ms
+	PersistCurrentRevisions: 0.399ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 83.580ms
+
+Start importing Assets/Audio/UI/UI_Appear_Whoosh.wav using Guid(f95c47e876c493b4ab7a2a84ea945007) (AudioImporter) -> (artifact id: '4a9f684da70b03302181ec2d521432b4') in 0.0931384 seconds
+Refreshing native plugins compatible for Editor in 5.15 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b7a0af25e52b1314594608ce583c1752): Total: 0.167 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Audio/UI/UI_Click_SoftShot.wav using Guid(1a970ee20495d1c498e6116b9abdde62) (AudioImporter) -> (artifact id: '0019eed461d187b4cbc3784344af19f6') in 0.0904158 seconds
+Refreshing native plugins compatible for Editor in 3.71 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3a50ff55e6fcb774c92b1a5ed71908a1): Total: 0.166 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Audio/UI/UI_Hover_Cylinder.wav using Guid(6bea2ac2a29e24d4084a6d1e6e18ccd2) (AudioImporter) -> (artifact id: '0725171cc52e66261c4f800100cb5ada') in 0.086949 seconds
+Refreshing native plugins compatible for Editor in 4.30 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=49d3849da1f6cc349886bee539efef00): Total: 0.157 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Audio/UI/Resources/UIButtonSounds.asset using Guid(95891f31ff878214caf25e604e75da4d) (NativeFormatImporter) -> (artifact id: 'fe75bd9b346e5a76ac7483d0936d714d') in 0.0064155 seconds
+Refreshing native plugins compatible for Editor in 4.92 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a789268bfb988f34683191f1b0d839d0): Total: 0.055 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/f7e531c3c7962b34fa5afcff45d88638'
+	Deserialize:            2.728 ms
+	Integration:            14.264 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       54.210 ms
+	Total Operation Time:   71.204 ms
+Loaded scene 'Library/Unused/2547e93c42f1785499fa41e4d3d09b00'
+	Deserialize:            0.342 ms
+	Integration:            1.000 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   1.355 ms
+Loaded scene 'Library/Unused/74d08c079939344458373f2c43d6da6c'
+	Deserialize:            0.285 ms
+	Integration:            1.005 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   1.304 ms
+Loaded scene 'Library/Unused/aac63da417fe2b0408de4f638f0ecc11'
+	Deserialize:            0.332 ms
+	Integration:            0.801 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   1.147 ms
+Loaded scene 'Library/Unused/be52c18240e8ff14689869c740ae38d8'
+	Deserialize:            0.347 ms
+	Integration:            0.933 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   1.293 ms
+Loaded scene 'Library/Unused/44d3b0a7b66272c499ebdaef6e1e9468'
+	Deserialize:            0.369 ms
+	Integration:            1.969 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.011 ms
+	Total Operation Time:   2.350 ms
+Loaded scene 'Library/Unused/31d9c62bdec75d84793164c8fd295d26'
+	Deserialize:            0.303 ms
+	Integration:            0.941 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.011 ms
+	Total Operation Time:   1.256 ms
+Loaded scene 'Library/Unused/d731f2c0500155d459d6bbb2620bc257'
+	Deserialize:            0.524 ms
+	Integration:            3.650 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   4.188 ms
+Loaded scene 'Library/Unused/f3e2e8f7bda8bbf4d83f67de269a4e53'
+	Deserialize:            0.313 ms
+	Integration:            1.319 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   1.646 ms
+Loaded scene 'Library/Unused/bd69e4aa4f9803a43a402235e236d65d'
+	Deserialize:            0.278 ms
+	Integration:            0.974 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   1.265 ms
+Loaded scene 'Library/Unused/067920e4c9520ab41b095b3e3d2cc958'
+	Deserialize:            1.006 ms
+	Integration:            0.885 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   1.903 ms
+Loaded scene 'Library/Unused/365846535d5b39d44ba1571cc0039b39'
+	Deserialize:            1.417 ms
+	Integration:            1.697 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   3.131 ms
+Loaded scene 'Library/Unused/97cdd266d3aa78f489f2544c6d95df4f'
+	Deserialize:            0.287 ms
+	Integration:            0.971 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   1.271 ms
+Loaded scene 'Library/Unused/cb9cc64766e93b942838669bc8838a01'
+	Deserialize:            0.322 ms
+	Integration:            1.828 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.011 ms
+	Total Operation Time:   2.162 ms
+Loaded scene 'Library/Unused/62b3b1a461cdd9046a93d11eda474b6a'
+	Deserialize:            0.375 ms
+	Integration:            0.395 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   0.787 ms
+Loaded scene 'Library/Unused/1c72769e1c326d541be26b0f59794c6b'
+	Deserialize:            4.091 ms
+	Integration:            0.508 ms
+	Integration of assets:  0.216 ms
+	Thread Wait Time:       0.064 ms
+	Total Operation Time:   4.880 ms
+Loaded scene 'Library/Unused/13a0f40a32c5aaa4ea9c36057d0de6e7'
+	Deserialize:            1.946 ms
+	Integration:            0.402 ms
+	Integration of assets:  0.206 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   2.568 ms
+Loaded scene 'Library/Unused/83d14abd520240b4fb047ded0867fa81'
+	Deserialize:            1.928 ms
+	Integration:            0.281 ms
+	Integration of assets:  0.170 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   2.392 ms
+Loaded scene 'Library/Unused/3d1812337fcfe9148b5ec724fda1f14e'
+	Deserialize:            0.343 ms
+	Integration:            1.877 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   2.234 ms
+Loaded scene 'Library/Unused/f525abc5fca481642a6a12f019d02653'
+	Deserialize:            0.514 ms
+	Integration:            1.449 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.010 ms
+	Total Operation Time:   1.974 ms
+Loaded scene 'Library/Unused/658035fb7fdc4664eb8d354ad4b47828'
+	Deserialize:            2.975 ms
+	Integration:            0.884 ms
+	Integration of assets:  0.231 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   4.113 ms
+Loaded scene 'Library/Unused/7574b7f40d278ed449d8710a48bd8ad5'
+	Deserialize:            1.908 ms
+	Integration:            0.891 ms
+	Integration of assets:  0.245 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   3.057 ms
+Loaded scene 'Library/Unused/bd70956405d9d4948a135cbdf327d3f2'
+	Deserialize:            27.483 ms
+	Integration:            1.567 ms
+	Integration of assets:  18.251 ms
+	Thread Wait Time:       0.062 ms
+	Total Operation Time:   47.363 ms
+Loaded scene 'Library/Unused/d7d9b78d9ba055a4892b8529a004a6a7'
+	Deserialize:            2.075 ms
+	Integration:            0.281 ms
+	Integration of assets:  0.214 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   2.592 ms
+Loaded scene 'Library/Unused/bba88f5ea789b9d46bf55d0abc87175f'
+	Deserialize:            1.770 ms
+	Integration:            0.948 ms
+	Integration of assets:  0.293 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   3.024 ms
+Loaded scene 'Library/Unused/bb7b3ccd17590194d986b58967ed4c54'
+	Deserialize:            1.706 ms
+	Integration:            1.050 ms
+	Integration of assets:  0.251 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   3.020 ms
+Loaded scene 'Library/Unused/d725c6f0798f96f47af217655c9d2a7b'
+	Deserialize:            1.642 ms
+	Integration:            1.200 ms
+	Integration of assets:  0.344 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   3.202 ms
+Loaded scene 'Library/Unused/f02997b2f842bbe49a6fbb943c46dcfa'
+	Deserialize:            1.813 ms
+	Integration:            0.936 ms
+	Integration of assets:  0.186 ms
+	Thread Wait Time:       0.063 ms
+	Total Operation Time:   2.997 ms
+Loaded scene 'Library/Unused/dfdc4d1a023190c4a91badec6f29834c'
+	Deserialize:            1.959 ms
+	Integration:            0.873 ms
+	Integration of assets:  0.352 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   3.198 ms
+Loaded scene 'Library/Unused/038daa4a26cc92043a8ce18de63fdfdc'
+	Deserialize:            1.942 ms
+	Integration:            0.859 ms
+	Integration of assets:  0.249 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   3.064 ms
+Loaded scene 'Library/Unused/2276f8636a2967247a09acffb1552c48'
+	Deserialize:            2.051 ms
+	Integration:            0.892 ms
+	Integration of assets:  0.205 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   3.167 ms
+Loaded scene 'Library/Unused/5a489580e69c02f41a3a7de945a987f7'
+	Deserialize:            1.897 ms
+	Integration:            0.459 ms
+	Integration of assets:  0.195 ms
+	Thread Wait Time:       0.016 ms
+	Total Operation Time:   2.568 ms
+Loaded scene 'Library/Unused/472987e2cfb55c64cafc2f243ef231a6'
+	Deserialize:            1.717 ms
+	Integration:            0.305 ms
+	Integration of assets:  0.301 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   2.340 ms
+Loaded scene 'Library/Unused/d0a51742ffccc1a4d9682e483ae05eb3'
+	Deserialize:            1.743 ms
+	Integration:            0.968 ms
+	Integration of assets:  0.263 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   2.987 ms
+Loaded scene 'Library/Unused/72e1b558a16e07a4fb6e4ab90effc028'
+	Deserialize:            2.172 ms
+	Integration:            0.888 ms
+	Integration of assets:  0.216 ms
+	Thread Wait Time:       0.029 ms
+	Total Operation Time:   3.304 ms
+Loaded scene 'Library/Unused/4e21702abbb32894382c622da59820f6'
+	Deserialize:            1.923 ms
+	Integration:            0.368 ms
+	Integration of assets:  0.214 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   2.526 ms
+Loaded scene 'Library/Unused/425d6f5c082b69144a0845548d175827'
+	Deserialize:            2.392 ms
+	Integration:            1.206 ms
+	Integration of assets:  0.209 ms
+	Thread Wait Time:       0.027 ms
+	Total Operation Time:   3.834 ms
+Loaded scene 'Library/Unused/0cd3acedaf050bb429a28fb5af7d9896'
+	Deserialize:            1.903 ms
+	Integration:            0.292 ms
+	Integration of assets:  0.204 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   2.417 ms
+Loaded scene 'Library/Unused/948b0f1fd70fdcc4bbe83bdc3a7ee097'
+	Deserialize:            2.628 ms
+	Integration:            0.360 ms
+	Integration of assets:  0.278 ms
+	Thread Wait Time:       0.029 ms
+	Total Operation Time:   3.295 ms
+Loaded scene 'Library/Unused/24126170e51aa5547a2b07823c183434'
+	Deserialize:            3.859 ms
+	Integration:            56.657 ms
+	Integration of assets:  0.006 ms
+	Thread Wait Time:       0.027 ms
+	Total Operation Time:   60.548 ms
+Start importing Assets/Prefabs/UI/Button_Tablet.prefab using Guid(774400632cda5b843b677951707b37d7) (PrefabImporter) -> (artifact id: '2b678cbbdc2a6d31e94ad19f068e8ed1') in 0.0115182 seconds
+Start importing Assets/Prefabs/UI/ConstructionUI.prefab using Guid(d74e274f730bcca45b57ab16184dec48) (PrefabImporter) -> (artifact id: '919865f37efa2ac7d238da711dd68e63') in 0.0501856 seconds
+Start importing Assets/Prefabs/Player.prefab using Guid(1feb3ceb66b1a334a8e6c9491bfe68a9) (PrefabImporter) -> (artifact id: '6756f2a9ac26fab35821d337f50fefa4') in 0.1481222 seconds
+Refreshing native plugins compatible for Editor in 3.75 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2e5811a3fcccec242a66878ca8595cd0): Total: 0.290 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/a31068927c2c25346a40fb7d1506e702'
+	Deserialize:            2.812 ms
+	Integration:            3.545 ms
+	Integration of assets:  0.050 ms
+	Thread Wait Time:       0.014 ms
+	Total Operation Time:   6.420 ms
+Loaded scene 'Library/Unused/f77c0c083deba3a4ba521594b6a2e4b2'
+	Deserialize:            2.931 ms
+	Integration:            1.782 ms
+	Integration of assets:  0.063 ms
+	Thread Wait Time:       0.024 ms
+	Total Operation Time:   4.801 ms
+Start importing Assets/Prefabs/UI/Button_sample.prefab using Guid(644a088161a6dd3459a45d77a1597d5d) (PrefabImporter) -> (artifact id: '87ec43d45f4c4efd1c1b7cf7087a76f5') in 0.0080333 seconds
+Start importing Assets/Prefabs/Printers/New_Cheap_3D_Printer.prefab using Guid(97850e1cfad4b1e489acc1f1cb30f77f) (PrefabImporter) -> (artifact id: '6456ff35ae23e241b5c16bcedd13ad02') in 0.0222766 seconds
+Start importing Assets/Prefabs/UI/OptionsPanel.prefab using Guid(4d6b9cae4f9c5ff4d98a7886f457c829) (PrefabImporter) -> (artifact id: 'f66a7beb7760a178b573eb687caa6916') in 0.0542523 seconds
+Refreshing native plugins compatible for Editor in 4.07 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1912cebb9cf0cbf478d26b5ec6871a4e): Total: 0.145 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/31010d8a56b1bf040aa4a4a5630d8c52'
+	Deserialize:            1.588 ms
+	Integration:            1.317 ms
+	Integration of assets:  0.336 ms
+	Thread Wait Time:       0.011 ms
+	Total Operation Time:   3.253 ms
+Loaded scene 'Library/Unused/3ba48ee4aa7366347bf16ddebfd8c0bb'
+	Deserialize:            2.629 ms
+	Integration:            0.439 ms
+	Integration of assets:  0.356 ms
+	Thread Wait Time:       0.037 ms
+	Total Operation Time:   3.461 ms
+Loaded scene 'Library/Unused/fdfee01601180594ea584c50f26b6cd1'
+	Deserialize:            1.279 ms
+	Integration:            0.682 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.025 ms
+	Total Operation Time:   1.988 ms
+Start importing Assets/Prefabs/UI/Button_sample_small.prefab using Guid(154f879b81613d047b6d9115e316d4f0) (PrefabImporter) -> (artifact id: 'd33e3b809179a8bdf74abbdc6ece5ce2') in 0.0092916 seconds
+Start importing Assets/Prefabs/UI/SlotsPanel.prefab using Guid(f12c47651b35eb64da72f0fcfabbab56) (PrefabImporter) -> (artifact id: 'c6660b81d39f1044701c6cb82e6afb8b') in 0.0248461 seconds
+Start importing Assets/Prefabs/UI/ConstructionUI.prefab using Guid(d74e274f730bcca45b57ab16184dec48) (PrefabImporter) -> (artifact id: 'c346c79b3183086eef902cf87a025bbb') in 0.0338347 seconds
+Start importing Assets/Prefabs/Player.prefab using Guid(1feb3ceb66b1a334a8e6c9491bfe68a9) (PrefabImporter) -> (artifact id: 'aaddaa92bc7551692067dabd434d4860') in 0.0793019 seconds
+Refreshing native plugins compatible for Editor in 3.82 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=85bf91b2b0cf49044b13657171b23a89): Total: 0.213 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/a678f47e9c3254a46858a8985085ff53'
+	Deserialize:            1.862 ms
+	Integration:            1.025 ms
+	Integration of assets:  0.261 ms
+	Thread Wait Time:       0.020 ms
+	Total Operation Time:   3.167 ms
+Loaded scene 'Library/Unused/b557245249cfe7f4ba4a35f05118cc51'
+	Deserialize:            3.943 ms
+	Integration:            3.140 ms
+	Integration of assets:  0.049 ms
+	Thread Wait Time:       0.024 ms
+	Total Operation Time:   7.155 ms
+Start importing Assets/Prefabs/UI/SlotRow.prefab using Guid(3a61147fd586723469916eec6ad4e1aa) (PrefabImporter) -> (artifact id: 'c9bfc7e3d0e8d4daa20f77ab7a552af6') in 0.0222756 seconds
+Refreshing native plugins compatible for Editor in 3.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2fced2856b9d9e54ca64e3eedda7f003): Total: 0.072 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/529cc40de24067c4c8357ad5cf035b50'
+	Deserialize:            2.742 ms
+	Integration:            2.083 ms
+	Integration of assets:  0.048 ms
+	Thread Wait Time:       0.024 ms
+	Total Operation Time:   4.898 ms
+Start importing Assets/Prefabs/UI/SlotRowCoop.prefab using Guid(9f93b4855cb747f4294b9b6c2b9fe680) (PrefabImporter) -> (artifact id: 'bb600fa4e13038398c4067b0dc1cefef') in 0.009365 seconds
+Refreshing native plugins compatible for Editor in 3.76 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=eb92d9eb66bc040478c4dd85aba52a03): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Loaded scene 'Library/Unused/f0ab4940a244fa34eacac3170028821b'
+	Deserialize:            0.897 ms
+	Integration:            1.504 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   2.419 ms
+Loaded scene 'Library/Unused/b3fcef5029d02aa408b9c458069ef5a1'
+	Deserialize:            2.838 ms
+	Integration:            1.358 ms
+	Integration of assets:  0.249 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   4.463 ms
+Loaded scene 'Library/Unused/96b44acca88429d4294655ae354ed6f3'
+	Deserialize:            2.975 ms
+	Integration:            0.434 ms
+	Integration of assets:  0.340 ms
+	Thread Wait Time:       0.050 ms
+	Total Operation Time:   3.799 ms
+Loaded scene 'Library/Unused/c1890c0c682930f43a272a3cafec09d4'
+	Deserialize:            3.213 ms
+	Integration:            0.252 ms
+	Integration of assets:  0.233 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   3.720 ms
+Loaded scene 'Library/Unused/042299a0470002f47b9520226edda0cf'
+	Deserialize:            2.545 ms
+	Integration:            12.962 ms
+	Integration of assets:  0.046 ms
+	Thread Wait Time:       0.022 ms
+	Total Operation Time:   15.575 ms
+Loaded scene 'Library/Unused/29e0e4a6b71fc1b42a689868b71b669c'
+	Deserialize:            11.001 ms
+	Integration:            15.770 ms
+	Integration of assets:  0.040 ms
+	Thread Wait Time:       0.023 ms
+	Total Operation Time:   26.835 ms
+Loaded scene 'Library/Unused/7b66b397d969d3e43a7af75f98c0deac'
+	Deserialize:            14.327 ms
+	Integration:            17.014 ms
+	Integration of assets:  0.005 ms
+	Thread Wait Time:       0.028 ms
+	Total Operation Time:   31.375 ms
+Loaded scene 'Library/Unused/745b478a2a51e5142bf67187aa671e76'
+	Deserialize:            6.216 ms
+	Integration:            5.936 ms
+	Integration of assets:  0.539 ms
+	Thread Wait Time:       0.033 ms
+	Total Operation Time:   12.724 ms
+Loaded scene 'Library/Unused/a6d56fe151cfd6c46ba729730d448ef7'
+	Deserialize:            23.035 ms
+	Integration:            213.212 ms
+	Integration of assets:  0.939 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   237.198 ms
+Opening scene 'Assets/Scenes/01_MainMenu.unity'
+Unloading 68 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/01_MainMenu.unity'
+	Deserialize:            20.133 ms
+	Integration:            542.804 ms
+	Integration of assets:  1.847 ms
+	Thread Wait Time:       0.075 ms
+	Total Operation Time:   564.859 ms
+Unloading 2279 unused Assets / (22.7 MB). Loaded Objects now: 9345.
+Memory consumption went from 239.9 MB to 217.2 MB.
+Total: 21.801500 ms (FindLiveObjects: 0.962200 ms CreateObjectMapping: 1.063800 ms MarkObjects: 16.929600 ms  DeleteObjects: 2.843800 ms)
+
+Opening scene 'Assets/Scenes/10_World_City.unity'
+Unloading 157 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/10_World_City.unity'
+	Deserialize:            134.290 ms
+	Integration:            413.542 ms
+	Integration of assets:  26.324 ms
+	Thread Wait Time:       0.036 ms
+	Total Operation Time:   574.192 ms
+Unloading 10 unused Assets / (29.3 KB). Loaded Objects now: 12671.
+Memory consumption went from 279.6 MB to 279.6 MB.
+Total: 15.474700 ms (FindLiveObjects: 0.843400 ms CreateObjectMapping: 0.714800 ms MarkObjects: 13.724000 ms  DeleteObjects: 0.191200 ms)
+
+Start importing Assets/Audio/UI/Resources/UIButtonSounds.asset using Guid(95891f31ff878214caf25e604e75da4d) (NativeFormatImporter) -> (artifact id: '3c759698264a0e16a0f19fa9556b259d') in 0.0045364 seconds
+Refreshing native plugins compatible for Editor in 4.24 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9d0e124519de38e47b52c2bae869536a): Total: 0.058 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+UI_BUTTON_AUDIO_SETUP_OK added=7 backup=Documentation/UIButtonAudioBackup/20261106_083613
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:59)
+
+(Filename: Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs Line: 59)
+
+UI_AUDIO_PASS UI_Appear_Whoosh duration=0,28 peak=0,7999573
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UIButtonAudioSetup:Validate () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:111)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs Line: 111)
+
+UI_AUDIO_PASS UI_Hover_Cylinder duration=0,1449792 peak=0,7999573
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UIButtonAudioSetup:Validate () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:111)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs Line: 111)
+
+UI_AUDIO_PASS UI_Click_SoftShot duration=0,105 peak=0,7999573
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UIButtonAudioSetup:Validate () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:111)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs Line: 111)
+
+Opening scene 'Assets/Scenes/01_MainMenu.unity'
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/01_MainMenu.unity'
+	Deserialize:            6.938 ms
+	Integration:            254.274 ms
+	Integration of assets:  0.311 ms
+	Thread Wait Time:       0.029 ms
+	Total Operation Time:   261.551 ms
+Unloading 2426 unused Assets / (47.7 MB). Loaded Objects now: 9343.
+Memory consumption went from 270.5 MB to 222.8 MB.
+Total: 27.970500 ms (FindLiveObjects: 0.872400 ms CreateObjectMapping: 0.604900 ms MarkObjects: 12.348500 ms  DeleteObjects: 14.143600 ms)
+
+Opening scene 'Assets/Scenes/10_World_City.unity'
+Unloading 155 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/10_World_City.unity'
+	Deserialize:            103.781 ms
+	Integration:            450.702 ms
+	Integration of assets:  30.966 ms
+	Thread Wait Time:       0.055 ms
+	Total Operation Time:   585.503 ms
+Unloading 10 unused Assets / (29.4 KB). Loaded Objects now: 12667.
+Memory consumption went from 279.2 MB to 279.2 MB.
+Total: 17.109700 ms (FindLiveObjects: 0.985900 ms CreateObjectMapping: 0.578200 ms MarkObjects: 15.415300 ms  DeleteObjects: 0.128600 ms)
+
+UI_BUTTON_AUDIO_VALIDATION_OK
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UIButtonAudioSetup:Validate () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:119)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs Line: 119)
+
+Unloading 67 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3194 unused Assets / (55.3 MB). Loaded Objects now: 7631.
+Memory consumption went from 271.0 MB to 215.7 MB.
+Total: 18.458200 ms (FindLiveObjects: 0.693800 ms CreateObjectMapping: 0.757400 ms MarkObjects: 14.032400 ms  DeleteObjects: 2.972200 ms)
+
+PENCIL_PASS SlotRow: serialized Pencil reference
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SlotPencilValidation:<Run>g__Check|0_0 (bool,string,SlotPencilValidation/<>c__DisplayClass0_0&) (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:17)
+SlotPencilValidation:Run () (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:26)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs Line: 17)
+
+PENCIL_PASS SlotRow: label is inside the input so caret and selection render correctly
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SlotPencilValidation:<Run>g__Check|0_0 (bool,string,SlotPencilValidation/<>c__DisplayClass0_0&) (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:17)
+SlotPencilValidation:Run () (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:32)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs Line: 17)
+
+PENCIL_PASS SlotRow: inspector editing palette and select-all configured
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SlotPencilValidation:<Run>g__Check|0_0 (bool,string,SlotPencilValidation/<>c__DisplayClass0_0&) (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:17)
+SlotPencilValidation:Run () (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:33)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs Line: 17)
+
+PENCIL_PASS SlotRow: name is not editable by clicking text
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SlotPencilValidation:<Run>g__Check|0_0 (bool,string,SlotPencilValidation/<>c__DisplayClass0_0&) (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:17)
+SlotPencilValidation:Run () (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:34)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs Line: 17)
+
+PENCIL_PASS SlotRow: retains twenty-character limit
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SlotPencilValidation:<Run>g__Check|0_0 (bool,string,SlotPencilValidation/<>c__DisplayClass0_0&) (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:17)
+SlotPencilValidation:Run () (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:35)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs Line: 17)
+
+PENCIL_PASS SlotRow: double click does not start editing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SlotPencilValidation:<Run>g__Check|0_0 (bool,string,SlotPencilValidation/<>c__DisplayClass0_0&) (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:17)
+SlotPencilValidation:Run () (at Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs:37)
+UIButtonAudioSetup:Apply () (at Assets/Scripts/UI/Tools/UIButtonAudioSetup.cs:60)
+
+(Filename: Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs Line: 17)
+
+Exception: SlotRow: name underlined while editing
+  at SlotPencilValidation.<Run>g__Check|0_0 (System.Boolean condition, System.String message, SlotPencilValidation+<>c__DisplayClass0_0& ) [0x0002a] in C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Assets\Scripts\UI\Tools\Validation\SlotPencilValidation.cs:17 
+  at SlotPencilValidation.Run () [0x002ab] in C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Assets\Scripts\UI\Tools\Validation\SlotPencilValidation.cs:40 
+  at UIButtonAudioSetup.Apply () [0x00348] in C:\Users\adm_mgarciajavier\Documents\Unity projects\Criminal-Game\Assets\Scripts\UI\Tools\UIButtonAudioSetup.cs:60 
+
+(Filename: Assets/Scripts/UI/Tools/Validation/SlotPencilValidation.cs Line: 17)
+
+executeMethod method UIButtonAudioSetup.Apply threw exception.
+Exiting without the bug reporter. Application will terminate with return code 1

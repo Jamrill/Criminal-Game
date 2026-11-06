@@ -21,7 +21,9 @@ namespace JuegoCriminal.Core
         Construction,
         BuildRotate,
         BuildDemolish,
-        BuildDistance
+        BuildDistance,
+        BuildCancel,
+        BuildOrBuy
     }
 
     public static class GameInput
@@ -43,10 +45,11 @@ namespace JuegoCriminal.Core
         public static Vector2 Look => ReadVector2(GameInputAction.Look);
         public static float CameraZoom => JuegoCriminal.Construction.ConstructionController.Active ? 0 : ReadVector2(GameInputAction.CameraZoom).y;
         public static bool TabletPressed => WasPressedThisFrame(GameInputAction.Construction);
-        public static bool ConstructionPressed => TabletPressed;
+        public static bool ConstructionPressed => WasPressedThisFrame(GameInputAction.BuildOrBuy);
         public static float BuildDistance => ReadVector2(GameInputAction.BuildDistance).y;
         public static bool BuildRotatePressed => WasPressedThisFrame(GameInputAction.BuildRotate);
         public static bool BuildDemolishPressed => WasPressedThisFrame(GameInputAction.BuildDemolish);
+        public static bool BuildCancelPressed => WasPressedThisFrame(GameInputAction.BuildCancel);
 
         public static bool JumpPressed => WasPressedThisFrame(GameInputAction.Jump);
         public static bool SprintHeld => IsPressed(GameInputAction.Sprint);
@@ -130,7 +133,17 @@ namespace JuegoCriminal.Core
             if (inputAction == null || bindingIndex < 0 || bindingIndex >= inputAction.bindings.Count)
                 return string.Empty;
 
-            return inputAction.GetBindingDisplayString(bindingIndex);
+            string path=inputAction.bindings[bindingIndex].effectivePath;
+            return path switch
+            {
+                "<Mouse>/rightButton"=>JuegoCriminal.Localization.GameLanguage.T("Right click","Clic derecho"),
+                "<Mouse>/leftButton"=>JuegoCriminal.Localization.GameLanguage.T("Left click","Clic izquierdo"),
+                "<Mouse>/scroll"=>JuegoCriminal.Localization.GameLanguage.T("Mouse wheel","Rueda del ratón"),
+                "<Keyboard>/space"=>JuegoCriminal.Localization.GameLanguage.T("Space","Espacio"),
+                "<Keyboard>/leftShift"=>JuegoCriminal.Localization.GameLanguage.T("Left Shift","Mayús. izquierda"),
+                "<Keyboard>/rightShift"=>JuegoCriminal.Localization.GameLanguage.T("Right Shift","Mayús. derecha"),
+                _=>inputAction.GetBindingDisplayString(bindingIndex)
+            };
         }
 
         public static InputActionRebindingExtensions.RebindingOperation StartInteractiveRebind(
@@ -242,6 +255,8 @@ namespace JuegoCriminal.Core
                 GameInputAction.BuildRotate => ("Player", "BuildRotate"),
                 GameInputAction.BuildDemolish => ("Player", "BuildDemolish"),
                 GameInputAction.BuildDistance => ("Player", "BuildDistance"),
+                GameInputAction.BuildCancel => ("Player", "BuildCancel"),
+                GameInputAction.BuildOrBuy => ("Player", "BuildOrBuy"),
                 _ => throw new ArgumentOutOfRangeException(nameof(action), action, null)
             };
         }

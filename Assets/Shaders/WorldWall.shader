@@ -6,7 +6,8 @@ Shader "CriminalGame/World Wall"
         _BaseColor("Tint",Color)=(1,1,1,1)
         _MetersPerRepeat("World metres per repeat",Float)=4
         _Smoothness("Smoothness",Range(0,1))=.15
-        _ShadowReceiverInset("Wall shadow contact offset (metres)",Range(0,.1))=0
+        _ShadowReceiverInset("Minimum wall shadow contact offset (metres)",Range(0,.1))=0
+        _ShadowContactTexels("Wall shadow contact (shadow texels)",Range(0,4))=0
     }
     SubShader
     {
@@ -34,6 +35,7 @@ Shader "CriminalGame/World Wall"
                 float _MetersPerRepeat;
                 half _Smoothness;
                 float _ShadowReceiverInset;
+                float _ShadowContactTexels;
             CBUFFER_END
             struct Attributes { float4 positionOS:POSITION; float3 normalOS:NORMAL; };
             struct Varyings { float4 positionCS:SV_POSITION; float3 positionWS:TEXCOORD0; half3 normalWS:TEXCOORD1; half fog:TEXCOORD2; };
@@ -58,7 +60,20 @@ Shader "CriminalGame/World Wall"
                 // offset here would sample beneath the floor and create a dark strip.
                 float baseY=GetObjectToWorldMatrix()._m13;
                 float heightAboveBase=max(0,i.positionWS.y-baseY);
-                float safeOffset=min(_ShadowReceiverInset,max(0,heightAboveBase-.025));
+                float contactOffset=_ShadowReceiverInset;
+                #if defined(MAIN_LIGHT_CALCULATE_SHADOWS) && !defined(_MAIN_LIGHT_SHADOWS_SCREEN)
+                    // A fixed world-space offset covers the near cascade but not
+                    // the larger shadow texels seen across a whole plot. Measure
+                    // vertical displacement in the active cascade's texel space.
+                    uint contactCascade=0;
+                    #if defined(_MAIN_LIGHT_SHADOWS_CASCADE)
+                        contactCascade=min((uint)ComputeCascadeIndex(i.positionWS),3u);
+                    #endif
+                    float2 verticalUV=float2(_MainLightWorldToShadow[contactCascade][0].y,_MainLightWorldToShadow[contactCascade][1].y);
+                    float texelsPerMetre=length(verticalUV*_MainLightShadowmapSize.zw);
+                    contactOffset=max(contactOffset,min(.5,_ShadowContactTexels/max(texelsPerMetre,.001)));
+                #endif
+                float safeOffset=min(contactOffset,max(0,heightAboveBase-.025));
                 safeOffset*=smoothstep(.025,.2,heightAboveBase);
                 float3 shadowPosition=i.positionWS-float3(0,safeOffset*(1-abs(n.y)),0);
                 #if defined(_MAIN_LIGHT_SHADOWS_SCREEN)

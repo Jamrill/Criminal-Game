@@ -4,6 +4,7 @@ namespace JuegoCriminal.Construction
 {
     public enum BuildCategory { Walls, Furniture }
     public enum BuildMount { Ground, Doorway, Ceiling }
+    [Flags] public enum BuildAccessSides { None=0, Front=1, Back=2, Left=4, Right=8 }
     [Serializable] public sealed class BuildEntry
     {
         public string id;
@@ -18,6 +19,8 @@ namespace JuegoCriminal.Construction
         public Vector2Int footprintCells=Vector2Int.one;
         [Tooltip("Front arrow yaw in the imported prefab's local space. 0 = +Z, 90 = +X, 180 = -Z. Does not rotate or move the model.")]
         public float guideFrontYaw;
+        [Tooltip("Access arrows relative to Guide Front Yaw. Select Front and Back for furniture accessible from both long sides.")]
+        public BuildAccessSides guideAccessSides=BuildAccessSides.Front;
         [Tooltip("Hueco disponible en el marco de colocacion del prefab; solo paredes con hueco de puerta.")]
         public Bounds doorway;
         public bool IsOpening => prefab && (prefab.name.StartsWith("Wall_door_hole",StringComparison.OrdinalIgnoreCase) || prefab.name.StartsWith("Window_Wall",StringComparison.OrdinalIgnoreCase));

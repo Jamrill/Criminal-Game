@@ -47,7 +47,7 @@ namespace JuegoCriminal.Construction
             root.transform.localScale=scale;
             Clone(prefab.transform,root.transform);
             var preview=new MeshPreview(root);
-            preview.SetMaterial(material);
+            if(material)preview.SetMaterial(material);
             root.SetActive(true);
             return preview;
         }
@@ -73,7 +73,8 @@ namespace JuegoCriminal.Construction
             if(mesh && mesh.sharedMesh)
             {
                 target.gameObject.AddComponent<MeshFilter>().sharedMesh=mesh.sharedMesh;
-                target.gameObject.AddComponent<MeshRenderer>().shadowCastingMode=ShadowCastingMode.Off;
+                var renderer=target.gameObject.AddComponent<MeshRenderer>();renderer.shadowCastingMode=ShadowCastingMode.Off;
+                if(sourceRenderer)renderer.sharedMaterials=sourceRenderer.sharedMaterials;
             }
             foreach(Transform child in source)
             {

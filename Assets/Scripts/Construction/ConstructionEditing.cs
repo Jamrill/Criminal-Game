@@ -11,15 +11,16 @@ namespace JuegoCriminal.Construction
         readonly Dictionary<Renderer,Material[]> highlighted=new();
         readonly Dictionary<Renderer,bool> visibility=new();
         readonly WallChangePreview preview=new();
+        readonly WallChangePreview removedSectionPreview=new();
         readonly StairChangePreview stairPreview=new();
         public void Clear()
         {
             foreach(var pair in highlighted)if(pair.Key)pair.Key.sharedMaterials=pair.Value;
             highlighted.Clear();
             foreach(var pair in visibility)if(pair.Key)pair.Key.enabled=pair.Value;
-            visibility.Clear();preview.Hide();stairPreview.Hide();
+            visibility.Clear();preview.Hide();removedSectionPreview.Hide();stairPreview.Hide();
         }
-        public void Dispose(){Clear();preview.Dispose();stairPreview.Dispose();}
+        public void Dispose(){Clear();preview.Dispose();removedSectionPreview.Dispose();stairPreview.Dispose();}
         public void ShowStairPlan(StairBuildPlan plan,BuildCatalog catalog,Material green,Material red)
         {
             stairPreview.Show(plan,catalog,green,red);
@@ -107,6 +108,17 @@ namespace JuegoCriminal.Construction
             var old=catalog.Find(target.definitionId);
             if(old==null)return hint;
             if(!replacing && target.ProtectedFloor && !FloorEditing.CanRemove(target))return FloorEditing.RemovalWarning;
+            if(!replacing && WallGeometry.World(target.GetComponent<WallTopology>()).Count>1)
+            {
+                var plan=WallReconfiguration.Removal(catalog,plot,target,aim,out var section);
+                if(!WallReconfiguration.Validate(plan,catalog,out var reason))return reason;
+                ShowPlan(plan,catalog,null);
+                var redPlan=new WallChangePlan{plot=plot};redPlan.added.Add(section);
+                removedSectionPreview.Show(redPlan,catalog,red);
+                int refund=-plan.Difference(catalog);
+                if(click){Clear();if(!WallReconfiguration.Apply(plan,catalog,economy,out reason))return reason;}
+                return T("Red: remove this section | Refund: ${0}","Rojo: borrar este tramo | Reembolso: ${0}",refund);
+            }
             int difference=replacing ? catalog.Cost(opening)-catalog.Cost(old) : -catalog.Cost(old);
             bool affordable=economy && (difference<=0 || economy.CanAfford(difference));
             if(replacing)

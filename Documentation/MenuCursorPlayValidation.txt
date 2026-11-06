@@ -1,0 +1,28 @@
+PASS cycle=1 Real boot reaches MainMenu
+PASS cycle=1 Initial menu cursor is visible and unlocked
+PASS cycle=1 Menu repairs a stale hidden/locked cursor on next frame
+PASS cycle=1 Regaining menu focus restores cursor
+PASS cycle=1 Player Start does not capture cursor from menu
+PASS cycle=1 Boot explicitly releases cursor
+PASS cycle=1 Loading explicitly releases cursor
+PASS cycle=1 Menu explicitly releases cursor
+NOTE Headless editor does not grant a physical cursor lock; world lock requires interactive verification.
+PASS cycle=1 World-ready transition hides cursor (lock=None)
+PASS cycle=1 Menu code does not override world cursor
+PASS cycle=1 Late player Start preserves overlay cursor in world
+PASS cycle=1 Returning to menu leaves cursor visible and unlocked
+PASS cycle=1 No save slot loaded or created
+PASS cycle=2 Real boot reaches MainMenu
+PASS cycle=2 Initial menu cursor is visible and unlocked
+PASS cycle=2 Menu repairs a stale hidden/locked cursor on next frame
+PASS cycle=2 Regaining menu focus restores cursor
+PASS cycle=2 Player Start does not capture cursor from menu
+PASS cycle=2 Boot explicitly releases cursor
+PASS cycle=2 Loading explicitly releases cursor
+PASS cycle=2 Menu explicitly releases cursor
+NOTE Headless editor does not grant a physical cursor lock; world lock requires interactive verification.
+PASS cycle=2 World-ready transition hides cursor (lock=None)
+PASS cycle=2 Menu code does not override world cursor
+PASS cycle=2 Late player Start preserves overlay cursor in world
+PASS cycle=2 Returning to menu leaves cursor visible and unlocked
+PASS cycle=2 No save slot loaded or created

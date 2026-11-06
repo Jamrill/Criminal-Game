@@ -1,0 +1,13 @@
+PASS Controller Start keeps docked tablet alive
+PASS Live unowned property shows B Comprar
+PASS Readout follows the game clock
+PASS Context handler requests opening immediately
+PASS Animated tablet reaches screen centre: open=True position=(0.00, 0.00) alpha=1
+PASS Context action opens matching property without charging
+PASS Runtime confirmation buys once
+PASS Purchased property enters construction through context handler
+PASS Closed tablet cannot intercept construction clicks
+PASS Owned property shows B Construir after exit
+PASS Context prompt and docked data update language live
+PASS Outside a property there is no buy/build prompt
+PASS Three docked data fields remain visible outside properties

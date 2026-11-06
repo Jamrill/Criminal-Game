@@ -11,7 +11,37 @@
     "printers": [],
     "buildings": [
         {
-            "id": "76026c054cfb4d8687ab563fd680b5ab",
+            "id": "f73f72e884ec4e9294ebc8d2e3b458eb",
+            "definitionId": "a18105208714efd438e17be7d2d0bc64",
+            "sceneName": "",
+            "propertyId": 881,
+            "finish": 0,
+            "deleted": false,
+            "position": {
+                "x": 4.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": -0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "scale": {
+                "x": 1.000000238418579,
+                "y": 1.0,
+                "z": 1.000000238418579
+            },
+            "cellCenter": {
+                "x": 4.0,
+                "y": 0.0,
+                "z": 1.9999998807907105
+            },
+            "floorTriangles": []
+        },
+        {
+            "id": "310ea655d40c4dfd913e90e2ddaa5229",
             "definitionId": "646161ef561b93c4e895b13fc557dca2",
             "sceneName": "",
             "propertyId": 881,
@@ -41,7 +71,7 @@
             "floorTriangles": []
         },
         {
-            "id": "7cdfa10bbf954e0d9ccc44b32aafb60c",
+            "id": "730e593ee8b14cceb0fa91887b2269a5",
             "definitionId": "503a480c185e59340b02ae885887e4ab",
             "sceneName": "",
             "propertyId": 881,
@@ -67,36 +97,6 @@
                 "x": 1.9999992847442628,
                 "y": 0.0,
                 "z": 8.901013188733486e-7
-            },
-            "floorTriangles": []
-        },
-        {
-            "id": "e5fbe215ff594c9e8e8c62b03dc6f41e",
-            "definitionId": "a18105208714efd438e17be7d2d0bc64",
-            "sceneName": "",
-            "propertyId": 881,
-            "finish": 0,
-            "deleted": false,
-            "position": {
-                "x": 4.0,
-                "y": 0.0,
-                "z": 0.0
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": -0.7071068286895752,
-                "z": 0.0,
-                "w": 0.7071068286895752
-            },
-            "scale": {
-                "x": 1.000000238418579,
-                "y": 1.0,
-                "z": 1.000000238418579
-            },
-            "cellCenter": {
-                "x": 4.0,
-                "y": 0.0,
-                "z": 1.9999998807907105
             },
             "floorTriangles": []
         },
@@ -131,7 +131,7 @@
             "floorTriangles": []
         },
         {
-            "id": "9e86da15400245d99743fe4a59f13855",
+            "id": "62d4175e03d34834abcc70f7f9e32c69",
             "definitionId": "df5a3bf947a2f4b4ea327b50d1351d65",
             "sceneName": "",
             "propertyId": 881,
@@ -161,7 +161,7 @@
             "floorTriangles": []
         },
         {
-            "id": "bfbc954d0e2f40eb80fe7d4c22feb028",
+            "id": "8a2eaa9dd1d947519a199fe422d870f6",
             "definitionId": "8fb093df2ca49ef44b97c736bf909d95",
             "sceneName": "",
             "propertyId": 881,

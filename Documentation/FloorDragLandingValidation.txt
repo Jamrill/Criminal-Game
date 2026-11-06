@@ -1,0 +1,100 @@
+PASS Rectangle 1x1 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 1x2 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 1x5 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 2x1 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 2x2 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 2x5 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 3x1 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 3x2 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 3x5 direction -1
+PASS Authored floor datum remains 7
+PASS Rectangle 1x1 direction 1
+PASS Authored floor datum remains 7
+PASS Rectangle 1x2 direction 1
+PASS Authored floor datum remains 7
+PASS Rectangle 1x5 direction 1
+PASS Authored floor datum remains 7
+PASS Rectangle 2x1 direction 1
+PASS Authored floor datum remains 7
+PASS Rectangle 2x2 direction 1
+PASS Authored floor datum remains 7
+PASS Rectangle 2x5 direction 1
+PASS Authored floor datum remains 7
+PASS Rectangle 3x1 direction 1
+PASS Authored floor datum remains 7
+PASS Rectangle 3x2 direction 1
+PASS Authored floor datum remains 7
+PASS Rectangle 3x5 direction 1
+PASS Authored floor datum remains 7
+PASS Retract 3x3 to 2x2 to 1x1
+PASS Planning is non-mutating
+PASS One payment builds all nine tiles
+PASS Aiming at existing upper floor reuses its pivot without centimetre drift
+PASS Existing tiles skipped and not charged
+PASS Existing first cell can be a drag anchor without duplicate purchase
+PASS Upper floor sold
+PASS Explicit construction restores intentionally deleted tile
+PASS Insufficient funds never builds a partial rectangle
+PASS Physical obstruction is still rejected
+PASS Outside-plot rectangle rejected
+PASS Oversized rectangle bounded safely
+PASS Embedded upper floors of revised prefab are recognised, yaw=0
+PASS New staircase after sold neighbour, yaw=0: 
+PASS Full required landing despite old tombstone, yaw=0
+PASS Updated prefab builds with complete exit, yaw=0
+PASS Actual live landing coverage, yaw=0
+PASS Exit has real supporting collider, yaw=0
+PASS Manual extension from landing is valid, yaw=0
+PASS Floor extension never seals active stair hole, yaw=0
+PASS Updated staircase can be sold, yaw=0
+PASS Rebuild after sale retains a usable landing, yaw=0
+PASS Rebuilt exit complete, yaw=0
+PASS Embedded upper floors of revised prefab are recognised, yaw=90
+PASS New staircase after sold neighbour, yaw=90: 
+PASS Full required landing despite old tombstone, yaw=90
+PASS Updated prefab builds with complete exit, yaw=90
+PASS Actual live landing coverage, yaw=90
+PASS Exit has real supporting collider, yaw=90
+PASS Manual extension from landing is valid, yaw=90
+PASS Floor extension never seals active stair hole, yaw=90
+PASS Updated staircase can be sold, yaw=90
+PASS Rebuild after sale retains a usable landing, yaw=90
+PASS Rebuilt exit complete, yaw=90
+PASS Embedded upper floors of revised prefab are recognised, yaw=180
+PASS New staircase after sold neighbour, yaw=180: 
+PASS Full required landing despite old tombstone, yaw=180
+PASS Updated prefab builds with complete exit, yaw=180
+PASS Actual live landing coverage, yaw=180
+PASS Exit has real supporting collider, yaw=180
+PASS Manual extension from landing is valid, yaw=180
+PASS Floor extension never seals active stair hole, yaw=180
+PASS Updated staircase can be sold, yaw=180
+PASS Rebuild after sale retains a usable landing, yaw=180
+PASS Rebuilt exit complete, yaw=180
+PASS Embedded upper floors of revised prefab are recognised, yaw=270
+PASS New staircase after sold neighbour, yaw=270: 
+PASS Full required landing despite old tombstone, yaw=270
+PASS Updated prefab builds with complete exit, yaw=270
+PASS Actual live landing coverage, yaw=270
+PASS Exit has real supporting collider, yaw=270
+PASS Manual extension from landing is valid, yaw=270
+PASS Floor extension never seals active stair hole, yaw=270
+PASS Updated staircase can be sold, yaw=270
+PASS Rebuild after sale retains a usable landing, yaw=270
+PASS Rebuilt exit complete, yaw=270
+PASS Legacy prefab exit repaired despite sold-stair AND sold-floor history
+PASS Missing legacy landing is explicitly included in paid additions
+PASS Controller rectangle previews resize without colliders: 1
+PASS Controller rectangle previews resize without colliders: 2
+PASS Controller rectangle previews resize without colliders: 3
+PASS Controller rectangle previews resize without colliders: 2
+PASS Controller rectangle previews resize without colliders: 1
+PASS Right-click cancellation path clears previews without charging or building

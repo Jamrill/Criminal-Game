@@ -15,6 +15,10 @@ using Object=UnityEngine.Object;
 public static class LargeRoomShadowDistanceValidation
 {
     public static void Run()
+        =>RunChecks(false);
+    public static void CornerSeams()=>RunChecks(true);
+    public static void CornerSeamsFinal(){RunChecks(true,true);WallBaseShadowValidation.Run();}
+    static void RunChecks(bool seams,bool verify=false)
     {
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         var wall=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Construction/Incompletes/Wall_incomplete.prefab");
@@ -30,7 +34,7 @@ public static class LargeRoomShadowDistanceValidation
         sun.shadowBias=.01f;sun.shadowNormalBias=.02f;sun.shadowNearPlane=.01f;
         sun.gameObject.AddComponent<UniversalAdditionalLightData>().usePipelineSettings=false;
         RenderSettings.sun=sun;RenderSettings.ambientMode=AmbientMode.Flat;RenderSettings.ambientLight=new Color(.04f,.04f,.04f);RenderSettings.reflectionIntensity=0;RenderSettings.fog=false;RenderSettings.skybox=null;
-        var report=new List<string>();string dir="Documentation/LargeRoomShadowDistance";Directory.CreateDirectory(dir);
+        var report=new List<string>();string dir=seams?"Documentation/CornerSeamDiagnosis":"Documentation/LargeRoomShadowDistance";Directory.CreateDirectory(dir);
         Texture2D Capture(string name)
         {
             camera.Render();camera.Render();
@@ -58,6 +62,44 @@ public static class LargeRoomShadowDistanceValidation
             }
             var corners=new[]{new Vector3(474,104,487),new Vector3(514,104,487),new Vector3(514,104,527),new Vector3(474,104,527)};
             float oldTotal=0,newTotal=0;
+            if(seams)
+            {
+                sun.shadowBias=0;sun.shadowNormalBias=0;sun.shadowNearPlane=.1f;
+                var splits=pipeline.cascade4Split;
+                var wallMaterials=new List<Material>();
+                foreach(var renderer in Object.FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None))
+                    if(renderer.GetComponentInParent<WallTopology>())
+                    {
+                        var copies=renderer.sharedMaterials.Select(m=>Object.Instantiate(m)).ToArray();
+                        wallMaterials.AddRange(copies);renderer.sharedMaterials=copies;
+                    }
+                float before=0,after=0;
+                for(int corner=0;corner<4;corner++)foreach(float elevation in new[]{10f,35f,60f})foreach(float yaw in verify?new[]{-25f,0f,25f}:new[]{0f})
+                {
+                    camera.transform.position=corners[corner];camera.transform.LookAt(corners[(corner+2)%4]+Vector3.up*2);
+                    camera.transform.Rotate(0,yaw,0,Space.World);
+                    sun.transform.rotation=Quaternion.Euler(elevation,corner*90,0);
+                    sun.enabled=false;var baseline=Capture($"c{corner}_e{elevation}_yaw{yaw}_off");sun.enabled=true;
+                    foreach(int mode in verify?new[]{0,4}:new[]{0,1,2,3,4,5,6})
+                    {
+                        foreach(var material in wallMaterials)if(material.HasProperty("_ShadowReceiverInset"))material.SetFloat("_ShadowReceiverInset",mode==4?AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Wall_Building.mat").GetFloat("_ShadowReceiverInset"):mode==5?.2f:mode==6?.3f:.05f);
+                        foreach(var material in wallMaterials)if(material.HasProperty("_ShadowContactTexels"))material.SetFloat("_ShadowContactTexels",mode==4?AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Wall_Building.mat").GetFloat("_ShadowContactTexels"):0);
+                        pipeline.shadowDistance=mode==1?150:100;
+                        pipeline.cascade4Split=mode==2?new Vector3(.1f,.3f,.6f):splits;
+                        sun.shadowNearPlane=mode==3?5:.1f;
+                        var image=Capture($"c{corner}_e{elevation}_yaw{yaw}_mode{mode}");float excess=0;int bright=0;
+                        for(int y=15;y<345;y++)for(int x=15;x<625;x++)
+                        {float delta=Mathf.Max(0,image.GetPixel(x,y).grayscale-baseline.GetPixel(x,y).grayscale);excess+=delta;if(delta>.08f)bright++;}
+                        report.Add($"corner={corner} elevation={elevation} yaw={yaw} mode={mode} excess={excess:F4} bright={bright}");Object.DestroyImmediate(image);
+                        if(mode==0)before+=excess;if(mode==4)after+=excess;
+                    }
+                    Object.DestroyImmediate(baseline);
+                }
+                foreach(var material in wallMaterials)Object.DestroyImmediate(material);
+                File.WriteAllLines(dir+(verify?"/FinalMeasurements.txt":"/Measurements.txt"),report);
+                if(verify && (before<1 || after>before*.1f))throw new Exception($"Contact correction regression: before={before} after={after}");
+                Debug.Log($"CORNER_SEAMS_OK before={before} after={after}");return;
+            }
             for(int corner=0;corner<4;corner++)
             {
                 camera.transform.position=corners[corner];camera.transform.LookAt(corners[(corner+2)%4]);

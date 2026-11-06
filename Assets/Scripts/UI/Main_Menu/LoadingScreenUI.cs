@@ -63,7 +63,15 @@ namespace JuegoCriminal.UI
                 gameObject.SetActive(true);
 
             if (loadingText != null)
-                loadingText.text = string.IsNullOrWhiteSpace(text) ? defaultLoadingText : text;
+            {
+                if(string.IsNullOrWhiteSpace(text))JuegoCriminal.Localization.LocalizedText.Bind(loadingText,defaultLoadingText,"Cargando...");
+                else
+                {
+                    var binding=loadingText.GetComponent<JuegoCriminal.Localization.LocalizedText>();
+                    if(binding)binding.enabled=false;
+                    loadingText.text=text;
+                }
+            }
 
             StartIconAnimation();
         }

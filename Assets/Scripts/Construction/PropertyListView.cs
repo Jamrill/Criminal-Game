@@ -12,6 +12,7 @@ namespace JuegoCriminal.Construction
     {
         public Transform content;
         public TMP_Text message;
+        public JuegoCriminal.UI.TabletView tablet;
         private PropertyService properties;
         private EconomyService economy;
         private BuildPlot[] plots = Array.Empty<BuildPlot>();
@@ -33,22 +34,23 @@ namespace JuegoCriminal.Construction
                 plots=current; rows=new Button[plots.Length]; labels=new TMP_Text[plots.Length];
                 for (int i=0;i<plots.Length;i++)
                 {
-                    var target=plots[i]; rows[i]=BuildMenuView.Button(target.DisplayName,content);
+                    var target=plots[i]; rows[i]=tablet?JuegoCriminal.UI.TabletLayout.CreateButton(content,"Property_"+target.propertyId,target.DisplayName,target.DisplayName,Vector2.zero,new Vector2(235,70),tablet.buttonTemplate):BuildMenuView.Button(target.DisplayName,content);
                     labels[i]=rows[i].GetComponentInChildren<TMP_Text>(); labels[i].fontSize=18;
                     rows[i].GetComponent<LayoutElement>().preferredHeight=70;
-                    rows[i].onClick.AddListener(()=>Buy(target));
+                    rows[i].onClick.AddListener(()=>{if(tablet)tablet.SelectProperty(target);else Buy(target);});
                 }
             }
-            message.text=plots.Length==0 ? T("No plots available in this scene.","No hay solares disponibles en esta escena.") : T("Balance: ${0} | Select a plot to buy it","Saldo: ${0} | Selecciona un solar para comprarlo",economy ? economy.Money : 0);
+            message.text=plots.Length==0 ? T("No properties available","No hay propiedades") : tablet?T("Select a property","Selecciona un inmueble"):T("Balance: ${0} | Select a plot to buy it","Saldo: ${0} | Selecciona un solar para comprarlo",economy ? economy.Money : 0);
             for (int i=0;i<plots.Length;i++)
             {
                 var p=plots[i]; bool owned=properties && properties.IsOwned(p.propertyId);
                 bool valid=p.propertyId>=0 && p.price>=0 && plots.Count(other=>other.propertyId==p.propertyId)==1;
                 int value=p.TotalValue;
                 bool affordable=economy && economy.CanAfford(value);
-                rows[i].interactable=valid && !owned && affordable && properties;
+                rows[i].interactable=tablet?valid:valid && !owned && affordable && properties;
                 string state=!valid ? T("Check ID/price in Inspector","Revisar ID/precio en Inspector") : owned ? T("Owned","En propiedad") : affordable ? T("Buy","Comprar") : T("Insufficient funds","Saldo insuficiente");
-                labels[i].text=p.DisplayName+T(" | Value: ${0}\n"," | Valor: ${0}\n",value)+state+(p.buildable ? "" : T(" (not buildable)"," (no construible)"));
+                labels[i].text=tablet?p.DisplayName+"\n"+T("${0:N0} · {1}","${0:N0} · {1}",value,owned?T("Owned","En propiedad"):T("For sale","En venta")):
+                    p.DisplayName+T(" | Value: ${0}\n"," | Valor: ${0}\n",value)+state+(p.buildable ? "" : T(" (not buildable)"," (no construible)"));
             }
         }
         private void Buy(BuildPlot target)

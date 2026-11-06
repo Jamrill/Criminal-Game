@@ -44,6 +44,8 @@ namespace JuegoCriminal.UI
 
         private void Awake()
         {
+            JuegoCriminal.Localization.LocalizedText.BindMenu(gameObject);
+            JuegoCriminal.Localization.LocalizedText.BindMenu(panelRoot);
             Bootstrapper app = Bootstrapper.Instance;
             _save = app != null ? app.SaveService : null;
             _loader = app != null ? app.SceneLoader : null;

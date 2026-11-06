@@ -17,6 +17,7 @@ namespace JuegoCriminal.UI
                 button.targetGraphic=go.GetComponent<Image>();
             }
             button.name=name;
+            UIButtonAudio.Ensure(button);
             var rect=(RectTransform)button.transform;
             rect.anchorMin=rect.anchorMax=rect.pivot=new Vector2(.5f,.5f);
             rect.anchoredPosition3D=Vector3.zero;rect.localRotation=Quaternion.identity;rect.localScale=Vector3.one;

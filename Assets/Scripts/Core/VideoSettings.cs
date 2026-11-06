@@ -16,7 +16,7 @@ namespace JuegoCriminal.Core
         public static int Reflections { get; private set; } = 2;
         public static string ReflectionsLabel => JuegoCriminal.Localization.GameLanguage.T(new[] { "Low", "Medium", "High", "Ultra" }[Reflections],new[] { "Bajo", "Medio", "Alto", "Ultra" }[Reflections]);
         public static event Action Changed;
-        public static string AntialiasingLabel => new[] { "Off", "FXAA", "SMAA", "TAA" }[Antialiasing];
+        public static string AntialiasingLabel => new[] { JuegoCriminal.Localization.GameLanguage.T("Off","Desactivado"), "FXAA", "SMAA", "TAA" }[Antialiasing];
         public static string PresetLabel => JuegoCriminal.Localization.GameLanguage.T(new[] { "Low", "Medium", "High", "Ultra", "Custom" }[(int)Preset],new[] { "Bajo", "Medio", "Alto", "Ultra", "Personalizado" }[(int)Preset]);
         public static string SmaaQualityLabel => JuegoCriminal.Localization.GameLanguage.T(new[] { "Low", "Medium", "High" }[SmaaQuality],new[] { "Baja", "Media", "Alta" }[SmaaQuality]);
         private static RenderPipelineAsset originalQualityPipeline;

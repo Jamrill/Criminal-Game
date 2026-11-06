@@ -260,9 +260,20 @@ MonoBehaviour:
   uiPrefab: {fileID: 2506006912951942396, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
   embeddedUI: {fileID: 5557185031675255595}
   previewOpacity: 0.55
+  validPreviewColor: {r: 0.15, g: 0.9, b: 0.3, a: 1}
+  invalidPreviewColor: {r: 0.95, g: 0.12, b: 0.12, a: 1}
   showPlacementGuides: 1
   guideGridRadius: 4
   guideAlignmentRange: 24
+  guideColors:
+    grid: {r: 1, g: 1, b: 1, a: 0.22}
+    validOutline: {r: 0.3, g: 1, b: 0.4, a: 0.95}
+    invalidOutline: {r: 1, g: 0.18, b: 0.18, a: 0.95}
+    validFill: {r: 0.15, g: 0.95, b: 0.25, a: 0.22}
+    invalidFill: {r: 1, g: 0.12, b: 0.12, a: 0.22}
+    validArrow: {r: 0.3, g: 1, b: 0.4, a: 1}
+    invalidArrow: {r: 1, g: 0.18, b: 0.18, a: 1}
+    alignment: {r: 1, g: 1, b: 1, a: 0.9}
 --- !u!114 &9105260164997638365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,7 +1215,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6922818708028005500, guid: d74e274f730bcca45b57ab16184dec48, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d74e274f730bcca45b57ab16184dec48, type: 3}

@@ -125,7 +125,7 @@ namespace JuegoCriminal.UI
             antialiasingLabel.text = VideoSettings.AntialiasingLabel + "  v";
             presetLabel.text = VideoSettings.PresetLabel + "  v";
             msaaButton.interactable = VideoSettings.Antialiasing != 3;
-            msaaLabel.text = VideoSettings.Antialiasing == 3 ? "Off (TAA)" :
+            msaaLabel.text = VideoSettings.Antialiasing == 3 ? T("Off (TAA)","Desactivado (TAA)") :
                 (VideoSettings.MsaaSamples == 1 ? "Off" : "x" + VideoSettings.MsaaSamples) + "  v";
             smaaQualityButton.interactable = VideoSettings.Antialiasing == 2;
             smaaQualityLabel.text = VideoSettings.Antialiasing == 2 ? VideoSettings.SmaaQualityLabel + "  v" : T("Not applicable","No aplicable");

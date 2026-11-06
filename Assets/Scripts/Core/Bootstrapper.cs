@@ -59,6 +59,8 @@ namespace JuegoCriminal.Core
             }
 
             // Arranca la máquina de estados.
+            if(!GetComponent<JuegoCriminal.Audio.AmbientMusicDirector>())
+                gameObject.AddComponent<JuegoCriminal.Audio.AmbientMusicDirector>();
             if (GameStateMachine != null)
                 GameStateMachine.Boot();
         }

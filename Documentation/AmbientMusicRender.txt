@@ -1,0 +1,5 @@
+Original composition: Neon Quiet Hours
+78 BPM; 16 bars; stereo PCM16 44100 Hz
+Seconds=53,2307692307692
+Peak=0.72
+RMS=0,110704195849648

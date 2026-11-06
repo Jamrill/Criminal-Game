@@ -44,6 +44,8 @@ namespace JuegoCriminal.UI
 
         private void Awake()
         {
+            JuegoCriminal.Localization.LocalizedText.BindMenu(gameObject);
+            JuegoCriminal.Localization.LocalizedText.BindMenu(panelRoot);
             Bootstrapper app = Bootstrapper.Instance;
             _save = app != null ? app.SaveService : null;
             _loader = app != null ? app.SceneLoader : null;
@@ -92,7 +94,7 @@ namespace JuegoCriminal.UI
             _mode = coop ? "Coop" : "Single";
 
             if (titleText != null)
-                titleText.text = coop ? coopTitle : singleTitle;
+                JuegoCriminal.Localization.LocalizedText.Bind(titleText,coop ? coopTitle : singleTitle,coop ? "Nueva partida cooperativa" : "Nueva partida");
 
             if (panelRoot != null)
                 panelRoot.SetActive(true);
@@ -153,7 +155,7 @@ namespace JuegoCriminal.UI
             string displayName = nameInput != null ? nameInput.text.Trim() : "";
 
             if (string.IsNullOrWhiteSpace(displayName))
-                displayName = _mode == "Coop" ? "New Co-op Save" : "New Save";
+                displayName = _mode == "Coop" ? JuegoCriminal.Localization.GameLanguage.T("New Co-op Save","Partida cooperativa") : JuegoCriminal.Localization.GameLanguage.T("New Save","Nueva partida");
 
             return SaveService.NormalizeSaveName(displayName);
         }

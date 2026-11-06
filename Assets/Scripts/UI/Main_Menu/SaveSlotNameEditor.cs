@@ -43,7 +43,7 @@ namespace JuegoCriminal.UI
             _input.onEndEdit.AddListener(OnEndEdit);
             // TMP creates the caret renderer in OnEnable, after text/viewport
             // references must be assigned (AddComponent enables it too early).
-            _input.enabled = true;
+            ShowDisplayName(_savedName);
             _pencil = row.RenameButton;
             if (_pencil != null) _pencil.onClick.AddListener(BeginEditing);
             SetInteractable(true);
@@ -60,7 +60,7 @@ namespace JuegoCriminal.UI
         {
             _savedName = name ?? string.Empty;
             if (_editing) FinishEditing(_savedName);
-            else if (_input != null) _input.SetTextWithoutNotify(_savedName);
+            else if (_input != null) ShowDisplayName(_savedName);
             else if (_text != null) _text.text = _savedName;
         }
 
@@ -75,7 +75,9 @@ namespace JuegoCriminal.UI
             _savedFontStyle = _text.fontStyle;
             if (_row.UnderlineNameWhileEditing) _text.fontStyle |= FontStyles.Underline;
             ApplyEditingStyle();
+            _text.overflowMode = TextOverflowModes.Overflow;
             _input.SetTextWithoutNotify(_savedName);
+            _input.enabled = true;
             _input.interactable = true;
             _text.raycastTarget = true;
             _input.Select();
@@ -104,6 +106,13 @@ namespace JuegoCriminal.UI
             label.offsetMin = label.offsetMax = Vector2.zero;
             label.localRotation = Quaternion.identity;
             label.localScale = Vector3.one;
+            // The editable label may scroll horizontally, but never over the
+            // row icon, pencil or date. Negative authored margins escaped it.
+            field.gameObject.AddComponent<RectMask2D>();
+            var margin = _text.margin;
+            _text.margin = new Vector4(Mathf.Max(0, margin.x), Mathf.Max(0, margin.y), Mathf.Max(0, margin.z), Mathf.Max(0, margin.w));
+            _text.richText = false;
+            _text.textWrappingMode = TextWrappingModes.NoWrap;
             _input = field.gameObject.AddComponent<TMP_InputField>();
             _input.enabled = false;
         }
@@ -130,9 +139,24 @@ namespace JuegoCriminal.UI
             _editing = false; // Deactivation may raise onEndEdit again.
             _savedName = name;
             _text.fontStyle = _savedFontStyle;
-            _input.DeactivateInputField();
+            _input.DeactivateInputField(true);
+            ShowDisplayName(name);
+        }
+
+        private void ShowDisplayName(string name)
+        {
+            // TMP moves its text RectTransform to keep the caret visible. Just
+            // restoring text leaves that scroll offset behind after Escape.
+            // Disable the editor while showing the static label, so deferred
+            // caret/mesh rebuilds cannot move it again after cancellation.
+            _input.enabled = false;
             _input.interactable = false;
             _input.SetTextWithoutNotify(name);
+            var label = _text.rectTransform;
+            label.anchorMin = Vector2.zero;
+            label.anchorMax = Vector2.one;
+            label.offsetMin = label.offsetMax = Vector2.zero;
+            _text.overflowMode = TextOverflowModes.Ellipsis;
             _text.text = name;
             _text.raycastTarget = false;
         }

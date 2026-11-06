@@ -115,7 +115,7 @@ public static class ConstructionGuidesValidation
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         Debug.Log("CONSTRUCTION_GUIDES_VALIDATION_OK checks="+report.Count);
     }
-    static void Capture()
+    internal static void Capture(string path="Documentation/ConstructionGuidesPreview.png")
     {
         var ground=GameObject.CreatePrimitive(PrimitiveType.Plane);ground.transform.position=Vector3.down*.03f;ground.transform.localScale=Vector3.one*4;
         var material=new Material(Shader.Find("Universal Render Pipeline/Unlit"));material.SetColor("_BaseColor",new Color(.16f,.21f,.23f));ground.GetComponent<Renderer>().sharedMaterial=material;
@@ -124,7 +124,7 @@ public static class ConstructionGuidesValidation
         camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.12f,.16f,.18f);
         var target=new RenderTexture(900,700,24);var previous=RenderTexture.active;
         var image=new Texture2D(900,700,TextureFormat.RGB24,false);
-        try{camera.targetTexture=target;camera.Render();RenderTexture.active=target;image.ReadPixels(new Rect(0,0,900,700),0,0);image.Apply();File.WriteAllBytes("Documentation/ConstructionGuidesPreview.png",image.EncodeToPNG());}
+        try{camera.targetTexture=target;camera.Render();RenderTexture.active=target;image.ReadPixels(new Rect(0,0,900,700),0,0);image.Apply();File.WriteAllBytes(path,image.EncodeToPNG());}
         finally{RenderTexture.active=previous;camera.targetTexture=null;Object.DestroyImmediate(target);Object.DestroyImmediate(image);Object.DestroyImmediate(camera.gameObject);Object.DestroyImmediate(light.gameObject);Object.DestroyImmediate(ground);Object.DestroyImmediate(material);}
     }
 }

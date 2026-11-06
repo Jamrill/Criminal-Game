@@ -1,5 +1,6 @@
 using JuegoCriminal.Services;
 using UnityEngine;
+using System.Linq;
 
 namespace JuegoCriminal.Construction
 {
@@ -19,6 +20,8 @@ namespace JuegoCriminal.Construction
         public static bool BuildWalls(BuildCatalog catalog,System.Collections.Generic.IReadOnlyList<BuildRecord> records,BuildPlot plot,EconomyService money)
         {
             if(records.Count==0 || !Owns(plot,money))return false;
+            var joined=WallReconfiguration.Stroke(catalog,plot,records);
+            if(joined!=null)return WallReconfiguration.Apply(joined,catalog,money,out _);
             long total=0;
             foreach(var record in records)
             {
@@ -63,6 +66,16 @@ namespace JuegoCriminal.Construction
             if(entry==null || !Owns(plot,money) || record.propertyId!=plot.propertyId)return null;
             if(!BuildPlacement.FitsPlot(entry,plot,record.position,record.rotation))return null;
             if(StairConstruction.IsStairs(entry))return StairConstruction.Build(catalog,plot,record,money);
+            if(entry.prefab.GetComponent<WallTopology>())
+            {
+                var plan=WallReconfiguration.Placement(catalog,plot,entry,record.position,record.rotation);
+                if(plan!=null)
+                {
+                    if(!WallReconfiguration.Apply(plan,catalog,money,out _))return null;
+                    return plot.GetComponentsInChildren<PlacedBuildObject>().FirstOrDefault(p=>!p.deleted&&plan.added.Any(r=>r.id==p.persistentId));
+                }
+                if(!BuildPlacement.IsValid(entry,plot,record.position,record.rotation,record.cellCenter))return null;
+            }
             int cost=catalog.Cost(entry);
             if(!money.TrySpend(cost))return null;
             var placed=ConstructionPersistence.Spawn(catalog,record,true,plot.gameObject.scene);

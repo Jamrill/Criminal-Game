@@ -63,6 +63,12 @@ namespace JuegoCriminal.Inventory
         {
             if (inventory != null) inventory.Changed -= Refresh;
         }
+        private void OnEnable()=>JuegoCriminal.Localization.GameLanguage.Changed+=RefreshCaption;
+        private void OnDisable()=>JuegoCriminal.Localization.GameLanguage.Changed-=RefreshCaption;
+        private void RefreshCaption()
+        {
+            if(capacityText && inventory)capacityText.text=JuegoCriminal.Localization.GameLanguage.T("Inventory {0}/{1}","Inventario {0}/{1}",inventory.Capacity,InventoryGrid.MaxCapacity);
+        }
 
         private void Update()
         {
@@ -200,7 +206,7 @@ namespace JuegoCriminal.Inventory
             int columns = inventory.Grid.Columns;
             int rows = inventory.Grid.Rows;
             gridRoot.sizeDelta = new Vector2(columns * cellSize, rows * cellSize);
-            if (capacityText != null) capacityText.text = $"Inventory {capacity}/{InventoryGrid.MaxCapacity}";
+            if (capacityText != null) capacityText.text = JuegoCriminal.Localization.GameLanguage.T("Inventory {0}/{1}","Inventario {0}/{1}",capacity,InventoryGrid.MaxCapacity);
 
             for (int i = 0; i < rows * columns; i++) CreateCell(i % columns, i / columns, i < capacity);
             for (int i = 0; i < inventory.Grid.Placements.Count; i++) CreateItem(inventory.Grid.Placements[i]);

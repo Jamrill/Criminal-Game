@@ -46,6 +46,16 @@ namespace JuegoCriminal.Construction
         {
             var up=plot.Grid.up;
             var support=hasHit?hit.collider.GetComponentInParent<WallTopology>():null;
+            var stair=hasHit?hit.collider.GetComponentInParent<PlacedBuildObject>():null;
+            if(FloorEditing.IsFloor(entry) && stair && plot.catalog && StairConstruction.Passage(plot.catalog,plot,stair.Capture(),out _,out float upper))
+            {
+                // A ramp is not a storey: do not place slabs at arbitrary tread
+                // heights. Aiming at its upper flight selects the upper floor.
+                var local=plot.Grid.InverseTransformPoint(hit.point);
+                float bottom=plot.Grid.InverseTransformPoint(stair.transform.position).y;
+                local.y=local.y>(bottom+upper)*.5f?upper:bottom;
+                point=plot.Grid.TransformPoint(local);return true;
+            }
             if(FloorEditing.IsFloor(entry) && support)
             {
                 // A wall face may be hit by a horizontal ray that cannot meet the
@@ -56,8 +66,10 @@ namespace JuegoCriminal.Construction
             }
             if(FloorEditing.IsFloor(entry) && hasHit && hit.collider.GetComponentInParent<BuildFloorCoverage>())
             {
-                point=hit.point;
-                if(Vector3.Dot(hit.normal,up)<-.7f)point+=up*RoomFloorPatch.Thickness;
+                var slab=hit.collider.GetComponentInParent<BuildFloorCoverage>();
+                // Reuse the authored floor datum from either face, not the top
+                // surface. Otherwise each extension climbs another centimetre.
+                point=hit.point-up*Vector3.Dot(hit.point-slab.transform.position,up);
                 return true;
             }
             if((entry.prefab.GetComponent<WallTopology>() || StairConstruction.IsStairs(entry)) && support)
@@ -66,7 +78,7 @@ namespace JuegoCriminal.Construction
             var floor=hasHit?hit.collider.GetComponentInParent<BuildFloorCoverage>():null;
             // Terrain/furniture cannot choose a wall's storey. At a tile edge keep
             // the player's construction level, never the terrain underneath it.
-            if(hasHit && Vector3.Dot(hit.normal,up)>.7f && (!placingWall ||
+            if(hasHit && Vector3.Dot(hit.normal,up)>.7f && (!(placingWall || FloorEditing.IsFloor(entry)) ||
                 (floor && floor.GetComponentInParent<BuildPlot>()==plot && plot.Grid.InverseTransformPoint(hit.point).y>=plot.foundationHeight-.02f)))
             {point=hit.point;return true;}
             if(placingWall)
@@ -79,24 +91,71 @@ namespace JuegoCriminal.Construction
             point=default;return false;
         }
         public static Vector3 SnapWall(BuildEntry entry, BuildPlot plot, Vector3 position, Quaternion rotation)
+            =>SnapWall(entry,plot,position,rotation,out _);
+        static Vector3 SnapWall(BuildEntry entry,BuildPlot plot,Vector3 position,Quaternion rotation,out bool joined)
         {
+            joined=false;
             var wall=entry.prefab.GetComponent<WallTopology>();
             if(!wall || wall.connections==null || plot.endpointSnapDistance<=0)return position;
             var candidates=new System.Collections.Generic.List<Vector3>();
-            foreach(var other in Object.FindObjectsByType<WallTopology>(FindObjectsSortMode.None))
+            // Include construction joints, not only the external connection ends.
+            // A one-unit placement grid can miss a seam by up to half a cell on
+            // both axes; search locally without dragging to distant wall modules.
+            float range=Mathf.Max(plot.endpointSnapDistance,Mathf.Max(.1f,plot.placementStep)*.75f);
+            foreach(var other in plot.GetComponentsInChildren<WallTopology>())
             {
-                if(other.gameObject.scene!=plot.gameObject.scene || other.connections==null)continue;
-                foreach(var end in other.connections)foreach(var local in wall.connections)
+                if(other.GetComponentInParent<BuildPlot>()!=plot || !other.isActiveAndEnabled)continue;
+                var marker=other.GetComponent<PlacedBuildObject>();if(marker&&marker.deleted)continue;
+                foreach(var end in WallGeometry.Contacts(other))foreach(var local in WallGeometry.Contacts(wall))
                 {
                     var candidate=other.transform.TransformPoint(end)-rotation*Vector3.Scale(local,entry.prefab.transform.localScale);
-                    if(Mathf.Abs(Vector3.Dot(candidate-position,plot.Grid.up))<.06f && Vector3.Distance(candidate,position)<=plot.endpointSnapDistance)
+                    if(Mathf.Abs(Vector3.Dot(candidate-position,plot.Grid.up))<.06f && Vector3.Distance(candidate,position)<=range &&
+                        !candidates.Exists(p=>(p-candidate).sqrMagnitude<.000001f))
                         candidates.Add(candidate);
                 }
             }
             candidates.Sort((a,b)=>(a-position).sqrMagnitude.CompareTo((b-position).sqrMagnitude));
             foreach(var candidate in candidates)
-                if(IsValid(entry,plot,candidate,rotation,candidate+rotation*Vector3.Scale(wall.bottomCenter,entry.prefab.transform.localScale)))return candidate;
+            {
+                var plan=plot.catalog?WallReconfiguration.Placement(plot.catalog,plot,entry,candidate,rotation):null;
+                // Evaluate the resulting corner/T/+ with old pieces excluded.
+                // Testing against the old wall colliders alone rejects the very
+                // overlap which the transactional replacement is meant to resolve.
+                if(plan!=null)
+                {if(WallReconfiguration.Validate(plan,plot.catalog,out _)){joined=true;return candidate;}}
+                else if(IsValid(entry,plot,candidate,rotation,candidate+rotation*Vector3.Scale(wall.bottomCenter,entry.prefab.transform.localScale))){joined=true;return candidate;}
+            }
             return position;
+        }
+        public static Vector3 ResolveWallPosition(BuildEntry entry,BuildPlot plot,Vector3 position,Quaternion rotation)
+        {
+            // Existing authored/legacy walls keep their exact seams. In empty
+            // space use the SAME four-unit lattice drawn by the placement guide.
+            var connected=SnapWall(entry,plot,position,rotation,out bool joined);
+            if(joined)return connected;
+            var snapped=SnapWallGrid(entry,plot,position,rotation);
+            return SnapWall(entry,plot,snapped,rotation,out _);
+        }
+        public static Vector3 SnapWallGrid(BuildEntry entry,BuildPlot plot,Vector3 position,Quaternion rotation)
+        {
+            var wall=entry.prefab.GetComponent<WallTopology>();if(!wall)return position;
+            var spans=WallGeometry.Local(wall);if(spans.Count==0)return position;
+            var offset=rotation*Vector3.Scale(spans[0].a,entry.prefab.transform.localScale);
+            var point=plot.Grid.InverseTransformPoint(position+offset);var origin=plot.FurnitureGridOffset;
+            point.x=origin.x+Mathf.Round((point.x-origin.x)/BuildPlot.CellSize)*BuildPlot.CellSize;
+            point.z=origin.y+Mathf.Round((point.z-origin.y)/BuildPlot.CellSize)*BuildPlot.CellSize;
+            var nearest=plot.Grid.TransformPoint(point)-offset;
+            if(FitsPlot(entry,plot,nearest,rotation))return nearest;
+            // Clamping a mesh to the volume face creates fractional, off-grid
+            // pivots. Choose a nearby whole lattice position instead.
+            float best=float.PositiveInfinity;var result=nearest;
+            for(int x=-4;x<=4;x++)for(int z=-4;z<=4;z++)
+            {
+                var p=plot.Grid.TransformPoint(point+new Vector3(x*BuildPlot.CellSize,0,z*BuildPlot.CellSize))-offset;
+                float distance=(p-position).sqrMagnitude;
+                if(distance<best&&FitsPlot(entry,plot,p,rotation)){best=distance;result=p;}
+            }
+            return result;
         }
         public static Vector3 Position(BuildEntry entry, Vector3 cellCenter, Quaternion rotation)
         {

@@ -5,6 +5,13 @@ namespace JuegoCriminal.Construction
 {
     public static class ConstructionText
     {
+        public static string Finish(UnityEngine.Material material)=>material?material.name switch
+        {
+            "Wall_Building"=>GameLanguage.T("Unfinished wall","Pared sin acabado"),
+            "White_Paint"=>GameLanguage.T("White paint","Pintura blanca"),
+            "Black_Paint"=>GameLanguage.T("Black paint","Pintura negra"),
+            _=>material.name.Replace('_',' ')
+        }:"";
         public static string Title(BuildEntry entry)
         {
             if(entry==null)return "";

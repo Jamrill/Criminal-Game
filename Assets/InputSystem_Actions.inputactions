@@ -133,6 +133,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "BuildCancel",
+                    "type": "Button",
+                    "id": "53a77c23-cb1d-476c-8c5b-9c12587dc32e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BuildOrBuy",
+                    "type": "Button",
+                    "id": "e34c20c6-c34e-41e3-b78a-975a76d70036",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "BuildDistance",
                     "type": "Value",
                     "id": "d58372a8-0870-427c-a596-8f4073e79c93",
@@ -633,6 +651,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "BuildDistance",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71d38ef1-e985-474f-bce5-d872c35923c7",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BuildCancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d10c3e47-f417-4d0d-9424-944b9bd016b7",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BuildOrBuy",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

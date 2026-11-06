@@ -1,0 +1,34 @@
+PASS Six authored applications and six content panels
+PASS Build moved out of tablet; contextual prompt authored
+PASS Build/buy has separate B action; Tab action preserved
+PASS Exclusive panel selection 0 locale=English
+PASS Exclusive panel selection 1 locale=English
+PASS Exclusive panel selection 2 locale=English
+PASS Exclusive panel selection 3 locale=English
+PASS Exclusive panel selection 4 locale=English
+PASS Exclusive panel selection 5 locale=English
+PASS Navigation follows locale English
+PASS Bank and notifications start independently at zero
+PASS Exclusive panel selection 0 locale=Spanish
+PASS Exclusive panel selection 1 locale=Spanish
+PASS Exclusive panel selection 2 locale=Spanish
+PASS Exclusive panel selection 3 locale=Spanish
+PASS Exclusive panel selection 4 locale=Spanish
+PASS Exclusive panel selection 5 locale=Spanish
+PASS Navigation follows locale Spanish
+PASS Bank and notifications start independently at zero
+PASS Deep link selects property and its price
+PASS Opening property never spends money
+PASS Affordable property has confirmation button
+PASS Confirm purchase once at catalogue value
+PASS Repeated purchase cannot charge twice
+PASS Three readouts stay on screen when docked (1600, 1000)
+PASS Closed tablet persists without hidden interactive buttons (1600, 1000)
+PASS Three readouts stay on screen when docked (1920, 1080)
+PASS Closed tablet persists without hidden interactive buttons (1920, 1080)
+PASS Three readouts stay on screen when docked (1280, 720)
+PASS Closed tablet persists without hidden interactive buttons (1280, 720)
+PASS B in unowned building opens details without purchase
+PASS B in owned building activates construction without tablet
+PASS B can leave construction
+PASS Player inherits tablet from shared UI prefab

@@ -1,0 +1,346 @@
+PASS T end joins validly, rotation=0 batch=False
+PASS All four spans preserved exactly once
+PASS Outer corner owns shared T arm
+PASS Apply corner redistribution
+PASS Price and old T deletion persist
+PASS Live geometry retains coverage
+PASS T end joins validly, rotation=0 batch=True
+PASS All four spans preserved exactly once
+PASS Outer corner owns shared T arm
+PASS Apply corner redistribution
+PASS Price and old T deletion persist
+PASS Live geometry retains coverage
+PASS T end joins validly, rotation=1 batch=False
+PASS All four spans preserved exactly once
+PASS Outer corner owns shared T arm
+PASS Apply corner redistribution
+PASS Price and old T deletion persist
+PASS Live geometry retains coverage
+PASS T end joins validly, rotation=1 batch=True
+PASS All four spans preserved exactly once
+PASS Outer corner owns shared T arm
+PASS Apply corner redistribution
+PASS Price and old T deletion persist
+PASS Live geometry retains coverage
+PASS T end joins validly, rotation=2 batch=False
+PASS All four spans preserved exactly once
+PASS Outer corner owns shared T arm
+PASS Apply corner redistribution
+PASS Price and old T deletion persist
+PASS Live geometry retains coverage
+PASS T end joins validly, rotation=2 batch=True
+PASS All four spans preserved exactly once
+PASS Outer corner owns shared T arm
+PASS Apply corner redistribution
+PASS Price and old T deletion persist
+PASS Live geometry retains coverage
+PASS T end joins validly, rotation=3 batch=False
+PASS All four spans preserved exactly once
+PASS Outer corner owns shared T arm
+PASS Apply corner redistribution
+PASS Price and old T deletion persist
+PASS Live geometry retains coverage
+PASS T end joins validly, rotation=3 batch=True
+PASS All four spans preserved exactly once
+PASS Outer corner owns shared T arm
+PASS Apply corner redistribution
+PASS Price and old T deletion persist
+PASS Live geometry retains coverage
+PASS Explicit overlapping T also honours the existing outer turn
+PASS Single arm removal valid T_wall_complete rotation=0 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=0 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=0 arm=2
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=1 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=1 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=1 arm=2
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=2 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=2 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=2 arm=2
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=3 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=3 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid T_wall_complete rotation=3 arm=2
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=0 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=0 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=0 arm=2
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=0 arm=3
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=1 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=1 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=1 arm=2
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=1 arm=3
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=2 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=2 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=2 arm=2
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=2 arm=3
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=3 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=3 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=3 arm=2
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid +_wall_complete rotation=3 arm=3
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid Corner_Wall rotation=0 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid Corner_Wall rotation=0 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid Corner_Wall rotation=1 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid Corner_Wall rotation=1 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid Corner_Wall rotation=2 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid Corner_Wall rotation=2 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid Corner_Wall rotation=3 arm=0
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Single arm removal valid Corner_Wall rotation=3 arm=1
+PASS Only selected arm removed; remainder exact
+PASS Paint preserved
+PASS Red selected section and untinted painted remainder previews
+PASS Cancel preview restores original visibility/materials
+PASS Removal transaction and refund
+PASS Sold joined source is tombstoned for save/load
+PASS Live remainder after sale
+PASS Drag can begin by forming a corner
+PASS Budget accepts only affordable extension 1
+PASS Budget accepts only affordable extension 2
+PASS Budget accepts only affordable extension 3
+PASS No charge or world mutation until release
+PASS Corner-started stroke retracts
+PASS Release builds corner plus retained span for net $70
+PASS Corner stroke also preserves the existing painted finish
+PASS Painted corner stroke applies atomically

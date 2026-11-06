@@ -1,0 +1,350 @@
+PASS Visible lattice and plot limits: Wall_complete yaw=0 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=0 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=0 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=0 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=90 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=90 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=90 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=90 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=180 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=180 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=180 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=180 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=270 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=270 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=270 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Wall_complete yaw=270 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=0 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=0 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=0 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=0 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=90 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=90 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=90 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=90 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=180 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=180 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=180 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=180 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=270 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=270 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=270 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Corner_Wall yaw=270 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=0 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=0 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=0 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=0 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=90 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=90 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=90 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=90 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=180 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=180 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=180 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=180 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=270 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=270 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=270 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: T_wall_complete yaw=270 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=0 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=0 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=0 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=0 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=90 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=90 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=90 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=90 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=180 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=180 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=180 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=180 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=270 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=270 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=270 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: +_wall_complete yaw=270 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=0 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=0 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=0 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=0 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=90 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=90 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=90 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=90 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=180 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=180 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=180 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=180 aim=(22.00, 0.00, 22.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=270 aim=(1.00, 0.00, 3.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=270 aim=(-5.00, 0.00, 1.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=270 aim=(-22.00, 0.00, -22.00)
+PASS Visible lattice and plot limits: Glass_Wall_door_complete yaw=270 aim=(22.00, 0.00, 22.00)
+PASS Begin retractable stroke Wall_complete yaw=0
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Cancellation clears entire gesture
+PASS Begin retractable stroke Wall_complete yaw=90
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Cancellation clears entire gesture
+PASS Begin retractable stroke Wall_complete yaw=180
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Cancellation clears entire gesture
+PASS Begin retractable stroke Wall_complete yaw=270
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Cancellation clears entire gesture
+PASS Begin retractable stroke Glass_wall yaw=0
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Cancellation clears entire gesture
+PASS Begin retractable stroke Glass_wall yaw=90
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Cancellation clears entire gesture
+PASS Begin retractable stroke Glass_wall yaw=180
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Cancellation clears entire gesture
+PASS Begin retractable stroke Glass_wall yaw=270
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-2
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=-1
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Preview retracts/extends and retains first wall target=0
+PASS Individual glass preview count follows pending records
+PASS Gesture does not build or charge
+PASS Cancellation clears entire gesture
+PASS Drag preview consolidates Corner_Wall yaw=0
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: Corner_Wall
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates Corner_Wall yaw=90
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: Corner_Wall
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates Corner_Wall yaw=180
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: Corner_Wall
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates Corner_Wall yaw=270
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: Corner_Wall
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates T_wall_complete yaw=0
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: T_wall_complete
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates T_wall_complete yaw=90
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: T_wall_complete
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates T_wall_complete yaw=180
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: T_wall_complete
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates T_wall_complete yaw=270
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: T_wall_complete
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates +_wall_complete yaw=0
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: +_wall_complete
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates +_wall_complete yaw=90
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: +_wall_complete
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates +_wall_complete yaw=180
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: +_wall_complete
+PASS Old straight wall is persistently replaced
+PASS Drag preview consolidates +_wall_complete yaw=270
+PASS Queued preview does not mutate or charge
+PASS Mouse release applies one consolidated transaction
+PASS No overlapping standalone planes remain: +_wall_complete
+PASS Old straight wall is persistently replaced
+PASS An existing legacy seam takes priority without relocating the old wall
+PASS Direct single-wall build uses the same junction transaction

@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 7778118005720238578}
   - component: {fileID: 5331540182615867310}
   - component: {fileID: 4504791676883720491}
+  - component: {fileID: 281622229233961380}
   m_Layer: 5
   m_Name: Button_sample
   m_TagString: Untagged
@@ -362,9 +363,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.UI.ButtonTextStateColors
   labels:
   - {fileID: 6880233339789842671}
+  styleSource: {fileID: 0}
   normal: {r: 0.48235294, g: 0.42745098, b: 0.36862746, a: 1}
   highlighted: {r: 0.8039216, g: 0.7294118, b: 0.6039216, a: 1}
   pressed: {r: 0.7294118, g: 0.57254905, b: 0.39215687, a: 1}
   selected: {r: 0.7294118, g: 0.57254905, b: 0.39215687, a: 1}
   disabled: {r: 0.38039216, g: 0.38039216, b: 0.3764706, a: 0.6}
   fadeDuration: 0.1
+--- !u!114 &281622229233961380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236846228930573523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01d2757c77f552449aa69b9cdc58dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.UI.UIButtonAudio
+  playAppearance: 1
+  playHover: 1
+  playClick: 1

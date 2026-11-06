@@ -10,7 +10,7 @@ namespace JuegoCriminal.UI
         [SerializeField] private Button backButton;
         Action close;
         public Button BackButton=>backButton;
-        void Awake()=>Connect();
+        void Awake(){JuegoCriminal.Localization.LocalizedText.BindMenu(gameObject);Connect();}
         void OnEnable()=>RaiseNavigation();
         public void RaiseNavigation()
         {

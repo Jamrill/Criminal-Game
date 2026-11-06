@@ -1,4 +1,31 @@
 PASS Main menu exists
+PASS MainMenuUI newGameButton = New Game (actual: New Game)
+PASS MainMenuUI continueButton = Continue (actual: Continue)
+PASS MainMenuUI loadGameButton = Load Game (actual: Load Game)
+PASS MainMenuUI coopButton = Coop (actual: Coop)
+PASS MainMenuUI quitButton = Quit (actual: Quit)
+PASS MainMenuUI newGameButton = Nueva partida (actual: Nueva partida)
+PASS MainMenuUI continueButton = Continuar (actual: Continuar)
+PASS MainMenuUI loadGameButton = Cargar partida (actual: Cargar partida)
+PASS MainMenuUI coopButton = Cooperativo (actual: Cooperativo)
+PASS MainMenuUI quitButton = Salir (actual: Salir)
+PASS MainMenuUI newGameButton = New Game (actual: New Game)
+PASS MainMenuUI continueButton = Continue (actual: Continue)
+PASS MainMenuUI loadGameButton = Load Game (actual: Load Game)
+PASS MainMenuUI coopButton = Coop (actual: Coop)
+PASS MainMenuUI quitButton = Quit (actual: Quit)
+PASS Open new-game title updates on language change
+PASS NewGameDialogUI acceptButton = Aceptar (actual: Aceptar)
+PASS NewGameDialogUI backButton = Volver (actual: Volver)
+PASS SlotsPanelUI deleteButton = Eliminar (actual: Eliminar)
+PASS SlotsPanelUI loadButton = Cargar (actual: Cargar)
+PASS SlotsPanelUI backButton = Volver (actual: Volver)
+PASS Separate translated driving section
+PASS Construction cancel is listed in Spanish
+PASS Cancel uses the actual right-click binding
+PASS Cancel belongs to construction, before driving
+PASS Contextual build/buy action translated in Controls
+PASS Build/buy row shows current binding
 PASS Runtime action labels and button columns have usable width
 PASS Back is interactable
 PASS Back is not covered by another UI raycast target: point=(460.87, 44.86) screen=640x480 hits=Canvas/OptionsPanel/Back/Text (TMP);Canvas/OptionsPanel/Back;Canvas/OptionsPanel/ControlsMenuUI/ControlsScrollView/Viewport;Canvas/OptionsPanel/ControlsMenuUI/ControlsScrollView;Canvas/MainPanel
@@ -8,6 +35,14 @@ PASS Back is interactable
 PASS Back is not covered by another UI raycast target: point=(460.87, 44.86) screen=640x480 hits=Canvas/OptionsPanel/Back/Text (TMP);Canvas/OptionsPanel/Back;Canvas/OptionsPanel/VideoMenuUI/VideoScrollView/Viewport;Canvas/OptionsPanel/VideoMenuUI/VideoScrollView;Canvas/MainPanel
 PASS Video Back returns to MainMenu
 PASS World pause menu exists
+PASS PauseMenuUI saveButton = Guardar partida (actual: Guardar partida)
+PASS PauseMenuUI loadButton = Cargar partida (actual: Cargar partida)
+PASS PauseMenuUI quitButton = Salir (actual: Salir)
+PASS Authored tablet exists
+PASS Hidden tablet captions follow Spanish
+PASS Tablet catalogue uses Spanish names
+PASS Tablet catalogue switches back to English
+PASS User save names are never translated
 PASS Pause UI works with time stopped
 PASS Runtime action labels and button columns have usable width
 PASS Back is interactable

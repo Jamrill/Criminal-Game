@@ -71,6 +71,13 @@ namespace JuegoCriminal.Player
         {
             FindCameraReferencesIfNeeded();
 
+            // Normal gameplay captures the cursor only when GameStateMachine
+            // reports World ready. Spawning another player must not steal it
+            // from pause, tablet or inventory UI either.
+            if(Bootstrapper.Instance && Bootstrapper.Instance.GameStateMachine &&
+                !FindAnyObjectByType<StandalonePreviewScene>())return;
+            // Keep isolated gameplay previews usable, but not menu previews.
+            if(FindAnyObjectByType<JuegoCriminal.Scenes.MainMenuUI>())return;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

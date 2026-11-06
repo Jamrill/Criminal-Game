@@ -51,13 +51,13 @@ public static class StairHallValidation
                 var ends=plan.additions.Where(r=>catalog.Find(r.definitionId).prefab.GetComponent<WallTopology>())
                     .SelectMany(r=>WallGeometry.At(catalog.Find(r.definitionId).prefab.GetComponent<WallTopology>(),r.position,r.rotation,r.scale)).SelectMany(s=>new[]{s.a,s.b}).ToArray();
                 Check(ends.Length>0 && ends.All(p=>p.x>=enclosure.xMin-.001f && p.x<=enclosure.xMax+.001f && p.z>=enclosure.yMin-.001f && p.z<=enclosure.yMax+.001f),"Upper enclosure has no side/back extension at yaw="+angle);
-                var coverage=new List<List<Vector2>>();
+                var coverage=StairConstruction.PrefabFloors(stairs,plot,record,level);
                 foreach(var tile in plan.additions.Where(r=>r.floorTriangles!=null && Mathf.Abs(r.position.y-level)<.06f))
                     for(int i=0;i<tile.floorTriangles.Length;i+=3)
                     {var p=new List<Vector2>();for(int j=0;j<3;j++){var v=tile.position+tile.rotation*tile.floorTriangles[i+j];p.Add(new Vector2(v.x,v.z));}coverage.Add(p);}
                 var region=new RoomGeometry.Region{outline=new(){landing.min,new(landing.xMax,landing.yMin),landing.max,new(landing.xMin,landing.yMax)},min=landing.min,max=landing.max};
                 Check(RoomGeometry.Missing(region,coverage).Sum(p=>Mathf.Abs(RoomGeometry.SignedArea(p)))<.0001f,"Full landing floor is included before building at yaw="+angle);
-                Check(Mathf.Abs(coverage.Sum(p=>Mathf.Abs(RoomGeometry.SignedArea(p)))-(enclosure.width*enclosure.height-hole.width*hole.height))<.001f,"Only the frontal strip receives new upper floor at yaw="+angle);
+                Check(coverage.All(p=>p.All(v=>v.x>=enclosure.xMin-.001f&&v.x<=enclosure.xMax+.001f&&v.y>=enclosure.yMin-.001f&&v.y<=enclosure.yMax+.001f)),"Upper floor stays inside the compact enclosure at yaw="+angle);
                 // Allow only wall thickness outside the compact footprint, not a
                 // spare 4-unit tile on either side or behind the staircase.
                 plot.Volume.center=new Vector3(enclosure.center.x,10,enclosure.center.y);
@@ -79,15 +79,20 @@ public static class StairHallValidation
             Check(built && money.Money==100000-cost,"Stairs, walls, hall floor and roof use one paid transaction");
             StairConstruction.Landing(catalog,plot,stairRecord,out var hall,out float y);Physics.SyncTransforms();
             Check(Physics.Raycast(new Vector3(hall.center.x,y+2,hall.center.y),Vector3.down,out var hit,3) && Mathf.Abs(hit.point.y-y)<.03f,"Real collider supports the player immediately past the last step");
-            manager.Rebuild();var landingTile=hit.collider.GetComponentInParent<PlacedBuildObject>();
-            Check(landingTile && FloorEditing.CanRemove(landingTile),"Upper stair landing is editable under the foundation-only rule");
+            manager.Rebuild();var landingTile=plot.GetComponentsInChildren<PlacedBuildObject>().FirstOrDefault(p=>p.ProtectedFloor&&Mathf.Abs(p.transform.position.y-y)<.06f);
+            Check(hit.collider.GetComponentInParent<BuildFloorCoverage>(),"Upper stair landing has floor coverage, including embedded prefab floors");
             Check(!built.ProtectedFloor,"Nested intermediate landings do not classify the whole staircase as a floor");
             Check(ConstructionEconomy.Sell(catalog,built,money),"Sell only stairs before testing hall reuse");Physics.SyncTransforms();
             var reuse=StairConstruction.Plan(catalog,plot,stairRecord);Check(string.IsNullOrEmpty(reuse.error) && reuse.additions.Count==0,"Existing complete hall is reused without duplicate charges");
+            // The updated stair prefab may own its entire landing. Create an
+            // independent tile to exercise an explicitly sold-floor tombstone.
+            if(!landingTile)
+                landingTile=ConstructionPersistence.Spawn(catalog,new BuildRecord{id=Guid.NewGuid().ToString("N"),definitionId=floor.id,propertyId=plot.propertyId,sceneName=scene.name,
+                    position=new Vector3(hall.xMin,y,hall.yMin),rotation=Quaternion.identity,scale=Vector3.one,finish=-1},true,scene);
             var savedLanding=landingTile.Capture();var missingLanding=JsonUtility.FromJson<BuildRecord>(JsonUtility.ToJson(savedLanding));missingLanding.deleted=true;
             landingTile.Restore(missingLanding,catalog);manager.Rebuild();
             var repair=StairConstruction.Plan(catalog,plot,stairRecord);
-            Check(string.IsNullOrEmpty(repair.error) && !repair.additions.Any(r=>r.floorTriangles!=null && Mathf.Abs(r.position.y-y)<.06f) && !repair.additions.Any(r=>catalog.Find(r.definitionId).prefab.GetComponent<WallTopology>()),"Intentionally removed upper floor stays removed when a hall is reused");
+            Check(string.IsNullOrEmpty(repair.error) && !repair.additions.Any(r=>catalog.Find(r.definitionId).prefab.GetComponent<WallTopology>()),"Reused hall repairs its required landing without replacing unchanged walls");
             landingTile=ConstructionPersistence.Spawn(catalog,savedLanding,true,scene);manager.Rebuild();
             built=ConstructionPersistence.Spawn(catalog,stairRecord,true,scene);Physics.SyncTransforms();
             StairConstruction.Passage(catalog,plot,stairRecord,out var aperture,out _);

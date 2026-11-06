@@ -34,6 +34,8 @@ namespace JuegoCriminal.Scenes
 
         private void Awake()
         {
+            JuegoCriminal.Localization.LocalizedText.BindMenu(gameObject);
+            JuegoCriminal.Localization.LocalizedText.BindMenu(mainButtonsPanel);
             Bootstrapper app = Bootstrapper.Instance;
             _save = app != null ? app.SaveService : null;
             _loader = app != null ? app.SceneLoader : null;
@@ -66,6 +68,7 @@ namespace JuegoCriminal.Scenes
 
         private void OnEnable()
         {
+            EnsureMenuCursor();
             // Suscripci�n segura
             if (slotsPanel != null)
             {
@@ -82,9 +85,24 @@ namespace JuegoCriminal.Scenes
 
         private void Start()
         {
+            EnsureMenuCursor();
             if (optionsPanel != null) optionsPanel.SetActive(false);
             if (mainButtonsPanel != null) mainButtonsPanel.SetActive(true);
             RefreshButtons();
+        }
+        private void LateUpdate() => EnsureMenuCursor();
+        private void OnApplicationFocus(bool focused)
+        {
+            if(focused && isActiveAndEnabled)EnsureMenuCursor();
+        }
+        private void EnsureMenuCursor()
+        {
+            // Also covers direct Play in MainMenu and late cleanup from the
+            // previous scene. Never take ownership from gameplay overlays.
+            var state = Bootstrapper.Instance ? Bootstrapper.Instance.GameStateMachine : null;
+            if(state && state.CurrentState == GameState.World)return;
+            if(Cursor.lockState != CursorLockMode.None)Cursor.lockState = CursorLockMode.None;
+            if(!Cursor.visible)Cursor.visible = true;
         }
         private void OnDestroy(){if(optionsNavigation)optionsNavigation.Unbind(CloseOptions);}
 

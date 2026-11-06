@@ -15,11 +15,13 @@ namespace JuegoCriminal.Construction
         public Transform content;
         public Button propertiesButton, hudPropertiesButton;
         public PropertyListView propertiesPanel;
+        public JuegoCriminal.UI.TabletView tablet;
+        public TMP_Text contextPrompt;
         [SerializeField] private Button buttonTemplate;
         BuildCatalog activeCatalog;
         BuildCategory activeCategory;
         Action<BuildEntry> selection;
-        void OnEnable(){GameLanguage.Changed+=RefreshLanguage;ConfigurePointerOnly();RefreshLanguage();}
+        void OnEnable(){LocalizedText.BindMenu(gameObject);GameLanguage.Changed+=RefreshLanguage;ConfigurePointerOnly();RefreshLanguage();}
         void OnDisable()=>GameLanguage.Changed-=RefreshLanguage;
         public void ConfigurePointerOnly()
         {
@@ -49,8 +51,25 @@ namespace JuegoCriminal.Construction
         }
         public void SetPropertiesVisible(bool visible)
         {
+            if(tablet){if(visible)tablet.Select(JuegoCriminal.UI.TabletSection.Properties);return;}
             if (!propertiesPanel) return;
             propertiesPanel.gameObject.SetActive(visible);
+        }
+        public void EnsureTablet()
+        {
+            if(!tablet)
+            {
+                if(menu){menu.SetActive(false);if(Application.isPlaying)Destroy(menu);else DestroyImmediate(menu);}
+                buildButton=null;buildLabel=null;propertiesButton=null;propertiesPanel=null;
+                JuegoCriminal.UI.TabletLayout.Create(this);
+            }
+            if(hudPropertiesButton)hudPropertiesButton.gameObject.SetActive(false);
+            if(!contextPrompt)
+            {
+                contextPrompt=Text("",transform);contextPrompt.name="BuildOrBuyPrompt";contextPrompt.fontSize=26;contextPrompt.alignment=TextAlignmentOptions.MidlineRight;
+                var r=contextPrompt.rectTransform;r.anchorMin=r.anchorMax=r.pivot=new Vector2(1,0);r.anchoredPosition=new Vector2(-38,38);r.sizeDelta=new Vector2(340,54);
+            }
+            contextPrompt.gameObject.SetActive(false);
         }
         // Legacy/fallback creation is optional: an authored prefab may deliberately
         // omit a navigation button or label. Runtime must not recreate it.
@@ -119,7 +138,7 @@ namespace JuegoCriminal.Construction
             go.GetComponent<LayoutElement>().preferredHeight=44;
             var text=Text(label,go.transform); text.rectTransform.anchorMin=Vector2.zero; text.rectTransform.anchorMax=Vector2.one;
             text.rectTransform.offsetMin=new Vector2(6,3); text.rectTransform.offsetMax=new Vector2(-6,-3);
-            var result=go.GetComponent<Button>();result.navigation=new Navigation{mode=Navigation.Mode.None};return result;
+            var result=go.GetComponent<Button>();JuegoCriminal.UI.UIButtonAudio.Ensure(result);result.navigation=new Navigation{mode=Navigation.Mode.None};return result;
         }
         public static TMP_Text Text(string value,Transform parent)
         {

@@ -1,0 +1,132 @@
+PASS Magnetic join resolves Corner_Wall yaw=0
+PASS Snapped plan uses the junction prefab: Corner_Wall
+PASS Guide contour contains no internal joint caps: Corner_Wall yaw=0
+PASS Guide fill has uniform alpha at Corner_Wall joins
+PASS Magnetic join resolves Corner_Wall yaw=90
+PASS Snapped plan uses the junction prefab: Corner_Wall
+PASS Guide contour contains no internal joint caps: Corner_Wall yaw=90
+PASS Guide fill has uniform alpha at Corner_Wall joins
+PASS Magnetic join resolves Corner_Wall yaw=180
+PASS Snapped plan uses the junction prefab: Corner_Wall
+PASS Guide contour contains no internal joint caps: Corner_Wall yaw=180
+PASS Guide fill has uniform alpha at Corner_Wall joins
+PASS Magnetic join resolves Corner_Wall yaw=270
+PASS Snapped plan uses the junction prefab: Corner_Wall
+PASS Guide contour contains no internal joint caps: Corner_Wall yaw=270
+PASS Guide fill has uniform alpha at Corner_Wall joins
+PASS Magnetic join resolves T_wall_complete yaw=0
+PASS Snapped plan uses the junction prefab: T_wall_complete
+PASS Guide contour contains no internal joint caps: T_wall_complete yaw=0
+PASS Guide fill has uniform alpha at T_wall_complete joins
+PASS Magnetic join resolves T_wall_complete yaw=90
+PASS Snapped plan uses the junction prefab: T_wall_complete
+PASS Guide contour contains no internal joint caps: T_wall_complete yaw=90
+PASS Guide fill has uniform alpha at T_wall_complete joins
+PASS Magnetic join resolves T_wall_complete yaw=180
+PASS Snapped plan uses the junction prefab: T_wall_complete
+PASS Guide contour contains no internal joint caps: T_wall_complete yaw=180
+PASS Guide fill has uniform alpha at T_wall_complete joins
+PASS Magnetic join resolves T_wall_complete yaw=270
+PASS Snapped plan uses the junction prefab: T_wall_complete
+PASS Guide contour contains no internal joint caps: T_wall_complete yaw=270
+PASS Guide fill has uniform alpha at T_wall_complete joins
+PASS Magnetic join resolves +_wall_complete yaw=0
+PASS Snapped plan uses the junction prefab: +_wall_complete
+PASS Guide contour contains no internal joint caps: +_wall_complete yaw=0
+PASS Guide fill has uniform alpha at +_wall_complete joins
+PASS Magnetic join resolves +_wall_complete yaw=90
+PASS Snapped plan uses the junction prefab: +_wall_complete
+PASS Guide contour contains no internal joint caps: +_wall_complete yaw=90
+PASS Guide fill has uniform alpha at +_wall_complete joins
+PASS Magnetic join resolves +_wall_complete yaw=180
+PASS Snapped plan uses the junction prefab: +_wall_complete
+PASS Guide contour contains no internal joint caps: +_wall_complete yaw=180
+PASS Guide fill has uniform alpha at +_wall_complete joins
+PASS Magnetic join resolves +_wall_complete yaw=270
+PASS Snapped plan uses the junction prefab: +_wall_complete
+PASS Guide contour contains no internal joint caps: +_wall_complete yaw=270
+PASS Guide fill has uniform alpha at +_wall_complete joins
+PASS Controller snap/clamp forms a fitting corner at plot boundary, yaw=0
+PASS Controller snap/clamp forms a fitting corner at plot boundary, yaw=90
+PASS Controller snap/clamp forms a fitting corner at plot boundary, yaw=180
+PASS Controller snap/clamp forms a fitting corner at plot boundary, yaw=270
+PASS Configured access arrows: Central_display_unit yaw=0
+PASS Configured access arrows: Central_display_unit yaw=90
+PASS Configured access arrows: Central_display_unit yaw=180
+PASS Configured access arrows: Central_display_unit yaw=270
+PASS Configured access arrows: Bed yaw=0
+PASS Configured access arrows: Bed yaw=90
+PASS Configured access arrows: Bed yaw=180
+PASS Configured access arrows: Bed yaw=270
+PASS Configured access arrows: Table yaw=0
+PASS Configured access arrows: Table yaw=90
+PASS Configured access arrows: Table yaw=180
+PASS Configured access arrows: Table yaw=270
+PASS Configured access arrows: Chair yaw=0
+PASS Configured access arrows: Chair yaw=90
+PASS Configured access arrows: Chair yaw=180
+PASS Configured access arrows: Chair yaw=270
+PASS First staircase builds yaw=0
+PASS Facing stairs need full cell, gap=0 yaw=0
+PASS Facing stairs need full cell, gap=1 yaw=0
+PASS Facing stairs need full cell, gap=3 yaw=0
+PASS Facing stairs share a valid hall, gap=4 yaw=0 error= blockers=
+PASS Facing pair builds transactionally
+PASS Both upper exits meet a continuous shared floor
+PASS Neither upper exit is sealed by a partition
+PASS First staircase builds yaw=0
+PASS Facing stairs need full cell, gap=0 yaw=0
+PASS Facing stairs need full cell, gap=1 yaw=0
+PASS Facing stairs need full cell, gap=3 yaw=0
+PASS Facing stairs share a valid hall, gap=8 yaw=0 error= blockers=
+PASS Facing pair builds transactionally
+PASS Both upper exits meet a continuous shared floor
+PASS Neither upper exit is sealed by a partition
+PASS First staircase builds yaw=90
+PASS Facing stairs need full cell, gap=0 yaw=90
+PASS Facing stairs need full cell, gap=1 yaw=90
+PASS Facing stairs need full cell, gap=3 yaw=90
+PASS Facing stairs share a valid hall, gap=4 yaw=90 error= blockers=
+PASS Facing pair builds transactionally
+PASS Both upper exits meet a continuous shared floor
+PASS Neither upper exit is sealed by a partition
+PASS First staircase builds yaw=90
+PASS Facing stairs need full cell, gap=0 yaw=90
+PASS Facing stairs need full cell, gap=1 yaw=90
+PASS Facing stairs need full cell, gap=3 yaw=90
+PASS Facing stairs share a valid hall, gap=8 yaw=90 error= blockers=
+PASS Facing pair builds transactionally
+PASS Both upper exits meet a continuous shared floor
+PASS Neither upper exit is sealed by a partition
+PASS First staircase builds yaw=180
+PASS Facing stairs need full cell, gap=0 yaw=180
+PASS Facing stairs need full cell, gap=1 yaw=180
+PASS Facing stairs need full cell, gap=3 yaw=180
+PASS Facing stairs share a valid hall, gap=4 yaw=180 error= blockers=
+PASS Facing pair builds transactionally
+PASS Both upper exits meet a continuous shared floor
+PASS Neither upper exit is sealed by a partition
+PASS First staircase builds yaw=180
+PASS Facing stairs need full cell, gap=0 yaw=180
+PASS Facing stairs need full cell, gap=1 yaw=180
+PASS Facing stairs need full cell, gap=3 yaw=180
+PASS Facing stairs share a valid hall, gap=8 yaw=180 error= blockers=
+PASS Facing pair builds transactionally
+PASS Both upper exits meet a continuous shared floor
+PASS Neither upper exit is sealed by a partition
+PASS First staircase builds yaw=270
+PASS Facing stairs need full cell, gap=0 yaw=270
+PASS Facing stairs need full cell, gap=1 yaw=270
+PASS Facing stairs need full cell, gap=3 yaw=270
+PASS Facing stairs share a valid hall, gap=4 yaw=270 error= blockers=
+PASS Facing pair builds transactionally
+PASS Both upper exits meet a continuous shared floor
+PASS Neither upper exit is sealed by a partition
+PASS First staircase builds yaw=270
+PASS Facing stairs need full cell, gap=0 yaw=270
+PASS Facing stairs need full cell, gap=1 yaw=270
+PASS Facing stairs need full cell, gap=3 yaw=270
+PASS Facing stairs share a valid hall, gap=8 yaw=270 error= blockers=
+PASS Facing pair builds transactionally
+PASS Both upper exits meet a continuous shared floor
+PASS Neither upper exit is sealed by a partition

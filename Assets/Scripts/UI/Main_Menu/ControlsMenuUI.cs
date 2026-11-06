@@ -28,6 +28,7 @@ namespace JuegoCriminal.UI
 
             EnsureRuntimeBindingRow("Crouch", GameInputAction.Crouch, 1);
             EnsureRuntimeBindingRow("Rotate Inventory Item", GameInputAction.RotateInventory, 0);
+            EnsureRuntimeBindingRow("Camera Zoom", GameInputAction.CameraZoom, 0);
             EnsureTabletBinding();
             EnsureRuntimeBindingRow("Rotate Building", GameInputAction.BuildRotate, 0);
             OrganizeSections();
@@ -94,6 +95,12 @@ namespace JuegoCriminal.UI
                 var layout=text.gameObject.AddComponent<LayoutElement>(); layout.minHeight=layout.preferredHeight=52;
                 return text.transform;
             }
+            void Help(string name,string label,float height)
+            {
+                var item=Header(name,label);item.SetAsLastSibling();
+                var text=item.GetComponent<TMP_Text>();text.fontStyle=FontStyles.Normal;text.fontSize=20;
+                var layout=item.GetComponent<LayoutElement>();layout.minHeight=layout.preferredHeight=height;
+            }
             Header("NormalControlsHeader",T("NORMAL CONTROLS","CONTROLES NORMALES")).SetAsFirstSibling();
             foreach(var name in new[]{"BuildMoveForward","BuildMoveBackward","BuildMoveLeft","BuildMoveRight","BuildJump","BuildSprint"})
             {
@@ -101,6 +108,7 @@ namespace JuegoCriminal.UI
             }
             EnsureTabletBinding();
             contentRoot.Find("Binding_Tablet").SetAsLastSibling();
+            Help("NormalPointerHelp",T("Move mouse: camera · Right click: toggle aiming","Mover ratón: cámara · Clic derecho: activar / desactivar apuntado"),60);
             Header("ConstructionControlsHeader",T("CONSTRUCTION","CONSTRUCCIÓN")).SetAsLastSibling();
             void Row(string name,GameInputAction action,int binding)
             {
@@ -108,9 +116,14 @@ namespace JuegoCriminal.UI
                 contentRoot.Find("Binding_"+name.Replace(" ",string.Empty)).SetAsLastSibling();
             }
             Row("Rotate Building",GameInputAction.BuildRotate,0);
+            Row("Build or Buy Property",GameInputAction.BuildOrBuy,0);
             Row("Demolish Building",GameInputAction.BuildDemolish,0);
             Row("Build Cursor (hold)",GameInputAction.SwitchTarget,1);
             Row("Build Preview Distance",GameInputAction.BuildDistance,0);
+            Row("Cancel Placement",GameInputAction.BuildCancel,0);
+            Help("ConstructionGestureHelp",T("Left click: place / sell\nHold and drag: walls / floor rectangles\nMove back: reduce · Release: build\n{0}: exit construction", "Clic izquierdo: colocar / vender\nArrastrar: paredes / rectángulos de suelo\nRetroceder: reducir · Soltar: construir\n{0}: salir de construcción",GameInput.GetBindingDisplayString(GameInputAction.Pause,0)),132);
+            Header("DrivingControlsHeader",T("DRIVING","CONDUCCIÓN")).SetAsLastSibling();
+            Help("DrivingControlsHelp",T("Driving controls will be available when driving is added.","Los controles de conducción estarán disponibles al añadir vehículos."),80);
             var help=contentRoot.Find("ConstructionControlsHelp");if(help)help.gameObject.SetActive(false);
             foreach(var row in contentRoot.GetComponentsInChildren<ControlRebindButtonUI>(true))row.RefreshLayout();
         }

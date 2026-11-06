@@ -71,6 +71,11 @@ namespace JuegoCriminal.Construction
             var plan=new WallChangePlan{plot=plot};
             if(requested.Count==1)
                 return Opening(catalog,plot,touched[0],selected,(requested[0].a+requested[0].b)*.5f+Vector3.up*2);
+            if(WallGeometry.Solid(selected))
+                touched=touched.Concat(plot.GetComponentsInChildren<PlacedBuildObject>().Where(p=>!p.deleted && p.propertyId==plot.propertyId &&
+                    p.GetComponentInParent<BuildPlot>()==plot && WallGeometry.Solid(catalog.Find(p.definitionId)) &&
+                    WallGeometry.World(p.GetComponent<WallTopology>()).Any(s=>requested.Any(t=>
+                        WallGeometry.Near(s.a,t.a)||WallGeometry.Near(s.a,t.b)||WallGeometry.Near(s.b,t.a)||WallGeometry.Near(s.b,t.b))))).Distinct().ToArray();
             var solid=new List<WallGeometry.Span>(requested);
             foreach(var item in touched)
             {
@@ -87,7 +92,7 @@ namespace JuegoCriminal.Construction
             int finish=finishes.Length==1?finishes[0]:touched[0].finish;
             candidate.finish=finish;
             // The selected shape intentionally replaces the types underneath it.
-            if(requested.All(s=>solid.Any(t=>t.Same(s))))
+            if(!WallGeometry.Solid(selected) && requested.All(s=>solid.Any(t=>t.Same(s))))
             {plan.added.Add(candidate);solid.RemoveAll(s=>requested.Any(t=>t.Same(s)));}
             if(!Pack(catalog,plot,solid,rot,finish,plan.added)){plan.error=T("No compatible prefabs to preserve all sections","No hay prefabs compatibles para conservar todos los tramos");return plan;}
             if(plan.removed.Count==1 && plan.added.Count==1 &&
@@ -98,34 +103,67 @@ namespace JuegoCriminal.Construction
             return plan;
         }
         static bool SameCoverage(List<WallGeometry.Span> a,List<WallGeometry.Span> b)=>a.Count==b.Count && a.All(s=>b.Any(t=>s.Same(t)));
+        // The drag preview and mouse-release transaction must pack identical
+        // geometry. Null retains the separate placement rules for glass/openings.
+        public static WallChangePlan Stroke(BuildCatalog catalog,BuildPlot plot,IReadOnlyList<BuildRecord> records)
+        {
+            if(records.Count==0)return new WallChangePlan{plot=plot,error=T("No walls selected","No hay paredes seleccionadas")};
+            if(records.Any(r=>!WallGeometry.Solid(catalog.Find(r.definitionId))))return null;
+            if(records.Select(r=>Mathf.Max(0,r.finish)).Distinct().Count()>1)
+                return new WallChangePlan{plot=plot,error=T("Sections have different finishes","Los tramos tienen acabados diferentes")};
+            var spans=new List<WallGeometry.Span>();
+            foreach(var r in records)
+            {
+                if(r.propertyId!=plot.propertyId)return new WallChangePlan{plot=plot,error=T("Wrong plot","Solar incorrecto")};
+                foreach(var s in Spans(catalog,r))
+                {
+                    // Never silently collapse duplicate or partly overlapping
+                    // requested spans into a successful, differently priced batch.
+                    foreach(var old in spans)
+                    {
+                        if(Mathf.Abs(old.a.y-s.a.y)>.06f)continue;
+                        var direction=(s.b-s.a).normalized;
+                        if(Vector3.Cross(old.a-s.a,direction).magnitude>.06f||Vector3.Cross(old.b-s.a,direction).magnitude>.06f)continue;
+                        float a=Vector3.Dot(old.a-s.a,direction),b=Vector3.Dot(old.b-s.a,direction);
+                        if(Mathf.Min(s.Length,Mathf.Max(a,b))-Mathf.Max(0,Mathf.Min(a,b))>.06f)
+                            return new WallChangePlan{plot=plot,error=T("Pending walls overlap","Las paredes pendientes se solapan")};
+                    }
+                    spans.Add(s);
+                }
+            }
+            var plan=Enclosure(catalog,plot,records,plot.Grid.rotation,finish:records[0].finish);
+            if(plan.added.Count==0&&plan.removed.Count==0)plan.error=T("These walls already exist","Estas paredes ya existen");
+            return plan;
+        }
         // Batch auto-enclosures use the same authored arm geometry as manual
         // replacements. Pack junctions locally (at most four arms), never run an
         // unbounded exact-cover search over an entire connected building.
-        public static WallChangePlan Enclosure(BuildCatalog catalog,BuildPlot plot,IEnumerable<BuildRecord> walls,Quaternion basis,ICollection<PlacedBuildObject> excluded=null)
+        public static WallChangePlan Enclosure(BuildCatalog catalog,BuildPlot plot,IEnumerable<BuildRecord> walls,Quaternion basis,ICollection<PlacedBuildObject> excluded=null,int finish=-1)
         {
             var plan=new WallChangePlan{plot=plot};
             var requested=Distinct(walls.SelectMany(r=>Spans(catalog,r)));
             if(requested.Count==0)return plan;
             bool Touch(WallGeometry.Span a,WallGeometry.Span b)=>WallGeometry.Near(a.a,b.a)||WallGeometry.Near(a.a,b.b)||WallGeometry.Near(a.b,b.a)||WallGeometry.Near(a.b,b.b);
             var neighbours=plot.GetComponentsInChildren<PlacedBuildObject>().Where(p=>!p.deleted && !(excluded?.Contains(p)??false) && p.propertyId==plot.propertyId &&
-                p.GetComponentInParent<BuildPlot>()==plot && p.finish<=0 && WallGeometry.Solid(catalog.Find(p.definitionId)) &&
+                p.GetComponentInParent<BuildPlot>()==plot && Mathf.Max(0,p.finish)==Mathf.Max(0,finish) && WallGeometry.Solid(catalog.Find(p.definitionId)) &&
                 WallGeometry.World(p.GetComponent<WallTopology>()).Any(a=>requested.Any(b=>Touch(a,b)))).ToArray();
             var spans=Distinct(requested.Concat(neighbours.SelectMany(p=>WallGeometry.World(p.GetComponent<WallTopology>()))));
             if(spans.Count>256){plan.error=T("Too many sections in staircase junctions","Demasiados tramos en las uniones de la escalera");return plan;}
             var nodes=new List<Vector3>();
             foreach(var s in spans)foreach(var p in new[]{s.a,s.b})if(!nodes.Any(n=>WallGeometry.Near(n,p)))nodes.Add(p);
             bool At(WallGeometry.Span s,Vector3 p)=>WallGeometry.Near(s.a,p)||WallGeometry.Near(s.b,p);
-            // Crosses and T junctions take precedence over corners at nearby ends.
-            foreach(var node in nodes.OrderByDescending(n=>spans.Count(s=>At(s,n))).ToArray())
+            // An outside turn needs its authored corner before an adjacent T can
+            // consume the shared arm. Straight end caps cannot close that turn.
+            foreach(var node in nodes.OrderByDescending(n=>IsCorner(spans.Where(s=>At(s,n)).ToList(),n)).ThenByDescending(n=>spans.Count(s=>At(s,n))).ToArray())
             {
                 var arms=spans.Where(s=>At(s,node)).ToList();
                 if(arms.Count<2 || arms.Count>4)continue;
                 var packed=new List<BuildRecord>();
-                if(!Pack(catalog,plot,arms,basis,-1,packed) || packed.Count>=arms.Count)continue;
+                if(!Pack(catalog,plot,arms,basis,finish,packed) || packed.Count>=arms.Count)continue;
                 plan.added.AddRange(packed);spans.RemoveAll(s=>arms.Any(a=>a.Same(s)));
             }
             foreach(var span in spans)
-                if(!Pack(catalog,plot,new List<WallGeometry.Span>{span},basis,-1,plan.added))
+                if(!Pack(catalog,plot,new List<WallGeometry.Span>{span},basis,finish,plan.added))
                 {plan.error=T("No compatible wall for this section","No hay pared compatible para este tramo");return plan;}
             plan.removed.AddRange(neighbours);
             foreach(var item in neighbours)
@@ -153,7 +191,7 @@ namespace JuegoCriminal.Construction
             if(finishes.Length!=1)return null; // A single prefab cannot preserve different per-arm paint.
             var spans=Distinct(requested.Concat(neighbours.SelectMany(item=>WallGeometry.World(item.GetComponent<WallTopology>()))));
             var plan=new WallChangePlan{plot=plot};
-            if(!Pack(catalog,plot,spans,basis,finishes[0],plan.added) || plan.added.Count>=neighbours.Length+1)return null;
+            if(!Pack(catalog,plot,spans,basis,finishes[0],plan.added))return null;
             plan.removed.AddRange(neighbours);
             // Preserve identities of any neighbouring piece that exact-cover left
             // unchanged. Only pieces actually consolidated become tombstones.
@@ -281,9 +319,19 @@ namespace JuegoCriminal.Construction
             return best??failure??new WallChangePlan{plot=plot,error=T("No room for the complete replacement inside this plot","No cabe la sustitucion completa dentro del solar")};
         }
 
+        static bool IsCorner(List<WallGeometry.Span> arms,Vector3 node)
+        {
+            if(arms.Count!=2)return false;
+            var a=WallGeometry.Near(arms[0].a,node)?arms[0].b-node:arms[0].a-node;
+            var b=WallGeometry.Near(arms[1].a,node)?arms[1].b-node:arms[1].a-node;
+            return Mathf.Abs(Vector3.Dot(a.normalized,b.normalized))<.01f && Mathf.Abs(a.magnitude-BuildPlot.CellSize)<.06f && Mathf.Abs(b.magnitude-BuildPlot.CellSize)<.06f;
+        }
         static bool Pack(BuildCatalog catalog,BuildPlot plot,List<WallGeometry.Span> spans,Quaternion basis,int finish,List<BuildRecord> result)
         {
             if(spans.Count==0)return true;
+            var corner=spans.SelectMany(s=>new[]{s.a,s.b}).Select(node=>new{node,arms=spans.Where(s=>WallGeometry.Near(s.a,node)||WallGeometry.Near(s.b,node)).ToList()})
+                .FirstOrDefault(n=>IsCorner(n.arms,n.node));
+            var pivot=corner!=null?corner.arms[0]:spans[0];
             // Exact cover: a template may only consume whole existing segments.
             // This prevents merging across gaps, crossing storeys or losing arms.
             var templates=catalog.entries.Where(e=>!e.hiddenInMenu && WallGeometry.Solid(e))
@@ -295,17 +343,38 @@ namespace JuegoCriminal.Construction
                     var local=WallGeometry.At(entry.prefab.GetComponent<WallTopology>(),Vector3.zero,rotation,entry.prefab.transform.localScale);
                     if(local.Count>spans.Count)continue;
                     foreach(var anchor in local)
-                        foreach(var end in new[]{spans[0].a,spans[0].b})
+                        foreach(var end in new[]{pivot.a,pivot.b})
                         {
                             var pos=end-anchor.a;
                             var covered=local.Select(s=>new WallGeometry.Span(pos+s.a,pos+s.b)).ToList();
                             if(!covered.All(s=>spans.Any(t=>s.Same(t))))continue;
+                            if(corner!=null && !corner.arms.All(s=>covered.Any(t=>t.Same(s))))continue;
                             int count=result.Count;result.Add(Record(entry,plot,pos,rotation,finish));
                             if(Pack(catalog,plot,spans.Where(s=>!covered.Any(t=>s.Same(t))).ToList(),basis,finish,result))return true;
                             result.RemoveRange(count,result.Count-count);
                         }
                 }
             return false;
+        }
+
+        public static WallChangePlan Removal(BuildCatalog catalog,BuildPlot plot,PlacedBuildObject target,Vector3 hit,out BuildRecord section)
+        {
+            section=null;var plan=new WallChangePlan{plot=plot};
+            if(!target || target.deleted || target.propertyId!=plot.propertyId || target.GetComponentInParent<BuildPlot>()!=plot)
+            {plan.error=T("Aim at a wall you own","Apunta a una pared propia");return plan;}
+            var entry=catalog.Find(target.definitionId);
+            var spans=WallGeometry.World(target.GetComponent<WallTopology>()).OrderBy(s=>s.Distance(hit)).ToList();
+            if(!WallGeometry.Solid(entry)||spans.Count<2)
+            {plan.error=T("This piece cannot be split","Esta pieza no se puede dividir");return plan;}
+            if(Mathf.Abs(spans[0].Distance(hit)-spans[1].Distance(hit))<.01f)
+            {plan.error=T("Aim at the arm to remove, away from the joint","Apunta al tramo que quieres borrar, lejos de la unión");return plan;}
+            var selected=new List<BuildRecord>();
+            if(!Pack(catalog,plot,new List<WallGeometry.Span>{spans[0]},target.transform.rotation,target.finish,selected))
+            {plan.error=T("No prefab for this section","No hay prefab para este tramo");return plan;}
+            section=selected[0];spans.RemoveAt(0);plan.removed.Add(target);
+            if(!Pack(catalog,plot,spans,target.transform.rotation,target.finish,plan.added))
+                plan.error=T("No prefabs to preserve the rest of the wall","No hay prefabs para conservar el resto de la pared");
+            return plan;
         }
 
         public static bool Validate(WallChangePlan plan,BuildCatalog catalog,out string reason,ICollection<Collider> blockers=null)

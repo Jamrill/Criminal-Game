@@ -48,7 +48,7 @@ namespace JuegoCriminal.Construction
             var before=item.Capture();var after=JsonUtility.FromJson<BuildRecord>(JsonUtility.ToJson(before));after.deleted=true;
             plan.edits.Add((item,before,after));
         }
-        internal static void Prepare(StairBuildPlan plan,BuildCatalog catalog,BuildEntry wall,Rect opening,Rect enclosure,float level,float height)
+        internal static void Prepare(StairBuildPlan plan,BuildCatalog catalog,BuildEntry wall,Rect opening,Rect enclosure,float level,float height,bool sharedLanding=false)
         {
             var plot=plan.plot;var items=plot.GetComponentsInChildren<PlacedBuildObject>().Where(p=>!p.deleted&&p.GetComponentInParent<BuildPlot>()==plot).ToArray();
             var surfaces=new List<List<Vector2>>();
@@ -99,6 +99,16 @@ namespace JuegoCriminal.Construction
             var required=plan.additions.SelectMany(r=>WallGeometry.At(catalog.Find(r.definitionId).prefab.GetComponent<WallTopology>(),r.position,r.rotation,r.scale)).ToArray();
             var clearUpper=Rect.MinMaxRect(enclosure.xMin+.06f,enclosure.yMin+.06f,enclosure.xMax-.06f,enclosure.yMax-.06f);
             var clearLower=Rect.MinMaxRect(opening.xMin+.5f,opening.yMin+.5f,opening.xMax-.5f,opening.yMax-.5f);
+            if(sharedLanding && StairConstruction.Landing(catalog,plot,plan.stairs,out var landing,out _))
+            {
+                // The old hall's front support can become the new stair's front
+                // seam. Include that seam in the priced removal, not the side or
+                // rear walls which must continue to support the enclosure.
+                if(landing.xMin>=opening.xMax-.06f)clearLower.xMax=opening.xMax+.3f;
+                else if(landing.xMax<=opening.xMin+.06f)clearLower.xMin=opening.xMin-.3f;
+                else if(landing.yMin>=opening.yMax-.06f)clearLower.yMax=opening.yMax+.3f;
+                else if(landing.yMax<=opening.yMin+.06f)clearLower.yMin=opening.yMin-.3f;
+            }
             foreach(var item in items)
             {
                 var topology=item.GetComponent<WallTopology>();if(!topology)continue;

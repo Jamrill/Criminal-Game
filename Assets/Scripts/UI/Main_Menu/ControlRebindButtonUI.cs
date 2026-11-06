@@ -67,6 +67,8 @@ namespace JuegoCriminal.UI
                     "Switch Shoulder"=>"Cambiar hombro","Camera Zoom"=>"Zoom de cámara","Inventory"=>"Inventario","Crouch"=>"Agacharse",
                     "Rotate Inventory Item"=>"Rotar objeto del inventario","Tablet"=>"Tablet","Rotate Building"=>"Rotar construcción",
                     "Demolish Building"=>"Vender construcción","Build Cursor (hold)"=>"Cursor de construcción (mantener)","Build Preview Distance"=>"Distancia de previsualización",
+                    "Cancel Placement"=>"Cancelar colocación",
+                    "Build or Buy Property"=>"Construir / Comprar propiedad",
                     _=>englishDisplayName
                 };
                 actionLabel.text=GameLanguage.T(englishDisplayName,spanish);

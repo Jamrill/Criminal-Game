@@ -27,6 +27,9 @@ namespace JuegoCriminal.UI
             if (_economy != null)
                 UpdateText(_economy.Money);
         }
+        private void OnEnable(){JuegoCriminal.Localization.GameLanguage.Changed+=RefreshLanguage;RefreshLanguage();}
+        private void OnDisable()=>JuegoCriminal.Localization.GameLanguage.Changed-=RefreshLanguage;
+        private void RefreshLanguage(){if(_economy)UpdateText(_economy.Money);}
 
         private void OnDestroy()
         {
@@ -37,7 +40,7 @@ namespace JuegoCriminal.UI
         private void UpdateText(int money)
         {
             if (moneyText != null)
-                moneyText.text = $"Cash: ${money}";
+                moneyText.text = JuegoCriminal.Localization.GameLanguage.T("Cash: ${0}","Dinero: ${0}",money);
         }
     }
 }

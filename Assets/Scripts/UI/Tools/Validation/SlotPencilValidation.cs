@@ -37,7 +37,7 @@ public static class SlotPencilValidation
             Check(!input.interactable,name+": double click does not start editing");
             int selections=0;row.Clicked+=_=>selections++;
             row.RenameButton.onClick.Invoke();
-            Check((row.NameText.fontStyle&FontStyles.Underline)!=0,name+": name underlined while editing");
+            Check(((row.NameText.fontStyle&FontStyles.Underline)!=0)==row.UnderlineNameWhileEditing,name+": editing respects authored underline preference");
             Check(input.interactable&&selections==1&&input.text=="Original name",name+": pencil selects row and starts editing current name (enabled="+input.interactable+", selections="+selections+", text="+input.text+")");
             input.onEndEdit.Invoke("");
             Check((row.NameText.fontStyle&FontStyles.Underline)==0,name+": underline removed after editing");
@@ -108,6 +108,7 @@ public static class SlotPencilPlayValidation
             if(phase==0)
             {
                 new GameObject("EventSystem",typeof(EventSystem));
+                new GameObject("Test audio listener").AddComponent<AudioListener>();
                 var view=new GameObject("Canvas",typeof(Canvas)).GetComponent<Canvas>();view.renderMode=RenderMode.ScreenSpaceOverlay;canvas=view.transform;
                 save=new GameObject("Test save service").AddComponent<SaveService>();phase=1;
             }
@@ -115,7 +116,7 @@ public static class SlotPencilPlayValidation
             {
                 string name=index==0?"SlotRow":"SlotRowCoop";
                 row=Object.Instantiate(AssetDatabase.LoadAssetAtPath<SaveSlotRowUI>("Assets/Prefabs/UI/"+name+".prefab"),canvas);
-                row.GetComponent<RectTransform>().sizeDelta=new Vector2(800,50);
+                row.GetComponent<RectTransform>().sizeDelta=new Vector2(530,50);
                 row.Init(-1,SlotPanelMode.LoadOnly,save,null);row.Refresh(new SaveData{displayName="Test name",slotId=-1});
                 var corners=new Vector3[4];row.NameText.rectTransform.GetWorldCorners(corners);
                 var editor=row.NameText.gameObject.AddComponent<SaveSlotNameEditor>();editor.Configure(row,save,row.NameText);
@@ -128,13 +129,37 @@ public static class SlotPencilPlayValidation
             {
                 Check(input.isFocused,"Pencil focuses the input");
                 Check(Mathf.Abs(input.selectionStringAnchorPosition-input.selectionStringFocusPosition)==input.text.Length,"Whole name selected after deferred TMP activation");
-                Check((row.NameText.fontStyle&FontStyles.Underline)!=0,"Underline remains visible while editing");
+                Check(((row.NameText.fontStyle&FontStyles.Underline)!=0)==row.UnderlineNameWhileEditing,"Editing respects the configured underline preference");
                 Check(input.GetComponentsInChildren<TMP_SelectionCaret>(true).Length==1,"TMP creates a selection/caret renderer inside the field");
                 Canvas.ForceUpdateCanvases();
                 var selectionMesh=input.GetComponentInChildren<TMP_SelectionCaret>().canvasRenderer.GetMesh();
                 Check(selectionMesh&&selectionMesh.vertexCount>0,"Selection has actual drawable geometry, not just focus state");
-                input.SetTextWithoutNotify("Changed");input.caretPosition=input.text.Length;
+                input.SetTextWithoutNotify(new string('A',20));input.caretPosition=input.text.Length;
                 Check(input.selectionStringAnchorPosition==input.selectionStringFocusPosition,"Typing can collapse selection to a caret");
+                input.ForceLabelUpdate();Canvas.ForceUpdateCanvases();frame=Time.frameCount;phase=4;
+            }
+            else if(phase==4&&Time.frameCount>frame+2)
+            {
+                Check(input.text.Length==20,"Twenty wide characters reach the input");
+                Check(input.GetComponent<UnityEngine.UI.RectMask2D>(),"Edited name is clipped to its viewport");
+                // Exercise actual TMP cancellation, then wait for deferred canvas updates.
+                input.ProcessEvent(new Event{type=EventType.KeyDown,keyCode=KeyCode.Escape});
+                input.DeactivateInputField(true);frame=Time.frameCount;phase=5;
+            }
+            else if(phase==5&&Time.frameCount>frame+2)
+            {
+                Check(input.wasCanceled,"Escape is recognized as cancellation");
+                Check(row.NameText.text=="Test name","Cancelling restores the saved name");
+                Check(row.NameText.rectTransform.offsetMin.sqrMagnitude<.001f&&row.NameText.rectTransform.offsetMax.sqrMagnitude<.001f,"Cancelled name has no residual scroll or size offset");
+                Check(!input.enabled&&row.NameText.overflowMode==TextOverflowModes.Ellipsis,"Static name stops editing geometry and uses ellipsis");
+                row.RenameButton.onClick.Invoke();frame=Time.frameCount;phase=6;
+            }
+            else if(phase==6&&Time.frameCount>frame+2)
+            {
+                Check(input.isFocused,"Pencil works again after cancellation");
+                input.SetTextWithoutNotify(new string('A',20));input.caretPosition=20;input.ForceLabelUpdate();
+                row.NameText.GetComponent<SaveSlotNameEditor>().SetInteractable(false);
+                Check(row.NameText.text=="Test name"&&row.NameText.rectTransform.anchoredPosition.sqrMagnitude<.001f,"Modal cancellation also restores position and name");
                 row.gameObject.SetActive(false);
                 Check(!input.interactable,"Closing panel exits edit mode in Play");
                 Object.Destroy(row.gameObject);index++;

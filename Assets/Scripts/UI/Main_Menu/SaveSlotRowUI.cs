@@ -36,6 +36,13 @@ namespace JuegoCriminal.UI
         public bool IsCoopVisual => isCoopVisual;
 
         private int _slotId;
+        private string lastPlayedUtc;
+        private void OnEnable(){GameLanguage.Changed+=RefreshDate;RefreshDate();}
+        private void OnDisable()=>GameLanguage.Changed-=RefreshDate;
+        private void RefreshDate()
+        {
+            if(dateText)dateText.text=DateFormatUtil.FormatLastPlayedWithTime(lastPlayedUtc,GameLanguage.Current==GameLocale.Spanish?"es-ES":"en-US");
+        }
 
         public int SlotId => _slotId;
         public bool SlotExists { get; private set; }
@@ -57,6 +64,7 @@ namespace JuegoCriminal.UI
         public void Refresh(SaveData dataOrNull)
         {
             SlotExists = (dataOrNull != null);
+            lastPlayedUtc=dataOrNull?.lastPlayedUtc;
 
             if (!SlotExists)
             {
@@ -77,9 +85,7 @@ namespace JuegoCriminal.UI
 
             if (dateText != null)
             {
-                // Más adelante: cultureCode vendrá de Settings (por ejemplo "es-ES" o "en-US")
-                string cultureCode = null; // TODO: leerlo de SettingsService
-                dateText.text = DateFormatUtil.FormatLastPlayedWithTime(dataOrNull.lastPlayedUtc, cultureCode);
+                RefreshDate();
             }
 
             if (rowButton != null) rowButton.interactable = true;

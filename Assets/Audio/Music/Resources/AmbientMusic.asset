@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff8482bd7d694041916fc8c2ebd60d2, type: 3}
+  m_Name: AmbientMusic
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.Audio.AmbientMusicSettings
+  musicEnabled: 1
+  tracks:
+  - {fileID: 8300000, guid: 402a5fc5ea785c14a803a5a30e960bd5, type: 3}
+  volume: 0.22
+  mixerGroup: {fileID: 0}
+  fadeSeconds: 2.5
+  menuFirstDelay: {x: 2, y: 5}
+  menuSilence: {x: 30, y: 65}
+  worldFirstDelay: {x: 45, y: 90}
+  worldSilence: {x: 120, y: 240}
+  calmSecondsBeforeMusic: 10

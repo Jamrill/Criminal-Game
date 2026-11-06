@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b40d251ebb8e5b488702a35c16e52c5, type: 3}
+  m_Name: UIButtonSounds
+  m_EditorClassIdentifier: Assembly-CSharp::JuegoCriminal.UI.UIButtonSoundSettings
+  soundEnabled: 1
+  appear: {fileID: 8300000, guid: f95c47e876c493b4ab7a2a84ea945007, type: 3}
+  hover: {fileID: 8300000, guid: 6bea2ac2a29e24d4084a6d1e6e18ccd2, type: 3}
+  click: {fileID: 8300000, guid: 1a970ee20495d1c498e6116b9abdde62, type: 3}
+  masterVolume: 0.5
+  appearVolume: 0.45
+  hoverVolume: 0.4
+  clickVolume: 0.55
+  mixerGroup: {fileID: 0}
+  appearCooldown: 0.15
+  hoverCooldown: 0.05

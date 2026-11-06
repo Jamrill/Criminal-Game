@@ -28,12 +28,21 @@ namespace JuegoCriminal.Construction
         }
         public bool Next(Vector3 desired,out Vector3 position,out int index)
         {
-            index=Mathf.Clamp(Mathf.RoundToInt(Vector3.Dot(desired-origin,step)/step.sqrMagnitude),-4096,4096);
+            index=Index(desired);
             int target=index,sign=target<0?-1:1;
             for(int i=sign;sign>0?i<=target:i>=target;i+=sign)
                 if(!placed.Contains(i)){index=i;position=origin+step*i;return true;}
             position=origin+step*index;return false;
         }
         public void Commit(int index)=>placed.Add(index);
+        int Index(Vector3 position)=>Mathf.Clamp(Mathf.RoundToInt(Vector3.Dot(position-origin,step)/step.sqrMagnitude),-4096,4096);
+        public bool Contains(Vector3 position)=>placed.Contains(Index(position));
+        // The gesture is a segment, not a paintbrush: returning to its origin
+        // retracts queued spans without ever removing its first wall.
+        public bool Trim(Vector3 desired)
+        {
+            int target=Index(desired),min=Mathf.Min(0,target),max=Mathf.Max(0,target);
+            return placed.RemoveWhere(i=>i<min||i>max)>0;
+        }
     }
 }
